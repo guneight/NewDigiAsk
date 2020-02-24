@@ -106,9 +106,7 @@ let stackViewIndicator: UIStackView = {
 
 extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-    func setupStatusBar(){
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-    }
+    
     func cvSetup(){
         
         baseView.addSubview(whiteView)

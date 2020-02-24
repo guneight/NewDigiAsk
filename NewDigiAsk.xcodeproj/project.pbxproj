@@ -20,6 +20,7 @@
 		67288E9823FCE53A002E257C /* ExtensionDaftarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67288E9723FCE53A002E257C /* ExtensionDaftarViewController.swift */; };
 		67392AF124018A69007630DF /* LengkapiDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67392AF024018A69007630DF /* LengkapiDataViewController.swift */; };
 		67392AF32403B3A2007630DF /* ProdukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67392AF22403B3A2007630DF /* ProdukViewController.swift */; };
+		67392AF52403B76C007630DF /* ExtensionProduk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67392AF42403B76C007630DF /* ExtensionProduk.swift */; };
 		6751E12E23EC06B4008ACB56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751E12D23EC06B4008ACB56 /* AppDelegate.swift */; };
 		6751E13023EC06B4008ACB56 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751E12F23EC06B4008ACB56 /* HomeMenuViewController.swift */; };
 		6751E13323EC06B4008ACB56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6751E13123EC06B4008ACB56 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		67288E9723FCE53A002E257C /* ExtensionDaftarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDaftarViewController.swift; sourceTree = "<group>"; };
 		67392AF024018A69007630DF /* LengkapiDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengkapiDataViewController.swift; sourceTree = "<group>"; };
 		67392AF22403B3A2007630DF /* ProdukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukViewController.swift; sourceTree = "<group>"; };
+		67392AF42403B76C007630DF /* ExtensionProduk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionProduk.swift; sourceTree = "<group>"; };
 		6751E12A23EC06B4008ACB56 /* NewDigiAsk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewDigiAsk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6751E12D23EC06B4008ACB56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6751E12F23EC06B4008ACB56 /* HomeMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				6753A2C623F532F9000F7CE1 /* UIHelper.swift */,
 				67288E8823FBA19F002E257C /* ExtensionUISetup.swift */,
 				67288E9723FCE53A002E257C /* ExtensionDaftarViewController.swift */,
+				67392AF42403B76C007630DF /* ExtensionProduk.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67392AF52403B76C007630DF /* ExtensionProduk.swift in Sources */,
 				6751E13623EC06B4008ACB56 /* NewDigiAsk.xcdatamodeld in Sources */,
 				67392AF32403B3A2007630DF /* ProdukViewController.swift in Sources */,
 				67288E9623FCE4D2002E257C /* DaftarViewController.swift in Sources */,

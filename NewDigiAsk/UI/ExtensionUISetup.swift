@@ -113,12 +113,12 @@ func UiSetup(){
             notifButton.widthAnchor.constraint(equalToConstant: 17),
             notifButton.heightAnchor.constraint(equalToConstant: 17.55)
             ])
-    notifButton.setImage(UIImage(named: "notif.png"), for: .normal)
+        notifButton.setImage(UIImage(named: "notif.png"), for: .normal)
 
                 //NotifCount
                 let labelNotif = UILabel()
-            containerViewNav.addSubview(labelNotif)
-    UIHelper.makeLabel(label: labelNotif, corner: 7, allignment: .center, leadingAnchor: containerViewNav.leadingAnchor, trailingAnchor: containerViewNav.trailingAnchor, topAnchor: containerViewNav.topAnchor, leadingConstant: (containerViewNav.frame.size.width-106), trailingConstant: -92, topConstant: 0, heightAnchor: 14, widthAnchor: 14)
+        containerViewNav.addSubview(labelNotif)
+        UIHelper.makeLabel(label: labelNotif, corner: 7, allignment: .center, leadingAnchor: containerViewNav.leadingAnchor, trailingAnchor: containerViewNav.trailingAnchor, topAnchor: containerViewNav.topAnchor, leadingConstant: (containerViewNav.frame.size.width-106), trailingConstant: -92, topConstant: 0, heightAnchor: 14, widthAnchor: 14)
             labelNotif.backgroundColor = #colorLiteral(red: 1, green: 0.2039215686, blue: 0.01176470588, alpha: 1)
             labelNotif.text = "1"
             labelNotif.font = UIFont(name: "AvantGarde Bk BT", size: 6)
@@ -146,8 +146,6 @@ func UiSetup(){
             containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             containerView.heightAnchor.constraint(equalToConstant: 80.2)
             ])
-
-
 
         containerView.addSubview(tabBarView)
         tabBarView.translatesAutoresizingMaskIntoConstraints = false

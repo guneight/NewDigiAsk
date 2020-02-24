@@ -15,7 +15,7 @@ class HomeMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupStatusBar()
+        
         UiSetup()
         cvSetup()
         view.layoutIfNeeded()
