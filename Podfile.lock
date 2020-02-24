@@ -1,0 +1,16 @@
+PODS:
+  - PinCodeTextField (0.1.0)
+
+DEPENDENCIES:
+  - PinCodeTextField
+
+SPEC REPOS:
+  trunk:
+    - PinCodeTextField
+
+SPEC CHECKSUMS:
+  PinCodeTextField: a3c39be58bde3ed1d6888d0fb1d88b0a4a2277cc
+
+PODFILE CHECKSUM: a9aef4a937bbbacfb0c1fcf873aa8d67ccd3637f
+
+COCOAPODS: 1.8.4

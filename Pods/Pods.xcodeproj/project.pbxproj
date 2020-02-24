@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19811CCE732537994C028D55642B4960 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		2637783C303A316D781FE17C61899F36 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0C112BB3DA0C0A4677A54B68F75416 /* TextHelper.swift */; };
+		26463FBD4A136CDF5E895889999D44F0 /* PinCodeTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0451F06E1C3486BC76C18834B9B4A7B8 /* PinCodeTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FA8F1CDAE87DE962680392749441AF5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E2C7A90C43174BE8C66BB234A3CBF /* StringExtension.swift */; };
+		3F1DA61BE86422F9CD1A81AB19114A10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		61E90D227CF9830790574F25E5508239 /* PinCodeTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B370C4A56D6BBE29AB941BD4C5DDAA7B /* PinCodeTextField-dummy.m */; };
+		74232C4427316682D79F7217A032B86B /* Pods-NewDigiAsk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C99A602572B844B08C6ED36EF916F861 /* Pods-NewDigiAsk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E8DAE4BF06456AE9B0B37F442F1AB94 /* PinCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915FF082D46DA863F8FA68476FD03E19 /* PinCodeTextField.swift */; };
+		B502CE1A3C15FECBB0C7DF0D96E3A1FA /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4098F5ED11F85E9E9464B13A3C8F2513 /* IntExtension.swift */; };
+		F22FBDD5A5777B8D95346B3BDBA7CD71 /* Pods-NewDigiAsk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EA67D03D530BCEBBE0200E8A92E6C1 /* Pods-NewDigiAsk-dummy.m */; };
+		FF6D64C4C36F653F1602BB5A598F1A3E /* PinCodeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7528D77E8CBDCE5050CB78E4426BC3 /* PinCodeTextFieldDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5D6586418E9316A6CBA56E5D0FBAA7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDF1FB11822899F2978739C8B4A9BCB5;
+			remoteInfo = PinCodeTextField;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00A7F58AEE7A58F76C565C69FA8C1D5B /* Pods-NewDigiAsk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewDigiAsk.release.xcconfig"; sourceTree = "<group>"; };
+		0451F06E1C3486BC76C18834B9B4A7B8 /* PinCodeTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PinCodeTextField-umbrella.h"; sourceTree = "<group>"; };
+		1B7528D77E8CBDCE5050CB78E4426BC3 /* PinCodeTextFieldDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PinCodeTextFieldDelegate.swift; path = Pod/PinCodeTextFieldDelegate.swift; sourceTree = "<group>"; };
+		1F64861C97EE78C47056E16E0C121F12 /* Pods-NewDigiAsk-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NewDigiAsk-frameworks.sh"; sourceTree = "<group>"; };
+		223E2C7A90C43174BE8C66BB234A3CBF /* StringExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Pod/Extensions/StringExtension.swift; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		33EA67D03D530BCEBBE0200E8A92E6C1 /* Pods-NewDigiAsk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NewDigiAsk-dummy.m"; sourceTree = "<group>"; };
+		38DF2801A650FDCEA2C5F128387D8FA1 /* PinCodeTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PinCodeTextField.xcconfig; sourceTree = "<group>"; };
+		4098F5ED11F85E9E9464B13A3C8F2513 /* IntExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntExtension.swift; path = Pod/Extensions/IntExtension.swift; sourceTree = "<group>"; };
+		4AC1CDC0284BD38F2969875D47656D6E /* PinCodeTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PinCodeTextField.framework; path = PinCodeTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5967974B75912B55EF2D9699E41A351D /* PinCodeTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PinCodeTextField-prefix.pch"; sourceTree = "<group>"; };
+		76D7F234E5918BDE2CC1D095DD36EDF6 /* Pods-NewDigiAsk-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NewDigiAsk-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7C0C112BB3DA0C0A4677A54B68F75416 /* TextHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextHelper.swift; path = Pod/TextHelper/TextHelper.swift; sourceTree = "<group>"; };
+		915FF082D46DA863F8FA68476FD03E19 /* PinCodeTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PinCodeTextField.swift; path = Pod/PinCodeTextField.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A133009FA39F32959DB9EEF003AF5FCB /* Pods-NewDigiAsk-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewDigiAsk-acknowledgements.plist"; sourceTree = "<group>"; };
+		B370C4A56D6BBE29AB941BD4C5DDAA7B /* PinCodeTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PinCodeTextField-dummy.m"; sourceTree = "<group>"; };
+		B603BBF0F5E97F5B0E7A6A165ECD6E56 /* PinCodeTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PinCodeTextField.modulemap; sourceTree = "<group>"; };
+		B7A209BA7E8333B9752D56449B0CF426 /* Pods_NewDigiAsk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NewDigiAsk.framework; path = "Pods-NewDigiAsk.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C99A602572B844B08C6ED36EF916F861 /* Pods-NewDigiAsk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NewDigiAsk-umbrella.h"; sourceTree = "<group>"; };
+		CF71C456024D74172FABA931C04CE602 /* PinCodeTextField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PinCodeTextField-Info.plist"; sourceTree = "<group>"; };
+		D2FEEB769C4F060601C76C1DFDB21DDB /* Pods-NewDigiAsk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NewDigiAsk.modulemap"; sourceTree = "<group>"; };
+		DBFEEAC3271D8A2EE5FC3611019B907A /* Pods-NewDigiAsk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewDigiAsk.debug.xcconfig"; sourceTree = "<group>"; };
+		DEB1A8E44C2FF2FE8DA6834885BB3988 /* Pods-NewDigiAsk-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewDigiAsk-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C12FE5752809DB08E9622B451FA2B9AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1DA61BE86422F9CD1A81AB19114A10 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9BDD9DACAC8E191D0D5130465E8EA15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19811CCE732537994C028D55642B4960 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		75957132DEF6CB320AD2DA19E3756A14 /* PinCodeTextField */ = {
+			isa = PBXGroup;
+			children = (
+				4098F5ED11F85E9E9464B13A3C8F2513 /* IntExtension.swift */,
+				915FF082D46DA863F8FA68476FD03E19 /* PinCodeTextField.swift */,
+				1B7528D77E8CBDCE5050CB78E4426BC3 /* PinCodeTextFieldDelegate.swift */,
+				223E2C7A90C43174BE8C66BB234A3CBF /* StringExtension.swift */,
+				7C0C112BB3DA0C0A4677A54B68F75416 /* TextHelper.swift */,
+				8596A7BBACE4F06048C20188D65E8FEC /* Support Files */,
+			);
+			name = PinCodeTextField;
+			path = PinCodeTextField;
+			sourceTree = "<group>";
+		};
+		8596A7BBACE4F06048C20188D65E8FEC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B603BBF0F5E97F5B0E7A6A165ECD6E56 /* PinCodeTextField.modulemap */,
+				38DF2801A650FDCEA2C5F128387D8FA1 /* PinCodeTextField.xcconfig */,
+				B370C4A56D6BBE29AB941BD4C5DDAA7B /* PinCodeTextField-dummy.m */,
+				CF71C456024D74172FABA931C04CE602 /* PinCodeTextField-Info.plist */,
+				5967974B75912B55EF2D9699E41A351D /* PinCodeTextField-prefix.pch */,
+				0451F06E1C3486BC76C18834B9B4A7B8 /* PinCodeTextField-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PinCodeTextField";
+			sourceTree = "<group>";
+		};
+		A129E8192452E66A5A5E6D344E5B0522 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E61D5D330A10360D07789AE414B8B1E7 /* Pods-NewDigiAsk */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A68D84A58E393B6A0E565CBC7AEE4B0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AC1CDC0284BD38F2969875D47656D6E /* PinCodeTextField.framework */,
+				B7A209BA7E8333B9752D56449B0CF426 /* Pods_NewDigiAsk.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CE7CCA8264A105DE26ADD9436CC070BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75957132DEF6CB320AD2DA19E3756A14 /* PinCodeTextField */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				CE7CCA8264A105DE26ADD9436CC070BD /* Pods */,
+				A68D84A58E393B6A0E565CBC7AEE4B0C /* Products */,
+				A129E8192452E66A5A5E6D344E5B0522 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E61D5D330A10360D07789AE414B8B1E7 /* Pods-NewDigiAsk */ = {
+			isa = PBXGroup;
+			children = (
+				D2FEEB769C4F060601C76C1DFDB21DDB /* Pods-NewDigiAsk.modulemap */,
+				76D7F234E5918BDE2CC1D095DD36EDF6 /* Pods-NewDigiAsk-acknowledgements.markdown */,
+				A133009FA39F32959DB9EEF003AF5FCB /* Pods-NewDigiAsk-acknowledgements.plist */,
+				33EA67D03D530BCEBBE0200E8A92E6C1 /* Pods-NewDigiAsk-dummy.m */,
+				1F64861C97EE78C47056E16E0C121F12 /* Pods-NewDigiAsk-frameworks.sh */,
+				DEB1A8E44C2FF2FE8DA6834885BB3988 /* Pods-NewDigiAsk-Info.plist */,
+				C99A602572B844B08C6ED36EF916F861 /* Pods-NewDigiAsk-umbrella.h */,
+				DBFEEAC3271D8A2EE5FC3611019B907A /* Pods-NewDigiAsk.debug.xcconfig */,
+				00A7F58AEE7A58F76C565C69FA8C1D5B /* Pods-NewDigiAsk.release.xcconfig */,
+			);
+			name = "Pods-NewDigiAsk";
+			path = "Target Support Files/Pods-NewDigiAsk";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		480088D4527F13D766EB602C9AB0A79D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74232C4427316682D79F7217A032B86B /* Pods-NewDigiAsk-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6C9756D60E93674A284EA47D4BE1679 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26463FBD4A136CDF5E895889999D44F0 /* PinCodeTextField-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BDF1FB11822899F2978739C8B4A9BCB5 /* PinCodeTextField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D592052C2724C0A9FC21BDC0273A5A39 /* Build configuration list for PBXNativeTarget "PinCodeTextField" */;
+			buildPhases = (
+				C6C9756D60E93674A284EA47D4BE1679 /* Headers */,
+				0D9592664C421FFC4A02965F97593422 /* Sources */,
+				C12FE5752809DB08E9622B451FA2B9AA /* Frameworks */,
+				B1051F0A767E66CF69569FD8CA9D24F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PinCodeTextField;
+			productName = PinCodeTextField;
+			productReference = 4AC1CDC0284BD38F2969875D47656D6E /* PinCodeTextField.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BFE563A8FE3CAD6E6FFB6850420128F6 /* Pods-NewDigiAsk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3A85777081A91DE1183E4B51E1CB84D /* Build configuration list for PBXNativeTarget "Pods-NewDigiAsk" */;
+			buildPhases = (
+				480088D4527F13D766EB602C9AB0A79D /* Headers */,
+				E12AB62A7B760BEBF54B3E0CF9032799 /* Sources */,
+				E9BDD9DACAC8E191D0D5130465E8EA15 /* Frameworks */,
+				47349DD7318AD505FEDC6D3CC8A2DA43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F87DA1FACEC7347F25AB2BA014A0FC2 /* PBXTargetDependency */,
+			);
+			name = "Pods-NewDigiAsk";
+			productName = "Pods-NewDigiAsk";
+			productReference = B7A209BA7E8333B9752D56449B0CF426 /* Pods_NewDigiAsk.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = A68D84A58E393B6A0E565CBC7AEE4B0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDF1FB11822899F2978739C8B4A9BCB5 /* PinCodeTextField */,
+				BFE563A8FE3CAD6E6FFB6850420128F6 /* Pods-NewDigiAsk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47349DD7318AD505FEDC6D3CC8A2DA43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1051F0A767E66CF69569FD8CA9D24F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D9592664C421FFC4A02965F97593422 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B502CE1A3C15FECBB0C7DF0D96E3A1FA /* IntExtension.swift in Sources */,
+				61E90D227CF9830790574F25E5508239 /* PinCodeTextField-dummy.m in Sources */,
+				8E8DAE4BF06456AE9B0B37F442F1AB94 /* PinCodeTextField.swift in Sources */,
+				FF6D64C4C36F653F1602BB5A598F1A3E /* PinCodeTextFieldDelegate.swift in Sources */,
+				2FA8F1CDAE87DE962680392749441AF5 /* StringExtension.swift in Sources */,
+				2637783C303A316D781FE17C61899F36 /* TextHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E12AB62A7B760BEBF54B3E0CF9032799 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F22FBDD5A5777B8D95346B3BDBA7CD71 /* Pods-NewDigiAsk-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F87DA1FACEC7347F25AB2BA014A0FC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PinCodeTextField;
+			target = BDF1FB11822899F2978739C8B4A9BCB5 /* PinCodeTextField */;
+			targetProxy = B5D6586418E9316A6CBA56E5D0FBAA7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2FE457814E2798FCCDA4479699DFC45B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBFEEAC3271D8A2EE5FC3611019B907A /* Pods-NewDigiAsk.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		590A17BEFF0FED91D72832B4283970DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38DF2801A650FDCEA2C5F128387D8FA1 /* PinCodeTextField.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PinCodeTextField/PinCodeTextField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PinCodeTextField/PinCodeTextField-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PinCodeTextField/PinCodeTextField.modulemap";
+				PRODUCT_MODULE_NAME = PinCodeTextField;
+				PRODUCT_NAME = PinCodeTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		916E0404255105F480DC4950B7625F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		ACAF35D3F97E2F4B4009946B391D088F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38DF2801A650FDCEA2C5F128387D8FA1 /* PinCodeTextField.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PinCodeTextField/PinCodeTextField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PinCodeTextField/PinCodeTextField-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PinCodeTextField/PinCodeTextField.modulemap";
+				PRODUCT_MODULE_NAME = PinCodeTextField;
+				PRODUCT_NAME = PinCodeTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B7E21FCDF3A0656B1EFD26D2B3FD4197 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00A7F58AEE7A58F76C565C69FA8C1D5B /* Pods-NewDigiAsk.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				916E0404255105F480DC4950B7625F7A /* Debug */,
+				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D592052C2724C0A9FC21BDC0273A5A39 /* Build configuration list for PBXNativeTarget "PinCodeTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACAF35D3F97E2F4B4009946B391D088F /* Debug */,
+				590A17BEFF0FED91D72832B4283970DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3A85777081A91DE1183E4B51E1CB84D /* Build configuration list for PBXNativeTarget "Pods-NewDigiAsk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE457814E2798FCCDA4479699DFC45B /* Debug */,
+				B7E21FCDF3A0656B1EFD26D2B3FD4197 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
