@@ -8,24 +8,12 @@
 
 import UIKit
 
-let scrollViewDaftar = UIScrollView()
-let viewDaftar = UIView()
-let buttonBackNav = UIButton()
-let labelEmail = UILabel()
-let labelTextfieldEmail = UILabel()
-let textFieldEmail = UITextField()
-let buttonDaftar = UIButton()
-let labelMasukDengan = UILabel()
-let buttonSingInGoogle = UIButton()
-let imageViewGoogle = UIImageView()
-let labelSingInGoogle = UILabel()
-let labelSudahPunyaAkun = UILabel()
-let masukButton = UIButton()
-let vc = DaftarViewController()
+
 
 extension DaftarViewController{
     
     func setupUIDaftarVC(){
+        
         
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
         self.navigationItem.leftBarButtonItem = customButtonNav

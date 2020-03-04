@@ -114,6 +114,21 @@
             </objects>
             <point key="canvasLocation" x="5449" y="-791"/>
         </scene>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="Xoc-tg-JDS">
+            <objects>
+                <viewController storyboardIdentifier="EditProfileViewController" id="zW0-0B-BXX" customClass="EditProfileViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="93j-1u-26S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5ka-tZ-PGd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b0w-6o-xKb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6238" y="-791"/>
+        </scene>
         <!--Verifikasi View Controller-->
         <scene sceneID="nRF-bQ-N1d">
             <objects>
