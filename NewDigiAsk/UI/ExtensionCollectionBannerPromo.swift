@@ -85,6 +85,7 @@ let stackViewIndicator: UIStackView = {
         cvGalery.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellGalery")
         return cvGalery
     }()
+  
     let viewColletionProduct = UIView()
     let viewPromo = UIView()
     let labelPromo = UILabel()
@@ -102,7 +103,10 @@ let stackViewIndicator: UIStackView = {
     let indicatorbanner4 = UILabel()
     let indicatorbanner5 = UILabel()
     let arrayIndicator = [indicatorbanner1, indicatorbanner2,indicatorbanner3, indicatorbanner4, indicatorbanner5]
-  
+    let namaProdukArray = ["Kecelakaan Diri", "Kebakaran", "Kontruksi", "Tanggung Gugat", "Pengangkutan Barang", "Perjalanan", "Kerusakan Mesin", "Property All Risk", "Uang", "Alat Berat", "Penjaminan", "Kredit Perdagangan", "Kredit Serba Guna", "Surety Bond", "Kontra Bank Garnis", "Custom Bond"]
+    let infoPromo = ["info1","info2","info3"]
+    let galeri = ["galeri1","galeri2", "galeri3","galeri4"]
+
 
 extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
@@ -249,6 +253,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         collectBannerPromo.translatesAutoresizingMaskIntoConstraints = false
         UIHelper.makeContraintCollectionVIew(collectionView: collectBannerPromo, leadingAnchor: viewPromo.leadingAnchor, trailingAnchor: viewPromo.trailingAnchor, topAnchor: viewPromo.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, heightAnchor: 112, widthAnchor: 274)
         collectBannerPromo.backgroundColor = UIColor.clear.withAlphaComponent(0)
+        
         collectBannerPromo.showsHorizontalScrollIndicator = false
 
         whiteView.addSubview(viewInfo)
@@ -330,17 +335,17 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == collectionViewProduct {
-                       return 20
+            return namaProdukArray.count
         }else if collectionView == collectionViewPromo{
             return 5
         }else if collectionView == collectBannerPromo{
              print("lewat")
             return 10
         }else if collectionView == collectionViewInfo{
-            return 10
+            return infoPromo.count
         }
         else if collectionView == collectionViewGalery{
-            return 10
+            return galeri.count
         }else{
             return 0
         }
@@ -350,96 +355,113 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collectionViewProduct{
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cellproduct", for: indexPath)
-            cell.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
             cell.layer.masksToBounds = true
+//            cell.backgroundColor = .red
             cell.layer.cornerRadius = 10
             
             let imageIcon = UIImageView()
             cell.addSubview(imageIcon)
-            UIHelper.makeImageView(imageView: imageIcon, leadingAnchor: cell.leadingAnchor, topAnchor: cell.topAnchor, leadingConstant: 0, topConstant: 0, corner: 10, heightAnchor: 55)
-            imageIcon.backgroundColor = UIColor.red
-            
+            UIHelper.makeImageView(imageView: imageIcon, leadingAnchor: cell.leadingAnchor, topAnchor: cell.topAnchor, leadingConstant: 14, topConstant: 13, corner: 0, heightAnchor: 27)
+          
+            imageIcon.widthAnchor.constraint(equalToConstant: 27).isActive = true
+            imageIcon.image = UIImage(named: "\(namaProdukArray[indexPath.row]).png")
+            imageIcon.contentMode = .scaleAspectFit
             let labelIcon = UILabel()
             cell.addSubview(labelIcon)
-            UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: cell.leadingAnchor, trailingAnchor: cell.trailingAnchor ,topAnchor: imageIcon.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: 23, widthAnchor: 0)
-            labelIcon.text = "Icon name"
+            UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: cell.leadingAnchor, trailingAnchor: cell.trailingAnchor ,topAnchor: imageIcon.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: 40, widthAnchor: 0)
+            labelIcon.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true
+            labelIcon.numberOfLines = 0
+            labelIcon.textAlignment = .center
+        
+            labelIcon.text = "\(namaProdukArray[indexPath.row])"
+            
             labelIcon.font = UIFont(name: "AvantGarde Bk BT", size: 10)
             return cell
             
         }else if collectionView == collectionViewPromo{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellpromo", for: indexPath)
-            cell.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-            button.backgroundColor = .red
-            cell.addSubview(button)
+            let bannerPromoImage  = UIImageView()
+            cell.contentView.addSubview(bannerPromoImage)
+            UIHelper.makeImageView(imageView: bannerPromoImage, leadingAnchor: cell.contentView.leadingAnchor, topAnchor: cell.contentView.topAnchor, leadingConstant: 0, topConstant: 0, corner: 0, heightAnchor: cell.frame.size.height)
+            bannerPromoImage.widthAnchor.constraint(equalToConstant: containerCollectionView.frame.size.width).isActive = true
+            bannerPromoImage.image = UIImage(named: "banner1.png")
+            bannerPromoImage.contentMode = .scaleAspectFit
             arrayIndicator[indexPath.row].backgroundColor = .red
             return cell
             
         }else if collectionView == collectBannerPromo{
             let cell3 = collectionView.dequeueReusableCell(withReuseIdentifier: "cellBannerPromo", for: indexPath)
-            cell3.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
             cell3.layer.masksToBounds = true
             cell3.layer.cornerRadius = 10
             
              let imagePromo = UIImageView()
             cell3.addSubview(imagePromo)
             UIHelper.makeImageView(imageView: imagePromo, leadingAnchor: cell3.leadingAnchor,  topAnchor: cell3.topAnchor, leadingConstant: 0,  topConstant: 0, corner: 10, heightAnchor: 112 )
-            imagePromo.backgroundColor = UIColor.red
+            imagePromo.widthAnchor.constraint(equalToConstant: 274).isActive = true
+            imagePromo.image = UIImage(named: "promo1.png")
+            imagePromo.contentMode = .scaleAspectFit
             return cell3
             
         }else if collectionView == collectionViewInfo{
             let cell4 = collectionView.dequeueReusableCell(withReuseIdentifier: "cellInfo", for: indexPath)
-            cell4.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
             cell4.layer.masksToBounds = true
             cell4.layer.cornerRadius = 10
             
             let imageInfo = UIImageView()
             cell4.addSubview(imageInfo)
             UIHelper.makeImageView(imageView: imageInfo, leadingAnchor: cell4.leadingAnchor, topAnchor: cell4.topAnchor, leadingConstant: 0,  topConstant: 0, corner: 10, heightAnchor: 82)
-            imageInfo.backgroundColor = UIColor.red
+            imageInfo.widthAnchor.constraint(equalToConstant: 147).isActive = true
+            imageInfo.image = UIImage(named: "\(infoPromo[indexPath.row])")
+            imageInfo.contentMode = .scaleAspectFit
             
             let imageTime = UIImageView()
             cell4.addSubview(imageTime)
             UIHelper.makeImageView(imageView: imageTime, leadingAnchor: cell4.leadingAnchor,  topAnchor: imageInfo.bottomAnchor, leadingConstant: 0, topConstant: 5.26, corner: 0, heightAnchor: 10)
-            imageTime.backgroundColor = .red
+            imageTime.widthAnchor.constraint(equalToConstant: 10).isActive = true
+            imageTime.image = UIImage(named: "time")
+            imageTime.contentMode = .scaleAspectFit
             
             let labelTime = UILabel()
             cell4.addSubview(labelTime)
             UIHelper.makeLabel(label: labelTime, corner: 0, allignment: .left, leadingAnchor: imageTime.trailingAnchor, trailingAnchor: cell4.trailingAnchor, topAnchor: imageInfo.bottomAnchor, leadingConstant: 3, trailingConstant: 0, topConstant: 5.26, heightAnchor: 10, widthAnchor: 0)
-            labelTime.backgroundColor = .red
+            labelTime.text = "24 Oktober 2019"
             
             let labelnfo = UILabel()
             cell4.addSubview(labelnfo)
             UIHelper.makeLabel(label: labelnfo, corner: 0, allignment: .left, leadingAnchor: cell4.leadingAnchor, trailingAnchor: cell4.trailingAnchor, topAnchor: imageTime.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 2, heightAnchor: 156-99.26, widthAnchor: 0)
-            labelnfo.backgroundColor = .red
+            labelnfo.text = " Askrindo serahakan bantuan mobil pintar untuk Aceh"
             return cell4
             
         }else if collectionView == collectionViewGalery{
             let cell5 = collectionView.dequeueReusableCell(withReuseIdentifier: "cellGalery", for: indexPath)
-            cell5.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
             cell5.layer.masksToBounds = true
             cell5.layer.cornerRadius = 10
             
             let imageGalery = UIImageView()
             cell5.addSubview(imageGalery)
             UIHelper.makeImageView(imageView: imageGalery, leadingAnchor: cell5.leadingAnchor, topAnchor: cell5.topAnchor, leadingConstant: 0, topConstant: 0, corner: 10, heightAnchor: 92)
-            imageGalery.backgroundColor = .red
+            imageGalery.widthAnchor.constraint(equalToConstant: 96).isActive = true
+            imageGalery.image = UIImage(named: "\(galeri[indexPath.row])")
+            imageGalery.contentMode = .scaleAspectFit
             
             let imageTime = UIImageView()
             cell5.addSubview(imageTime)
             UIHelper.makeImageView(imageView: imageTime, leadingAnchor: cell5.leadingAnchor, topAnchor: imageGalery.bottomAnchor, leadingConstant: 0, topConstant: 6, corner: 0, heightAnchor: 10)
-            imageTime.backgroundColor = .red
+            imageTime.widthAnchor.constraint(equalToConstant: 10).isActive = true
+            imageTime.image = UIImage(named: "time.png")
+            
 
             let labelTime = UILabel()
             cell5.addSubview(labelTime)
             UIHelper.makeLabel(label: labelTime, corner: 0, allignment: .left, leadingAnchor: imageTime.trailingAnchor, trailingAnchor: cell5.trailingAnchor, topAnchor: imageGalery.bottomAnchor, leadingConstant: 3, trailingConstant: 0, topConstant: 6, heightAnchor: 10, widthAnchor: 0)
-            labelTime.backgroundColor = .red
+            labelTime.text = "w4 Oktober 2019"
 
             let labelGalery = UILabel()
             cell5.addSubview(labelGalery)
             UIHelper.makeLabel(label: labelGalery, corner: 0, allignment: .left, leadingAnchor: cell5.leadingAnchor, trailingAnchor: cell5.trailingAnchor, topAnchor: imageTime.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 2, heightAnchor: 50, widthAnchor: 0)
-            labelGalery.backgroundColor = .red
+            labelGalery.text = "Manfaat teh hijau buat kesehatan"
             return cell5
+            
         }else{
             return UICollectionViewCell()
         }
@@ -484,4 +506,8 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         }
     }
     
+}
+
+class BannerPromoCollectionViewCell: UICollectionViewCell {
+   
 }

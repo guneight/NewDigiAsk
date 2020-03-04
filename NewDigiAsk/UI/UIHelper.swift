@@ -12,6 +12,38 @@ struct UIHelper {
     static let widthScreen = UIScreen.main.bounds.width
     static let heightScreen = UIScreen.main.bounds.height
     
+    static func makeSmalllabel(smallLabel : UILabel, leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, leadingConstant: CGFloat, topConstant: CGFloat, corner : CGFloat, heightAnchor : CGFloat,widthtAnchor : CGFloat){
+           smallLabel.translatesAutoresizingMaskIntoConstraints = false
+           NSLayoutConstraint.activate([
+               smallLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingConstant),
+               smallLabel.topAnchor.constraint(equalTo: topAnchor, constant: topConstant),
+               smallLabel.heightAnchor.constraint(equalToConstant: heightAnchor),
+               smallLabel.widthAnchor.constraint(equalToConstant: widthtAnchor)
+           ])
+           smallLabel.layer.masksToBounds = true
+           smallLabel.layer.cornerRadius = corner
+           smallLabel.layoutIfNeeded()
+          
+           
+       }
+       
+    static func makeSmallButton(smallButton : UIButton, leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, leadingConstant: CGFloat, topConstant: CGFloat, corner : CGFloat, heightAnchor : CGFloat,widthtAnchor : CGFloat, borderWidth : CGFloat, colorBorder : CGColor ){
+        smallButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            smallButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingConstant),
+            smallButton.topAnchor.constraint(equalTo: topAnchor, constant: topConstant),
+            smallButton.heightAnchor.constraint(equalToConstant: heightAnchor),
+            smallButton.widthAnchor.constraint(equalToConstant: widthtAnchor)
+        ])
+        smallButton.layer.masksToBounds = true
+        smallButton.layer.cornerRadius = corner
+        smallButton.layoutIfNeeded()
+        smallButton.layer.borderWidth = borderWidth
+        smallButton.layer.borderColor = colorBorder 
+        
+    }
+    
+    
     static func makeTetxField(textField : UITextField, leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,trailingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, leadingConstant: CGFloat, trailingConstant: CGFloat, topConstant: CGFloat, corner : CGFloat, heightAnchor : CGFloat, textColor : UIColor){
         textField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

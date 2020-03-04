@@ -67,6 +67,7 @@ class LengkapiDataViewController: UIViewController {
     
     func setupUINav(){
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
+        selesaiButton.addTarget(self, action: #selector(selesaiAction(sender:)), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = customButtonNav
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -79,6 +80,10 @@ class LengkapiDataViewController: UIViewController {
     }
     @objc func backButtonTapped() {
       navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @objc func selesaiAction (sender: Any){
+         navigationController?.popToRootViewController(animated: true)
     }
 
 }

@@ -8,25 +8,7 @@
 
 import UIKit
 
-let scrollView : UIScrollView = UIScrollView()
-   let containerViewNav : UIView = UIView()
-   let cartButton : UIButton = UIButton()
-   let chatButton : UIButton = UIButton()
-   let notifButton : UIButton = UIButton()
-   let containerView : UIView = UIView()
-   let backcontainerView : UIView = UIView()
-   let baseView : UIView = UIView()
-   let tabBarView : UIView = UIView()
-   let stackView : UIStackView = UIStackView()
-   let homeButton : UIButton = UIButton()
-   let klaimButton : UIButton = UIButton()
-   let beliButton : UIButton = UIButton()
-   let simulasiButton : UIButton = UIButton()
-   let profileButton : UIButton = UIButton()
-   let imageBarView : UIImageView = UIImageView()
-   let logoImageView : UIImageView = UIImageView()
 extension HomeMenuViewController{
-
     
 func UiSetup(){
         self.view.addSubview(scrollView)

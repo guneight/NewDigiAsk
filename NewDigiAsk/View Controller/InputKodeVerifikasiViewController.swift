@@ -93,10 +93,6 @@ class InputKodeVerifikasiViewController: UIViewController {
         UIHelper.makeLabel(label: labelTidakMenerimaKode, corner: 0, allignment: .center, leadingAnchor: kodeVerifikasi.leadingAnchor, trailingAnchor: kodeVerifikasi.trailingAnchor, topAnchor: labelMohonTunggu.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, heightAnchor: 18, widthAnchor: 0)
         labelTidakMenerimaKode.text = "Tidak menerima kode ?"
         labelTidakMenerimaKode.font = UIFont(name:"AvantGarde Bk BT", size:12)
-        
-        
-        
-        
         kodeVerifikasi.addSubview(labelKirimUlang)
         UIHelper.makeLabel(label: labelKirimUlang, corner: 0, allignment: .center, leadingAnchor: kodeVerifikasi.leadingAnchor, trailingAnchor: kodeVerifikasi.trailingAnchor, topAnchor: labelTidakMenerimaKode.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, heightAnchor: 30, widthAnchor: 0)
         labelKirimUlang.font = UIFont(name:"AvantGarde Bk BT", size:12)
@@ -109,24 +105,18 @@ class InputKodeVerifikasiViewController: UIViewController {
         let gunakanMetodeLain =  (text as NSString).range(of: "Gunanakan Metode Lain")
         underliningString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: gunakanMetodeLain)
         labelKirimUlang.attributedText = underliningString
-        
-        
-        
-        
-        
-        
+
     }
     
     func setupNavBar(){
            let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
                  self.navigationItem.leftBarButtonItem = customButtonNav
-                 navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-                 navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                 navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-                 navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-                 UINavigationBar.appearance().isTranslucent = false
-                 navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-                 title: "VERIFIKASI", style: .plain, target: nil, action: nil)
+            navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+            navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            UINavigationBar.appearance().isTranslucent = false
+            navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "VERIFIKASI", style: .plain, target: nil, action: nil)
                  
        }
        

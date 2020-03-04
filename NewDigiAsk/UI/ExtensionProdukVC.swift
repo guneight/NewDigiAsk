@@ -21,16 +21,51 @@ return stackViewCV
 let lineView = UIView()
 let viewContainerTableProduk = UIView()
 let produkTable = UITableView()
-let iconProdukImage = UIImage()
-let produkLabel = UILabel()
 let produkImage = UIImageView()
 let tertanggungImage = UIImageView()
 let kerangjangImage = UIImageView()
 let checkOutImage = UIImageView()
 let completeImage = UIImageView()
+var PresentationDelegate = PresentationManager()
 
+extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 13
+//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 13    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellProduk", for: indexPath) as! produkTableViewCell
+        cell.iconProdukImage.image = UIImage(named: "\(namaProdukArray[indexPath.row])")
+        cell.produkLabel.text = "\(namaProdukArray[indexPath.row])"
+        cell.selectionStyle = .none
+        cell.backgroundColor = .white
+        cell.layoutIfNeeded()
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 63
+    }
 
-extension ProdukViewController {
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        let produkDetailVC = self.storyboard?.instantiateViewController(identifier: "ProdukDetailViewController") as! ProdukDetailViewController
+        produkDetailVC.modalPresentationStyle = UIModalPresentationStyle.automatic
+        produkDetailVC.transitioningDelegate = PresentationDelegate
+        produkDetailVC.modalPresentationStyle = .custom
+        present(produkDetailVC, animated: true, completion: {})
+        
+    }
+    
     
     func setupUI(){
         
@@ -46,7 +81,8 @@ extension ProdukViewController {
         
         produkBaseView.layer.cornerRadius = 20
         produkBaseView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner ]
-        produkBaseView.backgroundColor = .red
+        produkBaseView.backgroundColor = #colorLiteral(red: 0.6549019608, green: 0.6980392157, blue: 0.8980392157, alpha: 0.7213452483)
+        produkBaseView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.2017337329)
         produkBaseView.layoutIfNeeded()
         
         produkBaseView.addSubview(lineView)
@@ -73,7 +109,8 @@ extension ProdukViewController {
         produkImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         produkImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
                
-        produkImage.backgroundColor = .gray
+        produkImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        produkImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         produkImage.image = UIImage(named: "cart.png")
         produkImage.contentMode = .scaleAspectFit
         produkImage.layer.masksToBounds = true
@@ -84,7 +121,8 @@ extension ProdukViewController {
         tertanggungImage.translatesAutoresizingMaskIntoConstraints = false
         tertanggungImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         tertanggungImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        tertanggungImage.backgroundColor = .green
+        tertanggungImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tertanggungImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         tertanggungImage.layer.masksToBounds = true
         tertanggungImage.layer.cornerRadius = 17
         
@@ -92,7 +130,8 @@ extension ProdukViewController {
         kerangjangImage.translatesAutoresizingMaskIntoConstraints = false
         kerangjangImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         kerangjangImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        kerangjangImage.backgroundColor = .blue
+        kerangjangImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        kerangjangImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         kerangjangImage.layer.masksToBounds = true
         kerangjangImage.layer.cornerRadius = 17
         
@@ -100,7 +139,8 @@ extension ProdukViewController {
         checkOutImage.translatesAutoresizingMaskIntoConstraints = false
         checkOutImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         checkOutImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        checkOutImage.backgroundColor = .yellow
+        checkOutImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        checkOutImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         checkOutImage.layer.masksToBounds = true
         checkOutImage.layer.cornerRadius = 17
         
@@ -108,7 +148,8 @@ extension ProdukViewController {
         completeImage.translatesAutoresizingMaskIntoConstraints = false
         completeImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         completeImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        completeImage.backgroundColor = .black
+        completeImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        completeImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         completeImage.layer.masksToBounds = true
         completeImage.layer.cornerRadius = 17
         
@@ -129,13 +170,17 @@ extension ProdukViewController {
         viewContainerTableProduk.addSubview(produkTable)
         produkTable.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            produkTable.leadingAnchor.constraint(equalTo: viewContainerTableProduk.leadingAnchor),
-            produkTable.trailingAnchor.constraint(equalTo: viewContainerTableProduk.trailingAnchor),
+            produkTable.leadingAnchor.constraint(equalTo: viewContainerTableProduk.leadingAnchor, constant: 22),
+            produkTable.trailingAnchor.constraint(equalTo: viewContainerTableProduk.trailingAnchor, constant: -22),
             produkTable.topAnchor.constraint(equalTo: viewContainerTableProduk.topAnchor, constant: 30),
             produkTable.bottomAnchor.constraint(equalTo: viewContainerTableProduk.bottomAnchor, constant: 0)
         ])
         
-        produkTable.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        produkTable.backgroundColor?.withAlphaComponent(0)
+        produkTable.register(produkTableViewCell.self, forCellReuseIdentifier: "cellProduk")
+        produkTable.separatorStyle = UITableViewCell.SeparatorStyle.none
+        produkTable.showsVerticalScrollIndicator = false
+        
         
     }
     
@@ -158,4 +203,47 @@ extension ProdukViewController {
     
     
     
+    
 }
+
+class produkTableViewCell: UITableViewCell {
+    let viewContent = UIView()
+    let iconProdukImage = UIImageView()
+    let produkLabel = UILabel()
+    
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.contentView.addSubview(viewContent)
+        self.viewContent.addSubview(iconProdukImage)
+        self.viewContent.addSubview(produkLabel)
+        UIHelper.makeView(view: viewContent, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 5, corner: 0, heightAnchor: 53, widthAnchor: 0)
+        viewContent.backgroundColor = .white
+        viewContent.layer.masksToBounds = true
+        viewContent.layer.cornerRadius = 10
+        viewContent.layer.borderColor = #colorLiteral(red: 0.8705882353, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
+        viewContent.layer.borderWidth = 1
+        viewContent.layer.shadowColor = UIColor.black.cgColor
+        viewContent.layer.shadowPath = UIBezierPath(rect: viewContent.bounds).cgPath
+        viewContent.layer.shadowOffset = .zero
+        viewContent.layer.shadowRadius = 10
+        viewContent.layer.shadowOpacity = 1
+        viewContent.layer.shouldRasterize = true
+        
+        iconProdukImage.backgroundColor = .white
+        UIHelper.makeImageView(imageView: iconProdukImage, leadingAnchor: viewContent.leadingAnchor, topAnchor: viewContent.topAnchor, leadingConstant: 28, topConstant: 13, corner: 0, heightAnchor: 27)
+        iconProdukImage.widthAnchor.constraint(equalToConstant: 27).isActive = true
+
+             
+        UIHelper.makeLabel(label: produkLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: viewContent.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 18, trailingConstant: -5, topConstant: 23, heightAnchor: 16, widthAnchor: 0)
+        produkLabel.backgroundColor = .white
+            
+        
+                  
+}
+    
+    required init?(coder: NSCoder) {
+           super.init(coder: coder)
+}
+}
+
