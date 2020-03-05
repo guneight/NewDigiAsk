@@ -18,15 +18,31 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "polisPending", for: indexPath) as! PolisPendingTableViewCell
         
         if segmentedIndex == 0{
+            segmentedIndicatorLabel1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+            segmentedIndicatorLabel2.backgroundColor = .white
+            segmentedIndicatorLabel3.backgroundColor = .white
+            segmentedIndicatorLabel4.backgroundColor = .white
             cell.namaProdukLabel.text = "Asuransi Kebakaran"
             cell.klaimButton.isHidden = true
         }else if segmentedIndex == 1 {
+            segmentedIndicatorLabel1.backgroundColor = .white
+            segmentedIndicatorLabel2.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+            segmentedIndicatorLabel3.backgroundColor = .white
+            segmentedIndicatorLabel4.backgroundColor = .white
             cell.namaProdukLabel.text = "Asuransi Perjalanan"
             cell.klaimButton.isHidden = false
         }else if segmentedIndex == 2{
+            segmentedIndicatorLabel1.backgroundColor = .white
+            segmentedIndicatorLabel2.backgroundColor = .white
+            segmentedIndicatorLabel3.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+            segmentedIndicatorLabel4.backgroundColor = .white
             cell.namaProdukLabel.text = "Asuransi Jalan-Jalan"
             cell.klaimButton.isHidden = true
         }else{
+            segmentedIndicatorLabel1.backgroundColor = .white
+            segmentedIndicatorLabel2.backgroundColor = .white
+            segmentedIndicatorLabel3.backgroundColor = .white
+            segmentedIndicatorLabel4.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
             cell.namaProdukLabel.text = "Asuransi ngacap"
             cell.klaimButton.isHidden = true
         }
@@ -52,7 +68,35 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
         ])
         polisManageSegmentControl.backgroundColor = .white
         polisManageSegmentControl.selectedSegmentTintColor = .clear
-   
+        
+        polisManageSegmentControl.addSubview(segmentedControlIndicator)
+        segmentedControlIndicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            segmentedControlIndicator.leadingAnchor.constraint(equalTo: polisManageSegmentControl.leadingAnchor),
+            segmentedControlIndicator.trailingAnchor.constraint(equalTo: polisManageSegmentControl.trailingAnchor),
+            segmentedControlIndicator.heightAnchor.constraint(equalToConstant: 3),
+            segmentedControlIndicator.bottomAnchor.constraint(equalTo: polisManageSegmentControl.bottomAnchor)
+        ])
+        
+        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel1)
+        segmentedIndicatorLabel1.translatesAutoresizingMaskIntoConstraints = false
+        segmentedIndicatorLabel1.heightAnchor.constraint(equalToConstant: 3).isActive = true
+        segmentedIndicatorLabel1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        
+        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel2)
+        segmentedIndicatorLabel2.translatesAutoresizingMaskIntoConstraints = false
+        segmentedIndicatorLabel2.heightAnchor.constraint(equalToConstant: 3).isActive = true
+       
+        
+        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel3)
+        segmentedIndicatorLabel3.translatesAutoresizingMaskIntoConstraints = false
+        segmentedIndicatorLabel3.heightAnchor.constraint(equalToConstant: 3).isActive = true
+     
+        
+        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel4)
+        segmentedIndicatorLabel4.translatesAutoresizingMaskIntoConstraints = false
+        segmentedIndicatorLabel4.heightAnchor.constraint(equalToConstant: 3).isActive = true
+        
         view.addSubview(polisSearchBar)
         polisSearchBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -74,6 +118,22 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
         UIHelper.makeSmallButton(smallButton: polisfilterButton, leadingAnchor: polisfilterView.leadingAnchor, topAnchor: polisfilterView.topAnchor, leadingConstant: width-80, topConstant: 15, corner: 0, heightAnchor: 16, widthtAnchor: 51, borderWidth: 0, colorBorder: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
         polisfilterButton.setImage(UIImage(named: "Filter Button"), for: .normal)
         
+        view.addSubview(polisEmptyImage)
+        polisEmptyImage.translatesAutoresizingMaskIntoConstraints = false
+               NSLayoutConstraint.activate([
+                   polisEmptyImage.topAnchor.constraint(equalTo: polisfilterView.bottomAnchor, constant: 15),
+                   polisEmptyImage.widthAnchor.constraint(equalToConstant: 204),
+                   polisEmptyImage.heightAnchor.constraint(equalToConstant: 194),
+                   polisEmptyImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+               ])
+               polisEmptyImage.image = UIImage(named: "emptyImage")
+               polisEmptyImage.contentMode = .center
+               
+               view.addSubview(polisEmptyLabel)
+               UIHelper.makeLabel(label: polisEmptyLabel, corner: 0, allignment: .center, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: polisEmptyImage.bottomAnchor, leadingConstant: 50, trailingConstant: -50, topConstant: 0, heightAnchor: 40, widthAnchor: 0)
+               polisEmptyLabel.numberOfLines = 2
+               polisEmptyLabel.text = "TIDAK DITEMUKAN DATA KLAIM YANG DITOLAK"
+               polisEmptyLabel.font = UIFont(name: "AvantGarde Bk BT", size: 12)
         view.addSubview(polisPendingTableView)
         polisPendingTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -89,22 +149,7 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
         polisPendingTableView.register(PolisPendingTableViewCell.self, forCellReuseIdentifier: "polisPending")
         polisManageSegmentControl.selectedSegmentIndex = 0
         
-        view.addSubview(polisEmptyImage)
-        polisEmptyImage.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            polisEmptyImage.topAnchor.constraint(equalTo: polisfilterView.bottomAnchor, constant: 15),
-            polisEmptyImage.widthAnchor.constraint(equalToConstant: 204),
-            polisEmptyImage.heightAnchor.constraint(equalToConstant: 194),
-            polisEmptyImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
-        ])
-        polisEmptyImage.image = UIImage(named: "emptyImage")
-        polisEmptyImage.contentMode = .center
-        
-        view.addSubview(polisEmptyLabel)
-        UIHelper.makeLabel(label: polisEmptyLabel, corner: 0, allignment: .center, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: polisEmptyImage.bottomAnchor, leadingConstant: 50, trailingConstant: -50, topConstant: 0, heightAnchor: 40, widthAnchor: 0)
-        polisEmptyLabel.numberOfLines = 2
-        polisEmptyLabel.text = "TIDAK DITEMUKAN DATA KLAIM YANG DITOLAK"
-        polisEmptyLabel.font = UIFont(name: "AvantGarde Bk BT", size: 12)
+       
         
         
     }

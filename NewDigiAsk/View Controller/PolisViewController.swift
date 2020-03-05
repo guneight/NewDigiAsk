@@ -18,7 +18,21 @@ class PolisViewController: UIViewController {
     let polisEmptyImage = UIImageView()
     let polisEmptyLabel = UILabel()
     
-    let jumlahPolidPending : Int = 0
+    let segmentedControlIndicator: UIStackView = {
+    let stackViewCV = UIStackView()
+    stackViewCV.axis = NSLayoutConstraint.Axis.horizontal
+    stackViewCV.distribution = UIStackView.Distribution.fillEqually
+    stackViewCV.alignment = UIStackView.Alignment.center
+    stackViewCV.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    stackViewCV.translatesAutoresizingMaskIntoConstraints = false
+    stackViewCV.spacing = 1
+    return stackViewCV
+    }()
+    let segmentedIndicatorLabel1 = UILabel()
+    let segmentedIndicatorLabel2 = UILabel()
+    let segmentedIndicatorLabel3 = UILabel()
+    let segmentedIndicatorLabel4 = UILabel()
+    let jumlahPolidPending : Int = 5
     var segmentedIndex : Int = 0
     
     
