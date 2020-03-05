@@ -68,7 +68,7 @@ extension ProdukDetailViewController {
             produkDetailImage.heightAnchor.constraint(equalToConstant: 157)
         ])
         produkDetailImage.image = UIImage(named: "PA")
-        produkImage.contentMode = .scaleAspectFit
+        produkDetailImage.contentMode = .scaleAspectFit
         
         produkBaseView.addSubview(attributView)
         attributView.translatesAutoresizingMaskIntoConstraints = false

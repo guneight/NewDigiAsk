@@ -39,7 +39,7 @@ class HomeMenuViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         profileButton.addTarget(self, action: #selector(tabBarProfileAction(sender:)), for: .touchUpInside)
         beliButton.addTarget(self, action: #selector(tabBarBeliAction(sender:)), for: .touchUpInside)
-        // Do any additional setup after loading the view, typically from a nib.
+        klaimButton.addTarget(self, action: #selector(tabBarKlaim(sender:)), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +65,12 @@ class HomeMenuViewController: UIViewController {
         let daftarProdukVC = storyboard?.instantiateViewController(identifier : "ProdukViewController" ) as! ProdukViewController
         self.navigationController?.pushViewController(daftarProdukVC, animated: true)
         print("beli")
+    }
+    
+    @objc func tabBarKlaim(sender : Any){
+        
+        let klaimVC = storyboard?.instantiateViewController(identifier: "KlaimViewController") as! KlaimViewController
+        self.navigationController?.pushViewController(klaimVC, animated: true)
     }
     
     

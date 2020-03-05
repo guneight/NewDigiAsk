@@ -10,6 +10,10 @@
 		593D2983BF5D7261210B2D5D /* Pods_NewDigiAsk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A078CAC6B5981AF843D17151 /* Pods_NewDigiAsk.framework */; };
 		67104EC023FE35140035343F /* VerifikasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67104EBF23FE35140035343F /* VerifikasiViewController.swift */; };
 		67104EC223FE6FCD0035343F /* InputKodeVerifikasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67104EC123FE6FCD0035343F /* InputKodeVerifikasiViewController.swift */; };
+		6728574324109F24005E3B6D /* KlaimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728574224109F24005E3B6D /* KlaimViewController.swift */; };
+		6728574524109F3A005E3B6D /* ExtensionKlaimVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728574424109F3A005E3B6D /* ExtensionKlaimVC.swift */; };
+		672857472410A9FE005E3B6D /* PolisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672857462410A9FE005E3B6D /* PolisViewController.swift */; };
+		672857492410AA10005E3B6D /* ExtensionPolisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672857482410AA10005E3B6D /* ExtensionPolisVC.swift */; };
 		67288E8923FBA19F002E257C /* ExtensionHomeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67288E8823FBA19F002E257C /* ExtensionHomeMenu.swift */; };
 		67288E9023FBDB20002E257C /* AVGARDNI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8B23FBDB1F002E257C /* AVGARDNI.ttf */; };
 		67288E9123FBDB20002E257C /* AVGARDN.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8C23FBDB1F002E257C /* AVGARDN.TTF */; };
@@ -62,6 +66,10 @@
 /* Begin PBXFileReference section */
 		67104EBF23FE35140035343F /* VerifikasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikasiViewController.swift; sourceTree = "<group>"; };
 		67104EC123FE6FCD0035343F /* InputKodeVerifikasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputKodeVerifikasiViewController.swift; sourceTree = "<group>"; };
+		6728574224109F24005E3B6D /* KlaimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlaimViewController.swift; sourceTree = "<group>"; };
+		6728574424109F3A005E3B6D /* ExtensionKlaimVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionKlaimVC.swift; sourceTree = "<group>"; };
+		672857462410A9FE005E3B6D /* PolisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolisViewController.swift; sourceTree = "<group>"; };
+		672857482410AA10005E3B6D /* ExtensionPolisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPolisVC.swift; sourceTree = "<group>"; };
 		67288E8823FBA19F002E257C /* ExtensionHomeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHomeMenu.swift; sourceTree = "<group>"; };
 		67288E8B23FBDB1F002E257C /* AVGARDNI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AVGARDNI.ttf; sourceTree = "<group>"; };
 		67288E8C23FBDB1F002E257C /* AVGARDN.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = AVGARDN.TTF; sourceTree = "<group>"; };
@@ -215,6 +223,8 @@
 				67924D98240E572F0099F26F /* ExtensionProfileVC.swift */,
 				679C71ED240F85A30092B1FA /* ExtensionEditProfileVC.swift */,
 				679C71F124108E0D0092B1FA /* ExtensionTentangKamiVC.swift */,
+				6728574424109F3A005E3B6D /* ExtensionKlaimVC.swift */,
+				672857482410AA10005E3B6D /* ExtensionPolisVC.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -248,6 +258,8 @@
 				67924D96240E57170099F26F /* ProfileViewController.swift */,
 				679C71EB240F85870092B1FA /* EditProfileViewController.swift */,
 				679C71EF24108DF10092B1FA /* TentangKamiViewController.swift */,
+				6728574224109F24005E3B6D /* KlaimViewController.swift */,
+				672857462410A9FE005E3B6D /* PolisViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -391,6 +403,7 @@
 			files = (
 				67392AF52403B76C007630DF /* ExtensionProdukVC.swift in Sources */,
 				6751E13623EC06B4008ACB56 /* NewDigiAsk.xcdatamodeld in Sources */,
+				6728574524109F3A005E3B6D /* ExtensionKlaimVC.swift in Sources */,
 				67924D8E240CD6700099F26F /* BayarViewController.swift in Sources */,
 				67924D99240E572F0099F26F /* ExtensionProfileVC.swift in Sources */,
 				679C71F024108DF10092B1FA /* TentangKamiViewController.swift in Sources */,
@@ -400,7 +413,10 @@
 				67924D97240E57170099F26F /* ProfileViewController.swift in Sources */,
 				67924D94240CDCF10099F26F /* ExtensionDetailBayarVC.swift in Sources */,
 				6728F09F24050BCA00A2C605 /* PresentationManager.swift in Sources */,
+				6728574324109F24005E3B6D /* KlaimViewController.swift in Sources */,
 				67CF8B9E24066EF70032DBDE /* JenisProdukDetailViewController.swift in Sources */,
+				672857492410AA10005E3B6D /* ExtensionPolisVC.swift in Sources */,
+				672857472410A9FE005E3B6D /* PolisViewController.swift in Sources */,
 				6728F0A324050CB500A2C605 /* ProdukDetailViewController.swift in Sources */,
 				67CF8BA22406A2D60032DBDE /* SyaratdanKetentuanViewController.swift in Sources */,
 				67288E9623FCE4D2002E257C /* DaftarViewController.swift in Sources */,
