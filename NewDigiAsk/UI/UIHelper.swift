@@ -12,6 +12,7 @@ struct UIHelper {
     static let widthScreen = UIScreen.main.bounds.width
     static let heightScreen = UIScreen.main.bounds.height
     
+    
     static func makeSmalllabel(smallLabel : UILabel, leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, leadingConstant: CGFloat, topConstant: CGFloat, corner : CGFloat, heightAnchor : CGFloat,widthtAnchor : CGFloat){
            smallLabel.translatesAutoresizingMaskIntoConstraints = false
            NSLayoutConstraint.activate([

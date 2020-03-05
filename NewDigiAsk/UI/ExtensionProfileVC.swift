@@ -28,10 +28,13 @@ extension ProfileViewController : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        if menuProfile[indexPath.row] == "Profile" {
             let editProfileVC = storyboard?.instantiateViewController(identifier: "EditProfileViewController")  as! EditProfileViewController
             self.navigationController?.pushViewController(editProfileVC, animated: true)
             print(indexPath.row)
+        }else if menuProfile[indexPath.row] == "Tentang Kami"{
+            let tentangKamiVC =  storyboard?.instantiateViewController(withIdentifier: "TentangKamiViewController") as! TentangKamiViewController
+            self.navigationController?.pushViewController(tentangKamiVC, animated: true)
         }
         
     }

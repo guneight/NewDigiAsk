@@ -129,6 +129,21 @@
             </objects>
             <point key="canvasLocation" x="6238" y="-791"/>
         </scene>
+        <!--Tentang Kami View Controller-->
+        <scene sceneID="5gF-5X-nqC">
+            <objects>
+                <viewController storyboardIdentifier="TentangKamiViewController" id="JKQ-tu-r76" customClass="TentangKamiViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RR3-8j-RLk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Bvh-e2-Tg2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mZn-cP-BZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7016" y="-778"/>
+        </scene>
         <!--Verifikasi View Controller-->
         <scene sceneID="nRF-bQ-N1d">
             <objects>
