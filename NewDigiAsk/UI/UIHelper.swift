@@ -12,7 +12,9 @@ struct UIHelper {
     static let widthScreen = UIScreen.main.bounds.width
     static let heightScreen = UIScreen.main.bounds.height
     
-    
+//    static func setTextLabel(label : UILabel, text : String!, textColor : UIColor, textFont : String, textSize: CGFloat ){
+//        label.text = UIFont(descriptor: UIFontDescriptor(fontAttributes: <#T##[UIFontDescriptor.AttributeName : Any]#>), size: <#T##CGFloat#>)
+//    }
     static func makeSmalllabel(smallLabel : UILabel, leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, leadingConstant: CGFloat, topConstant: CGFloat, corner : CGFloat, heightAnchor : CGFloat,widthtAnchor : CGFloat){
            smallLabel.translatesAutoresizingMaskIntoConstraints = false
            NSLayoutConstraint.activate([
@@ -24,6 +26,7 @@ struct UIHelper {
            smallLabel.layer.masksToBounds = true
            smallLabel.layer.cornerRadius = corner
            smallLabel.layoutIfNeeded()
+
           
            
        }

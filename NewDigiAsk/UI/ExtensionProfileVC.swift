@@ -38,6 +38,9 @@ extension ProfileViewController : UITableViewDataSource, UITableViewDelegate{
         }else if menuProfile[indexPath.row] == "Polis"{
             let polisVC = storyboard?.instantiateViewController(withIdentifier: "PolisViewController") as! PolisViewController
             self.navigationController?.pushViewController(polisVC, animated: true)
+        }else if menuProfile[indexPath.row] == "Monitoring Klaim"{
+            let monitoringKlaimVC = storyboard?.instantiateViewController(withIdentifier: "MonitoringKlaimViewController") as! MonitoringKlaimViewController
+            self.navigationController?.pushViewController(monitoringKlaimVC, animated: true)
         }
         
     }

@@ -15,7 +15,7 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "polisPending", for: indexPath) as! PolisPendingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "polisPending", for: indexPath) as! PolisdanKlaimTableViewCell
         
         if segmentedIndex == 0{
             segmentedIndicatorLabel1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
@@ -23,6 +23,7 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
             segmentedIndicatorLabel3.backgroundColor = .white
             segmentedIndicatorLabel4.backgroundColor = .white
             cell.namaProdukLabel.text = "Asuransi Kebakaran"
+            cell.iconProdukImage.image = UIImage(named:"\(namaProdukArray[indexPath.row])")
             cell.klaimButton.isHidden = true
         }else if segmentedIndex == 1 {
             segmentedIndicatorLabel1.backgroundColor = .white
@@ -146,7 +147,7 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
         polisPendingTableView.showsVerticalScrollIndicator = false
         polisPendingTableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
-        polisPendingTableView.register(PolisPendingTableViewCell.self, forCellReuseIdentifier: "polisPending")
+        polisPendingTableView.register(PolisdanKlaimTableViewCell.self, forCellReuseIdentifier: "polisPending")
         polisManageSegmentControl.selectedSegmentIndex = 0
         
        
@@ -168,11 +169,11 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
               
     }
     @objc func backButtonTapped() {
-             navigationController?.popToRootViewController(animated: true)
+             navigationController?.popViewController(animated: true)
            }
 }
 
-class PolisPendingTableViewCell : UITableViewCell{
+class PolisdanKlaimTableViewCell : UITableViewCell{
     let HeadernomorTransaksiLabel = UILabel()
     let nomorTransaksiLabel = UILabel()
     let tanggalTransaksiLabel = UILabel()
@@ -242,6 +243,7 @@ class PolisPendingTableViewCell : UITableViewCell{
         UIHelper.makeImageView(imageView: iconProdukImage, leadingAnchor: containerProdukView.leadingAnchor, topAnchor: lineNamaProduk.bottomAnchor, leadingConstant: 16, topConstant: 12, corner: 10, heightAnchor: 57)
         iconProdukImage.widthAnchor.constraint(equalToConstant: 57).isActive = true
         iconProdukImage.backgroundColor = #colorLiteral(red: 0.8862745098, green: 0.8862745098, blue: 0.8862745098, alpha: 1)
+        iconProdukImage.contentMode = .center
         
         containerProdukView.addSubview(deskripsiProdukLabel)
         UIHelper.makeLabel(label: deskripsiProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: lineNamaProduk.bottomAnchor, leadingConstant: 12, trailingConstant: -20, topConstant: 12, heightAnchor: 40, widthAnchor: 0)

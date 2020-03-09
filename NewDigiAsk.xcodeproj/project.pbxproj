@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		593D2983BF5D7261210B2D5D /* Pods_NewDigiAsk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A078CAC6B5981AF843D17151 /* Pods_NewDigiAsk.framework */; };
 		67104EC023FE35140035343F /* VerifikasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67104EBF23FE35140035343F /* VerifikasiViewController.swift */; };
 		67104EC223FE6FCD0035343F /* InputKodeVerifikasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67104EC123FE6FCD0035343F /* InputKodeVerifikasiViewController.swift */; };
 		6728574324109F24005E3B6D /* KlaimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728574224109F24005E3B6D /* KlaimViewController.swift */; };
@@ -38,6 +37,8 @@
 		6753A2C723F532F9000F7CE1 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6753A2C623F532F9000F7CE1 /* UIHelper.swift */; };
 		676B7C55240CA762003D0FB1 /* CheckOutKeranjangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B7C54240CA762003D0FB1 /* CheckOutKeranjangViewController.swift */; };
 		676B7C57240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B7C56240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift */; };
+		677EFC1C2411EE0600656CE4 /* MonitoringKlaimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677EFC1B2411EE0600656CE4 /* MonitoringKlaimViewController.swift */; };
+		677EFC1E2411EE1B00656CE4 /* ExtensionMonitoringKlaimVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677EFC1D2411EE1B00656CE4 /* ExtensionMonitoringKlaimVC.swift */; };
 		6791B5BF23F3B8E800E33F0C /* ExtensionCollectionBannerPromo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6791B5BE23F3B8E800E33F0C /* ExtensionCollectionBannerPromo.swift */; };
 		67924D8E240CD6700099F26F /* BayarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67924D8D240CD6700099F26F /* BayarViewController.swift */; };
 		67924D90240CD6850099F26F /* ExtensionBayarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67924D8F240CD6850099F26F /* ExtensionBayarVC.swift */; };
@@ -49,6 +50,8 @@
 		679C71EE240F85A30092B1FA /* ExtensionEditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C71ED240F85A30092B1FA /* ExtensionEditProfileVC.swift */; };
 		679C71F024108DF10092B1FA /* TentangKamiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C71EF24108DF10092B1FA /* TentangKamiViewController.swift */; };
 		679C71F224108E0D0092B1FA /* ExtensionTentangKamiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C71F124108E0D0092B1FA /* ExtensionTentangKamiVC.swift */; };
+		679E5C7F2415F00000107457 /* Pods_NewDigiAsk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A078CAC6B5981AF843D17151 /* Pods_NewDigiAsk.framework */; };
+		679E5C802415F00000107457 /* Pods_NewDigiAsk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A078CAC6B5981AF843D17151 /* Pods_NewDigiAsk.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		67CF8B9A240649D00032DBDE /* JenisProdukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8B99240649D00032DBDE /* JenisProdukViewController.swift */; };
 		67CF8B9C24064A310032DBDE /* ExtensionJenisProdukVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8B9B24064A310032DBDE /* ExtensionJenisProdukVC.swift */; };
 		67CF8B9E24066EF70032DBDE /* JenisProdukDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8B9D24066EF70032DBDE /* JenisProdukDetailViewController.swift */; };
@@ -62,6 +65,20 @@
 		67EE591B24092A1100404C6E /* PembayaranViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EE591A24092A1100404C6E /* PembayaranViewController.swift */; };
 		67EE591D24092A2600404C6E /* ExtensionPembayaranVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EE591C24092A2600404C6E /* ExtensionPembayaranVC.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		679E5C812415F00000107457 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				679E5C802415F00000107457 /* Pods_NewDigiAsk.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		67104EBF23FE35140035343F /* VerifikasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikasiViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +113,8 @@
 		6753A2C623F532F9000F7CE1 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		676B7C54240CA762003D0FB1 /* CheckOutKeranjangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutKeranjangViewController.swift; sourceTree = "<group>"; };
 		676B7C56240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCheckOutKeranjangVC.swift; sourceTree = "<group>"; };
+		677EFC1B2411EE0600656CE4 /* MonitoringKlaimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringKlaimViewController.swift; sourceTree = "<group>"; };
+		677EFC1D2411EE1B00656CE4 /* ExtensionMonitoringKlaimVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMonitoringKlaimVC.swift; sourceTree = "<group>"; };
 		6791B5BE23F3B8E800E33F0C /* ExtensionCollectionBannerPromo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionBannerPromo.swift; sourceTree = "<group>"; };
 		67924D8D240CD6700099F26F /* BayarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayarViewController.swift; sourceTree = "<group>"; };
 		67924D8F240CD6850099F26F /* ExtensionBayarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionBayarVC.swift; sourceTree = "<group>"; };
@@ -107,6 +126,8 @@
 		679C71ED240F85A30092B1FA /* ExtensionEditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionEditProfileVC.swift; sourceTree = "<group>"; };
 		679C71EF24108DF10092B1FA /* TentangKamiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TentangKamiViewController.swift; sourceTree = "<group>"; };
 		679C71F124108E0D0092B1FA /* ExtensionTentangKamiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTentangKamiVC.swift; sourceTree = "<group>"; };
+		679E5C822415F35D00107457 /* PinCodeTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PinCodeTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		679E5C852415F8E100107457 /* PinCodeTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PinCodeTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CF8B99240649D00032DBDE /* JenisProdukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisProdukViewController.swift; sourceTree = "<group>"; };
 		67CF8B9B24064A310032DBDE /* ExtensionJenisProdukVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionJenisProdukVC.swift; sourceTree = "<group>"; };
 		67CF8B9D24066EF70032DBDE /* JenisProdukDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisProdukDetailViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				593D2983BF5D7261210B2D5D /* Pods_NewDigiAsk.framework in Frameworks */,
+				679E5C7F2415F00000107457 /* Pods_NewDigiAsk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +160,8 @@
 		1940AB3185AD02CAA7E784F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				679E5C852415F8E100107457 /* PinCodeTextField.framework */,
+				679E5C822415F35D00107457 /* PinCodeTextField.framework */,
 				A078CAC6B5981AF843D17151 /* Pods_NewDigiAsk.framework */,
 			);
 			name = Frameworks;
@@ -225,6 +248,7 @@
 				679C71F124108E0D0092B1FA /* ExtensionTentangKamiVC.swift */,
 				6728574424109F3A005E3B6D /* ExtensionKlaimVC.swift */,
 				672857482410AA10005E3B6D /* ExtensionPolisVC.swift */,
+				677EFC1D2411EE1B00656CE4 /* ExtensionMonitoringKlaimVC.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -260,6 +284,7 @@
 				679C71EF24108DF10092B1FA /* TentangKamiViewController.swift */,
 				6728574224109F24005E3B6D /* KlaimViewController.swift */,
 				672857462410A9FE005E3B6D /* PolisViewController.swift */,
+				677EFC1B2411EE0600656CE4 /* MonitoringKlaimViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -292,6 +317,7 @@
 				6751E12723EC06B4008ACB56 /* Frameworks */,
 				6751E12823EC06B4008ACB56 /* Resources */,
 				7E161BCD721CDA0B28FE21E2 /* [CP] Embed Pods Frameworks */,
+				679E5C812415F00000107457 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				677EFC1E2411EE1B00656CE4 /* ExtensionMonitoringKlaimVC.swift in Sources */,
 				67392AF52403B76C007630DF /* ExtensionProdukVC.swift in Sources */,
 				6751E13623EC06B4008ACB56 /* NewDigiAsk.xcdatamodeld in Sources */,
 				6728574524109F3A005E3B6D /* ExtensionKlaimVC.swift in Sources */,
@@ -432,6 +459,7 @@
 				67924D92240CDCE10099F26F /* DetailBayarViewController.swift in Sources */,
 				67288E8923FBA19F002E257C /* ExtensionHomeMenu.swift in Sources */,
 				67EE59172408F05600404C6E /* KeranjangViewController.swift in Sources */,
+				677EFC1C2411EE0600656CE4 /* MonitoringKlaimViewController.swift in Sources */,
 				6753A2C723F532F9000F7CE1 /* UIHelper.swift in Sources */,
 				679C71EC240F85870092B1FA /* EditProfileViewController.swift in Sources */,
 				679C71F224108E0D0092B1FA /* ExtensionTentangKamiVC.swift in Sources */,

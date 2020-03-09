@@ -25,6 +25,6 @@ extension KlaimViewController{
               
     }
     @objc func backButtonTapped() {
-             navigationController?.popToRootViewController(animated: true)
+             navigationController?.popViewController(animated: true)
            }
 }
