@@ -14,11 +14,6 @@
 		672857472410A9FE005E3B6D /* PolisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672857462410A9FE005E3B6D /* PolisViewController.swift */; };
 		672857492410AA10005E3B6D /* ExtensionPolisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672857482410AA10005E3B6D /* ExtensionPolisVC.swift */; };
 		67288E8923FBA19F002E257C /* ExtensionHomeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67288E8823FBA19F002E257C /* ExtensionHomeMenu.swift */; };
-		67288E9023FBDB20002E257C /* AVGARDNI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8B23FBDB1F002E257C /* AVGARDNI.ttf */; };
-		67288E9123FBDB20002E257C /* AVGARDN.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8C23FBDB1F002E257C /* AVGARDN.TTF */; };
-		67288E9223FBDB20002E257C /* AvantGardeDemiBT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8D23FBDB1F002E257C /* AvantGardeDemiBT.ttf */; };
-		67288E9323FBDB20002E257C /* AvantGardeBookBT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8E23FBDB1F002E257C /* AvantGardeBookBT.ttf */; };
-		67288E9423FBDB20002E257C /* AvantGardeDemiObliqueBT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8F23FBDB1F002E257C /* AvantGardeDemiObliqueBT.ttf */; };
 		67288E9623FCE4D2002E257C /* DaftarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67288E9523FCE4D2002E257C /* DaftarViewController.swift */; };
 		67288E9823FCE53A002E257C /* ExtensionDaftarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67288E9723FCE53A002E257C /* ExtensionDaftarVC.swift */; };
 		6728F09F24050BCA00A2C605 /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728F09E24050BCA00A2C605 /* PresentationManager.swift */; };
@@ -30,10 +25,7 @@
 		67392AF52403B76C007630DF /* ExtensionProdukVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67392AF42403B76C007630DF /* ExtensionProdukVC.swift */; };
 		6751E12E23EC06B4008ACB56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751E12D23EC06B4008ACB56 /* AppDelegate.swift */; };
 		6751E13023EC06B4008ACB56 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751E12F23EC06B4008ACB56 /* HomeMenuViewController.swift */; };
-		6751E13323EC06B4008ACB56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6751E13123EC06B4008ACB56 /* Main.storyboard */; };
 		6751E13623EC06B4008ACB56 /* NewDigiAsk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6751E13423EC06B4008ACB56 /* NewDigiAsk.xcdatamodeld */; };
-		6751E13823EC06B5008ACB56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6751E13723EC06B5008ACB56 /* Assets.xcassets */; };
-		6751E13B23EC06B5008ACB56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6751E13923EC06B5008ACB56 /* LaunchScreen.storyboard */; };
 		6753A2C723F532F9000F7CE1 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6753A2C623F532F9000F7CE1 /* UIHelper.swift */; };
 		676B7C55240CA762003D0FB1 /* CheckOutKeranjangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B7C54240CA762003D0FB1 /* CheckOutKeranjangViewController.swift */; };
 		676B7C57240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B7C56240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift */; };
@@ -50,8 +42,14 @@
 		679C71EE240F85A30092B1FA /* ExtensionEditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C71ED240F85A30092B1FA /* ExtensionEditProfileVC.swift */; };
 		679C71F024108DF10092B1FA /* TentangKamiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C71EF24108DF10092B1FA /* TentangKamiViewController.swift */; };
 		679C71F224108E0D0092B1FA /* ExtensionTentangKamiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C71F124108E0D0092B1FA /* ExtensionTentangKamiVC.swift */; };
-		679E5C7F2415F00000107457 /* Pods_NewDigiAsk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A078CAC6B5981AF843D17151 /* Pods_NewDigiAsk.framework */; };
-		679E5C802415F00000107457 /* Pods_NewDigiAsk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A078CAC6B5981AF843D17151 /* Pods_NewDigiAsk.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		679E5C942416353500107457 /* AvantGardeBookBT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8E23FBDB1F002E257C /* AvantGardeBookBT.ttf */; };
+		679E5C952416353500107457 /* AvantGardeDemiBT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8D23FBDB1F002E257C /* AvantGardeDemiBT.ttf */; };
+		679E5C962416353500107457 /* AvantGardeDemiObliqueBT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8F23FBDB1F002E257C /* AvantGardeDemiObliqueBT.ttf */; };
+		679E5C972416353500107457 /* AVGARDN.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8C23FBDB1F002E257C /* AVGARDN.TTF */; };
+		679E5C982416353500107457 /* AVGARDNI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67288E8B23FBDB1F002E257C /* AVGARDNI.ttf */; };
+		679E5C992416353F00107457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6751E13723EC06B5008ACB56 /* Assets.xcassets */; };
+		679E5C9A2416354D00107457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6751E13123EC06B4008ACB56 /* Main.storyboard */; };
+		679E5CA524172DBE00107457 /* Pods_NewDigiAsk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A078CAC6B5981AF843D17151 /* Pods_NewDigiAsk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		67CF8B9A240649D00032DBDE /* JenisProdukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8B99240649D00032DBDE /* JenisProdukViewController.swift */; };
 		67CF8B9C24064A310032DBDE /* ExtensionJenisProdukVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8B9B24064A310032DBDE /* ExtensionJenisProdukVC.swift */; };
 		67CF8B9E24066EF70032DBDE /* JenisProdukDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8B9D24066EF70032DBDE /* JenisProdukDetailViewController.swift */; };
@@ -64,16 +62,17 @@
 		67EE59192408F07300404C6E /* ExtensionKeranjangVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EE59182408F07300404C6E /* ExtensionKeranjangVC.swift */; };
 		67EE591B24092A1100404C6E /* PembayaranViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EE591A24092A1100404C6E /* PembayaranViewController.swift */; };
 		67EE591D24092A2600404C6E /* ExtensionPembayaranVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EE591C24092A2600404C6E /* ExtensionPembayaranVC.swift */; };
+		8275B861BDFC58E77934DE58 /* Pods_NewDigiAsk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A3FF8B9A3FF0B16B47C482 /* Pods_NewDigiAsk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		679E5C812415F00000107457 /* Embed Frameworks */ = {
+		679E5C8F2416224000107457 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				679E5C802415F00000107457 /* Pods_NewDigiAsk.framework in Embed Frameworks */,
+				679E5CA524172DBE00107457 /* Pods_NewDigiAsk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,8 +125,7 @@
 		679C71ED240F85A30092B1FA /* ExtensionEditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionEditProfileVC.swift; sourceTree = "<group>"; };
 		679C71EF24108DF10092B1FA /* TentangKamiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TentangKamiViewController.swift; sourceTree = "<group>"; };
 		679C71F124108E0D0092B1FA /* ExtensionTentangKamiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTentangKamiVC.swift; sourceTree = "<group>"; };
-		679E5C822415F35D00107457 /* PinCodeTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PinCodeTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		679E5C852415F8E100107457 /* PinCodeTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PinCodeTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		679E5CA72417305100107457 /* PinCodeTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PinCodeTextField.framework; path = "../../../../Library/Developer/Xcode/DerivedData/NewDigiAsk-axcgyhacvyiiroejhfzxegywupsm/Build/Products/Debug-iphonesimulator/PinCodeTextField/PinCodeTextField.framework"; sourceTree = "<group>"; };
 		67CF8B99240649D00032DBDE /* JenisProdukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisProdukViewController.swift; sourceTree = "<group>"; };
 		67CF8B9B24064A310032DBDE /* ExtensionJenisProdukVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionJenisProdukVC.swift; sourceTree = "<group>"; };
 		67CF8B9D24066EF70032DBDE /* JenisProdukDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisProdukDetailViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +141,7 @@
 		A078CAC6B5981AF843D17151 /* Pods_NewDigiAsk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewDigiAsk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAC6D45BFBE83B975F02063 /* Pods-NewDigiAsk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewDigiAsk.release.xcconfig"; path = "Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk.release.xcconfig"; sourceTree = "<group>"; };
 		CEBB39A43EB40BB39ACFCE29 /* Pods-NewDigiAsk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewDigiAsk.debug.xcconfig"; path = "Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk.debug.xcconfig"; sourceTree = "<group>"; };
+		D6A3FF8B9A3FF0B16B47C482 /* Pods_NewDigiAsk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewDigiAsk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				679E5C7F2415F00000107457 /* Pods_NewDigiAsk.framework in Frameworks */,
+				8275B861BDFC58E77934DE58 /* Pods_NewDigiAsk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,9 +159,7 @@
 		1940AB3185AD02CAA7E784F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				679E5C852415F8E100107457 /* PinCodeTextField.framework */,
-				679E5C822415F35D00107457 /* PinCodeTextField.framework */,
-				A078CAC6B5981AF843D17151 /* Pods_NewDigiAsk.framework */,
+				D6A3FF8B9A3FF0B16B47C482 /* Pods_NewDigiAsk.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,10 +188,12 @@
 		6751E12123EC06B4008ACB56 = {
 			isa = PBXGroup;
 			children = (
+				679E5CA72417305100107457 /* PinCodeTextField.framework */,
 				6751E12C23EC06B4008ACB56 /* NewDigiAsk */,
 				6751E12B23EC06B4008ACB56 /* Products */,
 				960B71AB39D62E71678CDEC0 /* Pods */,
 				1940AB3185AD02CAA7E784F8 /* Frameworks */,
+				679E5CAC241733FA00107457 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -296,6 +295,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		679E5CAC241733FA00107457 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A078CAC6B5981AF843D17151 /* Pods_NewDigiAsk.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		960B71AB39D62E71678CDEC0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,8 +323,8 @@
 				6751E12623EC06B4008ACB56 /* Sources */,
 				6751E12723EC06B4008ACB56 /* Frameworks */,
 				6751E12823EC06B4008ACB56 /* Resources */,
-				7E161BCD721CDA0B28FE21E2 /* [CP] Embed Pods Frameworks */,
-				679E5C812415F00000107457 /* Embed Frameworks */,
+				679E5C8F2416224000107457 /* Embed Frameworks */,
+				D9D87E7730E9DDE7692084BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,7 +342,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Gun Eight ";
 				TargetAttributes = {
 					6751E12923EC06B4008ACB56 = {
@@ -367,40 +374,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67288E9223FBDB20002E257C /* AvantGardeDemiBT.ttf in Resources */,
-				67288E9023FBDB20002E257C /* AVGARDNI.ttf in Resources */,
-				67288E9423FBDB20002E257C /* AvantGardeDemiObliqueBT.ttf in Resources */,
-				67288E9323FBDB20002E257C /* AvantGardeBookBT.ttf in Resources */,
-				6751E13B23EC06B5008ACB56 /* LaunchScreen.storyboard in Resources */,
-				67288E9123FBDB20002E257C /* AVGARDN.TTF in Resources */,
-				6751E13823EC06B5008ACB56 /* Assets.xcassets in Resources */,
-				6751E13323EC06B4008ACB56 /* Main.storyboard in Resources */,
+				679E5C9A2416354D00107457 /* Main.storyboard in Resources */,
+				679E5C992416353F00107457 /* Assets.xcassets in Resources */,
+				679E5C942416353500107457 /* AvantGardeBookBT.ttf in Resources */,
+				679E5C952416353500107457 /* AvantGardeDemiBT.ttf in Resources */,
+				679E5C962416353500107457 /* AvantGardeDemiObliqueBT.ttf in Resources */,
+				679E5C972416353500107457 /* AVGARDN.TTF in Resources */,
+				679E5C982416353500107457 /* AVGARDNI.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7E161BCD721CDA0B28FE21E2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D3460D7C61F5E00944222482 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -418,6 +407,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9D87E7730E9DDE7692084BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NewDigiAsk/Pods-NewDigiAsk-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -623,7 +629,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55CQAZ789D;
 				INFOPLIST_FILE = NewDigiAsk/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -640,16 +646,18 @@
 			baseConfigurationReference = CDAC6D45BFBE83B975F02063 /* Pods-NewDigiAsk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55CQAZ789D;
 				INFOPLIST_FILE = NewDigiAsk/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = guneightDev.NewDigiAsk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
