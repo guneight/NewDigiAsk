@@ -44,6 +44,7 @@ class HomeMenuViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
          self.navigationController?.setNavigationBarHidden(true, animated: false)
+        cvSetup()
         collectionViewInfo.reloadData()
         collectionViewPromo.reloadData()
         collectBannerPromo.reloadData()

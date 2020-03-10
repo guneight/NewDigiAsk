@@ -58,11 +58,14 @@ extension EditProfileViewController{
 
         profileWhiteView.addSubview(namaLengkapLabel)
         UIHelper.makeLabel(label: namaLengkapLabel, corner: 0, allignment: .left, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: profileWhiteView.topAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 70, heightAnchor: 12, widthAnchor: 0)
-        namaLengkapLabel.text = "Nama Lengkap"
+//        namaLengkapLabel.text = "Nama Lengkap"
+        UIHelper.setTextLabel(label: namaLengkapLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Nama lengkap", kerning: 0)
         
         profileWhiteView.addSubview(namaLengkapTextField)
         UIHelper.makeTetxField(textField: namaLengkapTextField, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: namaLengkapLabel.bottomAnchor, leadingConstant: 40, trailingConstant: 40, topConstant: 8, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
-        namaLengkapTextField.placeholder = "Nama lengkap"
+        UIHelper.setTextField(textField: namaLengkapTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Nama lengkap", kerning: 0.8)
+        
+        
         
         profileWhiteView.addSubview(editNamaLengkapButton)
         editNamaLengkapButton.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +76,7 @@ extension EditProfileViewController{
             editNamaLengkapButton.heightAnchor.constraint(equalToConstant: 12)
         ])
         editNamaLengkapButton.setTitle("Ubah", for: .normal)
+       
         
         profileWhiteView.addSubview(lineNamaLengkap)
         UIHelper.makeView(view: lineNamaLengkap, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: namaLengkapTextField.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 6, corner: 0, heightAnchor: 1, widthAnchor: 0)
@@ -80,11 +84,12 @@ extension EditProfileViewController{
         
         profileWhiteView.addSubview(emailLabel)
         UIHelper.makeLabel(label: emailLabel, corner: 0, allignment: .left, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: lineNamaLengkap.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 14, heightAnchor: 12, widthAnchor: 0)
-        emailLabel.text = "Email"
+//        emailLabel.text = "Email"
+        UIHelper.setTextLabel(label: emailLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Email", kerning: 0)
         
         profileWhiteView.addSubview(emailTextField)
         UIHelper.makeTetxField(textField: emailTextField, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: emailLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 8, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
-        emailTextField.placeholder = "Email"
+        UIHelper.setTextField(textField: emailTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Email", kerning: 0.8)
         
         profileWhiteView.addSubview(editEmailButton)
         editEmailButton.translatesAutoresizingMaskIntoConstraints = false
@@ -102,12 +107,12 @@ extension EditProfileViewController{
         
         profileWhiteView.addSubview(kataSandiLabel)
         UIHelper.makeLabel(label: kataSandiLabel, corner: 0, allignment: .left, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: lineEmail.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 14, heightAnchor: 12, widthAnchor: 0)
-        kataSandiLabel.text = "Kata Sandi"
+        UIHelper.setTextLabel(label: kataSandiLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Kata sandi", kerning: 0)
               
         profileWhiteView.addSubview(kataSandiTextField)
         UIHelper.makeTetxField(textField: kataSandiTextField, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: kataSandiLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 8, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
-        kataSandiTextField.placeholder = "Kata sandi"
-              
+        UIHelper.setTextField(textField: kataSandiTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Kata sandi", kerning: 0.8)
+        
         profileWhiteView.addSubview(editKataSandiButton)
         editKataSandiButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -124,12 +129,12 @@ extension EditProfileViewController{
         
         profileWhiteView.addSubview(nomorTeleponLabel)
         UIHelper.makeLabel(label: nomorTeleponLabel, corner: 0, allignment: .left, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: lineKataSandi.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 14, heightAnchor: 12, widthAnchor: 0)
-        nomorTeleponLabel.text = "Nomor telepon"
+        UIHelper.setTextLabel(label: nomorTeleponLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Nomor Telelpon", kerning: 0)
               
         profileWhiteView.addSubview(nomorTeleponTextField)
         UIHelper.makeTetxField(textField: nomorTeleponTextField, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: nomorTeleponLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 8, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
-        nomorTeleponTextField.placeholder = "Nomor telepon"
-              
+        UIHelper.setTextField(textField: nomorTeleponTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Nomor telepon", kerning: 0.8)
+        
         profileWhiteView.addSubview(editNomorTeleponButton)
         editNomorTeleponButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -147,12 +152,12 @@ extension EditProfileViewController{
                
         profileWhiteView.addSubview(tanggalLahirLabel)
         UIHelper.makeLabel(label: tanggalLahirLabel, corner: 0, allignment: .left, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: linenomorTelepon.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 14, heightAnchor: 12, widthAnchor: 0)
-        tanggalLahirLabel.text = "Tanggal Lahir"
+        UIHelper.setTextLabel(label: tanggalLahirLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Tanggal Lahir", kerning: 0)
               
         profileWhiteView.addSubview(tanggalLahirTextField)
         UIHelper.makeTetxField(textField: tanggalLahirTextField, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: tanggalLahirLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 8, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
-        tanggalLahirTextField.placeholder = "Tanggal lahir"
-              
+        UIHelper.setTextField(textField: tanggalLahirTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Tanggal lahir", kerning: 0.8)
+        
         profileWhiteView.addSubview(editTanggalahirButton)
         editTanggalahirButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -169,12 +174,13 @@ extension EditProfileViewController{
 
         profileWhiteView.addSubview(kartuIdentitasLabel)
         UIHelper.makeLabel(label: kartuIdentitasLabel, corner: 0, allignment: .left, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: lineTanggalLahir.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 14, heightAnchor: 12, widthAnchor: 0)
-        kartuIdentitasLabel.text = "Kartu Identitas"
+        UIHelper.setTextLabel(label: kartuIdentitasLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Kartu Identitas", kerning: 0)
+        
 
         profileWhiteView.addSubview(kartuIdentitasTextField)
         UIHelper.makeTetxField(textField: kartuIdentitasTextField, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: kartuIdentitasLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 8, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
-        kartuIdentitasTextField.placeholder = "nomor identitas"
-
+        UIHelper.setTextField(textField: kartuIdentitasTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Nomor identitas", kerning: 0.8)
+        
         profileWhiteView.addSubview(editKartuIdentitasButton)
         editKartuIdentitasButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -192,10 +198,11 @@ extension EditProfileViewController{
         profileWhiteView.addSubview(alamatLabel)
         UIHelper.makeLabel(label: alamatLabel, corner: 0, allignment: .left, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: lineKartuIdentitas.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 14, heightAnchor: 12, widthAnchor: 0)
         alamatLabel.text = "Alamat"
+        UIHelper.setTextLabel(label: alamatLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Alamat", kerning: 0)
 
         profileWhiteView.addSubview(alamatTextField)
         UIHelper.makeTetxField(textField: alamatTextField, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: alamatLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 8, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
-        alamatTextField.placeholder = "Alamat"
+        UIHelper.setTextField(textField: alamatTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Alamat", kerning: 0.8)
 
         profileWhiteView.addSubview(editAlamatButton)
         editAlamatButton.translatesAutoresizingMaskIntoConstraints = false

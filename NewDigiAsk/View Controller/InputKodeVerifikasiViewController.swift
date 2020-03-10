@@ -97,6 +97,8 @@ class InputKodeVerifikasiViewController: UIViewController {
         UIHelper.makeLabel(label: labelKirimUlang, corner: 0, allignment: .center, leadingAnchor: kodeVerifikasi.leadingAnchor, trailingAnchor: kodeVerifikasi.trailingAnchor, topAnchor: labelTidakMenerimaKode.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, heightAnchor: 30, widthAnchor: 0)
         labelKirimUlang.font = UIFont(name:"AvantGarde Bk BT", size:12)
         labelKirimUlang.text = " Kirim Ulang atau Gunanakan Metode Lain"
+        
+//        label with link
         let text = (labelKirimUlang.text)!
         let underliningString = NSMutableAttributedString(string: text)
         let kirimUlang = (text as NSString).range(of: "Kirim Ulang")

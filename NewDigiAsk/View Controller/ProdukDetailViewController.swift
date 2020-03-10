@@ -9,6 +9,7 @@
 import UIKit
 
 class ProdukDetailViewController: UIViewController {
+       let produkView = UIView()
        let produkDetailScrollView = UIScrollView()
        let produkBaseView = UIView()
        let produkDetailHeaderLabel = UILabel()

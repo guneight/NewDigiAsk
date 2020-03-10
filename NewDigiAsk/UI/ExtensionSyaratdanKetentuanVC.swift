@@ -13,6 +13,7 @@ extension SyaratdanKetentuanViewController {
     func setupUI(){
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
         gesture.direction = .down
+        view.backgroundColor = .clear
         let height = view.frame.size.height
         view.addSubview(SyaratDanKetentuanScrollView)
         SyaratDanKetentuanScrollView.translatesAutoresizingMaskIntoConstraints = false

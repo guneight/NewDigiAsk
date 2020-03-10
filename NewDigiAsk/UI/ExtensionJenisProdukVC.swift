@@ -34,6 +34,7 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
     func setupUI(){
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
         gesture.direction = .down
+        view.backgroundColor = .clear
         jenisProdukTable.backgroundColor?.withAlphaComponent(0)
         jenisProdukTable.register(jenisProdukTableViewCell.self, forCellReuseIdentifier: "cellJenisProduk")
         jenisProdukTable.separatorStyle = UITableViewCell.SeparatorStyle.none

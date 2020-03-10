@@ -17,6 +17,7 @@ extension ProfileViewController : UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! profielTableViewCell
         cell.iconImage.image = UIImage(named: "\(menuProfile[indexPath.row]).png")
         cell.menuProfileLabel.text = menuProfile[indexPath.row]
+        
         cell.deskripsiProfileLabel.text = deskripsiMenuProfile[indexPath.row]
         cell.rightButton.setImage(UIImage(named: "next.png"), for: .normal)
         cell.selectionStyle = .none
@@ -91,6 +92,7 @@ class profielTableViewCell: UITableViewCell{
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.contentView.backgroundColor = .white
         self.contentView.addSubview(iconImage)
         UIHelper.makeImageView(imageView: iconImage, leadingAnchor: self.contentView.leadingAnchor, topAnchor: self.contentView.topAnchor, leadingConstant: 25, topConstant: 10, corner: 0, heightAnchor: 16)
         iconImage.widthAnchor.constraint(equalToConstant: 16).isActive = true
@@ -98,9 +100,11 @@ class profielTableViewCell: UITableViewCell{
         
         self.contentView.addSubview(menuProfileLabel)
         UIHelper.makeLabel(label: menuProfileLabel, corner: 0, allignment: .left, leadingAnchor: iconImage.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 20, trailingConstant: -40, topConstant: 8, heightAnchor: 12, widthAnchor: 0)
+        UIHelper.setTextLabel(label: menuProfileLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 12, text: "profile", kerning: 0)
         
         self.contentView.addSubview(deskripsiProfileLabel)
         UIHelper.makeLabel(label: deskripsiProfileLabel, corner: 0, allignment: .left, leadingAnchor: iconImage.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: menuProfileLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -40, topConstant: 5, heightAnchor: 12, widthAnchor: 0)
+        UIHelper.setTextLabel(label: deskripsiProfileLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Dekripsi", kerning: 0)
         
         self.contentView.addSubview(rightButton)
         rightButton.translatesAutoresizingMaskIntoConstraints = false

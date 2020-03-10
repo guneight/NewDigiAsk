@@ -43,6 +43,7 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
                gesture.direction = .down
 //        daftarPremiTable.backgroundColor?.withAlphaComponent(0)
+         view.backgroundColor = .clear
         daftarPremiTable.register(JenisProdukDetailTableViewCell.self, forCellReuseIdentifier: "cellJenisProdukDetail")
         daftarPremiTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         daftarPremiTable.showsVerticalScrollIndicator = false

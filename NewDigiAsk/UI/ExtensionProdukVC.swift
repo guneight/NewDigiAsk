@@ -86,8 +86,8 @@ extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
         produkBaseView.layoutIfNeeded()
         
         produkBaseView.addSubview(lineView)
-        UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 1, widthAnchor: 0)
-        lineView.widthAnchor.constraint(equalToConstant: 290).isActive = true
+        UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 1.5, widthAnchor: 0)
+        lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
@@ -96,7 +96,7 @@ extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
             prosesStackView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 15),
             prosesStackView.widthAnchor.constraint(equalToConstant: 290),
             prosesStackView.centerXAnchor.constraint(equalTo: produkBaseView.centerXAnchor),
-            prosesStackView.heightAnchor.constraint(equalToConstant: 34)
+            prosesStackView.heightAnchor.constraint(equalToConstant: 35)
         ])
         prosesStackView.layoutIfNeeded()
         prosesStackView.backgroundColor?.withAlphaComponent(0)
@@ -172,11 +172,11 @@ extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
         NSLayoutConstraint.activate([
             produkTable.leadingAnchor.constraint(equalTo: viewContainerTableProduk.leadingAnchor, constant: 22),
             produkTable.trailingAnchor.constraint(equalTo: viewContainerTableProduk.trailingAnchor, constant: -22),
-            produkTable.topAnchor.constraint(equalTo: viewContainerTableProduk.topAnchor, constant: 30),
+            produkTable.topAnchor.constraint(equalTo: viewContainerTableProduk.topAnchor, constant: 10),
             produkTable.bottomAnchor.constraint(equalTo: viewContainerTableProduk.bottomAnchor, constant: 0)
         ])
         
-        produkTable.backgroundColor?.withAlphaComponent(0)
+        produkTable.backgroundColor = .white
         produkTable.register(produkTableViewCell.self, forCellReuseIdentifier: "cellProduk")
         produkTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         produkTable.showsVerticalScrollIndicator = false
@@ -199,10 +199,6 @@ extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
         @objc func backButtonTapped() {
           navigationController?.popToRootViewController(animated: true)
         }
-        
-    
-    
-    
     
 }
 
@@ -233,10 +229,12 @@ class produkTableViewCell: UITableViewCell {
         iconProdukImage.backgroundColor = .white
         UIHelper.makeImageView(imageView: iconProdukImage, leadingAnchor: viewContent.leadingAnchor, topAnchor: viewContent.topAnchor, leadingConstant: 28, topConstant: 13, corner: 0, heightAnchor: 27)
         iconProdukImage.widthAnchor.constraint(equalToConstant: 27).isActive = true
+        iconProdukImage.contentMode = .scaleAspectFit
 
              
         UIHelper.makeLabel(label: produkLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: viewContent.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 18, trailingConstant: -5, topConstant: 23, heightAnchor: 16, widthAnchor: 0)
         produkLabel.backgroundColor = .white
+        UIHelper.setTextLabel(label: produkLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .semibold, fontSize: 13, text: "", kerning: 0)
             
         
                   

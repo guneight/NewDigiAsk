@@ -14,6 +14,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController {
     let gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
     gesture.direction = .down
     let height = view.frame.size.height
+     view.backgroundColor = .clear
     view.addSubview(identitasScrollView)
            identitasScrollView.translatesAutoresizingMaskIntoConstraints = false
                    NSLayoutConstraint.activate([

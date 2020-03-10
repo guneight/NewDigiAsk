@@ -104,11 +104,7 @@ func UiSetup(){
             labelNotif.backgroundColor = #colorLiteral(red: 1, green: 0.2039215686, blue: 0.01176470588, alpha: 1)
             labelNotif.text = "1"
             labelNotif.font = UIFont(name: "AvantGarde Bk BT", size: 6)
-            
-                
-        
-        
-        
+
         //
         view.addSubview(backcontainerView)
         backcontainerView.translatesAutoresizingMaskIntoConstraints = false

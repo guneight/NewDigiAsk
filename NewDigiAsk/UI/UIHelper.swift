@@ -12,9 +12,25 @@ struct UIHelper {
     static let widthScreen = UIScreen.main.bounds.width
     static let heightScreen = UIScreen.main.bounds.height
     
-//    static func setTextLabel(label : UILabel, text : String!, textColor : UIColor, textFont : String, textSize: CGFloat ){
-//        label.text = UIFont(descriptor: UIFontDescriptor(fontAttributes: <#T##[UIFontDescriptor.AttributeName : Any]#>), size: <#T##CGFloat#>)
-//    }
+    static func setTextField(textField : UITextField, fontName : String!, fontColor : UIColor, weight : UIFont.Weight,fontSize: CGFloat, text : String, kerning : CGFloat){
+    //        var fontType = UIFontDescriptor(name: fontName, size: fontSize)
+    //        fontType = fontType.addingAttributes([UIFontDescriptor.AttributeName.traits : [UIFontDescriptor.TraitKey.weight : weight]])
+    //        label.font = UIFont(descriptor: fontType, size: fontSize)
+            textField.attributedText = NSAttributedString(string: "", attributes: [.kern: kerning])
+            textField.textColor = fontColor
+            textField.font = UIFont(name: fontName, size: fontSize)
+            textField.placeholder = text
+        }
+    
+    static func setTextLabel(label : UILabel, fontName : String!, fontColor : UIColor, weight : UIFont.Weight,fontSize: CGFloat, text : String, kerning : CGFloat){
+//        var fontType = UIFontDescriptor(name: fontName, size: fontSize)
+//        fontType = fontType.addingAttributes([UIFontDescriptor.AttributeName.traits : [UIFontDescriptor.TraitKey.weight : weight]])
+//        label.font = UIFont(descriptor: fontType, size: fontSize)
+        label.attributedText = NSAttributedString(string: text, attributes: [.kern: kerning])
+        label.textColor = fontColor
+        label.font = UIFont(name: fontName, size: fontSize)
+    }
+    
     static func makeSmalllabel(smallLabel : UILabel, leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, leadingConstant: CGFloat, topConstant: CGFloat, corner : CGFloat, heightAnchor : CGFloat,widthtAnchor : CGFloat){
            smallLabel.translatesAutoresizingMaskIntoConstraints = false
            NSLayoutConstraint.activate([
@@ -27,8 +43,6 @@ struct UIHelper {
            smallLabel.layer.cornerRadius = corner
            smallLabel.layoutIfNeeded()
 
-          
-           
        }
        
     static func makeSmallButton(smallButton : UIButton, leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, leadingConstant: CGFloat, topConstant: CGFloat, corner : CGFloat, heightAnchor : CGFloat,widthtAnchor : CGFloat, borderWidth : CGFloat, colorBorder : CGColor ){

@@ -13,17 +13,21 @@ extension ProdukDetailViewController {
     func setupUI(){
         let height = view.frame.size.height
         print("height view = \(height)")
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
         gesture.direction = .down
+        view.addSubview(produkView)
+        UIHelper.makeView(view: produkView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 55, corner: 0, heightAnchor: 0, widthAnchor: 0)
+        produkView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        produkView.backgroundColor = .white
         
-        view.addSubview(produkDetailScrollView)
+        produkView.addSubview(produkDetailScrollView)
         produkDetailScrollView.translatesAutoresizingMaskIntoConstraints = false
                 NSLayoutConstraint.activate([
-        produkDetailScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-        produkDetailScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-        produkDetailScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        produkDetailScrollView.heightAnchor.constraint(equalToConstant: height*0.77)
+        produkDetailScrollView.leadingAnchor.constraint(equalTo: produkView.leadingAnchor),
+        produkDetailScrollView.trailingAnchor.constraint(equalTo: produkView.trailingAnchor),
+        produkDetailScrollView.topAnchor.constraint(equalTo: produkView.topAnchor),
+        produkDetailScrollView.heightAnchor.constraint(equalToConstant: height*0.77-55)
         ])
         produkDetailScrollView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         produkDetailScrollView.isScrollEnabled = true
@@ -32,12 +36,13 @@ extension ProdukDetailViewController {
         print("Height scroll: \(produkDetailScrollView.frame.size.height)")
         produkDetailScrollView.layoutIfNeeded()
         
-        view.addSubview(pilihProdukButton)
-        UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: view.leadingAnchor, trailingAnchor: view.trailingAnchor, topAnchor: produkDetailScrollView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        produkView.addSubview(pilihProdukButton)
+        UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: produkDetailScrollView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
         pilihProdukButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         pilihProdukButton.setTitle( "PILIH PRODUK", for: .normal)
         let descriptionFont = UIFont(name: "Arial", size: 10)?.fontDescriptor.withSymbolicTraits(UIFontDescriptor.SymbolicTraits.traitBold)
         pilihProdukButton.titleLabel?.font = UIFont(descriptor: descriptionFont!, size: 10)
+        
         produkDetailScrollView.addSubview(produkBaseView)
         produkBaseView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
