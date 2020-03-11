@@ -9,8 +9,9 @@
 import UIKit
 
 class KeranjangViewController: UIViewController {
+    let keranjangBaseView = UIView()
     let pilihSemuaProduk = UILabel()
-    let  pilihSemuaProdukButton = UIButton()
+    let pilihSemuaProdukButton = UIButton()
     let daftarProdukKeranjangTable = UITableView()
     let checkOutButton = UIButton()
     let trushButton = UIButton()
@@ -20,7 +21,6 @@ class KeranjangViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
         daftarProdukKeranjangTable.delegate = self
         daftarProdukKeranjangTable.dataSource = self
         view.layoutIfNeeded()

@@ -17,7 +17,7 @@ extension ProdukDetailViewController {
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
         gesture.direction = .down
         view.addSubview(produkView)
-        UIHelper.makeView(view: produkView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 55, corner: 0, heightAnchor: 0, widthAnchor: 0)
+        UIHelper.makeView(view: produkView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 55, corner: 10, heightAnchor: 0, widthAnchor: 0)
         produkView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         produkView.backgroundColor = .white
         
@@ -60,9 +60,7 @@ extension ProdukDetailViewController {
     
         produkBaseView.addSubview(produkDetailHeaderLabel)
         UIHelper.makeLabel(label: produkDetailHeaderLabel, corner: 0, allignment: .left, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 19, heightAnchor: 18, widthAnchor: 0)
-        produkDetailHeaderLabel.text = "Asuransi Kecelakaan Diri"
-        produkDetailHeaderLabel.font = UIFont(name: "AvantGarde Bk BT", size: 12)
-        produkDetailHeaderLabel.textColor = #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1)
+        UIHelper.setTextLabel(label: produkDetailHeaderLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .medium, fontSize: 12, text: "Asuransi Kecelakaan Diri", kerning: 0.2)
 
         produkBaseView.addSubview(produkDetailImage)
         produkDetailImage.translatesAutoresizingMaskIntoConstraints = false
@@ -94,25 +92,21 @@ extension ProdukDetailViewController {
         namaProdukLabel.textColor = .white
         
         produkBaseView.addSubview(deskripsiProdukLabel)
-        deskripsiProdukLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis sapien id tortor sodales imperdiet. Maecenas egestas id ligula eget varius. Nulla condimentum, metus a faucibus tristique, lectus massa luctus ex, id accumsan diam nisl a augue. Quisque auctor neque eget enim ultrices, id dignissim tellus egestas. Nam eu commodo odio, vel interdum erat. Donec ut venenatis libero, eget rutrum ex. Morbi dictum ac nunc nec blandit. Ut sit amet turpis sollicitudin, semper lacus ut, tincidunt est. Vivamus egestas nunc eu lacinia consequat. Duis luctus efficitur risus quis faucibus. Mauris volutpat congue metus, quis hendrerit urna pharetra finibus."
+        var text = "Memberikan perlindungan atas risiko kematian, cacat tetap, biaya perawatan dan atau pengobatan yang secara langsung disebabkan suatu kecelakaan. Kecelakaan yaitu suatu kejadian atau peristiwa yang mengandung unsur kekerasan, baik bersifat fisik maupun kimia, yang datangnya secara tiba-tiba, termasuk juga kecelakaan yaitu yang disebabkan karena keracunan makanan, uap dan gas, jatuh ke dalam air atau tenggelam."
 //        let heightLabel = deskripsiProdukLabel.systemLayoutSizeFitting(CGSize(width: produkBaseView.frame.size.width-90, height: UIView.layoutFittingCompressedSize.height), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
         UIHelper.makeLabel(label: deskripsiProdukLabel, corner: 0, allignment: .left, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkDetailImage.bottomAnchor, leadingConstant: 70, trailingConstant: -20, topConstant: 17, heightAnchor: 200, widthAnchor: 0)
-        deskripsiProdukLabel.font = UIFont(name: "Helvetica LT Std", size: 14)
+        UIHelper.setTextLabel(label: deskripsiProdukLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.66), weight: .medium, fontSize: 14, text: text, kerning: 0.04)
         deskripsiProdukLabel.numberOfLines = 0
         
         produkBaseView.addSubview(penggunaLabel)
         UIHelper.makeLabel(label: penggunaLabel, corner: 0, allignment: .left, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: deskripsiProdukLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 18, widthAnchor: 0)
-        penggunaLabel.text = "Pengguna (Tertanggung)"
-        penggunaLabel.font = UIFont(name: "AvantGarde Bk BT", size: 12)
-        penggunaLabel.textColor = #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1)
+        UIHelper.setTextLabel(label: penggunaLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .medium, fontSize: 12, text: "Pengguna (tertanggung)", kerning: 0.12)
         
         produkBaseView.addSubview(deskripsiPenggunaLabel)
         UIHelper.makeLabel(label: deskripsiPenggunaLabel, corner: 0, allignment: .left, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: penggunaLabel.bottomAnchor, leadingConstant: 73, trailingConstant: -17, topConstant: 10, heightAnchor: 43, widthAnchor: 0)
-        deskripsiPenggunaLabel.text = "Individu yang berusia 17 sampai dengan 60 tahun baik perorangan ataupun group"
-        deskripsiPenggunaLabel.font = UIFont(name: "Helvetica LT Std", size: 14)
-        deskripsiPenggunaLabel.textColor = #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1)
+        UIHelper.setTextLabel(label: deskripsiPenggunaLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 14, text: "Individu yang berusia 17 sampai dengan 60 tahun baik perorangan atau grup", kerning: 0.04)
         deskripsiPenggunaLabel.numberOfLines = 0
-
+        
         produkBaseView.addSubview(gantiRugiContainerView)
         UIHelper.makeView(view: gantiRugiContainerView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: deskripsiPenggunaLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 40 , corner: 10, heightAnchor: 206, widthAnchor:    0)
         gantiRugiContainerView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
@@ -126,9 +120,7 @@ extension ProdukDetailViewController {
 
         gantiRugiContainerView.addSubview(gantiRugiLabel)
         UIHelper.makeLabel(label: gantiRugiLabel, corner: 0, allignment: .right, leadingAnchor:iconGantiRugiImage.trailingAnchor, trailingAnchor: gantiRugiContainerView.trailingAnchor, topAnchor: gantiRugiContainerView.topAnchor, leadingConstant:10, trailingConstant: -15, topConstant: 10, heightAnchor: 16, widthAnchor: 0   )
-        gantiRugiLabel.text = "Ganti Biaya"
-        gantiRugiLabel.font = UIFont(name: "AvantGarde Bk BT", size: 12)
-        gantiRugiLabel.textColor = #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1)
+        UIHelper.setTextLabel(label: gantiRugiLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: "Ganti Rugi", kerning: 0.12)
 
         gantiRugiContainerView.addSubview(lineGantiRugiLabel)
         UIHelper.makeView(view: lineGantiRugiLabel, leadingAnchor: iconGantiRugiImage.trailingAnchor, trailingAnchor: gantiRugiContainerView.trailingAnchor, topAnchor: gantiRugiLabel.bottomAnchor, leadingConstant: 6, trailingConstant: 0, topConstant: 5, corner: 0, heightAnchor: 1, widthAnchor: 0)
@@ -143,10 +135,9 @@ extension ProdukDetailViewController {
             deskripsiGantiRugi.bottomAnchor.constraint(equalTo: gantiRugiContainerView.bottomAnchor, constant: -12)
         ])
        
-        deskripsiGantiRugi.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis sapien id tortor sodales imperdiet. Maecenas egestas id ligula eget varius. Nulla condimentum, metus a faucibus tristique, lectus massa luctus ex, id accumsan diam nisl a augue. Quisque auctor neque eget enim ultrices, id dignissim tellus egestas. Nam eu commodo odio, vel interdum erat. Donec ut venenatis libero, eget rutrum ex. Morbi dictum ac nunc nec blandit. Ut sit amet turpis sollicitudin, semper lacus ut, tincidunt est. Vivamus egestas nunc eu lacinia consequat. Duis luctus efficitur risus quis faucibus. Mauris volutpat congue metus, quis hendrerit urna pharetra finibus."
-        deskripsiGantiRugi.font = UIFont(name: "Helvetica LT Std", size: 12)
-        deskripsiGantiRugi.textColor = #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1)
-        deskripsiGantiRugi.numberOfLines = 0
+        var textGantiRugi = "Memberikan ganti rugi kepada tertanggung/ahli waris apabila tertanggung mengalami kecelakaan yang mengakibatkan:Meninggal dunia, Cacat tetap total atau cacat tetap sebagian, Biaya perawatan dan atau pengobatan"
+         UIHelper.setTextLabel(label: deskripsiGantiRugi , fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1), weight: .regular, fontSize: 12, text: textGantiRugi, kerning: 0.06)
+         deskripsiGantiRugi.numberOfLines = 0
 
         produkBaseView.addSubview(penggantiBiayacontainerView)
         UIHelper.makeView(view: penggantiBiayacontainerView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: gantiRugiContainerView.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 47, corner: 10, heightAnchor: 206, widthAnchor: 0)
@@ -162,9 +153,7 @@ extension ProdukDetailViewController {
 
         penggantiBiayacontainerView.addSubview(penggantiBiayaLabel)
         UIHelper.makeLabel(label: penggantiBiayaLabel, corner: 0, allignment: .right, leadingAnchor: iconPenggantiBiayaImage.trailingAnchor, trailingAnchor: penggantiBiayacontainerView.trailingAnchor, topAnchor: penggantiBiayacontainerView.topAnchor, leadingConstant:10, trailingConstant: -5, topConstant: 10, heightAnchor: 16, widthAnchor: 0   )
-        penggantiBiayaLabel.text = "Penggantian Biaya"
-        penggantiBiayaLabel.font = UIFont(name: "AvantGarde Bk BT", size: 12)
-        penggantiBiayaLabel.textColor = #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1)
+         UIHelper.setTextLabel(label: penggantiBiayaLabel , fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: "Penggantian Biaya", kerning: 0.12)
 
         penggantiBiayacontainerView.addSubview(linePenggatianBiayaLabel)
         UIHelper.makeView(view: linePenggatianBiayaLabel, leadingAnchor: iconPenggantiBiayaImage.trailingAnchor, trailingAnchor: penggantiBiayacontainerView.trailingAnchor, topAnchor: penggantiBiayaLabel.bottomAnchor, leadingConstant: 6, trailingConstant: 0, topConstant: 5, corner: 0, heightAnchor: 1, widthAnchor: 0)
@@ -178,15 +167,10 @@ extension ProdukDetailViewController {
             deskripsiPenggantiBiayaLabel.topAnchor.constraint(equalTo: linePenggatianBiayaLabel.bottomAnchor, constant: 15),
             deskripsiPenggantiBiayaLabel.bottomAnchor.constraint(equalTo: penggantiBiayacontainerView.bottomAnchor, constant: -12)
         ])
-        deskripsiPenggantiBiayaLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis sapien id tortor sodales imperdiet. Maecenas egestas id ligula eget varius. Nulla condimentum, metus a faucibus tristique, lectus massa luctus ex, id accumsan diam nisl a augue. Quisque auctor neque eget enim ultrices, id dignissim tellus egestas. Nam eu commodo odio, vel interdum erat. Donec ut venenatis libero, eget rutrum ex. Morbi dictum ac nunc nec blandit. Ut sit amet turpis sollicitudin, semper lacus ut, tincidunt est. Vivamus egestas nunc eu lacinia consequat. Duis luctus efficitur risus quis faucibus. Mauris volutpat congue metus, quis hendrerit urna pharetra finibus."
-        deskripsiPenggantiBiayaLabel.font = UIFont(name: "Helvetica LT Std", size: 12)
-        deskripsiPenggantiBiayaLabel.textColor = #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1)
+        var textPenggantianBiaya = "Memberikan ganti rugi akibat kecelakaan atas biaya-biaya yang dikerluarkan dengan tambahan premi berupa:Penggantian biaya expatriasy atau pemulangan jenazah dari tempat kejadian kecelakaan Penggantian biaya pemakaman Penggantian biaya ambulans Penggantian biaya pengurusan dokumen"
+        UIHelper.setTextLabel(label: deskripsiPenggantiBiayaLabel , fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: textPenggantianBiaya, kerning: 0.06)
         deskripsiPenggantiBiayaLabel.numberOfLines = 0
 
-        
-
-
-        
         
     }
     @objc func swipeDown() {

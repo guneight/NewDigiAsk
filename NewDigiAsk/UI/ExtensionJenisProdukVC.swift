@@ -18,6 +18,13 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         cell.selectionStyle = .none
         cell.backgroundColor = .white
         cell.layoutIfNeeded()
+        cell.jenisProdukLabel.text = jenisProduk[indexPath.row]
+        cell.startHargaProdukLabel.text = startHarga[indexPath.row]
+        cell.deskripsiJenisProdukLabel.text = deskripsijenisProduk
+        jenisProdukLabel.text = cell.jenisProdukLabel.text
+        startHargaProdukLabel.text = cell.startHargaProdukLabel.text
+        deskripsiJenisProdukLabel.text = cell.deskripsiJenisProdukLabel.text
+    
         cell.rightButton.addTarget(self, action: #selector(jenisProdukDetail(sender:)), for: .touchUpInside)
         return cell
     }
@@ -35,21 +42,27 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
         gesture.direction = .down
         view.backgroundColor = .clear
-        jenisProdukTable.backgroundColor?.withAlphaComponent(0)
+        view.addSubview(jenisProdukView)
+        UIHelper.makeView(view: jenisProdukView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 55, corner: 10, heightAnchor: 0, widthAnchor: 0)
+        jenisProdukView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        jenisProdukView.backgroundColor = .white
+        
+        jenisProdukTable.backgroundColor = .white
         jenisProdukTable.register(jenisProdukTableViewCell.self, forCellReuseIdentifier: "cellJenisProduk")
         jenisProdukTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         jenisProdukTable.showsVerticalScrollIndicator = false
-        view.addSubview(namaProdukLabel)
-        UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: view.leadingAnchor, trailingAnchor: view.trailingAnchor, topAnchor: view.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 17, widthAnchor: 0)
-        namaProdukLabel.backgroundColor = .red
+        
+        jenisProdukView.addSubview(namaProdukLabel)
+        UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: jenisProdukView.leadingAnchor, trailingAnchor: jenisProdukView.trailingAnchor, topAnchor: jenisProdukView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 17, widthAnchor: 0)
+        UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Asuransi Kecelakaan Diri", kerning: 0.12)
                 
-        view.addSubview(jenisProdukTable)
+        jenisProdukView.addSubview(jenisProdukTable)
         jenisProdukTable.translatesAutoresizingMaskIntoConstraints = false
                NSLayoutConstraint.activate([
-                   jenisProdukTable.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-                   jenisProdukTable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+                   jenisProdukTable.leadingAnchor.constraint(equalTo: jenisProdukView.leadingAnchor, constant: 0),
+                   jenisProdukTable.trailingAnchor.constraint(equalTo: jenisProdukView.trailingAnchor, constant: 0),
                    jenisProdukTable.topAnchor.constraint(equalTo: namaProdukLabel.bottomAnchor, constant: 20),
-                   jenisProdukTable.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+                   jenisProdukTable.bottomAnchor.constraint(equalTo: jenisProdukView.bottomAnchor, constant: 0)
                ])
     }
     
@@ -82,17 +95,19 @@ class jenisProdukTableViewCell: UITableViewCell {
         self.contentView.addSubview(iconJenisProdukImage)
         UIHelper.makeImageView(imageView: iconJenisProdukImage, leadingAnchor: contentView.leadingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 25, topConstant: 10, corner: 10, heightAnchor: 69)
         iconJenisProdukImage.widthAnchor.constraint(equalToConstant: 69).isActive = true
-        iconJenisProdukImage.image = UIImage(named: "wallet")
+        iconJenisProdukImage.image = UIImage(named: "idr-min")
         iconJenisProdukImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         iconJenisProdukImage.contentMode = .center
         
         jenisProdukCellView.addSubview(jenisProdukLabel)
         UIHelper.makeLabel(label: jenisProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconJenisProdukImage.trailingAnchor, trailingAnchor: jenisProdukCellView.trailingAnchor, topAnchor: jenisProdukCellView.topAnchor, leadingConstant: 18, trailingConstant: -40, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        jenisProdukLabel.backgroundColor = .red
+        UIHelper.setTextLabel(label: jenisProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0.12)
+        jenisProdukLabel.numberOfLines = 0
         
         jenisProdukCellView.addSubview(startHargaProdukLabel)
         UIHelper.makeLabel(label: startHargaProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconJenisProdukImage.trailingAnchor, trailingAnchor: jenisProdukCellView.trailingAnchor, topAnchor: jenisProdukLabel.bottomAnchor, leadingConstant: 18, trailingConstant: -40, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        startHargaProdukLabel.backgroundColor = .green
+        UIHelper.setTextLabel(label: startHargaProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0.12)
+        startHargaProdukLabel.numberOfLines = 0
         
         jenisProdukCellView.addSubview(rightButton)
         rightButton.translatesAutoresizingMaskIntoConstraints = false
@@ -119,8 +134,9 @@ class jenisProdukTableViewCell: UITableViewCell {
             deskripsiJenisProdukLabel.topAnchor.constraint(equalTo: lineHargaProduk.bottomAnchor, constant: 18),
             deskripsiJenisProdukLabel.heightAnchor.constraint(equalToConstant: 50),
         ])
+          UIHelper.setTextLabel(label: deskripsiJenisProdukLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0.06)
+        deskripsiJenisProdukLabel.numberOfLines = 0
         
-        deskripsiJenisProdukLabel.backgroundColor = .red
         
         
     }

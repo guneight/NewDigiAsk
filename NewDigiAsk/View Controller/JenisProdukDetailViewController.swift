@@ -9,6 +9,7 @@
 import UIKit
 
 class JenisProdukDetailViewController: UIViewController {
+    let jenisProdukDetailView = UIView()
     let JenisProdukContainerView = UIView()
     let iconJenisProdukDetailImage = UIImageView()
     let namajenisProdukDetailLabel = UILabel()
@@ -16,6 +17,11 @@ class JenisProdukDetailViewController: UIViewController {
     let lineHargaProdukDetail = UIView()
     let deskripsiJenisProdukDetail = UILabel()
     let daftarPremiTable = UITableView()
+    
+    let hargaDetail = ["Rp 20.000,-", "Rp 20.000,-","Rp 40.000,-","Rp 60.000,-","Rp 80.000,-"]
+    let jumlahHari = ["7 hari", "14 hari", "30 hari", "3 bulan", "6 bulan"]
+    
+    
 
     override func viewDidLoad() {
         view.backgroundColor = .gray
@@ -24,7 +30,9 @@ class JenisProdukDetailViewController: UIViewController {
         view.layoutIfNeeded()
         setupUI()
         super.viewDidLoad()
+        daftarPremiTable.reloadData()
 
+        print("namajenisProdukDetailLabel : \(namajenisProdukDetailLabel.text)")
         // Do any additional setup after loading the view.
     }
     

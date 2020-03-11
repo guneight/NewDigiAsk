@@ -9,6 +9,7 @@
 import UIKit
 
 class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController {
+    let identitasbaseView = UIView()
     let identitasScrollView = UIScrollView()
     let identitasContainerView = UIView()
     

@@ -9,6 +9,7 @@
 import UIKit
 
 class CheckOutKeranjangViewController: UIViewController {
+    let checkOutView = UIView()
     let pembelianBerupa =  UILabel()
     let daftarPembelianTable = UITableView()
     let jumlahPembelianProduk : Int = 10
