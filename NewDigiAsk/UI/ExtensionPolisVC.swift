@@ -18,32 +18,32 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "polisPending", for: indexPath) as! PolisdanKlaimTableViewCell
         
         if segmentedIndex == 0{
-            segmentedIndicatorLabel1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-            segmentedIndicatorLabel2.backgroundColor = .white
-            segmentedIndicatorLabel3.backgroundColor = .white
-            segmentedIndicatorLabel4.backgroundColor = .white
+//            segmentedIndicatorLabel1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+//            segmentedIndicatorLabel2.backgroundColor = .white
+//            segmentedIndicatorLabel3.backgroundColor = .white
+//            segmentedIndicatorLabel4.backgroundColor = .white
             cell.namaProdukLabel.text = "Asuransi Kebakaran"
             cell.iconProdukImage.image = UIImage(named:"\(namaProdukArray[indexPath.row])")
             cell.klaimButton.isHidden = true
         }else if segmentedIndex == 1 {
-            segmentedIndicatorLabel1.backgroundColor = .white
-            segmentedIndicatorLabel2.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-            segmentedIndicatorLabel3.backgroundColor = .white
-            segmentedIndicatorLabel4.backgroundColor = .white
+//            segmentedIndicatorLabel1.backgroundColor = .white
+//            segmentedIndicatorLabel2.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+//            segmentedIndicatorLabel3.backgroundColor = .white
+//            segmentedIndicatorLabel4.backgroundColor = .white
             cell.namaProdukLabel.text = "Asuransi Perjalanan"
             cell.klaimButton.isHidden = false
         }else if segmentedIndex == 2{
-            segmentedIndicatorLabel1.backgroundColor = .white
-            segmentedIndicatorLabel2.backgroundColor = .white
-            segmentedIndicatorLabel3.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-            segmentedIndicatorLabel4.backgroundColor = .white
+//            segmentedIndicatorLabel1.backgroundColor = .white
+//            segmentedIndicatorLabel2.backgroundColor = .white
+//            segmentedIndicatorLabel3.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+//            segmentedIndicatorLabel4.backgroundColor = .white
             cell.namaProdukLabel.text = "Asuransi Jalan-Jalan"
             cell.klaimButton.isHidden = true
         }else{
-            segmentedIndicatorLabel1.backgroundColor = .white
-            segmentedIndicatorLabel2.backgroundColor = .white
-            segmentedIndicatorLabel3.backgroundColor = .white
-            segmentedIndicatorLabel4.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+//            segmentedIndicatorLabel1.backgroundColor = .white
+//            segmentedIndicatorLabel2.backgroundColor = .white
+//            segmentedIndicatorLabel3.backgroundColor = .white
+//            segmentedIndicatorLabel4.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
             cell.namaProdukLabel.text = "Asuransi ngacap"
             cell.klaimButton.isHidden = true
         }
@@ -68,36 +68,36 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
             polisManageSegmentControl.heightAnchor.constraint(equalToConstant: 40)
         ])
         polisManageSegmentControl.backgroundColor = .white
-        polisManageSegmentControl.selectedSegmentTintColor = .clear
+//        polisManageSegmentControl.selectedSegmentTintColor = .clear
         
-        polisManageSegmentControl.addSubview(segmentedControlIndicator)
-        segmentedControlIndicator.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            segmentedControlIndicator.leadingAnchor.constraint(equalTo: polisManageSegmentControl.leadingAnchor),
-            segmentedControlIndicator.trailingAnchor.constraint(equalTo: polisManageSegmentControl.trailingAnchor),
-            segmentedControlIndicator.heightAnchor.constraint(equalToConstant: 3),
-            segmentedControlIndicator.bottomAnchor.constraint(equalTo: polisManageSegmentControl.bottomAnchor)
-        ])
-        
-        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel1)
-        segmentedIndicatorLabel1.translatesAutoresizingMaskIntoConstraints = false
-        segmentedIndicatorLabel1.heightAnchor.constraint(equalToConstant: 3).isActive = true
-        segmentedIndicatorLabel1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-        
-        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel2)
-        segmentedIndicatorLabel2.translatesAutoresizingMaskIntoConstraints = false
-        segmentedIndicatorLabel2.heightAnchor.constraint(equalToConstant: 3).isActive = true
-       
-        
-        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel3)
-        segmentedIndicatorLabel3.translatesAutoresizingMaskIntoConstraints = false
-        segmentedIndicatorLabel3.heightAnchor.constraint(equalToConstant: 3).isActive = true
-     
-        
-        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel4)
-        segmentedIndicatorLabel4.translatesAutoresizingMaskIntoConstraints = false
-        segmentedIndicatorLabel4.heightAnchor.constraint(equalToConstant: 3).isActive = true
-        
+//        polisManageSegmentControl.addSubview(segmentedControlIndicator)
+//        segmentedControlIndicator.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            segmentedControlIndicator.leadingAnchor.constraint(equalTo: polisManageSegmentControl.leadingAnchor),
+//            segmentedControlIndicator.trailingAnchor.constraint(equalTo: polisManageSegmentControl.trailingAnchor),
+//            segmentedControlIndicator.heightAnchor.constraint(equalToConstant: 3),
+//            segmentedControlIndicator.bottomAnchor.constraint(equalTo: polisManageSegmentControl.bottomAnchor)
+//        ])
+//
+//        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel1)
+//        segmentedIndicatorLabel1.translatesAutoresizingMaskIntoConstraints = false
+//        segmentedIndicatorLabel1.heightAnchor.constraint(equalToConstant: 3).isActive = true
+//        segmentedIndicatorLabel1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+//
+//        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel2)
+//        segmentedIndicatorLabel2.translatesAutoresizingMaskIntoConstraints = false
+//        segmentedIndicatorLabel2.heightAnchor.constraint(equalToConstant: 3).isActive = true
+//
+//
+//        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel3)
+//        segmentedIndicatorLabel3.translatesAutoresizingMaskIntoConstraints = false
+//        segmentedIndicatorLabel3.heightAnchor.constraint(equalToConstant: 3).isActive = true
+//
+//
+//        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel4)
+//        segmentedIndicatorLabel4.translatesAutoresizingMaskIntoConstraints = false
+//        segmentedIndicatorLabel4.heightAnchor.constraint(equalToConstant: 3).isActive = true
+//
         view.addSubview(polisSearchBar)
         polisSearchBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

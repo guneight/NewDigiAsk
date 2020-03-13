@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailBayarViewController: UIViewController {
+    let detailBayarView = UIView()
     let transaksiView = UIView()
     let headerNomorTransaksiLabel = UILabel()
     let nomorTransaksiLabel = UILabel()
@@ -38,18 +39,21 @@ class DetailBayarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layoutIfNeeded()
-        setupUI()// Do any additional setup after loading the view.
+        setupUI()
+        lihatTransaksiButton.addTarget(self, action: #selector(lihatTransaksion(sender:)), for: .touchUpInside)
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Lihat Transaksi
+    
+    @objc func lihatTransaksion (sender : Any){
+        let polisVC = self.storyboard?.instantiateViewController(identifier: "PolisViewController")  as! PolisViewController
+        let profileVC = self.storyboard?.instantiateViewController(identifier: "ProfileViewController")  as! ProfileViewController
+        let nav = UINavigationController(rootViewController: profileVC)
+        
+        UIApplication.shared.keyWindow?.rootViewController = nav
+            nav.pushViewController(polisVC, animated: true)
     }
-    */
 
 }

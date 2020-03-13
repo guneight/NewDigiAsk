@@ -9,6 +9,7 @@
 import UIKit
 
 class BayarViewController: UIViewController {
+    let bayarView = UIView()
     let totalBayarView = UIView()
     let totalBayarLabel = UILabel()
     let nilaiTotalLabel = UILabel()
@@ -30,6 +31,7 @@ class BayarViewController: UIViewController {
     
     @objc func bayarAction (sender : Any){
         let detailBayarVC = storyboard?.instantiateViewController(identifier: "DetailBayarViewController")  as! DetailBayarViewController
+        detailBayarVC.iconMetodeBayarImage.image = iconImageMetodeBayar.image
         detailBayarVC.modalPresentationStyle = .custom
         detailBayarVC.transitioningDelegate = PresentationDelegate
         present(detailBayarVC, animated: true, completion: nil)

@@ -53,7 +53,7 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         daftarPremiTable.showsVerticalScrollIndicator = false
         
         view.addSubview(jenisProdukDetailView)
-        UIHelper.makeView(view: jenisProdukDetailView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 55, corner: 10, heightAnchor: 0, widthAnchor: 0 )
+        UIHelper.makeView(view: jenisProdukDetailView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 45, corner: 20, heightAnchor: 0, widthAnchor: 0 )
         jenisProdukDetailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         jenisProdukDetailView.backgroundColor = .white
         

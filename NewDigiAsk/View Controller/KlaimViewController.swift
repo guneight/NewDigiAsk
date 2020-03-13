@@ -9,26 +9,34 @@
 import UIKit
 
 class KlaimViewController: UIViewController {
-    let prosesMonitoring = UISegmentedControl()
+    let polisPendingTableView = UITableView()
+    let namaManageSegmenLabel = UILabel()
+    let polisSearchBar = UISearchBar()
+    let polisfilterView = UIView()
+    let polisfilterButton = UIButton()
+    let polisEmptyImage = UIImageView()
+    let polisEmptyLabel = UILabel()
+    let jumlahPolidPending : Int = 5
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavBarKlaim()
+        setupNavBarPolis()
         setupUI()
         view.layoutIfNeeded()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        // Do any additional setup after loading the view.
+        setupNavBarPolis()
+        setupUI()
+        view.layoutIfNeeded()
+        polisPendingTableView.delegate = self
+        polisPendingTableView.dataSource = self
     }
     
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @objc func klaimButtonAction (sender: Any){
+        let prosesKlaimVC = storyboard?.instantiateViewController(identifier: "ProsesKlaimViewController") as! ProsesKlaimViewController
+        navigationController?.pushViewController(prosesKlaimVC, animated: true)
     }
-    */
+    
 
 }

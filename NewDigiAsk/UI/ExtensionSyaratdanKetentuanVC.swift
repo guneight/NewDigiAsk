@@ -17,7 +17,7 @@ extension SyaratdanKetentuanViewController {
         let height = view.frame.size.height
         
         view.addSubview(syaratDanKetentuanView)
-        UIHelper.makeView(view: syaratDanKetentuanView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 55, corner: 10, heightAnchor: 0, widthAnchor: 0 )
+        UIHelper.makeView(view: syaratDanKetentuanView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 45, corner: 20, heightAnchor: 0, widthAnchor: 0 )
         syaratDanKetentuanView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         syaratDanKetentuanView.backgroundColor = .white
         
@@ -28,7 +28,7 @@ extension SyaratdanKetentuanViewController {
         SyaratDanKetentuanScrollView.leadingAnchor.constraint(equalTo: syaratDanKetentuanView.leadingAnchor),
         SyaratDanKetentuanScrollView.trailingAnchor.constraint(equalTo: syaratDanKetentuanView.trailingAnchor),
         SyaratDanKetentuanScrollView.topAnchor.constraint(equalTo: syaratDanKetentuanView.topAnchor),
-        SyaratDanKetentuanScrollView.heightAnchor.constraint(equalToConstant: height*0.77-55)
+        SyaratDanKetentuanScrollView.heightAnchor.constraint(equalToConstant: height*0.77-35)
         ])
         SyaratDanKetentuanScrollView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         SyaratDanKetentuanScrollView.isScrollEnabled = true

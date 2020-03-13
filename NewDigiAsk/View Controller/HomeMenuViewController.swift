@@ -70,9 +70,10 @@ class HomeMenuViewController: UIViewController {
     
     @objc func tabBarKlaim(sender : Any){
         
-        let klaimVC = storyboard?.instantiateViewController(identifier: "KlaimViewController") as! KlaimViewController
-        self.navigationController?.pushViewController(klaimVC, animated: true)
+        let polisVC = storyboard?.instantiateViewController(identifier: "KlaimViewController") as! KlaimViewController
+        self.navigationController?.pushViewController(polisVC, animated: true)
     }
+    
     
     
     

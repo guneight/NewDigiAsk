@@ -36,7 +36,7 @@ extension CheckOutKeranjangViewController : UITableViewDelegate, UITableViewData
         view.backgroundColor = .clear
         
         view.addSubview(checkOutView)
-        UIHelper.makeView(view: checkOutView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 55, corner: 10, heightAnchor: 0, widthAnchor: 0)
+        UIHelper.makeView(view: checkOutView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 45, corner: 20, heightAnchor: 0, widthAnchor: 0)
         checkOutView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         checkOutView.backgroundColor = .white
         
@@ -50,7 +50,7 @@ extension CheckOutKeranjangViewController : UITableViewDelegate, UITableViewData
             daftarPembelianTable.leadingAnchor.constraint(equalTo: checkOutView.leadingAnchor, constant: 20),
             daftarPembelianTable.trailingAnchor.constraint(equalTo: checkOutView.trailingAnchor, constant: -20),
             daftarPembelianTable.topAnchor.constraint(equalTo: pembelianBerupa.bottomAnchor, constant: 15),
-            daftarPembelianTable.heightAnchor.constraint(equalToConstant: height*0.7-55)
+            daftarPembelianTable.heightAnchor.constraint(equalToConstant: height*0.7-35)
         ])
         daftarPembelianTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         daftarPembelianTable.showsVerticalScrollIndicator = false

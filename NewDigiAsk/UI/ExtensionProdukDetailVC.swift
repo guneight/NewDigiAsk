@@ -17,7 +17,7 @@ extension ProdukDetailViewController {
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
         gesture.direction = .down
         view.addSubview(produkView)
-        UIHelper.makeView(view: produkView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 55, corner: 10, heightAnchor: 0, widthAnchor: 0)
+        UIHelper.makeView(view: produkView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 45, corner: 20, heightAnchor: 0, widthAnchor: 0)
         produkView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         produkView.backgroundColor = .white
         
@@ -27,7 +27,7 @@ extension ProdukDetailViewController {
         produkDetailScrollView.leadingAnchor.constraint(equalTo: produkView.leadingAnchor),
         produkDetailScrollView.trailingAnchor.constraint(equalTo: produkView.trailingAnchor),
         produkDetailScrollView.topAnchor.constraint(equalTo: produkView.topAnchor),
-        produkDetailScrollView.heightAnchor.constraint(equalToConstant: height*0.77-55)
+        produkDetailScrollView.heightAnchor.constraint(equalToConstant: height*0.77-35)
         ])
         produkDetailScrollView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         produkDetailScrollView.isScrollEnabled = true

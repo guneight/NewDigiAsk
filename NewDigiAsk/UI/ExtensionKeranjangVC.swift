@@ -42,7 +42,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         
         view.backgroundColor = .clear
         view.addSubview(keranjangBaseView)
-        UIHelper.makeView(view: keranjangBaseView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 55, corner: 10, heightAnchor: 0, widthAnchor: 0)
+        UIHelper.makeView(view: keranjangBaseView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 45, corner: 20, heightAnchor: 0, widthAnchor: 0)
         keranjangBaseView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         keranjangBaseView.backgroundColor = .white
         
@@ -66,7 +66,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
             daftarProdukKeranjangTable.leadingAnchor.constraint(equalTo: keranjangBaseView.safeAreaLayoutGuide.leadingAnchor),
             daftarProdukKeranjangTable.trailingAnchor.constraint(equalTo: keranjangBaseView.safeAreaLayoutGuide.trailingAnchor),
             daftarProdukKeranjangTable.topAnchor.constraint(equalTo: pilihSemuaProdukButton.bottomAnchor, constant: 15),
-            daftarProdukKeranjangTable.heightAnchor.constraint(equalToConstant: height*0.7)
+            daftarProdukKeranjangTable.heightAnchor.constraint(equalToConstant: height*0.7-35)
         ])
         daftarProdukKeranjangTable.register(daftarProdukKeranjangTableViewCell.self, forCellReuseIdentifier: "produkKeranjang")
         daftarProdukKeranjangTable.separatorStyle = UITableViewCell.SeparatorStyle.none

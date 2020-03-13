@@ -17,7 +17,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController {
         view.backgroundColor = .clear
         
     view.addSubview(identitasbaseView)
-        UIHelper.makeView(view: identitasbaseView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 55, corner: 10, heightAnchor: 0, widthAnchor: 0)
+        UIHelper.makeView(view: identitasbaseView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 45, corner: 20, heightAnchor: 0, widthAnchor: 0)
         identitasbaseView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         identitasbaseView.backgroundColor = .white
     identitasbaseView.addSubview(identitasScrollView)

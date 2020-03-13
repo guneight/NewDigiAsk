@@ -46,9 +46,22 @@ class PembayaranViewController: UIViewController {
         super.viewDidLoad()
         view.layoutIfNeeded()
         setupUI()
+        
+        rightButtonBCA.addTarget(self, action: #selector(nextButtonBcaAction(sender:)), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
     
+    @objc func nextButtonBcaAction (sender :Any){
+        let bayarVC = storyboard?.instantiateViewController(identifier: "BayarViewController") as! BayarViewController
+        bayarVC.nilaiTotalLabel.text = String(nilaiTotalPembayaranLabel.text!)
+        print( "nilai bayar \(String(describing: bayarVC.nilaiTotalLabel.text))")
+        bayarVC.iconImageMetodeBayar.image = iconBCAimage.image
+        bayarVC.namaMetodeBayar.text = virtualAccountBCALabel.text
+        bayarVC.modalPresentationStyle = .custom
+        bayarVC.transitioningDelegate = PresentationDelegate
+        present(bayarVC, animated: true, completion: nil)
+        
     
+    }
 
 }

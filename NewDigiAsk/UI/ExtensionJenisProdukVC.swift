@@ -43,7 +43,7 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         gesture.direction = .down
         view.backgroundColor = .clear
         view.addSubview(jenisProdukView)
-        UIHelper.makeView(view: jenisProdukView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 55, corner: 10, heightAnchor: 0, widthAnchor: 0)
+        UIHelper.makeView(view: jenisProdukView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 45, corner: 20, heightAnchor: 0, widthAnchor: 0)
         jenisProdukView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         jenisProdukView.backgroundColor = .white
         
