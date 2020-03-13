@@ -218,6 +218,51 @@
             </objects>
             <point key="canvasLocation" x="5449" y="-2282"/>
         </scene>
+        <!--Ambil FotoKTP View Controller-->
+        <scene sceneID="T3T-ao-j8D">
+            <objects>
+                <viewController storyboardIdentifier="AmbilFotoKTPViewController" id="PE1-v7-GXY" customClass="AmbilFotoKTPViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RsS-Nq-I9c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8pJ-Np-Bq4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ul5-9Y-unH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7015" y="-1518"/>
+        </scene>
+        <!--Surat Bukti Kematian View Controller-->
+        <scene sceneID="x3f-1S-2vE">
+            <objects>
+                <viewController storyboardIdentifier="SuratBuktiKematianViewController" id="Ref-Ao-9A1" customClass="SuratBuktiKematianViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nto-w8-WyB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aqQ-pg-NY7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QSd-1J-IGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7798" y="-1518"/>
+        </scene>
+        <!--Kartu Keluarga View Controller-->
+        <scene sceneID="Z2o-i3-02M">
+            <objects>
+                <viewController storyboardIdentifier="KartuKeluargaViewController" id="r42-Gh-TsF" customClass="KartuKeluargaViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Beh-na-ejX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9yq-VW-k4V"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yo5-rk-Ajh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8553" y="-1518"/>
+        </scene>
         <!--Verifikasi View Controller-->
         <scene sceneID="nRF-bQ-N1d">
             <objects>

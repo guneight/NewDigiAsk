@@ -51,8 +51,8 @@ class ProsesKlaimViewController: UIViewController {
    
     // MARK: - Navigation
     @objc func lanjutAction(sender : Any){
-        let monitoringKlaimVC = storyboard?.instantiateViewController(identifier: "MonitoringKlaimViewController") as! MonitoringKlaimViewController
-        navigationController?.pushViewController(monitoringKlaimVC, animated: true)
+        let ambilFotoKTPVC = storyboard?.instantiateViewController(identifier: "AmbilFotoKTPViewController") as! AmbilFotoKTPViewController
+        navigationController?.pushViewController(ambilFotoKTPVC, animated: true)
     }
 
 }
