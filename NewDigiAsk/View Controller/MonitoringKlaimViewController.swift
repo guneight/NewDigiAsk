@@ -11,7 +11,7 @@ import UIKit
 class MonitoringKlaimViewController: UIViewController {
        let klaimPendingTableView = UITableView()
        let namaManageSegmenLabel = UILabel()
-       let klaimManageSegmentControl = UISegmentedControl(items: ["PENDING", "POLIS","EXPIRED","DIBATALKAN"])
+       let klaimManageSegmentControl = UISegmentedControl(items: ["PENGAJUAN", "PROSES","BERHASIL","TOLAK"])
        let klaimSearchBar = UISearchBar()
        let klaimfilterView = UIView()
        let klaimfilterButton = UIButton()
@@ -28,6 +28,9 @@ class MonitoringKlaimViewController: UIViewController {
        stackViewCV.spacing = 1
        return stackViewCV
        }()
+    
+        let headerNomorKlaim = UILabel()
+        let nomorKlaim = UILabel()
        let segmentedIndicatorLabel1 = UILabel()
        let segmentedIndicatorLabel2 = UILabel()
        let segmentedIndicatorLabel3 = UILabel()

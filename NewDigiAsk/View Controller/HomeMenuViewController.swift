@@ -27,6 +27,8 @@ class HomeMenuViewController: UIViewController {
       let profileButton : UIButton = UIButton()
       let imageBarView : UIImageView = UIImageView()
       let logoImageView : UIImageView = UIImageView()
+      
+    var indexProduk : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,6 +75,7 @@ class HomeMenuViewController: UIViewController {
         let polisVC = storyboard?.instantiateViewController(identifier: "KlaimViewController") as! KlaimViewController
         self.navigationController?.pushViewController(polisVC, animated: true)
     }
+    
     
     
     

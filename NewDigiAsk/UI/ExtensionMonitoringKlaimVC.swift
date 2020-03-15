@@ -15,7 +15,10 @@ extension MonitoringKlaimViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "klaimCell", for: indexPath) as! PolisdanKlaimTableViewCell
-            cell.klaimButton.isHidden = true
+        cell.klaimButton.isHidden = true
+        cell.contentView.addSubview(headerNomorKlaim)
+        UIHelper.makeLabel(label: headerNomorKlaim, corner: 0, allignment: .left, leadingAnchor: cell.leadingAnchor, trailingAnchor: cell.trailingAnchor, topAnchor: cell.topAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
+        UIHelper.setTextLabel(label: headerNomorKlaim, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Klaim", kerning: 0.12)
         if segmentedIndex == 0{
 //            segmentedIndicatorLabel1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
 //            segmentedIndicatorLabel2.backgroundColor = .white
@@ -51,7 +54,7 @@ extension MonitoringKlaimViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 220
+        return 265
     }
     
     
@@ -109,6 +112,7 @@ extension MonitoringKlaimViewController: UITableViewDelegate, UITableViewDataSou
        klaimSearchBar.searchBarStyle = .default
        klaimSearchBar.layer.borderWidth = 1
        klaimSearchBar.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        UIHelper.setTextField(textField: klaimSearchBar.searchTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "Tulis nama atau nomor polis", kerning: 0.5)
        
        view.addSubview(klaimfilterView)
        UIHelper.makeView(view: klaimfilterView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: klaimSearchBar.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 10, corner: 0, heightAnchor: 40, widthAnchor: 0)

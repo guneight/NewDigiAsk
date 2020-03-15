@@ -8,7 +8,51 @@
 
 import UIKit
 
-extension AmbilFotoKTPViewController {
+extension AmbilFotoKTPViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func ambilFotoKTP() {
+        cameraIconImage.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openCamera(gesture:)))
+        cameraIconImage.addGestureRecognizer(tapGesture)
+        
+       
+    }
+    
+    @objc func openCamera(gesture : UITapGestureRecognizer){
+        let imgPicker = UIImagePickerController()
+        imgPicker.delegate = self
+        imgPicker.sourceType = .camera
+        imgPicker.allowsEditing = false
+        imgPicker.showsCameraControls = true
+        self.present(imgPicker, animated: true, completion: nil)
+         print("presss")
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey :
+        Any]) {
+        if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            cameraIconImage.image = resizeImage(image: img, newHeight: 192)
+            cameraIconImage.contentMode = .center
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            print("error")
+        }
+    }
+    
+     func resizeImage(image: UIImage, newHeight: CGFloat) -> UIImage {
+        let width = image.size.width
+        let scale = newHeight / image.size.height
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: width, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: width, height: newHeight))
+        guard let newImage = UIGraphicsGetImageFromCurrentImageContext()else {
+            return image
+        }
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+    
     func setupUIAmbilKTP (){
         view.addSubview(ambilKTPView)
         ambilKTPView.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +69,7 @@ extension AmbilFotoKTPViewController {
         
         ambilKTPView.addSubview(kartuIdentitasLabel)
         UIHelper.makeLabel(label: kartuIdentitasLabel, corner: 0, allignment: .left, leadingAnchor: ambilKTPView.leadingAnchor, trailingAnchor: ambilKTPView.trailingAnchor, topAnchor: datadiSiapkan.bottomAnchor, leadingConstant: 23, trailingConstant: -23, topConstant: 13, heightAnchor: 16, widthAnchor: 0)
-         UIHelper.setTextLabel(label: kartuIdentitasLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "1 - Kartu Identitas (KTP)", kerning: 0.12)
+        UIHelper.setTextLabel(label: kartuIdentitasLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "1 - Kartu Identitas (KTP)", kerning: 0.12)
         
         ambilKTPView.addSubview(deskripsiKartuIdentitasLabel)
         UIHelper.makeLabel(label: deskripsiKartuIdentitasLabel, corner: 0, allignment: .left, leadingAnchor: ambilKTPView.leadingAnchor, trailingAnchor: ambilKTPView.trailingAnchor, topAnchor: kartuIdentitasLabel.bottomAnchor, leadingConstant: 42, trailingConstant: -30, topConstant: 5, heightAnchor: 47, widthAnchor: 0)
@@ -46,14 +90,14 @@ extension AmbilFotoKTPViewController {
         UIHelper.makeLabel(label: keteranganFoto, corner: 0, allignment: .center, leadingAnchor: ambilKTPView.leadingAnchor, trailingAnchor: ambilKTPView.trailingAnchor, topAnchor: cameraIconImage.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: keteranganFoto, fontName: "Arial", fontColor: #colorLiteral(red: 0.6470588235, green: 0.6274509804, blue: 0.6274509804, alpha: 1), weight: .bold, fontSize: 10, text: "Foto KTP ataupun Bukti Identitas lainnya dari Ahli Waris", kerning: 0)
         
-         ambilKTPView.addSubview(lanjutButton)
-               lanjutButton.translatesAutoresizingMaskIntoConstraints = false
-               NSLayoutConstraint.activate([
-                   lanjutButton.leadingAnchor.constraint(equalTo: ambilKTPView.leadingAnchor, constant: 24),
-                   lanjutButton.trailingAnchor.constraint(equalTo: ambilKTPView.trailingAnchor, constant: -24),
-                   lanjutButton.bottomAnchor.constraint(equalTo: ambilKTPView.bottomAnchor, constant: -23),
-                   lanjutButton.heightAnchor.constraint(equalToConstant: 48)
-               ])
+        ambilKTPView.addSubview(lanjutButton)
+        lanjutButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            lanjutButton.leadingAnchor.constraint(equalTo: ambilKTPView.leadingAnchor, constant: 24),
+            lanjutButton.trailingAnchor.constraint(equalTo: ambilKTPView.trailingAnchor, constant: -24),
+            lanjutButton.bottomAnchor.constraint(equalTo: ambilKTPView.bottomAnchor, constant: -23),
+            lanjutButton.heightAnchor.constraint(equalToConstant: 48)
+        ])
         lanjutButton.layer.masksToBounds = true
         lanjutButton.layer.borderColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
         lanjutButton.layer.borderWidth = 1
@@ -65,22 +109,22 @@ extension AmbilFotoKTPViewController {
     
     
     func setupNavBar(){
-          let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
-                 self.navigationItem.leftBarButtonItem = customButtonNav
-                 navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-                 navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-                 navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                 navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-                 navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-                 UINavigationBar.appearance().isTranslucent = false
-                 navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-                 title: "PROSES KLAIM", style: .plain, target: nil, action: nil)
-      }
-      
-      @objc func backButtonTapped() {
-//        let prosesKlaimVC = storyboard?.instantiateViewController(identifier: "ProsesKlaimViewController")  as! ProsesKlaimViewController
-        navigationController?.popViewController(animated: true)
+        let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
+        self.navigationItem.leftBarButtonItem = customButtonNav
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "PROSES KLAIM", style: .plain, target: nil, action: nil)
+    }
     
+    @objc func backButtonTapped() {
+        //        let prosesKlaimVC = storyboard?.instantiateViewController(identifier: "ProsesKlaimViewController")  as! ProsesKlaimViewController
+        navigationController?.popViewController(animated: true)
+        
     }
 }
-    
+

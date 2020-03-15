@@ -543,6 +543,15 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let deskripsiProdukVC  = storyboard?.instantiateViewController(identifier: "DeskripsiProdukViewController") as! DeskripsiProdukViewController
+        indexProduk = indexPath.row
+        if collectionView == collectionViewProduct {
+        deskripsiProdukVC.indexProdukSelect = indexProduk
+        navigationController?.pushViewController(deskripsiProdukVC, animated: true)
+        }
+    }
+    
 }
 
 class BannerPromoCollectionViewCell: UICollectionViewCell {

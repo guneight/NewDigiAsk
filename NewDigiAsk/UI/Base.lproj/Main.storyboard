@@ -43,6 +43,21 @@
             </objects>
             <point key="canvasLocation" x="4678" y="695"/>
         </scene>
+        <!--Deskripsi Produk View Controller-->
+        <scene sceneID="HDP-tT-UY0">
+            <objects>
+                <viewController storyboardIdentifier="DeskripsiProdukViewController" id="bgi-JT-iMb" customClass="DeskripsiProdukViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wVM-m4-XoZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Or0-s7-0Yh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9kk-5j-K8Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4678" y="1402"/>
+        </scene>
         <!--Produk Detail View Controller-->
         <scene sceneID="rS9-F7-5w1">
             <objects>
@@ -262,6 +277,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yo5-rk-Ajh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8553" y="-1518"/>
+        </scene>
+        <!--Submit Klaim View Controller-->
+        <scene sceneID="b18-Sq-fPp">
+            <objects>
+                <viewController storyboardIdentifier="SubmitKlaimViewController" id="wfz-R4-Q5n" customClass="SubmitKlaimViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wLh-l6-sDr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1wu-uS-lWT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3b8-aa-dMt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9265" y="-1518"/>
         </scene>
         <!--Verifikasi View Controller-->
         <scene sceneID="nRF-bQ-N1d">

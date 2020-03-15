@@ -21,18 +21,16 @@ class KartuKeluargaViewController: UIViewController {
         setupUIKartuKeluarga()
         setupNavBar()
         view.layoutIfNeeded()
+        lanjutButton.addTarget(self, action: #selector(lanjutAction(sender:)), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: lanjutButton Action
+
+    @objc func lanjutAction(sender: Any){
+        let submitKlaimVC = storyboard?.instantiateViewController(identifier: "SubmitKlaimViewController")  as! SubmitKlaimViewController
+        navigationController?.pushViewController(submitKlaimVC, animated: true)
     }
-    */
-
 }
