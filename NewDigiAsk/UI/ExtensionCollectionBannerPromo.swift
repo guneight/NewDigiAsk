@@ -549,6 +549,14 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == collectionViewProduct {
         deskripsiProdukVC.indexProdukSelect = indexProduk
         navigationController?.pushViewController(deskripsiProdukVC, animated: true)
+        }else if  collectionView == collectionViewPromo{
+            if let url = URL(string: "https://www.askrindo.co.id") {
+                UIApplication.shared.open(url)
+            }
+        }else if collectionView == collectBannerPromo{
+            if let url = URL(string: "https://www.askrindo.co.id") {
+                UIApplication.shared.open(url)
+            }
         }
     }
     

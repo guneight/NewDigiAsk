@@ -8,9 +8,53 @@
 
 import UIKit
 
-extension SuratBuktiKematianViewController{
-    
+extension SuratBuktiKematianViewController : UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+    func ambilFotoSuratBukti() {
+           cameraIconImage.isUserInteractionEnabled = true
+           let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openCamera(gesture:)))
+           cameraIconImage.addGestureRecognizer(tapGesture)
+           
+          
+       }
+       
+       @objc func openCamera(gesture : UITapGestureRecognizer){
+           let imgPicker = UIImagePickerController()
+           imgPicker.delegate = self
+           imgPicker.sourceType = .camera
+           imgPicker.allowsEditing = false
+           imgPicker.showsCameraControls = true
+           self.present(imgPicker, animated: true, completion: nil)
+            print("presss")
+       }
+       
+       
+       func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey :
+           Any]) {
+           if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+               cameraIconImage.image = resizeImage(image: img, newHeight: 192)
+               cameraIconImage.contentMode = .center
+               self.dismiss(animated: true, completion: nil)
+           } else {
+               print("error")
+           }
+        
+            
+       }
+       
+        func resizeImage(image: UIImage, newHeight: CGFloat) -> UIImage {
+           let width = image.size.width
+           let scale = newHeight / image.size.height
+           let newHeight = image.size.height * scale
+           UIGraphicsBeginImageContext(CGSize(width: width, height: newHeight))
+           image.draw(in: CGRect(x: 0, y: 0, width: width, height: newHeight))
+           guard let newImage = UIGraphicsGetImageFromCurrentImageContext()else {
+               return image
+           }
+           UIGraphicsEndImageContext()
+           return newImage
+       }
     func setupUISuratBuktiKematian(){
+        view.backgroundColor = .white
         view.addSubview(suratKematianView)
                suratKematianView.translatesAutoresizingMaskIntoConstraints = false
                NSLayoutConstraint.activate([

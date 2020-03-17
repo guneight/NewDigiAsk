@@ -14,10 +14,12 @@ extension KlaimViewController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "polisKlaim", for: indexPath) as! PolisakanKlaimTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "polisakanKlaim", for: indexPath) as! PolisakanKlaimTableViewCell
         
         cell.backgroundColor = .white
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        cell.iconProdukImage.image = UIImage(named:"\(namaProdukArray[indexPath.row])")
+        cell.namaProdukLabel.text = "\(namaProdukArray[indexPath.row])"
         cell.klaimButton.addTarget(self, action: #selector(klaimButtonAction(sender:)), for: .touchUpInside)
         return cell
     }
@@ -29,7 +31,7 @@ extension KlaimViewController : UITableViewDelegate, UITableViewDataSource{
     func setupUI(){
         let width = view.frame.size.width
         let hegiht = view.frame.size.height
-    
+        view.backgroundColor = .white
         view.addSubview(polisSearchBar)
         polisSearchBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -41,8 +43,10 @@ extension KlaimViewController : UITableViewDelegate, UITableViewDataSource{
         polisSearchBar.placeholder = "Masukkan nama atau nomor polis"
         polisSearchBar.searchBarStyle = .default
         polisSearchBar.layer.borderWidth = 1
-        polisSearchBar.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
+        polisSearchBar.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        polisSearchBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        polisSearchBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)
+        UIHelper.setTextField(textField: polisSearchBar.searchTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "Tulis nama atau nomor polis", kerning: 1)
         view.addSubview(polisfilterView)
         UIHelper.makeView(view: polisfilterView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: polisSearchBar.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 10, corner: 0, heightAnchor: 40, widthAnchor: 0)
         polisfilterView.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 0.1)
@@ -79,7 +83,7 @@ extension KlaimViewController : UITableViewDelegate, UITableViewDataSource{
         polisPendingTableView.showsVerticalScrollIndicator = false
         polisPendingTableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
-        polisPendingTableView.register(PolisakanKlaimTableViewCell.self, forCellReuseIdentifier: "polisKlaim")
+        polisPendingTableView.register(PolisakanKlaimTableViewCell.self, forCellReuseIdentifier: "polisakanKlaim")
         
        
         
@@ -155,8 +159,8 @@ class PolisakanKlaimTableViewCell : UITableViewCell{
         
         containerProdukView.addSubview(namaProdukLabel)
         UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: containerProdukView.leadingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: containerProdukView.topAnchor, leadingConstant: 16, trailingConstant: -25, topConstant: 10, heightAnchor: 17, widthAnchor: 0)
-        namaProdukLabel.text = "Asuransi Kecelakaan Diri"
-    
+        UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
+        
         containerProdukView.addSubview(rightDetailProdukButton)
         rightDetailProdukButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -178,13 +182,13 @@ class PolisakanKlaimTableViewCell : UITableViewCell{
         iconProdukImage.contentMode = .center
         
         containerProdukView.addSubview(deskripsiProdukLabel)
-        UIHelper.makeLabel(label: deskripsiProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: lineNamaProduk.bottomAnchor, leadingConstant: 12, trailingConstant: -20, topConstant: 12, heightAnchor: 40, widthAnchor: 0)
+        UIHelper.makeLabel(label: deskripsiProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: lineNamaProduk.bottomAnchor, leadingConstant: 12, trailingConstant: -20, topConstant: 5, heightAnchor: 40, widthAnchor: 0)
         deskripsiProdukLabel.numberOfLines = 0
-        deskripsiProdukLabel.text = "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam"
+        UIHelper.setTextLabel(label: deskripsiProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.65), weight: .regular, fontSize: 10, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam", kerning: 0.5)
                 
         containerProdukView.addSubview(hargaProdukLabel)
         UIHelper.makeLabel(label: hargaProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: deskripsiProdukLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -20, topConstant: 5, heightAnchor: 17, widthAnchor:   0)
-        hargaProdukLabel.text = "Rp 250.000,-"
+         UIHelper.setTextLabel(label: hargaProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 12, text: "Rp 250.000,-", kerning: 0.5)
         
         self.contentView.addSubview(grayLinePolis)
         UIHelper.makeView(view: grayLinePolis, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: containerProdukView.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 17, corner: 0, heightAnchor: 7, widthAnchor: 0)

@@ -11,6 +11,7 @@ import UIKit
 extension HomeMenuViewController{
     
 func UiSetup(){
+    view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         self.view.addSubview(scrollView)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -96,7 +97,7 @@ func UiSetup(){
             notifButton.heightAnchor.constraint(equalToConstant: 17.55)
             ])
         notifButton.setImage(UIImage(named: "notif.png"), for: .normal)
-
+    
                 //NotifCount
                 let labelNotif = UILabel()
         containerViewNav.addSubview(labelNotif)
@@ -112,37 +113,43 @@ func UiSetup(){
             backcontainerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             backcontainerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             backcontainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backcontainerView.heightAnchor.constraint(equalToConstant: 80.2)
+            backcontainerView.heightAnchor.constraint(equalToConstant: 100)
             ])
-        backcontainerView.backgroundColor = #colorLiteral(red: 0.9294117647, green: 0.9294117647, blue: 0.9294117647, alpha: 1)
+        backcontainerView.backgroundColor = .clear
+    
 
         view.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            containerView.heightAnchor.constraint(equalToConstant: 80.2)
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            containerView.heightAnchor.constraint(equalToConstant: 40)
             ])
+//        containerView.layer.borderWidth = 1
+//        containerView.layer.borderColor = #colorLiteral(red: 0.9294117647, green: 0.9294117647, blue: 0.9294117647, alpha: 1)
+        containerView.backgroundColor = #colorLiteral(red: 0.9294117647, green: 0.9294117647, blue: 0.9294117647, alpha: 1)
 
         containerView.addSubview(tabBarView)
         tabBarView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
                tabBarView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
                tabBarView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-               tabBarView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+               tabBarView.topAnchor.constraint(equalTo: backcontainerView.topAnchor),
                tabBarView.heightAnchor.constraint(equalToConstant: 80.2)
             ])
-
+    tabBarView.backgroundColor = .clear
+        
         tabBarView.addSubview(imageBarView)
         imageBarView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imageBarView.leadingAnchor.constraint(equalTo: tabBarView.leadingAnchor),
             imageBarView.trailingAnchor.constraint(equalTo: tabBarView.trailingAnchor),
             imageBarView.topAnchor.constraint(equalTo: tabBarView.topAnchor),
-            imageBarView.bottomAnchor.constraint(equalTo: tabBarView.bottomAnchor)
+            imageBarView.bottomAnchor.constraint(equalTo: tabBarView.bottomAnchor, constant: -10)
             ])
         imageBarView.image = UIImage(named: "bar.png")
+    
         tabBarView.addSubview(homeButton)
         homeButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -151,8 +158,8 @@ func UiSetup(){
             homeButton.heightAnchor.constraint(equalToConstant: 49),
             homeButton.widthAnchor.constraint(equalToConstant: 48)
             ])
-        homeButton.setImage(UIImage(named: "digiAskActive.png"), for: .normal)
-
+        homeButton.setImage(UIImage(named: "digiaskIcon.png"), for: .normal)
+        
         tabBarView.addSubview(klaimButton)
         klaimButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -162,17 +169,17 @@ func UiSetup(){
             klaimButton.widthAnchor.constraint(equalToConstant: 48)
             ])
         klaimButton.setImage(UIImage(named: "klaimNormal.png"), for: .normal)
-
+        
         tabBarView.addSubview(beliButton)
         beliButton.translatesAutoresizingMaskIntoConstraints = false
         beliButton.centerXAnchor.constraint(equalTo: tabBarView.centerXAnchor).isActive = true
         NSLayoutConstraint.activate([
-
+            
             beliButton.bottomAnchor.constraint(equalTo: tabBarView.bottomAnchor, constant:-18.2),
             beliButton.heightAnchor.constraint(equalToConstant: 54),
             beliButton.widthAnchor.constraint(equalToConstant: 54)
             ])
-        beliButton.setImage(UIImage(named: "barBeli.png"), for: .normal)
+        beliButton.setImage(UIImage(named: "beliIcon.png"), for: .normal)
         beliButton.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         beliButton.layer.cornerRadius = 54/2
             beliButton.clipsToBounds = true
@@ -197,5 +204,7 @@ func UiSetup(){
             simulasiButton.widthAnchor.constraint(equalToConstant: 48)
             ])
         simulasiButton.setImage(UIImage(named: "simulasiNormal"), for: .normal)
+         
             }
+    
 }

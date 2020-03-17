@@ -16,6 +16,7 @@ class TentangKamiViewController: UIViewController {
     let tentangKamiWhiteView = UIView()
     let tentangKamiLabel = UILabel()
     let profilePerusahaan = UILabel()
+    let backgroundImage = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()

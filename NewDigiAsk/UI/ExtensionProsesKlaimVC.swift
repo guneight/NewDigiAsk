@@ -11,6 +11,7 @@ import UIKit
 extension ProsesKlaimViewController {
     
     func setupUIProsesKlaim(){
+        view.backgroundColor = .white
         self.view.addSubview(prosesdKlaimScrollView)
             UIHelper.makeScroolView(scrollView: prosesdKlaimScrollView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 0, widthAnchor: 0, scrollAble: true, scrollShow: false)
             prosesdKlaimScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true

@@ -53,6 +53,8 @@ class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController {
         setupUI()
         view.layoutIfNeeded()
         tambahKerajangbutton.addTarget(self, action: #selector(tambahKeranjangAction(sender:)), for: .touchUpInside)
+         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
     
@@ -66,6 +68,9 @@ class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController {
         
     }
    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
 
 }

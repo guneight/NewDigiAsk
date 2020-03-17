@@ -54,13 +54,13 @@ class HomeMenuViewController: UIViewController {
     
     
     @objc func tabBarProfileAction (sender : Any){
-//        let profileVC = storyboard?.instantiateViewController(identifier: "DaftarViewController")  as! DaftarViewController
-//        self.navigationController?.pushViewController(profileVC, animated: true)
+//        let DaftarVC = storyboard?.instantiateViewController(identifier: "DaftarViewController")  as! DaftarViewController
+//        self.navigationController?.pushViewController(DaftarVC, animated: true)
 //        print("pressss")
 
-         let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController")  as! ProfileViewController
+        let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController")  as! ProfileViewController
                 self.navigationController?.pushViewController(profileVC, animated: true)
-        //        print("pressss")
+//        print("pressss")
     }
         
     @objc func tabBarBeliAction(sender : Any){

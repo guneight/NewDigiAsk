@@ -22,6 +22,7 @@ class KartuKeluargaViewController: UIViewController {
         setupNavBar()
         view.layoutIfNeeded()
         lanjutButton.addTarget(self, action: #selector(lanjutAction(sender:)), for: .touchUpInside)
+        ambilFotoKK()
         // Do any additional setup after loading the view.
     }
     

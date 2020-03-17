@@ -10,6 +10,7 @@ import UIKit
 
 extension SubmitKlaimViewController{
     func setupUISubmitKlaim(){
+        view.backgroundColor = .white
         view.addSubview(submitKlaimView)
         submitKlaimView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

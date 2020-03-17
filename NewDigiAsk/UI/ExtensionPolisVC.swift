@@ -67,8 +67,9 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
             polisManageSegmentControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             polisManageSegmentControl.heightAnchor.constraint(equalToConstant: 40)
         ])
-        polisManageSegmentControl.backgroundColor = .white
-//        polisManageSegmentControl.selectedSegmentTintColor = .clear
+        polisManageSegmentControl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)
+        polisManageSegmentControl.selectedSegmentTintColor = .white
+        polisManageSegmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
         
 //        polisManageSegmentControl.addSubview(segmentedControlIndicator)
 //        segmentedControlIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -106,11 +107,12 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
             polisSearchBar.topAnchor.constraint(equalTo: polisManageSegmentControl.bottomAnchor, constant: 12),
             polisSearchBar.heightAnchor.constraint(equalToConstant: 35)
         ])
-        polisSearchBar.placeholder = "Masukkan nama atau nomor polis"
         polisSearchBar.searchBarStyle = .default
         polisSearchBar.layer.borderWidth = 1
         polisSearchBar.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
+        polisSearchBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)
+        polisSearchBar.backgroundColor = .white
+        UIHelper.setTextField(textField: polisSearchBar.searchTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "Tulis nama atau nomor polis", kerning: 1)
         view.addSubview(polisfilterView)
         UIHelper.makeView(view: polisfilterView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: polisSearchBar.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 10, corner: 0, heightAnchor: 40, widthAnchor: 0)
         polisfilterView.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 0.1)

@@ -99,11 +99,11 @@ class profielTableViewCell: UITableViewCell{
         iconImage.contentMode = .scaleAspectFit
         
         self.contentView.addSubview(menuProfileLabel)
-        UIHelper.makeLabel(label: menuProfileLabel, corner: 0, allignment: .left, leadingAnchor: iconImage.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 20, trailingConstant: -40, topConstant: 8, heightAnchor: 12, widthAnchor: 0)
+        UIHelper.makeLabel(label: menuProfileLabel, corner: 0, allignment: .left, leadingAnchor: iconImage.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 20, trailingConstant: -40, topConstant: 8, heightAnchor: 14, widthAnchor: 0)
         UIHelper.setTextLabel(label: menuProfileLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 12, text: "profile", kerning: 0)
         
         self.contentView.addSubview(deskripsiProfileLabel)
-        UIHelper.makeLabel(label: deskripsiProfileLabel, corner: 0, allignment: .left, leadingAnchor: iconImage.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: menuProfileLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -40, topConstant: 5, heightAnchor: 12, widthAnchor: 0)
+        UIHelper.makeLabel(label: deskripsiProfileLabel, corner: 0, allignment: .left, leadingAnchor: iconImage.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: menuProfileLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -40, topConstant: 5, heightAnchor: 14, widthAnchor: 0)
         UIHelper.setTextLabel(label: deskripsiProfileLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Dekripsi", kerning: 0)
         
         self.contentView.addSubview(rightButton)

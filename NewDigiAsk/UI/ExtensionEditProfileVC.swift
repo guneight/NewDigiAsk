@@ -13,8 +13,6 @@ extension EditProfileViewController{
         self.view.addSubview(editProfileScrollView)
         UIHelper.makeScroolView(scrollView: editProfileScrollView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 0, widthAnchor: 0, scrollAble: true, scrollShow: false)
         editProfileScrollView.heightAnchor.constraint(equalToConstant: height).isActive = true
-        
-       
 
         editProfileScrollView.addSubview(editProfileBaseView)
         editProfileBaseView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,12 +69,11 @@ extension EditProfileViewController{
         editNamaLengkapButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             editNamaLengkapButton.trailingAnchor.constraint(equalTo: profileWhiteView.trailingAnchor, constant: -40),
-            editNamaLengkapButton.topAnchor.constraint(equalTo: namaLengkapLabel.bottomAnchor, constant: 6),
-            editNamaLengkapButton.widthAnchor.constraint(equalToConstant: 26),
-            editNamaLengkapButton.heightAnchor.constraint(equalToConstant: 12)
+            editNamaLengkapButton.topAnchor.constraint(equalTo: namaLengkapTextField.bottomAnchor, constant: -15),
+            editNamaLengkapButton.widthAnchor.constraint(equalToConstant: 14),
+            editNamaLengkapButton.heightAnchor.constraint(equalToConstant: 14)
         ])
-        editNamaLengkapButton.setTitle("Ubah", for: .normal)
-       
+        editNamaLengkapButton.setImage(UIImage(named: "editIcon"), for: .normal)
         
         profileWhiteView.addSubview(lineNamaLengkap)
         UIHelper.makeView(view: lineNamaLengkap, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: namaLengkapTextField.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 6, corner: 0, heightAnchor: 1, widthAnchor: 0)
@@ -95,11 +92,11 @@ extension EditProfileViewController{
         editEmailButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             editEmailButton.trailingAnchor.constraint(equalTo: profileWhiteView.trailingAnchor, constant: -40),
-            editEmailButton.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 19),
-            editEmailButton.widthAnchor.constraint(equalToConstant: 26),
-            editEmailButton.heightAnchor.constraint(equalToConstant: 12)
+            editEmailButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: -15),
+            editEmailButton.widthAnchor.constraint(equalToConstant: 14),
+            editEmailButton.heightAnchor.constraint(equalToConstant: 14)
         ])
-        editEmailButton.setTitle("Ubah", for: .normal)
+        editEmailButton.setImage(UIImage(named: "editIcon"), for: .normal)
         
         profileWhiteView.addSubview(lineEmail)
         UIHelper.makeView(view: lineEmail, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: emailTextField.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 6, corner: 0, heightAnchor: 1, widthAnchor: 0)
@@ -117,11 +114,11 @@ extension EditProfileViewController{
         editKataSandiButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             editKataSandiButton.trailingAnchor.constraint(equalTo: profileWhiteView.trailingAnchor, constant: -40),
-            editKataSandiButton.topAnchor.constraint(equalTo: kataSandiTextField.bottomAnchor, constant: 19),
-            editKataSandiButton.widthAnchor.constraint(equalToConstant: 26),
-            editKataSandiButton.heightAnchor.constraint(equalToConstant: 12)
+            editKataSandiButton.topAnchor.constraint(equalTo: kataSandiTextField.bottomAnchor, constant: -15),
+            editKataSandiButton.widthAnchor.constraint(equalToConstant: 14),
+            editKataSandiButton.heightAnchor.constraint(equalToConstant: 14)
             ])
-        editKataSandiButton.setTitle("Ubah", for: .normal)
+        editKataSandiButton.setImage(UIImage(named: "editIcon"), for: .normal)
               
         profileWhiteView.addSubview(lineKataSandi)
         UIHelper.makeView(view: lineKataSandi, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: kataSandiTextField.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 6, corner: 0, heightAnchor: 1, widthAnchor: 0)
@@ -139,12 +136,12 @@ extension EditProfileViewController{
         editNomorTeleponButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             editNomorTeleponButton.trailingAnchor.constraint(equalTo: profileWhiteView.trailingAnchor, constant: -40),
-            editNomorTeleponButton.topAnchor.constraint(equalTo: kataSandiTextField.bottomAnchor, constant: 19),
-            editNomorTeleponButton.widthAnchor.constraint(equalToConstant: 26),
-            editNomorTeleponButton.heightAnchor.constraint(equalToConstant: 12)
+            editNomorTeleponButton.topAnchor.constraint(equalTo: nomorTeleponTextField.bottomAnchor, constant: -15),
+            editNomorTeleponButton.widthAnchor.constraint(equalToConstant: 14),
+            editNomorTeleponButton.heightAnchor.constraint(equalToConstant: 14)
             ])
-        editNomorTeleponButton.setTitle("Ubah", for: .normal)
-              
+        editNomorTeleponButton.setImage(UIImage(named: "editIcon"), for: .normal)
+        
         profileWhiteView.addSubview(linenomorTelepon)
         UIHelper.makeView(view: linenomorTelepon, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: nomorTeleponTextField.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 6, corner: 0, heightAnchor: 1, widthAnchor: 0)
         linenomorTelepon.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
@@ -162,12 +159,13 @@ extension EditProfileViewController{
         editTanggalahirButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             editTanggalahirButton.trailingAnchor.constraint(equalTo: profileWhiteView.trailingAnchor, constant: -40),
-            editTanggalahirButton.topAnchor.constraint(equalTo: kataSandiTextField.bottomAnchor, constant: 19),
-            editTanggalahirButton.widthAnchor.constraint(equalToConstant: 26),
-            editTanggalahirButton.heightAnchor.constraint(equalToConstant: 12)
+            editTanggalahirButton.topAnchor.constraint(equalTo: tanggalLahirTextField.bottomAnchor, constant: -15),
+            editTanggalahirButton.widthAnchor.constraint(equalToConstant: 14),
+            editTanggalahirButton.heightAnchor.constraint(equalToConstant: 14)
             ])
-        editTanggalahirButton.setTitle("Ubah", for: .normal)
-              
+        editTanggalahirButton.setImage(UIImage(named: "editIcon"), for: .normal)
+        
+        
         profileWhiteView.addSubview(lineTanggalLahir)
         UIHelper.makeView(view: lineTanggalLahir, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: tanggalLahirTextField.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 6, corner: 0, heightAnchor: 1, widthAnchor: 0)
         lineTanggalLahir.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
@@ -185,11 +183,12 @@ extension EditProfileViewController{
         editKartuIdentitasButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             editKartuIdentitasButton.trailingAnchor.constraint(equalTo: profileWhiteView.trailingAnchor, constant: -40),
-            editKartuIdentitasButton.topAnchor.constraint(equalTo: kartuIdentitasTextField.bottomAnchor, constant: 19),
-            editKartuIdentitasButton.widthAnchor.constraint(equalToConstant: 26),
-            editKartuIdentitasButton.heightAnchor.constraint(equalToConstant: 12)
+            editKartuIdentitasButton.topAnchor.constraint(equalTo: kartuIdentitasTextField.bottomAnchor, constant: -15),
+            editKartuIdentitasButton.widthAnchor.constraint(equalToConstant: 14),
+            editKartuIdentitasButton.heightAnchor.constraint(equalToConstant: 14)
         ])
-        editTanggalahirButton.setTitle("Ubah", for: .normal)
+        editKartuIdentitasButton.setImage(UIImage(named: "editIcon"), for: .normal)
+        
         profileWhiteView.addSubview(lineKartuIdentitas)
         UIHelper.makeView(view: lineKartuIdentitas, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: kartuIdentitasTextField.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 6, corner: 0, heightAnchor: 1, widthAnchor: 0)
         lineKartuIdentitas.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
@@ -208,11 +207,11 @@ extension EditProfileViewController{
         editAlamatButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             editAlamatButton.trailingAnchor.constraint(equalTo: profileWhiteView.trailingAnchor, constant: -40),
-            editAlamatButton.topAnchor.constraint(equalTo: alamatLabel.bottomAnchor, constant: 19),
-            editAlamatButton.widthAnchor.constraint(equalToConstant: 26),
-            editAlamatButton.heightAnchor.constraint(equalToConstant: 12)
+            editAlamatButton.topAnchor.constraint(equalTo: alamatTextField.bottomAnchor, constant: -15),
+            editAlamatButton.widthAnchor.constraint(equalToConstant: 14),
+            editAlamatButton.heightAnchor.constraint(equalToConstant: 14)
         ])
-        editAlamatButton.setTitle("Ubah", for: .normal)
+        editAlamatButton.setImage(UIImage(named: "editIcon"), for: .normal)
 
         profileWhiteView.addSubview(lineAlamat)
         UIHelper.makeView(view: lineAlamat, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: alamatTextField.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 6, corner: 0, heightAnchor: 1, widthAnchor: 0)

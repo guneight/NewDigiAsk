@@ -54,6 +54,7 @@ extension AmbilFotoKTPViewController : UIImagePickerControllerDelegate, UINaviga
     }
     
     func setupUIAmbilKTP (){
+        view.backgroundColor = .white
         view.addSubview(ambilKTPView)
         ambilKTPView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
