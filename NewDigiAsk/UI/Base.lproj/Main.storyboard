@@ -6,11 +6,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvantGardeDemiBT.ttf">
-            <string>AvantGardeITCbyBT-Demi</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Home Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -57,6 +52,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kk-5j-K8Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4678" y="1402"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="O0e-QO-mrt">
+            <objects>
+                <viewController storyboardIdentifier="InfoViewController" id="Wwg-FY-Sdb" customClass="InfoViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ur8-nq-MBW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="xpL-da-4ul"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="818-8u-f2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4678" y="2098"/>
+        </scene>
+        <!--Galery View Controller-->
+        <scene sceneID="4c3-7O-XBC">
+            <objects>
+                <viewController storyboardIdentifier="GaleryViewController" id="Hja-vu-W7m" customClass="GaleryViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vam-1c-bLg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EB2-me-1eZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E55-BF-Dla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4678" y="2806"/>
+        </scene>
+        <!--Info Detail View Controller-->
+        <scene sceneID="6ph-TX-AeM">
+            <objects>
+                <viewController storyboardIdentifier="InfoDetailViewController" id="2nQ-Wt-giC" customClass="InfoDetailViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wnC-vi-NkV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="jy9-mx-co2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzf-AD-B9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5415" y="2098"/>
         </scene>
         <!--Produk Detail View Controller-->
         <scene sceneID="rS9-F7-5w1">
@@ -201,15 +241,6 @@
                     <view key="view" contentMode="scaleToFill" id="jNH-j2-kcr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUE-ck-LgW">
-                                <rect key="frame" x="229" y="350" width="44" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvantGardeITCbyBT-Demi" family="AvantGarde Bk BT" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="mxi-6D-kv4"/>
                     </view>

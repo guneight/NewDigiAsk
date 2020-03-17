@@ -544,9 +544,10 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let deskripsiProdukVC  = storyboard?.instantiateViewController(identifier: "DeskripsiProdukViewController") as! DeskripsiProdukViewController
+     
         indexProduk = indexPath.row
         if collectionView == collectionViewProduct {
+        let deskripsiProdukVC  = storyboard?.instantiateViewController(identifier: "DeskripsiProdukViewController") as! DeskripsiProdukViewController
         deskripsiProdukVC.indexProdukSelect = indexProduk
         navigationController?.pushViewController(deskripsiProdukVC, animated: true)
         }else if  collectionView == collectionViewPromo{
@@ -557,6 +558,12 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             if let url = URL(string: "https://www.askrindo.co.id") {
                 UIApplication.shared.open(url)
             }
+        }else if collectionView == collectionViewInfo{
+            let infoVC = storyboard?.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+            navigationController?.pushViewController(infoVC, animated: true)
+        }else if collectionView == collectionViewGalery{
+            let galeryVC = storyboard?.instantiateViewController(withIdentifier: "GaleryViewController") as! GaleryViewController
+            navigationController?.pushViewController(galeryVC, animated: true)
         }
     }
     
