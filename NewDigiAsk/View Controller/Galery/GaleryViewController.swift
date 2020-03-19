@@ -9,18 +9,14 @@
 import UIKit
 
 class GaleryViewController: UIViewController {
-    let galeryScrollView = UIScrollView()
     let galeryView = UIView()
     let listGaleryTable = UITableView()
-    let galeryImage = UIImageView()
-    let titleGaleryLabel = UILabel()
-    let timeGaleryIcon = UILabel()
-    let tanggalGalery = UILabel()
-    let shareGaleryButton = UIButton()
-    let underlineGalery = UIView()
     
+    let galeryPhoto = ["galery1","galery2", "galery3", "galery4", "galery5","galery6"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        listGaleryTable.delegate = self
+        listGaleryTable.dataSource = self
         setupUIGalery()
         setupNavBarGalery()
         view.layoutIfNeeded()
