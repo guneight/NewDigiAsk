@@ -50,7 +50,7 @@ extension GaleryViewController : UITableViewDelegate, UITableViewDataSource{
         listGaleryTable.register(galeryTableViewCell.self, forCellReuseIdentifier: "cellGalery")
         listGaleryTable.separatorStyle = .none
         listGaleryTable.showsVerticalScrollIndicator = false
-       
+        listGaleryTable.backgroundColor = .white
     }
     
     func setupNavBarGalery(){

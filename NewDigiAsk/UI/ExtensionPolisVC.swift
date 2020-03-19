@@ -49,6 +49,9 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
         }
         cell.backgroundColor = .white
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        cell.rightDetailProdukButton.addTarget(self, action: #selector(detailPolisRightButtonAction(sender:)), for: .touchUpInside)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(namaProdukAction(sender:)))
+        cell.namaProdukLabel.addGestureRecognizer(tapGesture)
         return cell
     }
     
@@ -58,7 +61,6 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
     
     func setupUI(){
         let width = view.frame.size.width
-        let hegiht = view.frame.size.height
         view.addSubview(polisManageSegmentControl)
         polisManageSegmentControl.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -226,7 +228,8 @@ class PolisdanKlaimTableViewCell : UITableViewCell{
         containerProdukView.addSubview(namaProdukLabel)
         UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: containerProdukView.leadingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: containerProdukView.topAnchor, leadingConstant: 16, trailingConstant: -25, topConstant: 10, heightAnchor: 17, widthAnchor: 0)
         UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Asuransi Kecelakaan Diri", kerning: 0.12)
-    
+        namaProdukLabel.isUserInteractionEnabled = true
+        
         containerProdukView.addSubview(rightDetailProdukButton)
         rightDetailProdukButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

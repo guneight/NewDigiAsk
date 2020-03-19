@@ -44,6 +44,7 @@ class PolisViewController: UIViewController {
         polisPendingTableView.delegate = self
         polisPendingTableView.dataSource = self
         polisManageSegmentControl.addTarget(self, action: #selector(segmentedAction(sender:)), for: .valueChanged)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -53,5 +54,14 @@ class PolisViewController: UIViewController {
         polisPendingTableView.reloadData()
         print("Index : \(segmentedIndex)")
     }
-
+    
+    @objc func detailPolisRightButtonAction(sender : Any){
+        let detailPolisVC  = storyboard?.instantiateViewController(identifier: "DetailPolisViewController") as! DetailPolisViewController
+        navigationController?.pushViewController(detailPolisVC, animated: true)
+    }
+    
+    @objc func namaProdukAction(sender : Any){
+        let detailPolisVC  = storyboard?.instantiateViewController(identifier: "DetailPolisViewController") as! DetailPolisViewController
+        navigationController?.pushViewController(detailPolisVC, animated: true)
+    }
 }

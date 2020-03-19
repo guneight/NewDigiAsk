@@ -264,6 +264,21 @@
             </objects>
             <point key="canvasLocation" x="5449" y="-2282"/>
         </scene>
+        <!--Detail Polis View Controller-->
+        <scene sceneID="nBc-AN-rEM">
+            <objects>
+                <viewController storyboardIdentifier="DetailPolisViewController" id="B0U-Iz-Vpr" customClass="DetailPolisViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AIA-ty-k8K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="L1G-DP-dzf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ui7-aG-clY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6238" y="-2283"/>
+        </scene>
         <!--Ambil FotoKTP View Controller-->
         <scene sceneID="T3T-ao-j8D">
             <objects>

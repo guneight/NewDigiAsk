@@ -16,6 +16,7 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellInfo", for: indexPath) as! infoListTableViewCell
         cell.selectionStyle = .none
+        cell.backgroundColor = .white
         return cell
     }
     
