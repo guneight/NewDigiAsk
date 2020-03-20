@@ -52,6 +52,10 @@ class DetailPolisViewController: UIViewController {
         setupUIDetailPolis()
         setupNavBarDeatailPolis()
         view.layoutIfNeeded()
+         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(detailAsuransiAction(sender:)))
+        namaProdukAsuransiLabel.addGestureRecognizer(tapGesture)
+        rightButton.addTarget(self, action: #selector(righButtonAction(sender:)), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
     
@@ -62,6 +66,17 @@ class DetailPolisViewController: UIViewController {
     @objc func beliLagiAction(sender : Any){
         
     }
-
+    
+    
+    @objc func detailAsuransiAction(sender: Any){
+        let detailProdukPolisVC = storyboard?.instantiateViewController(identifier: "DetailProdukPolisViewController") as! DetailProdukPolisViewController
+        navigationController?.pushViewController(detailProdukPolisVC, animated: true)
+        
+    }
+    
+    @objc func righButtonAction(sender : Any){
+        let detailProdukPolisVC = storyboard?.instantiateViewController(identifier: "DetailProdukPolisViewController") as! DetailProdukPolisViewController
+        navigationController?.pushViewController(detailProdukPolisVC, animated: true)
+    }
 
 }

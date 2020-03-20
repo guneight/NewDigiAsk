@@ -64,6 +64,8 @@
 		67D631A22420E65C00197A39 /* ExtensionGaleryVC-.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D631A12420E65C00197A39 /* ExtensionGaleryVC-.swift */; };
 		67EA32492423CE7800ED9F1F /* DetailPolisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA32482423CE7800ED9F1F /* DetailPolisViewController.swift */; };
 		67EA324C2423CEC400ED9F1F /* ExtensionDetailPolisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA324B2423CEC400ED9F1F /* ExtensionDetailPolisVC.swift */; };
+		67EA324E24247F7200ED9F1F /* DetailProdukPolisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA324D24247F7200ED9F1F /* DetailProdukPolisViewController.swift */; };
+		67EA325024247F8F00ED9F1F /* ExtensionDetailProdukPolisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA324F24247F8F00ED9F1F /* ExtensionDetailProdukPolisVC.swift */; };
 		67EE59132407D73500404C6E /* IdentitasTertanggungdanPenerimaManfaatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EE59122407D73500404C6E /* IdentitasTertanggungdanPenerimaManfaatViewController.swift */; };
 		67EE59152407D82900404C6E /* ExtensionIdentitasTertanggungPenerimaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EE59142407D82900404C6E /* ExtensionIdentitasTertanggungPenerimaVC.swift */; };
 		67EE59172408F05600404C6E /* KeranjangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EE59162408F05600404C6E /* KeranjangViewController.swift */; };
@@ -160,6 +162,8 @@
 		67D631A12420E65C00197A39 /* ExtensionGaleryVC-.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExtensionGaleryVC-.swift"; sourceTree = "<group>"; };
 		67EA32482423CE7800ED9F1F /* DetailPolisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPolisViewController.swift; sourceTree = "<group>"; };
 		67EA324B2423CEC400ED9F1F /* ExtensionDetailPolisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDetailPolisVC.swift; sourceTree = "<group>"; };
+		67EA324D24247F7200ED9F1F /* DetailProdukPolisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProdukPolisViewController.swift; sourceTree = "<group>"; };
+		67EA324F24247F8F00ED9F1F /* ExtensionDetailProdukPolisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDetailProdukPolisVC.swift; sourceTree = "<group>"; };
 		67EE59122407D73500404C6E /* IdentitasTertanggungdanPenerimaManfaatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentitasTertanggungdanPenerimaManfaatViewController.swift; sourceTree = "<group>"; };
 		67EE59142407D82900404C6E /* ExtensionIdentitasTertanggungPenerimaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionIdentitasTertanggungPenerimaVC.swift; sourceTree = "<group>"; };
 		67EE59162408F05600404C6E /* KeranjangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeranjangViewController.swift; sourceTree = "<group>"; };
@@ -399,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				67EA32482423CE7800ED9F1F /* DetailPolisViewController.swift */,
+				67EA324D24247F7200ED9F1F /* DetailProdukPolisViewController.swift */,
 			);
 			path = Polis;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				67EA324B2423CEC400ED9F1F /* ExtensionDetailPolisVC.swift */,
+				67EA324F24247F8F00ED9F1F /* ExtensionDetailProdukPolisVC.swift */,
 			);
 			path = PolisVC;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				67F06E14241B495D00B277B2 /* ExtensionKartuKeluargaVC.swift in Sources */,
 				67392AF32403B3A2007630DF /* ProdukViewController.swift in Sources */,
 				67924D97240E57170099F26F /* ProfileViewController.swift in Sources */,
+				67EA324E24247F7200ED9F1F /* DetailProdukPolisViewController.swift in Sources */,
 				67924D94240CDCF10099F26F /* ExtensionDetailBayarVC.swift in Sources */,
 				6728F09F24050BCA00A2C605 /* PresentationManager.swift in Sources */,
 				6728574324109F24005E3B6D /* KlaimViewController.swift in Sources */,
@@ -593,6 +600,7 @@
 				679C71EC240F85870092B1FA /* EditProfileViewController.swift in Sources */,
 				67F06E06241A264300B277B2 /* ProsesKlaimViewController.swift in Sources */,
 				67EA32492423CE7800ED9F1F /* DetailPolisViewController.swift in Sources */,
+				67EA325024247F8F00ED9F1F /* ExtensionDetailProdukPolisVC.swift in Sources */,
 				67F06E1C241B7E6D00B277B2 /* DeskripsiProdukViewController.swift in Sources */,
 				679C71F224108E0D0092B1FA /* ExtensionTentangKamiVC.swift in Sources */,
 				67392AF124018A69007630DF /* LengkapiDataViewController.swift in Sources */,

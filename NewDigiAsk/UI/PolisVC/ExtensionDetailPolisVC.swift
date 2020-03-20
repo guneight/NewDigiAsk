@@ -77,8 +77,9 @@ extension DetailPolisViewController{
         produkView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
         produkView.addSubview(namaProdukAsuransiLabel)
-        UIHelper.makeLabel(label: namaProdukAsuransiLabel, corner: 0, allignment: .left, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: produkView.topAnchor, leadingConstant: 15, trailingConstant: -35, topConstant: 10, heightAnchor: 17, widthAnchor: 0)
+        UIHelper.makeLabel(label: namaProdukAsuransiLabel, corner: 0, allignment: .left, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: produkView.topAnchor, leadingConstant: 15, trailingConstant: 0, topConstant: 10, heightAnchor: 17, widthAnchor: 0)
         UIHelper.setTextLabel(label: namaProdukAsuransiLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Asuransi Kecelakaan Diri", kerning: 0.12)
+        namaProdukAsuransiLabel.isUserInteractionEnabled = true
         
         produkView.addSubview(rightButton)
         UIHelper.makeSmallButton(smallButton: rightButton, leadingAnchor: produkView.trailingAnchor, topAnchor: produkView.topAnchor, leadingConstant: -25, topConstant: 12, corner: 0, heightAnchor: 10, widthtAnchor: 6, borderWidth: 0, colorBorder: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
