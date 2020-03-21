@@ -49,6 +49,9 @@ extension MonitoringKlaimViewController: UITableViewDelegate, UITableViewDataSou
         }
         cell.backgroundColor = .white
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        cell.rightDetailProdukButton.addTarget(self, action: #selector(rightButtonAction(sender:)), for: .touchUpInside)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(namaAsuransiAction(sender:)))
+        cell.namaProdukLabel.addGestureRecognizer(tapGesture)
         
         return cell
     }
@@ -60,7 +63,6 @@ extension MonitoringKlaimViewController: UITableViewDelegate, UITableViewDataSou
     
     func setupUI(){
         let width = view.frame.size.width
-        let hegiht = view.frame.size.height
         view.backgroundColor = .white
         view.addSubview(klaimManageSegmentControl)
         klaimManageSegmentControl.translatesAutoresizingMaskIntoConstraints = false

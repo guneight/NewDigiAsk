@@ -54,6 +54,18 @@ class MonitoringKlaimViewController: UIViewController {
         klaimPendingTableView.reloadData()
         print("Index : \(segmentedIndex)")
     }
+    
+    @objc func rightButtonAction(sender : Any){
+        let detailPolisKlaimVC = storyboard?.instantiateViewController(identifier: "DetailPolisKlaimViewController") as! DetailPolisKlaimViewController
+        navigationController?.pushViewController(detailPolisKlaimVC, animated: true)
+        
+    }
+    
+    @objc func namaAsuransiAction(sender : Any){
+        let detailPolisKlaimVC = storyboard?.instantiateViewController(identifier: "DetailPolisKlaimViewController") as! DetailPolisKlaimViewController
+        navigationController?.pushViewController(detailPolisKlaimVC, animated: true)
+        
+    }
 
    
 }

@@ -203,6 +203,31 @@ extension DetailProdukPolisViewController {
                UIHelper.makeView(view: underlineNomorTeleponAhliWaris, leadingAnchor: detailProdukPolisView.leadingAnchor, trailingAnchor: detailProdukPolisView.trailingAnchor, topAnchor: nomorTeleponAhliWarisTextField.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 12, corner: 0, heightAnchor: 1, widthAnchor: 0)
                underlineNomorTeleponAhliWaris.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 0.5)
         
+        detailProdukPolisView.addSubview(backgroundMasaAktif)
+        UIHelper.makeView(view: backgroundMasaAktif, leadingAnchor: detailProdukPolisView.leadingAnchor, trailingAnchor: detailProdukPolisView.trailingAnchor, topAnchor: underlineNomorTeleponAhliWaris.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 24, corner: 0, heightAnchor: 47, widthAnchor: 0)
+        backgroundMasaAktif.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
+        
+        backgroundMasaAktif.addSubview(masaAktifLabel)
+        UIHelper.makeLabel(label: masaAktifLabel, corner: 0, allignment: .left, leadingAnchor: backgroundMasaAktif.leadingAnchor, trailingAnchor: backgroundMasaAktif.trailingAnchor, topAnchor: backgroundMasaAktif.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 16, heightAnchor: 16, widthAnchor: 0)
+        UIHelper.setTextLabel(label: masaAktifLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Masa Aktif", kerning: 0.12)
+        
+        detailProdukPolisView.addSubview(pilihWaktuAktifPolisLabel)
+        UIHelper.makeLabel(label: pilihWaktuAktifPolisLabel, corner: 0, allignment: .left, leadingAnchor: detailProdukPolisView.leadingAnchor, trailingAnchor: detailProdukPolisView.trailingAnchor, topAnchor: backgroundMasaAktif.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 13, heightAnchor: 12, widthAnchor: 0)
+        UIHelper.setTextLabel(label: pilihWaktuAktifPolisLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 10, text: "Pilih waktu aktif Polis", kerning: 0.5)
+        
+        detailProdukPolisView.addSubview(masaAktifTextField)
+        UIHelper.makeTetxField(textField: masaAktifTextField, leadingAnchor: detailProdukPolisView.leadingAnchor, trailingAnchor: detailProdukPolisView.trailingAnchor, topAnchor: pilihWaktuAktifPolisLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 13, corner: 0, heightAnchor: 19, textColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
+        
+        UIHelper.setTextField(textField: masaAktifTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .medium, fontSize: 16, text: "20/Desember/2019", kerning: 0.8)
+      
+        
+        detailProdukPolisView.addSubview(underlinePilihWaktuPolis)
+        UIHelper.makeView(view: underlinePilihWaktuPolis, leadingAnchor: detailProdukPolisView.leadingAnchor, trailingAnchor: detailProdukPolisView.trailingAnchor, topAnchor: masaAktifTextField.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 12, corner: 0, heightAnchor: 1, widthAnchor: 0)
+        underlinePilihWaktuPolis.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 0.5)
+        
+        
+        
+        
         
     }
     

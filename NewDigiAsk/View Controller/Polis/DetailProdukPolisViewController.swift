@@ -53,6 +53,11 @@ class DetailProdukPolisViewController: UIViewController {
     let nomorTeleponAhliWarisTextField = UITextField()
     let underlineNomorTeleponAhliWaris = UIView()
     
+    let backgroundMasaAktif = UIView()
+    let masaAktifLabel = UILabel()
+    let pilihWaktuAktifPolisLabel = UILabel()
+    let masaAktifTextField = UITextField()
+    let underlinePilihWaktuPolis = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
