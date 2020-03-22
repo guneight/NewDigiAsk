@@ -525,8 +525,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout
-        collectionViewLayout: UICollectionViewLayout,
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == collectionViewPromo {
             return CGFloat(0)
