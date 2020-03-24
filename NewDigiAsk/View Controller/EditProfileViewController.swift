@@ -54,7 +54,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         view.layoutIfNeeded()
         setupNavBar()
         setupUI()
-         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         // Do any additional setup after loading the view.

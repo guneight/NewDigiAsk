@@ -22,7 +22,7 @@ func UiSetup(){
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 //            scrollView.heightAnchor.constraint(equalToConstant: 1282),
             ])
-        scrollView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        scrollView.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         scrollView.isScrollEnabled = true
         scrollView.showsVerticalScrollIndicator = false
         

@@ -44,7 +44,7 @@ class JenisProdukViewController: UIViewController {
         jenisProdukDetailVC.namajenisProdukDetailLabel.text = jenisProdukLabel.text
         jenisProdukDetailVC.startHargaProdukDetailLabel.text = startHargaProdukLabel.text
         jenisProdukDetailVC.deskripsiJenisProdukDetail.text = deskripsiJenisProdukLabel.text
-        print( "deskripsi : \(  jenisProdukDetailVC.deskripsiJenisProdukDetail.text)")
+        print( "deskripsi : \(  String(describing: jenisProdukDetailVC.deskripsiJenisProdukDetail.text))")
         jenisProdukDetailVC.modalPresentationStyle = UIModalPresentationStyle.automatic
         jenisProdukDetailVC.transitioningDelegate = PresentationDelegate
         jenisProdukDetailVC.modalPresentationStyle = .custom

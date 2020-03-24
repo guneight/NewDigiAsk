@@ -30,7 +30,7 @@ extension KlaimViewController : UITableViewDelegate, UITableViewDataSource{
     
     func setupUI(){
         let width = view.frame.size.width
-        let hegiht = view.frame.size.height
+//        let hegiht = view.frame.size.height
         view.backgroundColor = .white
         view.addSubview(polisSearchBar)
         polisSearchBar.translatesAutoresizingMaskIntoConstraints = false

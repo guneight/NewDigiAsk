@@ -53,7 +53,7 @@ class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController {
         setupUI()
         view.layoutIfNeeded()
         tambahKerajangbutton.addTarget(self, action: #selector(tambahKeranjangAction(sender:)), for: .touchUpInside)
-         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }

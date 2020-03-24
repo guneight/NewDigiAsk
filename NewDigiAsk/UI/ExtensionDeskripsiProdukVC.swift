@@ -185,7 +185,7 @@ extension DeskripsiProdukViewController{
         namaProdukLabel.textColor = .white
         
         produkBaseView.addSubview(deskripsiProdukLabel)
-        var text = "Memberikan perlindungan atas risiko kematian, cacat tetap, biaya perawatan dan atau pengobatan yang secara langsung disebabkan suatu kecelakaan. Kecelakaan yaitu suatu kejadian atau peristiwa yang mengandung unsur kekerasan, baik bersifat fisik maupun kimia, yang datangnya secara tiba-tiba, termasuk juga kecelakaan yaitu yang disebabkan karena keracunan makanan, uap dan gas, jatuh ke dalam air atau tenggelam."
+        let text = "Memberikan perlindungan atas risiko kematian, cacat tetap, biaya perawatan dan atau pengobatan yang secara langsung disebabkan suatu kecelakaan. Kecelakaan yaitu suatu kejadian atau peristiwa yang mengandung unsur kekerasan, baik bersifat fisik maupun kimia, yang datangnya secara tiba-tiba, termasuk juga kecelakaan yaitu yang disebabkan karena keracunan makanan, uap dan gas, jatuh ke dalam air atau tenggelam."
         //        let heightLabel = deskripsiProdukLabel.systemLayoutSizeFitting(CGSize(width: produkBaseView.frame.size.width-90, height: UIView.layoutFittingCompressedSize.height), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
         UIHelper.makeLabel(label: deskripsiProdukLabel, corner: 0, allignment: .left, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkDetailImage.bottomAnchor, leadingConstant: 70, trailingConstant: -20, topConstant: 17, heightAnchor: 200, widthAnchor: 0)
         UIHelper.setTextLabel(label: deskripsiProdukLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.66), weight: .medium, fontSize: 14, text: text, kerning: 0.04)
@@ -228,7 +228,7 @@ extension DeskripsiProdukViewController{
             deskripsiGantiRugi.bottomAnchor.constraint(equalTo: gantiRugiContainerView.bottomAnchor, constant: -12)
         ])
         
-        var textGantiRugi = "Memberikan ganti rugi kepada tertanggung/ahli waris apabila tertanggung mengalami kecelakaan yang mengakibatkan:Meninggal dunia, Cacat tetap total atau cacat tetap sebagian, Biaya perawatan dan atau pengobatan"
+        let textGantiRugi = "Memberikan ganti rugi kepada tertanggung/ahli waris apabila tertanggung mengalami kecelakaan yang mengakibatkan:Meninggal dunia, Cacat tetap total atau cacat tetap sebagian, Biaya perawatan dan atau pengobatan"
         UIHelper.setTextLabel(label: deskripsiGantiRugi , fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1), weight: .regular, fontSize: 12, text: textGantiRugi, kerning: 0.06)
         deskripsiGantiRugi.numberOfLines = 0
         
@@ -260,7 +260,7 @@ extension DeskripsiProdukViewController{
             deskripsiPenggantiBiayaLabel.topAnchor.constraint(equalTo: linePenggatianBiayaLabel.bottomAnchor, constant: 15),
             deskripsiPenggantiBiayaLabel.bottomAnchor.constraint(equalTo: penggantiBiayacontainerView.bottomAnchor, constant: -12)
         ])
-        var textPenggantianBiaya = "Memberikan ganti rugi akibat kecelakaan atas biaya-biaya yang dikerluarkan dengan tambahan premi berupa:Penggantian biaya expatriasy atau pemulangan jenazah dari tempat kejadian kecelakaan Penggantian biaya pemakaman Penggantian biaya ambulans Penggantian biaya pengurusan dokumen"
+        let textPenggantianBiaya = "Memberikan ganti rugi akibat kecelakaan atas biaya-biaya yang dikerluarkan dengan tambahan premi berupa:Penggantian biaya expatriasy atau pemulangan jenazah dari tempat kejadian kecelakaan Penggantian biaya pemakaman Penggantian biaya ambulans Penggantian biaya pengurusan dokumen"
         UIHelper.setTextLabel(label: deskripsiPenggantiBiayaLabel , fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: textPenggantianBiaya, kerning: 0.06)
         deskripsiPenggantiBiayaLabel.numberOfLines = 0
         

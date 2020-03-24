@@ -22,7 +22,9 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         cell.deskripsiManfaatLabel.text = "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam"
         cell.nominalLabel.text = "Rp 250.000,-"
         
-//        cell.rightArrowButton.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        cell.rightArrowButton.addTarget(self, action: #selector(rightButtonAction(sender:)), for: .touchUpInside)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(namaProdukAction(sender:)))
+        cell.namaProdukLabel.addGestureRecognizer(tapGesture)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -111,8 +113,9 @@ class daftarProdukKeranjangTableViewCell: UITableViewCell {
         checkCellButton.contentMode = .center
         
         containerView.addSubview(namaProdukLabel)
-        UIHelper.makeSmalllabel(smallLabel: namaProdukLabel, leadingAnchor: checkCellButton.trailingAnchor, topAnchor: containerView.topAnchor, leadingConstant: 12, topConstant: 13, corner: 0, heightAnchor: 18, widthtAnchor: containerView.frame.size.width-43)
+        UIHelper.makeSmalllabel(smallLabel: namaProdukLabel, leadingAnchor: checkCellButton.trailingAnchor, topAnchor: containerView.topAnchor, leadingConstant: 12, topConstant: 13, corner: 0, heightAnchor: 18, widthtAnchor: containerView.frame.size.width)
         UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
+        namaProdukLabel.isUserInteractionEnabled = true
         
         containerView.addSubview(rightArrowButton)
         rightArrowButton.translatesAutoresizingMaskIntoConstraints = false

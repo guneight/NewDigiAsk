@@ -13,7 +13,7 @@ extension PembayaranViewController{
     func setupUI(){
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
               gesture.direction = .down
-        let height = view.frame.size.height
+//        let height = view.frame.size.height
         
         view.backgroundColor = .clear
         

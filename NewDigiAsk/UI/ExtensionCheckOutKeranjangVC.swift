@@ -21,6 +21,11 @@ extension CheckOutKeranjangViewController : UITableViewDelegate, UITableViewData
         cell.deskripsiProduklabel.text = "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam"
         cell.hargaLabel.text = "Rp 250.000,-"
         cell.iconProdukImage.image = UIImage(named: "\(namaProdukArray[indexPath.row])")
+        
+        cell.rightButton.addTarget(self, action: #selector(rightButtonAction(sender:)), for: .touchUpInside)
+        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(namaProdukAction(sender:)))
+        cell.namaProdukLabel.addGestureRecognizer(tapgesture)
+        
         return cell
     }
     
@@ -93,9 +98,9 @@ class checkOutTableCell : UITableViewCell {
                containerView.backgroundColor = .white
         
         containerView.addSubview(namaProdukLabel)
-        UIHelper.makeSmalllabel(smallLabel: namaProdukLabel, leadingAnchor: containerView.leadingAnchor, topAnchor: containerView.topAnchor, leadingConstant: 17, topConstant: 14, corner: 0, heightAnchor: 18, widthtAnchor: containerView.frame.size.width-43)
+        UIHelper.makeSmalllabel(smallLabel: namaProdukLabel, leadingAnchor: containerView.leadingAnchor, topAnchor: containerView.topAnchor, leadingConstant: 17, topConstant: 14, corner: 0, heightAnchor: 18, widthtAnchor: containerView.frame.size.width)
         UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
-        
+        namaProdukLabel.isUserInteractionEnabled = true
         containerView.addSubview(rightButton)
              rightButton.translatesAutoresizingMaskIntoConstraints = false
              NSLayoutConstraint.activate([

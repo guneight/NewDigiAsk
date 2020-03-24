@@ -491,6 +491,21 @@
             </objects>
             <point key="canvasLocation" x="9266" y="695"/>
         </scene>
+        <!--Detail Polis Beli View Controller-->
+        <scene sceneID="dWs-C5-lpv">
+            <objects>
+                <viewController storyboardIdentifier="DetailPolisBeliViewController" id="8cR-Fa-CrS" customClass="DetailPolisBeliViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="99p-5n-Noa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="jkY-gA-khN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcz-wp-FEe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9286" y="1390"/>
+        </scene>
         <!--Pembayaran View Controller-->
         <scene sceneID="xsG-tE-2nZ">
             <objects>

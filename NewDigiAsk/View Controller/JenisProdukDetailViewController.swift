@@ -32,7 +32,7 @@ class JenisProdukDetailViewController: UIViewController {
         super.viewDidLoad()
         daftarPremiTable.reloadData()
 
-        print("namajenisProdukDetailLabel : \(namajenisProdukDetailLabel.text)")
+        print("namajenisProdukDetailLabel : \(String(describing: namajenisProdukDetailLabel.text))")
         // Do any additional setup after loading the view.
     }
     

@@ -31,6 +31,8 @@
 		676B7C57240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B7C56240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift */; };
 		677EFC1C2411EE0600656CE4 /* MonitoringKlaimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677EFC1B2411EE0600656CE4 /* MonitoringKlaimViewController.swift */; };
 		677EFC1E2411EE1B00656CE4 /* ExtensionMonitoringKlaimVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677EFC1D2411EE1B00656CE4 /* ExtensionMonitoringKlaimVC.swift */; };
+		678E02CD2429D92600D7D935 /* DetailPolisBeliViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E02CC2429D92600D7D935 /* DetailPolisBeliViewController.swift */; };
+		678E02CF2429D94200D7D935 /* ExtensionDetailPolisBeliVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E02CE2429D94200D7D935 /* ExtensionDetailPolisBeliVC.swift */; };
 		6791B5BF23F3B8E800E33F0C /* ExtensionCollectionBannerPromo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6791B5BE23F3B8E800E33F0C /* ExtensionCollectionBannerPromo.swift */; };
 		67924D8E240CD6700099F26F /* BayarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67924D8D240CD6700099F26F /* BayarViewController.swift */; };
 		67924D90240CD6850099F26F /* ExtensionBayarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67924D8F240CD6850099F26F /* ExtensionBayarVC.swift */; };
@@ -138,6 +140,8 @@
 		676B7C56240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCheckOutKeranjangVC.swift; sourceTree = "<group>"; };
 		677EFC1B2411EE0600656CE4 /* MonitoringKlaimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringKlaimViewController.swift; sourceTree = "<group>"; };
 		677EFC1D2411EE1B00656CE4 /* ExtensionMonitoringKlaimVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMonitoringKlaimVC.swift; sourceTree = "<group>"; };
+		678E02CC2429D92600D7D935 /* DetailPolisBeliViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPolisBeliViewController.swift; sourceTree = "<group>"; };
+		678E02CE2429D94200D7D935 /* ExtensionDetailPolisBeliVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDetailPolisBeliVC.swift; sourceTree = "<group>"; };
 		6791B5BE23F3B8E800E33F0C /* ExtensionCollectionBannerPromo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionBannerPromo.swift; sourceTree = "<group>"; };
 		67924D8D240CD6700099F26F /* BayarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayarViewController.swift; sourceTree = "<group>"; };
 		67924D8F240CD6850099F26F /* ExtensionBayarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionBayarVC.swift; sourceTree = "<group>"; };
@@ -409,6 +413,7 @@
 				67EA32482423CE7800ED9F1F /* DetailPolisViewController.swift */,
 				67EA324D24247F7200ED9F1F /* DetailProdukPolisViewController.swift */,
 				67EA325124250DF900ED9F1F /* DetailPolisKlaimViewController.swift */,
+				678E02CC2429D92600D7D935 /* DetailPolisBeliViewController.swift */,
 			);
 			path = Polis;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 				67EA324B2423CEC400ED9F1F /* ExtensionDetailPolisVC.swift */,
 				67EA324F24247F8F00ED9F1F /* ExtensionDetailProdukPolisVC.swift */,
 				67EA325324250E1800ED9F1F /* ExtensionDetailPolisKlaimVC.swift */,
+				678E02CE2429D94200D7D935 /* ExtensionDetailPolisBeliVC.swift */,
 			);
 			path = PolisVC;
 			sourceTree = "<group>";
@@ -596,6 +602,7 @@
 				67D631932420A5A000197A39 /* InfoViewController.swift in Sources */,
 				67F06E10241B456800B277B2 /* ExtensionSuratBuktiKematianVC.swift in Sources */,
 				67D631982420D34200197A39 /* InfoDetailViewController.swift in Sources */,
+				678E02CD2429D92600D7D935 /* DetailPolisBeliViewController.swift in Sources */,
 				67F06E0E241B454200B277B2 /* SuratBuktiKematianViewController.swift in Sources */,
 				67924D92240CDCE10099F26F /* DetailBayarViewController.swift in Sources */,
 				67288E8923FBA19F002E257C /* ExtensionHomeMenu.swift in Sources */,
@@ -607,6 +614,7 @@
 				679C71EC240F85870092B1FA /* EditProfileViewController.swift in Sources */,
 				67F06E06241A264300B277B2 /* ProsesKlaimViewController.swift in Sources */,
 				67EA32492423CE7800ED9F1F /* DetailPolisViewController.swift in Sources */,
+				678E02CF2429D94200D7D935 /* ExtensionDetailPolisBeliVC.swift in Sources */,
 				67EA325024247F8F00ED9F1F /* ExtensionDetailProdukPolisVC.swift in Sources */,
 				67F06E1C241B7E6D00B277B2 /* DeskripsiProdukViewController.swift in Sources */,
 				679C71F224108E0D0092B1FA /* ExtensionTentangKamiVC.swift in Sources */,

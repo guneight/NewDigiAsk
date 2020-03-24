@@ -34,5 +34,19 @@ class CheckOutKeranjangViewController: UIViewController {
                pembayaranVC.transitioningDelegate = PresentationDelegate
                present(pembayaranVC, animated: true, completion: nil)
     }
+    
+    @objc func namaProdukAction(sender:Any){
+        let detailPolisBeliVC = storyboard?.instantiateViewController(identifier: "DetailPolisBeliViewController") as! DetailPolisBeliViewController
+        detailPolisBeliVC.modalPresentationStyle = .custom
+        detailPolisBeliVC.transitioningDelegate = PresentationDelegate
+        present(detailPolisBeliVC, animated: true, completion: nil)
+    }
+    
+    @objc func rightButtonAction(sender:Any){
+           let detailPolisBeliVC = storyboard?.instantiateViewController(identifier: "DetailPolisBeliViewController") as! DetailPolisBeliViewController
+           detailPolisBeliVC.modalPresentationStyle = .custom
+           detailPolisBeliVC.transitioningDelegate = PresentationDelegate
+           present(detailPolisBeliVC, animated: true, completion: nil)
+       }
 
 }
