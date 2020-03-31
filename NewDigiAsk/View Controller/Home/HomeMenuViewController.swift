@@ -42,6 +42,7 @@ class HomeMenuViewController: UIViewController {
         profileButton.addTarget(self, action: #selector(tabBarProfileAction(sender:)), for: .touchUpInside)
         beliButton.addTarget(self, action: #selector(tabBarBeliAction(sender:)), for: .touchUpInside)
         klaimButton.addTarget(self, action: #selector(tabBarKlaim(sender:)), for: .touchUpInside)
+        notifButton.addTarget(self, action: #selector(notificationAction(sender:)), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,27 +54,34 @@ class HomeMenuViewController: UIViewController {
     }
     
     
-    @objc func tabBarProfileAction (sender : Any){
-//        let DaftarVC = storyboard?.instantiateViewController(identifier: "DaftarViewController")  as! DaftarViewController
+    @objc func tabBarProfileAction (sender : UIButton){
+//        let DaftarVC = storyboard?.instantiateViewController(identifier: "DaftarAccountViewController")  as! DaftarAccountViewController
 //        self.navigationController?.pushViewController(DaftarVC, animated: true)
 //        print("pressss")
-
+        
+//        let daftarAccountVC = storyboard?.instantiateViewController(identifier: "DaftarAccountViewController") as! DaftarAccountViewController
+//        navigationController?.pushViewController(daftarAccountVC, animated: true)
         let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController")  as! ProfileViewController
                 self.navigationController?.pushViewController(profileVC, animated: true)
-//        print("pressss")
+        print("pressss")
     }
         
-    @objc func tabBarBeliAction(sender : Any){
+    @objc func tabBarBeliAction(sender : UIButton){
         
         let daftarProdukVC = storyboard?.instantiateViewController(identifier : "ProdukViewController" ) as! ProdukViewController
         self.navigationController?.pushViewController(daftarProdukVC, animated: true)
         print("beli")
     }
     
-    @objc func tabBarKlaim(sender : Any){
+    @objc func tabBarKlaim(sender : UIButton){
         
         let polisVC = storyboard?.instantiateViewController(identifier: "KlaimViewController") as! KlaimViewController
         self.navigationController?.pushViewController(polisVC, animated: true)
+    }
+    
+    @objc func notificationAction(sender: UIButton){
+        let notifikasiVC = storyboard?.instantiateViewController(identifier: "NotifikasiViewController") as! NotifikasiViewController
+        self.navigationController?.pushViewController(notifikasiVC, animated: true)
     }
     
     

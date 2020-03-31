@@ -51,8 +51,15 @@ extension InfoDetailViewController{
         infoDetailView.addSubview(infoDetailImage)
         UIHelper.makeImageView(imageView: infoDetailImage, leadingAnchor: infoDetailView.leadingAnchor, topAnchor: tanggalInfoDetailLabel.bottomAnchor, leadingConstant: 24, topConstant: 15, corner: 20, heightAnchor: 160)
         infoDetailImage.trailingAnchor.constraint(equalTo: infoDetailView.trailingAnchor, constant: -24).isActive = true
-        infoDetailImage.backgroundColor = .red
+        infoDetailImage.backgroundColor = .white
+        infoDetailImage.image = UIImage(named: "info-1")
         
+        infoDetailView.addSubview(detailInfoLabel)
+        UIHelper.makeLabel(label: detailInfoLabel, corner: 0, allignment: .left, leadingAnchor: infoDetailView.leadingAnchor, trailingAnchor: infoDetailView.trailingAnchor, topAnchor: infoDetailImage.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 10, heightAnchor: 180, widthAnchor: 0)
+        
+        detailInfoLabel.backgroundColor = .white
+        detailInfoLabel.numberOfLines = 0
+        UIHelper.setTextLabel(label: detailInfoLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .light, fontSize: 12, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan. Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan.", kerning: 0.4)
     }
     
     func setupNavBarInfoDetail(){

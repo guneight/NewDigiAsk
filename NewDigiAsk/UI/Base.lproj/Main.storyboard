@@ -23,6 +23,21 @@
             </objects>
             <point key="canvasLocation" x="4677.6000000000004" y="-18.472906403940886"/>
         </scene>
+        <!--Notifikasi View Controller-->
+        <scene sceneID="CNM-Yd-iza">
+            <objects>
+                <viewController storyboardIdentifier="NotifikasiViewController" id="LVC-2d-3EY" customClass="NotifikasiViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TBV-XU-Znx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wX2-0M-DVt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ELE-MC-HwB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4678" y="3496"/>
+        </scene>
         <!--Produk View Controller-->
         <scene sceneID="QPO-Ka-4Tu">
             <objects>
@@ -143,10 +158,10 @@
             </objects>
             <point key="canvasLocation" x="7023" y="695"/>
         </scene>
-        <!--Daftar View Controller-->
+        <!--Daftar Account View Controller-->
         <scene sceneID="29b-D1-BcJ">
             <objects>
-                <viewController storyboardIdentifier="DaftarViewController" id="q19-eE-ZM6" customClass="DaftarViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DaftarAccountViewController" id="q19-eE-ZM6" customClass="DaftarAccountViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4SJ-vx-ixK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,6 +248,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZn-cP-BZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7016" y="-778"/>
+        </scene>
+        <!--List Tertanggung View Controller-->
+        <scene sceneID="oaQ-GK-SkA">
+            <objects>
+                <viewController storyboardIdentifier="ListTertanggungViewController" id="hib-CI-h74" customClass="ListTertanggungViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ZK-1v-I7G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Zm4-LX-3PM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ihz-tf-FB0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5446" y="-3698"/>
+        </scene>
+        <!--Daftar Tertanggung View Controller-->
+        <scene sceneID="KVi-ie-d26">
+            <objects>
+                <viewController storyboardIdentifier="DaftarTertanggungViewController" id="Gzz-pO-L3R" customClass="DaftarTertanggungViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wgz-Cz-Jj6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0tm-GR-tub"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzx-qI-8zC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6238" y="-3698"/>
+        </scene>
+        <!--Add Tertanggung View Controller-->
+        <scene sceneID="PRV-yT-4GL">
+            <objects>
+                <viewController storyboardIdentifier="AddTertanggungViewController" id="iti-GM-tz5" customClass="AddTertanggungViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A6u-2L-4bS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LJJ-9H-vQB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Zj-wX-gfo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7022" y="-3698"/>
         </scene>
         <!--Monitoring Klaim View Controller-->
         <scene sceneID="SBf-Ud-oYN">

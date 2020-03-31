@@ -42,6 +42,12 @@ extension ProfileViewController : UITableViewDataSource, UITableViewDelegate{
         }else if menuProfile[indexPath.row] == "Monitoring Klaim"{
             let monitoringKlaimVC = storyboard?.instantiateViewController(withIdentifier: "MonitoringKlaimViewController") as! MonitoringKlaimViewController
             self.navigationController?.pushViewController(monitoringKlaimVC, animated: true)
+        }else if menuProfile[indexPath.row] == "List Tertanggung"{
+            let listTertanggungVC = storyboard?.instantiateViewController(identifier: "ListTertanggungViewController") as! ListTertanggungViewController
+            self.navigationController?.pushViewController(listTertanggungVC, animated: true)
+        }else if menuProfile[indexPath.row] == "List Penerima Manfaat"{
+            let listPenerimaManfaatVC = storyboard?.instantiateViewController(identifier: "DaftarTertanggungViewController") as! DaftarTertanggungViewController
+            self.navigationController?.pushViewController(listPenerimaManfaatVC, animated: true)
         }
         
     }

@@ -18,6 +18,7 @@ extension GaleryViewController : UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellGalery", for: indexPath) as! galeryTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.galeryImage.image = UIImage(named: "\(galeryPhoto[indexPath.row])")
+        cell.backgroundColor = .white
         return cell
     }
     

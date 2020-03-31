@@ -22,6 +22,7 @@ func UiSetup(){
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 //            scrollView.heightAnchor.constraint(equalToConstant: 1282),
             ])
+        
         scrollView.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         scrollView.isScrollEnabled = true
         scrollView.showsVerticalScrollIndicator = false
@@ -116,7 +117,8 @@ func UiSetup(){
             backcontainerView.heightAnchor.constraint(equalToConstant: 100)
             ])
         backcontainerView.backgroundColor = .clear
-    
+        backcontainerView.layoutIfNeeded()
+
 
         view.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -124,7 +126,7 @@ func UiSetup(){
             containerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            containerView.heightAnchor.constraint(equalToConstant: 40)
+            containerView.heightAnchor.constraint(equalToConstant: 70)
             ])
 //        containerView.layer.borderWidth = 1
 //        containerView.layer.borderColor = #colorLiteral(red: 0.9294117647, green: 0.9294117647, blue: 0.9294117647, alpha: 1)
@@ -138,8 +140,9 @@ func UiSetup(){
                tabBarView.topAnchor.constraint(equalTo: backcontainerView.topAnchor),
                tabBarView.heightAnchor.constraint(equalToConstant: 80.2)
             ])
-    tabBarView.backgroundColor = .clear
-        
+        tabBarView.backgroundColor = .clear
+        tabBarView.layoutIfNeeded()
+    
         tabBarView.addSubview(imageBarView)
         imageBarView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -149,6 +152,7 @@ func UiSetup(){
             imageBarView.bottomAnchor.constraint(equalTo: tabBarView.bottomAnchor, constant: -10)
             ])
         imageBarView.image = UIImage(named: "bar.png")
+        imageBarView.layoutIfNeeded()
     
         tabBarView.addSubview(homeButton)
         homeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -159,7 +163,8 @@ func UiSetup(){
             homeButton.widthAnchor.constraint(equalToConstant: 48)
             ])
         homeButton.setImage(UIImage(named: "digiaskIcon.png"), for: .normal)
-        
+        homeButton.layoutIfNeeded()
+    
         tabBarView.addSubview(klaimButton)
         klaimButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -169,7 +174,8 @@ func UiSetup(){
             klaimButton.widthAnchor.constraint(equalToConstant: 48)
             ])
         klaimButton.setImage(UIImage(named: "klaimNormal.png"), for: .normal)
-        
+        klaimButton.layoutIfNeeded()
+    
         tabBarView.addSubview(beliButton)
         beliButton.translatesAutoresizingMaskIntoConstraints = false
         beliButton.centerXAnchor.constraint(equalTo: tabBarView.centerXAnchor).isActive = true

@@ -133,8 +133,9 @@ class infoListTableViewCell : UITableViewCell{
         
         contentView.addSubview(headerInfoListLabel)
         UIHelper.makeLabel(label: headerInfoListLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 0, trailingConstant: -110, topConstant: 0, heightAnchor: 30, widthAnchor: 0)
-        UIHelper.setTextLabel(label: headerInfoListLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 13, text: " ", kerning: 0.13)
-        headerInfoListLabel.backgroundColor = .gray
+        UIHelper.setTextLabel(label: headerInfoListLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 13, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan.", kerning: 0.13)
+        headerInfoListLabel.backgroundColor = .white
+        headerInfoListLabel.numberOfLines = 0
 
         contentView.addSubview(timeIconInfoListImage)
         UIHelper.makeImageView(imageView: timeIconInfoListImage, leadingAnchor: contentView.leadingAnchor, topAnchor: headerInfoListLabel.bottomAnchor, leadingConstant: 0, topConstant: 5, corner: 0, heightAnchor: 10)
@@ -144,7 +145,7 @@ class infoListTableViewCell : UITableViewCell{
         contentView.addSubview(tanggalInfoListLabel)
         UIHelper.makeLabel(label: tanggalInfoListLabel, corner: 0, allignment: .left, leadingAnchor: timeIconInfoListImage.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: headerInfoListLabel.bottomAnchor, leadingConstant: 7, trailingConstant: -110, topConstant: 5, heightAnchor: 10, widthAnchor: 0)
         UIHelper.setTextLabel(label: tanggalInfoListLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1), weight: .bold, fontSize: 8, text: " 24 Oktober 2019", kerning: 0.4)
-        tanggalInfoListLabel.backgroundColor = .gray
+        tanggalInfoListLabel.backgroundColor = .white
 
         contentView.addSubview(infoListImage)
         infoListImage.translatesAutoresizingMaskIntoConstraints = false
@@ -155,7 +156,7 @@ class infoListTableViewCell : UITableViewCell{
             infoListImage.widthAnchor.constraint(equalToConstant: 95),
             infoListImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
-        infoListImage.backgroundColor = .yellow
+        infoListImage.backgroundColor = .white
         infoListImage.contentMode = .scaleAspectFit
         infoListImage.image = UIImage(named: "info-1")
     }

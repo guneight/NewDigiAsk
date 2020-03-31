@@ -70,11 +70,11 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         
         JenisProdukContainerView.addSubview(namajenisProdukDetailLabel)
         UIHelper.makeLabel(label: namajenisProdukDetailLabel, corner: 0, allignment: .left, leadingAnchor: iconJenisProdukDetailImage.trailingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: JenisProdukContainerView.topAnchor, leadingConstant: 18, trailingConstant: -18, topConstant: 18, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namajenisProdukDetailLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
+        UIHelper.setTextLabel(label: namajenisProdukDetailLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text:jenisProduk[0], kerning: 0.12)
         
         JenisProdukContainerView.addSubview(startHargaProdukDetailLabel)
         UIHelper.makeLabel(label: startHargaProdukDetailLabel, corner: 0, allignment: .left, leadingAnchor: iconJenisProdukDetailImage.trailingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: namajenisProdukDetailLabel.bottomAnchor , leadingConstant: 18, trailingConstant: -18, topConstant: 2, heightAnchor: 16, widthAnchor: 0)
-         UIHelper.setTextLabel(label: startHargaProdukDetailLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
+         UIHelper.setTextLabel(label: startHargaProdukDetailLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text:startHarga[0], kerning: 0.12)
         
         JenisProdukContainerView.addSubview(lineHargaProdukDetail)
         UIHelper.makeView(view: lineHargaProdukDetail, leadingAnchor: iconJenisProdukDetailImage.trailingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: startHargaProdukDetailLabel.bottomAnchor, leadingConstant: 6, trailingConstant: 0, topConstant: 7, corner: 0, heightAnchor: 0.5, widthAnchor: 0)
@@ -84,7 +84,8 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         
         JenisProdukContainerView.addSubview(deskripsiJenisProdukDetail)
         UIHelper.makeLabel(label: deskripsiJenisProdukDetail, corner: 0, allignment: .left, leadingAnchor: JenisProdukContainerView.leadingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: lineHargaProdukDetail.bottomAnchor , leadingConstant: 60, trailingConstant: 18, topConstant: 15, heightAnchor: 60, widthAnchor: 0)
-        UIHelper.setTextLabel(label: deskripsiJenisProdukDetail, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.06)
+        UIHelper.setTextLabel(label: deskripsiJenisProdukDetail, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: deskripsijenisProduk, kerning: 0.06)
+        deskripsiJenisProdukDetail.numberOfLines = 0
         
         JenisProdukContainerView.addSubview(daftarPremiTable)
         daftarPremiTable.translatesAutoresizingMaskIntoConstraints = false

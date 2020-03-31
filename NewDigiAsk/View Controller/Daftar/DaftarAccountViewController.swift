@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DaftarViewController: UIViewController {
+class DaftarAccountViewController: UIViewController {
     let scrollViewDaftar = UIScrollView()
     let viewDaftar = UIView()
     let buttonBackNav = UIButton()
@@ -22,7 +22,7 @@ class DaftarViewController: UIViewController {
     let labelSingInGoogle = UILabel()
     let labelSudahPunyaAkun = UILabel()
     let masukButton = UIButton()
-    let vc = DaftarViewController()
+    let vc = DaftarAccountViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
