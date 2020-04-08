@@ -1,25 +1,30 @@
 //
-//  NotifikasiViewController.swift
+//  HubungiKamiViewController.swift
 //  NewDigiAsk
 //
-//  Created by Gun Eight  on 31/03/20.
+//  Created by Gun Eight  on 08/04/20.
 //  Copyright © 2020 Gun Eight . All rights reserved.
 //
 
 import UIKit
 
-class NotifikasiViewController: UIViewController {
-    let notifikasiBaseView = UIView()
-    let notifikasiListTable = UITableView()
+class HubungiKamiViewController: UIViewController {
+    let hubungiKamiLabel = UILabel()
+    let hubungiKami7hariLabel = UILabel()
+    let teleponBaseView = UIView()
+    let teleponIconImage = UIImageView()
+    let nomorTeleponLabel = UILabel()
+    let chatBaseView = UIView()
+    let chatIconImage = UIImageView()
+    let chatLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupNavBarNotifikasi()
-        view.layoutIfNeeded()
-        notifikasiListTable.delegate = self
-        notifikasiListTable.dataSource  = self
+        setupNavBarHubungiKami()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        view.layoutIfNeeded()
+    
         // Do any additional setup after loading the view.
     }
     

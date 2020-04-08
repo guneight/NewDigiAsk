@@ -23,6 +23,10 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
         return 190
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailNotifikasiVC = storyboard?.instantiateViewController(identifier: "DetailNotifikasiViewController") as! DetailNotifikasiViewController
+        navigationController?.pushViewController(detailNotifikasiVC, animated: true)
+    }
     
     func setupUI(){
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)

@@ -43,6 +43,7 @@ class HomeMenuViewController: UIViewController {
         beliButton.addTarget(self, action: #selector(tabBarBeliAction(sender:)), for: .touchUpInside)
         klaimButton.addTarget(self, action: #selector(tabBarKlaim(sender:)), for: .touchUpInside)
         notifButton.addTarget(self, action: #selector(notificationAction(sender:)), for: .touchUpInside)
+        chatButton.addTarget(self, action: #selector(hubungiKamiAction(sender:)), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,6 +85,10 @@ class HomeMenuViewController: UIViewController {
         self.navigationController?.pushViewController(notifikasiVC, animated: true)
     }
     
+    @objc func hubungiKamiAction(sender: UIButton){
+        let hubungiKamiVC = storyboard?.instantiateViewController(identifier: "HubungiKamiViewController") as! HubungiKamiViewController
+        self.navigationController?.pushViewController(hubungiKamiVC, animated: true)
+    }
     
     
     

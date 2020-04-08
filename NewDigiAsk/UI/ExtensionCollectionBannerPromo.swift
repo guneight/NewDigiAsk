@@ -215,7 +215,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         viewColletionProduct.addSubview(headerCollectionProduct)
         UIHelper.makeLabel(label: headerCollectionProduct, corner: 0, allignment: .left, leadingAnchor: viewColletionProduct.leadingAnchor, trailingAnchor: viewColletionProduct.trailingAnchor, topAnchor: viewColletionProduct.topAnchor, leadingConstant: 19, trailingConstant: -19, topConstant: 0, heightAnchor: 18, widthAnchor: viewColletionProduct.frame.size.width)
         
-        UIHelper.setTextLabel(label: headerCollectionProduct, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Produk Asusransi", kerning: 1)
+        UIHelper.setTextLabel(label: headerCollectionProduct, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Produk Asuransi", kerning: 1)
 
         collectionViewProduct.delegate = self
         collectionViewProduct.dataSource = self

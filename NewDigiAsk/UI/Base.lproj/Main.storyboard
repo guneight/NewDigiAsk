@@ -38,6 +38,51 @@
             </objects>
             <point key="canvasLocation" x="4678" y="3496"/>
         </scene>
+        <!--Hubungi Kami View Controller-->
+        <scene sceneID="DoN-pg-0Fc">
+            <objects>
+                <viewController storyboardIdentifier="HubungiKamiViewController" id="q2r-Az-aY4" customClass="HubungiKamiViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="roG-Sx-OG8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="R9y-Jh-VBv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2B-b1-obH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4678" y="4179"/>
+        </scene>
+        <!--Detail Hubungi Kami View Controller-->
+        <scene sceneID="xPf-Sz-MWw">
+            <objects>
+                <viewController storyboardIdentifier="DetailHubungiKamiViewController" id="C8E-Cu-g7a" customClass="DetailHubungiKamiViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G5y-be-EWO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="VLW-4s-nlU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PjM-LN-pFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5542" y="4179"/>
+        </scene>
+        <!--Detail Notifikasi View Controller-->
+        <scene sceneID="I2O-Yd-h0M">
+            <objects>
+                <viewController storyboardIdentifier="DetailNotifikasiViewController" id="xBr-Xo-Su2" customClass="DetailNotifikasiViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ghb-S3-1gV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qRd-zD-MYL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6w8-yP-yv7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5543" y="3496"/>
+        </scene>
         <!--Produk View Controller-->
         <scene sceneID="QPO-Ka-4Tu">
             <objects>

@@ -1,25 +1,24 @@
 //
-//  NotifikasiViewController.swift
+//  DetailNotifikasiViewController.swift
 //  NewDigiAsk
 //
-//  Created by Gun Eight  on 31/03/20.
+//  Created by Gun Eight  on 08/04/20.
 //  Copyright © 2020 Gun Eight . All rights reserved.
 //
 
 import UIKit
 
-class NotifikasiViewController: UIViewController {
-    let notifikasiBaseView = UIView()
-    let notifikasiListTable = UITableView()
+class DetailNotifikasiViewController: UIViewController {
+    let detailNotifikasiScroolView = UIScrollView()
+    let detailNotifikasiBaseView = UIView()
+    let detailNotifikasiImageView = UIImageView()
+    let detailNotifikasiLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBarDetailNotifikasi()
         setupUI()
-        setupNavBarNotifikasi()
-        view.layoutIfNeeded()
-        notifikasiListTable.delegate = self
-        notifikasiListTable.dataSource  = self
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
         // Do any additional setup after loading the view.
     }
     
