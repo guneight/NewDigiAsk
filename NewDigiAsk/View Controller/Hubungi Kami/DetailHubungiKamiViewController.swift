@@ -9,10 +9,25 @@
 import UIKit
 
 class DetailHubungiKamiViewController: UIViewController {
-
+    let detailHubungiKamiBaseView = UIView() 
+    let iconCreateNewContactImage = UIImageView()
+    let createNewContactLabel = UILabel()
+    let underlineCreateNewContact = UIView()
+    
+    let iconAddContactImage = UIImageView()
+    let addContactLabel = UILabel()
+    let underlineAddCOntact = UIView()
+    
+    let iconSMSImage = UIImageView()
+    let smsLabel = UILabel()
+    let underlineSMS = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+//        setupNavBarDetailHubungiKami()
+        view.layoutIfNeeded()
+         self.navigationController?.setNavigationBarHidden(false, animated: true)
         // Do any additional setup after loading the view.
     }
     
