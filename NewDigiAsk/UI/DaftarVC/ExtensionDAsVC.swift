@@ -1,20 +1,16 @@
 //
-//  ExtensionDaftarViewController.swift
+//  ExtensionDAsVC.swift
 //  NewDigiAsk
 //
-//  Created by Gun Eight  on 19/02/20.
+//  Created by Gun Eight  on 13/04/20.
 //  Copyright © 2020 Gun Eight . All rights reserved.
 //
 
 import UIKit
 
-
-
-extension DaftarAccountViewController{
-
-    func setupUIDaftarVC(){
-
-
+extension DAsViewController{
+    
+    func setupUINavBarDaftar() {
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
         self.navigationItem.leftBarButtonItem = customButtonNav
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
@@ -24,21 +20,18 @@ extension DaftarAccountViewController{
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
         navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-        title: "DAFTAR", style: .plain, target: nil, action: nil)
-
+            title: "DAFTAR", style: .plain, target: nil, action: nil)
     }
-
     @objc func backButtonTapped() {
-             navigationController?.popToRootViewController(animated: true)
-           }
-
-    func scrollViews (){
-        self.view.addSubview(scrollViewDaftar)
-        UIHelper.makeScroolView(scrollView: scrollViewDaftar, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 0, widthAnchor: 0, scrollAble: true, scrollShow: false)
-        scrollViewDaftar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        scrollViewDaftar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationController?.popToRootViewController(animated: true)
     }
-
+    
+        func scrollViews (){
+            self.view.addSubview(scrollViewDaftar)
+            UIHelper.makeScroolView(scrollView: scrollViewDaftar, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 0, widthAnchor: 0, scrollAble: true, scrollShow: false)
+            scrollViewDaftar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+            scrollViewDaftar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }
     func formDaftar(){
         scrollViewDaftar.addSubview(viewDaftar)
         UIHelper.makeView(view: viewDaftar, leadingAnchor: scrollViewDaftar.leadingAnchor, trailingAnchor: scrollViewDaftar.trailingAnchor, topAnchor: scrollViewDaftar.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 10, heightAnchor: 1100, widthAnchor: 0)
@@ -52,13 +45,15 @@ extension DaftarAccountViewController{
 
         viewDaftar.addSubview(labelTextfieldEmail)
         UIHelper.makeLabel(label: labelTextfieldEmail, corner: 0, allignment: .left, leadingAnchor: viewDaftar.leadingAnchor, trailingAnchor: viewDaftar.trailingAnchor, topAnchor: viewDaftar.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 31, heightAnchor: 18, widthAnchor: 0)
-        labelTextfieldEmail.text = "Daftar dengan nomor hp atau email"
-                labelTextfieldEmail.font = UIFont(name: "AvantGarde Bk BT", size: 15)
+        UIHelper.setTextLabel(label: labelTextfieldEmail, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 15, text: "Daftar dengan nomor hp atau email", kerning: 0.4)
+  
 
         viewDaftar.addSubview(textFieldEmail)
         UIHelper.makeTetxField(textField: textFieldEmail, leadingAnchor: viewDaftar.leadingAnchor, trailingAnchor: viewDaftar.trailingAnchor, topAnchor: labelTextfieldEmail.bottomAnchor, leadingConstant: 40, trailingConstant: -24, topConstant: 20, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.06274509804, green: 0.06274509804, blue: 0.06274509804, alpha: 1))
         textFieldEmail.font = UIFont(name: "AvantGarde Bk BT", size: 16)
         textFieldEmail.placeholder = "nomor hp atau email"
+        textFieldEmail
+        UIHelper.setTextField(textField: textFieldEmail, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 16, text: "nomor hp atau email", kerning: 0.4)
 
 
         viewDaftar.addSubview(labelEmail)
@@ -103,9 +98,4 @@ extension DaftarAccountViewController{
 
 
     }
-
-
-
-
 }
-

@@ -82,17 +82,16 @@ class VerifikasiViewController: UIViewController {
         UIHelper.makeImageView(imageView: imageMetodeWhatsapp, leadingAnchor: viewMetodeWhatsapp.leadingAnchor, topAnchor: viewMetodeWhatsapp.topAnchor, leadingConstant: 17, topConstant: 18, corner: 0, heightAnchor: 60)
         imageMetodeWhatsapp.heightAnchor.constraint(equalToConstant: 60).isActive = true
         imageMetodeWhatsapp.widthAnchor.constraint(equalToConstant: 45 ).isActive = true
-        imageMetodeWhatsapp.backgroundColor = .red
+        imageMetodeWhatsapp.image = UIImage(named: "waIcon")
         
         viewMetodeWhatsapp.addSubview(labelMelauiWhatsapp)
         UIHelper.makeLabel(label: labelMelauiWhatsapp, corner: 0, allignment: .left, leadingAnchor: imageMetodeWhatsapp.trailingAnchor, trailingAnchor: viewMetodeWhatsapp.trailingAnchor, topAnchor: viewMetodeWhatsapp.topAnchor, leadingConstant: 20, trailingConstant: 0, topConstant: 20, heightAnchor: 20, widthAnchor: 0)
-        labelMelauiWhatsapp.text = "Melalui WhatsApp ke nomor"
-        labelMelauiWhatsapp.font = UIFont(name: "AvantGarde Bk BT", size: 14)
+        UIHelper.setTextLabel(label: labelMelauiWhatsapp, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 14, text: "Melalui WhatsApp ke nomor", kerning: 0.4)
         
         viewMetodeWhatsapp.addSubview(labelNomorWhatsapp)
         UIHelper.makeLabel(label: labelNomorWhatsapp, corner: 0, allignment: .left, leadingAnchor: imageMetodeWhatsapp.trailingAnchor, trailingAnchor: viewMetodeWhatsapp.trailingAnchor, topAnchor: labelMelauiWhatsapp.bottomAnchor, leadingConstant: 20, trailingConstant: 0, topConstant: 5, heightAnchor: 20, widthAnchor: 0)
-        labelNomorWhatsapp.text = "1234567890"
-        labelNomorWhatsapp.font = UIFont(name: "AvantGarde Bk BT", size: 14)
+        UIHelper.setTextLabel(label: labelNomorWhatsapp, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 14, text: "1234567890", kerning: 0.4)
+       
         
         
         viewVerifikasi.addSubview(viewMetodeSms)
@@ -103,17 +102,17 @@ class VerifikasiViewController: UIViewController {
         UIHelper.makeImageView(imageView: imageMetodeSms, leadingAnchor: viewMetodeSms.leadingAnchor, topAnchor: viewMetodeSms.topAnchor, leadingConstant: 17, topConstant: 18, corner: 0, heightAnchor: 60)
         imageMetodeSms.heightAnchor.constraint(equalToConstant: 60).isActive = true
         imageMetodeSms.widthAnchor.constraint(equalToConstant: 45 ).isActive = true
-        imageMetodeSms.backgroundColor = .red
+
+        imageMetodeSms.image = UIImage(named: "smsIcon")
         
         viewMetodeSms.addSubview(labelMelaluiSms)
         UIHelper.makeLabel(label: labelMelaluiSms, corner: 0, allignment: .left, leadingAnchor: imageMetodeSms.trailingAnchor, trailingAnchor: viewMetodeSms.trailingAnchor, topAnchor: viewMetodeSms.topAnchor, leadingConstant: 20, trailingConstant: 0, topConstant: 20, heightAnchor: 20, widthAnchor: 0)
-        labelMelaluiSms.text = "Melalui SMS ke nomor"
-        labelMelaluiSms.font = UIFont(name: "AvantGarde Bk BT", size: 14)
+        UIHelper.setTextLabel(label: labelMelaluiSms, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 14, text: "Melalui SMS ke nomor", kerning: 0.4)
         
         viewMetodeSms.addSubview(labelNomorsms)
         UIHelper.makeLabel(label: labelNomorsms, corner: 0, allignment: .left, leadingAnchor: imageMetodeSms.trailingAnchor, trailingAnchor: viewMetodeWhatsapp.trailingAnchor, topAnchor: labelMelaluiSms.bottomAnchor, leadingConstant: 20, trailingConstant: 0, topConstant: 5, heightAnchor: 20, widthAnchor: 0)
-        labelNomorsms.text = "1234567890"
-        labelNomorsms.font = UIFont(name: "AvantGarde Bk BT", size: 14)
+        UIHelper.setTextLabel(label: labelNomorsms, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 14, text: "1234567890", kerning: 0.4)
+        
         
     }
     

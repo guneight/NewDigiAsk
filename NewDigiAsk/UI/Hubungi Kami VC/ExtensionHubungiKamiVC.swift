@@ -22,14 +22,15 @@ extension HubungiKamiViewController{
 
         view.addSubview(teleponBaseView)
         UIHelper.makeView(view: teleponBaseView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: hubungiKami7hariLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 40, corner: 10, heightAnchor: 70, widthAnchor: 0)
-        teleponBaseView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        teleponBaseView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         teleponBaseView.isUserInteractionEnabled = true
 
         teleponBaseView.addSubview(teleponIconImage)
-        UIHelper.makeImageView(imageView: teleponIconImage, leadingAnchor: teleponBaseView.leadingAnchor, topAnchor: teleponBaseView.topAnchor, leadingConstant: 10, topConstant: 10, corner: 10, heightAnchor: 50)
+        UIHelper.makeImageView(imageView: teleponIconImage, leadingAnchor: teleponBaseView.leadingAnchor, topAnchor: teleponBaseView.topAnchor, leadingConstant: 10, topConstant: 10, corner: 0, heightAnchor: 50)
          teleponIconImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        teleponIconImage.image = UIImage(named: " ")
-        teleponIconImage.backgroundColor = .gray
+        teleponIconImage.image = UIImage(named: "smsIcon")
+        teleponIconImage.contentMode = .scaleAspectFit
+   
 
 
         teleponBaseView.addSubview(nomorTeleponLabel)
@@ -41,13 +42,14 @@ extension HubungiKamiViewController{
 
         view.addSubview(chatBaseView)
         UIHelper.makeView(view: chatBaseView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: teleponBaseView.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 10, heightAnchor: 70, widthAnchor: 0)
-        chatBaseView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        chatBaseView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
 
         chatBaseView.addSubview(chatIconImage)
-        UIHelper.makeImageView(imageView: chatIconImage, leadingAnchor: chatBaseView.leadingAnchor, topAnchor: chatBaseView.topAnchor, leadingConstant: 10, topConstant: 10, corner: 10, heightAnchor: 50)
+        UIHelper.makeImageView(imageView: chatIconImage, leadingAnchor: chatBaseView.leadingAnchor, topAnchor: chatBaseView.topAnchor, leadingConstant: 10, topConstant: 10, corner: 0, heightAnchor: 50)
         chatIconImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        chatIconImage.image = UIImage(named: " ")
-        chatIconImage.backgroundColor = .gray
+        chatIconImage.image = UIImage(named: "waIcon")
+        chatIconImage.contentMode = .scaleAspectFit
+   
 
         chatBaseView.addSubview(chatLabel)
         UIHelper.makeLabel(label: chatLabel, corner: 0, allignment: .left, leadingAnchor: chatIconImage.trailingAnchor, trailingAnchor: chatBaseView.trailingAnchor, topAnchor: chatBaseView.topAnchor, leadingConstant: 10, trailingConstant: -(chatBaseView.frame.size.width)/2, topConstant: 15, heightAnchor: 32, widthAnchor: 0)

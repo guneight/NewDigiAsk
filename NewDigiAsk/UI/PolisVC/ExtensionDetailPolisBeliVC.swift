@@ -208,6 +208,11 @@ extension DetailPolisBeliViewController{
           detailPolisBeliView.addSubview(underlineNomorTeleponAhliWaris)
                  UIHelper.makeView(view: underlineNomorTeleponAhliWaris, leadingAnchor: detailPolisBeliView.leadingAnchor, trailingAnchor: detailPolisBeliView.trailingAnchor, topAnchor: nomorTeleponAhliWarisTextField.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 12, corner: 0, heightAnchor: 1, widthAnchor: 0)
                  underlineNomorTeleponAhliWaris.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 0.5)
+        
+        detailPolisBeliView.addSubview(saveButton)
+        UIHelper.makeButton(button: saveButton, leadingAnchor: detailPolisBeliView.leadingAnchor, trailingAnchor: detailPolisBeliView.trailingAnchor, topAnchor: underlineNomorTeleponAhliWaris.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 30, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        saveButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        saveButton.setTitle("SAVE", for: .normal)
           
         
           

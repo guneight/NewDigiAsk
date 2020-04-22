@@ -93,9 +93,7 @@ let stackViewIndicator: UIStackView = {
     let labelInfo = UILabel()
     let viewGalery = UIView()
     let labelGalery = UILabel()
-    let viewMap = UIView()
-    let labelMap = UILabel()
-    let imageViewMap = UIImageView()
+
     
     let indicatorbanner1 = UILabel()
     let indicatorbanner2 = UILabel()
@@ -285,7 +283,8 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         
         whiteView.addSubview(viewMap)
         UIHelper.makeView(view: viewMap, leadingAnchor: whiteView.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewGalery.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 20, corner: 0, heightAnchor: 262, widthAnchor: 0)
-        viewMap.backgroundColor = UIColor.clear.withAlphaComponent(0)
+        viewMap.backgroundColor = UIColor.white
+        viewMap.isUserInteractionEnabled = true
         
         viewMap.addSubview(labelMap)
         UIHelper.makeLabel(label: labelMap, corner: 0, allignment: .left, leadingAnchor: viewMap.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewMap.topAnchor, leadingConstant: 19, trailingConstant: 19, topConstant: 0, heightAnchor: 18, widthAnchor: 0)
@@ -300,11 +299,13 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             imageViewMap.topAnchor.constraint(equalTo: labelMap.bottomAnchor, constant: 8),
             imageViewMap.heightAnchor.constraint(equalToConstant: 137)
         ])
-        imageViewMap.backgroundColor = UIColor.clear.withAlphaComponent(0)
+        
+        imageViewMap.backgroundColor = UIColor.white
         imageViewMap.image = UIImage(named: "map.png")
         imageViewMap.layer.masksToBounds = true
         imageViewMap.layer.cornerRadius = 5
         imageViewMap.layoutIfNeeded()
+
         
     }
     

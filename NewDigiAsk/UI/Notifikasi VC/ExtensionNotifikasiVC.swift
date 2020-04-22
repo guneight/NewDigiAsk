@@ -28,6 +28,16 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
         navigationController?.pushViewController(detailNotifikasiVC, animated: true)
     }
     
+//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        }
+    
+    
     func setupUI(){
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         view.addSubview(notifikasiBaseView)
@@ -98,17 +108,17 @@ class notifikasiListTableViewCell: UITableViewCell{
         
         contentView.addSubview(tanggalNotifikasilabel)
         UIHelper.makeLabel(label: tanggalNotifikasilabel, corner: 0, allignment: .left, leadingAnchor: timeIconImage.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: notifikasiImage.bottomAnchor, leadingConstant: 10, trailingConstant: -24, topConstant: 5, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: tanggalNotifikasilabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1), weight: .regular, fontSize: 8, text: "24 Oktober 2019", kerning: 0.4)
+        UIHelper.setTextLabel(label: tanggalNotifikasilabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1), weight: .regular, fontSize: 8, text: "", kerning: 0.4)
         
         contentView.addSubview(headerNotifikaiLabel)
         UIHelper.makeLabel(label: headerNotifikaiLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: tanggalNotifikasilabel.bottomAnchor, leadingConstant: 24, trailingConstant: -30, topConstant: 5, heightAnchor: 14, widthAnchor: 0)
         
-        UIHelper.setTextLabel(label: headerNotifikaiLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 13, text: "Askrindo serahkan bantuan mobil pintar untuk aceh", kerning: 0.13)
+        UIHelper.setTextLabel(label: headerNotifikaiLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 13, text: "", kerning: 0.13)
         headerNotifikaiLabel.backgroundColor = .white
         
         contentView.addSubview(deskripsiNotifikasilabel)
         UIHelper.makeLabel(label: deskripsiNotifikasilabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: headerNotifikaiLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -30, topConstant: 0, heightAnchor: 36, widthAnchor: 0)
-        UIHelper.setTextLabel(label: deskripsiNotifikasilabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 13, text: "Manfaat akan diberikan dalam hal tertanggung meniggal dunia dalam periode polis sebagai akibat ", kerning: 0.13)
+        UIHelper.setTextLabel(label: deskripsiNotifikasilabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 13, text: "", kerning: 0.13)
         deskripsiNotifikasilabel.backgroundColor = .white
         deskripsiNotifikasilabel.numberOfLines = 0
     }

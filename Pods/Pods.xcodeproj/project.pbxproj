@@ -6,55 +6,107 @@
 	objectVersion = 51;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		0C1885900810601510E0C632060FAF26 /* GooglePlaces */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2FC2AC47FDB0310285CE777F18CD1532 /* Build configuration list for PBXAggregateTarget "GooglePlaces" */;
+			buildPhases = (
+			);
+			dependencies = (
+				D42315111F400C0605ACCD6B5CAF2178 /* PBXTargetDependency */,
+			);
+			name = GooglePlaces;
+		};
+		E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 46921981F609C5BA3CB72EC4EA41299D /* Build configuration list for PBXAggregateTarget "GoogleMaps" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = GoogleMaps;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		19811CCE732537994C028D55642B4960 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		2637783C303A316D781FE17C61899F36 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0C112BB3DA0C0A4677A54B68F75416 /* TextHelper.swift */; };
-		26463FBD4A136CDF5E895889999D44F0 /* PinCodeTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0451F06E1C3486BC76C18834B9B4A7B8 /* PinCodeTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2FA8F1CDAE87DE962680392749441AF5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E2C7A90C43174BE8C66BB234A3CBF /* StringExtension.swift */; };
+		2637783C303A316D781FE17C61899F36 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B66399A8177A80A674EE2745997B1 /* TextHelper.swift */; };
+		26463FBD4A136CDF5E895889999D44F0 /* PinCodeTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 732BA3CBA00E95632EB61C1EFF1D28EA /* PinCodeTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FA8F1CDAE87DE962680392749441AF5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D1DCC132C5ACAB970385E484D052F /* StringExtension.swift */; };
 		3F1DA61BE86422F9CD1A81AB19114A10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		61E90D227CF9830790574F25E5508239 /* PinCodeTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B370C4A56D6BBE29AB941BD4C5DDAA7B /* PinCodeTextField-dummy.m */; };
-		74232C4427316682D79F7217A032B86B /* Pods-NewDigiAsk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C99A602572B844B08C6ED36EF916F861 /* Pods-NewDigiAsk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8E8DAE4BF06456AE9B0B37F442F1AB94 /* PinCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915FF082D46DA863F8FA68476FD03E19 /* PinCodeTextField.swift */; };
-		B502CE1A3C15FECBB0C7DF0D96E3A1FA /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4098F5ED11F85E9E9464B13A3C8F2513 /* IntExtension.swift */; };
-		F22FBDD5A5777B8D95346B3BDBA7CD71 /* Pods-NewDigiAsk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EA67D03D530BCEBBE0200E8A92E6C1 /* Pods-NewDigiAsk-dummy.m */; };
-		FF6D64C4C36F653F1602BB5A598F1A3E /* PinCodeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7528D77E8CBDCE5050CB78E4426BC3 /* PinCodeTextFieldDelegate.swift */; };
+		43D0038AA8511DE66817F4C0E60DEA79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		61E90D227CF9830790574F25E5508239 /* PinCodeTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0BE7AB17967FAD04B7DB0C755FE814 /* PinCodeTextField-dummy.m */; };
+		6CDC3AF75F8AF641B239DC0CF0EAF325 /* Pods-NewDigiAsk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2348D1B88FC666984E1CD2EB699BCD0F /* Pods-NewDigiAsk-dummy.m */; };
+		8E8DAE4BF06456AE9B0B37F442F1AB94 /* PinCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0394E3B7966A0775AB1A7121B058027D /* PinCodeTextField.swift */; };
+		AD5287A4B527358186C51D50AB86486C /* Pods-NewDigiAsk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50277275B48FAA50AA9C123A3466ADEE /* Pods-NewDigiAsk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B502CE1A3C15FECBB0C7DF0D96E3A1FA /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B71B38D6C4ECD64A77E2AC090DD8AC /* IntExtension.swift */; };
+		FF6D64C4C36F653F1602BB5A598F1A3E /* PinCodeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF1EAA4ABB554D828A0000B9E6C0E1 /* PinCodeTextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B5D6586418E9316A6CBA56E5D0FBAA7B /* PBXContainerItemProxy */ = {
+		43F79053CF7C56A3341EC8CA719A8C0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
+			remoteInfo = GoogleMaps;
+		};
+		5E74E39B36879506B556DFCBEB6F9FBA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BDF1FB11822899F2978739C8B4A9BCB5;
 			remoteInfo = PinCodeTextField;
 		};
+		6EB1C2DD30E6564FC3135C9E8002D8F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
+			remoteInfo = GoogleMaps;
+		};
+		CB83B7275D0B0A4752E699F95E23BDC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
+			remoteInfo = GooglePlaces;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00A7F58AEE7A58F76C565C69FA8C1D5B /* Pods-NewDigiAsk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewDigiAsk.release.xcconfig"; sourceTree = "<group>"; };
-		0451F06E1C3486BC76C18834B9B4A7B8 /* PinCodeTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PinCodeTextField-umbrella.h"; sourceTree = "<group>"; };
-		1B7528D77E8CBDCE5050CB78E4426BC3 /* PinCodeTextFieldDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PinCodeTextFieldDelegate.swift; path = Pod/PinCodeTextFieldDelegate.swift; sourceTree = "<group>"; };
-		1F64861C97EE78C47056E16E0C121F12 /* Pods-NewDigiAsk-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NewDigiAsk-frameworks.sh"; sourceTree = "<group>"; };
-		223E2C7A90C43174BE8C66BB234A3CBF /* StringExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Pod/Extensions/StringExtension.swift; sourceTree = "<group>"; };
+		0394E3B7966A0775AB1A7121B058027D /* PinCodeTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PinCodeTextField.swift; path = Pod/PinCodeTextField.swift; sourceTree = "<group>"; };
+		190B99863C11AE811CBC9D2B728917C1 /* Pods-NewDigiAsk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NewDigiAsk.modulemap"; sourceTree = "<group>"; };
+		1ED7E192FBB075540AB06A7F8A7AB4D0 /* PinCodeTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PinCodeTextField.modulemap; sourceTree = "<group>"; };
+		21FFAA3F02C465E13671882A0FA0AB0B /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		2348D1B88FC666984E1CD2EB699BCD0F /* Pods-NewDigiAsk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NewDigiAsk-dummy.m"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		33EA67D03D530BCEBBE0200E8A92E6C1 /* Pods-NewDigiAsk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NewDigiAsk-dummy.m"; sourceTree = "<group>"; };
-		38DF2801A650FDCEA2C5F128387D8FA1 /* PinCodeTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PinCodeTextField.xcconfig; sourceTree = "<group>"; };
-		4098F5ED11F85E9E9464B13A3C8F2513 /* IntExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntExtension.swift; path = Pod/Extensions/IntExtension.swift; sourceTree = "<group>"; };
+		32794CD57FD6B2D0D4F652ACC1C64E0A /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		382B28A8AB35063163260B1DE4F35FBF /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		42D7DF75E8ED4BDCAC47F1A20F71801E /* GoogleMaps.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.xcconfig; sourceTree = "<group>"; };
 		4AC1CDC0284BD38F2969875D47656D6E /* PinCodeTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PinCodeTextField.framework; path = PinCodeTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5967974B75912B55EF2D9699E41A351D /* PinCodeTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PinCodeTextField-prefix.pch"; sourceTree = "<group>"; };
-		76D7F234E5918BDE2CC1D095DD36EDF6 /* Pods-NewDigiAsk-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NewDigiAsk-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7C0C112BB3DA0C0A4677A54B68F75416 /* TextHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextHelper.swift; path = Pod/TextHelper/TextHelper.swift; sourceTree = "<group>"; };
-		915FF082D46DA863F8FA68476FD03E19 /* PinCodeTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PinCodeTextField.swift; path = Pod/PinCodeTextField.swift; sourceTree = "<group>"; };
+		4D60E669414FA950631B01EF20C295FD /* Pods-NewDigiAsk-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NewDigiAsk-frameworks.sh"; sourceTree = "<group>"; };
+		50277275B48FAA50AA9C123A3466ADEE /* Pods-NewDigiAsk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NewDigiAsk-umbrella.h"; sourceTree = "<group>"; };
+		5D9D1DCC132C5ACAB970385E484D052F /* StringExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Pod/Extensions/StringExtension.swift; sourceTree = "<group>"; };
+		720028927A3A9BD890D7317466010193 /* Pods-NewDigiAsk-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NewDigiAsk-resources.sh"; sourceTree = "<group>"; };
+		732BA3CBA00E95632EB61C1EFF1D28EA /* PinCodeTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PinCodeTextField-umbrella.h"; sourceTree = "<group>"; };
+		7CBB0EC01E0E8B9FDA131CD13BCF871E /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		8F0BE7AB17967FAD04B7DB0C755FE814 /* PinCodeTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PinCodeTextField-dummy.m"; sourceTree = "<group>"; };
+		8FEA78932E08C8425AF6B19B100CA27D /* Pods-NewDigiAsk-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewDigiAsk-Info.plist"; sourceTree = "<group>"; };
+		97874FE31ABAADD24E55217D044EA9AF /* Pods-NewDigiAsk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewDigiAsk.release.xcconfig"; sourceTree = "<group>"; };
+		99CF1EAA4ABB554D828A0000B9E6C0E1 /* PinCodeTextFieldDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PinCodeTextFieldDelegate.swift; path = Pod/PinCodeTextFieldDelegate.swift; sourceTree = "<group>"; };
+		9D55A88A5BA24F06B45338F5449A8F08 /* PinCodeTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PinCodeTextField-prefix.pch"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A133009FA39F32959DB9EEF003AF5FCB /* Pods-NewDigiAsk-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewDigiAsk-acknowledgements.plist"; sourceTree = "<group>"; };
-		B370C4A56D6BBE29AB941BD4C5DDAA7B /* PinCodeTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PinCodeTextField-dummy.m"; sourceTree = "<group>"; };
-		B603BBF0F5E97F5B0E7A6A165ECD6E56 /* PinCodeTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PinCodeTextField.modulemap; sourceTree = "<group>"; };
+		A865604090DD4B2BBD4493F67FFDA4B7 /* Pods-NewDigiAsk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewDigiAsk.debug.xcconfig"; sourceTree = "<group>"; };
+		B0D388A1A901962D37117AAE4F7DAE1A /* Pods-NewDigiAsk-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewDigiAsk-acknowledgements.plist"; sourceTree = "<group>"; };
+		B18B66399A8177A80A674EE2745997B1 /* TextHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextHelper.swift; path = Pod/TextHelper/TextHelper.swift; sourceTree = "<group>"; };
+		B5E9633B990576053FF559E7041D247C /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		B7A209BA7E8333B9752D56449B0CF426 /* Pods_NewDigiAsk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NewDigiAsk.framework; path = "Pods-NewDigiAsk.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C99A602572B844B08C6ED36EF916F861 /* Pods-NewDigiAsk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NewDigiAsk-umbrella.h"; sourceTree = "<group>"; };
-		CF71C456024D74172FABA931C04CE602 /* PinCodeTextField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PinCodeTextField-Info.plist"; sourceTree = "<group>"; };
-		D2FEEB769C4F060601C76C1DFDB21DDB /* Pods-NewDigiAsk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NewDigiAsk.modulemap"; sourceTree = "<group>"; };
-		DBFEEAC3271D8A2EE5FC3611019B907A /* Pods-NewDigiAsk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewDigiAsk.debug.xcconfig"; sourceTree = "<group>"; };
-		DEB1A8E44C2FF2FE8DA6834885BB3988 /* Pods-NewDigiAsk-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewDigiAsk-Info.plist"; sourceTree = "<group>"; };
+		C4BDE68EC818B16DB1F4FEBE5C6BCDDB /* GooglePlaces.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.xcconfig; sourceTree = "<group>"; };
+		CC74EBAC65FD76D70167BE6C9406E942 /* PinCodeTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PinCodeTextField.xcconfig; sourceTree = "<group>"; };
+		CE5A80C45F3803D96F58E7EBCF837762 /* Pods-NewDigiAsk-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NewDigiAsk-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E177E669EC2F6D10DEC871B2B309F82F /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		E1B71B38D6C4ECD64A77E2AC090DD8AC /* IntExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntExtension.swift; path = Pod/Extensions/IntExtension.swift; sourceTree = "<group>"; };
+		E8D3832720CD45D0D1001E5AE1FF71A2 /* PinCodeTextField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PinCodeTextField-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,51 +118,118 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9BDD9DACAC8E191D0D5130465E8EA15 /* Frameworks */ = {
+		FBC115FCAC0171B63E92F82C386D529B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19811CCE732537994C028D55642B4960 /* Foundation.framework in Frameworks */,
+				43D0038AA8511DE66817F4C0E60DEA79 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		75957132DEF6CB320AD2DA19E3756A14 /* PinCodeTextField */ = {
+		0CBC53F97EAAFA37DB3DEBA5733E6D43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4098F5ED11F85E9E9464B13A3C8F2513 /* IntExtension.swift */,
-				915FF082D46DA863F8FA68476FD03E19 /* PinCodeTextField.swift */,
-				1B7528D77E8CBDCE5050CB78E4426BC3 /* PinCodeTextFieldDelegate.swift */,
-				223E2C7A90C43174BE8C66BB234A3CBF /* StringExtension.swift */,
-				7C0C112BB3DA0C0A4677A54B68F75416 /* TextHelper.swift */,
-				8596A7BBACE4F06048C20188D65E8FEC /* Support Files */,
+				E177E669EC2F6D10DEC871B2B309F82F /* GoogleMaps.framework */,
+				32794CD57FD6B2D0D4F652ACC1C64E0A /* GoogleMapsCore.framework */,
 			);
-			name = PinCodeTextField;
-			path = PinCodeTextField;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8596A7BBACE4F06048C20188D65E8FEC /* Support Files */ = {
+		26DD919EB1D12A9DA54E495FD3A5D575 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				B603BBF0F5E97F5B0E7A6A165ECD6E56 /* PinCodeTextField.modulemap */,
-				38DF2801A650FDCEA2C5F128387D8FA1 /* PinCodeTextField.xcconfig */,
-				B370C4A56D6BBE29AB941BD4C5DDAA7B /* PinCodeTextField-dummy.m */,
-				CF71C456024D74172FABA931C04CE602 /* PinCodeTextField-Info.plist */,
-				5967974B75912B55EF2D9699E41A351D /* PinCodeTextField-prefix.pch */,
-				0451F06E1C3486BC76C18834B9B4A7B8 /* PinCodeTextField-umbrella.h */,
+				0CBC53F97EAAFA37DB3DEBA5733E6D43 /* Frameworks */,
+				F3E807EFA951E3B926DE339523E37292 /* Resources */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		2C2024940F1FC5A11AB78F4AB2DCFB7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8517E254C5688D40D4B59922FD975031 /* GoogleMaps */,
+				9EF9BBEDEB7FFBE890539F7F8865E941 /* GooglePlaces */,
+				8C5F95D2447B3C789BD7A36F49155403 /* PinCodeTextField */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		379F97B48E234CF15D4DECE139744984 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CBB0EC01E0E8B9FDA131CD13BCF871E /* GooglePlaces.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A6916D6E66FAEF2B6AAA7CBE7266FDB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D2AE2AB9A001AAF5A6F1B87E5472AC86 /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		586FB71788DF9FF357FC60089CC59EA2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				42D7DF75E8ED4BDCAC47F1A20F71801E /* GoogleMaps.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleMaps";
+			sourceTree = "<group>";
+		};
+		5E59677A7E5489EC6CC51FF7DDB9A815 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1ED7E192FBB075540AB06A7F8A7AB4D0 /* PinCodeTextField.modulemap */,
+				CC74EBAC65FD76D70167BE6C9406E942 /* PinCodeTextField.xcconfig */,
+				8F0BE7AB17967FAD04B7DB0C755FE814 /* PinCodeTextField-dummy.m */,
+				E8D3832720CD45D0D1001E5AE1FF71A2 /* PinCodeTextField-Info.plist */,
+				9D55A88A5BA24F06B45338F5449A8F08 /* PinCodeTextField-prefix.pch */,
+				732BA3CBA00E95632EB61C1EFF1D28EA /* PinCodeTextField-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/PinCodeTextField";
 			sourceTree = "<group>";
 		};
-		A129E8192452E66A5A5E6D344E5B0522 /* Targets Support Files */ = {
+		8517E254C5688D40D4B59922FD975031 /* GoogleMaps */ = {
 			isa = PBXGroup;
 			children = (
-				E61D5D330A10360D07789AE414B8B1E7 /* Pods-NewDigiAsk */,
+				3A6916D6E66FAEF2B6AAA7CBE7266FDB /* Base */,
+				26DD919EB1D12A9DA54E495FD3A5D575 /* Maps */,
+				586FB71788DF9FF357FC60089CC59EA2 /* Support Files */,
 			);
-			name = "Targets Support Files";
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		8C5F95D2447B3C789BD7A36F49155403 /* PinCodeTextField */ = {
+			isa = PBXGroup;
+			children = (
+				E1B71B38D6C4ECD64A77E2AC090DD8AC /* IntExtension.swift */,
+				0394E3B7966A0775AB1A7121B058027D /* PinCodeTextField.swift */,
+				99CF1EAA4ABB554D828A0000B9E6C0E1 /* PinCodeTextFieldDelegate.swift */,
+				5D9D1DCC132C5ACAB970385E484D052F /* StringExtension.swift */,
+				B18B66399A8177A80A674EE2745997B1 /* TextHelper.swift */,
+				5E59677A7E5489EC6CC51FF7DDB9A815 /* Support Files */,
+			);
+			name = PinCodeTextField;
+			path = PinCodeTextField;
+			sourceTree = "<group>";
+		};
+		9EF9BBEDEB7FFBE890539F7F8865E941 /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				379F97B48E234CF15D4DECE139744984 /* Frameworks */,
+				D54C7C06B5B2E2E2EA93255D263DB61A /* Resources */,
+				F6F45BCF45573BB39F888894E6FC9B9A /* Support Files */,
+			);
+			name = GooglePlaces;
+			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
 		A68D84A58E393B6A0E565CBC7AEE4B0C /* Products */ = {
@@ -130,12 +249,22 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		CE7CCA8264A105DE26ADD9436CC070BD /* Pods */ = {
+		CE27EAC22E3E94F45153F5D4147EFC9A /* Pods-NewDigiAsk */ = {
 			isa = PBXGroup;
 			children = (
-				75957132DEF6CB320AD2DA19E3756A14 /* PinCodeTextField */,
+				190B99863C11AE811CBC9D2B728917C1 /* Pods-NewDigiAsk.modulemap */,
+				CE5A80C45F3803D96F58E7EBCF837762 /* Pods-NewDigiAsk-acknowledgements.markdown */,
+				B0D388A1A901962D37117AAE4F7DAE1A /* Pods-NewDigiAsk-acknowledgements.plist */,
+				2348D1B88FC666984E1CD2EB699BCD0F /* Pods-NewDigiAsk-dummy.m */,
+				4D60E669414FA950631B01EF20C295FD /* Pods-NewDigiAsk-frameworks.sh */,
+				8FEA78932E08C8425AF6B19B100CA27D /* Pods-NewDigiAsk-Info.plist */,
+				720028927A3A9BD890D7317466010193 /* Pods-NewDigiAsk-resources.sh */,
+				50277275B48FAA50AA9C123A3466ADEE /* Pods-NewDigiAsk-umbrella.h */,
+				A865604090DD4B2BBD4493F67FFDA4B7 /* Pods-NewDigiAsk.debug.xcconfig */,
+				97874FE31ABAADD24E55217D044EA9AF /* Pods-NewDigiAsk.release.xcconfig */,
 			);
-			name = Pods;
+			name = "Pods-NewDigiAsk";
+			path = "Target Support Files/Pods-NewDigiAsk";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -143,9 +272,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				CE7CCA8264A105DE26ADD9436CC070BD /* Pods */,
+				2C2024940F1FC5A11AB78F4AB2DCFB7A /* Pods */,
 				A68D84A58E393B6A0E565CBC7AEE4B0C /* Products */,
-				A129E8192452E66A5A5E6D344E5B0522 /* Targets Support Files */,
+				DFBDACEFE25C7C73861E2D4A71DEF514 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,31 +286,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E61D5D330A10360D07789AE414B8B1E7 /* Pods-NewDigiAsk */ = {
+		D2AE2AB9A001AAF5A6F1B87E5472AC86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D2FEEB769C4F060601C76C1DFDB21DDB /* Pods-NewDigiAsk.modulemap */,
-				76D7F234E5918BDE2CC1D095DD36EDF6 /* Pods-NewDigiAsk-acknowledgements.markdown */,
-				A133009FA39F32959DB9EEF003AF5FCB /* Pods-NewDigiAsk-acknowledgements.plist */,
-				33EA67D03D530BCEBBE0200E8A92E6C1 /* Pods-NewDigiAsk-dummy.m */,
-				1F64861C97EE78C47056E16E0C121F12 /* Pods-NewDigiAsk-frameworks.sh */,
-				DEB1A8E44C2FF2FE8DA6834885BB3988 /* Pods-NewDigiAsk-Info.plist */,
-				C99A602572B844B08C6ED36EF916F861 /* Pods-NewDigiAsk-umbrella.h */,
-				DBFEEAC3271D8A2EE5FC3611019B907A /* Pods-NewDigiAsk.debug.xcconfig */,
-				00A7F58AEE7A58F76C565C69FA8C1D5B /* Pods-NewDigiAsk.release.xcconfig */,
+				B5E9633B990576053FF559E7041D247C /* GoogleMapsBase.framework */,
 			);
-			name = "Pods-NewDigiAsk";
-			path = "Target Support Files/Pods-NewDigiAsk";
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D54C7C06B5B2E2E2EA93255D263DB61A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21FFAA3F02C465E13671882A0FA0AB0B /* GooglePlaces.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DFBDACEFE25C7C73861E2D4A71DEF514 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE27EAC22E3E94F45153F5D4147EFC9A /* Pods-NewDigiAsk */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F3E807EFA951E3B926DE339523E37292 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				382B28A8AB35063163260B1DE4F35FBF /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F6F45BCF45573BB39F888894E6FC9B9A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4BDE68EC818B16DB1F4FEBE5C6BCDDB /* GooglePlaces.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GooglePlaces";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		480088D4527F13D766EB602C9AB0A79D /* Headers */ = {
+		2B69A088EE8C1F2F1EE8C8816353EC54 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74232C4427316682D79F7217A032B86B /* Pods-NewDigiAsk-umbrella.h in Headers */,
+				AD5287A4B527358186C51D50AB86486C /* Pods-NewDigiAsk-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,17 +369,19 @@
 		};
 		BFE563A8FE3CAD6E6FFB6850420128F6 /* Pods-NewDigiAsk */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3A85777081A91DE1183E4B51E1CB84D /* Build configuration list for PBXNativeTarget "Pods-NewDigiAsk" */;
+			buildConfigurationList = 5D4B651CED83468B190D02EF0FA1E322 /* Build configuration list for PBXNativeTarget "Pods-NewDigiAsk" */;
 			buildPhases = (
-				480088D4527F13D766EB602C9AB0A79D /* Headers */,
-				E12AB62A7B760BEBF54B3E0CF9032799 /* Sources */,
-				E9BDD9DACAC8E191D0D5130465E8EA15 /* Frameworks */,
-				47349DD7318AD505FEDC6D3CC8A2DA43 /* Resources */,
+				2B69A088EE8C1F2F1EE8C8816353EC54 /* Headers */,
+				098EE2AFDB4F85AD3AB92D318F7DED76 /* Sources */,
+				FBC115FCAC0171B63E92F82C386D529B /* Frameworks */,
+				D08A357F2EE007B154E2F933D31175F1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9F87DA1FACEC7347F25AB2BA014A0FC2 /* PBXTargetDependency */,
+				EE242F7D5FA086A3C29163944C7E0D9D /* PBXTargetDependency */,
+				E49A6F73FA48A58D43E9AE1BCA37A1C9 /* PBXTargetDependency */,
+				94BE7E952EAD91CB4371465DAFA24A7C /* PBXTargetDependency */,
 			);
 			name = "Pods-NewDigiAsk";
 			productName = "Pods-NewDigiAsk";
@@ -255,6 +410,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */,
+				0C1885900810601510E0C632060FAF26 /* GooglePlaces */,
 				BDF1FB11822899F2978739C8B4A9BCB5 /* PinCodeTextField */,
 				BFE563A8FE3CAD6E6FFB6850420128F6 /* Pods-NewDigiAsk */,
 			);
@@ -262,14 +419,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		47349DD7318AD505FEDC6D3CC8A2DA43 /* Resources */ = {
+		B1051F0A767E66CF69569FD8CA9D24F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1051F0A767E66CF69569FD8CA9D24F9 /* Resources */ = {
+		D08A357F2EE007B154E2F933D31175F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,6 +436,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		098EE2AFDB4F85AD3AB92D318F7DED76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CDC3AF75F8AF641B239DC0CF0EAF325 /* Pods-NewDigiAsk-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D9592664C421FFC4A02965F97593422 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,29 +457,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E12AB62A7B760BEBF54B3E0CF9032799 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F22FBDD5A5777B8D95346B3BDBA7CD71 /* Pods-NewDigiAsk-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9F87DA1FACEC7347F25AB2BA014A0FC2 /* PBXTargetDependency */ = {
+		94BE7E952EAD91CB4371465DAFA24A7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PinCodeTextField;
 			target = BDF1FB11822899F2978739C8B4A9BCB5 /* PinCodeTextField */;
-			targetProxy = B5D6586418E9316A6CBA56E5D0FBAA7B /* PBXContainerItemProxy */;
+			targetProxy = 5E74E39B36879506B556DFCBEB6F9FBA /* PBXContainerItemProxy */;
+		};
+		D42315111F400C0605ACCD6B5CAF2178 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleMaps;
+			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
+			targetProxy = 6EB1C2DD30E6564FC3135C9E8002D8F7 /* PBXContainerItemProxy */;
+		};
+		E49A6F73FA48A58D43E9AE1BCA37A1C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GooglePlaces;
+			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
+			targetProxy = CB83B7275D0B0A4752E699F95E23BDC1 /* PBXContainerItemProxy */;
+		};
+		EE242F7D5FA086A3C29163944C7E0D9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleMaps;
+			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
+			targetProxy = 43F79053CF7C56A3341EC8CA719A8C0C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2FE457814E2798FCCDA4479699DFC45B /* Debug */ = {
+		056E5DB0E9357973B5073CBECD593863 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBFEEAC3271D8A2EE5FC3611019B907A /* Pods-NewDigiAsk.debug.xcconfig */;
+			baseConfigurationReference = A865604090DD4B2BBD4493F67FFDA4B7 /* Pods-NewDigiAsk.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -349,9 +524,25 @@
 			};
 			name = Debug;
 		};
+		4AA46832D8A16AA4E4811383B204D2A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42D7DF75E8ED4BDCAC47F1A20F71801E /* GoogleMaps.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		590A17BEFF0FED91D72832B4283970DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38DF2801A650FDCEA2C5F128387D8FA1 /* PinCodeTextField.xcconfig */;
+			baseConfigurationReference = CC74EBAC65FD76D70167BE6C9406E942 /* PinCodeTextField.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -445,6 +636,22 @@
 			};
 			name = Release;
 		};
+		907050E8ED96EF2CF04EC3D293E73BD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4BDE68EC818B16DB1F4FEBE5C6BCDDB /* GooglePlaces.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		916E0404255105F480DC4950B7625F7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -511,7 +718,7 @@
 		};
 		ACAF35D3F97E2F4B4009946B391D088F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38DF2801A650FDCEA2C5F128387D8FA1 /* PinCodeTextField.xcconfig */;
+			baseConfigurationReference = CC74EBAC65FD76D70167BE6C9406E942 /* PinCodeTextField.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -544,9 +751,43 @@
 			};
 			name = Debug;
 		};
-		B7E21FCDF3A0656B1EFD26D2B3FD4197 /* Release */ = {
+		C7565AEA7FCD8F66CAF546DC5AF1404F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00A7F58AEE7A58F76C565C69FA8C1D5B /* Pods-NewDigiAsk.release.xcconfig */;
+			baseConfigurationReference = 42D7DF75E8ED4BDCAC47F1A20F71801E /* GoogleMaps.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC85D7712D8EE6E340F053BC38E1FB63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4BDE68EC818B16DB1F4FEBE5C6BCDDB /* GooglePlaces.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEE66266670D97B1AB368204AAAFCA66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97874FE31ABAADD24E55217D044EA9AF /* Pods-NewDigiAsk.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -585,6 +826,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2FC2AC47FDB0310285CE777F18CD1532 /* Build configuration list for PBXAggregateTarget "GooglePlaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				907050E8ED96EF2CF04EC3D293E73BD9 /* Debug */,
+				DC85D7712D8EE6E340F053BC38E1FB63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46921981F609C5BA3CB72EC4EA41299D /* Build configuration list for PBXAggregateTarget "GoogleMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AA46832D8A16AA4E4811383B204D2A4 /* Debug */,
+				C7565AEA7FCD8F66CAF546DC5AF1404F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -594,20 +853,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5D4B651CED83468B190D02EF0FA1E322 /* Build configuration list for PBXNativeTarget "Pods-NewDigiAsk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				056E5DB0E9357973B5073CBECD593863 /* Debug */,
+				DEE66266670D97B1AB368204AAAFCA66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D592052C2724C0A9FC21BDC0273A5A39 /* Build configuration list for PBXNativeTarget "PinCodeTextField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ACAF35D3F97E2F4B4009946B391D088F /* Debug */,
 				590A17BEFF0FED91D72832B4283970DF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E3A85777081A91DE1183E4B51E1CB84D /* Build configuration list for PBXNativeTarget "Pods-NewDigiAsk" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2FE457814E2798FCCDA4479699DFC45B /* Debug */,
-				B7E21FCDF3A0656B1EFD26D2B3FD4197 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

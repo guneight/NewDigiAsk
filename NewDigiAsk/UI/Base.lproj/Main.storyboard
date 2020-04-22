@@ -53,6 +53,21 @@
             </objects>
             <point key="canvasLocation" x="4678" y="4179"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="aXy-Of-pnj">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="SQq-Vk-ET1" customClass="MapViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1lM-aw-jKR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="IBg-K3-MyE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJJ-dD-x2I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4678" y="4984"/>
+        </scene>
         <!--Detail Hubungi Kami View Controller-->
         <scene sceneID="xPf-Sz-MWw">
             <objects>
@@ -203,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="7023" y="695"/>
         </scene>
-        <!--Daftar Account View Controller-->
+        <!--View Controller-->
         <scene sceneID="29b-D1-BcJ">
             <objects>
-                <viewController storyboardIdentifier="DaftarAccountViewController" id="q19-eE-ZM6" customClass="DaftarAccountViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q19-eE-ZM6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4SJ-vx-ixK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,6 +263,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eu6-Iv-Yh9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6238" y="-1518"/>
+        </scene>
+        <!--As View Controller-->
+        <scene sceneID="6CE-ez-CWn">
+            <objects>
+                <viewController storyboardIdentifier="DAsViewController" id="HmB-Nr-Zsd" customClass="DAsViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cwn-mc-HMm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="acL-4l-xiu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KXc-aV-2dt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4658" y="-791"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="M67-fe-lxd">

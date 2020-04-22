@@ -59,6 +59,9 @@ class DetailPolisBeliViewController: UIViewController {
      let pilihWaktuAktifPolisLabel = UILabel()
      let masaAktifTextField = UITextField()
      let underlinePilihWaktuPolis = UIView()
+    
+     let saveButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUIDetailPolisBeli()

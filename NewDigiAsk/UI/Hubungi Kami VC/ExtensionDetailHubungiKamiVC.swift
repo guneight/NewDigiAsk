@@ -19,35 +19,28 @@ extension DetailHubungiKamiViewController {
         detailHubungiKamiBaseView.addSubview(iconCreateNewContactImage)
         UIHelper.makeImageView(imageView: iconCreateNewContactImage, leadingAnchor: detailHubungiKamiBaseView.leadingAnchor, topAnchor: detailHubungiKamiBaseView.topAnchor, leadingConstant: 20, topConstant: 30, corner: 0, heightAnchor: 20)
         iconCreateNewContactImage.widthAnchor.constraint(equalToConstant: 20 ).isActive = true
-        iconCreateNewContactImage.backgroundColor = .gray
+        iconCreateNewContactImage.contentMode = .scaleAspectFit
+     
+        iconCreateNewContactImage.image = UIImage(named: "newContactIcon")
         
         detailHubungiKamiBaseView.addSubview(createNewContactLabel)
         UIHelper.makeLabel(label: createNewContactLabel, corner: 0, allignment: .left, leadingAnchor: iconCreateNewContactImage.trailingAnchor, trailingAnchor: detailHubungiKamiBaseView.trailingAnchor, topAnchor: detailHubungiKamiBaseView.topAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 35, heightAnchor: 12, widthAnchor: 0)
         UIHelper.setTextLabel(label: createNewContactLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 12, text: "Create New Contact", kerning: 0.4)
+        createNewContactLabel.isUserInteractionEnabled = true
 
         detailHubungiKamiBaseView.addSubview(underlineCreateNewContact)
         UIHelper.makeView(view: underlineCreateNewContact, leadingAnchor: detailHubungiKamiBaseView.leadingAnchor, trailingAnchor: detailHubungiKamiBaseView.trailingAnchor, topAnchor: iconCreateNewContactImage.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 1, widthAnchor: 0)
         underlineCreateNewContact.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
 
-        detailHubungiKamiBaseView.addSubview(iconAddContactImage)
-        UIHelper.makeImageView(imageView: iconAddContactImage, leadingAnchor: detailHubungiKamiBaseView.leadingAnchor, topAnchor: underlineCreateNewContact.bottomAnchor, leadingConstant: 20, topConstant: 10, corner: 0, heightAnchor: 20)
-        iconAddContactImage.widthAnchor.constraint(equalToConstant: 20 ).isActive = true
-
-        detailHubungiKamiBaseView.addSubview(addContactLabel)
-        UIHelper.makeLabel(label: addContactLabel, corner: 0, allignment: .left, leadingAnchor: iconAddContactImage.trailingAnchor, trailingAnchor: detailHubungiKamiBaseView.trailingAnchor, topAnchor: underlineCreateNewContact.bottomAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 15, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: addContactLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 12, text: "Add to Contact", kerning: 0.4)
-
-        detailHubungiKamiBaseView.addSubview(underlineAddCOntact)
-        UIHelper.makeView(view: underlineAddCOntact, leadingAnchor: detailHubungiKamiBaseView.leadingAnchor, trailingAnchor: detailHubungiKamiBaseView.trailingAnchor, topAnchor: iconAddContactImage.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 1, widthAnchor: 0)
-        underlineAddCOntact.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-
         detailHubungiKamiBaseView.addSubview(iconSMSImage)
-        UIHelper.makeImageView(imageView: iconSMSImage, leadingAnchor: detailHubungiKamiBaseView.leadingAnchor, topAnchor: underlineAddCOntact.bottomAnchor, leadingConstant: 20, topConstant: 10, corner: 0, heightAnchor: 20)
+        UIHelper.makeImageView(imageView: iconSMSImage, leadingAnchor: detailHubungiKamiBaseView.leadingAnchor, topAnchor: underlineCreateNewContact.bottomAnchor, leadingConstant: 20, topConstant: 10, corner: 0, heightAnchor: 20)
         iconSMSImage.widthAnchor.constraint(equalToConstant: 20 ).isActive = true
+        iconSMSImage.image = UIImage(named: "messageIcon")
 
         detailHubungiKamiBaseView.addSubview(smsLabel)
-        UIHelper.makeLabel(label: smsLabel, corner: 0, allignment: .left, leadingAnchor: iconSMSImage.trailingAnchor, trailingAnchor: detailHubungiKamiBaseView.trailingAnchor, topAnchor: underlineAddCOntact.bottomAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 15, heightAnchor: 12, widthAnchor: 0)
+        UIHelper.makeLabel(label: smsLabel, corner: 0, allignment: .left, leadingAnchor: iconSMSImage.trailingAnchor, trailingAnchor: detailHubungiKamiBaseView.trailingAnchor, topAnchor: underlineCreateNewContact.bottomAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 15, heightAnchor: 12, widthAnchor: 0)
         UIHelper.setTextLabel(label: smsLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 12, text: "SMS", kerning: 0.4)
+        smsLabel.isUserInteractionEnabled = true
 
         detailHubungiKamiBaseView.addSubview(underlineSMS)
         UIHelper.makeView(view: underlineSMS, leadingAnchor: detailHubungiKamiBaseView.leadingAnchor, trailingAnchor: detailHubungiKamiBaseView.trailingAnchor, topAnchor: iconSMSImage.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 1, widthAnchor: 0)

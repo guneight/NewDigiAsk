@@ -56,7 +56,7 @@ class InputKodeVerifikasiViewController: UIViewController {
         imageIconVerifikasi.widthAnchor.constraint(equalToConstant: 48).isActive = true
         imageIconVerifikasi.topAnchor.constraint(equalTo: kodeVerifikasi.topAnchor, constant:45).isActive = true
         imageIconVerifikasi.centerXAnchor.constraint(equalTo: kodeVerifikasi.centerXAnchor).isActive = true
-        imageIconVerifikasi.backgroundColor = .red
+        imageIconVerifikasi.image = UIImage(named: "smsIcon")
         
         kodeVerifikasi.addSubview(labelMasukkanKode)
         UIHelper.makeLabel(label: labelMasukkanKode, corner: 0, allignment: .center, leadingAnchor: kodeVerifikasi.leadingAnchor, trailingAnchor: kodeVerifikasi.trailingAnchor, topAnchor: imageIconVerifikasi.bottomAnchor, leadingConstant: 99, trailingConstant: -99, topConstant: 12, heightAnchor: 18, widthAnchor: 0)

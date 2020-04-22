@@ -7,4 +7,7 @@ target 'NewDigiAsk' do
 
   # Pods for NewDigiAsk
     pod 'PinCodeTextField'
+    pod 'GoogleMaps'
+    pod 'GooglePlaces'
+    pod 'GooglePlacePicker'
 end

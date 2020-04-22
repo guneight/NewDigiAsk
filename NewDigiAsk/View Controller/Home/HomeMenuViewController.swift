@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeMenuViewController: UIViewController {
+class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
 
    let scrollView : UIScrollView = UIScrollView()
       let containerViewNav : UIView = UIView()
@@ -27,8 +27,14 @@ class HomeMenuViewController: UIViewController {
       let profileButton : UIButton = UIButton()
       let imageBarView : UIImageView = UIImageView()
       let logoImageView : UIImageView = UIImageView()
+    
+      let viewMap = UIView()
+      let labelMap = UILabel()
+      let imageViewMap = UIImageView()
       
     var indexProduk : Int = 0
+    var loginStatus : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,11 +45,16 @@ class HomeMenuViewController: UIViewController {
         collectionViewInfo.reloadData()
         view.layoutIfNeeded()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
         profileButton.addTarget(self, action: #selector(tabBarProfileAction(sender:)), for: .touchUpInside)
         beliButton.addTarget(self, action: #selector(tabBarBeliAction(sender:)), for: .touchUpInside)
         klaimButton.addTarget(self, action: #selector(tabBarKlaim(sender:)), for: .touchUpInside)
         notifButton.addTarget(self, action: #selector(notificationAction(sender:)), for: .touchUpInside)
         chatButton.addTarget(self, action: #selector(hubungiKamiAction(sender:)), for: .touchUpInside)
+        simulasiButton.addTarget(self, action: #selector(simulasiAction(sender:)), for: .touchUpInside)
+        imageViewMap.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.mapAction(sender:)))
+        self.imageViewMap.addGestureRecognizer(gesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,16 +66,17 @@ class HomeMenuViewController: UIViewController {
     }
     
     
+    
     @objc func tabBarProfileAction (sender : UIButton){
-//        let DaftarVC = storyboard?.instantiateViewController(identifier: "DaftarAccountViewController")  as! DaftarAccountViewController
-//        self.navigationController?.pushViewController(DaftarVC, animated: true)
-//        print("pressss")
+        let DaftarVC = storyboard?.instantiateViewController(identifier: "DAsViewController")  as! DAsViewController
+        self.navigationController?.pushViewController(DaftarVC, animated: true)
+        print("pressss")
         
 //        let daftarAccountVC = storyboard?.instantiateViewController(identifier: "DaftarAccountViewController") as! DaftarAccountViewController
 //        navigationController?.pushViewController(daftarAccountVC, animated: true)
-        let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController")  as! ProfileViewController
-                self.navigationController?.pushViewController(profileVC, animated: true)
-        print("pressss")
+//        let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController")  as! ProfileViewController
+//                self.navigationController?.pushViewController(profileVC, animated: true)
+//        print("pressss")
     }
         
     @objc func tabBarBeliAction(sender : UIButton){
@@ -90,8 +102,17 @@ class HomeMenuViewController: UIViewController {
         self.navigationController?.pushViewController(hubungiKamiVC, animated: true)
     }
     
+    @objc func mapAction(sender: Any){
+        let mapVc = storyboard?.instantiateViewController(identifier: "MapViewController") as! MapViewController
+        self.navigationController?.pushViewController(mapVc, animated: true)
+        print("lewat")
+    }
     
-    
+    @objc func simulasiAction(sender: UIButton){
+        let DaftarVC = storyboard?.instantiateViewController(identifier: "DaftarAccountViewController")  as! DaftarAccountViewController
+        self.navigationController?.pushViewController(DaftarVC, animated: true)
+        print("pressss")
+    }
     
     
 
