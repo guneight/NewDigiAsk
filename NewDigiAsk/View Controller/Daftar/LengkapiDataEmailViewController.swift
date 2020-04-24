@@ -31,10 +31,14 @@ class LengkapiDataEmailViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupUINavBarLengkapiData()
+        daftarButton.addTarget(self, action: #selector(daftarAction(sender:)), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @objc func daftarAction(sender : UIButton){
+        self.navigationController?.popToRootViewController(animated: true)
+    }
    
 
 }

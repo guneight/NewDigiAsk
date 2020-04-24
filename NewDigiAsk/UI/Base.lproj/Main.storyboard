@@ -611,6 +611,21 @@
             </objects>
             <point key="canvasLocation" x="10750" y="-18"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="SbK-5E-6R5">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="GZ0-MW-21z" customClass="LoginViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aDY-EW-Azl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JJj-1W-P9T"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q6F-66-f2X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12167" y="-18"/>
+        </scene>
         <!--Input Kode Verifikasi Email View Controller-->
         <scene sceneID="JGz-OR-zl7">
             <objects>

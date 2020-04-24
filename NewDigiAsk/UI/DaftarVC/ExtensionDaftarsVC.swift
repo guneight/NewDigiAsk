@@ -23,7 +23,7 @@ extension DaftarViewController{
             title: "DAFTAR", style: .plain, target: nil, action: nil)
     }
     @objc func backButtonTapped() {
-        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
         func scrollViews (){
