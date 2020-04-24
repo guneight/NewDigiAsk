@@ -11,6 +11,8 @@ import UIKit
 class NotifikasiViewController: UIViewController {
     let notifikasiBaseView = UIView()
     let notifikasiListTable = UITableView()
+    var titleNotifArray = ["Askrindo serahkan bantuan mobil pintar untuk Aceh","Askrindo serahkan bantuan mobil pintar untuk Aceh","Askrindo serahkan bantuan mobil pintar untuk Aceh","Askrindo serahkan bantuan mobil pintar untuk Aceh","Askrindo serahkan bantuan mobil pintar untuk Aceh","Askrindo serahkan bantuan mobil pintar untuk Aceh","Askrindo serahkan bantuan mobil pintar untuk Aceh"]
+    var bodyNotifArry = ["Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat …Selengkapnya","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat …Selengkapnya","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat …Selengkapnya","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat …Selengkapnya","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat …Selengkapnya","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat …Selengkapnya","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat …Selengkapnya"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,18 +22,15 @@ class NotifikasiViewController: UIViewController {
         notifikasiListTable.delegate = self
         notifikasiListTable.dataSource  = self
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
+ 
+    // MARK: - TRUSH ACTION
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
+   
 
 }

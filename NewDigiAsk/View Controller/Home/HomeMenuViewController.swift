@@ -68,7 +68,7 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     
     
     @objc func tabBarProfileAction (sender : UIButton){
-        let DaftarVC = storyboard?.instantiateViewController(identifier: "DAsViewController")  as! DAsViewController
+        let DaftarVC = storyboard?.instantiateViewController(identifier: "DaftarViewController")  as! DaftarViewController
         self.navigationController?.pushViewController(DaftarVC, animated: true)
         print("pressss")
         
@@ -109,9 +109,7 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     @objc func simulasiAction(sender: UIButton){
-        let DaftarVC = storyboard?.instantiateViewController(identifier: "DaftarAccountViewController")  as! DaftarAccountViewController
-        self.navigationController?.pushViewController(DaftarVC, animated: true)
-        print("pressss")
+       
     }
     
     

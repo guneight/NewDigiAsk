@@ -218,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="7023" y="695"/>
         </scene>
-        <!--View Controller-->
+        <!--Daftar View Controller-->
         <scene sceneID="29b-D1-BcJ">
             <objects>
-                <viewController id="q19-eE-ZM6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DaftarViewController" id="q19-eE-ZM6" customClass="DaftarViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4SJ-vx-ixK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -580,6 +580,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Chi-nE-giB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7799" y="-18"/>
+        </scene>
+        <!--Verifkasi Email View Controller-->
+        <scene sceneID="57O-u5-qN1">
+            <objects>
+                <viewController storyboardIdentifier="VerifkasiEmailViewController" id="nKX-Y0-ZfP" customClass="VerifkasiEmailViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4YR-3O-bNX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Xmg-eI-E17"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D46-LY-nqA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9265" y="-7"/>
+        </scene>
+        <!--Lengkapi Data Email View Controller-->
+        <scene sceneID="GW4-RK-XQY">
+            <objects>
+                <viewController storyboardIdentifier="LengkapiDataEmailViewController" id="uGv-eb-Zeh" customClass="LengkapiDataEmailViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tjs-me-k48">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="826-Ag-YP6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="flR-H9-EYY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10750" y="-18"/>
+        </scene>
+        <!--Input Kode Verifikasi Email View Controller-->
+        <scene sceneID="JGz-OR-zl7">
+            <objects>
+                <viewController storyboardIdentifier="InputKodeVerifikasiEmailViewController" id="taQ-S3-ynl" customClass="InputKodeVerifikasiEmailViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X4f-3J-w0T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irC-70-hAx" customClass="PinCodeTextField" customModule="PinCodeTextField">
+                                <rect key="frame" x="67" y="64" width="240" height="378"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
+                                        <color key="value" red="0.96078431369999995" green="0.50980392159999999" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="j5b-D5-fZo"/>
+                    </view>
+                    <connections>
+                        <outlet property="kodeVerifikasi" destination="irC-70-hAx" id="YDh-OP-QEN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cb3-hy-UWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10013.6" y="-7.389162561576355"/>
         </scene>
         <!--Syaratdan Ketentuan View Controller-->
         <scene sceneID="WxD-7J-KWp">

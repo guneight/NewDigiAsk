@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DAsViewController: UIViewController {
+class DaftarViewController: UIViewController {
     let scrollViewDaftar = UIScrollView()
     let viewDaftar = UIView()
     let buttonBackNav = UIButton()
@@ -39,6 +39,11 @@ class DAsViewController: UIViewController {
     
     
     @objc func daftarButtonAction(sender: Any){
+       
+        if textFieldEmail.text?.isValidEmail == true{
+            let verifikasiEmailVC = storyboard?.instantiateViewController(identifier: "VerifkasiEmailViewController") as! VerifkasiEmailViewController
+            self.navigationController?.pushViewController(verifikasiEmailVC, animated: true)
+        }else{
            let alertNoHp = UIAlertController(title: "1234567890", message: "Apakah nomor ponsel Anda sudah benar?", preferredStyle: .alert)
            alertNoHp.addAction(UIAlertAction(title: "UBAH", style: .cancel, handler: nil))
            alertNoHp.addAction(UIAlertAction(title: "BENAR", style: .default, handler: {(action)-> Void in
@@ -48,6 +53,7 @@ class DAsViewController: UIViewController {
            }))
            self.present(alertNoHp, animated: true)
        }
+    }
      
     
 }

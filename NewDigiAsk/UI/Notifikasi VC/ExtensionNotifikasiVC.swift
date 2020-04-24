@@ -9,13 +9,15 @@
 import UIKit
 extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return titleNotifArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "notifikasiCell", for: indexPath) as! notifikasiListTableViewCell
         cell.backgroundColor = .white
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        cell.headerNotifikaiLabel.text = titleNotifArray[indexPath.row]
+        cell.deskripsiNotifikasilabel.text = bodyNotifArry[indexPath.row]
         return cell
     }
     
@@ -28,14 +30,16 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
         navigationController?.pushViewController(detailNotifikasiVC, animated: true)
     }
     
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            tableView.deleteRows(at: [indexPath], with: .fade)
+        if editingStyle == .delete {
+            titleNotifArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+       
         }
-        }
+    }
     
     
     func setupUI(){
@@ -53,14 +57,14 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
         ])
         notifikasiListTable.backgroundColor = .white
         notifikasiListTable.showsVerticalScrollIndicator = false
-        
+        notifikasiListTable.separatorStyle = .none
         notifikasiListTable.register(notifikasiListTableViewCell.self, forCellReuseIdentifier: "notifikasiCell")
         
     }
     
     func setupNavBarNotifikasi(){
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
-        let deleteButtonNav = UIBarButtonItem(image: UIImage(named: "whiteTrushIcon"), style: .plain, target: self, action: #selector(deleteButtonAction))
+        let deleteButtonNav = UIBarButtonItem(image: UIImage(named: "whiteTrushIcon"), style: .plain, target: self, action: #selector(trushAction))
         self.navigationItem.leftBarButtonItem = customButtonNav
         self.navigationItem.rightBarButtonItem = deleteButtonNav
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
@@ -73,14 +77,17 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
         
            }
            
-           @objc func backButtonTapped() {
-               navigationController?.popViewController(animated: true)
+        @objc func backButtonTapped() {
+            navigationController?.popViewController(animated: true)
                
-           }
+        }
     
-    @objc func deleteButtonAction(){
-        
-    }
+        @objc func trushAction(sender :UIButton){
+            titleNotifArray.removeAll()
+            bodyNotifArry.removeAll()
+            notifikasiListTable.reloadData()
+            
+        }
            
     
 }

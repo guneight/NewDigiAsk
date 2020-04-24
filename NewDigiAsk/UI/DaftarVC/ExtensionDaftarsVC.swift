@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension DAsViewController{
+extension DaftarViewController{
     
     func setupUINavBarDaftar() {
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
@@ -52,7 +52,6 @@ extension DAsViewController{
         UIHelper.makeTetxField(textField: textFieldEmail, leadingAnchor: viewDaftar.leadingAnchor, trailingAnchor: viewDaftar.trailingAnchor, topAnchor: labelTextfieldEmail.bottomAnchor, leadingConstant: 40, trailingConstant: -24, topConstant: 20, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.06274509804, green: 0.06274509804, blue: 0.06274509804, alpha: 1))
         textFieldEmail.font = UIFont(name: "AvantGarde Bk BT", size: 16)
         textFieldEmail.placeholder = "nomor hp atau email"
-        textFieldEmail
         UIHelper.setTextField(textField: textFieldEmail, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 16, text: "nomor hp atau email", kerning: 0.4)
 
 
@@ -97,5 +96,11 @@ extension DAsViewController{
         masukButton.contentHorizontalAlignment = .left
 
 
+    }
+}
+
+extension String {
+    var isValidEmail: Bool {
+        NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
     }
 }
