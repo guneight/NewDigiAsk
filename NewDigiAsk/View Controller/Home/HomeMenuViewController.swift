@@ -51,15 +51,17 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         klaimButton.addTarget(self, action: #selector(tabBarKlaim(sender:)), for: .touchUpInside)
         notifButton.addTarget(self, action: #selector(notificationAction(sender:)), for: .touchUpInside)
         chatButton.addTarget(self, action: #selector(hubungiKamiAction(sender:)), for: .touchUpInside)
+        cartButton.addTarget(self, action: #selector(cartAction(sender:)), for: .touchUpInside)
         simulasiButton.addTarget(self, action: #selector(simulasiAction(sender:)), for: .touchUpInside)
+        
         imageViewMap.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.mapAction(sender:)))
         self.imageViewMap.addGestureRecognizer(gesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
-//        cvSetup()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        cvSetup()
         collectionViewInfo.reloadData()
         collectionViewPromo.reloadData()
         collectBannerPromo.reloadData()
@@ -106,6 +108,11 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     @objc func hubungiKamiAction(sender: UIButton){
         let hubungiKamiVC = storyboard?.instantiateViewController(identifier: "HubungiKamiViewController") as! HubungiKamiViewController
         self.navigationController?.pushViewController(hubungiKamiVC, animated: true)
+    }
+    
+    @objc func cartAction(sender : UIButton){
+        let checkOutVC = storyboard?.instantiateViewController(identifier: "CheckOutCartViewController") as! CheckOutCartViewController
+        self.navigationController?.pushViewController(checkOutVC, animated: true)
     }
     
     @objc func mapAction(sender: Any){

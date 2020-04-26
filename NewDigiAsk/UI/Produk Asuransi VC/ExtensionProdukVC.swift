@@ -112,7 +112,7 @@ extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
         produkImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         produkImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         produkImage.image = UIImage(named: "cart.png")
-        produkImage.contentMode = .scaleAspectFit
+        produkImage.contentMode = .center
         produkImage.layer.masksToBounds = true
         produkImage.layer.cornerRadius = 17
     

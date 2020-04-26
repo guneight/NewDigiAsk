@@ -53,6 +53,36 @@
             </objects>
             <point key="canvasLocation" x="4678" y="4179"/>
         </scene>
+        <!--Check Out Cart View Controller-->
+        <scene sceneID="xle-TY-XIl">
+            <objects>
+                <viewController storyboardIdentifier="CheckOutCartViewController" id="j67-w4-ogm" customClass="CheckOutCartViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lR3-p6-hLR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kEn-DF-XhI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KmP-ty-1rA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4678" y="4895"/>
+        </scene>
+        <!--Pembayaran Cart View Controller-->
+        <scene sceneID="uEz-ky-L34">
+            <objects>
+                <viewController storyboardIdentifier="PembayaranCartViewController" id="tCM-Cf-3rl" customClass="PembayaranCartViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hmo-fa-1d5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="RdV-vU-uqd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCD-e7-LrH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5542" y="4895"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="aXy-Of-pnj">
             <objects>
@@ -66,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJJ-dD-x2I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4678" y="4984"/>
+            <point key="canvasLocation" x="4678" y="5603"/>
         </scene>
         <!--Detail Hubungi Kami View Controller-->
         <scene sceneID="xPf-Sz-MWw">
@@ -775,6 +805,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yZ-eq-Lra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="12209" y="695"/>
+        </scene>
+        <!--Bayar Cart View Controller-->
+        <scene sceneID="f50-Sg-boQ">
+            <objects>
+                <viewController storyboardIdentifier="BayarCartViewController" id="JpX-Md-Emc" customClass="BayarCartViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hYg-TW-C92">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8kj-2T-b4i"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dj0-1v-uem" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6398" y="4895"/>
+        </scene>
+        <!--Detail Bayar Cart View Controller-->
+        <scene sceneID="JZN-az-4pN">
+            <objects>
+                <viewController storyboardIdentifier="DetailBayarCartViewController" id="Iyd-Zi-Mph" customClass="DetailBayarCartViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AZ4-sm-M1M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="BkF-Ax-kV7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ims-u6-UxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7218" y="4895"/>
         </scene>
     </scenes>
 </document>
