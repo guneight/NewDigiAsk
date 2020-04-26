@@ -9,29 +9,29 @@
 import UIKit
 
 class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
-
-   let scrollView : UIScrollView = UIScrollView()
-      let containerViewNav : UIView = UIView()
-      let cartButton : UIButton = UIButton()
-      let chatButton : UIButton = UIButton()
-      let notifButton : UIButton = UIButton()
-      let containerView : UIView = UIView()
-      let backcontainerView : UIView = UIView()
-      let baseView : UIView = UIView()
-      let tabBarView : UIView = UIView()
-      let stackView : UIStackView = UIStackView()
-      let homeButton : UIButton = UIButton()
-      let klaimButton : UIButton = UIButton()
-      let beliButton : UIButton = UIButton()
-      let simulasiButton : UIButton = UIButton()
-      let profileButton : UIButton = UIButton()
-      let imageBarView : UIImageView = UIImageView()
-      let logoImageView : UIImageView = UIImageView()
     
-      let viewMap = UIView()
-      let labelMap = UILabel()
-      let imageViewMap = UIImageView()
-      
+    let scrollView : UIScrollView = UIScrollView()
+    let containerViewNav : UIView = UIView()
+    let cartButton : UIButton = UIButton()
+    let chatButton : UIButton = UIButton()
+    let notifButton : UIButton = UIButton()
+    let containerView : UIView = UIView()
+    let backcontainerView : UIView = UIView()
+    let baseView : UIView = UIView()
+    let tabBarView : UIView = UIView()
+    let stackView : UIStackView = UIStackView()
+    let homeButton : UIButton = UIButton()
+    let klaimButton : UIButton = UIButton()
+    let beliButton : UIButton = UIButton()
+    let simulasiButton : UIButton = UIButton()
+    let profileButton : UIButton = UIButton()
+    let imageBarView : UIImageView = UIImageView()
+    let logoImageView : UIImageView = UIImageView()
+    
+    let viewMap = UIView()
+    let labelMap = UILabel()
+    let imageViewMap = UIImageView()
+    
     var indexProduk : Int = 0
     var loginStatus : Int = 0
     
@@ -58,23 +58,33 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        cvSetup()
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+//        cvSetup()
         collectionViewInfo.reloadData()
         collectionViewPromo.reloadData()
         collectBannerPromo.reloadData()
+        print("Login Status :", loginStatus)
     }
+    
+    
     
     
     
     @objc func tabBarProfileAction (sender : UIButton){
+        if (loginStatus == 0) {
         let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController")  as! LoginViewController
         self.navigationController?.pushViewController(loginVC, animated: true)
         print("pressss")
+        }else if(loginStatus == 1){
+            let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController") as!ProfileViewController
+            self.navigationController?.pushViewController(profileVC, animated: true)
+        }else{
+            print("Login failed")
+        }
         
-   
+        
     }
-        
+    
     @objc func tabBarBeliAction(sender : UIButton){
         
         let daftarProdukVC = storyboard?.instantiateViewController(identifier : "ProdukViewController" ) as! ProdukViewController
@@ -105,11 +115,11 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     @objc func simulasiAction(sender: UIButton){
-       
+        
     }
     
     
-
-
+    
+    
 }
 

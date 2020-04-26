@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
     let googleIconImage = UIImageView()
     let belumPunyaAkunLabel = UILabel()
     
+    var loginStatus : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class LoginViewController: UIViewController {
         
     }
     
-
+    
     @objc func checkEmail() {
         if nomorPonseLEmailTextField.text?.isValidEmail == true{
             passwordLabel.isHidden = false
@@ -55,11 +56,22 @@ class LoginViewController: UIViewController {
     }
     
     @objc func continueAction(){
-        print("continueAction")
-        let verifikasiEmailVC = storyboard?.instantiateViewController(identifier: "VerifkasiEmailViewController") as! VerifkasiEmailViewController
-        self.navigationController?.pushViewController(verifikasiEmailVC, animated: true)
+        if (nomorPonseLEmailTextField.text?.isValidEmail == true) {
+            print("continueAction")
+            let verifikasiEmailVC = storyboard?.instantiateViewController(identifier: "VerifkasiEmailViewController") as! VerifkasiEmailViewController
+            verifikasiEmailVC.loginStatus = loginStatus
+            self.navigationController?.pushViewController(verifikasiEmailVC, animated: true)
+        }else if (nomorPonseLEmailTextField.text?.isNumber == true){
+            let verifikasiVC = storyboard?.instantiateViewController(identifier: "VerifikasiViewController") as!VerifikasiViewController
+            verifikasiVC.loginStatus = loginStatus
+            self.navigationController?.pushViewController(verifikasiVC, animated: true)
+        }else{
+            let alertNoHp = UIAlertController(title: "Nomor HP atau Email tidak valid", message: "Mohon periksa kembali nomor hp atau email Anda", preferredStyle: .alert)
+            alertNoHp.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alertNoHp, animated: true)
+        }
     }
-
+    
     
     func daftarDisiniLink(){
         let text = (belumPunyaAkunLabel.text)!
@@ -78,7 +90,7 @@ class LoginViewController: UIViewController {
         }
         
     }
-              
+    
 }
 
 

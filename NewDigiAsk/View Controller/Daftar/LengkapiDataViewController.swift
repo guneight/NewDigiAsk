@@ -17,6 +17,8 @@ class LengkapiDataViewController: UIViewController {
     let underLineNamaLengkap = UIView()
     let selesaiButton = UIButton()
     
+    var loginStatus : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUINav()
@@ -83,7 +85,9 @@ class LengkapiDataViewController: UIViewController {
     }
     
     @objc func selesaiAction (sender: Any){
-         navigationController?.popToRootViewController(animated: true)
+         let homeVC = self.navigationController?.viewControllers.first as! HomeMenuViewController
+         homeVC.loginStatus = 1
+         self.navigationController?.popToRootViewController(animated: true)
     }
 
 }

@@ -27,6 +27,8 @@ class LengkapiDataEmailViewController: UIViewController {
     let daftarButton = UIButton()
     let syaratLabel = UILabel()
     
+    var loginStatus : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -37,6 +39,8 @@ class LengkapiDataEmailViewController: UIViewController {
     
     
     @objc func daftarAction(sender : UIButton){
+        let homeVC = self.navigationController?.viewControllers.first as! HomeMenuViewController
+        homeVC.loginStatus = 1
         self.navigationController?.popToRootViewController(animated: true)
     }
    

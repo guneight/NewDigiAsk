@@ -21,6 +21,8 @@ class VerifikasiViewController: UIViewController {
     let labelMelaluiSms = UILabel()
     let labelNomorsms = UILabel()
     
+    var loginStatus : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()

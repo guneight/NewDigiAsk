@@ -16,6 +16,8 @@ class VerifkasiEmailViewController: UIViewController {
     let melaluiemailLabel = UILabel()
     let emailLabel = UILabel()
     
+    var loginStatus : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -33,6 +35,7 @@ class VerifkasiEmailViewController: UIViewController {
     
     @objc func verifikasiEmailAction(sender : Any){
         let inputVerifikasiVC = storyboard?.instantiateViewController(identifier: "InputKodeVerifikasiEmailViewController") as! InputKodeVerifikasiEmailViewController
+        inputVerifikasiVC.loginStatus = loginStatus
         navigationController?.pushViewController(inputVerifikasiVC, animated: true)
     }
 

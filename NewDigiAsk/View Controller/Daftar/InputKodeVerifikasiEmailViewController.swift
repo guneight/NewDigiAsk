@@ -21,6 +21,8 @@ class InputKodeVerifikasiEmailViewController: UIViewController {
         
         @IBOutlet weak var kodeVerifikasi: PinCodeTextField!
         
+        var loginStatus : Int = 0
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             setupNavBar()
@@ -33,6 +35,7 @@ class InputKodeVerifikasiEmailViewController: UIViewController {
             buttonverifikasi.addTarget(self, action: #selector(verifikasiAction(sender:)), for: .touchUpInside)
             print("InputKodeVerifikasiEmailViewController")
             view.layoutIfNeeded()
+            print(loginStatus)
             // Do any additional setup after loading the view.
         }
         
@@ -145,6 +148,7 @@ class InputKodeVerifikasiEmailViewController: UIViewController {
     //        let kode = kodeVerifikasi.text
     //        if kode != "" {
                 let lengkapiDataVC = self.storyboard?.instantiateViewController(identifier: "LengkapiDataEmailViewController")  as! LengkapiDataEmailViewController
+            lengkapiDataVC.loginStatus = loginStatus
                 self.navigationController?.pushViewController(lengkapiDataVC, animated: true)
             print("presss")
     //        }

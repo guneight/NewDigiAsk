@@ -20,6 +20,8 @@ class InputKodeVerifikasiViewController: UIViewController {
     
     @IBOutlet weak var kodeVerifikasi: PinCodeTextField!
     
+    var loginStatus : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()

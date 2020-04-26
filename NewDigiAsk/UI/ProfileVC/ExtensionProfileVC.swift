@@ -48,6 +48,11 @@ extension ProfileViewController : UITableViewDataSource, UITableViewDelegate{
         }else if menuProfile[indexPath.row] == "List Penerima Manfaat"{
             let listPenerimaManfaatVC = storyboard?.instantiateViewController(identifier: "DaftarTertanggungViewController") as! DaftarTertanggungViewController
             self.navigationController?.pushViewController(listPenerimaManfaatVC, animated: true)
+        }else if menuProfile[indexPath.row] == "Keluar" {
+            print("keluar")
+            let homeVC = self.navigationController?.viewControllers.first as! HomeMenuViewController
+            homeVC.loginStatus = 0
+            self.navigationController?.popToRootViewController(animated: true)
         }
         
     }

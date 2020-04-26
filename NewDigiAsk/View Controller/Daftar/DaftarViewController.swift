@@ -23,6 +23,7 @@ class DaftarViewController: UIViewController {
     let labelSudahPunyaAkun = UILabel()
     let masukButton = UIButton()
    
+    var loginStatus : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
