@@ -46,16 +46,21 @@ class PembayaranCartViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupNavBarPembayaranCart()
-         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         let gesture = UITapGestureRecognizer(target: self, action: #selector(bcaAction(sender:)))
         bcaBaseView.addGestureRecognizer(gesture)
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        setupUI()
+        setupNavBarPembayaranCart()
+        view.layoutIfNeeded()
+    }
+    
     @objc func bcaAction(sender : Any) {
         let bayarCartVC = storyboard?.instantiateViewController(identifier: "BayarCartViewController") as! BayarCartViewController
         self.navigationController?.pushViewController(bayarCartVC, animated: true)
     }
-
+    
 }

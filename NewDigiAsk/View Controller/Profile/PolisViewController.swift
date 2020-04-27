@@ -44,7 +44,7 @@ class PolisViewController: UIViewController {
         polisPendingTableView.delegate = self
         polisPendingTableView.dataSource = self
         polisManageSegmentControl.addTarget(self, action: #selector(segmentedAction(sender:)), for: .valueChanged)
-        
+        polisfilterButton.addTarget(self, action: #selector(polisFilterAction(sender:)), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
     
@@ -63,5 +63,14 @@ class PolisViewController: UIViewController {
     @objc func namaProdukAction(sender : Any){
         let detailPolisVC  = storyboard?.instantiateViewController(identifier: "DetailPolisViewController") as! DetailPolisViewController
         navigationController?.pushViewController(detailPolisVC, animated: true)
+    }
+    
+    @objc func polisFilterAction(sender: Any){
+        let filterPolisVC = self.storyboard?.instantiateViewController(identifier: "FilterPolisViewController") as! FilterPolisViewController
+        filterPolisVC.modalPresentationStyle = UIModalPresentationStyle.automatic
+        filterPolisVC.transitioningDelegate = PresentationDelegate
+        filterPolisVC.modalPresentationStyle = .custom
+        present(filterPolisVC, animated: true, completion: {})
+        
     }
 }

@@ -15,7 +15,7 @@ class DetailBayarCartViewController: UIViewController {
     let nomorTransaksiLabel = UILabel()
     let headerNomorPengajuanLabel = UILabel()
     let nomorPengajuanLabel = UILabel()
-     
+    
     let segeraLakukanPembayaranLabel = UILabel()
     let tanggalWaktuPembayarannLabel = UILabel()
     
@@ -33,7 +33,7 @@ class DetailBayarCartViewController: UIViewController {
     let mobileBankingLabel = UILabel()
     let rightButtonMobile = UIButton()
     let lihatTransaksiButton = UIButton()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -42,10 +42,15 @@ class DetailBayarCartViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        setupUI()
+        setupNavBarDetailBayarCart()
+        view.layoutIfNeeded()
+    }
+    
     @objc func lihatTransaksiAction (){
         let polisVC = storyboard?.instantiateViewController(identifier: "PolisViewController") as! PolisViewController
         self.navigationController?.pushViewController(polisVC, animated: true)
     }
-
+    
 }

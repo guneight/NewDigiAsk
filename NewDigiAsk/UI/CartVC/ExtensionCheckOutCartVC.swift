@@ -22,7 +22,7 @@ extension CheckOutCartViewController: UITableViewDelegate, UITableViewDataSource
         cell.deskripsiManfaatLabel.text = "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam"
         cell.nominalLabel.text = "Rp 250.000,-"
         
-                   cell.rightArrowButton.addTarget(self, action: #selector(rightButtonAction(sender:)), for: .touchUpInside)
+        cell.rightArrowButton.addTarget(self, action: #selector(rightButtonAction(sender:)), for: .touchUpInside)
         //           let tapGesture = UITapGestureRecognizer(target: self, action: #selector(namaProdukAction(sender:)))
         //           cell.namaProdukLabel.addGestureRecognizer(tapGesture)
         return cell
@@ -36,7 +36,7 @@ extension CheckOutCartViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func setupUI(){
-
+        
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         view.addSubview(produkBaseView)
         produkBaseView.translatesAutoresizingMaskIntoConstraints = false
@@ -130,26 +130,26 @@ extension CheckOutCartViewController: UITableViewDelegate, UITableViewDataSource
         completeImage.layer.cornerRadius = 17
         completeImage.image = UIImage(named: "checkfinishIcon")
         completeImage.contentMode = .center
-
+        
         produkBaseView.addSubview(keranjangBaseView)
         UIHelper.makeView(view: keranjangBaseView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
         keranjangBaseView.bottomAnchor.constraint(equalTo: produkBaseView.bottomAnchor).isActive = true
         keranjangBaseView.backgroundColor = .white
-
+        
         keranjangBaseView.addSubview(pilihSemuaProdukButton)
         UIHelper.makeButton(button: pilihSemuaProdukButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: keranjangBaseView.topAnchor, leadingConstant: 22, trailingConstant:-(view.frame.size.width-36), topConstant: 22, corner: 4, heightAnchor: 14, widthAnchor: 14)
         pilihSemuaProdukButton.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         pilihSemuaProdukButton.layer.borderWidth = 1
-
+        
         keranjangBaseView.addSubview(pilihSemuaProduk)
         UIHelper.makeLabel(label: pilihSemuaProduk, corner: 0, allignment: .left, leadingAnchor: pilihSemuaProdukButton.trailingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: keranjangBaseView.topAnchor, leadingConstant: 12, trailingConstant: -76 , topConstant: 22, heightAnchor: 12, widthAnchor: 0)
         UIHelper.setTextLabel(label: pilihSemuaProduk, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 10, text: "Pilih Semua Produk", kerning: 0.5)
-
+        
         keranjangBaseView.addSubview(trushButton)
         UIHelper.makeButton(button: trushButton, leadingAnchor: pilihSemuaProduk.trailingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: keranjangBaseView.topAnchor, leadingConstant: 12, trailingConstant: -24, topConstant: 22, corner: 0, heightAnchor: 17, widthAnchor: 0)
         trushButton.setImage(UIImage(named: "trushhapus"), for: .normal)
         trushButton.contentMode = .center
-
+        
         keranjangBaseView.addSubview(daftarProdukKeranjangTable)
         daftarProdukKeranjangTable.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -163,7 +163,7 @@ extension CheckOutCartViewController: UITableViewDelegate, UITableViewDataSource
         daftarProdukKeranjangTable.showsVerticalScrollIndicator = false
         daftarProdukKeranjangTable.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
         daftarProdukKeranjangTable.layoutIfNeeded()
-
+        
         keranjangBaseView.addSubview(checkOutButton)
         UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: daftarProdukKeranjangTable.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 15, corner: 24, heightAnchor: 48, widthAnchor: 0)
         print("checkOutButton :", checkOutButton.frame.size.width)

@@ -20,7 +20,7 @@ class PresentationController: UIPresentationController {
     
     override var frameOfPresentedViewInContainerView: CGRect{
         print("height = \(self.containerView!.frame.height*0.25)" )
-        return CGRect(origin: CGPoint(x: 0, y: (self.containerView!.frame.height)*0.115
+        return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height*0.3
         ), size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height))
     }
     
@@ -77,7 +77,7 @@ class PresentationController: UIPresentationController {
     {
         cardView = UIView()
         cardView.translatesAutoresizingMaskIntoConstraints = false
-        cardView.backgroundColor = UIColor(white: 0.0, alpha: 0)
+        cardView.backgroundColor = UIColor(white: 0.0, alpha: 0.5)
         cardView.alpha = 0.0
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismiss))
         cardView.addGestureRecognizer(tapGestureRecognizer)

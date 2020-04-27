@@ -16,8 +16,7 @@ class PresentationManager: NSObject {
         func presentationController(forPresented presented: UIViewController,
                                     presenting: UIViewController?,
                                     source: UIViewController) -> UIPresentationController? {
-            let presentationController = PresentationController(presentedViewController: presented,
-                                                                presenting: presenting)
+            let presentationController = PresentationController(presentedViewController: presented, presenting: presenting)
             return presentationController
         }
 }

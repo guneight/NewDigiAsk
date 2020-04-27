@@ -12,7 +12,7 @@ import CoreLocation
 import GoogleMaps
 import GooglePlaces
 
-class MapViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDelegate{
+class MapViewController: UIViewController, CLLocationManagerDelegate,GMSMapViewDelegate{
     let mapBaseView = UIView()
     let mapSearchBar = UISearchBar()
     let mapView = GMSMapView()
@@ -22,7 +22,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDe
         kantorCabang(name: "Askrindo Bogor", long:-6.571802 , lat:  106.808158),
         kantorCabang(name: "Askrindo Cikini", long:-6.193592 , lat:  106.839413),
         kantorCabang(name: "Askrindo Pusat", long: -6.154424, lat: 106.844391)]
-    
+    var lastLocationLong : CLLocationDegrees = 0.0
+    var lastLocationLan : CLLocationDegrees = 0.0
     // mapKey = AIzaSyDRbvUTXVtSjXPVyP3JNlqg6IBGHyKZbwA
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDe
         locationManager.requestWhenInUseAuthorization()
         listPlaceTable.delegate = self
         listPlaceTable.dataSource = self
+        
+        mapView.delegate = self
         
     }
     
@@ -57,6 +60,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDe
             return
         }
         mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        lastLocationLong = location.coordinate.longitude
+        lastLocationLan = location.coordinate.latitude
         locationManager.stopUpdatingLocation()
     }
     
@@ -81,7 +86,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDe
         return distance
     }
     
-    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+         if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {  //if phone has an app
+
+            if let url = URL(string: "comgooglemaps-x-callback://?saddr=\(lastLocationLong)),\( lastLocationLan))&daddr=\(marker.position.longitude),\(marker.position.latitude)&directionsmode=driving") {
+                           UIApplication.shared.open(url, options: [:])
+                  }}
+             else {
+                    //Open in browser
+                   if let urlDestination = URL.init(string: "https://www.google.co.in/maps/dir/?saddr=\(String(describing: lastLocationLong)),\(String(describing: lastLocationLan))&daddr=\(marker.position.longitude),\(marker.position.latitude)&directionsmode=driving") {
+                                      UIApplication.shared.open(urlDestination)
+                                  }
+                       }
+
+               }
+
+
+
 }
 
 struct  kantorCabang : Codable{

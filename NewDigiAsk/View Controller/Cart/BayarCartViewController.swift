@@ -27,6 +27,11 @@ class BayarCartViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupUI()
+        setupNavBarBayarCart()
+        view.layoutIfNeeded()
+    }
     
     @objc func bayarAction(){
         let detailBayarCartVC = storyboard?.instantiateViewController(identifier: "DetailBayarCartViewController") as! DetailBayarCartViewController
