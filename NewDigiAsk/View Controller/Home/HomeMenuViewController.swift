@@ -83,7 +83,7 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
 //        }else{
 //            print("Login failed")
 //        }
-        
+//
         
     }
     

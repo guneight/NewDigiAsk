@@ -37,7 +37,7 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
         if editingStyle == .delete {
             titleNotifArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-       
+            
         }
     }
     
@@ -75,20 +75,27 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
         UINavigationBar.appearance().isTranslucent = false
         navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "NOTIFIKASI", style: .plain, target: nil, action: nil)
         
-           }
-           
-        @objc func backButtonTapped() {
-            navigationController?.popViewController(animated: true)
-               
-        }
+    }
     
-        @objc func trushAction(sender :UIButton){
-            titleNotifArray.removeAll()
-            bodyNotifArry.removeAll()
-            notifikasiListTable.reloadData()
+    @objc func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+        
+    }
+    
+    @objc func trushAction(sender :UIButton){
+        let alertNoHp = UIAlertController(title: "Hapus Notifikasi", message: "Apakah Anda yakin untuk menghapus seluruh notifikasi?", preferredStyle: .alert)
+        alertNoHp.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertNoHp.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: {(action)-> Void in
+            self.titleNotifArray.removeAll()
+            self.bodyNotifArry.removeAll()
+            self.notifikasiListTable.reloadData()
             
-        }
-           
+        }))
+        self.present(alertNoHp, animated: true)
+        
+        
+    }
+    
     
 }
 

@@ -81,18 +81,27 @@ extension FilterPolisViewController{
         datePicker.datePickerMode = .date
         
         //ToolBar
-        let toolbar = UIToolbar();
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        let startDateToolbar = UIToolbar();
+        let endDateToolbar = UIToolbar();
+        startDateToolbar.sizeToFit()
+        endDateToolbar.sizeToFit()
         
-        startDateTextField.inputAccessoryView = toolbar
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let doneEndDateButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneEndDatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+       
+        startDateToolbar.setItems([spaceButton,doneButton,], animated: false)
+        endDateToolbar.setItems([spaceButton,doneEndDateButton], animated: false)
+        
+        
+        startDateTextField.inputAccessoryView = startDateToolbar
         startDateTextField.inputView = datePicker
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         startDateTextField.text = formatter.string(from: datePicker.date)
+
+        endDateTextField.inputAccessoryView = endDateToolbar
+        endDateTextField.inputView = datePicker
         endDateTextField.text = formatter.string(from: datePicker.date)
         
     }
@@ -101,6 +110,12 @@ extension FilterPolisViewController{
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         startDateTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func doneEndDatePicker(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
         endDateTextField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
@@ -112,8 +127,8 @@ extension FilterPolisViewController{
     @objc func resetDate(sender: UIButton){
         let formatter = DateFormatter()
         formatter.dateStyle = .long
-        self.startDateTextField.text = formatter.string(from: datePicker.date)
-        self.endDateTextField.text = formatter.string(from: datePicker.date)
+        self.startDateTextField.text = formatter.string(from: Date())
+        self.endDateTextField.text = formatter.string(from: Date())
     }
     
 }

@@ -81,19 +81,19 @@ extension DaftarViewController{
         buttonSingInGoogle.layer.borderWidth = 1
 
         viewDaftar.addSubview(labelSudahPunyaAkun)
-        UIHelper.makeLabel(label: labelSudahPunyaAkun, corner: 0, allignment: .right, leadingAnchor: viewDaftar.leadingAnchor, trailingAnchor: viewDaftar.trailingAnchor, topAnchor: buttonSingInGoogle.bottomAnchor, leadingConstant: 84, trailingConstant: -160, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        labelSudahPunyaAkun.text = "Sudah punya akun DigiAsk?"
+        UIHelper.makeLabel(label: labelSudahPunyaAkun, corner: 0, allignment: .right, leadingAnchor: viewDaftar.leadingAnchor, trailingAnchor: viewDaftar.trailingAnchor, topAnchor: buttonSingInGoogle.bottomAnchor, leadingConstant: 84, trailingConstant: -84, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
+        labelSudahPunyaAkun.text = "Sudah punya akun DigiAsk? Masuk"
         labelSudahPunyaAkun.font = UIFont(name: "AvantGarde Bk BT", size: 12)
         labelSudahPunyaAkun.textColor = #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1)
 
 
-        viewDaftar.addSubview(masukButton)
-        UIHelper.makeButton(button: masukButton, leadingAnchor: labelSudahPunyaAkun.trailingAnchor, trailingAnchor: viewDaftar.trailingAnchor, topAnchor: buttonSingInGoogle.bottomAnchor, leadingConstant: 0, trailingConstant: -84, topConstant: 10, corner: 0, heightAnchor: 16, widthAnchor: 0)
-        masukButton.backgroundColor = UIColor.clear.withAlphaComponent(0)
-        masukButton.setTitle(" Masuk", for: .normal)
-        masukButton.setTitleColor(#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), for: .normal)
-        masukButton.titleLabel?.font = UIFont(name: "AvantGarde Bk BT", size: 12)
-        masukButton.contentHorizontalAlignment = .left
+//        viewDaftar.addSubview(masukButton)
+//        UIHelper.makeButton(button: masukButton, leadingAnchor: labelSudahPunyaAkun.trailingAnchor, trailingAnchor: viewDaftar.trailingAnchor, topAnchor: buttonSingInGoogle.bottomAnchor, leadingConstant: 0, trailingConstant: -84, topConstant: 10, corner: 0, heightAnchor: 16, widthAnchor: 0)
+//        masukButton.backgroundColor = UIColor.clear.withAlphaComponent(0)
+//        masukButton.setTitle(" Masuk", for: .normal)
+//        masukButton.setTitleColor(#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), for: .normal)
+//        masukButton.titleLabel?.font = UIFont(name: "AvantGarde Bk BT", size: 12)
+//        masukButton.contentHorizontalAlignment = .left
 
 
     }

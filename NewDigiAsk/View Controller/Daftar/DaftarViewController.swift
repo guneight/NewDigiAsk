@@ -33,8 +33,11 @@ class DaftarViewController: UIViewController {
         view.layoutIfNeeded()
         scrollViews()
         formDaftar()
-        
+        masukLink()
         buttonDaftar.addTarget(self, action: #selector(daftarButtonAction(sender:)), for: .touchUpInside)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(masukAkun(sender:)))
+        labelSudahPunyaAkun.addGestureRecognizer(gesture)
+        labelSudahPunyaAkun.isUserInteractionEnabled = true
         // Do any additional setup after loading the view.
     }
     
@@ -54,6 +57,24 @@ class DaftarViewController: UIViewController {
            }))
            self.present(alertNoHp, animated: true)
        }
+    }
+    
+    func masukLink(){
+        let text = (labelSudahPunyaAkun.text)!
+        let underliningString = NSMutableAttributedString(string: text)
+        let masuk = (text as NSString).range(of: "Masuk")
+        underliningString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: masuk)
+        labelSudahPunyaAkun.attributedText = underliningString
+    }
+    
+    @objc func masukAkun(sender : UITapGestureRecognizer){
+        let text = (labelSudahPunyaAkun.text)!
+        let masuk = (text as NSString).range(of: "Masuk")
+        if sender.didTapAttributedTextInLabel(label: labelSudahPunyaAkun, inRange: masuk){
+            let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController") as! LoginViewController
+            self.navigationController?.pushViewController(loginVC, animated: true)
+        }
+        
     }
      
     

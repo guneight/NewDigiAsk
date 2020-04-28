@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class HubungiKamiViewController: UIViewController {
+import MessageUI
+class HubungiKamiViewController: UIViewController,MFMailComposeViewControllerDelegate  {
     let hubungiKamiLabel = UILabel()
     let hubungiKami7hariLabel = UILabel()
     let teleponBaseView = UIView()
@@ -17,6 +17,9 @@ class HubungiKamiViewController: UIViewController {
     let chatBaseView = UIView()
     let chatIconImage = UIImageView()
     let chatLabel = UILabel()
+    let emailBaseView = UIView()
+    let emailIconImage = UIImageView()
+    let emailLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,9 @@ class HubungiKamiViewController: UIViewController {
         view.layoutIfNeeded()
         let tapGesture  = UITapGestureRecognizer.init(target: self, action: #selector(teleponAction(sender:)))
         teleponBaseView.addGestureRecognizer(tapGesture)
+        
+        let emailTapGesture  = UITapGestureRecognizer.init(target: self, action: #selector(emailAction(sender:)))
+        emailBaseView.addGestureRecognizer(emailTapGesture)
         // Do any additional setup after loading the view.
     }
     
@@ -37,6 +43,22 @@ class HubungiKamiViewController: UIViewController {
         navigationController?.pushViewController(detailHubungiKamiVC, animated: true)
     }
     
+    @objc func emailAction(sender : Any){
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["digital@askrindo.co.id"])
+            mail.setSubject("DigiAsk help-")
+
+            present(mail, animated: true)
+        } else {
+            print("send mail was failed")
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+         dismiss(animated: true, completion: nil)
+    }
     
 
     
