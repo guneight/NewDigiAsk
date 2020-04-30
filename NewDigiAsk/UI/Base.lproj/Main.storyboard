@@ -671,6 +671,21 @@
             </objects>
             <point key="canvasLocation" x="12167" y="-18"/>
         </scene>
+        <!--Lupa Password View Controller-->
+        <scene sceneID="tNm-8i-bV2">
+            <objects>
+                <viewController storyboardIdentifier="LupaPasswordViewController" id="iyO-ya-lqb" customClass="LupaPasswordViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Jw-Wn-gx5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mEE-xr-W2i"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TV7-ek-12g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13020" y="-18"/>
+        </scene>
         <!--Input Kode Verifikasi Email View Controller-->
         <scene sceneID="JGz-OR-zl7">
             <objects>

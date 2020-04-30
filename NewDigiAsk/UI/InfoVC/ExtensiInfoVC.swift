@@ -96,9 +96,9 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
         listInfoTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         listInfoTable.delegate = self
         listInfoTable.dataSource = self
-        
-        
     }
+    
+    
     
     func setupNavBarInfo(){
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))

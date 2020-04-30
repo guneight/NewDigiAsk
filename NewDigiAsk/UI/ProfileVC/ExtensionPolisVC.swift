@@ -52,6 +52,7 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
         cell.rightDetailProdukButton.addTarget(self, action: #selector(detailPolisRightButtonAction(sender:)), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(namaProdukAction(sender:)))
         cell.namaProdukLabel.addGestureRecognizer(tapGesture)
+        cell.klaimButton.addTarget(self, action: #selector(klaimAction), for: .touchUpInside)
         return cell
     }
     
@@ -153,10 +154,11 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
         
         polisPendingTableView.register(PolisdanKlaimTableViewCell.self, forCellReuseIdentifier: "polisPending")
         polisManageSegmentControl.selectedSegmentIndex = 0
-        
-       
-        
-        
+    }
+    
+    @objc func klaimAction(){
+        let prosesKlaimVC = storyboard?.instantiateViewController(identifier: "ProsesKlaimViewController") as! ProsesKlaimViewController
+        self.navigationController?.pushViewController(prosesKlaimVC, animated: true)
     }
     
     

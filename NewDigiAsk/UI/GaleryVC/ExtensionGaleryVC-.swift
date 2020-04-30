@@ -19,6 +19,7 @@ extension GaleryViewController : UITableViewDelegate, UITableViewDataSource{
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.galeryImage.image = UIImage(named: "\(galeryPhoto[indexPath.row])")
         cell.backgroundColor = .white
+        cell.shareGaleryButton.addTarget(self, action: #selector(shareGalery), for: .touchUpInside)
         return cell
     }
     
@@ -52,6 +53,18 @@ extension GaleryViewController : UITableViewDelegate, UITableViewDataSource{
         listGaleryTable.separatorStyle = .none
         listGaleryTable.showsVerticalScrollIndicator = false
         listGaleryTable.backgroundColor = .white
+    }
+    
+    @objc func shareGalery(){
+        if let name = URL(string: "https://askrindo.co.id"), !name.absoluteString.isEmpty {
+            let objectsToShare = [name]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+            self.present(activityVC, animated: true, completion: nil)
+        }else  {
+            let alertNoHp = UIAlertController(title: "GAGAL", message: "Share file galery tidak dapat dilakukan!", preferredStyle: .alert)
+            alertNoHp.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        }
     }
     
     func setupNavBarGalery(){

@@ -74,12 +74,12 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @objc func tabBarProfileAction (sender : UIButton){
 //        if (loginStatus == 0) {
-//        let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController")  as! LoginViewController
-//        self.navigationController?.pushViewController(loginVC, animated: true)
-//        print("pressss")
+        let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController")  as! LoginViewController
+        self.navigationController?.pushViewController(loginVC, animated: true)
+        print("pressss")
 //        }else if(loginStatus == 1){
-            let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController") as!ProfileViewController
-            self.navigationController?.pushViewController(profileVC, animated: true)
+//            let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController") as!ProfileViewController
+//            self.navigationController?.pushViewController(profileVC, animated: true)
 //        }else{
 //            print("Login failed")
 //        }

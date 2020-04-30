@@ -61,7 +61,9 @@ extension LoginViewController{
         
         passwordLabel.isHidden = true
         passwordTextField.isHidden = true
+        showPasswordButton.isHidden = true
         underlinePassword.isHidden = true
+        lupaPasswordLabel.isHidden = true
         loginBaseView.addSubview(nomorPonselEmailLabel)
         UIHelper.makeLabel(label: nomorPonselEmailLabel, corner: 0, allignment: .left, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: loginBaseView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 34, heightAnchor: 14, widthAnchor: 0)
         UIHelper.setTextLabel(label: nomorPonselEmailLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1), weight: .regular, fontSize: 14, text: "Nomor Ponsel/Email", kerning: 0.04)
@@ -83,13 +85,23 @@ extension LoginViewController{
         UIHelper.makeTetxField(textField: passwordTextField, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: passwordLabel.bottomAnchor, leadingConstant: 44, trailingConstant: -24, topConstant: 10, corner: 0, heightAnchor: 22, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
         UIHelper.setTextField(textField: passwordTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 16, text: "", kerning: 1)
         passwordTextField.placeholder = "Password"
-
+        passwordTextField.isSecureTextEntry = true
+        
+        loginBaseView.addSubview(showPasswordButton)
+        UIHelper.makeButton(button: showPasswordButton, leadingAnchor: loginBaseView.trailingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: passwordTextField.topAnchor, leadingConstant: -44, trailingConstant: -24, topConstant: 5, corner: 0, heightAnchor: 16, widthAnchor: 20)
+        showPasswordButton.setImage(UIImage(named: "showPasswordIcon"), for: .normal)
+        
         loginBaseView.addSubview(underlinePassword)
         UIHelper.makeView(view: underlinePassword, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: passwordTextField.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 5, corner: 0, heightAnchor: 1, widthAnchor: 0)
         underlinePassword.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 0.5)
         
+        loginBaseView.addSubview(lupaPasswordLabel)
+        UIHelper.makeLabel(label: lupaPasswordLabel, corner: 0, allignment: .right, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: underlinePassword.bottomAnchor, leadingConstant: loginBaseView.frame.size.width/2, trailingConstant: -24, topConstant: 7, heightAnchor: 12, widthAnchor: 0)
+        UIHelper.setTextLabel(label: lupaPasswordLabel, fontName: "AvantGarde Bk BT", fontColor:#colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1) , weight: .regular, fontSize: 10, text: "Lupa password?", kerning: 0.8)
+        lupaPasswordLabel.isUserInteractionEnabled = true
+        
         loginBaseView.addSubview(continueButton)
-        UIHelper.makeButton(button: continueButton, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: underlinePassword.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 35, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        UIHelper.makeButton(button: continueButton, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: underlinePassword.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 45, corner: 24, heightAnchor: 48, widthAnchor: 0)
         continueButton.setTitle("CONTINUE", for: .normal)
         continueButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         
@@ -115,12 +127,10 @@ extension LoginViewController{
         UIHelper.makeLabel(label: belumPunyaAkunLabel, corner: 0, allignment: .center, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: signInWithGoogleButton.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 10, heightAnchor: 17, widthAnchor: 0)
         UIHelper.setTextLabel(label: belumPunyaAkunLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: "Belum punya akun Digiask? Daftar disini", kerning: 0.72)
         belumPunyaAkunLabel.isUserInteractionEnabled = true
-        
-        
-        
-        
-        
+
     }
+   
+    
     
     func setupNavBarLogin(){
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))

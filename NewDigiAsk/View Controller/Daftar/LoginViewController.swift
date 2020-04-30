@@ -19,13 +19,15 @@ class LoginViewController: UIViewController {
     let underlineNomorPonselEmail = UIView()
     let passwordLabel = UILabel()
     let passwordTextField = UITextField()
+    let showPasswordButton = UIButton()
+    let lupaPasswordLabel = UILabel()
     let underlinePassword = UIView()
     let continueButton = UIButton()
     let atauMasukDenganLabel = UILabel()
     let signInWithGoogleButton = UIButton()
     let googleIconImage = UIImageView()
     let belumPunyaAkunLabel = UILabel()
-    
+    var iconClick = true
     var loginStatus : Int = 0
     
     override func viewDidLoad() {
@@ -34,10 +36,14 @@ class LoginViewController: UIViewController {
         setupNavBarLogin()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         nomorPonseLEmailTextField.addTarget(self, action:#selector(checkEmail) , for: .editingChanged)
+        showPasswordButton.addTarget(self, action: #selector(showOrHidePassword), for: .touchUpInside)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(lupaPasswordAction))
+        lupaPasswordLabel.addGestureRecognizer(tapGesture)
         continueButton.addTarget(self, action: #selector(continueAction), for: .touchUpInside)
         daftarDisiniLink()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(daftarAkun(sender:)))
         belumPunyaAkunLabel.addGestureRecognizer(gesture)
+        
         // Do any additional setup after loading the view.
         
     }
@@ -47,10 +53,15 @@ class LoginViewController: UIViewController {
         if nomorPonseLEmailTextField.text?.isValidEmail == true{
             passwordLabel.isHidden = false
             passwordTextField.isHidden = false
+            showPasswordButton.isHidden = false
+            lupaPasswordLabel.isHidden = false
             underlinePassword.isHidden = false
+            
         }else{
             passwordLabel.isHidden = true
             passwordTextField.isHidden = true
+            showPasswordButton.isHidden = true
+            lupaPasswordLabel.isEnabled = true
             underlinePassword.isHidden = true
         }
     }
@@ -89,6 +100,20 @@ class LoginViewController: UIViewController {
             self.navigationController?.pushViewController(daftarVC, animated: true)
         }
         
+    }
+    
+    @objc func showOrHidePassword(){
+        if iconClick == true{
+            passwordTextField.isSecureTextEntry = true
+        }else{
+            passwordTextField.isSecureTextEntry = false
+        }
+        iconClick = !iconClick
+    }
+    
+    @objc func lupaPasswordAction(){
+        let lupaPasswordVC = storyboard?.instantiateViewController(identifier: "LupaPasswordViewController") as! LupaPasswordViewController
+        self.navigationController?.pushViewController(lupaPasswordVC, animated: true)
     }
     
 }

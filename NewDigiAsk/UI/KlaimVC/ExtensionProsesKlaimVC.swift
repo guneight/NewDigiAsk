@@ -108,14 +108,35 @@ extension ProsesKlaimViewController {
         UIHelper.setTextLabel(label: typeKlaim, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Type Klaim", kerning: 0.5)
 
         dataKlaimView.addSubview(namaTypeKlaim)
-        UIHelper.makeSmalllabel(smallLabel: namaTypeKlaim, leadingAnchor: dataKlaimView.trailingAnchor, topAnchor: lineDataKlaim.bottomAnchor, leadingConstant: -(dataKlaimView.frame.size.width/2)-17, topConstant: 10, corner: 0, heightAnchor: 16, widthtAnchor: dataKlaimView.frame.size.width/2)
+        UIHelper.makeTetxField(textField: namaTypeKlaim, leadingAnchor: typeKlaim.trailingAnchor, trailingAnchor: dataKlaimView.trailingAnchor, topAnchor: lineDataKlaim.bottomAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 9, corner: 0, heightAnchor: 16, textColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1))
+        UIHelper.setTextField(textField: namaTypeKlaim, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 12, text: "", kerning: 1)
         namaTypeKlaim.textAlignment = .right
-        UIHelper.setTextLabel(label: namaTypeKlaim, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Kematian", kerning: 0.5)
+        namaTypeKlaim.tintColor = .clear
+        
         
         prosesKlaimView.addSubview(lanjutButton)
         UIHelper.makeButton(button: lanjutButton, leadingAnchor: prosesKlaimView.leadingAnchor, trailingAnchor: prosesKlaimView.trailingAnchor, topAnchor: dataKlaimView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
         lanjutButton.setTitle("LANJUT", for: .normal)
         lanjutButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        
+        
+    }
+    
+    func jenisKlaimpPickerView(){
+        
+        let namaKlaim = UIToolbar()
+        namaKlaim.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePickerView));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        namaKlaim.setItems([spaceButton,doneButton,], animated: false)
+        namaTypeKlaim.inputAccessoryView = namaKlaim
+        namaTypeKlaim.inputView = ManfaatPickerView
+        namaTypeKlaim.text = "Manfaat"
+         self.view.endEditing(true)
+    }
+    
+    @objc func donePickerView(){
+         self.view.endEditing(true)
     }
     
     func setupNavBar(){

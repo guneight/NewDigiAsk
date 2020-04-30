@@ -17,7 +17,7 @@ class KlaimViewController: UIViewController {
     let polisEmptyImage = UIImageView()
     let polisEmptyLabel = UILabel()
     let jumlahPolidPending : Int = 5
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBarPolis()
