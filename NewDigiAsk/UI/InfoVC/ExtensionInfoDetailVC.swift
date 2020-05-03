@@ -36,7 +36,7 @@ extension InfoDetailViewController{
         
         infoDetailView.addSubview(titleInfoDetailLabel)
         UIHelper.makeLabel(label: titleInfoDetailLabel, corner: 0, allignment: .left, leadingAnchor: infoDetailView.leadingAnchor, trailingAnchor: infoDetailView.trailingAnchor, topAnchor: infoDetailView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 21, heightAnchor: 40, widthAnchor: 0)
-        UIHelper.setTextLabel(label: titleInfoDetailLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Askrindo serahkan bantuan mobil pintar untuk Aceh", kerning: 0.48)
+        UIHelper.setTextLabel(label: titleInfoDetailLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Askrindo serahkan bantuan mobil pintar untuk Aceh", kerning: 0.48)
         titleInfoDetailLabel.numberOfLines = 0
         
         infoDetailView.addSubview(timeIconInfoDetailImage)
@@ -59,7 +59,7 @@ extension InfoDetailViewController{
         
         detailInfoLabel.backgroundColor = .white
         detailInfoLabel.numberOfLines = 0
-        UIHelper.setTextLabel(label: detailInfoLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .light, fontSize: 12, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan. Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan.", kerning: 0.4)
+        UIHelper.setTextLabel(label: detailInfoLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .light, fontSize: 14, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan. Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan.", kerning: 0.4)
     }
     
     func setupNavBarInfoDetail(){

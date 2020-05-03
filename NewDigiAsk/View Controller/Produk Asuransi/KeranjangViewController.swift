@@ -25,6 +25,7 @@ class KeranjangViewController: UIViewController {
         daftarProdukKeranjangTable.dataSource = self
         view.layoutIfNeeded()
         setupUI()
+        setupNavBarKeranjang()
         checkOutButton.addTarget(self, action: #selector(checkOutAction), for: .touchUpInside)
         
 
@@ -34,9 +35,7 @@ class KeranjangViewController: UIViewController {
 
     @objc func checkOutAction(sender: Any){
         let checkOutVC = storyboard?.instantiateViewController(identifier: "CheckOutKeranjangViewController")  as! CheckOutKeranjangViewController
-        checkOutVC.modalPresentationStyle = .custom
-        checkOutVC.transitioningDelegate = PresentationDelegate
-        present(checkOutVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(checkOutVC, animated: true)
     }
     
     @objc func namaProdukAction(sender: Any){

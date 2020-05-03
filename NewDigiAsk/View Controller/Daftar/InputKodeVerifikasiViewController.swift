@@ -62,8 +62,8 @@ class InputKodeVerifikasiViewController: UIViewController {
         
         kodeVerifikasi.addSubview(labelMasukkanKode)
         UIHelper.makeLabel(label: labelMasukkanKode, corner: 0, allignment: .center, leadingAnchor: kodeVerifikasi.leadingAnchor, trailingAnchor: kodeVerifikasi.trailingAnchor, topAnchor: imageIconVerifikasi.bottomAnchor, leadingConstant: 99, trailingConstant: -99, topConstant: 12, heightAnchor: 18, widthAnchor: 0)
-        labelMasukkanKode.text = "Masukkan kode verifikasi"
-        labelMasukkanKode.font = UIFont(name: "AvantGarde Bk BT", size: 15)
+        UIHelper.setTextLabel(label: labelMasukkanKode, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 15, text: "Masukkan kode verifikasi", kerning: 0.75)
+       
         
         kodeVerifikasi.addSubview(labelKodeVerikasiDikirim)
         UIHelper.makeLabel(label: labelKodeVerikasiDikirim, corner: 0, allignment: .center, leadingAnchor: kodeVerifikasi.leadingAnchor, trailingAnchor: kodeVerifikasi.trailingAnchor, topAnchor: labelMasukkanKode.bottomAnchor, leadingConstant: 80, trailingConstant: -80, topConstant: 10, heightAnchor: 36, widthAnchor: 0)

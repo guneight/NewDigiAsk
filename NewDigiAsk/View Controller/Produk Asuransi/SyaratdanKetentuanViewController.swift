@@ -21,6 +21,7 @@ class SyaratdanKetentuanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupNavBarSyaratdanKetentuan()
         view.layoutIfNeeded()
         setujuButton.addTarget(self, action: #selector(setujuAction(sender:)), for: .touchUpInside)
         // Do any additional setup after loading the view.
@@ -29,10 +30,8 @@ class SyaratdanKetentuanViewController: UIViewController {
 
     @objc func setujuAction(sender: Any){
         let identitasPenanungVC = self.storyboard?.instantiateViewController(identifier: "IdentitasTertanggungdanPenerimaManfaatViewController") as! IdentitasTertanggungdanPenerimaManfaatViewController
-//               identitasPenanungVC.modalPresentationStyle = UIModalPresentationStyle.automatic
-               identitasPenanungVC.transitioningDelegate = PresentationDelegate
-               identitasPenanungVC.modalPresentationStyle = .custom
-               present(identitasPenanungVC, animated: true, completion: {})
+        self.navigationController?.pushViewController(identitasPenanungVC, animated: true)
+            
     }
 
 }

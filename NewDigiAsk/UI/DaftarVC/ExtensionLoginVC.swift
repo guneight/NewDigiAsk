@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension LoginViewController{
+extension LoginViewController : UITextFieldDelegate{
     
     func setupUI(){
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
@@ -76,11 +76,11 @@ extension LoginViewController{
         loginBaseView.addSubview(underlineNomorPonselEmail)
         UIHelper.makeView(view: underlineNomorPonselEmail, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: nomorPonseLEmailTextField.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 5, corner: 0, heightAnchor: 1, widthAnchor: 0)
         underlineNomorPonselEmail.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 0.5)
-
+        
         loginBaseView.addSubview(passwordLabel)
         UIHelper.makeLabel(label: passwordLabel, corner: 0, allignment: .left, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: underlineNomorPonselEmail.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 15, heightAnchor: 14, widthAnchor: 0)
         UIHelper.setTextLabel(label: passwordLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1), weight: .regular, fontSize: 14, text: "Password", kerning: 0.04)
-
+        
         loginBaseView.addSubview(passwordTextField)
         UIHelper.makeTetxField(textField: passwordTextField, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: passwordLabel.bottomAnchor, leadingConstant: 44, trailingConstant: -24, topConstant: 10, corner: 0, heightAnchor: 22, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
         UIHelper.setTextField(textField: passwordTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 16, text: "", kerning: 1)
@@ -121,17 +121,33 @@ extension LoginViewController{
         UIHelper.makeImageView(imageView: googleIconImage, leadingAnchor: signInWithGoogleButton.leadingAnchor, topAnchor: signInWithGoogleButton.topAnchor, leadingConstant: 21, topConstant: 13, corner: 0, heightAnchor: 22)
         googleIconImage.widthAnchor.constraint(equalToConstant: 22).isActive = true
         googleIconImage.image = UIImage(named: "googleIcon")
-    
-
+        
+        
         loginBaseView.addSubview(belumPunyaAkunLabel)
         UIHelper.makeLabel(label: belumPunyaAkunLabel, corner: 0, allignment: .center, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: signInWithGoogleButton.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 10, heightAnchor: 17, widthAnchor: 0)
         UIHelper.setTextLabel(label: belumPunyaAkunLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: "Belum punya akun Digiask? Daftar disini", kerning: 0.72)
         belumPunyaAkunLabel.isUserInteractionEnabled = true
-
+        
+        
+        nomorPonseLEmailTextField.delegate = self
+        passwordTextField.delegate = self
+        nomorPonseLEmailTextField.returnKeyType = UIReturnKeyType.next
+        passwordTextField.returnKeyType = UIReturnKeyType.done
+        nomorPonseLEmailTextField.becomeFirstResponder()
     }
-   
     
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nomorPonseLEmailTextField {
+            textField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        }else if textField == passwordTextField {
+            passwordTextField.resignFirstResponder()
+        }
+        return true
+    }
+        
     func setupNavBarLogin(){
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
         self.navigationItem.leftBarButtonItem = customButtonNav

@@ -34,7 +34,7 @@ class JenisProdukDetailViewController: UIViewController {
         setupUI()
         super.viewDidLoad()
         daftarPremiTable.reloadData()
-
+        setupNavBarJenisProdukDetail()
         print("namajenisProdukDetailLabel : \(String(describing: namajenisProdukDetailLabel.text))")
         // Do any additional setup after loading the view.
     }

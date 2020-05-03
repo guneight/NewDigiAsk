@@ -27,11 +27,11 @@ extension SubmitKlaimViewController{
         
         dataPolisView.addSubview(headerNomorPolisLabel)
         UIHelper.makeLabel(label: headerNomorPolisLabel, corner: 0, allignment: .left, leadingAnchor: dataPolisView.leadingAnchor, trailingAnchor: dataPolisView.trailingAnchor, topAnchor: dataPolisView.topAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 12, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: headerNomorPolisLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Polis", kerning: 0.5)
+        UIHelper.setTextLabel(label: headerNomorPolisLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Polis", kerning: 0.5)
         
         dataPolisView.addSubview(nomorPolisLabel)
         UIHelper.makeLabel(label: nomorPolisLabel, corner: 0, allignment: .left, leadingAnchor: dataPolisView.leadingAnchor, trailingAnchor: dataPolisView.trailingAnchor, topAnchor: headerNomorPolisLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 5, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorPolisLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.5)
+        UIHelper.setTextLabel(label: nomorPolisLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.5)
         
         dataPolisView.addSubview(lineNomorPolis)
         UIHelper.makeLabel(label: lineNomorPolis, corner: 0, allignment: .center, leadingAnchor: dataPolisView.leadingAnchor, trailingAnchor: dataPolisView.trailingAnchor, topAnchor: nomorPolisLabel.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 5, heightAnchor: 1, widthAnchor: 0)
@@ -39,11 +39,11 @@ extension SubmitKlaimViewController{
         
         dataPolisView.addSubview(headerStatusPolisLabel)
         UIHelper.makeLabel(label: headerStatusPolisLabel, corner: 0, allignment: .left, leadingAnchor: dataPolisView.leadingAnchor, trailingAnchor: dataPolisView.trailingAnchor, topAnchor: nomorPolisLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: headerStatusPolisLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Status polis", kerning: 0.5)
+        UIHelper.setTextLabel(label: headerStatusPolisLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Status polis", kerning: 0.5)
         
         dataPolisView.addSubview(statusPolisLabel)
         UIHelper.makeLabel(label: statusPolisLabel, corner: 0, allignment: .left, leadingAnchor: dataPolisView.leadingAnchor, trailingAnchor: dataPolisView.trailingAnchor, topAnchor: headerStatusPolisLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 5, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: statusPolisLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.5)
+        UIHelper.setTextLabel(label: statusPolisLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.5)
         
         dataPolisView.addSubview(laniStatusPolis)
         UIHelper.makeLabel(label: laniStatusPolis, corner: 0, allignment: .center, leadingAnchor: dataPolisView.leadingAnchor, trailingAnchor: dataPolisView.trailingAnchor, topAnchor: statusPolisLabel.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 5, heightAnchor: 1, widthAnchor: 0)
@@ -51,11 +51,11 @@ extension SubmitKlaimViewController{
  
         dataPolisView.addSubview(headerMasaBerlakuLabel)
         UIHelper.makeLabel(label: headerMasaBerlakuLabel, corner: 0, allignment: .left, leadingAnchor: dataPolisView.leadingAnchor, trailingAnchor: dataPolisView.trailingAnchor, topAnchor: statusPolisLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: headerMasaBerlakuLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Masa berlaku", kerning: 0.5)
+        UIHelper.setTextLabel(label: headerMasaBerlakuLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Masa berlaku", kerning: 0.5)
         
         dataPolisView.addSubview(masaBerlakuLabel)
         UIHelper.makeLabel(label: masaBerlakuLabel, corner: 0, allignment: .left, leadingAnchor: dataPolisView.leadingAnchor, trailingAnchor: dataPolisView.trailingAnchor, topAnchor: headerMasaBerlakuLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 5, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: masaBerlakuLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Jumat, 1 nov 2019, 00.00 wib", kerning: 0.5)
+        UIHelper.setTextLabel(label: masaBerlakuLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Jumat, 1 nov 2019, 00.00 wib", kerning: 0.5)
         
         submitKlaimView.addSubview(manfaatView)
         UIHelper.makeView(view: manfaatView, leadingAnchor: submitKlaimView.leadingAnchor, trailingAnchor: submitKlaimView.trailingAnchor, topAnchor: dataPolisView.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 15, corner: 10, heightAnchor: 71, widthAnchor: 0)
@@ -64,7 +64,7 @@ extension SubmitKlaimViewController{
         
         manfaatView.addSubview(pilihManfaatLabel)
         UIHelper.makeLabel(label: pilihManfaatLabel, corner: 0, allignment: .center, leadingAnchor: manfaatView.leadingAnchor, trailingAnchor: manfaatView.trailingAnchor, topAnchor: manfaatView.topAnchor, leadingConstant: 70, trailingConstant: -70, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: pilihManfaatLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "PILIH MANFAAT", kerning: 0.5)
+        UIHelper.setTextLabel(label: pilihManfaatLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "PILIH MANFAAT", kerning: 0.5)
 
         manfaatView.addSubview(linepilihManfaat)
         UIHelper.makeView(view: linepilihManfaat, leadingAnchor: manfaatView.leadingAnchor, trailingAnchor: manfaatView.trailingAnchor, topAnchor: pilihManfaatLabel.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 6.5, corner: 0, heightAnchor: 1, widthAnchor: 0)
@@ -72,7 +72,7 @@ extension SubmitKlaimViewController{
 
         manfaatView.addSubview(manfaatlabel)
         UIHelper.makeSmalllabel(smallLabel: manfaatlabel, leadingAnchor: manfaatView.leadingAnchor, topAnchor: linepilihManfaat.bottomAnchor, leadingConstant: 17, topConstant: 10, corner: 0, heightAnchor: 16, widthtAnchor: manfaatView.frame.size.width/2)
-        UIHelper.setTextLabel(label: manfaatlabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Meninggal", kerning: 0.5)
+        UIHelper.setTextLabel(label: manfaatlabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Meninggal", kerning: 0.5)
         
         submitKlaimView.addSubview(dokumentKlaimView)
         UIHelper.makeView(view: dokumentKlaimView, leadingAnchor: submitKlaimView.leadingAnchor, trailingAnchor: submitKlaimView.trailingAnchor, topAnchor: manfaatView.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 10, heightAnchor: 150, widthAnchor: 0)
@@ -81,7 +81,7 @@ extension SubmitKlaimViewController{
         
         dokumentKlaimView.addSubview(dokumenKlaimLabel)
         UIHelper.makeLabel(label: dokumenKlaimLabel, corner: 0, allignment: .center, leadingAnchor: dokumentKlaimView.leadingAnchor, trailingAnchor: dokumentKlaimView.trailingAnchor, topAnchor: dokumentKlaimView.topAnchor, leadingConstant: 80, trailingConstant: -80, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: dokumenKlaimLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "DOKUMEN KLAIM", kerning: 0.12)
+        UIHelper.setTextLabel(label: dokumenKlaimLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "DOKUMEN KLAIM", kerning: 0.12)
         
         dokumentKlaimView.addSubview(lineDokumenKlaim)
         UIHelper.makeLabel(label: lineDokumenKlaim, corner: 0, allignment: .center, leadingAnchor: dokumentKlaimView.leadingAnchor, trailingAnchor: dokumentKlaimView.trailingAnchor, topAnchor: dokumenKlaimLabel.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 6, heightAnchor: 1, widthAnchor: 0)

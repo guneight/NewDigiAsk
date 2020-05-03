@@ -57,6 +57,15 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         imageViewMap.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.mapAction(sender:)))
         self.imageViewMap.addGestureRecognizer(gesture)
+        
+        for family: String in UIFont.familyNames
+               {
+                   print(family)
+                   for names: String in UIFont.fontNames(forFamilyName: family)
+                   {
+                       print("== \(names)")
+                   }
+               }
     }
     
     override func viewWillAppear(_ animated: Bool) {

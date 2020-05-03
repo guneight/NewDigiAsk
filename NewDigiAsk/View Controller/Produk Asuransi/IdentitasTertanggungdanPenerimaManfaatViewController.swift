@@ -61,10 +61,7 @@ class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController {
     
     @objc func tambahKeranjangAction(sender :Any){
         let kerangjangVC = storyboard?.instantiateViewController(identifier: "KeranjangViewController") as! KeranjangViewController
-       
-        kerangjangVC.modalPresentationStyle = .custom
-        kerangjangVC.transitioningDelegate = PresentationDelegate
-        present(kerangjangVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(kerangjangVC, animated: true)
         
     }
    

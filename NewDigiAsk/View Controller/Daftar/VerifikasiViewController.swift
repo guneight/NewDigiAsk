@@ -67,8 +67,8 @@ class VerifikasiViewController: UIViewController {
         
         viewVerifikasi.addSubview(labelMetodeverifikasi)
         UIHelper.makeLabel(label: labelMetodeverifikasi, corner: 0, allignment: .center, leadingAnchor: viewVerifikasi.leadingAnchor, trailingAnchor: viewVerifikasi.trailingAnchor, topAnchor: viewVerifikasi.topAnchor, leadingConstant: 104, trailingConstant: -104, topConstant: 34, heightAnchor: 20, widthAnchor: 0)
-        labelMetodeverifikasi.text = "Pilih Metode Verifikasi"
-        labelMetodeverifikasi.font = UIFont(name: "AvantGarde Bk BT", size: 15)
+        UIHelper.setTextLabel(label: labelMetodeverifikasi, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 15, text: "Pilih Metode Verifikasi", kerning: 0.75)
+        
         
         viewVerifikasi.addSubview(labelPilihSalahSatu)
         UIHelper.makeLabel(label: labelPilihSalahSatu, corner: 0, allignment: .center, leadingAnchor: viewVerifikasi.leadingAnchor, trailingAnchor: viewVerifikasi.trailingAnchor, topAnchor: labelMetodeverifikasi.topAnchor, leadingConstant: 47, trailingConstant: -47, topConstant: 20, heightAnchor: 44, widthAnchor: 0)

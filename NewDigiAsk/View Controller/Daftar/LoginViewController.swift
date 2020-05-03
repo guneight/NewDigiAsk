@@ -43,11 +43,15 @@ class LoginViewController: UIViewController {
         daftarDisiniLink()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(daftarAkun(sender:)))
         belumPunyaAkunLabel.addGestureRecognizer(gesture)
-        
+        let tapDismissKeyBoard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapDismissKeyBoard)
         // Do any additional setup after loading the view.
         
     }
     
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
     
     @objc func checkEmail() {
         if nomorPonseLEmailTextField.text?.isValidEmail == true{
@@ -67,7 +71,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc func continueAction(){
-        if (nomorPonseLEmailTextField.text?.isValidEmail == true) {
+        if (nomorPonseLEmailTextField.text?.isValidEmail == true && passwordTextField.text != "") {
             print("continueAction")
             let verifikasiEmailVC = storyboard?.instantiateViewController(identifier: "VerifkasiEmailViewController") as! VerifkasiEmailViewController
             verifikasiEmailVC.loginStatus = loginStatus

@@ -66,11 +66,11 @@ extension AmbilFotoKTPViewController : UIImagePickerControllerDelegate, UINaviga
         
         ambilKTPView.addSubview(datadiSiapkan)
         UIHelper.makeLabel(label: datadiSiapkan, corner: 0, allignment: .center, leadingAnchor: ambilKTPView.leadingAnchor, trailingAnchor: ambilKTPView.trailingAnchor, topAnchor: ambilKTPView.topAnchor, leadingConstant: 70, trailingConstant: -70, topConstant: 26, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: datadiSiapkan, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "DATA YANG HARUS DISIAPKAN", kerning: 0.6)
+        UIHelper.setTextLabel(label: datadiSiapkan, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "DATA YANG HARUS DISIAPKAN", kerning: 0.6)
         
         ambilKTPView.addSubview(kartuIdentitasLabel)
         UIHelper.makeLabel(label: kartuIdentitasLabel, corner: 0, allignment: .left, leadingAnchor: ambilKTPView.leadingAnchor, trailingAnchor: ambilKTPView.trailingAnchor, topAnchor: datadiSiapkan.bottomAnchor, leadingConstant: 23, trailingConstant: -23, topConstant: 13, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: kartuIdentitasLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "1 - Kartu Identitas (KTP)", kerning: 0.12)
+        UIHelper.setTextLabel(label: kartuIdentitasLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "1 - Kartu Identitas (KTP)", kerning: 0.12)
         
         ambilKTPView.addSubview(deskripsiKartuIdentitasLabel)
         UIHelper.makeLabel(label: deskripsiKartuIdentitasLabel, corner: 0, allignment: .left, leadingAnchor: ambilKTPView.leadingAnchor, trailingAnchor: ambilKTPView.trailingAnchor, topAnchor: kartuIdentitasLabel.bottomAnchor, leadingConstant: 42, trailingConstant: -30, topConstant: 5, heightAnchor: 47, widthAnchor: 0)

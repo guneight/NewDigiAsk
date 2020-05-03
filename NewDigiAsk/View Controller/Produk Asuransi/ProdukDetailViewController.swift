@@ -11,7 +11,7 @@ import UIKit
 class ProdukDetailViewController: UIViewController {
        let produkView = UIView()
        let produkDetailScrollView = UIScrollView()
-       let produkBaseView = UIView()
+       let produkBasesView = UIView()
        let produkDetailHeaderLabel = UILabel()
        let produkDetailImage = UIImageView()
        let attributView = UIView()
@@ -35,7 +35,7 @@ class ProdukDetailViewController: UIViewController {
         setupUI()
         view.layoutIfNeeded()
         pilihProdukAction()
-        
+        setupNavBarProdukDetail()
         // Do any additional setup after loading the view.
     }
     
@@ -45,10 +45,7 @@ class ProdukDetailViewController: UIViewController {
     
     @objc func pilihProduk(sender: Any){
         let jenisProdukVC = self.storyboard?.instantiateViewController(identifier: "JenisProdukViewController") as! JenisProdukViewController
-        jenisProdukVC.modalPresentationStyle = UIModalPresentationStyle.automatic
-        jenisProdukVC.transitioningDelegate = PresentationDelegate
-        jenisProdukVC.modalPresentationStyle = .custom
-        present(jenisProdukVC, animated: true, completion: {})
+        self.navigationController?.pushViewController(jenisProdukVC, animated: true)
         
     }
     

@@ -18,7 +18,7 @@ extension VerifkasiEmailViewController {
         
         verifikasiEmailView.addSubview(titleVerifikasiLabel)
         UIHelper.makeLabel(label: titleVerifikasiLabel, corner: 0, allignment: .center, leadingAnchor: verifikasiEmailView.leadingAnchor, trailingAnchor: verifikasiEmailView.trailingAnchor, topAnchor: verifikasiEmailView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant:34 , heightAnchor: 18, widthAnchor: 0)
-        UIHelper.setTextLabel(label: titleVerifikasiLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .semibold, fontSize: 15, text: "Verifikasi Email", kerning: 0.8)
+        UIHelper.setTextLabel(label: titleVerifikasiLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .semibold, fontSize: 15, text: "Verifikasi Email", kerning: 0.8)
         
         verifikasiEmailView.addSubview(melaluiEmailBaseView)
         UIHelper.makeView(view: melaluiEmailBaseView, leadingAnchor: verifikasiEmailView.leadingAnchor, trailingAnchor: verifikasiEmailView.trailingAnchor, topAnchor: titleVerifikasiLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 50, corner: 10, heightAnchor: 93, widthAnchor: 0)

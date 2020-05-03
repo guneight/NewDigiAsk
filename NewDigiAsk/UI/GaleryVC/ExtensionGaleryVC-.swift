@@ -116,7 +116,7 @@ class galeryTableViewCell : UITableViewCell{
         
         self.contentView.addSubview(titleGaleryLabel)
         UIHelper.makeLabel(label: titleGaleryLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: galeryImage.bottomAnchor, leadingConstant: 0, trailingConstant: -40, topConstant: 10, heightAnchor: 45, widthAnchor: 0)
-        UIHelper.setTextLabel(label: titleGaleryLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi, Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi", kerning: 0.12)
+        UIHelper.setTextLabel(label: titleGaleryLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi, Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi", kerning: 0.12)
         titleGaleryLabel.numberOfLines = 0
         
         

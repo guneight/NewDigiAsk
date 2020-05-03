@@ -128,11 +128,11 @@ class PolisakanKlaimTableViewCell : UITableViewCell{
         
         self.contentView.addSubview(HeadernomorTransaksiLabel)
         UIHelper.makeLabel(label: HeadernomorTransaksiLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 21, trailingConstant: -(contentView.frame.size.width/2), topConstant: 12, heightAnchor: 16, widthAnchor: 0)
-        HeadernomorTransaksiLabel.text = "Nomor Transaksi"
+        UIHelper.setTextLabel(label: HeadernomorTransaksiLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Transaksi", kerning: 0.12)
         
         self.contentView.addSubview(tanggalTransaksiLabel)
         UIHelper.makeLabel(label: tanggalTransaksiLabel, corner: 0, allignment: .right, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: contentView.frame.size.width/2, trailingConstant: -21, topConstant: 14, heightAnchor: 11, widthAnchor: 0)
-        tanggalTransaksiLabel.text = "12 Maret 2020"
+        UIHelper.setTextLabel(label: tanggalTransaksiLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 9, text: "12 Desember 2019", kerning: 0.45)
         
         self.contentView.addSubview(klaimButton)
         klaimButton.translatesAutoresizingMaskIntoConstraints = false
@@ -146,7 +146,7 @@ class PolisakanKlaimTableViewCell : UITableViewCell{
         
         self.contentView.addSubview(nomorTransaksiLabel)
         UIHelper.makeLabel(label: nomorTransaksiLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: HeadernomorTransaksiLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 5, heightAnchor: 15, widthAnchor: 0)
-        nomorTransaksiLabel.text = "123-2345-567-10879"
+        UIHelper.setTextLabel(label: nomorTransaksiLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.45)
         
         self.contentView.addSubview(lineTransaksiView)
         UIHelper.makeView(view: lineTransaksiView, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: nomorTransaksiLabel.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 10, corner: 0, heightAnchor: 1, widthAnchor: 0)
@@ -159,7 +159,7 @@ class PolisakanKlaimTableViewCell : UITableViewCell{
         
         containerProdukView.addSubview(namaProdukLabel)
         UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: containerProdukView.leadingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: containerProdukView.topAnchor, leadingConstant: 16, trailingConstant: -25, topConstant: 10, heightAnchor: 17, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
+        UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
         
         containerProdukView.addSubview(rightDetailProdukButton)
         rightDetailProdukButton.translatesAutoresizingMaskIntoConstraints = false
@@ -184,11 +184,11 @@ class PolisakanKlaimTableViewCell : UITableViewCell{
         containerProdukView.addSubview(deskripsiProdukLabel)
         UIHelper.makeLabel(label: deskripsiProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: lineNamaProduk.bottomAnchor, leadingConstant: 12, trailingConstant: -20, topConstant: 5, heightAnchor: 40, widthAnchor: 0)
         deskripsiProdukLabel.numberOfLines = 0
-        UIHelper.setTextLabel(label: deskripsiProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.65), weight: .regular, fontSize: 10, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam", kerning: 0.5)
+        UIHelper.setTextLabel(label: deskripsiProdukLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.65), weight: .regular, fontSize: 10, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam", kerning: 0.5)
                 
         containerProdukView.addSubview(hargaProdukLabel)
         UIHelper.makeLabel(label: hargaProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: deskripsiProdukLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -20, topConstant: 5, heightAnchor: 17, widthAnchor:   0)
-         UIHelper.setTextLabel(label: hargaProdukLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 12, text: "Rp 250.000,-", kerning: 0.5)
+         UIHelper.setTextLabel(label: hargaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 12, text: "Rp 250.000,-", kerning: 0.5)
         
         self.contentView.addSubview(grayLinePolis)
         UIHelper.makeView(view: grayLinePolis, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: containerProdukView.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 17, corner: 0, heightAnchor: 7, widthAnchor: 0)

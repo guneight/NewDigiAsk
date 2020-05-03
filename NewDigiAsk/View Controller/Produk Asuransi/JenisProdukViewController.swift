@@ -33,6 +33,7 @@ class JenisProdukViewController: UIViewController {
         jenisProdukTable.delegate = self
         jenisProdukTable.dataSource = self
         setupUI()
+        setupNavBarJenisProdukDetail()
         view.layoutIfNeeded()
         
         
@@ -45,10 +46,7 @@ class JenisProdukViewController: UIViewController {
         jenisProdukDetailVC.startHargaProdukDetailLabel.text = startHargaProdukLabel.text
         jenisProdukDetailVC.deskripsiJenisProdukDetail.text = deskripsiJenisProdukLabel.text
         print( "deskripsi : \(  String(describing: jenisProdukDetailVC.deskripsiJenisProdukDetail.text))")
-        jenisProdukDetailVC.modalPresentationStyle = UIModalPresentationStyle.automatic
-        jenisProdukDetailVC.transitioningDelegate = PresentationDelegate
-        jenisProdukDetailVC.modalPresentationStyle = .custom
-        present(jenisProdukDetailVC, animated: true, completion: {})
+        self.navigationController?.pushViewController(jenisProdukDetailVC, animated: true)
         
     }
 
