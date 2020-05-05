@@ -7,18 +7,23 @@
 //
 
 import UIKit
-
+import AVKit
 extension GaleryViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return galeryPhoto.count
+        print("jumlah video : \(video.count)")
+        return video.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellGalery", for: indexPath) as! galeryTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        cell.galeryImage.image = UIImage(named: "\(galeryPhoto[indexPath.row])")
+        let image = UIImage(named: video[indexPath.row].thumbUrl.path)
+        cell.galeryImage.image = image
+        cell.titleGaleryLabel.text = video[indexPath.row].title
+        cell.tanggalGalery.text = video[indexPath.row].tanggalVideo
         cell.backgroundColor = .white
+        cell.playButton.addTarget(self, action: #selector(playVideo), for: .touchUpInside)
         cell.shareGaleryButton.addTarget(self, action: #selector(shareGalery), for: .touchUpInside)
         return cell
     }
@@ -26,6 +31,21 @@ extension GaleryViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 270
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let videos = video[indexPath.row]
+        
+        let videoURL = videos.url
+        let player = AVPlayer(url: videoURL)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        
+        present(playerViewController, animated: true) {
+            player.play()
+        }
+    }
+    
+    
     
     func setupUIGalery(){
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
@@ -59,11 +79,23 @@ extension GaleryViewController : UITableViewDelegate, UITableViewDataSource{
         if let name = URL(string: "https://askrindo.co.id"), !name.absoluteString.isEmpty {
             let objectsToShare = [name]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-
+            
             self.present(activityVC, animated: true, completion: nil)
         }else  {
             let alertNoHp = UIAlertController(title: "GAGAL", message: "Share file galery tidak dapat dilakukan!", preferredStyle: .alert)
             alertNoHp.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        }
+    }
+    
+    @objc func playVideo(){
+        let videos = video[0]
+        let videoURL = videos.url
+        let player = AVPlayer(url: videoURL)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        
+        present(playerViewController, animated: true) {
+            player.play()
         }
     }
     
@@ -104,7 +136,7 @@ class galeryTableViewCell : UITableViewCell{
         galeryImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         galeryImage.contentMode = .scaleAspectFill
         
-        galeryImage.addSubview(playButton)
+        contentView.addSubview(playButton)
         playButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             playButton.heightAnchor.constraint(equalToConstant: 39),
@@ -112,11 +144,11 @@ class galeryTableViewCell : UITableViewCell{
             playButton.centerXAnchor.constraint(equalTo: galeryImage.centerXAnchor),
             playButton.centerYAnchor.constraint(equalTo: galeryImage.centerYAnchor)
         ])
-        playButton.setImage(UIImage(named: "playButton"), for: .normal)
+        playButton.setImage(UIImage(named: "playIcon"), for: .normal)
         
         self.contentView.addSubview(titleGaleryLabel)
         UIHelper.makeLabel(label: titleGaleryLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: galeryImage.bottomAnchor, leadingConstant: 0, trailingConstant: -40, topConstant: 10, heightAnchor: 45, widthAnchor: 0)
-        UIHelper.setTextLabel(label: titleGaleryLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi, Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi", kerning: 0.12)
+        UIHelper.setTextLabel(label: titleGaleryLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 14, text: "Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi, Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi", kerning: 0.5)
         titleGaleryLabel.numberOfLines = 0
         
         

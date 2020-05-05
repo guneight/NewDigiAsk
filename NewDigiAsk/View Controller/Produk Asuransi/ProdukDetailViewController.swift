@@ -33,9 +33,10 @@ class ProdukDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        view.layoutIfNeeded()
         pilihProdukAction()
         setupNavBarProdukDetail()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+         view.layoutIfNeeded()
         // Do any additional setup after loading the view.
     }
     

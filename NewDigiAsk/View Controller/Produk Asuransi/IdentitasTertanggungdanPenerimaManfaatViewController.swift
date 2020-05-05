@@ -52,6 +52,7 @@ class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         view.layoutIfNeeded()
+         self.navigationController?.setNavigationBarHidden(false, animated: false)
         tambahKerajangbutton.addTarget(self, action: #selector(tambahKeranjangAction(sender:)), for: .touchUpInside)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(dismissKeyboard))
         view.addGestureRecognizer(tap)

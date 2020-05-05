@@ -132,7 +132,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         completeImage.layer.cornerRadius = 17
         completeImage.image = UIImage(named: "checkfinishIcon")
         completeImage.contentMode = .center
-     
+        
         
         produkBaseView.addSubview(keranjangBaseView)
         UIHelper.makeView(view: keranjangBaseView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)

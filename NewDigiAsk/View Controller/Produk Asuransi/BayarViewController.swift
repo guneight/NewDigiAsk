@@ -25,16 +25,15 @@ class BayarViewController: UIViewController {
         super.viewDidLoad()
         view.layoutIfNeeded()
         setupUI()
+        setupNavBarBayar()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         bayarButton.addTarget(self, action: #selector(bayarAction(sender:)), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
     
     @objc func bayarAction (sender : Any){
         let detailBayarVC = storyboard?.instantiateViewController(identifier: "DetailBayarViewController")  as! DetailBayarViewController
-        detailBayarVC.iconMetodeBayarImage.image = iconImageMetodeBayar.image
-        detailBayarVC.modalPresentationStyle = .custom
-        detailBayarVC.transitioningDelegate = PresentationDelegate
-        present(detailBayarVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(detailBayarVC, animated: true)
         
     }
 }

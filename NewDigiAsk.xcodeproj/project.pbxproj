@@ -97,6 +97,9 @@
 		67D97650242A0F5A001BA581 /* ListTertanggungViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D9764F242A0F5A001BA581 /* ListTertanggungViewController.swift */; };
 		67E60CF42444069C003E22A6 /* DaftarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60CF32444069C003E22A6 /* DaftarViewController.swift */; };
 		67E60CF624440976003E22A6 /* ExtensionDaftarsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60CF524440976003E22A6 /* ExtensionDaftarsVC.swift */; };
+		67EA064524613270000662AA /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA064424613270000662AA /* VideoPlayerView.swift */; };
+		67EA064724613F05000662AA /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA064624613F05000662AA /* Video.swift */; };
+		67EA064A246143D5000662AA /* foxVillage.png in Resources */ = {isa = PBXBuildFile; fileRef = 67EA0649246143D5000662AA /* foxVillage.png */; };
 		67EA32492423CE7800ED9F1F /* DetailPolisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA32482423CE7800ED9F1F /* DetailPolisViewController.swift */; };
 		67EA324C2423CEC400ED9F1F /* ExtensionDetailPolisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA324B2423CEC400ED9F1F /* ExtensionDetailPolisVC.swift */; };
 		67EA324E24247F7200ED9F1F /* DetailProdukPolisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA324D24247F7200ED9F1F /* DetailProdukPolisViewController.swift */; };
@@ -234,6 +237,9 @@
 		67D9764F242A0F5A001BA581 /* ListTertanggungViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTertanggungViewController.swift; sourceTree = "<group>"; };
 		67E60CF32444069C003E22A6 /* DaftarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarViewController.swift; sourceTree = "<group>"; };
 		67E60CF524440976003E22A6 /* ExtensionDaftarsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDaftarsVC.swift; sourceTree = "<group>"; };
+		67EA064424613270000662AA /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		67EA064624613F05000662AA /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Video.swift; path = "NewDigiAsk/View Controller/Galery/Video.swift"; sourceTree = SOURCE_ROOT; };
+		67EA0649246143D5000662AA /* foxVillage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foxVillage.png; sourceTree = "<group>"; };
 		67EA32482423CE7800ED9F1F /* DetailPolisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPolisViewController.swift; sourceTree = "<group>"; };
 		67EA324B2423CEC400ED9F1F /* ExtensionDetailPolisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDetailPolisVC.swift; sourceTree = "<group>"; };
 		67EA324D24247F7200ED9F1F /* DetailProdukPolisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProdukPolisViewController.swift; sourceTree = "<group>"; };
@@ -440,6 +446,7 @@
 				676D3F0323F2476E00AF813D /* Model */,
 				6751E14223ED0846008ACB56 /* UI */,
 				67288E8A23FBDAEC002E257C /* Font */,
+				67EA06482461439B000662AA /* Local Video */,
 				6751E12D23EC06B4008ACB56 /* AppDelegate.swift */,
 				6751E13723EC06B5008ACB56 /* Assets.xcassets */,
 				6751E13923EC06B5008ACB56 /* LaunchScreen.storyboard */,
@@ -491,6 +498,7 @@
 		676D3F0323F2476E00AF813D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				67EA064624613F05000662AA /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -642,6 +650,7 @@
 			isa = PBXGroup;
 			children = (
 				67D6319C2420DB7B00197A39 /* GaleryViewController.swift */,
+				67EA064424613270000662AA /* VideoPlayerView.swift */,
 			);
 			path = Galery;
 			sourceTree = "<group>";
@@ -686,6 +695,14 @@
 				67423262242C79D100A07141 /* ExtensionAddTertanggungVC.swift */,
 			);
 			path = "List Penerima Manfaat VC";
+			sourceTree = "<group>";
+		};
+		67EA06482461439B000662AA /* Local Video */ = {
+			isa = PBXGroup;
+			children = (
+				67EA0649246143D5000662AA /* foxVillage.png */,
+			);
+			path = "Local Video";
 			sourceTree = "<group>";
 		};
 		67EA32472423CE5E00ED9F1F /* Polis */ = {
@@ -800,6 +817,7 @@
 			files = (
 				679E5C9A2416354D00107457 /* Main.storyboard in Resources */,
 				679E5C992416353F00107457 /* Assets.xcassets in Resources */,
+				67EA064A246143D5000662AA /* foxVillage.png in Resources */,
 				679E5C942416353500107457 /* AvantGardeBookBT.ttf in Resources */,
 				679E5C952416353500107457 /* AvantGardeDemiBT.ttf in Resources */,
 				679E5C962416353500107457 /* AvantGardeDemiObliqueBT.ttf in Resources */,
@@ -903,6 +921,7 @@
 				6700E98F2452F85A0097AC47 /* LoginViewController.swift in Sources */,
 				6702D6432455A2670022325E /* PembayaranCartViewController.swift in Sources */,
 				67EA324E24247F7200ED9F1F /* DetailProdukPolisViewController.swift in Sources */,
+				67EA064724613F05000662AA /* Video.swift in Sources */,
 				67924D94240CDCF10099F26F /* ExtensionDetailBayarVC.swift in Sources */,
 				6728F09F24050BCA00A2C605 /* PresentationManager.swift in Sources */,
 				6728574324109F24005E3B6D /* KlaimViewController.swift in Sources */,
@@ -933,6 +952,7 @@
 				6728F0A524050D2E00A2C605 /* ExtensionProdukDetailVC.swift in Sources */,
 				67D631932420A5A000197A39 /* InfoViewController.swift in Sources */,
 				6702D63F245596530022325E /* CheckOutCartViewController.swift in Sources */,
+				67EA064524613270000662AA /* VideoPlayerView.swift in Sources */,
 				67F06E10241B456800B277B2 /* ExtensionSuratBuktiKematianVC.swift in Sources */,
 				67EE977A243F794F00DC3C7A /* ExtensionMapVC.swift in Sources */,
 				67D631982420D34200197A39 /* InfoDetailViewController.swift in Sources */,

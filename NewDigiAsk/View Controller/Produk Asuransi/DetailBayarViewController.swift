@@ -40,6 +40,8 @@ class DetailBayarViewController: UIViewController {
         super.viewDidLoad()
         view.layoutIfNeeded()
         setupUI()
+        setupNavBarDetailBayar()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         lihatTransaksiButton.addTarget(self, action: #selector(lihatTransaksion(sender:)), for: .touchUpInside)
     }
     

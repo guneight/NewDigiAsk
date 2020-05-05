@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import GooglePlaces
 import GoogleMaps
+import AVFoundation
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyDRbvUTXVtSjXPVyP3JNlqg6IBGHyKZbwA")
+        
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient, mode: AVAudioSession.Mode.moviePlayback, options: [.mixWithOthers] )
+        let feed  = GaleryViewController()
+        feed.video = Video.allVideos()
+        print("jumlah video adalah : \(feed.video.count)")
         return true
     }
 

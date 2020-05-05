@@ -11,8 +11,8 @@ import UIKit
 class GaleryViewController: UIViewController {
     let galeryView = UIView()
     let listGaleryTable = UITableView()
-    
-    let galeryPhoto = ["galery1","galery2", "galery3", "galery4", "galery5","galery6"]
+    var video : [Video] = []
+//    let galeryPhoto = ["galery1","galery2", "galery3", "galery4", "galery5","galery6"]
     override func viewDidLoad() {
         super.viewDidLoad()
         listGaleryTable.delegate = self
@@ -21,6 +21,7 @@ class GaleryViewController: UIViewController {
         setupNavBarGalery()
         view.layoutIfNeeded()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        video = Video.allVideos()
         // Do any additional setup after loading the view.
     }
     

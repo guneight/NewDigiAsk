@@ -65,9 +65,7 @@ class DeskripsiProdukViewController: UIViewController {
     
     @objc func pilihProdukAction(sender: Any){
         let produkDetail = storyboard?.instantiateViewController(identifier: "JenisProdukDetailViewController") as! JenisProdukDetailViewController
-        produkDetail.transitioningDelegate = PresentationDelegate
-        produkDetail.modalPresentationStyle = .custom
-        present(produkDetail, animated: true, completion: {})
+        self.navigationController?.pushViewController(produkDetail, animated: true)
     }
 
 }

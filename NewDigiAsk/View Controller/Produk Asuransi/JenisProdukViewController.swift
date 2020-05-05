@@ -34,6 +34,7 @@ class JenisProdukViewController: UIViewController {
         jenisProdukTable.dataSource = self
         setupUI()
         setupNavBarJenisProdukDetail()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         view.layoutIfNeeded()
         
         

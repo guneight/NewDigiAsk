@@ -26,6 +26,7 @@ class KeranjangViewController: UIViewController {
         view.layoutIfNeeded()
         setupUI()
         setupNavBarKeranjang()
+         self.navigationController?.setNavigationBarHidden(false, animated: false)
         checkOutButton.addTarget(self, action: #selector(checkOutAction), for: .touchUpInside)
         
 

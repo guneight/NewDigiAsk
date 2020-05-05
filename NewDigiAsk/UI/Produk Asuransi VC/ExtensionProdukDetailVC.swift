@@ -275,8 +275,5 @@ extension ProdukDetailViewController {
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
-    @objc func swipeDown() {
-        self.dismiss(animated: true, completion: nil)
-    }
     
 }

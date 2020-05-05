@@ -23,6 +23,8 @@ class CheckOutKeranjangViewController: UIViewController {
         setupUI()
         daftarPembelianTable.delegate = self
         daftarPembelianTable.dataSource = self
+        setupNavBarCheckOut()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         bayarButton.addTarget(self, action: #selector(bayarAction(sender:)), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
@@ -30,9 +32,7 @@ class CheckOutKeranjangViewController: UIViewController {
 
     @objc func bayarAction (sender : Any){
         let pembayaranVC = storyboard?.instantiateViewController(identifier: "PembayaranViewController")  as! PembayaranViewController
-               pembayaranVC.modalPresentationStyle = .custom
-               pembayaranVC.transitioningDelegate = PresentationDelegate
-               present(pembayaranVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(pembayaranVC, animated: true)
     }
     
     @objc func namaProdukAction(sender:Any){
