@@ -117,19 +117,19 @@ extension PembayaranViewController{
         
         totalPembayaranView.addSubview(totalPemabayaranLabel)
         UIHelper.makeLabel(label: totalPemabayaranLabel, corner: 0, allignment: .left, leadingAnchor: totalPembayaranView.leadingAnchor, trailingAnchor: totalPembayaranView.trailingAnchor, topAnchor: totalPembayaranView.topAnchor, leadingConstant: 15, trailingConstant: -15, topConstant: 15, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: totalPemabayaranLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Total Pembayaran", kerning: 0.12)
+        UIHelper.setTextLabel(label: totalPemabayaranLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Total Pembayaran", kerning: 0.12)
         
         totalPembayaranView.addSubview(nilaiTotalPembayaranLabel)
         UIHelper.makeLabel(label: nilaiTotalPembayaranLabel, corner: 0, allignment: .left, leadingAnchor: totalPembayaranView.leadingAnchor, trailingAnchor: nilaiTotalPembayaranLabel.trailingAnchor, topAnchor: totalPemabayaranLabel.bottomAnchor, leadingConstant: 15, trailingConstant: -15, topConstant: 10, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nilaiTotalPembayaranLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.12)
+        UIHelper.setTextLabel(label: nilaiTotalPembayaranLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.12)
         
         pembayaranView.addSubview(pilihMetodePembayaranLabel)
         UIHelper.makeLabel(label: pilihMetodePembayaranLabel, corner: 0, allignment:.left, leadingAnchor:pembayaranView.leadingAnchor, trailingAnchor: pembayaranView.trailingAnchor, topAnchor: totalPembayaranView.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 25, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: pilihMetodePembayaranLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Pilin Metode Pembayaran", kerning: 0.12)
+        UIHelper.setTextLabel(label: pilihMetodePembayaranLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Pilin Metode Pembayaran", kerning: 0.12)
         
         pembayaranView.addSubview(virtualAccountLabel)
         UIHelper.makeLabel(label: virtualAccountLabel, corner: 0, allignment: .left, leadingAnchor: pembayaranView.leadingAnchor, trailingAnchor: pembayaranView.trailingAnchor, topAnchor: pilihMetodePembayaranLabel.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: virtualAccountLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Virtual Account", kerning: 0.12)
+        UIHelper.setTextLabel(label: virtualAccountLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Virtual Account", kerning: 0.12)
         
         pembayaranView.addSubview(virtualAccountView)
         UIHelper.makeView(view: virtualAccountView, leadingAnchor: pembayaranView.leadingAnchor, trailingAnchor: pembayaranView.trailingAnchor, topAnchor: virtualAccountLabel.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 10, corner: 10, heightAnchor: 110, widthAnchor: 0)
@@ -181,7 +181,7 @@ extension PembayaranViewController{
         
         view.addSubview(KartuKreditLabel)
         UIHelper.makeLabel(label: KartuKreditLabel, corner: 0, allignment: .left, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: virtualAccountView.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 35, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: KartuKreditLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Kartu Kredit", kerning: 0.12)
+        UIHelper.setTextLabel(label: KartuKreditLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Kartu Kredit", kerning: 0.12)
         
         pembayaranView.addSubview(kartuKreditView)
         UIHelper.makeView(view: kartuKreditView, leadingAnchor: pembayaranView.leadingAnchor, trailingAnchor: pembayaranView.trailingAnchor, topAnchor: KartuKreditLabel.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 10, corner: 10, heightAnchor: 36, widthAnchor: 0)
@@ -204,7 +204,7 @@ extension PembayaranViewController{
         
         pembayaranView.addSubview(uangElektronikLabel)
         UIHelper.makeLabel(label: uangElektronikLabel, corner: 0, allignment: .left, leadingAnchor: pembayaranView.leadingAnchor, trailingAnchor: pembayaranView.trailingAnchor, topAnchor: kartuKreditView.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 12, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: uangElektronikLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Uang Electronik", kerning: 0.12)
+        UIHelper.setTextLabel(label: uangElektronikLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Uang Electronik", kerning: 0.12)
         
         pembayaranView.addSubview(uangElektronikView)
         UIHelper.makeView(view: uangElektronikView, leadingAnchor: pembayaranView.leadingAnchor, trailingAnchor: pembayaranView.trailingAnchor, topAnchor: uangElektronikLabel.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 10, corner: 10, heightAnchor: 110, widthAnchor: 0)

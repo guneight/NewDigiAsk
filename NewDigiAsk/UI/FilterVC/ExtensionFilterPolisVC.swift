@@ -10,7 +10,7 @@ import UIKit
 
 extension FilterPolisViewController{
     func setupUI(){
-        let height = view.frame.size.height
+      
         view.backgroundColor = .clear
         
         view.addSubview(filterBaseView)

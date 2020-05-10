@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
     let signInWithGoogleButton = UIButton()
     let googleIconImage = UIImageView()
     let belumPunyaAkunLabel = UILabel()
+    let emailAlert = UILabel()
     var iconClick = true
     var loginStatus : Int = 0
     
@@ -55,6 +56,7 @@ class LoginViewController: UIViewController {
     
     @objc func checkEmail() {
         if nomorPonseLEmailTextField.text?.isValidEmail == true{
+            emailAlert.isHidden = true
             passwordLabel.isHidden = false
             passwordTextField.isHidden = false
             showPasswordButton.isHidden = false
@@ -62,10 +64,11 @@ class LoginViewController: UIViewController {
             underlinePassword.isHidden = false
             
         }else{
+            emailAlert.isHidden = false
             passwordLabel.isHidden = true
             passwordTextField.isHidden = true
             showPasswordButton.isHidden = true
-            lupaPasswordLabel.isEnabled = true
+            lupaPasswordLabel.isHidden = true
             underlinePassword.isHidden = true
         }
     }

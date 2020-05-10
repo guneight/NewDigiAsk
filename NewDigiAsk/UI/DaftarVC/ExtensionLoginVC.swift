@@ -77,8 +77,13 @@ extension LoginViewController : UITextFieldDelegate{
         UIHelper.makeView(view: underlineNomorPonselEmail, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: nomorPonseLEmailTextField.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 5, corner: 0, heightAnchor: 1, widthAnchor: 0)
         underlineNomorPonselEmail.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 0.5)
         
+        loginBaseView.addSubview(emailAlert)
+        emailAlert.isEnabled = true
+        UIHelper.makeLabel(label: emailAlert, corner: 0, allignment: .right, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: underlineNomorPonselEmail.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 7, heightAnchor: 12, widthAnchor: 0)
+        UIHelper.setTextLabel(label: emailAlert, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 10, text: "Pastikan nomor atau email yang dimasukkan benar", kerning: 0.8)
+        
         loginBaseView.addSubview(passwordLabel)
-        UIHelper.makeLabel(label: passwordLabel, corner: 0, allignment: .left, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: underlineNomorPonselEmail.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 15, heightAnchor: 14, widthAnchor: 0)
+        UIHelper.makeLabel(label: passwordLabel, corner: 0, allignment: .left, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: underlineNomorPonselEmail.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 14, widthAnchor: 0)
         UIHelper.setTextLabel(label: passwordLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1), weight: .regular, fontSize: 14, text: "Password", kerning: 0.04)
         
         loginBaseView.addSubview(passwordTextField)

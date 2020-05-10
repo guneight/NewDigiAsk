@@ -43,6 +43,9 @@ class DetailBayarViewController: UIViewController {
         setupNavBarDetailBayar()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         lihatTransaksiButton.addTarget(self, action: #selector(lihatTransaksion(sender:)), for: .touchUpInside)
+        salinNomorRekeningLink()
+        let tapGestur = UITapGestureRecognizer(target: self, action: #selector(salinNomorRekening(sender:)))
+        salinNomorRekening.addGestureRecognizer(tapGestur)
     }
     
 
@@ -58,4 +61,20 @@ class DetailBayarViewController: UIViewController {
             nav.pushViewController(polisVC, animated: true)
     }
 
+    func salinNomorRekeningLink(){
+        let text = (salinNomorRekening.text)!
+        let underliningString = NSMutableAttributedString(string: text)
+        let salin = (text as NSString).range(of: "Salin nomor rekening")
+        underliningString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: salin)
+        salinNomorRekening.attributedText = underliningString
+    }
+    
+    @objc func salinNomorRekening(sender : UITapGestureRecognizer){
+        let text = (salinNomorRekening.text)!
+        let daftarDisini = (text as NSString).range(of: "Salin nomor rekening")
+        if sender.didTapAttributedTextInLabel(label: salinNomorRekening, inRange: daftarDisini){
+            print("Salin nomor rekening")
+        }
+        
+    }
 }
