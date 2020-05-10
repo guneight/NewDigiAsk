@@ -9,6 +9,7 @@
 import UIKit
 
 class CheckOutCartViewController: UIViewController {
+    let produkBaseView = UIView()
     let keranjangBaseView = UIView()
     let pilihSemuaProduk = UILabel()
     let pilihSemuaProdukButton = UIButton()
@@ -41,9 +42,7 @@ class CheckOutCartViewController: UIViewController {
 
     @objc func rightButtonAction(sender: Any){
          let detailPolisBeliVC = storyboard?.instantiateViewController(identifier: "DetailPolisBeliViewController") as! DetailPolisBeliViewController
-        detailPolisBeliVC.modalPresentationStyle = .custom
-        detailPolisBeliVC.transitioningDelegate = PresentationDelegate
-        present(detailPolisBeliVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(detailPolisBeliVC, animated: true)
         
     }
 

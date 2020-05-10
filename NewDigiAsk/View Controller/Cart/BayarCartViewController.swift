@@ -9,6 +9,7 @@
 import UIKit
 
 class BayarCartViewController: UIViewController {
+    let produkBaseView = UIView()
     let bayarView = UIView()
     let totalBayarView = UIView()
     let totalBayarLabel = UILabel()

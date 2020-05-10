@@ -52,6 +52,7 @@ extension ProdukDetailViewController {
         produkImage.translatesAutoresizingMaskIntoConstraints = false
         produkImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         produkImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
+        
         produkImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         produkImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         produkImage.image = UIImage(named: "produkIconWhite")
@@ -105,6 +106,7 @@ extension ProdukDetailViewController {
         completeImage.layer.cornerRadius = 17
         completeImage.image = UIImage(named: "checkfinishIcon")
         completeImage.contentMode = .center
+        
         produkBaseView.addSubview(produkView)
         UIHelper.makeView(view: produkView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
         produkView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -127,8 +129,17 @@ extension ProdukDetailViewController {
         
         produkView.addSubview(pilihProdukButton)
         UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: produkDetailScrollView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
-        pilihProdukButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-        pilihProdukButton.setTitle( "PILIH PRODUK", for: .normal)
+        let index =  indexProdukSelect
+               if index == 0  {
+                   pilihProdukButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+                   pilihProdukButton.setTitle( "PILIH PRODUK", for: .normal)
+                   
+               }else{
+                   pilihProdukButton.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+                   pilihProdukButton.setTitle( "Coming soon,,,", for: .normal)
+                   pilihProdukButton.isEnabled = false
+                   pilihProdukButton.layer.cornerRadius = 5
+               }
         let descriptionFont = UIFont(name: "Arial", size: 10)?.fontDescriptor.withSymbolicTraits(UIFontDescriptor.SymbolicTraits.traitBold)
         pilihProdukButton.titleLabel?.font = UIFont(descriptor: descriptionFont!, size: 10)
         

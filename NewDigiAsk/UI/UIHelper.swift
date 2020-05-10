@@ -170,6 +170,8 @@ struct UIHelper {
         alert.addAction(UIAlertAction(title: "BENAR", style: .default, handler: nil))
         vc.present(alert,animated: true)
     }
+    
+    
 }
 
 

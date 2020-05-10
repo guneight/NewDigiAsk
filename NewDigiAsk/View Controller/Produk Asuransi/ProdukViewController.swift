@@ -28,7 +28,7 @@ class ProdukViewController: UIViewController {
     let kerangjangImage = UIImageView()
     let checkOutImage = UIImageView()
     let completeImage = UIImageView()
-    var PresentationDelegate = PresentationManager()
+   
 
     override func viewDidLoad() {
         produkTable.delegate = self

@@ -548,7 +548,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
      
         indexProduk = indexPath.row
         if collectionView == collectionViewProduct {
-        let deskripsiProdukVC  = storyboard?.instantiateViewController(identifier: "DeskripsiProdukViewController") as! DeskripsiProdukViewController
+        let deskripsiProdukVC  = storyboard?.instantiateViewController(identifier: "ProdukDetailViewController") as! ProdukDetailViewController
         deskripsiProdukVC.indexProdukSelect = indexProduk
         navigationController?.pushViewController(deskripsiProdukVC, animated: true)
         }else if  collectionView == collectionViewPromo{

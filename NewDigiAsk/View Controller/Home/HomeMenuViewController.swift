@@ -58,24 +58,16 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.mapAction(sender:)))
         self.imageViewMap.addGestureRecognizer(gesture)
         
-        for family: String in UIFont.familyNames
-               {
-                   print(family)
-                   for names: String in UIFont.fontNames(forFamilyName: family)
-                   {
-                       print("== \(names)")
-                   }
-               }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        cvSetup()
-        collectionViewInfo.reloadData()
-        collectionViewPromo.reloadData()
-        collectBannerPromo.reloadData()
-        print("Login Status :", loginStatus)
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+//        cvSetup()
+//        collectionViewInfo.reloadData()
+//        collectionViewPromo.reloadData()
+//        collectBannerPromo.reloadData()
+//        print("Login Status :", loginStatus)
+//    }
     
     
     

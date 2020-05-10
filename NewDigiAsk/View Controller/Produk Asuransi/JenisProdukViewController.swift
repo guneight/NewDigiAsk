@@ -9,6 +9,25 @@
 import UIKit
 
 class JenisProdukViewController: UIViewController {
+    let produkBaseView = UIView()
+    let prosesStackView : UIStackView = {
+        let stackViewCV = UIStackView()
+        stackViewCV.axis = NSLayoutConstraint.Axis.horizontal
+        stackViewCV.distribution = UIStackView.Distribution.fillEqually
+        stackViewCV.alignment = UIStackView.Alignment.center
+        stackViewCV.backgroundColor = #colorLiteral(red: 0.2131774127, green: 0.6528760791, blue: 1, alpha: 1)
+        stackViewCV.translatesAutoresizingMaskIntoConstraints = false
+        stackViewCV.spacing = 30
+        return stackViewCV
+    }()
+    let lineView = UIView()
+    let viewContainerTableProduk = UIView()
+    let produkTable = UITableView()
+    let produkImage = UIImageView()
+    let tertanggungImage = UIImageView()
+    let kerangjangImage = UIImageView()
+    let checkOutImage = UIImageView()
+    let completeImage = UIImageView()
     let jenisProdukView = UIView()
     let jenisProdukScrollView = UIScrollView()
     let namaProdukLabel = UILabel()
@@ -29,7 +48,6 @@ class JenisProdukViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
         jenisProdukTable.delegate = self
         jenisProdukTable.dataSource = self
         setupUI()
@@ -40,7 +58,7 @@ class JenisProdukViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    
     @objc func jenisProdukDetail(sender: Any){
         let jenisProdukDetailVC = self.storyboard?.instantiateViewController(identifier: "JenisProdukDetailViewController") as! JenisProdukDetailViewController
         jenisProdukDetailVC.namajenisProdukDetailLabel.text = jenisProdukLabel.text
@@ -50,8 +68,8 @@ class JenisProdukViewController: UIViewController {
         self.navigationController?.pushViewController(jenisProdukDetailVC, animated: true)
         
     }
-
-  
-   
-
+    
+    
+    
+    
 }

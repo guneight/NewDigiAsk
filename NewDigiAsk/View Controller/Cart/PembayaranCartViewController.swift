@@ -9,6 +9,7 @@
 import UIKit
 
 class PembayaranCartViewController: UIViewController {
+    let produkBaseView = UIView()
     let pembayaranView = UIView()
     let totalPembayaranView = UIView()
     let totalPemabayaranLabel = UILabel()

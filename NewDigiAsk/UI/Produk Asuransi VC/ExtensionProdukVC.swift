@@ -26,8 +26,8 @@ let tertanggungImage = UIImageView()
 let kerangjangImage = UIImageView()
 let checkOutImage = UIImageView()
 let completeImage = UIImageView()
-var PresentationDelegate = PresentationManager()
-
+ var PresentationDelegate = PresentationManager()
+var indexProduk :Int = 0
 extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
     
     
@@ -59,20 +59,22 @@ extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         let produkDetailVC = self.storyboard?.instantiateViewController(identifier: "ProdukDetailViewController") as! ProdukDetailViewController
+        produkDetailVC.indexProdukSelect = indexPath.row
         self.navigationController?.pushViewController(produkDetailVC, animated: true)
+        print(" IndexPath = \(indexPath.row)")
         
     }
     
     
     func setupUI(){
-        
+        view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         view.addSubview(produkBaseView)
         produkBaseView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             produkBaseView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             produkBaseView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             produkBaseView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            produkBaseView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            produkBaseView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             
         ])
         
@@ -106,49 +108,59 @@ extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
         produkImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         produkImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
                
-        produkImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-        produkImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-        produkImage.image = UIImage(named: "cart.png")
-        produkImage.contentMode = .center
-        produkImage.layer.masksToBounds = true
-        produkImage.layer.cornerRadius = 17
-    
-        
-        prosesStackView.addArrangedSubview(tertanggungImage)
-        tertanggungImage.translatesAutoresizingMaskIntoConstraints = false
-        tertanggungImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
-        tertanggungImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        tertanggungImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        tertanggungImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-        tertanggungImage.layer.masksToBounds = true
-        tertanggungImage.layer.cornerRadius = 17
-        
-        prosesStackView.addArrangedSubview(kerangjangImage)
-        kerangjangImage.translatesAutoresizingMaskIntoConstraints = false
-        kerangjangImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
-        kerangjangImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        kerangjangImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        kerangjangImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-        kerangjangImage.layer.masksToBounds = true
-        kerangjangImage.layer.cornerRadius = 17
-        
-        prosesStackView.addArrangedSubview(checkOutImage)
-        checkOutImage.translatesAutoresizingMaskIntoConstraints = false
-        checkOutImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
-        checkOutImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        checkOutImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        checkOutImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-        checkOutImage.layer.masksToBounds = true
-        checkOutImage.layer.cornerRadius = 17
-        
-        prosesStackView.addArrangedSubview(completeImage)
-        completeImage.translatesAutoresizingMaskIntoConstraints = false
-        completeImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
-        completeImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        completeImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        completeImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-        completeImage.layer.masksToBounds = true
-        completeImage.layer.cornerRadius = 17
+         produkImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+               produkImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+               produkImage.image = UIImage(named: "produkIconWhite")
+               produkImage.contentMode = .center
+               produkImage.layer.masksToBounds = true
+               produkImage.layer.cornerRadius = 17
+               produkImage.layer.borderWidth = 1
+               
+               
+               prosesStackView.addArrangedSubview(tertanggungImage)
+               tertanggungImage.translatesAutoresizingMaskIntoConstraints = false
+               tertanggungImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
+               tertanggungImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
+               tertanggungImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+               tertanggungImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+               tertanggungImage.layer.masksToBounds = true
+               tertanggungImage.layer.cornerRadius = 17
+               tertanggungImage.image = UIImage(named: "profileIcon")
+               tertanggungImage.contentMode = .center
+               
+               prosesStackView.addArrangedSubview(kerangjangImage)
+               kerangjangImage.translatesAutoresizingMaskIntoConstraints = false
+               kerangjangImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
+               kerangjangImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
+               kerangjangImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+               kerangjangImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+               kerangjangImage.layer.masksToBounds = true
+               kerangjangImage.layer.cornerRadius = 17
+               kerangjangImage.image = UIImage(named: "keranjangIcon")
+               kerangjangImage.contentMode = .center
+               
+               
+               prosesStackView.addArrangedSubview(checkOutImage)
+               checkOutImage.translatesAutoresizingMaskIntoConstraints = false
+               checkOutImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
+               checkOutImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
+               checkOutImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+               checkOutImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+               checkOutImage.layer.masksToBounds = true
+               checkOutImage.layer.cornerRadius = 17
+               checkOutImage.image = UIImage(named: "rpIcon")
+               checkOutImage.contentMode = .center
+               
+               prosesStackView.addArrangedSubview(completeImage)
+               completeImage.translatesAutoresizingMaskIntoConstraints = false
+               completeImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
+               completeImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
+               completeImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+               completeImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+               completeImage.layer.masksToBounds = true
+               completeImage.layer.cornerRadius = 17
+               completeImage.image = UIImage(named: "checkfinishIcon")
+               completeImage.contentMode = .center
         
        
         produkBaseView.addSubview(viewContainerTableProduk)

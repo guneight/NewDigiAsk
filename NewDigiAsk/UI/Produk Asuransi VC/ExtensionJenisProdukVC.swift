@@ -49,20 +49,20 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
             produkBaseView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             produkBaseView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             produkBaseView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            
+
         ])
-        
+
         produkBaseView.layer.cornerRadius = 20
         produkBaseView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner ]
         produkBaseView.backgroundColor = #colorLiteral(red: 0.6549019608, green: 0.6980392157, blue: 0.8980392157, alpha: 0.7728756421)
         produkBaseView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.2017337329)
         produkBaseView.layoutIfNeeded()
-        
+
         produkBaseView.addSubview(lineView)
         UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 2, widthAnchor: 0)
         lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-        
+
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
         produkBaseView.addSubview(prosesStackView)
         NSLayoutConstraint.activate([
@@ -76,7 +76,7 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         prosesStackView.alignment = .center
         prosesStackView.axis = .horizontal
         prosesStackView.distribution = UIStackView.Distribution.fillEqually
-        
+
         prosesStackView.addArrangedSubview(produkImage)
         produkImage.translatesAutoresizingMaskIntoConstraints = false
         produkImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
@@ -88,8 +88,8 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         produkImage.layer.masksToBounds = true
         produkImage.layer.cornerRadius = 17
         produkImage.layer.borderWidth = 1
-        
-        
+
+
         prosesStackView.addArrangedSubview(tertanggungImage)
         tertanggungImage.translatesAutoresizingMaskIntoConstraints = false
         tertanggungImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
@@ -100,7 +100,7 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         tertanggungImage.layer.cornerRadius = 17
         tertanggungImage.image = UIImage(named: "profileIcon")
         tertanggungImage.contentMode = .center
-        
+
         prosesStackView.addArrangedSubview(kerangjangImage)
         kerangjangImage.translatesAutoresizingMaskIntoConstraints = false
         kerangjangImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
@@ -111,8 +111,8 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         kerangjangImage.layer.cornerRadius = 17
         kerangjangImage.image = UIImage(named: "keranjangIcon")
         kerangjangImage.contentMode = .center
-        
-        
+
+
         prosesStackView.addArrangedSubview(checkOutImage)
         checkOutImage.translatesAutoresizingMaskIntoConstraints = false
         checkOutImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
@@ -123,7 +123,7 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         checkOutImage.layer.cornerRadius = 17
         checkOutImage.image = UIImage(named: "rpIcon")
         checkOutImage.contentMode = .center
-        
+
         prosesStackView.addArrangedSubview(completeImage)
         completeImage.translatesAutoresizingMaskIntoConstraints = false
         completeImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
@@ -135,9 +135,9 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         completeImage.image = UIImage(named: "checkfinishIcon")
         completeImage.contentMode = .center
         
-        produkBaseView.addSubview(jenisProdukView)
-        UIHelper.makeView(view: jenisProdukView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
-        jenisProdukView.bottomAnchor.constraint(equalTo: produkBaseView.bottomAnchor).isActive = true
+        view.addSubview(jenisProdukView)
+        UIHelper.makeView(view: jenisProdukView, leadingAnchor: view.leadingAnchor, trailingAnchor: view.trailingAnchor, topAnchor: view.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
+        jenisProdukView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         jenisProdukView.backgroundColor = .white
         
         jenisProdukTable.backgroundColor = .white
