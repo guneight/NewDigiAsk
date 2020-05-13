@@ -108,7 +108,7 @@ extension PembayaranCartViewController {
         
         produkBaseView .addSubview(pembayaranView)
         UIHelper.makeView(view: pembayaranView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 65, corner: 20, heightAnchor: 0, widthAnchor: 0)
-        pembayaranView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        pembayaranView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         pembayaranView.backgroundColor = .white
         
         pembayaranView.addSubview(totalPembayaranView)
@@ -265,10 +265,11 @@ extension PembayaranCartViewController {
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().isTranslucent = false
-        navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "PRODUK", style: .plain, target: nil, action: nil)
+       let backItem = UIBarButtonItem()
+          backItem.title = "CHECKOUT"
+          let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+          backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
+          navigationItem.leftBarButtonItems = [customButtonNav, backItem]
         
     }
     @objc func backButtonTapped() {

@@ -74,34 +74,7 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
         polisManageSegmentControl.selectedSegmentTintColor = .white
         polisManageSegmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
         
-//        polisManageSegmentControl.addSubview(segmentedControlIndicator)
-//        segmentedControlIndicator.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            segmentedControlIndicator.leadingAnchor.constraint(equalTo: polisManageSegmentControl.leadingAnchor),
-//            segmentedControlIndicator.trailingAnchor.constraint(equalTo: polisManageSegmentControl.trailingAnchor),
-//            segmentedControlIndicator.heightAnchor.constraint(equalToConstant: 3),
-//            segmentedControlIndicator.bottomAnchor.constraint(equalTo: polisManageSegmentControl.bottomAnchor)
-//        ])
-//
-//        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel1)
-//        segmentedIndicatorLabel1.translatesAutoresizingMaskIntoConstraints = false
-//        segmentedIndicatorLabel1.heightAnchor.constraint(equalToConstant: 3).isActive = true
-//        segmentedIndicatorLabel1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-//
-//        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel2)
-//        segmentedIndicatorLabel2.translatesAutoresizingMaskIntoConstraints = false
-//        segmentedIndicatorLabel2.heightAnchor.constraint(equalToConstant: 3).isActive = true
-//
-//
-//        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel3)
-//        segmentedIndicatorLabel3.translatesAutoresizingMaskIntoConstraints = false
-//        segmentedIndicatorLabel3.heightAnchor.constraint(equalToConstant: 3).isActive = true
-//
-//
-//        segmentedControlIndicator.addArrangedSubview(segmentedIndicatorLabel4)
-//        segmentedIndicatorLabel4.translatesAutoresizingMaskIntoConstraints = false
-//        segmentedIndicatorLabel4.heightAnchor.constraint(equalToConstant: 3).isActive = true
-//
+
         view.addSubview(polisSearchBar)
         polisSearchBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -169,13 +142,16 @@ extension PolisViewController : UITableViewDelegate, UITableViewDataSource{
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().isTranslucent = false
-        navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "MONITORING KLAIM", style: .plain, target: nil, action: nil)
+        let backItem = UIBarButtonItem()
+          backItem.title = "PROFILE"
+          let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+          backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
+          navigationItem.leftBarButtonItems = [customButtonNav, backItem]
+        
               
     }
     @objc func backButtonTapped() {
-             navigationController?.popViewController(animated: true)
+             navigationController?.popToRootViewController(animated: true)
            }
 }
 

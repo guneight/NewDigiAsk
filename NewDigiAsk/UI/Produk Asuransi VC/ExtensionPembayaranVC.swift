@@ -197,6 +197,7 @@ extension PembayaranViewController{
         kartuKreditView.addSubview(nomorkartuKreditLabel)
         UIHelper.makeLabel(label: nomorkartuKreditLabel, corner: 0, allignment: .left, leadingAnchor: iconKartuKreditImage.trailingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: kartuKreditView.topAnchor, leadingConstant: 12, trailingConstant: -50, topConstant: 12, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: nomorkartuKreditLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Kartu Kredit", kerning: 0.12)
+        kartuKreditView.isUserInteractionEnabled = true
         
         kartuKreditView.addSubview(rightButtonKartuKredit)
         UIHelper.makeSmallButton(smallButton: rightButtonKartuKredit, leadingAnchor: kartuKreditView.trailingAnchor, topAnchor: kartuKreditView.topAnchor, leadingConstant: -30, topConstant: 12, corner: 0, heightAnchor: 11, widthtAnchor: 6, borderWidth: 0, colorBorder: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))

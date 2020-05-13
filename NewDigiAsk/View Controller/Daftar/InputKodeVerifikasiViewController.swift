@@ -67,10 +67,8 @@ class InputKodeVerifikasiViewController: UIViewController {
         
         kodeVerifikasi.addSubview(labelKodeVerikasiDikirim)
         UIHelper.makeLabel(label: labelKodeVerikasiDikirim, corner: 0, allignment: .center, leadingAnchor: kodeVerifikasi.leadingAnchor, trailingAnchor: kodeVerifikasi.trailingAnchor, topAnchor: labelMasukkanKode.bottomAnchor, leadingConstant: 80, trailingConstant: -80, topConstant: 10, heightAnchor: 36, widthAnchor: 0)
-        
-        labelKodeVerikasiDikirim.text = "Kode verifikasi telah dikirimkan melalui WhatsApp ke nomor 1234567890"
-        labelKodeVerikasiDikirim.font = UIFont(name:"AvantGarde Bk BT", size:12)
-        labelKodeVerikasiDikirim.textColor = #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1)
+        UIHelper.setTextLabel(label: labelKodeVerikasiDikirim, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Kode verifikasi telah dikirimkan melalui WhatsApp ke nomor 1234567890", kerning: 0.7)
+            
         labelKodeVerikasiDikirim.numberOfLines = 2
         
         kodeVerifikasi.addSubview(buttonverifikasi)
@@ -87,9 +85,11 @@ class InputKodeVerifikasiViewController: UIViewController {
         
         kodeVerifikasi.addSubview(labelMohonTunggu)
         UIHelper.makeLabel(label: labelMohonTunggu, corner: 0, allignment: .center, leadingAnchor: kodeVerifikasi.leadingAnchor, trailingAnchor: kodeVerifikasi.trailingAnchor, topAnchor: buttonverifikasi.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 30, heightAnchor: 40, widthAnchor: 0)
-        labelMohonTunggu.text = "Mohon tunggu dalam 30 detik untuk kirim ulang"
+       
         labelMohonTunggu.numberOfLines = 2
-        labelMohonTunggu.font = UIFont(name:"AvantGarde Bk BT", size:12)
+        UIHelper.setTextLabel(label: labelMohonTunggu, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 13, text: "Mohon tunggu dalam 30 detik untuk kirim ulang", kerning: 0.8)
+                 
+
         
         kodeVerifikasi.addSubview(labelTidakMenerimaKode)
         UIHelper.makeLabel(label: labelTidakMenerimaKode, corner: 0, allignment: .center, leadingAnchor: kodeVerifikasi.leadingAnchor, trailingAnchor: kodeVerifikasi.trailingAnchor, topAnchor: labelMohonTunggu.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, heightAnchor: 18, widthAnchor: 0)
@@ -97,8 +97,8 @@ class InputKodeVerifikasiViewController: UIViewController {
         labelTidakMenerimaKode.font = UIFont(name:"AvantGarde Bk BT", size:12)
         kodeVerifikasi.addSubview(labelKirimUlang)
         UIHelper.makeLabel(label: labelKirimUlang, corner: 0, allignment: .center, leadingAnchor: kodeVerifikasi.leadingAnchor, trailingAnchor: kodeVerifikasi.trailingAnchor, topAnchor: labelTidakMenerimaKode.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, heightAnchor: 30, widthAnchor: 0)
-        labelKirimUlang.font = UIFont(name:"AvantGarde Bk BT", size:12)
-        labelKirimUlang.text = " Kirim Ulang atau Gunanakan Metode Lain"
+        UIHelper.setTextLabel(label: labelKirimUlang, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 15, text: "Kirim Ulang atau Gunanakan Metode Lain", kerning: 1)
+        
         
 //        label with link
         let text = (labelKirimUlang.text)!
@@ -125,7 +125,7 @@ class InputKodeVerifikasiViewController: UIViewController {
        }
        
     @objc func backButtonTapped() {
-                   navigationController?.popToRootViewController(animated: true)
+                   navigationController?.popViewController(animated: true)
                  }
        
     @objc func tapLabel(gesture : UITapGestureRecognizer){

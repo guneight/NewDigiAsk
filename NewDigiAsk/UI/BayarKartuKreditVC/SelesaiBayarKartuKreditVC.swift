@@ -1,15 +1,16 @@
 //
-//  ExtensionBayarCartVC.swift
+//  ExtensionBayarKartuKreditVC.swift
 //  NewDigiAsk
 //
-//  Created by Gun Eight  on 26/04/20.
+//  Created by Gun Eight  on 12/05/20.
 //  Copyright © 2020 Gun Eight . All rights reserved.
 //
 
 import UIKit
-extension BayarCartViewController{
+
+extension SelesaiBayarKartuKreditViewController {
+    
     func setupUI(){
-       
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         view.addSubview(produkBaseView)
         produkBaseView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,6 +51,7 @@ extension BayarCartViewController{
         produkImage.translatesAutoresizingMaskIntoConstraints = false
         produkImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         produkImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
+        
         produkImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         produkImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         produkImage.image = UIImage(named: "produkIcon")
@@ -86,83 +88,78 @@ extension BayarCartViewController{
         checkOutImage.translatesAutoresizingMaskIntoConstraints = false
         checkOutImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         checkOutImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        checkOutImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        checkOutImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         checkOutImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         checkOutImage.layer.masksToBounds = true
         checkOutImage.layer.cornerRadius = 17
-        checkOutImage.image = UIImage(named: "rpIconWhite")
+        checkOutImage.image = UIImage(named: "rpIcon")
         checkOutImage.contentMode = .center
         
         prosesStackView.addArrangedSubview(completeImage)
         completeImage.translatesAutoresizingMaskIntoConstraints = false
         completeImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         completeImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        completeImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        completeImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         completeImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         completeImage.layer.masksToBounds = true
         completeImage.layer.cornerRadius = 17
-        completeImage.image = UIImage(named: "checkfinishIcon")
+        completeImage.image = UIImage(named: "checkfinishWhite")
         completeImage.contentMode = .center
         
-        produkBaseView.addSubview(bayarView)
-        UIHelper.makeView(view: bayarView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 65, corner: 20, heightAnchor: 0, widthAnchor: 0)
-        bayarView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        bayarView.backgroundColor = .white
+        produkBaseView.addSubview(selesaiBayarBaseView)
+        UIHelper.makeView(view: selesaiBayarBaseView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height-60, widthAnchor: 0)
+        selesaiBayarBaseView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
-        bayarView.addSubview(totalBayarView)
-        UIHelper.makeView(view: totalBayarView, leadingAnchor: bayarView.leadingAnchor, trailingAnchor: bayarView.trailingAnchor, topAnchor: bayarView.topAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 21, corner: 10, heightAnchor: 71, widthAnchor: 0)
-        totalBayarView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        totalBayarView.layer.borderWidth = 1
+        selesaiBayarBaseView.addSubview(terimakasihLabel)
+        UIHelper.makeLabel(label: terimakasihLabel, corner: 0, allignment: .center , leadingAnchor: selesaiBayarBaseView.leadingAnchor, trailingAnchor: selesaiBayarBaseView.trailingAnchor, topAnchor: selesaiBayarBaseView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 30, heightAnchor: 40, widthAnchor: 0)
+        terimakasihLabel.numberOfLines = 2
         
-        totalBayarView.addSubview(totalBayarLabel)
-        UIHelper.makeLabel(label: totalBayarLabel, corner: 0, allignment: .left, leadingAnchor: totalBayarView.leadingAnchor, trailingAnchor: totalBayarView.trailingAnchor, topAnchor: totalBayarView.topAnchor, leadingConstant: 12, trailingConstant: -12, topConstant: 12, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: totalBayarLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Total Pembayaran", kerning: 0.16)
+        UIHelper.setTextLabel(label: terimakasihLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Terimakasih untuk pembayaran Anda", kerning: 0.5)
         
-        totalBayarView.addSubview(nilaiTotalLabel)
-        UIHelper.makeLabel(label: nilaiTotalLabel, corner: 0, allignment: .left, leadingAnchor: totalBayarView.leadingAnchor, trailingAnchor: totalBayarView.trailingAnchor, topAnchor: totalBayarLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -12, topConstant: 5, heightAnchor: 15, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nilaiTotalLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.16)
+        selesaiBayarBaseView.addSubview(transaksiView)
+        UIHelper.makeView(view: transaksiView, leadingAnchor: selesaiBayarBaseView.leadingAnchor, trailingAnchor: selesaiBayarBaseView.trailingAnchor, topAnchor: terimakasihLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 15, corner: 10, heightAnchor: 118, widthAnchor: 0)
+        transaksiView.layer.borderColor = #colorLiteral(red: 0.8509803922, green: 0.8509803922, blue: 0.8509803922, alpha: 1)
+        transaksiView.layer.borderWidth = 1
         
-        bayarView.addSubview(metodeBayarView)
-        UIHelper.makeView(view: metodeBayarView, leadingAnchor: bayarView.leadingAnchor, trailingAnchor: bayarView.trailingAnchor, topAnchor: totalBayarView.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 11, corner: 10, heightAnchor: 132, widthAnchor: 0)
-        metodeBayarView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        metodeBayarView.layer.borderWidth = 0.5
+        transaksiView.addSubview(nomorTransaksiHeaderLabel)
+        UIHelper.makeLabel(label: nomorTransaksiHeaderLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: transaksiView.topAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 20, heightAnchor: 16, widthAnchor: 0)
+        UIHelper.setTextLabel(label: nomorTransaksiHeaderLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Transaksi", kerning: 0.2)
         
-        metodeBayarView.addSubview(iconImageMetodeBayar)
-        UIHelper.makeImageView(imageView: iconImageMetodeBayar, leadingAnchor: metodeBayarView.leadingAnchor, topAnchor: metodeBayarView.topAnchor, leadingConstant: 18, topConstant: 14, corner: 0, heightAnchor: 20)
-        iconImageMetodeBayar.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        iconImageMetodeBayar.image = UIImage(named: "bca")
+        transaksiView.addSubview(nomorTransaksiLabel)
+        UIHelper.makeLabel(label: nomorTransaksiLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: nomorTransaksiHeaderLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 2, heightAnchor: 16, widthAnchor: 0)
+        UIHelper.setTextLabel(label: nomorTransaksiLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.5)
+        
+        transaksiView.addSubview(nomorPengajuanHeaderLabel)
+        UIHelper.makeLabel(label: nomorPengajuanHeaderLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: nomorTransaksiLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
+        UIHelper.setTextLabel(label: nomorPengajuanHeaderLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor:#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Pengajuan", kerning: 0.2)
+        
+        transaksiView.addSubview(nomorPengajuanLabel)
+        UIHelper.makeLabel(label: nomorPengajuanLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: nomorPengajuanHeaderLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 2, heightAnchor: 16, widthAnchor: 0)
+        UIHelper.setTextLabel(label: nomorPengajuanLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor:#colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "ASK-2345-567-10879", kerning: 0.2)
+        
+        selesaiBayarBaseView.addSubview(lihatTransaksiButton)
+        UIHelper.makeButton(button: lihatTransaksiButton, leadingAnchor: selesaiBayarBaseView.leadingAnchor, trailingAnchor: selesaiBayarBaseView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor , leadingConstant: 24, trailingConstant: -24, topConstant: -48, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        lihatTransaksiButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        lihatTransaksiButton.setTitle("LIHAT TRANSAKSI", for: .normal)
         
         
-        metodeBayarView.addSubview(namaMetodeBayar)
-        UIHelper.makeLabel(label: namaMetodeBayar, corner: 0, allignment: .right, leadingAnchor: iconImageMetodeBayar.trailingAnchor, trailingAnchor: metodeBayarView.trailingAnchor, topAnchor: metodeBayarView.topAnchor, leadingConstant: 13, trailingConstant: -13, topConstant: 13, heightAnchor: 17, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaMetodeBayar, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "BCA Virtual Account", kerning: 0.6)
         
-        metodeBayarView.addSubview(lineMetodeBayar)
-        UIHelper.makeView(view: lineMetodeBayar, leadingAnchor: metodeBayarView.leadingAnchor, trailingAnchor: metodeBayarView.trailingAnchor, topAnchor: namaMetodeBayar.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 13, corner: 0, heightAnchor: 1, widthAnchor: 0)
-        lineMetodeBayar.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
-        metodeBayarView.addSubview(deskripsiMetodePembayaran)
-        UIHelper.makeLabel(label: deskripsiMetodePembayaran, corner: 0, allignment: .left, leadingAnchor: metodeBayarView.leadingAnchor, trailingAnchor: metodeBayarView.trailingAnchor, topAnchor: lineMetodeBayar.bottomAnchor, leadingConstant: 18, trailingConstant: -18, topConstant: 13, heightAnchor: 70, widthAnchor: 0)
-        UIHelper.setTextLabel(label: deskripsiMetodePembayaran, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Kode pembayaran akan didapatkan estela klik botton Pembayaran. \nUser tidal perlu melakukan konfirmasi", kerning: 0.6)
-        deskripsiMetodePembayaran.numberOfLines = 0
-        
-        bayarView.addSubview(bayarButton)
-        UIHelper.makeButton(button: bayarButton, leadingAnchor: bayarView.leadingAnchor, trailingAnchor: bayarView .trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -50, corner: 24, heightAnchor: 48, widthAnchor: 0)
-        bayarButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-        bayarButton.setTitle("BAYAR", for: .normal)
     }
     
-    func setupNavBarBayarCart(){
+    
+    func setupNavBarBayarKartuKredit(){
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
         self.navigationItem.leftBarButtonItem = customButtonNav
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         let backItem = UIBarButtonItem()
-          backItem.title = "PEMBAYARAN"
-          let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
-          backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
-          navigationItem.leftBarButtonItems = [customButtonNav, backItem]
+     
+        backItem.title = "PEMBAYARAN"
+        let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
+        navigationItem.leftBarButtonItems = [customButtonNav, backItem]
         
     }
     @objc func backButtonTapped() {

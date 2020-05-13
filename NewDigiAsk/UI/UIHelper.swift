@@ -61,6 +61,21 @@ struct UIHelper {
         
     }
     
+    static func makeSmallTetxField(textField : UITextField, leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, leadingConstant: CGFloat, trailingConstant: CGFloat, topConstant: CGFloat, corner : CGFloat, widthAnchor: CGFloat,heightAnchor : CGFloat, textColor : UIColor){
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingConstant),
+            textField.widthAnchor.constraint(equalToConstant: widthAnchor),
+            textField.topAnchor.constraint(equalTo: topAnchor, constant: topConstant),
+            textField.heightAnchor.constraint(equalToConstant: heightAnchor)
+        
+        ])
+        textField.textColor = textColor
+        textField.layer.masksToBounds = true
+        textField.layer.cornerRadius = corner
+        textField.layoutIfNeeded()
+        
+    }
     
     static func makeTetxField(textField : UITextField, leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,trailingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, leadingConstant: CGFloat, trailingConstant: CGFloat, topConstant: CGFloat, corner : CGFloat, heightAnchor : CGFloat, textColor : UIColor){
         textField.translatesAutoresizingMaskIntoConstraints = false

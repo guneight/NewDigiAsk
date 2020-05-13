@@ -135,8 +135,8 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         completeImage.image = UIImage(named: "checkfinishIcon")
         completeImage.contentMode = .center
         
-        view.addSubview(jenisProdukView)
-        UIHelper.makeView(view: jenisProdukView, leadingAnchor: view.leadingAnchor, trailingAnchor: view.trailingAnchor, topAnchor: view.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
+        produkBaseView.addSubview(jenisProdukView)
+        UIHelper.makeView(view: jenisProdukView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
         jenisProdukView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         jenisProdukView.backgroundColor = .white
         

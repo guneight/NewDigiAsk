@@ -58,32 +58,40 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.mapAction(sender:)))
         self.imageViewMap.addGestureRecognizer(gesture)
         
+//        for family: String in UIFont.familyNames
+//               {
+//                   print(family)
+//                   for names: String in UIFont.fontNames(forFamilyName: family)
+//                   {
+//                       print("== \(names)")
+//                   }
+//               }
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
-//        cvSetup()
-//        collectionViewInfo.reloadData()
-//        collectionViewPromo.reloadData()
-//        collectBannerPromo.reloadData()
-//        print("Login Status :", loginStatus)
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        cvSetup()
+        collectionViewInfo.reloadData()
+        collectionViewPromo.reloadData()
+        collectBannerPromo.reloadData()
+        print("Login Status :", loginStatus)
+    }
     
     
     
     
     
     @objc func tabBarProfileAction (sender : UIButton){
-        if (loginStatus == 0) {
-        let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController")  as! LoginViewController
-        self.navigationController?.pushViewController(loginVC, animated: true)
-        print("pressss")
-        }else if(loginStatus == 1){
+//        if (loginStatus == 0) {
+//        let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController")  as! LoginViewController
+//        self.navigationController?.pushViewController(loginVC, animated: true)
+//        print("pressss")
+//        }else if(loginStatus == 1){
             let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController") as!ProfileViewController
             self.navigationController?.pushViewController(profileVC, animated: true)
-        }else{
-            print("Login failed")
-        }
+//        }else{
+//            print("Login failed")
+//        }
 
         
     }

@@ -69,10 +69,12 @@ extension InfoDetailViewController{
           navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
           navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
           navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-          navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-          UINavigationBar.appearance().isTranslucent = false
-          navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-              title: "INFO", style: .plain, target: nil, action: nil)
+         let backItem = UIBarButtonItem()
+            backItem.title = "INFO"
+            let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+            backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
+            navigationItem.leftBarButtonItems = [customButtonNav, backItem]
+          
           
       }
       

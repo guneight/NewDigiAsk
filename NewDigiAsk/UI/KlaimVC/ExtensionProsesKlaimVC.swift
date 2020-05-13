@@ -148,8 +148,8 @@ extension ProsesKlaimViewController {
                navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
                navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
                UINavigationBar.appearance().isTranslucent = false
-               navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-               title: "DAFTAR", style: .plain, target: nil, action: nil)
+               navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "DAFTAR", style: .plain, target: nil, action: nil)
+        
     }
     
     @objc func backButtonTapped() {

@@ -66,16 +66,27 @@ class PembayaranViewController: UIViewController {
         view.layoutIfNeeded()
         setupUI()
         setupNavBarPembayaran()
+        kartuKredit()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         rightButtonBCA.addTarget(self, action: #selector(nextButtonBcaAction(sender:)), for: .touchUpInside)
+        
         // Do any additional setup after loading the view.
     }
     
     @objc func nextButtonBcaAction (sender :Any){
         let bayarVC = storyboard?.instantiateViewController(identifier: "BayarViewController") as! BayarViewController
         self.navigationController?.pushViewController(bayarVC, animated: true)
-        
-        
+    }
+    
+    func kartuKredit(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(kartuKreditAction))
+        kartuKreditView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func kartuKreditAction(){
+        let bayarKartuKreditVC = storyboard?.instantiateViewController(identifier: "BayarKartuKreditViewController") as! BayarKartuKreditViewController
+        self.navigationController?.pushViewController(bayarKartuKreditVC, animated: true)
     }
     
 }
+

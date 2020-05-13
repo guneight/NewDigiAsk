@@ -369,6 +369,36 @@
             </objects>
             <point key="canvasLocation" x="5452" y="-4453"/>
         </scene>
+        <!--Ubah NoHP View Controller-->
+        <scene sceneID="zME-Oe-1it">
+            <objects>
+                <viewController storyboardIdentifier="UbahNoHPViewController" id="Yru-3z-USE" customClass="UbahNoHPViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LKt-Dr-8Iz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="yEs-cW-i8E"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPr-vY-P2a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6238" y="-4453"/>
+        </scene>
+        <!--Ubah Email View Controller-->
+        <scene sceneID="E5r-be-iWj">
+            <objects>
+                <viewController storyboardIdentifier="UbahEmailViewController" id="KgF-xj-Cbg" customClass="UbahEmailViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iBV-xc-pgq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fcA-vd-Rlf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FK6-Mr-u0r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7022" y="-4453"/>
+        </scene>
         <!--List Tertanggung View Controller-->
         <scene sceneID="oaQ-GK-SkA">
             <objects>
@@ -579,6 +609,12 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
                                         <color key="value" red="0.96078431369999995" green="0.50980392159999999" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.96078431369999995" green="0.50980392159999999" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -701,6 +737,12 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
                                         <color key="value" red="0.96078431369999995" green="0.50980392159999999" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.96078431369999995" green="0.50980392159999999" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -835,6 +877,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yZ-eq-Lra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="12209" y="695"/>
+        </scene>
+        <!--Bayar Kartu Kredit View Controller-->
+        <scene sceneID="NhX-3Y-SdO">
+            <objects>
+                <viewController storyboardIdentifier="BayarKartuKreditViewController" id="9Zm-Dx-gVD" customClass="BayarKartuKreditViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uec-p8-XuC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="i0z-gX-14q"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J3H-PV-QQl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13198" y="701"/>
+        </scene>
+        <!--Selesai Bayar Kartu Kredit View Controller-->
+        <scene sceneID="hGV-oe-Tj4">
+            <objects>
+                <viewController storyboardIdentifier="SelesaiBayarKartuKreditViewController" id="OD3-Zh-xQX" customClass="SelesaiBayarKartuKreditViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iic-Mc-7iS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="E7k-Kj-3WX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qow-eZ-u9o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13999" y="700"/>
         </scene>
         <!--Bayar Cart View Controller-->
         <scene sceneID="f50-Sg-boQ">

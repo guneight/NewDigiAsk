@@ -54,13 +54,28 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         view.layoutIfNeeded()
         setupNavBar()
         setupUI()
+        editNomorTeleponButton.addTarget(self, action: #selector(ubahNoHPAction(sender:)), for: .touchUpInside)
+        editEmailButton.addTarget(self, action: #selector(ubahEmailAction(sender:)), for: .touchUpInside)
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         // Do any additional setup after loading the view.
     }
     
-    // MARK: - Navigation
+   // MARK: - Ubah No HP
+      @objc func ubahNoHPAction(sender : UIButton){
+        let ubahNoHPVC =  storyboard?.instantiateViewController(identifier: "UbahNoHPViewController") as! UbahNoHPViewController
+        self.navigationController?.pushViewController(ubahNoHPVC, animated: true)
+      }
+    
+    @objc func ubahEmailAction(sender : UIButton){
+        let ubahEmailVC = storyboard?.instantiateViewController(identifier: "UbahEmailViewController") as! UbahEmailViewController
+        self.navigationController?.pushViewController(ubahEmailVC, animated: true)
+    }
+
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
@@ -68,6 +83,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
 
  
 }
