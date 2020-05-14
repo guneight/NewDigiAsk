@@ -908,6 +908,51 @@
             </objects>
             <point key="canvasLocation" x="13999" y="700"/>
         </scene>
+        <!--Pembayaran Ewallet View Controller-->
+        <scene sceneID="KuD-1I-L3S">
+            <objects>
+                <viewController storyboardIdentifier="PembayaranEwalletViewController" id="1ow-st-36k" customClass="PembayaranEwalletViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kAX-79-A3I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mRT-52-dO2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3WB-fI-Yws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14908" y="703"/>
+        </scene>
+        <!--Detail Bayar Link Aja View Controller-->
+        <scene sceneID="NLX-Ta-7jz">
+            <objects>
+                <viewController storyboardIdentifier="DetailBayarLinkAjaViewController" id="k3y-Ic-h5w" customClass="DetailBayarLinkAjaViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="veE-3t-qdR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mMm-O4-lac"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Her-xs-12w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15630" y="703"/>
+        </scene>
+        <!--Selesai Bayar Link Aja View Controller-->
+        <scene sceneID="2bq-hf-1vm">
+            <objects>
+                <viewController storyboardIdentifier="SelesaiBayarLinkAjaViewController" id="Cbw-jx-u2f" customClass="SelesaiBayarLinkAjaViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2iJ-Ia-mQO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="C5G-0E-RXG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jff-Ij-uFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16356" y="703"/>
+        </scene>
         <!--Bayar Cart View Controller-->
         <scene sceneID="f50-Sg-boQ">
             <objects>

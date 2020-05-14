@@ -60,6 +60,9 @@ class PembayaranViewController: UIViewController {
     let rigthButtonOVO = UIButton()
     let rigthButtonGopay = UIButton()
     let rigthButtonLinkAja = UIButton()
+    let ovoBaseView = UIView()
+    let gopayBaseView = UIView()
+    let linkAjaBaseView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +70,7 @@ class PembayaranViewController: UIViewController {
         setupUI()
         setupNavBarPembayaran()
         kartuKredit()
+        ewallet()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         rightButtonBCA.addTarget(self, action: #selector(nextButtonBcaAction(sender:)), for: .touchUpInside)
         
@@ -81,11 +85,31 @@ class PembayaranViewController: UIViewController {
     func kartuKredit(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(kartuKreditAction))
         kartuKreditView.addGestureRecognizer(tapGesture)
+        rightButtonKartuKredit.addTarget(self, action: #selector(kartuKreditAction), for: .touchUpInside)
     }
     
     @objc func kartuKreditAction(){
         let bayarKartuKreditVC = storyboard?.instantiateViewController(identifier: "BayarKartuKreditViewController") as! BayarKartuKreditViewController
         self.navigationController?.pushViewController(bayarKartuKreditVC, animated: true)
+    }
+    
+    
+    func ewallet(){
+        let ovoTapGesture = UITapGestureRecognizer(target: self, action: #selector(ewallatAction))
+        let gopayTapGesture = UITapGestureRecognizer(target: self, action: #selector(ewallatAction))
+        let linkAjaTapGesture = UITapGestureRecognizer(target: self, action: #selector(ewallatAction))
+        ovoBaseView.addGestureRecognizer(ovoTapGesture)
+        gopayBaseView.addGestureRecognizer(gopayTapGesture)
+        linkAjaBaseView.addGestureRecognizer(linkAjaTapGesture)
+        rigthButtonOVO.addTarget(self, action: #selector(ewallatAction), for: .touchUpInside)
+        rigthButtonGopay.addTarget(self, action: #selector(ewallatAction), for: .touchUpInside)
+        rigthButtonLinkAja.addTarget(self, action: #selector(ewallatAction), for: .touchUpInside)
+    }
+    
+    @objc func ewallatAction(sender : Any){
+        print("ewallatAction")
+        let pembayaranEwalletVC = storyboard?.instantiateViewController(identifier: "PembayaranEwalletViewController") as! PembayaranEwalletViewController
+        self.navigationController?.pushViewController(pembayaranEwalletVC, animated: true)
     }
     
 }

@@ -38,6 +38,12 @@
 		6742325F242C4BCD00A07141 /* ExtensionDaftarTertanggungVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742325E242C4BCD00A07141 /* ExtensionDaftarTertanggungVC.swift */; };
 		67423261242C79B500A07141 /* AddTertanggungViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67423260242C79B500A07141 /* AddTertanggungViewController.swift */; };
 		67423263242C79D100A07141 /* ExtensionAddTertanggungVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67423262242C79D100A07141 /* ExtensionAddTertanggungVC.swift */; };
+		6749F1D7246C48BC0013A4F7 /* PembayaranEwalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1D6246C48BC0013A4F7 /* PembayaranEwalletViewController.swift */; };
+		6749F1D9246C48DB0013A4F7 /* DetailBayarLinkAjaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1D8246C48DB0013A4F7 /* DetailBayarLinkAjaViewController.swift */; };
+		6749F1DB246C48FC0013A4F7 /* SelesaiBayarLinkAjaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1DA246C48FC0013A4F7 /* SelesaiBayarLinkAjaViewController.swift */; };
+		6749F1DE246C49370013A4F7 /* ExtensionPembayaranEwalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1DD246C49370013A4F7 /* ExtensionPembayaranEwalletVC.swift */; };
+		6749F1E0246C494C0013A4F7 /* ExtensionDetailBayarLinkAjaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1DF246C494C0013A4F7 /* ExtensionDetailBayarLinkAjaVC.swift */; };
+		6749F1E2246C49680013A4F7 /* ExtensionSelesaiBayarLinkAjaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1E1246C49680013A4F7 /* ExtensionSelesaiBayarLinkAjaVC.swift */; };
 		6751E12E23EC06B4008ACB56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751E12D23EC06B4008ACB56 /* AppDelegate.swift */; };
 		6751E13023EC06B4008ACB56 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751E12F23EC06B4008ACB56 /* HomeMenuViewController.swift */; };
 		6751E13623EC06B4008ACB56 /* NewDigiAsk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6751E13423EC06B4008ACB56 /* NewDigiAsk.xcdatamodeld */; };
@@ -188,6 +194,12 @@
 		6742325E242C4BCD00A07141 /* ExtensionDaftarTertanggungVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDaftarTertanggungVC.swift; sourceTree = "<group>"; };
 		67423260242C79B500A07141 /* AddTertanggungViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTertanggungViewController.swift; sourceTree = "<group>"; };
 		67423262242C79D100A07141 /* ExtensionAddTertanggungVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAddTertanggungVC.swift; sourceTree = "<group>"; };
+		6749F1D6246C48BC0013A4F7 /* PembayaranEwalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PembayaranEwalletViewController.swift; sourceTree = "<group>"; };
+		6749F1D8246C48DB0013A4F7 /* DetailBayarLinkAjaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBayarLinkAjaViewController.swift; sourceTree = "<group>"; };
+		6749F1DA246C48FC0013A4F7 /* SelesaiBayarLinkAjaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelesaiBayarLinkAjaViewController.swift; sourceTree = "<group>"; };
+		6749F1DD246C49370013A4F7 /* ExtensionPembayaranEwalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPembayaranEwalletVC.swift; sourceTree = "<group>"; };
+		6749F1DF246C494C0013A4F7 /* ExtensionDetailBayarLinkAjaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDetailBayarLinkAjaVC.swift; sourceTree = "<group>"; };
+		6749F1E1246C49680013A4F7 /* ExtensionSelesaiBayarLinkAjaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSelesaiBayarLinkAjaVC.swift; sourceTree = "<group>"; };
 		6751E12A23EC06B4008ACB56 /* NewDigiAsk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewDigiAsk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6751E12D23EC06B4008ACB56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6751E12F23EC06B4008ACB56 /* HomeMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewController.swift; sourceTree = "<group>"; };
@@ -434,6 +446,26 @@
 			path = CardView;
 			sourceTree = "<group>";
 		};
+		6749F1D5246C486E0013A4F7 /* Bayar E-wallet */ = {
+			isa = PBXGroup;
+			children = (
+				6749F1D6246C48BC0013A4F7 /* PembayaranEwalletViewController.swift */,
+				6749F1D8246C48DB0013A4F7 /* DetailBayarLinkAjaViewController.swift */,
+				6749F1DA246C48FC0013A4F7 /* SelesaiBayarLinkAjaViewController.swift */,
+			);
+			path = "Bayar E-wallet";
+			sourceTree = "<group>";
+		};
+		6749F1DC246C49080013A4F7 /* BayarLinkAjaVC */ = {
+			isa = PBXGroup;
+			children = (
+				6749F1DD246C49370013A4F7 /* ExtensionPembayaranEwalletVC.swift */,
+				6749F1DF246C494C0013A4F7 /* ExtensionDetailBayarLinkAjaVC.swift */,
+				6749F1E1246C49680013A4F7 /* ExtensionSelesaiBayarLinkAjaVC.swift */,
+			);
+			path = BayarLinkAjaVC;
+			sourceTree = "<group>";
+		};
 		6751E12123EC06B4008ACB56 = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +489,7 @@
 		6751E12C23EC06B4008ACB56 /* NewDigiAsk */ = {
 			isa = PBXGroup;
 			children = (
+				6749F1D5246C486E0013A4F7 /* Bayar E-wallet */,
 				679EAF9D246B03D200021248 /* Bayar Kartu Kredit */,
 				676D3F0523F2478F00AF813D /* Controller */,
 				676D3F0423F2477D00AF813D /* View Controller */,
@@ -476,6 +509,7 @@
 		6751E14223ED0846008ACB56 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6749F1DC246C49080013A4F7 /* BayarLinkAjaVC */,
 				679EAFA3246B046700021248 /* BayarKartuKreditVC */,
 				67BBA20C246A8C17000EDABA /* Ubah NoHP-Email VC */,
 				6753DA68245B1E3500C72140 /* KlaimVC */,
@@ -948,9 +982,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6749F1DB246C48FC0013A4F7 /* SelesaiBayarLinkAjaViewController.swift in Sources */,
 				6700E9912452F8750097AC47 /* ExtensionLoginVC.swift in Sources */,
 				67B0AB0A243E27B4009AC66F /* DetailHubungiKamiViewController.swift in Sources */,
 				6702D6492455AF640022325E /* BayarCartViewController.swift in Sources */,
+				6749F1E2246C49680013A4F7 /* ExtensionSelesaiBayarLinkAjaVC.swift in Sources */,
 				67EA325224250DF900ED9F1F /* DetailPolisKlaimViewController.swift in Sources */,
 				679EAFA2246B046100021248 /* SelesaiBayarKartuKreditViewController.swift in Sources */,
 				67423263242C79D100A07141 /* ExtensionAddTertanggungVC.swift in Sources */,
@@ -976,6 +1012,7 @@
 				67B0AB08243E274D009AC66F /* ExtensionHubungiKamiVC.swift in Sources */,
 				6742325F242C4BCD00A07141 /* ExtensionDaftarTertanggungVC.swift in Sources */,
 				67924D97240E57170099F26F /* ProfileViewController.swift in Sources */,
+				6749F1D9246C48DB0013A4F7 /* DetailBayarLinkAjaViewController.swift in Sources */,
 				6700E98F2452F85A0097AC47 /* LoginViewController.swift in Sources */,
 				6702D6432455A2670022325E /* PembayaranCartViewController.swift in Sources */,
 				67EA324E24247F7200ED9F1F /* DetailProdukPolisViewController.swift in Sources */,
@@ -1009,6 +1046,7 @@
 				67EE59132407D73500404C6E /* IdentitasTertanggungdanPenerimaManfaatViewController.swift in Sources */,
 				676B7C57240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift in Sources */,
 				6728F0A524050D2E00A2C605 /* ExtensionProdukDetailVC.swift in Sources */,
+				6749F1E0246C494C0013A4F7 /* ExtensionDetailBayarLinkAjaVC.swift in Sources */,
 				67D631932420A5A000197A39 /* InfoViewController.swift in Sources */,
 				6702D63F245596530022325E /* CheckOutCartViewController.swift in Sources */,
 				67EA064524613270000662AA /* VideoPlayerView.swift in Sources */,
@@ -1040,6 +1078,7 @@
 				6702D64D2455C6E00022325E /* DetailBayarCartViewController.swift in Sources */,
 				67EA325024247F8F00ED9F1F /* ExtensionDetailProdukPolisVC.swift in Sources */,
 				67BBA209246A8BF0000EDABA /* UbahNoHPViewController.swift in Sources */,
+				6749F1D7246C48BC0013A4F7 /* PembayaranEwalletViewController.swift in Sources */,
 				67F06E1C241B7E6D00B277B2 /* DeskripsiProdukViewController.swift in Sources */,
 				679C71F224108E0D0092B1FA /* ExtensionTentangKamiVC.swift in Sources */,
 				67392AF124018A69007630DF /* LengkapiDataViewController.swift in Sources */,
@@ -1066,6 +1105,7 @@
 				676B7C55240CA762003D0FB1 /* CheckOutKeranjangViewController.swift in Sources */,
 				67D97650242A0F5A001BA581 /* ListTertanggungViewController.swift in Sources */,
 				67CF8BA42406A32C0032DBDE /* ExtensionSyaratdanKetentuanVC.swift in Sources */,
+				6749F1DE246C49370013A4F7 /* ExtensionPembayaranEwalletVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

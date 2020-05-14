@@ -208,50 +208,72 @@ extension PembayaranViewController{
         UIHelper.setTextLabel(label: uangElektronikLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Uang Electronik", kerning: 0.12)
         
         pembayaranView.addSubview(uangElektronikView)
-        UIHelper.makeView(view: uangElektronikView, leadingAnchor: pembayaranView.leadingAnchor, trailingAnchor: pembayaranView.trailingAnchor, topAnchor: uangElektronikLabel.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 10, corner: 10, heightAnchor: 110, widthAnchor: 0)
+        UIHelper.makeView(view: uangElektronikView, leadingAnchor: pembayaranView.leadingAnchor, trailingAnchor: pembayaranView.trailingAnchor, topAnchor: uangElektronikLabel.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 10, corner: 10, heightAnchor: 120, widthAnchor: 0)
         uangElektronikView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         uangElektronikView.layer.borderWidth = 0.5
         
-        uangElektronikView.addSubview(iconOVOImage)
-        UIHelper.makeImageView(imageView: iconOVOImage, leadingAnchor: uangElektronikView.leadingAnchor, topAnchor: uangElektronikView.topAnchor, leadingConstant: 12, topConstant: 12, corner: 0, heightAnchor: 16)
+        uangElektronikView.addSubview(ovoBaseView)
+        UIHelper.makeView(view: ovoBaseView, leadingAnchor: uangElektronikView.leadingAnchor, trailingAnchor: uangElektronikView.trailingAnchor, topAnchor: uangElektronikView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 0, heightAnchor: 40, widthAnchor: 0)
+        ovoBaseView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        let thickness: CGFloat = 1.0
+        let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x:0, y: self.ovoBaseView.frame.size.height - thickness, width: self.ovoBaseView.frame.size.width, height:thickness)
+        bottomBorder.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 0.2)
+        ovoBaseView.layer.addSublayer(bottomBorder)
+        ovoBaseView.isUserInteractionEnabled = true
+        
+        ovoBaseView.addSubview(iconOVOImage)
+        UIHelper.makeImageView(imageView: iconOVOImage, leadingAnchor: ovoBaseView.leadingAnchor, topAnchor: ovoBaseView.topAnchor, leadingConstant: 12, topConstant: 12, corner: 0, heightAnchor: 16)
         iconOVOImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
         iconOVOImage.image = UIImage(named: "ovo")
         iconOVOImage.contentMode = .scaleAspectFit
         
-        uangElektronikView.addSubview(ovoLabel)
-        UIHelper.makeLabel(label: ovoLabel, corner: 0, allignment: .left, leadingAnchor: iconOVOImage.trailingAnchor, trailingAnchor: uangElektronikView.trailingAnchor, topAnchor: uangElektronikView.topAnchor, leadingConstant: 12, trailingConstant: -50, topConstant: 12, heightAnchor: 16, widthAnchor: 0)
+        ovoBaseView.addSubview(ovoLabel)
+        UIHelper.makeLabel(label: ovoLabel, corner: 0, allignment: .left, leadingAnchor: iconOVOImage.trailingAnchor, trailingAnchor: ovoBaseView.trailingAnchor, topAnchor: ovoBaseView.topAnchor, leadingConstant: 12, trailingConstant: -50, topConstant: 12, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: ovoLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "OVO", kerning: 0.6)
         
-        uangElektronikView.addSubview(rigthButtonOVO)
-        UIHelper.makeSmallButton(smallButton: rigthButtonOVO, leadingAnchor: uangElektronikView.trailingAnchor, topAnchor: uangElektronikView.topAnchor, leadingConstant: -30, topConstant: 15, corner: 0, heightAnchor: 11, widthtAnchor: 6, borderWidth: 0, colorBorder: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        ovoBaseView.addSubview(rigthButtonOVO)
+        UIHelper.makeSmallButton(smallButton: rigthButtonOVO, leadingAnchor: ovoBaseView.trailingAnchor, topAnchor: ovoBaseView.topAnchor, leadingConstant: -30, topConstant: 15, corner: 0, heightAnchor: 11, widthtAnchor: 6, borderWidth: 0, colorBorder: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
         rigthButtonOVO.setImage(UIImage(named: "next"), for: .normal )
         
-        uangElektronikView.addSubview(iconGopayImage)
-        UIHelper.makeImageView(imageView: iconGopayImage, leadingAnchor: uangElektronikView.leadingAnchor, topAnchor: iconOVOImage.bottomAnchor, leadingConstant: 12, topConstant: 15, corner: 0, heightAnchor: 16)
+        uangElektronikView.addSubview(gopayBaseView)
+        UIHelper.makeView(view: gopayBaseView, leadingAnchor: uangElektronikView.leadingAnchor, trailingAnchor: uangElektronikView.trailingAnchor, topAnchor: ovoBaseView.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 0, heightAnchor: 40, widthAnchor: 0)
+        let gopayBottomBorder = CALayer()
+        gopayBottomBorder.frame = CGRect(x:0, y: self.gopayBaseView.frame.size.height - thickness, width: self.gopayBaseView.frame.size.width, height:thickness)
+        gopayBottomBorder.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 0.2)
+        gopayBaseView.layer.addSublayer(gopayBottomBorder)
+        gopayBaseView.isUserInteractionEnabled = true
+        
+        gopayBaseView.addSubview(iconGopayImage)
+        UIHelper.makeImageView(imageView: iconGopayImage, leadingAnchor: gopayBaseView.leadingAnchor, topAnchor: gopayBaseView.topAnchor, leadingConstant: 12, topConstant: 10, corner: 0, heightAnchor: 16)
         iconGopayImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
         iconGopayImage.image = UIImage(named: "gopay")
         iconGopayImage.contentMode = .scaleAspectFit
         
-        uangElektronikView.addSubview(gopayLabel)
-        UIHelper.makeLabel(label: gopayLabel, corner: 0, allignment: .left, leadingAnchor: iconGopayImage.trailingAnchor, trailingAnchor: uangElektronikView.trailingAnchor, topAnchor: ovoLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -50, topConstant: 15, heightAnchor: 16, widthAnchor: 0)
+        gopayBaseView.addSubview(gopayLabel)
+        UIHelper.makeLabel(label: gopayLabel, corner: 0, allignment: .left, leadingAnchor: iconGopayImage.trailingAnchor, trailingAnchor: gopayBaseView.trailingAnchor, topAnchor: gopayBaseView.topAnchor, leadingConstant: 12, trailingConstant: -50, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: gopayLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Gopay", kerning: 0.6)
         
-        uangElektronikView.addSubview(rigthButtonGopay)
-        UIHelper.makeSmallButton(smallButton: rigthButtonGopay, leadingAnchor: uangElektronikView.trailingAnchor, topAnchor: ovoLabel.bottomAnchor, leadingConstant: -30, topConstant: 20, corner: 0, heightAnchor: 11, widthtAnchor: 6, borderWidth: 0, colorBorder: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        gopayBaseView.addSubview(rigthButtonGopay)
+        UIHelper.makeSmallButton(smallButton: rigthButtonGopay, leadingAnchor: gopayBaseView.trailingAnchor, topAnchor: gopayBaseView.topAnchor, leadingConstant: -30, topConstant: 15, corner: 0, heightAnchor: 11, widthtAnchor: 6, borderWidth: 0, colorBorder: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
         rigthButtonGopay.setImage(UIImage(named: "next"), for: .normal )
+
+        uangElektronikView.addSubview(linkAjaBaseView)
+        UIHelper.makeView(view: linkAjaBaseView, leadingAnchor: uangElektronikView.leadingAnchor, trailingAnchor: uangElektronikView.trailingAnchor, topAnchor: gopayBaseView.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 0, heightAnchor: 40, widthAnchor: 0)
+        linkAjaBaseView.isUserInteractionEnabled = true
         
-        uangElektronikView.addSubview(iconLinAjaImage)
-        UIHelper.makeImageView(imageView: iconLinAjaImage, leadingAnchor: uangElektronikView.leadingAnchor, topAnchor: iconGopayImage.bottomAnchor, leadingConstant: 12, topConstant: 15, corner: 0, heightAnchor: 16)
+        linkAjaBaseView.addSubview(iconLinAjaImage)
+        UIHelper.makeImageView(imageView: iconLinAjaImage, leadingAnchor: linkAjaBaseView.leadingAnchor, topAnchor: linkAjaBaseView.topAnchor, leadingConstant: 12, topConstant: 10, corner: 0, heightAnchor: 16)
         iconLinAjaImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
         iconLinAjaImage.image = UIImage(named :"linkaja")
         iconLinAjaImage.contentMode = .scaleAspectFit
         
-        uangElektronikView.addSubview(linkAjaLabel)
-        UIHelper.makeLabel(label: linkAjaLabel, corner: 0, allignment: .left, leadingAnchor: iconLinAjaImage.trailingAnchor, trailingAnchor: uangElektronikView.trailingAnchor, topAnchor: gopayLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -50, topConstant: 15, heightAnchor: 16, widthAnchor: 0)
+        linkAjaBaseView.addSubview(linkAjaLabel)
+        UIHelper.makeLabel(label: linkAjaLabel, corner: 0, allignment: .left, leadingAnchor: iconLinAjaImage.trailingAnchor, trailingAnchor: linkAjaBaseView.trailingAnchor, topAnchor: linkAjaBaseView.topAnchor, leadingConstant: 12, trailingConstant: -50, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: linkAjaLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Link Aja", kerning: 0.6)
         
-        uangElektronikView.addSubview(rigthButtonLinkAja)
-        UIHelper.makeSmallButton(smallButton: rigthButtonLinkAja, leadingAnchor: uangElektronikView.trailingAnchor, topAnchor: gopayLabel.bottomAnchor, leadingConstant: -30, topConstant: 20, corner: 0, heightAnchor: 11, widthtAnchor: 6, borderWidth: 0, colorBorder: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        linkAjaBaseView.addSubview(rigthButtonLinkAja)
+        UIHelper.makeSmallButton(smallButton: rigthButtonLinkAja, leadingAnchor: linkAjaBaseView.trailingAnchor, topAnchor: linkAjaBaseView.topAnchor, leadingConstant: -30, topConstant: 15, corner: 0, heightAnchor: 11, widthtAnchor: 6, borderWidth: 0, colorBorder: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
         rigthButtonLinkAja.setImage(UIImage(named: "next"), for: .normal )
         
     }
