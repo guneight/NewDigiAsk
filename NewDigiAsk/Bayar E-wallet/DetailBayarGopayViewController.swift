@@ -1,14 +1,14 @@
 //
-//  DetailBayarLinkAjaViewController.swift
+//  DetailBayarGopayViewController.swift
 //  NewDigiAsk
 //
-//  Created by Gun Eight  on 13/05/20.
+//  Created by Gun Eight  on 14/05/20.
 //  Copyright © 2020 Gun Eight . All rights reserved.
 //
 
 import UIKit
 
-class DetailBayarLinkAjaViewController: UIViewController {
+class DetailBayarGopayViewController: UIViewController {
     let produkBaseView = UIView()
     let prosesStackView : UIStackView = {
         let stackViewCV = UIStackView()
@@ -27,34 +27,42 @@ class DetailBayarLinkAjaViewController: UIViewController {
     let checkOutImage = UIImageView()
     let completeImage = UIImageView()
     
-    let detailBayarBaseView = UIView()
-    let masukLabel = UILabel()
-    let linkAjaIconImage = UIImageView()
-    let nomorLinkAjaTextField = UITextField()
-    let pinTextField = UITextField()
-    let sisaWaktuLabel = UILabel()
-    let digiaskLogoImage = UIImageView()
-    let totalView = UIView()
-    let totalLabel = UILabel()
-    let nilaiTotalLabel = UILabel()
-    let lihatTransaksiLabel = UILabel()
-    let bayarButton = UIButton()
+    let gopayBaseView = UIView()
+    let totalPembayaranView = UIView()
+    let totalPembayaranLabel = UILabel()
+    let nilaiTotalPembayaranLabel = UILabel()
+    let detailPenerimaView = UIView()
+    let detailPenerimaLabel = UILabel()
+    let logoDigiAskImage = UIImageView()
+    let termConditionIcon  = UIImageView()
+    let termConditionLabel = UILabel()
+     
+    let gopayView = UIView()
+    let gopayLogoImage = UIImageView()
+    let gopayLabel = UILabel()
+    let payLaterLabel = UILabel()
+    let useLabel = UILabel()
+    let payNowView = UIView()
+    let payNowLabel = UILabel()
+    let nominalLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupNavBarDetailBayarLinkAja()
-        bayarButton.addTarget(self, action: #selector(bayarAction), for: .touchUpInside)
+        setupNavBarDetailBayarGopay()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(payNowAction))
+        payNowView.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
     }
     
-
     
-    // MARK: - Bayar
-    @objc func bayarAction(){
+    
+     // MARK: - Pay now
+    
+    @objc func payNowAction (){
         let selesaiBayarVC = storyboard?.instantiateViewController(identifier: "SelesaiBayarEwalletViewController") as! SelesaiBayarEwalletViewController
         self.navigationController?.pushViewController(selesaiBayarVC, animated: true)
     }
     
-
+    
 }

@@ -39,6 +39,7 @@ class PembayaranEwalletViewController: UIViewController {
     let keteranganLabel = UILabel()
     
     let lanjutButton = UIButton()
+    var ewalletSelected : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +49,22 @@ class PembayaranEwalletViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
 
     
     // MARK: - Lanjut
     
     @objc func lanjutAction(){
-        let detailBayarLinkAja = storyboard?.instantiateViewController(identifier: "DetailBayarLinkAjaViewController") as! DetailBayarLinkAjaViewController
-        self.navigationController?.pushViewController(detailBayarLinkAja, animated: true)
+        if ewalletSelected == 0{
+            let detailBayarOvo = storyboard?.instantiateViewController(identifier: "DetailBayarOvoViewController") as! DetailBayarOvoViewController
+            self.navigationController?.pushViewController(detailBayarOvo, animated: true)
+        }else if ewalletSelected == 1{
+            let detailBayarGopay = storyboard?.instantiateViewController(identifier: "DetailBayarGopayViewController") as! DetailBayarGopayViewController
+            self.navigationController?.pushViewController(detailBayarGopay, animated: true)
+        }else if ewalletSelected == 2{
+            let detailBayarLinkAja = storyboard?.instantiateViewController(identifier: "DetailBayarLinkAjaViewController") as! DetailBayarLinkAjaViewController
+            self.navigationController?.pushViewController(detailBayarLinkAja, animated: true)
+        }
     }
 
    

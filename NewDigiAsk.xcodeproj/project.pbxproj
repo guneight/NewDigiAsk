@@ -40,7 +40,7 @@
 		67423263242C79D100A07141 /* ExtensionAddTertanggungVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67423262242C79D100A07141 /* ExtensionAddTertanggungVC.swift */; };
 		6749F1D7246C48BC0013A4F7 /* PembayaranEwalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1D6246C48BC0013A4F7 /* PembayaranEwalletViewController.swift */; };
 		6749F1D9246C48DB0013A4F7 /* DetailBayarLinkAjaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1D8246C48DB0013A4F7 /* DetailBayarLinkAjaViewController.swift */; };
-		6749F1DB246C48FC0013A4F7 /* SelesaiBayarLinkAjaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1DA246C48FC0013A4F7 /* SelesaiBayarLinkAjaViewController.swift */; };
+		6749F1DB246C48FC0013A4F7 /* SelesaiBayarEwalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1DA246C48FC0013A4F7 /* SelesaiBayarEwalletViewController.swift */; };
 		6749F1DE246C49370013A4F7 /* ExtensionPembayaranEwalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1DD246C49370013A4F7 /* ExtensionPembayaranEwalletVC.swift */; };
 		6749F1E0246C494C0013A4F7 /* ExtensionDetailBayarLinkAjaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1DF246C494C0013A4F7 /* ExtensionDetailBayarLinkAjaVC.swift */; };
 		6749F1E2246C49680013A4F7 /* ExtensionSelesaiBayarLinkAjaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749F1E1246C49680013A4F7 /* ExtensionSelesaiBayarLinkAjaVC.swift */; };
@@ -95,6 +95,10 @@
 		67BBA20B246A8C02000EDABA /* UbahEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBA20A246A8C02000EDABA /* UbahEmailViewController.swift */; };
 		67BBA20E246A8C36000EDABA /* ExtensionUbahNoHPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBA20D246A8C36000EDABA /* ExtensionUbahNoHPVC.swift */; };
 		67BBA210246A8C48000EDABA /* ExtensionUbahEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBA20F246A8C48000EDABA /* ExtensionUbahEmailVC.swift */; };
+		67BC94FD246D635000A57CD0 /* DetailBayarOvoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BC94FC246D635000A57CD0 /* DetailBayarOvoViewController.swift */; };
+		67BC94FF246D636200A57CD0 /* DetailBayarGopayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BC94FE246D636200A57CD0 /* DetailBayarGopayViewController.swift */; };
+		67BC9501246D642400A57CD0 /* ExtensionDetailBayarOvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BC9500246D642400A57CD0 /* ExtensionDetailBayarOvoVC.swift */; };
+		67BC9503246D644A00A57CD0 /* ExtensionDetailBayarGopayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BC9502246D644A00A57CD0 /* ExtensionDetailBayarGopayVC.swift */; };
 		67CF8B9A240649D00032DBDE /* JenisProdukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8B99240649D00032DBDE /* JenisProdukViewController.swift */; };
 		67CF8B9C24064A310032DBDE /* ExtensionJenisProdukVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8B9B24064A310032DBDE /* ExtensionJenisProdukVC.swift */; };
 		67CF8B9E24066EF70032DBDE /* JenisProdukDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8B9D24066EF70032DBDE /* JenisProdukDetailViewController.swift */; };
@@ -196,7 +200,7 @@
 		67423262242C79D100A07141 /* ExtensionAddTertanggungVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAddTertanggungVC.swift; sourceTree = "<group>"; };
 		6749F1D6246C48BC0013A4F7 /* PembayaranEwalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PembayaranEwalletViewController.swift; sourceTree = "<group>"; };
 		6749F1D8246C48DB0013A4F7 /* DetailBayarLinkAjaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBayarLinkAjaViewController.swift; sourceTree = "<group>"; };
-		6749F1DA246C48FC0013A4F7 /* SelesaiBayarLinkAjaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelesaiBayarLinkAjaViewController.swift; sourceTree = "<group>"; };
+		6749F1DA246C48FC0013A4F7 /* SelesaiBayarEwalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelesaiBayarEwalletViewController.swift; sourceTree = "<group>"; };
 		6749F1DD246C49370013A4F7 /* ExtensionPembayaranEwalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPembayaranEwalletVC.swift; sourceTree = "<group>"; };
 		6749F1DF246C494C0013A4F7 /* ExtensionDetailBayarLinkAjaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDetailBayarLinkAjaVC.swift; sourceTree = "<group>"; };
 		6749F1E1246C49680013A4F7 /* ExtensionSelesaiBayarLinkAjaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSelesaiBayarLinkAjaVC.swift; sourceTree = "<group>"; };
@@ -249,6 +253,10 @@
 		67BBA20A246A8C02000EDABA /* UbahEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbahEmailViewController.swift; sourceTree = "<group>"; };
 		67BBA20D246A8C36000EDABA /* ExtensionUbahNoHPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUbahNoHPVC.swift; sourceTree = "<group>"; };
 		67BBA20F246A8C48000EDABA /* ExtensionUbahEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUbahEmailVC.swift; sourceTree = "<group>"; };
+		67BC94FC246D635000A57CD0 /* DetailBayarOvoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBayarOvoViewController.swift; sourceTree = "<group>"; };
+		67BC94FE246D636200A57CD0 /* DetailBayarGopayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBayarGopayViewController.swift; sourceTree = "<group>"; };
+		67BC9500246D642400A57CD0 /* ExtensionDetailBayarOvoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDetailBayarOvoVC.swift; sourceTree = "<group>"; };
+		67BC9502246D644A00A57CD0 /* ExtensionDetailBayarGopayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDetailBayarGopayVC.swift; sourceTree = "<group>"; };
 		67CF8B99240649D00032DBDE /* JenisProdukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisProdukViewController.swift; sourceTree = "<group>"; };
 		67CF8B9B24064A310032DBDE /* ExtensionJenisProdukVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionJenisProdukVC.swift; sourceTree = "<group>"; };
 		67CF8B9D24066EF70032DBDE /* JenisProdukDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisProdukDetailViewController.swift; sourceTree = "<group>"; };
@@ -451,19 +459,23 @@
 			children = (
 				6749F1D6246C48BC0013A4F7 /* PembayaranEwalletViewController.swift */,
 				6749F1D8246C48DB0013A4F7 /* DetailBayarLinkAjaViewController.swift */,
-				6749F1DA246C48FC0013A4F7 /* SelesaiBayarLinkAjaViewController.swift */,
+				67BC94FC246D635000A57CD0 /* DetailBayarOvoViewController.swift */,
+				67BC94FE246D636200A57CD0 /* DetailBayarGopayViewController.swift */,
+				6749F1DA246C48FC0013A4F7 /* SelesaiBayarEwalletViewController.swift */,
 			);
 			path = "Bayar E-wallet";
 			sourceTree = "<group>";
 		};
-		6749F1DC246C49080013A4F7 /* BayarLinkAjaVC */ = {
+		6749F1DC246C49080013A4F7 /* BayarEwalletVC */ = {
 			isa = PBXGroup;
 			children = (
 				6749F1DD246C49370013A4F7 /* ExtensionPembayaranEwalletVC.swift */,
 				6749F1DF246C494C0013A4F7 /* ExtensionDetailBayarLinkAjaVC.swift */,
 				6749F1E1246C49680013A4F7 /* ExtensionSelesaiBayarLinkAjaVC.swift */,
+				67BC9500246D642400A57CD0 /* ExtensionDetailBayarOvoVC.swift */,
+				67BC9502246D644A00A57CD0 /* ExtensionDetailBayarGopayVC.swift */,
 			);
-			path = BayarLinkAjaVC;
+			path = BayarEwalletVC;
 			sourceTree = "<group>";
 		};
 		6751E12123EC06B4008ACB56 = {
@@ -509,7 +521,7 @@
 		6751E14223ED0846008ACB56 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				6749F1DC246C49080013A4F7 /* BayarLinkAjaVC */,
+				6749F1DC246C49080013A4F7 /* BayarEwalletVC */,
 				679EAFA3246B046700021248 /* BayarKartuKreditVC */,
 				67BBA20C246A8C17000EDABA /* Ubah NoHP-Email VC */,
 				6753DA68245B1E3500C72140 /* KlaimVC */,
@@ -982,7 +994,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6749F1DB246C48FC0013A4F7 /* SelesaiBayarLinkAjaViewController.swift in Sources */,
+				6749F1DB246C48FC0013A4F7 /* SelesaiBayarEwalletViewController.swift in Sources */,
 				6700E9912452F8750097AC47 /* ExtensionLoginVC.swift in Sources */,
 				67B0AB0A243E27B4009AC66F /* DetailHubungiKamiViewController.swift in Sources */,
 				6702D6492455AF640022325E /* BayarCartViewController.swift in Sources */,
@@ -1042,6 +1054,7 @@
 				6751E12E23EC06B4008ACB56 /* AppDelegate.swift in Sources */,
 				67924D90240CD6850099F26F /* ExtensionBayarVC.swift in Sources */,
 				679C71EE240F85A30092B1FA /* ExtensionEditProfileVC.swift in Sources */,
+				67BC9503246D644A00A57CD0 /* ExtensionDetailBayarGopayVC.swift in Sources */,
 				67EE59192408F07300404C6E /* ExtensionKeranjangVC.swift in Sources */,
 				67EE59132407D73500404C6E /* IdentitasTertanggungdanPenerimaManfaatViewController.swift in Sources */,
 				676B7C57240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift in Sources */,
@@ -1054,6 +1067,7 @@
 				67EE977A243F794F00DC3C7A /* ExtensionMapVC.swift in Sources */,
 				67D631982420D34200197A39 /* InfoDetailViewController.swift in Sources */,
 				678E02CD2429D92600D7D935 /* DetailPolisBeliViewController.swift in Sources */,
+				67BC9501246D642400A57CD0 /* ExtensionDetailBayarOvoVC.swift in Sources */,
 				67F06E0E241B454200B277B2 /* SuratBuktiKematianViewController.swift in Sources */,
 				67924D92240CDCE10099F26F /* DetailBayarViewController.swift in Sources */,
 				67A494B82451FD5600F7BFAD /* LengkapiDataEmailViewController.swift in Sources */,
@@ -1071,6 +1085,7 @@
 				677EFC1C2411EE0600656CE4 /* MonitoringKlaimViewController.swift in Sources */,
 				67B0AB06243E2735009AC66F /* HubungiKamiViewController.swift in Sources */,
 				6753A2C723F532F9000F7CE1 /* UIHelper.swift in Sources */,
+				67BC94FD246D635000A57CD0 /* DetailBayarOvoViewController.swift in Sources */,
 				679C71EC240F85870092B1FA /* EditProfileViewController.swift in Sources */,
 				67F06E06241A264300B277B2 /* ProsesKlaimViewController.swift in Sources */,
 				67EA32492423CE7800ED9F1F /* DetailPolisViewController.swift in Sources */,
@@ -1081,6 +1096,7 @@
 				6749F1D7246C48BC0013A4F7 /* PembayaranEwalletViewController.swift in Sources */,
 				67F06E1C241B7E6D00B277B2 /* DeskripsiProdukViewController.swift in Sources */,
 				679C71F224108E0D0092B1FA /* ExtensionTentangKamiVC.swift in Sources */,
+				67BC94FF246D636200A57CD0 /* DetailBayarGopayViewController.swift in Sources */,
 				67392AF124018A69007630DF /* LengkapiDataViewController.swift in Sources */,
 				67F06E1A241B5F5C00B277B2 /* SubmitKlaimViewController.swift in Sources */,
 				679EAFA5246B049200021248 /* ExtensionBayarKartuKreditVC.swift in Sources */,

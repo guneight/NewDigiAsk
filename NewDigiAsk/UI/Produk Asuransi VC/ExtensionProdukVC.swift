@@ -7,33 +7,14 @@
 //
 
 import UIKit
-let produkBaseView = UIView()
-let prosesStackView : UIStackView = {
-let stackViewCV = UIStackView()
-    stackViewCV.axis = NSLayoutConstraint.Axis.horizontal
-    stackViewCV.distribution = UIStackView.Distribution.fillEqually
-    stackViewCV.alignment = UIStackView.Alignment.center
-    stackViewCV.backgroundColor = #colorLiteral(red: 0.2131774127, green: 0.6528760791, blue: 1, alpha: 1)
-    stackViewCV.translatesAutoresizingMaskIntoConstraints = false
-    stackViewCV.spacing = 30
-return stackViewCV
-}()
-let lineView = UIView()
-let viewContainerTableProduk = UIView()
-let produkTable = UITableView()
-let produkImage = UIImageView()
-let tertanggungImage = UIImageView()
-let kerangjangImage = UIImageView()
-let checkOutImage = UIImageView()
-let completeImage = UIImageView()
- var PresentationDelegate = PresentationManager()
+var PresentationDelegate = PresentationManager()
 var indexProduk :Int = 0
 extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
     
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 13
-//    }
+    //    func numberOfSections(in tableView: UITableView) -> Int {
+    //        return 13
+    //    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 13    }
     
@@ -51,11 +32,11 @@ extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 63
     }
-
+    
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         let produkDetailVC = self.storyboard?.instantiateViewController(identifier: "ProdukDetailViewController") as! ProdukDetailViewController
@@ -107,62 +88,62 @@ extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
         produkImage.translatesAutoresizingMaskIntoConstraints = false
         produkImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         produkImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-               
-         produkImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-               produkImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-               produkImage.image = UIImage(named: "produkIconWhite")
-               produkImage.contentMode = .center
-               produkImage.layer.masksToBounds = true
-               produkImage.layer.cornerRadius = 17
-               produkImage.layer.borderWidth = 1
-               
-               
-               prosesStackView.addArrangedSubview(tertanggungImage)
-               tertanggungImage.translatesAutoresizingMaskIntoConstraints = false
-               tertanggungImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
-               tertanggungImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-               tertanggungImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-               tertanggungImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-               tertanggungImage.layer.masksToBounds = true
-               tertanggungImage.layer.cornerRadius = 17
-               tertanggungImage.image = UIImage(named: "profileIcon")
-               tertanggungImage.contentMode = .center
-               
-               prosesStackView.addArrangedSubview(kerangjangImage)
-               kerangjangImage.translatesAutoresizingMaskIntoConstraints = false
-               kerangjangImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
-               kerangjangImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-               kerangjangImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-               kerangjangImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-               kerangjangImage.layer.masksToBounds = true
-               kerangjangImage.layer.cornerRadius = 17
-               kerangjangImage.image = UIImage(named: "keranjangIcon")
-               kerangjangImage.contentMode = .center
-               
-               
-               prosesStackView.addArrangedSubview(checkOutImage)
-               checkOutImage.translatesAutoresizingMaskIntoConstraints = false
-               checkOutImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
-               checkOutImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-               checkOutImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-               checkOutImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-               checkOutImage.layer.masksToBounds = true
-               checkOutImage.layer.cornerRadius = 17
-               checkOutImage.image = UIImage(named: "rpIcon")
-               checkOutImage.contentMode = .center
-               
-               prosesStackView.addArrangedSubview(completeImage)
-               completeImage.translatesAutoresizingMaskIntoConstraints = false
-               completeImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
-               completeImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-               completeImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-               completeImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-               completeImage.layer.masksToBounds = true
-               completeImage.layer.cornerRadius = 17
-               completeImage.image = UIImage(named: "checkfinishIcon")
-               completeImage.contentMode = .center
         
-       
+        produkImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        produkImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+        produkImage.image = UIImage(named: "produkIconWhite")
+        produkImage.contentMode = .center
+        produkImage.layer.masksToBounds = true
+        produkImage.layer.cornerRadius = 17
+        produkImage.layer.borderWidth = 1
+        
+        
+        prosesStackView.addArrangedSubview(tertanggungImage)
+        tertanggungImage.translatesAutoresizingMaskIntoConstraints = false
+        tertanggungImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
+        tertanggungImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
+        tertanggungImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tertanggungImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+        tertanggungImage.layer.masksToBounds = true
+        tertanggungImage.layer.cornerRadius = 17
+        tertanggungImage.image = UIImage(named: "profileIcon")
+        tertanggungImage.contentMode = .center
+        
+        prosesStackView.addArrangedSubview(kerangjangImage)
+        kerangjangImage.translatesAutoresizingMaskIntoConstraints = false
+        kerangjangImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
+        kerangjangImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
+        kerangjangImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        kerangjangImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+        kerangjangImage.layer.masksToBounds = true
+        kerangjangImage.layer.cornerRadius = 17
+        kerangjangImage.image = UIImage(named: "keranjangIcon")
+        kerangjangImage.contentMode = .center
+        
+        
+        prosesStackView.addArrangedSubview(checkOutImage)
+        checkOutImage.translatesAutoresizingMaskIntoConstraints = false
+        checkOutImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
+        checkOutImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
+        checkOutImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        checkOutImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+        checkOutImage.layer.masksToBounds = true
+        checkOutImage.layer.cornerRadius = 17
+        checkOutImage.image = UIImage(named: "rpIcon")
+        checkOutImage.contentMode = .center
+        
+        prosesStackView.addArrangedSubview(completeImage)
+        completeImage.translatesAutoresizingMaskIntoConstraints = false
+        completeImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
+        completeImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
+        completeImage.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        completeImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+        completeImage.layer.masksToBounds = true
+        completeImage.layer.cornerRadius = 17
+        completeImage.image = UIImage(named: "checkfinishIcon")
+        completeImage.contentMode = .center
+        
+        
         produkBaseView.addSubview(viewContainerTableProduk)
         viewContainerTableProduk.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -195,20 +176,20 @@ extension ProdukViewController : UITableViewDelegate, UITableViewDataSource {
     
     func setupNavBar(){
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
-            self.navigationItem.leftBarButtonItem = customButtonNav
-            navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-            navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-           let backItem = UIBarButtonItem()
-              backItem.title = "HOME"
-              let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
-              backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
-              navigationItem.leftBarButtonItems = [customButtonNav, backItem]
-            
-        }
-        @objc func backButtonTapped() {
-          navigationController?.popViewController(animated: true)
-        }
+        self.navigationItem.leftBarButtonItem = customButtonNav
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        let backItem = UIBarButtonItem()
+        backItem.title = "HOME"
+        let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
+        navigationItem.leftBarButtonItems = [customButtonNav, backItem]
+        
+    }
+    @objc func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
     
 }
 
@@ -240,18 +221,18 @@ class produkTableViewCell: UITableViewCell {
         UIHelper.makeImageView(imageView: iconProdukImage, leadingAnchor: viewContent.leadingAnchor, topAnchor: viewContent.topAnchor, leadingConstant: 28, topConstant: 13, corner: 0, heightAnchor: 27)
         iconProdukImage.widthAnchor.constraint(equalToConstant: 27).isActive = true
         iconProdukImage.contentMode = .scaleAspectFit
-
-             
+        
+        
         UIHelper.makeLabel(label: produkLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: viewContent.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 18, trailingConstant: -5, topConstant: 23, heightAnchor: 16, widthAnchor: 0)
         produkLabel.backgroundColor = .white
         UIHelper.setTextLabel(label: produkLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .semibold, fontSize: 13, text: "", kerning: 0.13)
-            
         
-                  
-}
+        
+        
+    }
     
     required init?(coder: NSCoder) {
-           super.init(coder: coder)
-}
+        super.init(coder: coder)
+    }
 }
 

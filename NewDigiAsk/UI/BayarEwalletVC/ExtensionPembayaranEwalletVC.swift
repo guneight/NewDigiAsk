@@ -135,11 +135,11 @@ extension PembayaranEwalletViewController{
         UIHelper.makeImageView(imageView: ewalletIcon, leadingAnchor: ewalletView.leadingAnchor, topAnchor: ewalletView.topAnchor, leadingConstant: 20, topConstant: 8, corner: 0, heightAnchor: 26)
         ewalletIcon.widthAnchor.constraint(equalToConstant: 55).isActive = true
         ewalletIcon.contentMode = .scaleAspectFit
-        ewalletIcon.image = UIImage(named: "linkaja")
+        
         
         ewalletView.addSubview(namaEwallet)
         UIHelper.makeLabel(label: namaEwallet, corner: 0, allignment: .right, leadingAnchor: ewalletIcon.trailingAnchor, trailingAnchor: ewalletView.trailingAnchor, topAnchor: ewalletView.topAnchor, leadingConstant: 50, trailingConstant: -20, topConstant: 15, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaEwallet, fontName: "AvantGardeITCbyBT-Demi", fontColor:#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "LinkAja", kerning: 0.6)
+        UIHelper.setTextLabel(label: namaEwallet, fontName: "AvantGardeITCbyBT-Demi", fontColor:#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.6)
         
         ewalletView.addSubview(underlineEwallet)
         UIHelper.makeView(view: underlineEwallet, leadingAnchor: ewalletView.leadingAnchor, trailingAnchor: ewalletView.trailingAnchor, topAnchor: ewalletIcon.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 10, corner: 0, heightAnchor: 1, widthAnchor: 1)
@@ -147,8 +147,23 @@ extension PembayaranEwalletViewController{
         
         ewalletView.addSubview(keteranganLabel)
         UIHelper.makeLabel(label: keteranganLabel, corner: 0, allignment: .left, leadingAnchor: ewalletView.leadingAnchor, trailingAnchor: ewalletView.trailingAnchor, topAnchor: underlineEwallet.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 12, heightAnchor: 62, widthAnchor: 0)
-        UIHelper.setTextLabel(label: keteranganLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.7), weight: .regular, fontSize: 12, text: "Anda akan diarahkan kehalaman LinkAja untuk melakukan pembayaran", kerning: 0.6)
+        UIHelper.setTextLabel(label: keteranganLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.7), weight: .regular, fontSize: 12, text: " ", kerning: 0.6)
         keteranganLabel.numberOfLines = 0
+        
+        if ewalletSelected == 0{
+            ewalletIcon.image = UIImage(named: "ovo")
+            namaEwallet.text = "OVO"
+            keteranganLabel.text = "Anda akan diminta untuk memasukkan nomor sandi OVO Anda"
+        }else if ewalletSelected == 1{
+            ewalletIcon.image = UIImage(named: "gopay")
+            namaEwallet.text = "Gopay"
+            keteranganLabel.text = "Pastikan anda telah menginstall aplikasi Gojek agar dapat melakukan pembayaran"
+        }else if ewalletSelected == 2{
+            ewalletIcon.image = UIImage(named: "linkaja")
+            namaEwallet.text = "LinkAja"
+            keteranganLabel.text = "Anda akan diarahkan kehalaman LinkAja untuk melakukan pembayaran"
+        }
+        
         
         pembayaranEwalletBaseView.addSubview(lanjutButton)
         UIHelper.makeButton(button: lanjutButton, leadingAnchor: pembayaranEwalletBaseView.leadingAnchor, trailingAnchor: pembayaranEwalletBaseView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -48, corner: 24, heightAnchor: 48, widthAnchor: 0)

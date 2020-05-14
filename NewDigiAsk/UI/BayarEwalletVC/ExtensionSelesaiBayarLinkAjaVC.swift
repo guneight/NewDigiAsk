@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension SelesaiBayarLinkAjaViewController{
+extension SelesaiBayarEwalletViewController{
     func setupUI(){
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         view.addSubview(produkBaseView)

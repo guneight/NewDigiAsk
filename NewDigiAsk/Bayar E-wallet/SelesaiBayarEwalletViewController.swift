@@ -1,5 +1,5 @@
 //
-//  DetailBayarLinkAjaViewController.swift
+//  SelesaiBayarLinkAjaViewController.swift
 //  NewDigiAsk
 //
 //  Created by Gun Eight  on 13/05/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailBayarLinkAjaViewController: UIViewController {
+class SelesaiBayarEwalletViewController: UIViewController {
     let produkBaseView = UIView()
     let prosesStackView : UIStackView = {
         let stackViewCV = UIStackView()
@@ -27,34 +27,34 @@ class DetailBayarLinkAjaViewController: UIViewController {
     let checkOutImage = UIImageView()
     let completeImage = UIImageView()
     
-    let detailBayarBaseView = UIView()
-    let masukLabel = UILabel()
+    let selesaiBayarBaseView = UIView()
+    let terimakasihLabel = UILabel()
+    let transaksiView = UIView()
+    let nomorTransaksiHeaderLabel = UILabel()
+    let nomorTransaksiLabel = UILabel()
+    let nomorPengajuanHeaderLabel = UILabel()
+    let nomorPengajuanLabel = UILabel()
+    let andaMelakukanLabel = UILabel()
     let linkAjaIconImage = UIImageView()
-    let nomorLinkAjaTextField = UITextField()
-    let pinTextField = UITextField()
-    let sisaWaktuLabel = UILabel()
-    let digiaskLogoImage = UIImageView()
-    let totalView = UIView()
-    let totalLabel = UILabel()
-    let nilaiTotalLabel = UILabel()
-    let lihatTransaksiLabel = UILabel()
-    let bayarButton = UIButton()
+    let nominalLabel = UILabel()
+    let lihatTransaksiButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupNavBarDetailBayarLinkAja()
-        bayarButton.addTarget(self, action: #selector(bayarAction), for: .touchUpInside)
+        setupNavBarSelesailBayarLinkAja()
+        lihatTransaksiButton.addTarget(self, action: #selector(lihatTransaksiAction), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
     
-
     
-    // MARK: - Bayar
-    @objc func bayarAction(){
-        let selesaiBayarVC = storyboard?.instantiateViewController(identifier: "SelesaiBayarEwalletViewController") as! SelesaiBayarEwalletViewController
-        self.navigationController?.pushViewController(selesaiBayarVC, animated: true)
+    
+     // MARK: - lihat transaksi
+    @objc func lihatTransaksiAction(){
+        let polisVC = storyboard?.instantiateViewController(identifier: "PolisViewController") as! PolisViewController
+        self.navigationController?.pushViewController(polisVC, animated: true)
     }
+     
+   
     
-
 }
