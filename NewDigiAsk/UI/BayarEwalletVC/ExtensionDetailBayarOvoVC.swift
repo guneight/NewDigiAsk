@@ -106,8 +106,31 @@ extension DetailBayarOvoViewController {
         completeImage.contentMode = .center
         
         produkBaseView.addSubview(ovoBaseView)
+        UIHelper.makeView(view: ovoBaseView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height-60, widthAnchor: 0)
+        ovoBaseView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
+        ovoBaseView.addSubview(verifikasiOvoLabel)
+        UIHelper.makeLabel(label: verifikasiOvoLabel, corner: 0, allignment: .left, leadingAnchor: ovoBaseView.leadingAnchor, trailingAnchor: ovoBaseView.trailingAnchor, topAnchor: ovoBaseView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 30, heightAnchor: 16, widthAnchor: 0)
+        UIHelper.setTextLabel(label: verifikasiOvoLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Verifikasi Dana OVO", kerning: 0.2)
         
+        ovoBaseView.addSubview(ovoIconImage)
+        UIHelper.makeImageView(imageView: ovoIconImage, leadingAnchor: ovoBaseView.trailingAnchor, topAnchor: ovoBaseView.topAnchor, leadingConstant: -91, topConstant: 30, corner: 0, heightAnchor: 32)
+        ovoIconImage.widthAnchor.constraint(equalToConstant: 67).isActive = true
+        ovoIconImage.image = UIImage(named: "ovo")
+        ovoIconImage.contentMode = .scaleAspectFit
+
+        ovoBaseView.addSubview(masukkanKodeOvoLabel)
+        UIHelper.makeLabel(label: masukkanKodeOvoLabel, corner: 0, allignment: .center, leadingAnchor: ovoBaseView.leadingAnchor, trailingAnchor: ovoBaseView.trailingAnchor, topAnchor: verifikasiOvoLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 74, heightAnchor: 20, widthAnchor: 0)
+        UIHelper.setTextLabel(label: masukkanKodeOvoLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 15, text: "Masukkan Security Code OVO Anda", kerning: 0.2)
+        
+        ovoBaseView.addSubview(kodeOvoView)
+        UIHelper.makeView(view: kodeOvoView, leadingAnchor: ovoBaseView.leadingAnchor, trailingAnchor: ovoBaseView.trailingAnchor, topAnchor: masukkanKodeOvoLabel.bottomAnchor, leadingConstant: 50, trailingConstant: -50, topConstant: 20, corner: 0, heightAnchor: 100, widthAnchor: 0)
+        kodeOvoView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        ovoBaseView.addSubview(bayarButton)
+        UIHelper.makeButton(button: bayarButton, leadingAnchor: ovoBaseView.leadingAnchor, trailingAnchor: ovoBaseView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -48, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        bayarButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        bayarButton.setTitle("BAYAR", for: .normal)
     }
     
     func setupNavBarDetailBayarOvo(){

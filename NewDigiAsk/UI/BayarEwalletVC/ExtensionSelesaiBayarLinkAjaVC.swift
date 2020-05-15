@@ -138,14 +138,25 @@ extension SelesaiBayarEwalletViewController{
         
         selesaiBayarBaseView.addSubview(andaMelakukanLabel)
         UIHelper.makeLabel(label: andaMelakukanLabel, corner: 0, allignment: .left, leadingAnchor: selesaiBayarBaseView.leadingAnchor, trailingAnchor: selesaiBayarBaseView.trailingAnchor, topAnchor: transaksiView.bottomAnchor , leadingConstant: 22, trailingConstant: -22, topConstant: 30, heightAnchor: 32, widthAnchor: 0)
-        UIHelper.setTextLabel(label: andaMelakukanLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.87), weight: .regular, fontSize: 12, text: "Anda melakukan pembayaran LinkAja senilai :", kerning: 0.6)
+        UIHelper.setTextLabel(label: andaMelakukanLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.87), weight: .regular, fontSize: 12, text: "", kerning: 0.6)
         andaMelakukanLabel.numberOfLines = 0
         
         selesaiBayarBaseView.addSubview(linkAjaIconImage)
-        UIHelper.makeImageView(imageView: linkAjaIconImage, leadingAnchor: selesaiBayarBaseView.leadingAnchor, topAnchor: andaMelakukanLabel.bottomAnchor, leadingConstant: 22, topConstant: 5, corner: 0, heightAnchor: 40)
-        linkAjaIconImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        UIHelper.makeImageView(imageView: linkAjaIconImage, leadingAnchor: selesaiBayarBaseView.leadingAnchor, topAnchor: andaMelakukanLabel.bottomAnchor, leadingConstant: 22, topConstant: 5, corner: 0, heightAnchor: 30)
+        linkAjaIconImage.widthAnchor.constraint(equalToConstant: 70).isActive = true
         linkAjaIconImage.contentMode = .scaleAspectFit
-        linkAjaIconImage.image = UIImage(named: "linkaja")
+       
+        
+        if selesaiBayarSelected == 0{
+            andaMelakukanLabel.text = "Anda melakukan pembayaran OVO senilai :"
+            linkAjaIconImage.image = UIImage(named: "ovo")
+        } else if selesaiBayarSelected == 1{
+            andaMelakukanLabel.text = "Anda melakukan pembayaran Gpay senilai :"
+            linkAjaIconImage.image = UIImage(named: "gopay")
+        }else if selesaiBayarSelected == 2 {
+            andaMelakukanLabel.text = "Anda melakukan pembayaran LinkAja senilai :"
+            linkAjaIconImage.image = UIImage(named: "linkaja")
+        }
         
         selesaiBayarBaseView.addSubview(nominalLabel)
         UIHelper.makeLabel(label: nominalLabel, corner: 0, allignment: .left, leadingAnchor: linkAjaIconImage.trailingAnchor, trailingAnchor: selesaiBayarBaseView.trailingAnchor, topAnchor: andaMelakukanLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -22, topConstant: 10, heightAnchor: 15, widthAnchor: 0)

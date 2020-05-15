@@ -61,6 +61,7 @@ class DetailBayarGopayViewController: UIViewController {
     
     @objc func payNowAction (){
         let selesaiBayarVC = storyboard?.instantiateViewController(identifier: "SelesaiBayarEwalletViewController") as! SelesaiBayarEwalletViewController
+        selesaiBayarVC.selesaiBayarSelected = 1
         self.navigationController?.pushViewController(selesaiBayarVC, animated: true)
     }
     

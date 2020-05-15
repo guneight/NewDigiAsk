@@ -38,7 +38,7 @@ class SelesaiBayarEwalletViewController: UIViewController {
     let linkAjaIconImage = UIImageView()
     let nominalLabel = UILabel()
     let lihatTransaksiButton = UIButton()
-    
+    var selesaiBayarSelected : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
