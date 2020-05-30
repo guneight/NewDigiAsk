@@ -35,9 +35,18 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            arrayTemp[0] = titleNotifArray[indexPath.row]
+            indexDelete = indexPath.row
             titleNotifArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            
+            baseViewUndoDelete.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                UIView.transition(with: self.baseViewUndoDelete, duration: 0.4,
+                    options: .transitionCrossDissolve,
+                    animations: {
+                        self.baseViewUndoDelete.isHidden = true
+                })
+            }
         }
     }
     
@@ -60,6 +69,25 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
         notifikasiListTable.separatorStyle = .none
         notifikasiListTable.register(notifikasiListTableViewCell.self, forCellReuseIdentifier: "notifikasiCell")
         
+        baseViewUndoDelete.isHidden = true
+        
+        notifikasiBaseView.addSubview(baseViewUndoDelete)
+        UIHelper.makeView(view: baseViewUndoDelete, leadingAnchor: notifikasiBaseView.leadingAnchor, trailingAnchor: notifikasiBaseView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: -40, corner: 5, heightAnchor: 45, widthAnchor: 0)
+        baseViewUndoDelete.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        
+        baseViewUndoDelete.addSubview(notifHaveDeleteLabel)
+        UIHelper.makeLabel(label: notifHaveDeleteLabel, corner: 0, allignment: .left, leadingAnchor: baseViewUndoDelete.leadingAnchor, trailingAnchor: baseViewUndoDelete.trailingAnchor, topAnchor: baseViewUndoDelete.topAnchor, leadingConstant: 10, trailingConstant: baseViewUndoDelete.frame.size.width/2, topConstant: 15, heightAnchor: 16, widthAnchor: 0)
+        UIHelper.setTextLabel(label: notifHaveDeleteLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .regular, fontSize: 12, text: "Notifikasi telah dihapus", kerning: 0.5)
+        
+        baseViewUndoDelete.addSubview(undoLabel)
+        UIHelper.makeLabel(label: undoLabel, corner: 0, allignment: .left, leadingAnchor: baseViewUndoDelete.leadingAnchor, trailingAnchor: baseViewUndoDelete.trailingAnchor, topAnchor: baseViewUndoDelete.topAnchor, leadingConstant: baseViewUndoDelete.frame.size.width/2+20, trailingConstant: 50, topConstant: 15, heightAnchor: 16, widthAnchor: 0)
+        UIHelper.setTextLabel(label: undoLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2458193898, green: 0.2900034189, blue: 0.4485326409, alpha: 1), weight: .regular, fontSize: 12, text: "Undo", kerning: 0.5)
+        undoLabel.isUserInteractionEnabled = true
+        
+        baseViewUndoDelete.addSubview(closeButton)
+        UIHelper.makeSmallButton(smallButton: closeButton, leadingAnchor: baseViewUndoDelete.trailingAnchor, topAnchor: baseViewUndoDelete.topAnchor, leadingConstant: -20, topConstant: 15, corner: 0, heightAnchor: 15, widthtAnchor: 15, borderWidth: 0, colorBorder: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        closeButton.setTitle("x", for: .normal)
+        closeButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
     }
     
     func setupNavBarNotifikasi(){
@@ -96,6 +124,15 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
         
     }
     
+    @objc func undoAction(){
+        titleNotifArray[indexDelete] = arrayTemp[0]
+        notifikasiListTable.reloadData()
+        baseViewUndoDelete.isHidden = true
+    }
+    
+    @objc func closeAction(){
+        baseViewUndoDelete.isHidden = true
+    }
     
 }
 

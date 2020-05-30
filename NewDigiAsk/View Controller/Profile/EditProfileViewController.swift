@@ -49,31 +49,42 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     let editAlamatButton = UIButton()
     let lineAlamat = UIView()
     
+    var nomorIdentitas = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layoutIfNeeded()
         setupNavBar()
         setupUI()
-        editNomorTeleponButton.addTarget(self, action: #selector(ubahNoHPAction(sender:)), for: .touchUpInside)
-        editEmailButton.addTarget(self, action: #selector(ubahEmailAction(sender:)), for: .touchUpInside)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        
+        editFunction()
+        kartuIdentitasTextField.text = nomorIdentitas
         // Do any additional setup after loading the view.
     }
     
-   // MARK: - Ubah No HP
-      @objc func ubahNoHPAction(sender : UIButton){
+    func editFunction(){
+        editNomorTeleponButton.addTarget(self, action: #selector(ubahNoHPAction(sender:)), for: .touchUpInside)
+        editEmailButton.addTarget(self, action: #selector(ubahEmailAction(sender:)), for: .touchUpInside)
+        editKartuIdentitasButton.addTarget(self, action: #selector(verifikasiKTPAction(sender:)), for: .touchUpInside)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    // MARK: - Ubah No HP
+    @objc func ubahNoHPAction(sender : UIButton){
         let ubahNoHPVC =  storyboard?.instantiateViewController(identifier: "UbahNoHPViewController") as! UbahNoHPViewController
         self.navigationController?.pushViewController(ubahNoHPVC, animated: true)
-      }
-    
+    }
+    // MARK: - Ubah Email
     @objc func ubahEmailAction(sender : UIButton){
         let ubahEmailVC = storyboard?.instantiateViewController(identifier: "UbahEmailViewController") as! UbahEmailViewController
         self.navigationController?.pushViewController(ubahEmailVC, animated: true)
     }
-
+    // MARK: - Verifikasi KTP
+    @objc func verifikasiKTPAction(sender:UIButton){
+        let verifikasiKTP = storyboard?.instantiateViewController(identifier: "VerifikasiKTPViewController") as! VerifikasiKTPViewController
+        self.navigationController?.pushViewController(verifikasiKTP, animated: true)
+    }
+    
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -84,6 +95,6 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-
- 
+    
+    
 }

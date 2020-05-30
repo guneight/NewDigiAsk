@@ -248,7 +248,7 @@ class daftarProdukKeranjangTableViewCell: UITableViewCell {
         
         containerView.addSubview(nominalLabel)
         UIHelper.makeLabel(label: nominalLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerView.trailingAnchor, topAnchor: deskripsiManfaatLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -22, topConstant: 5, heightAnchor: 20, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nominalLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 10, text: " ", kerning: 0.12)
+        UIHelper.setTextLabel(label: nominalLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 14, text: " ", kerning: 0.12)
         containerView.addSubview(trushOptioButton)
         UIHelper.makeSmallButton(smallButton: trushOptioButton, leadingAnchor: containerView.trailingAnchor, topAnchor: nominalLabel.bottomAnchor, leadingConstant: -40, topConstant: 3, corner: 0, heightAnchor: 15, widthtAnchor: 15, borderWidth: 0, colorBorder: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)  )
         trushOptioButton.setImage(UIImage(named: "trashicon"), for: .normal)

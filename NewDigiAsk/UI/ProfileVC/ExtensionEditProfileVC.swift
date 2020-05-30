@@ -178,7 +178,7 @@ extension EditProfileViewController{
         profileWhiteView.addSubview(kartuIdentitasTextField)
         UIHelper.makeTetxField(textField: kartuIdentitasTextField, leadingAnchor: profileWhiteView.leadingAnchor, trailingAnchor: profileWhiteView.trailingAnchor, topAnchor: kartuIdentitasLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 8, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
         UIHelper.setTextField(textField: kartuIdentitasTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Nomor identitas", kerning: 0.8)
-        
+        kartuIdentitasTextField.isEnabled = false
         profileWhiteView.addSubview(editKartuIdentitasButton)
         editKartuIdentitasButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

@@ -234,8 +234,8 @@ class checkOutTableCell : UITableViewCell {
         deskripsiProduklabel.numberOfLines = 0
         
         containerView.addSubview(hargaLabel)
-        UIHelper.makeLabel(label: hargaLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerView.trailingAnchor, topAnchor: deskripsiProduklabel.bottomAnchor, leadingConstant: 12, trailingConstant: -22, topConstant: 5, heightAnchor: 15, widthAnchor: 0)
-        UIHelper.setTextLabel(label: hargaLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
+        UIHelper.makeLabel(label: hargaLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerView.trailingAnchor, topAnchor: deskripsiProduklabel.bottomAnchor, leadingConstant: 12, trailingConstant: -22, topConstant: 5, heightAnchor: 16, widthAnchor: 0)
+        UIHelper.setTextLabel(label: hargaLabel, fontName: fontNameHelper.AvantGardeITCbyBTDemi, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 14, text: " ", kerning: 0.12)
     }
     
     required init?(coder: NSCoder) {

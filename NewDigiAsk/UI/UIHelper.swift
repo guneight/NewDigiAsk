@@ -178,11 +178,11 @@ struct UIHelper {
         label.layoutIfNeeded()
     }
     
-    static func alertShowBasic(title: String, msg: String, vc: UIViewController)
+    static func alertShowBasic(title: String, msg: String, vc: UIViewController, buttonCancel : String, buttonOk : String)
     {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "UBAH", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "BENAR", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: buttonCancel, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: buttonOk, style: .default, handler: nil))
         vc.present(alert,animated: true)
     }
     
@@ -190,3 +190,47 @@ struct UIHelper {
 }
 
 
+extension String {
+    var isValidEmail: Bool {
+        NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
+    }
+    var isNumber : Bool{
+        NSPredicate(format: "SELF MATCHES %@", "[0-9]{8,}").evaluate(with: self)
+    }
+    var isNomorKTP : Bool{
+        NSPredicate(format: "SELF MATCHES %@", "[0-9]{0,16}").evaluate(with: self)
+    }
+    
+    var isStrings : Bool{
+        NSPredicate(format: "SELF MATCHES %@","[0-9]" ).evaluate(with: self)
+    }
+}
+
+
+struct fontNameHelper {
+    static var AvantGardeITCbyBTBook : String {
+        return "AvantGardeITCbyBT-Book"
+    }
+    static var AvantGardeITCbyBTDemi : String {
+        return "AvantGardeITCbyBT-Demi"
+    }
+    static var AvantGardeITCbyBTDemiOblique : String {
+        return "AvantGardeITCbyBT-DemiOblique"
+    }
+    static var ArialBoldMT : String {
+        return "Arial-BoldMT"
+    }
+    static var ArialBoldItalicMT : String {
+        return "Arial-BoldItalicMT"
+    }
+    static var ArialItalicMT : String {
+        return "Arial-ItalicMT"
+    }
+    static var ArialMT : String {
+        return "ArialMT"
+    }
+}
+
+struct HexColorHelper {
+    
+}

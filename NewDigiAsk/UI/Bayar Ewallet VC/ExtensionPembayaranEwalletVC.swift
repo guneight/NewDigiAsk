@@ -123,7 +123,7 @@ extension PembayaranEwalletViewController{
         
         totalPembayaranView.addSubview(totalPembayaranLabel)
         UIHelper.makeLabel(label: totalPembayaranLabel, corner: 0, allignment: .left, leadingAnchor: totalPembayaranView.leadingAnchor, trailingAnchor: totalPembayaranView.trailingAnchor, topAnchor: totalPembayaranHeaderLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 2, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: totalPembayaranLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.5)
+        UIHelper.setTextLabel(label: totalPembayaranLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 14, text: "Rp 3.000.000,-", kerning: 0.12)
         
         pembayaranEwalletBaseView.addSubview(ewalletView)
         UIHelper.makeView(view: ewalletView, leadingAnchor: pembayaranEwalletBaseView.leadingAnchor, trailingAnchor: pembayaranEwalletBaseView.trailingAnchor, topAnchor: totalPembayaranView.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 12, corner: 10, heightAnchor: 132, widthAnchor: 0)

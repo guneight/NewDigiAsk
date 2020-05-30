@@ -121,8 +121,8 @@ extension BayarViewController{
         UIHelper.setTextLabel(label: totalBayarLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Total Pembayaran", kerning: 0.16)
         
         totalBayarView.addSubview(nilaiTotalLabel)
-        UIHelper.makeLabel(label: nilaiTotalLabel, corner: 0, allignment: .left, leadingAnchor: totalBayarView.leadingAnchor, trailingAnchor: totalBayarView.trailingAnchor, topAnchor: totalBayarLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -12, topConstant: 5, heightAnchor: 15, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nilaiTotalLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.16)
+        UIHelper.makeLabel(label: nilaiTotalLabel, corner: 0, allignment: .left, leadingAnchor: totalBayarView.leadingAnchor, trailingAnchor: totalBayarView.trailingAnchor, topAnchor: totalBayarLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -12, topConstant: 5, heightAnchor: 16, widthAnchor: 0)
+        UIHelper.setTextLabel(label: nilaiTotalLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 14, text: "Rp 3.000.000,-", kerning: 0.16)
         
         bayarView.addSubview(metodeBayarView)
         UIHelper.makeView(view: metodeBayarView, leadingAnchor: bayarView.leadingAnchor, trailingAnchor: bayarView.trailingAnchor, topAnchor: totalBayarView.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 11, corner: 10, heightAnchor: 132, widthAnchor: 0)
