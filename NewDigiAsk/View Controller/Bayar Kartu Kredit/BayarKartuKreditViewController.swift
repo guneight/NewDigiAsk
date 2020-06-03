@@ -93,9 +93,13 @@ class BayarKartuKreditViewController: UIViewController {
     @objc func checkBoxBayarPenuhAction(){
         if checkBoxBayarPenuh.tag == 0{
             checkBoxBayarPenuh.setImage(UIImage(named: "checkBoxIcon"), for: .normal)
+            checkBoxBayarCicilan.isEnabled = false
+            checkBoxBayarCicilan.layer.borderColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 0.1975599315)
             checkBoxBayarPenuh.tag += 1
         }else if checkBoxBayarPenuh.tag == 1 {
-            checkBoxBayarPenuh.setImage(UIImage(named: "checkfinishWhite"), for: .normal)
+            checkBoxBayarPenuh.setImage(UIImage(named: "checkBoxDisableIcon"), for: .normal)
+            checkBoxBayarCicilan.isEnabled = true
+            checkBoxBayarCicilan.layer.borderColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
             checkBoxBayarPenuh.tag = 0
         }
     }
@@ -105,7 +109,8 @@ class BayarKartuKreditViewController: UIViewController {
             simpanNomorKartuButton.setImage(UIImage(named: "checkBoxIcon"), for: .normal)
             simpanNomorKartuButton.tag += 1
         }else if simpanNomorKartuButton.tag == 1 {
-            simpanNomorKartuButton.setImage(UIImage(named: "checkfinishWhite"), for: .normal)
+            print("ini tag 1")
+            simpanNomorKartuButton.setImage(UIImage(named: "checkBoxDisableIcon"), for: .normal)
             simpanNomorKartuButton.tag = 0
         }
     }
@@ -113,10 +118,14 @@ class BayarKartuKreditViewController: UIViewController {
     @objc func checkBoxCicilanAction(sender : UIButton){
         if checkBoxBayarCicilan.tag == 0 {
             checkBoxBayarCicilan.setImage(UIImage(named: "checkBoxIcon"), for: .normal)
+            checkBoxBayarPenuh.isEnabled = false
+            checkBoxBayarPenuh.layer.borderColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 0.2021083048)
             bayarCicilanTextField.becomeFirstResponder()
             checkBoxBayarCicilan.tag += 1
         }else if checkBoxBayarCicilan.tag == 1{
-            checkBoxBayarCicilan.setImage(UIImage(named: "checkfinishWhite"), for: .normal)
+            checkBoxBayarCicilan.setImage(UIImage(named: "checkBoxDisableIcon"), for: .normal)
+            checkBoxBayarPenuh.isEnabled = true
+            checkBoxBayarPenuh.layer.borderColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
             donePickerView()
             checkBoxBayarCicilan.tag = 0
         }

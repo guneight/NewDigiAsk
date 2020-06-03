@@ -10,7 +10,7 @@ import UIKit
 
 extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jumlahProdukdiKreanjang
+        return namaProdukArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -19,14 +19,31 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         cell.layoutIfNeeded()
         cell.iconProdukImage.image = UIImage(named: "\(namaProdukArray[indexPath.row])")
         cell.namaProdukLabel.text = namaProdukArray[indexPath.row]
-        cell.deskripsiManfaatLabel.text = "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam"
-        cell.nominalLabel.text = "Rp 250.000,-"
+        cell.deskripsiManfaatLabel.text = deskripsiProduk[indexPath.row]
+        cell.nominalLabel.text = nominal[indexPath.row]
         
         cell.rightArrowButton.addTarget(self, action: #selector(rightButtonAction(sender:)), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(namaProdukAction(sender:)))
         cell.namaProdukLabel.addGestureRecognizer(tapGesture)
+        print("nilai tag = \(pilihSemuaProdukButton.tag)")
+       
+        if selectRows.contains(indexPath){
+            cell.checkCellButton.setImage(UIImage(named: "checkBoxIcon"), for: .normal)
+            cell.checkCellButton.layer.borderColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        }else{
+            cell.checkCellButton.setImage(UIImage(named: "checkBoxDisableIcon"), for: .normal)
+            cell.checkCellButton.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        }
+        
+        cell.checkCellButton.tag = indexPath.row
+        cell.checkCellButton.addTarget(self, action: #selector(checkBoxAction(sender:)), for: .touchUpInside)
+        
+        cell.trushOptioButton.tag = indexPath.row
+        cell.trushOptioButton.addTarget(self, action: #selector(deleteSelectProduk(sender:)), for: .touchUpInside)
+    
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
@@ -34,6 +51,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
+    
     
     func setupUI(){
         let width = view.frame.size.width
@@ -149,9 +167,9 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         UIHelper.setTextLabel(label: pilihSemuaProduk, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 10, text: "Pilih Semua Produk", kerning: 0.5)
         
         keranjangBaseView.addSubview(trushButton)
-        UIHelper.makeButton(button: trushButton, leadingAnchor: pilihSemuaProduk.trailingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: keranjangBaseView.topAnchor, leadingConstant: 12, trailingConstant: -24, topConstant: 22, corner: 0, heightAnchor: 17, widthAnchor: 0)
+        UIHelper.makeButton(button: trushButton, leadingAnchor: pilihSemuaProduk.trailingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: keranjangBaseView.topAnchor, leadingConstant: 5, trailingConstant: -24, topConstant: 22, corner: 0, heightAnchor: 17, widthAnchor: 0)
         trushButton.setImage(UIImage(named: "trushhapus"), for: .normal)
-        trushButton.contentMode = .center
+        trushButton.contentMode = .scaleAspectFit
         
         keranjangBaseView.addSubview(daftarProdukKeranjangTable)
         daftarProdukKeranjangTable.translatesAutoresizingMaskIntoConstraints = false
@@ -166,7 +184,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         daftarProdukKeranjangTable.showsVerticalScrollIndicator = false
         daftarProdukKeranjangTable.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
         daftarProdukKeranjangTable.layoutIfNeeded()
-        
+        daftarProdukKeranjangTable.allowsSelection = false
         keranjangBaseView.addSubview(checkOutButton)
         UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: daftarProdukKeranjangTable.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 15, corner: 24, heightAnchor: 48, widthAnchor: 0)
         print("checkOutButton :", checkOutButton.frame.size.width)
@@ -187,14 +205,73 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
             title: "PRODUK", style: .plain, target: nil, action: nil)
         
     }
+    
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func checkBoxAction(sender : UIButton){
+        let selectedIndexPath = IndexPath(row: sender.tag, section: 0)
+        if selectRows.contains(selectedIndexPath){
+            self.selectRows.remove(at: self.selectRows.firstIndex(of: selectedIndexPath)!)
+        }else{
+            self.selectRows.append(selectedIndexPath)
+        }
+        self.daftarProdukKeranjangTable.reloadData()
+    }
+    
+    @objc func pilihSemuaProduk(sender : UIButton){
+        self.selectRows = getAllIndexPath()
+        self.daftarProdukKeranjangTable.reloadData()
+    }
+    
+    func getAllIndexPath()->[IndexPath]{
+        var indexPaths : [IndexPath] = []
+          if pilihSemuaProdukButton.tag == 0{
+            for j in 0..<daftarProdukKeranjangTable.numberOfRows(inSection: 0){
+                indexPaths.append(IndexPath(row: j, section: 0))
+                pilihSemuaProdukButton.setImage(UIImage(named: "checkBoxIcon"), for: .normal)
+                pilihSemuaProdukButton.layer.borderColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+               
+            }
+             pilihSemuaProdukButton.tag += 1
+          }else {
+                indexPaths.removeAll()
+                pilihSemuaProdukButton.setImage(UIImage(named: "checkBoxDisableIcon"), for: .normal)
+                pilihSemuaProdukButton.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                pilihSemuaProdukButton.tag = 0
+            }
+            
+        return indexPaths
+    }
+    
+    @objc func deleteAllProduk(){
+        let alertDeleteAll = UIAlertController(title: "Hapus Semua Produk", message: "Apakah Anda yakin untuk menghapus semua produk?", preferredStyle: .alert)
+        alertDeleteAll.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertDeleteAll.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: {(action)-> Void in
+            self.jumlahProdukdiKreanjang = 0
+            self.daftarProdukKeranjangTable.reloadData()
+            self.trushButton.isEnabled = false
+        }))
+        self.present(alertDeleteAll, animated: true)
+    }
+    
+    @objc func deleteSelectProduk(sender : UIButton){
+        let selectedIndexPath = IndexPath(row: sender.tag, section: 0)
+        let alertDeleteProduct = UIAlertController(title: "Hapus Produk", message: "Apakah Anda yakin untuk menghapus produk ini ?", preferredStyle: .alert)
+
+        alertDeleteProduct.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: {(action)-> Void in
+            namaProdukArray.remove(at: selectedIndexPath.row)
+            self.daftarProdukKeranjangTable.reloadData()
+          
+        }))
+         alertDeleteProduct.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alertDeleteProduct, animated: true)
+    }
     
 }
 
-class daftarProdukKeranjangTableViewCell: UITableViewCell {
+class daftarProdukKeranjangTableViewCell: UITableViewCell  {
     let containerView = UIView()
     let checkCellButton = UIButton()
     let namaProdukLabel = UILabel()
@@ -213,7 +290,7 @@ class daftarProdukKeranjangTableViewCell: UITableViewCell {
         
         containerView.addSubview(checkCellButton)
         UIHelper.makeSmallButton(smallButton: checkCellButton, leadingAnchor: containerView.leadingAnchor, topAnchor: containerView.topAnchor, leadingConstant: 22, topConstant: 13, corner: 4, heightAnchor: 14, widthtAnchor: 14, borderWidth: 1, colorBorder: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
-        checkCellButton.setImage(UIImage(named: "checkfinish"), for: .normal)
+        checkCellButton.isUserInteractionEnabled = true
         checkCellButton.contentMode = .center
         
         containerView.addSubview(namaProdukLabel)
@@ -257,9 +334,6 @@ class daftarProdukKeranjangTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
     
-    
-    
-    
-    
 }
+
 

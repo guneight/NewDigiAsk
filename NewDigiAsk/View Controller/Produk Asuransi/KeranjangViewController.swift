@@ -35,8 +35,10 @@ class KeranjangViewController: UIViewController {
     let checkOutButton = UIButton()
     let trushButton = UIButton()
     
-    
-    let jumlahProdukdiKreanjang : Int = 10
+    var selectRows : [IndexPath] = []
+    var jumlahProdukdiKreanjang : Int = 10
+    let deskripsiProduk = ["Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam", "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam"]
+    let nominal = ["Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,13 +47,15 @@ class KeranjangViewController: UIViewController {
         view.layoutIfNeeded()
         setupUI()
         setupNavBarKeranjang()
+        pilihSemuaProdukButton.tag = 0
+        pilihSemuaProdukButton.addTarget(self, action: #selector(pilihSemuaProduk(sender:)), for: .touchUpInside)
+        trushButton.addTarget(self, action: #selector(deleteAllProduk), for: .touchUpInside)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         checkOutButton.addTarget(self, action: #selector(checkOutAction), for: .touchUpInside)
         
         
         // Do any additional setup after loading the view.
     }
-    
     
     @objc func checkOutAction(sender: Any){
         let checkOutVC = storyboard?.instantiateViewController(identifier: "CheckOutKeranjangViewController")  as! CheckOutKeranjangViewController
@@ -68,4 +72,7 @@ class KeranjangViewController: UIViewController {
         self.navigationController?.pushViewController(detailPolisBeliVC, animated: true)
         
     }
+    
+    
+    
 }
