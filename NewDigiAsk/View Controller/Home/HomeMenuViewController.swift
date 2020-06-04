@@ -34,12 +34,22 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     
     var indexProduk : Int = 0
     var loginStatus : Int = 0
-    
+    let promo = ["promo1","promo2","promo2","promo1"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionViewPromo.delegate = self
+        collectionViewPromo.dataSource = self
+        collectionViewProduct.delegate = self
+        collectionViewProduct.dataSource = self
+        collectionViewInfo.delegate = self
+        collectionViewInfo.dataSource = self
+        collectionViewGalery.delegate = self
+        collectionViewGalery.dataSource = self
+        
         UiSetup()
         cvSetup()
+        collectionViewProduct.reloadData()
         collectBannerPromo.reloadData()
         collectionViewPromo.reloadData()
         collectionViewInfo.reloadData()
@@ -58,19 +68,23 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.mapAction(sender:)))
         self.imageViewMap.addGestureRecognizer(gesture)
         
+        
         for family: String in UIFont.familyNames
-               {
-                   print(family)
-                   for names: String in UIFont.fontNames(forFamilyName: family)
-                   {
-                       print("== \(names)")
-                   }
-               }
+        {
+            print(family)
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                //                       print("== \(names)")
+            }
+        }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         cvSetup()
+        collectionViewProduct.reloadData()
         collectionViewInfo.reloadData()
         collectionViewPromo.reloadData()
         collectBannerPromo.reloadData()
@@ -82,17 +96,17 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     
     
     @objc func tabBarProfileAction (sender : UIButton){
-//        if (loginStatus == 0) {
-//        let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController")  as! LoginViewController
-//        self.navigationController?.pushViewController(loginVC, animated: true)
-//        print("pressss")
-//        }else if(loginStatus == 1){
-            let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController") as!ProfileViewController
-            self.navigationController?.pushViewController(profileVC, animated: true)
-//        }else{
-//            print("Login failed")
-//        }
-
+        //        if (loginStatus == 0) {
+        //        let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController")  as! LoginViewController
+        //        self.navigationController?.pushViewController(loginVC, animated: true)
+        //        print("pressss")
+        //        }else if(loginStatus == 1){
+        let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController") as!ProfileViewController
+        self.navigationController?.pushViewController(profileVC, animated: true)
+        //        }else{
+        //            print("Login failed")
+        //        }
+        
         
     }
     

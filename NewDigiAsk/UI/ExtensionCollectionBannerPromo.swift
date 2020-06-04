@@ -18,18 +18,17 @@ let collectionViewPromo : UICollectionView = {
     layout.scrollDirection = .horizontal
     layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     let cvPromo = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    cvPromo.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellpromo")
-    cvPromo.backgroundColor = UIColor.clear
+    cvPromo.register(collectionViewPromoCell.self, forCellWithReuseIdentifier: "cellpromo")
     return cvPromo
 }()
 
 let collectionViewProduct : UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .horizontal
-     layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+    layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
     let cvListProduct = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    cvListProduct.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellproduct")
-  
+    cvListProduct.register(collectionViewProductCell.self, forCellWithReuseIdentifier: "cellproduct")
+    
     return cvListProduct
 }()
 
@@ -53,57 +52,58 @@ let stackViewIndicator: UIStackView = {
     stackViewCV.translatesAutoresizingMaskIntoConstraints = false
     stackViewCV.spacing = 5
     return stackViewCV
-    }()
+}()
 
 
-    let collectBannerPromo : UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 19, bottom: 0, right: 0)
-        let cvBannerPromo = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cvBannerPromo.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellBannerPromo")
-        return cvBannerPromo
+let collectBannerPromo : UICollectionView = {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .horizontal
+    layout.sectionInset = UIEdgeInsets(top: 0, left: 19, bottom: 0, right: 0)
+    let cvBannerPromo = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    cvBannerPromo.register(PromoViewCell.self, forCellWithReuseIdentifier: "cellBannerPromo")
+    return cvBannerPromo
     
-    }()
+}()
 
 
-    let collectionViewInfo  : UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 19, bottom: 0, right: 0)
-        let cvInfo = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cvInfo.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellInfo")
-        return cvInfo
-
-    }()
-
-    let collectionViewGalery  : UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 19, bottom: 0, right: 0)
-        let cvGalery = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cvGalery.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellGalery")
-        return cvGalery
-    }()
-  
-    let viewColletionProduct = UIView()
-    let viewPromo = UIView()
-    let labelPromo = UILabel()
-    let viewInfo = UIView()
-    let labelInfo = UILabel()
-    let viewGalery = UIView()
-    let labelGalery = UILabel()
-
+let collectionViewInfo  : UICollectionView = {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .horizontal
+    layout.sectionInset = UIEdgeInsets(top: 0, left: 19, bottom: 0, right: 0)
+    let cvInfo = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    cvInfo.register(collectionViewInfoCell.self, forCellWithReuseIdentifier: "cellInfo")
+    return cvInfo
     
-    let indicatorbanner1 = UILabel()
-    let indicatorbanner2 = UILabel()
-    let indicatorbanner3 = UILabel()
-    let indicatorbanner4 = UILabel()
-    let indicatorbanner5 = UILabel()
-    let arrayIndicator = [indicatorbanner1, indicatorbanner2,indicatorbanner3, indicatorbanner4, indicatorbanner5]
-    var namaProdukArray = ["Kecelakaan Diri", "Kebakaran", "Kontruksi", "Tanggung Gugat", "Pengangkutan Barang", "Perjalanan", "Kerusakan Mesin", "Property All Risk", "Uang", "Alat Berat", "Penjaminan", "Kredit Perdagangan", "Kredit Serba Guna", "Surety Bond", "Kontra Bank Garnis", "Custom Bond"]
-    let infoPromo = ["info1","info2","info3"]
-    let galeri = ["galeri1","galeri2", "galeri3","galeri4"]
+}()
+
+let collectionViewGalery  : UICollectionView = {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .horizontal
+    layout.sectionInset = UIEdgeInsets(top: 0, left: 19, bottom: 0, right: 0)
+    let cvGalery = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    cvGalery.register(collectionViewGaleryCell.self, forCellWithReuseIdentifier: "cellGalery")
+    return cvGalery
+}()
+
+let viewColletionProduct = UIView()
+let viewPromo = UIView()
+let labelPromo = UILabel()
+let viewInfo = UIView()
+let labelInfo = UILabel()
+let viewGalery = UIView()
+let labelGalery = UILabel()
+
+
+let indicatorbanner1 = UILabel()
+let indicatorbanner2 = UILabel()
+let indicatorbanner3 = UILabel()
+let indicatorbanner4 = UILabel()
+let indicatorbanner5 = UILabel()
+let arrayIndicator = [indicatorbanner1, indicatorbanner2,indicatorbanner3, indicatorbanner4, indicatorbanner5]
+var namaProdukArray = ["Kecelakaan Diri", "Kebakaran", "Kontruksi", "Tanggung Gugat", "Pengangkutan Barang", "Perjalanan", "Kerusakan Mesin", "Property All Risk", "Uang", "Alat Berat", "Penjaminan", "Kredit Perdagangan", "Kredit Serba Guna", "Surety Bond", "Kontra Bank Garnis", "Custom Bond"]
+let infoPromo = ["info1","info2","info3"]
+let galeri = ["galeri1","galeri2", "galeri3","galeri4"]
+let info = ["Askrindo serahkan bantuan mobil pintar untuk Aceh Askrindo serahkan bantuan mobil pintar untuk Aceh"," Aceh Askrindo serahkan bantuan mobil pintar untuk Aceh", " serahkan bantuan mobil pintar untuk Aceh Askrindo serahkan  mobil pintar untuk Aceh","Askrindo pintar untuk Aceh Askrindo serahkan  mobil pintar untuk Aceh","Askrindo serahkan bantuan mobil pintar untuk Aceh Askrindo a Aceh"]
 
 
 extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -118,7 +118,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             whiteView.bottomAnchor.constraint(equalTo: baseView.bottomAnchor),
             whiteView.leadingAnchor.constraint(equalTo: baseView.leadingAnchor),
             whiteView.trailingAnchor.constraint(equalTo: baseView.trailingAnchor)
-            ])
+        ])
         
         baseView.addSubview(containerCollectionView)
         containerCollectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -130,8 +130,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         containerCollectionView.layer.masksToBounds = true
         containerCollectionView.layer.cornerRadius = 10
         
-        collectionViewPromo.delegate = self
-        collectionViewPromo.dataSource = self
+        
         containerCollectionView.addSubview(collectionViewPromo)
         collectionViewPromo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -139,11 +138,11 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             collectionViewPromo.leadingAnchor.constraint(equalTo: containerCollectionView.leadingAnchor),
             collectionViewPromo.trailingAnchor.constraint(equalTo: containerCollectionView.trailingAnchor),
             collectionViewPromo.bottomAnchor.constraint(equalTo: containerCollectionView.bottomAnchor)
-            ])
-
+        ])
+        
         collectionViewPromo.isPagingEnabled = true
         collectionViewPromo.showsHorizontalScrollIndicator = false
-
+        
         whiteView.addSubview(stackViewIndicator)
         stackViewIndicator.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -151,16 +150,16 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             stackViewIndicator.widthAnchor.constraint(equalToConstant: 45),
             stackViewIndicator.topAnchor.constraint(equalTo: whiteView.topAnchor, constant: 68),
             stackViewIndicator.centerXAnchor.constraint(equalTo: whiteView.centerXAnchor)
-            ])
+        ])
         
-
+        
         stackViewIndicator.addArrangedSubview(indicatorbanner1)
         indicatorbanner1.translatesAutoresizingMaskIntoConstraints = false
         indicatorbanner1.heightAnchor.constraint(equalToConstant: 5).isActive = true
         indicatorbanner1.widthAnchor.constraint(equalToConstant: 5).isActive = true
         indicatorbanner1.layer.masksToBounds = true
         indicatorbanner1.layer.cornerRadius = 2.5
-//        indicatorbanner1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        //        indicatorbanner1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         
         stackViewIndicator.addArrangedSubview(indicatorbanner2)
         indicatorbanner2.translatesAutoresizingMaskIntoConstraints = false
@@ -168,7 +167,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         indicatorbanner2.widthAnchor.constraint(equalToConstant: 5).isActive = true
         indicatorbanner2.layer.masksToBounds = true
         indicatorbanner2.layer.cornerRadius = 2.5
-//        indicatorbanner2.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
+        //        indicatorbanner2.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
         
         stackViewIndicator.addArrangedSubview(indicatorbanner3)
         indicatorbanner3.translatesAutoresizingMaskIntoConstraints = false
@@ -176,7 +175,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         indicatorbanner3.widthAnchor.constraint(equalToConstant: 5).isActive = true
         indicatorbanner3.layer.masksToBounds = true
         indicatorbanner3.layer.cornerRadius = 2.5
-//        indicatorbanner3.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
+        //        indicatorbanner3.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
         
         stackViewIndicator.addArrangedSubview(indicatorbanner4)
         indicatorbanner4.translatesAutoresizingMaskIntoConstraints = false
@@ -184,7 +183,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         indicatorbanner4.widthAnchor.constraint(equalToConstant: 5).isActive = true
         indicatorbanner4.layer.masksToBounds = true
         indicatorbanner4.layer.cornerRadius = 2.5
-//        indicatorbanner4.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
+        //        indicatorbanner4.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
         
         stackViewIndicator.addArrangedSubview(indicatorbanner5)
         indicatorbanner5.translatesAutoresizingMaskIntoConstraints = false
@@ -192,7 +191,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         indicatorbanner5.widthAnchor.constraint(equalToConstant: 5).isActive = true
         indicatorbanner5.layer.masksToBounds = true
         indicatorbanner5.layer.cornerRadius = 2.5
-//        indicatorbanner5.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
+        //        indicatorbanner5.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
         
         whiteView.addSubview(viewColletionProduct)
         viewColletionProduct.translatesAutoresizingMaskIntoConstraints = false
@@ -202,21 +201,20 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             viewColletionProduct.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
             viewColletionProduct.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor),
             viewColletionProduct.heightAnchor.constraint(equalToConstant: 223)
-
-            ])
+            
+        ])
         print(viewColletionProduct.frame.size.height)
         print(viewColletionProduct.frame.size.width)
         viewColletionProduct.backgroundColor = #colorLiteral(red: 0.9294117647, green: 0.9294117647, blue: 0.9294117647, alpha: 0.2756046661)
         viewColletionProduct.layoutIfNeeded()
-
+        
         let headerCollectionProduct = UILabel()
         viewColletionProduct.addSubview(headerCollectionProduct)
         UIHelper.makeLabel(label: headerCollectionProduct, corner: 0, allignment: .left, leadingAnchor: viewColletionProduct.leadingAnchor, trailingAnchor: viewColletionProduct.trailingAnchor, topAnchor: viewColletionProduct.topAnchor, leadingConstant: 19, trailingConstant: -19, topConstant: 0, heightAnchor: 18, widthAnchor: viewColletionProduct.frame.size.width)
         
         UIHelper.setTextLabel(label: headerCollectionProduct, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Produk Asuransi", kerning: 0.3)
-
-        collectionViewProduct.delegate = self
-        collectionViewProduct.dataSource = self
+        
+        
         viewColletionProduct.addSubview(collectionViewProduct)
         collectionViewProduct.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -224,22 +222,22 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             collectionViewProduct.bottomAnchor.constraint(equalTo: viewColletionProduct.bottomAnchor, constant:-12.36),
             collectionViewProduct.leadingAnchor.constraint(equalTo: viewColletionProduct.leadingAnchor, constant:10),
             collectionViewProduct.trailingAnchor.constraint(equalTo: viewColletionProduct.trailingAnchor, constant: -10)
-            ])
+        ])
         collectionViewProduct.showsHorizontalScrollIndicator = false
         collectionViewProduct.backgroundColor = UIColor.clear.withAlphaComponent(0)
         collectionViewProduct.layoutIfNeeded()
-
-
+        
+        
         whiteView.addSubview(labelPromo)
         UIHelper.makeLabel(label: labelPromo, corner: 0, allignment: .left, leadingAnchor: whiteView.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: collectionViewProduct.bottomAnchor,   leadingConstant: 19, trailingConstant: -19, topConstant: 17.64, heightAnchor: 18, widthAnchor: whiteView.frame.size.width)
         UIHelper.setTextLabel(label: labelPromo, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Promo", kerning: 0.3)
-
-
-
+        
+        
+        
         whiteView.addSubview(viewPromo)
         UIHelper.makeView(view: viewPromo, leadingAnchor: whiteView.leadingAnchor,trailingAnchor: whiteView.trailingAnchor, topAnchor: labelPromo.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 6, corner: 0,heightAnchor: 112, widthAnchor: 0)
-         viewPromo.backgroundColor = UIColor.clear.withAlphaComponent(0)
-
+        viewPromo.backgroundColor = UIColor.clear.withAlphaComponent(0)
+        
         collectBannerPromo.delegate = self
         collectBannerPromo.dataSource = self
         viewPromo.addSubview(collectBannerPromo)
@@ -248,18 +246,16 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         collectBannerPromo.backgroundColor = UIColor.clear.withAlphaComponent(0)
         
         collectBannerPromo.showsHorizontalScrollIndicator = false
-
+        
         whiteView.addSubview(viewInfo)
         UIHelper.makeView(view: viewInfo, leadingAnchor: whiteView.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewPromo.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 17.64, corner: 0,  heightAnchor: 180, widthAnchor: 0)
-         viewInfo.backgroundColor = UIColor.clear.withAlphaComponent(0)
+        viewInfo.backgroundColor = UIColor.clear.withAlphaComponent(0)
         
         viewInfo.addSubview(labelInfo)
         UIHelper.makeLabel(label: labelInfo, corner: 0, allignment: .left, leadingAnchor: viewInfo.leadingAnchor, trailingAnchor: viewInfo.trailingAnchor, topAnchor: viewInfo.topAnchor, leadingConstant: 19, trailingConstant: 19, topConstant: 0, heightAnchor: 18, widthAnchor: viewInfo.frame.size.width)
         UIHelper.setTextLabel(label: labelInfo, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Info", kerning: 0.3)
-
         
-        collectionViewInfo.delegate = self
-        collectionViewInfo.dataSource = self
+        
         viewInfo.addSubview(collectionViewInfo)
         UIHelper.makeContraintCollectionVIew(collectionView: collectionViewInfo, leadingAnchor: viewInfo.leadingAnchor, trailingAnchor: viewInfo.trailingAnchor, topAnchor: labelInfo.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 6, heightAnchor: 156, widthAnchor: 0)
         collectionViewInfo.backgroundColor = UIColor.clear.withAlphaComponent(0)
@@ -272,10 +268,8 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         viewGalery.addSubview(labelGalery)
         UIHelper.makeLabel(label: labelGalery, corner: 0, allignment: .left, leadingAnchor: viewGalery.leadingAnchor, trailingAnchor: viewGalery.trailingAnchor, topAnchor: viewGalery.topAnchor, leadingConstant: 19, trailingConstant: 19, topConstant: 0, heightAnchor: 18, widthAnchor: 0)
         UIHelper.setTextLabel(label: labelGalery, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Galeri", kerning: 0.3)
-
         
-        collectionViewGalery.delegate = self
-        collectionViewGalery.dataSource = self
+        
         viewGalery.addSubview(collectionViewGalery)
         UIHelper.makeContraintCollectionVIew(collectionView: collectionViewGalery, leadingAnchor: viewGalery.leadingAnchor, trailingAnchor: viewGalery.trailingAnchor, topAnchor: labelGalery.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 8, heightAnchor: 160, widthAnchor: 0)
         collectionViewGalery.backgroundColor = UIColor.white.withAlphaComponent(0)
@@ -289,8 +283,6 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         viewMap.addSubview(labelMap)
         UIHelper.makeLabel(label: labelMap, corner: 0, allignment: .left, leadingAnchor: viewMap.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewMap.topAnchor, leadingConstant: 19, trailingConstant: 19, topConstant: 0, heightAnchor: 18, widthAnchor: 0)
         UIHelper.setTextLabel(label: labelMap, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Map ", kerning: 1)
-        
-
         
         viewMap.addSubview(imageViewMap)
         imageViewMap.translatesAutoresizingMaskIntoConstraints = false
@@ -306,7 +298,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         imageViewMap.layer.masksToBounds = true
         imageViewMap.layer.cornerRadius = 5
         imageViewMap.layoutIfNeeded()
-
+        
         
     }
     
@@ -333,8 +325,8 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         }else if collectionView == collectionViewPromo{
             return 5
         }else if collectionView == collectBannerPromo{
-             print("lewat")
-            return 10
+            print("lewat")
+            return promo.count
         }else if collectionView == collectionViewInfo{
             return infoPromo.count
         }
@@ -348,48 +340,15 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collectionViewProduct{
-            let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cellproduct", for: indexPath)
-            cell.layer.masksToBounds = true
-            cell.layer.cornerRadius = 10
-            
-            let containerIconImage = UIView()
-            cell.addSubview(containerIconImage)
-            UIHelper.makeView(view: containerIconImage, leadingAnchor: cell.leadingAnchor, trailingAnchor: cell.trailingAnchor, topAnchor: cell.topAnchor, leadingConstant: 2, trailingConstant: -2, topConstant: 0, corner: 8, heightAnchor: 56, widthAnchor: 56)
-            containerIconImage.backgroundColor = .white
-            containerIconImage.layer.shadowColor = UIColor.black.cgColor
-            containerIconImage.layer.shadowOpacity = 0.5
-            containerIconImage.layer.shadowOffset = .zero
-            containerIconImage.layer.shadowRadius = 10
-            containerIconImage.layer.shadowPath = UIBezierPath(rect: containerIconImage.bounds).cgPath
-            containerIconImage.layer.shouldRasterize = true
-            
-            let imageIconProduct = UIImageView()
-            containerIconImage.addSubview(imageIconProduct)
-            UIHelper.makeImageView(imageView: imageIconProduct, leadingAnchor: containerIconImage.leadingAnchor, topAnchor: containerIconImage.topAnchor, leadingConstant: 14, topConstant: 13, corner: 5, heightAnchor: 27)
-            imageIconProduct.widthAnchor.constraint(equalToConstant: 27).isActive = true
-            imageIconProduct.image = UIImage(named: "\(namaProdukArray[indexPath.row]).png")
-            imageIconProduct.contentMode = .scaleAspectFit
-            imageIconProduct.backgroundColor?.withAlphaComponent(0)
-            
-            let labelIcon = UILabel()
-            cell.contentView.addSubview(labelIcon)
-            UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: cell.leadingAnchor, trailingAnchor: cell.trailingAnchor ,topAnchor: containerIconImage.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: 23, widthAnchor: 0)
-            labelIcon.numberOfLines = 0
-            labelIcon.textAlignment = .center
-            UIHelper.setTextLabel(label: labelIcon, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: "\(namaProdukArray[indexPath.row])", kerning: 0.5)
-                
-            
+            let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cellproduct", for: indexPath) as! collectionViewProductCell
+            cell.imageIconProduct.image = UIImage(named: namaProdukArray[indexPath.row])
+            UIHelper.setTextLabel(label: cell.labelIcon, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: namaProdukArray[indexPath.row], kerning: 0.5)
             return cell
             
         }else if collectionView == collectionViewPromo{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellpromo", for: indexPath)
-            let bannerPromoImage  = UIImageView()
-            cell.contentView.addSubview(bannerPromoImage)
-            UIHelper.makeImageView(imageView: bannerPromoImage, leadingAnchor: cell.contentView.leadingAnchor, topAnchor: cell.contentView.topAnchor, leadingConstant: 0, topConstant: 0, corner: 0, heightAnchor: cell.frame.size.height)
-            bannerPromoImage.widthAnchor.constraint(equalToConstant: containerCollectionView.frame.size.width).isActive = true
-            bannerPromoImage.image = UIImage(named: "banner1.png")
-            bannerPromoImage.contentMode = .scaleAspectFit
-           
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellpromo", for: indexPath) as! collectionViewPromoCell
+            cell.imageTopPromo.image = UIImage(named: "banner1")
+            
             if indexPath.row == 0 {
                 indicatorbanner1.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
                 indicatorbanner2.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
@@ -427,78 +386,28 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             return cell
             
         }else if collectionView == collectBannerPromo{
-            let cell3 = collectionView.dequeueReusableCell(withReuseIdentifier: "cellBannerPromo", for: indexPath)
+            let cell3 = collectionView.dequeueReusableCell(withReuseIdentifier: "cellBannerPromo", for: indexPath) as! PromoViewCell
             cell3.layer.masksToBounds = true
             cell3.layer.cornerRadius = 10
-            
-             let imagePromo = UIImageView()
-            cell3.addSubview(imagePromo)
-            UIHelper.makeImageView(imageView: imagePromo, leadingAnchor: cell3.leadingAnchor,  topAnchor: cell3.topAnchor, leadingConstant: 0,  topConstant: 0, corner: 10, heightAnchor: 112 )
-            imagePromo.widthAnchor.constraint(equalToConstant: 274).isActive = true
-            imagePromo.image = UIImage(named: "promo1.png")
-            imagePromo.contentMode = .scaleAspectFit
+            cell3.imagePromo.image = UIImage(named: promo[indexPath.row])
             return cell3
             
         }else if collectionView == collectionViewInfo{
-            let cell4 = collectionView.dequeueReusableCell(withReuseIdentifier: "cellInfo", for: indexPath)
+            let cell4 = collectionView.dequeueReusableCell(withReuseIdentifier: "cellInfo", for: indexPath) as! collectionViewInfoCell
             cell4.layer.masksToBounds = true
             cell4.layer.cornerRadius = 10
-            
-            let imageInfo = UIImageView()
-            cell4.addSubview(imageInfo)
-            UIHelper.makeImageView(imageView: imageInfo, leadingAnchor: cell4.leadingAnchor, topAnchor: cell4.topAnchor, leadingConstant: 0,  topConstant: 0, corner: 10, heightAnchor: 82)
-            imageInfo.widthAnchor.constraint(equalToConstant: 147).isActive = true
-            imageInfo.image = UIImage(named: "\(infoPromo[indexPath.row])")
-            imageInfo.contentMode = .scaleAspectFit
-            
-            let imageTime = UIImageView()
-            cell4.addSubview(imageTime)
-            UIHelper.makeImageView(imageView: imageTime, leadingAnchor: cell4.leadingAnchor,  topAnchor: imageInfo.bottomAnchor, leadingConstant: 0, topConstant: 5.26, corner: 0, heightAnchor: 10)
-            imageTime.widthAnchor.constraint(equalToConstant: 10).isActive = true
-            imageTime.image = UIImage(named: "time")
-            imageTime.contentMode = .scaleAspectFit
-            
-            let labelTime = UILabel()
-            cell4.addSubview(labelTime)
-            UIHelper.makeLabel(label: labelTime, corner: 0, allignment: .left, leadingAnchor: imageTime.trailingAnchor, trailingAnchor: cell4.trailingAnchor, topAnchor: imageInfo.bottomAnchor, leadingConstant: 3, trailingConstant: 0, topConstant: 5.26, heightAnchor: 10, widthAnchor: 0)
-             UIHelper.setTextLabel(label: labelTime, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: "24 Oktober 2019", kerning: 0.5)
-            
-            let labeDeskripsilnfo = UILabel()
-            cell4.addSubview(labeDeskripsilnfo)
-            UIHelper.makeLabel(label: labeDeskripsilnfo, corner: 0, allignment: .left, leadingAnchor: cell4.leadingAnchor, trailingAnchor: cell4.trailingAnchor, topAnchor: imageTime.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 2, heightAnchor: 156-105, widthAnchor: 0)
-             UIHelper.setTextLabel(label: labeDeskripsilnfo, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 11, text: "Askrindo serahkan bantuan mobil pintar untuk Aceh Askrindo serahkan bantuan mobil pintar untuk Aceh", kerning: 0.8)
-            labeDeskripsilnfo.numberOfLines = 3
+            cell4.imageInfo.image = UIImage(named: infoPromo[indexPath.row])
+            UIHelper.setTextLabel(label: cell4.labelTime, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: "24 Oktober 2019", kerning: 0.5)
+            UIHelper.setTextLabel(label: cell4.labeDeskripsilnfo, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 11, text: info[indexPath.row], kerning: 0.5)
             return cell4
             
         }else if collectionView == collectionViewGalery{
-            let cell5 = collectionView.dequeueReusableCell(withReuseIdentifier: "cellGalery", for: indexPath)
+            let cell5 = collectionView.dequeueReusableCell(withReuseIdentifier: "cellGalery", for: indexPath) as! collectionViewGaleryCell
             cell5.layer.masksToBounds = true
             cell5.layer.cornerRadius = 10
-            
-            let imageGalery = UIImageView()
-            cell5.addSubview(imageGalery)
-            UIHelper.makeImageView(imageView: imageGalery, leadingAnchor: cell5.leadingAnchor, topAnchor: cell5.topAnchor, leadingConstant: 0, topConstant: 0, corner: 10, heightAnchor: 92)
-            imageGalery.widthAnchor.constraint(equalToConstant: 96).isActive = true
-            imageGalery.image = UIImage(named: "\(galeri[indexPath.row])")
-            imageGalery.contentMode = .scaleAspectFit
-            
-            let imageTime = UIImageView()
-            cell5.addSubview(imageTime)
-            UIHelper.makeImageView(imageView: imageTime, leadingAnchor: cell5.leadingAnchor, topAnchor: imageGalery.bottomAnchor, leadingConstant: 0, topConstant: 6, corner: 0, heightAnchor: 10)
-            imageTime.widthAnchor.constraint(equalToConstant: 10).isActive = true
-            imageTime.image = UIImage(named: "time.png")
-            
-
-            let labelTime = UILabel()
-            cell5.addSubview(labelTime)
-            UIHelper.makeLabel(label: labelTime, corner: 0, allignment: .left, leadingAnchor: imageTime.trailingAnchor, trailingAnchor: cell5.trailingAnchor, topAnchor: imageGalery.bottomAnchor, leadingConstant: 3, trailingConstant: 0, topConstant: 6, heightAnchor: 10, widthAnchor: 0)
-            UIHelper.setTextLabel(label: labelTime, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: "24 Oktober 2019", kerning: 0.3)
-
-            let labelGalery = UILabel()
-            cell5.addSubview(labelGalery)
-            UIHelper.makeLabel(label: labelGalery, corner: 0, allignment: .left, leadingAnchor: cell5.leadingAnchor, trailingAnchor: cell5.trailingAnchor, topAnchor: imageTime.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 2, heightAnchor: 40, widthAnchor: 0)
-            UIHelper.setTextLabel(label: labelGalery, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 9, text: "Manfaat The Hijau boat kesehatan anfaat The Hijau boat kesehatan", kerning: 0.6)
-            labelGalery.numberOfLines = 3
+            cell5.imageGalery.image = UIImage(named: galeri[indexPath.row])
+            UIHelper.setTextLabel(label: cell5.labelTime, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: "24 Oktober 2019", kerning: 0.3)
+            UIHelper.setTextLabel(label: cell5.labelGalery, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 9, text: "Manfaat The Hijau boat kesehatan anfaat The Hijau boat kesehatan", kerning: 0.5)
             return cell5
             
         }else{
@@ -545,12 +454,12 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-     
+        
         indexProduk = indexPath.row
         if collectionView == collectionViewProduct {
-        let deskripsiProdukVC  = storyboard?.instantiateViewController(identifier: "ProdukDetailViewController") as! ProdukDetailViewController
-        deskripsiProdukVC.indexProdukSelect = indexProduk
-        navigationController?.pushViewController(deskripsiProdukVC, animated: true)
+            let deskripsiProdukVC  = storyboard?.instantiateViewController(identifier: "ProdukDetailViewController") as! ProdukDetailViewController
+            deskripsiProdukVC.indexProdukSelect = indexProduk
+            navigationController?.pushViewController(deskripsiProdukVC, animated: true)
         }else if  collectionView == collectionViewPromo{
             if let url = URL(string: "https://www.askrindo.co.id") {
                 UIApplication.shared.open(url)
@@ -570,6 +479,167 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
     
 }
 
-class BannerPromoCollectionViewCell: UICollectionViewCell {
-   
+
+
+class collectionViewPromoCell : UICollectionViewCell{
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViewPromo()
+    }
+    let imageTopPromo = UIImageView()
+    func setupViewPromo(){
+        addSubview(imageTopPromo)
+        imageTopPromo.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageTopPromo.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageTopPromo.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageTopPromo.topAnchor.constraint(equalTo: topAnchor),
+            imageTopPromo.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        imageTopPromo.contentMode = .scaleAspectFill
+        imageTopPromo.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
+
+class collectionViewProductCell : UICollectionViewCell{
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViewProduct()
+    }
+    
+    let containerIconImage = UIView()
+    let imageIconProduct = UIImageView()
+    let labelIcon = UILabel()
+    func setupViewProduct(){
+        addSubview(containerIconImage)
+        UIHelper.makeView(view: containerIconImage, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: topAnchor, leadingConstant: 2, trailingConstant: -2, topConstant: 0, corner: 8, heightAnchor: 56, widthAnchor: 56)
+        containerIconImage.backgroundColor = .white
+        containerIconImage.layer.shadowColor = UIColor.black.cgColor
+        containerIconImage.layer.shadowOpacity = 1
+        containerIconImage.layer.shadowOffset = .zero
+        containerIconImage.layer.shadowRadius = 10
+        containerIconImage.layer.shadowPath = UIBezierPath(rect: containerIconImage.bounds).cgPath
+        containerIconImage.layer.shouldRasterize = true
+        
+        containerIconImage.addSubview(imageIconProduct)
+        UIHelper.makeImageView(imageView: imageIconProduct, leadingAnchor: containerIconImage.leadingAnchor, topAnchor: containerIconImage.topAnchor, leadingConstant: 14, topConstant: 14, corner: 5, heightAnchor: 28)
+        imageIconProduct.widthAnchor.constraint(equalToConstant: 28).isActive = true
+        imageIconProduct.contentMode = .scaleAspectFit
+        imageIconProduct.backgroundColor?.withAlphaComponent(0)
+        
+        addSubview(labelIcon)
+        UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor ,topAnchor: containerIconImage.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: 23, widthAnchor: 0)
+        labelIcon.numberOfLines = 0
+        
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class PromoViewCell: UICollectionViewCell {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViewPromo()
+    }
+    
+    let imagePromo = UIImageView()
+    func setupViewPromo(){
+        addSubview(imagePromo)
+        imagePromo.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imagePromo.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imagePromo.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imagePromo.topAnchor.constraint(equalTo: topAnchor),
+            imagePromo.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        imagePromo.contentMode = .scaleAspectFit
+        imagePromo.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class collectionViewInfoCell: UICollectionViewCell {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViewInfo()
+    }
+    
+    let imageInfo = UIImageView()
+    let imageTime = UIImageView()
+    let labelTime = UILabel()
+    let labeDeskripsilnfo = UILabel()
+    
+    func setupViewInfo(){
+        addSubview(imageInfo)
+        UIHelper.makeImageView(imageView: imageInfo, leadingAnchor: leadingAnchor, topAnchor:topAnchor, leadingConstant: 0,  topConstant: 0, corner: 10, heightAnchor: 82)
+        imageInfo.widthAnchor.constraint(equalToConstant: 147).isActive = true
+        imageInfo.contentMode = .scaleAspectFit
+        
+        addSubview(imageTime)
+        UIHelper.makeImageView(imageView: imageTime, leadingAnchor: leadingAnchor,  topAnchor: imageInfo.bottomAnchor, leadingConstant: 0, topConstant: 5.26, corner: 0, heightAnchor: 10)
+        imageTime.widthAnchor.constraint(equalToConstant: 10).isActive = true
+        imageTime.image = UIImage(named: "time")
+        imageTime.contentMode = .scaleAspectFit
+        
+        addSubview(labelTime)
+        UIHelper.makeLabel(label: labelTime, corner: 0, allignment: .left, leadingAnchor: imageTime.trailingAnchor, trailingAnchor: trailingAnchor, topAnchor: imageInfo.bottomAnchor, leadingConstant: 3, trailingConstant: 0, topConstant: 5.26, heightAnchor: 10, widthAnchor: 0)
+        
+        addSubview(labeDeskripsilnfo)
+        UIHelper.makeLabel(label: labeDeskripsilnfo, corner: 0, allignment: .left, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: imageTime.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 2, heightAnchor: 156-105, widthAnchor: 0)
+        labeDeskripsilnfo.numberOfLines = 3
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+    
+    class collectionViewGaleryCell: UICollectionViewCell {
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            setupViewGalery()
+        }
+        
+        let imageGalery = UIImageView()
+        let imageTime = UIImageView()
+        let labelTime = UILabel()
+        let labelGalery = UILabel()
+        
+        func setupViewGalery(){
+            addSubview(imageGalery)
+            UIHelper.makeImageView(imageView: imageGalery, leadingAnchor: leadingAnchor, topAnchor: topAnchor, leadingConstant: 0, topConstant: 0, corner: 10, heightAnchor: 92)
+            imageGalery.widthAnchor.constraint(equalToConstant: 96).isActive = true
+            imageGalery.contentMode = .scaleAspectFit
+            
+            addSubview(imageTime)
+            UIHelper.makeImageView(imageView: imageTime, leadingAnchor: leadingAnchor, topAnchor: imageGalery.bottomAnchor, leadingConstant: 0, topConstant: 6, corner: 0, heightAnchor: 10)
+            imageTime.widthAnchor.constraint(equalToConstant: 10).isActive = true
+            imageTime.image = UIImage(named: "time.png")
+            
+            addSubview(labelTime)
+            UIHelper.makeLabel(label: labelTime, corner: 0, allignment: .left, leadingAnchor: imageTime.trailingAnchor, trailingAnchor: trailingAnchor, topAnchor: imageGalery.bottomAnchor, leadingConstant: 3, trailingConstant: 0, topConstant: 6, heightAnchor: 10, widthAnchor: 0)
+            
+            addSubview(labelGalery)
+            UIHelper.makeLabel(label: labelGalery, corner: 0, allignment: .left, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: imageTime.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 2, heightAnchor: 40, widthAnchor: 0)
+            labelGalery.numberOfLines = 3
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+}
+
+

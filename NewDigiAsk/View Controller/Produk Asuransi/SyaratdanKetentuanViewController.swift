@@ -40,9 +40,11 @@ class SyaratdanKetentuanViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
         setupNavBarSyaratdanKetentuan()
         view.layoutIfNeeded()
+        setupAnimation()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         setujuButton.addTarget(self, action: #selector(setujuAction(sender:)), for: .touchUpInside)
         // Do any additional setup after loading the view.

@@ -10,6 +10,8 @@ import UIKit
 
 extension SyaratdanKetentuanViewController {
     
+   
+    
     func setupUI(){
         let height = view.frame.size.height
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
@@ -127,7 +129,7 @@ extension SyaratdanKetentuanViewController {
         
         syaratDanKetentuanView.addSubview(setujuButton)
         UIHelper.makeButton(button: setujuButton, leadingAnchor: syaratDanKetentuanView.leadingAnchor, trailingAnchor: syaratDanKetentuanView.trailingAnchor, topAnchor:SyaratDanKetentuanScrollView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
-        setujuButton.backgroundColor = #colorLiteral(red: 0.8509803922, green: 0.8509803922, blue: 0.8509803922, alpha: 1)
+        setujuButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         setujuButton.setTitle("SETUJU", for: .normal)
         
         SyaratDanKetentuanScrollView.addSubview(syaratDanKetentuanContainerView)
@@ -169,8 +171,16 @@ extension SyaratdanKetentuanViewController {
             title: "PRODUK", style: .plain, target: nil, action: nil)
         
     }
+    
     @objc func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func setupAnimation(){
+        UIButton.animate(withDuration: 0.5, delay: 0, options: [.repeat, .autoreverse], animations: {
+               self.setujuButton.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+           }, completion: nil)
+           
+       }
 }
 
