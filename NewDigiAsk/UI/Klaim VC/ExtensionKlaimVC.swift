@@ -30,7 +30,7 @@ extension KlaimViewController : UITableViewDelegate, UITableViewDataSource{
     
     func setupUI(){
         let width = view.frame.size.width
-//        let hegiht = view.frame.size.height
+        //        let hegiht = view.frame.size.height
         view.backgroundColor = .white
         view.addSubview(polisSearchBar)
         polisSearchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -57,20 +57,20 @@ extension KlaimViewController : UITableViewDelegate, UITableViewDataSource{
         
         view.addSubview(polisEmptyImage)
         polisEmptyImage.translatesAutoresizingMaskIntoConstraints = false
-               NSLayoutConstraint.activate([
-                   polisEmptyImage.topAnchor.constraint(equalTo: polisfilterView.bottomAnchor, constant: 15),
-                   polisEmptyImage.widthAnchor.constraint(equalToConstant: 204),
-                   polisEmptyImage.heightAnchor.constraint(equalToConstant: 194),
-                   polisEmptyImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
-               ])
-               polisEmptyImage.image = UIImage(named: "emptyImage")
-               polisEmptyImage.contentMode = .center
-               
-               view.addSubview(polisEmptyLabel)
-               UIHelper.makeLabel(label: polisEmptyLabel, corner: 0, allignment: .center, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: polisEmptyImage.bottomAnchor, leadingConstant: 50, trailingConstant: -50, topConstant: 0, heightAnchor: 40, widthAnchor: 0)
-               polisEmptyLabel.numberOfLines = 2
-               polisEmptyLabel.text = "TIDAK DITEMUKAN DATA KLAIM YANG DITOLAK"
-               polisEmptyLabel.font = UIFont(name: "AvantGarde Bk BT", size: 12)
+        NSLayoutConstraint.activate([
+            polisEmptyImage.topAnchor.constraint(equalTo: polisfilterView.bottomAnchor, constant: 15),
+            polisEmptyImage.widthAnchor.constraint(equalToConstant: 204),
+            polisEmptyImage.heightAnchor.constraint(equalToConstant: 194),
+            polisEmptyImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+        ])
+        polisEmptyImage.image = UIImage(named: "emptyImage")
+        polisEmptyImage.contentMode = .center
+        
+        view.addSubview(polisEmptyLabel)
+        UIHelper.makeLabel(label: polisEmptyLabel, corner: 0, allignment: .center, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: polisEmptyImage.bottomAnchor, leadingConstant: 50, trailingConstant: -50, topConstant: 0, heightAnchor: 40, widthAnchor: 0)
+        polisEmptyLabel.numberOfLines = 2
+        polisEmptyLabel.text = "TIDAK DITEMUKAN DATA KLAIM YANG DITOLAK"
+        polisEmptyLabel.font = UIFont(name: "AvantGarde Bk BT", size: 12)
         view.addSubview(polisPendingTableView)
         polisPendingTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -85,7 +85,7 @@ extension KlaimViewController : UITableViewDelegate, UITableViewDataSource{
         
         polisPendingTableView.register(PolisakanKlaimTableViewCell.self, forCellReuseIdentifier: "polisakanKlaim")
         
-       
+        
         
         
     }
@@ -100,12 +100,15 @@ extension KlaimViewController : UITableViewDelegate, UITableViewDataSource{
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
-        navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "MONITORING KLAIM", style: .plain, target: nil, action: nil)
-              
+      let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+        UIHelper.setTextLabel(label: titleLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "HOME", kerning: 0)
+        navigationItem.titleView = titleLabel
+        
+        
     }
     @objc func backButtonTapped() {
-             navigationController?.popViewController(animated: true)
-           }
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 class PolisakanKlaimTableViewCell : UITableViewCell{
@@ -185,10 +188,10 @@ class PolisakanKlaimTableViewCell : UITableViewCell{
         UIHelper.makeLabel(label: deskripsiProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: lineNamaProduk.bottomAnchor, leadingConstant: 12, trailingConstant: -20, topConstant: 5, heightAnchor: 40, widthAnchor: 0)
         deskripsiProdukLabel.numberOfLines = 0
         UIHelper.setTextLabel(label: deskripsiProdukLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.65), weight: .regular, fontSize: 10, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam", kerning: 0.5)
-                
+        
         containerProdukView.addSubview(hargaProdukLabel)
         UIHelper.makeLabel(label: hargaProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: deskripsiProdukLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -20, topConstant: 5, heightAnchor: 17, widthAnchor:   0)
-         UIHelper.setTextLabel(label: hargaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 12, text: "Rp 250.000,-", kerning: 0.5)
+        UIHelper.setTextLabel(label: hargaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 12, text: "Rp 250.000,-", kerning: 0.5)
         
         self.contentView.addSubview(grayLinePolis)
         UIHelper.makeView(view: grayLinePolis, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: containerProdukView.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 17, corner: 0, heightAnchor: 7, widthAnchor: 0)

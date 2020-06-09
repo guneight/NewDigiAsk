@@ -10,7 +10,7 @@ import UIKit
 
 extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return namaProdukArray.count
+        return namaProdukArrays.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -186,7 +186,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         daftarProdukKeranjangTable.layoutIfNeeded()
         daftarProdukKeranjangTable.allowsSelection = false
         keranjangBaseView.addSubview(checkOutButton)
-        UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: daftarProdukKeranjangTable.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 15, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: daftarProdukKeranjangTable.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 30, corner: 24, heightAnchor: 48, widthAnchor: 0)
         print("checkOutButton :", checkOutButton.frame.size.width)
         checkOutButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         checkOutButton.setTitle("CHECKOUT", for: .normal)
@@ -201,8 +201,9 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
-        navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "PRODUK", style: .plain, target: nil, action: nil)
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+               UIHelper.setTextLabel(label: titleLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "IDENTITAS", kerning: 0)
+               navigationItem.titleView = titleLabel
         
     }
     
@@ -249,9 +250,12 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         let alertDeleteAll = UIAlertController(title: "Hapus Semua Produk", message: "Apakah Anda yakin untuk menghapus semua produk?", preferredStyle: .alert)
         alertDeleteAll.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alertDeleteAll.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: {(action)-> Void in
-            self.jumlahProdukdiKreanjang = 0
+            self.namaProdukArrays.removeAll()
             self.daftarProdukKeranjangTable.reloadData()
             self.trushButton.isEnabled = false
+            self.checkOutButton.setTitle(" < PILIH PRODUK", for: .normal)
+            self.checkOutButton.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+            
         }))
         self.present(alertDeleteAll, animated: true)
     }
@@ -261,7 +265,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         let alertDeleteProduct = UIAlertController(title: "Hapus Produk", message: "Apakah Anda yakin untuk menghapus produk ini ?", preferredStyle: .alert)
 
         alertDeleteProduct.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: {(action)-> Void in
-            namaProdukArray.remove(at: selectedIndexPath.row)
+            self.namaProdukArrays.remove(at: selectedIndexPath.row)
             self.daftarProdukKeranjangTable.reloadData()
           
         }))

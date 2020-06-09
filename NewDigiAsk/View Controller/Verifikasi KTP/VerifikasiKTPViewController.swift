@@ -16,6 +16,7 @@ class VerifikasiKTPViewController: UIViewController {
     let keteranganLabel = UILabel()
     let nomorKTPheaderLabel = UILabel()
     let nomorKTPTextField = UITextField()
+    var nomorKTPTextFieldText : Int?
     let alertNomorKtpLabel = UILabel()
     
     let panduanPhotoBaseView = UIView()
@@ -33,6 +34,8 @@ class VerifikasiKTPViewController: UIViewController {
     }()
     let lineSegmented = UIView()
     var step = 0
+    var nomorKtp = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -41,9 +44,13 @@ class VerifikasiKTPViewController: UIViewController {
         ubahLink()
         ambilFotoKTP()
         alertNomorKTP()
+        checkStep()
+        self.view.endEditing(true)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
         // Do any additional setup after loading the view.
     }
-    
     
     func selanjutnya (){
         selanjutnyaButton.addTarget(self, action: #selector(selanjutnyaAction), for: .touchUpInside)
@@ -57,32 +64,51 @@ class VerifikasiKTPViewController: UIViewController {
     
     // MARK: - Selanjutnya
     
-    @objc func selanjutnyaAction(sender: UIButton){
-        
-        if step == 0 {
-            
-            if nomorKTPTextField.text?.isNomorKTP == true {
-            step+=1
+    func checkStep(){
+        if step == 1{
             nomorKtpLabel.text = "Foto Diri dengan kartu Identitas/KTP"
             keteranganLabel.isHidden = true
             nomorKTPheaderLabel.isHidden = true
             nomorKTPTextField.isHidden = true
-            
+            nomorKTPTextField.text = nomorKtp
             panduanPhotoBaseView.isHidden = false
             panduanPhotoKTPLabel.isHidden = false
             keteranganPanduanPhoto.isHidden = false
             photoKTPImage.isHidden = false
-            
             fotoBersamaKTPImage.isHidden = true
             fotoBersamaKtpLabel.isHidden = true
             ubahLabel.isHidden = true
+            selanjutnyaButton.isEnabled = true
+        }
+    }
+    
+    @objc func selanjutnyaAction(sender: UIButton){
+        if step == 0 {
+            
+            if nomorKTPTextField.text!.count != 0 {
+                nomorKTPTextFieldText = nomorKTPTextField.text?.count
+                step += 1
+                nomorKtpLabel.text = "Foto Diri dengan kartu Identitas/KTP"
+                keteranganLabel.isHidden = true
+                nomorKTPheaderLabel.isHidden = true
+                nomorKTPTextField.isHidden = true
+                
+                panduanPhotoBaseView.isHidden = false
+                panduanPhotoKTPLabel.isHidden = false
+                keteranganPanduanPhoto.isHidden = false
+                photoKTPImage.isHidden = false
+                fotoBersamaKTPImage.isHidden = true
+                fotoBersamaKtpLabel.isHidden = true
+                ubahLabel.isHidden = true
+                selanjutnyaButton.isEnabled = false
+                
             }else {
-                    let alertNomorKTP = UIAlertController(title: "NOMOR KTP SALAH", message: "Mohon periksa kembali nomor KTP Anda", preferredStyle: .alert)
-                               alertNomorKTP.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                               self.present(alertNomorKTP, animated: true)
+                let alertNomorKTP = UIAlertController(title: "NOMOR KTP KOSONG", message: "Mohon masukkan nomor KTP Anda", preferredStyle: .alert)
+                alertNomorKTP.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alertNomorKTP, animated: true)
             }
         }else if step == 1{
-            step+=1
+            step += 1
             nomorKtpLabel.text = "Periksa kembali data Identitas"
             keteranganLabel.isHidden = false
             keteranganLabel.text = "Pastikan Nomor identitas dan foto yang akan Anda Upload suda benar dan tampas delas terlihat"
@@ -97,9 +123,11 @@ class VerifikasiKTPViewController: UIViewController {
             
             fotoBersamaKTPImage.isHidden = false
             fotoBersamaKtpLabel.isHidden = false
+            fotoBersamaKTPImage.image = photoKTPImage.image
             ubahLabel.isHidden = false
             selanjutnyaButton.setTitle("VERIFIKASI", for: .normal )
-
+            
+            
         }else if step == 2 {
             step = 0
             print("nomor identitas :", nomorKTPTextField.text)
@@ -107,7 +135,7 @@ class VerifikasiKTPViewController: UIViewController {
             editProfile.nomorIdentitas = nomorKTPTextField.text ?? ""
             
             navigationController?.pushViewController(editProfile, animated: true)
-        
+            
         }
     }
     
@@ -136,5 +164,9 @@ class VerifikasiKTPViewController: UIViewController {
         }else if nomorKTPTextField.text?.isStrings == false{
             alertNomorKtpLabel.isHidden = false
         }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

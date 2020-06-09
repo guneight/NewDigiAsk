@@ -132,6 +132,11 @@ extension SyaratdanKetentuanViewController {
         setujuButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         setujuButton.setTitle("SETUJU", for: .normal)
         
+        syaratDanKetentuanView.addSubview(setujuView)
+        UIHelper.makeView(view: setujuView, leadingAnchor: syaratDanKetentuanView.leadingAnchor, trailingAnchor: syaratDanKetentuanView.trailingAnchor, topAnchor: SyaratDanKetentuanScrollView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        setujuView.backgroundColor = .clear
+        setujuView.isUserInteractionEnabled = true
+        
         SyaratDanKetentuanScrollView.addSubview(syaratDanKetentuanContainerView)
         syaratDanKetentuanContainerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -167,8 +172,9 @@ extension SyaratdanKetentuanViewController {
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
-        navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "PRODUK", style: .plain, target: nil, action: nil)
+         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+               UIHelper.setTextLabel(label: titleLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "PRODUK", kerning: 0)
+               navigationItem.titleView = titleLabel
         
     }
     

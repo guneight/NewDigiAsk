@@ -13,13 +13,13 @@ extension ProsesKlaimViewController {
     func setupUIProsesKlaim(){
         view.backgroundColor = .white
         self.view.addSubview(prosesdKlaimScrollView)
-            UIHelper.makeScroolView(scrollView: prosesdKlaimScrollView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 0, widthAnchor: 0, scrollAble: true, scrollShow: false)
-            prosesdKlaimScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-            prosesdKlaimScrollView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        UIHelper.makeScroolView(scrollView: prosesdKlaimScrollView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 0, widthAnchor: 0, scrollAble: true, scrollShow: false)
+        prosesdKlaimScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        prosesdKlaimScrollView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         prosesdKlaimScrollView.addSubview(prosesKlaimView)
         UIHelper.makeView(view: prosesKlaimView, leadingAnchor: prosesdKlaimScrollView.leadingAnchor, trailingAnchor: prosesdKlaimScrollView.trailingAnchor, topAnchor: prosesdKlaimScrollView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 10, heightAnchor: 1100, widthAnchor: 0)
-               
+        
         prosesKlaimView.widthAnchor.constraint(equalTo: prosesdKlaimScrollView.widthAnchor).isActive = true
         prosesKlaimView.bottomAnchor.constraint(equalTo: prosesdKlaimScrollView.bottomAnchor).isActive = true
         let heightConstraint = prosesdKlaimScrollView.heightAnchor.constraint(equalTo: prosesdKlaimScrollView.heightAnchor)
@@ -44,7 +44,7 @@ extension ProsesKlaimViewController {
         prosesKlaimView.addSubview(suratBuktiKematianLabel)
         UIHelper.makeLabel(label: suratBuktiKematianLabel, corner: 0, allignment: .left, leadingAnchor: prosesKlaimView.leadingAnchor, trailingAnchor: prosesKlaimView.trailingAnchor, topAnchor: deskripsiKsrtuIdentitasLabel.bottomAnchor, leadingConstant: 25, trailingConstant: -25, topConstant: 6, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: suratBuktiKematianLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "2 - Surat Bukti Kematian", kerning: 0.12)
-               
+        
         let deskripsiBuktiKematian = "Lengkapi syarat syarat yang diperlukan untuk proses klaim yang Anda ajukan. untuk keterangan lebih jelas bisa hubungi Customer Services Kami."
         prosesKlaimView.addSubview(deskripsiBuktiKematianLabel)
         UIHelper.makeLabel(label: deskripsiBuktiKematianLabel, corner: 0, allignment: .left, leadingAnchor: prosesKlaimView.leadingAnchor, trailingAnchor: prosesKlaimView.trailingAnchor, topAnchor: suratBuktiKematianLabel.bottomAnchor, leadingConstant: 42, trailingConstant: -25, topConstant: 5, heightAnchor: 50, widthAnchor: 0)
@@ -54,7 +54,7 @@ extension ProsesKlaimViewController {
         prosesKlaimView.addSubview(kartuKeluargaLabel)
         UIHelper.makeLabel(label: kartuKeluargaLabel, corner: 0, allignment: .left, leadingAnchor: prosesKlaimView.leadingAnchor, trailingAnchor: prosesKlaimView.trailingAnchor, topAnchor: deskripsiBuktiKematianLabel.bottomAnchor, leadingConstant: 25, trailingConstant: -25, topConstant: 6, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: kartuKeluargaLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "3 - Kartu Keluarga", kerning: 0.12)
-               
+        
         let deskripsiKertuKeluarga = "Lengkapi syarat syarat yang diperlukan untuk proses klaim yang Anda ajukan. untuk keterangan lebih jelas bisa hubungi Customer Services Kami."
         prosesKlaimView.addSubview(deskripsiKartuKeluarga)
         UIHelper.makeLabel(label: deskripsiKartuKeluarga, corner: 0, allignment: .left, leadingAnchor: prosesKlaimView.leadingAnchor, trailingAnchor: prosesKlaimView.trailingAnchor, topAnchor: kartuKeluargaLabel.bottomAnchor, leadingConstant: 42, trailingConstant: -25, topConstant: 5, heightAnchor: 50, widthAnchor: 0)
@@ -98,15 +98,15 @@ extension ProsesKlaimViewController {
         dataKlaimView.addSubview(dataKlaimLabel)
         UIHelper.makeLabel(label: dataKlaimLabel, corner: 0, allignment: .center, leadingAnchor: dataKlaimView.leadingAnchor, trailingAnchor: dataKlaimView.trailingAnchor, topAnchor: dataKlaimView.topAnchor, leadingConstant: 70, trailingConstant: -70, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: dataKlaimLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "DATA KLAIM", kerning: 0.5)
-
+        
         dataKlaimView.addSubview(lineDataKlaim)
         UIHelper.makeView(view: lineDataKlaim, leadingAnchor: dataKlaimView.leadingAnchor, trailingAnchor: dataKlaimView.trailingAnchor, topAnchor: dataKlaimLabel.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 6.5, corner: 0, heightAnchor: 1, widthAnchor: 0)
         lineDataKlaim.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-
+        
         dataKlaimView.addSubview(typeKlaim)
         UIHelper.makeSmalllabel(smallLabel: typeKlaim, leadingAnchor: dataKlaimView.leadingAnchor, topAnchor: lineDataKlaim.bottomAnchor, leadingConstant: 17, topConstant: 10, corner: 0, heightAnchor: 16, widthtAnchor: dataKlaimView.frame.size.width/2)
         UIHelper.setTextLabel(label: typeKlaim, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Type Klaim", kerning: 0.5)
-
+        
         dataKlaimView.addSubview(namaTypeKlaim)
         UIHelper.makeTetxField(textField: namaTypeKlaim, leadingAnchor: typeKlaim.trailingAnchor, trailingAnchor: dataKlaimView.trailingAnchor, topAnchor: lineDataKlaim.bottomAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 9, corner: 0, heightAnchor: 16, textColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1))
         UIHelper.setTextField(textField: namaTypeKlaim, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 12, text: "", kerning: 1)
@@ -132,27 +132,27 @@ extension ProsesKlaimViewController {
         namaTypeKlaim.inputAccessoryView = namaKlaim
         namaTypeKlaim.inputView = ManfaatPickerView
         namaTypeKlaim.text = "Manfaat"
-         self.view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     @objc func donePickerView(){
-         self.view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     func setupNavBar(){
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
-               self.navigationItem.leftBarButtonItem = customButtonNav
-               navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-               navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-               navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-               navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-               navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-               UINavigationBar.appearance().isTranslucent = false
-               navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "DAFTAR", style: .plain, target: nil, action: nil)
+        self.navigationItem.leftBarButtonItem = customButtonNav
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "DAFTAR", style: .plain, target: nil, action: nil)
         
     }
     
     @objc func backButtonTapped() {
-                navigationController?.popViewController(animated: true)
-              }
+        navigationController?.popViewController(animated: true)
+    }
 }

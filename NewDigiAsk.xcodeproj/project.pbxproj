@@ -22,6 +22,7 @@
 		6702D6552455F1B30022325E /* ExtensionFilterPolisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6702D6542455F1B30022325E /* ExtensionFilterPolisVC.swift */; };
 		67104EC023FE35140035343F /* VerifikasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67104EBF23FE35140035343F /* VerifikasiViewController.swift */; };
 		67104EC223FE6FCD0035343F /* InputKodeVerifikasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67104EC123FE6FCD0035343F /* InputKodeVerifikasiViewController.swift */; };
+		6710AC8224894AC30040E2AC /* CameraKTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6710AC8124894AC30040E2AC /* CameraKTPViewController.swift */; };
 		6728574324109F24005E3B6D /* KlaimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728574224109F24005E3B6D /* KlaimViewController.swift */; };
 		6728574524109F3A005E3B6D /* ExtensionKlaimVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728574424109F3A005E3B6D /* ExtensionKlaimVC.swift */; };
 		672857472410A9FE005E3B6D /* PolisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672857462410A9FE005E3B6D /* PolisViewController.swift */; };
@@ -179,6 +180,7 @@
 		6702D6542455F1B30022325E /* ExtensionFilterPolisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFilterPolisVC.swift; sourceTree = "<group>"; };
 		67104EBF23FE35140035343F /* VerifikasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikasiViewController.swift; sourceTree = "<group>"; };
 		67104EC123FE6FCD0035343F /* InputKodeVerifikasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputKodeVerifikasiViewController.swift; sourceTree = "<group>"; };
+		6710AC8124894AC30040E2AC /* CameraKTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraKTPViewController.swift; sourceTree = "<group>"; };
 		6728574224109F24005E3B6D /* KlaimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlaimViewController.swift; sourceTree = "<group>"; };
 		6728574424109F3A005E3B6D /* ExtensionKlaimVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionKlaimVC.swift; sourceTree = "<group>"; };
 		672857462410A9FE005E3B6D /* PolisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolisViewController.swift; sourceTree = "<group>"; };
@@ -652,6 +654,7 @@
 			isa = PBXGroup;
 			children = (
 				67A97E1B246E690600CB906F /* VerifikasiKTPViewController.swift */,
+				6710AC8124894AC30040E2AC /* CameraKTPViewController.swift */,
 			);
 			path = "Verifikasi KTP";
 			sourceTree = "<group>";
@@ -1092,6 +1095,7 @@
 				67D631982420D34200197A39 /* InfoDetailViewController.swift in Sources */,
 				678E02CD2429D92600D7D935 /* DetailPolisBeliViewController.swift in Sources */,
 				67BC9501246D642400A57CD0 /* ExtensionDetailBayarOvoVC.swift in Sources */,
+				6710AC8224894AC30040E2AC /* CameraKTPViewController.swift in Sources */,
 				67F06E0E241B454200B277B2 /* SuratBuktiKematianViewController.swift in Sources */,
 				67924D92240CDCE10099F26F /* DetailBayarViewController.swift in Sources */,
 				67A494B82451FD5600F7BFAD /* LengkapiDataEmailViewController.swift in Sources */,
@@ -1295,7 +1299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55CQAZ789D;
 				INFOPLIST_FILE = NewDigiAsk/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1316,7 +1320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55CQAZ789D;
 				INFOPLIST_FILE = NewDigiAsk/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

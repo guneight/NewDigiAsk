@@ -65,6 +65,7 @@ class DetailPolisBeliViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUIDetailPolisBeli()
+        setupNavBar()
         view.layoutIfNeeded()
         // Do any additional setup after loading the view.
     }

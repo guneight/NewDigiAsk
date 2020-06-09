@@ -25,18 +25,14 @@ class InfoViewController: UIViewController {
         setupUIInfo()
         setupNavBarInfo()
         view.layoutIfNeeded()
-         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        titleInfoLabel.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(goToDetailInfo))
+        titleInfoLabel.addGestureRecognizer(tapGesture)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func  goToDetailInfo(){
+        let infoDetailVC = storyboard?.instantiateViewController(identifier: "InfoDetailViewController") as! InfoDetailViewController
+        navigationController?.pushViewController(infoDetailVC, animated: true)
     }
-    */
-
 }

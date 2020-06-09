@@ -11,10 +11,16 @@ import UIKit
 extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func ambilFotoKTP() {
         photoKTPImage.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openCamera(gesture:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewCamera))
         photoKTPImage.addGestureRecognizer(tapGesture)
         
        
+    }
+    
+    @objc func viewCamera(){
+        let cameraVC = storyboard?.instantiateViewController(identifier: "CameraKTPViewController") as! CameraKTPViewController
+        cameraVC.nomorKTP = nomorKTPTextField.text ?? ""
+        navigationController?.pushViewController(cameraVC, animated: true)
     }
     
     @objc func openCamera(gesture : UITapGestureRecognizer){
@@ -85,6 +91,7 @@ extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavig
         ktpView.addSubview(nomorKTPheaderLabel)
         UIHelper.makeLabel(label: nomorKTPheaderLabel, corner: 0, allignment: .left, leadingAnchor: ktpView.leadingAnchor, trailingAnchor: ktpView.trailingAnchor, topAnchor: keteranganLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 12, widthAnchor: 0)
         UIHelper.setTextLabel(label: nomorKTPheaderLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor KTP", kerning: 0.5)
+        
 
         ktpView.addSubview(nomorKTPTextField)
         UIHelper.makeTetxField(textField: nomorKTPTextField, leadingAnchor: ktpView.leadingAnchor, trailingAnchor: ktpView.trailingAnchor, topAnchor: nomorKTPheaderLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 0, heightAnchor: 40, textColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1))
@@ -95,6 +102,7 @@ extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavig
         bottomBorder.frame = CGRect(x:0, y: self.nomorKTPTextField.frame.size.height - thickness, width: self.nomorKTPTextField.frame.size.width, height:thickness)
         bottomBorder.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         nomorKTPTextField.layer.addSublayer(bottomBorder)
+        nomorKTPTextField.keyboardType = .numberPad
         
         ktpView.addSubview(alertNomorKtpLabel)
         UIHelper.makeLabel(label: alertNomorKtpLabel, corner: 0, allignment: .right, leadingAnchor: ktpView.leadingAnchor, trailingAnchor: ktpView.trailingAnchor, topAnchor: nomorKTPTextField.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 5, heightAnchor: 14, widthAnchor: 0)
@@ -128,11 +136,12 @@ extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavig
         keteranganPanduanPhoto.numberOfLines = 0
 
         ktpView.addSubview(photoKTPImage)
-        UIHelper.makeImageView(imageView: photoKTPImage, leadingAnchor: ktpView.leadingAnchor, topAnchor: keteranganPanduanPhoto.bottomAnchor, leadingConstant: 63, topConstant: 15, corner: 10, heightAnchor: 196)
+        UIHelper.makeImageView(imageView: photoKTPImage, leadingAnchor: ktpView.leadingAnchor, topAnchor: keteranganPanduanPhoto.bottomAnchor, leadingConstant: 63, topConstant: 15, corner: 10, heightAnchor: 160)
         photoKTPImage.trailingAnchor.constraint(equalTo: ktpView.trailingAnchor, constant: -63).isActive = true
         photoKTPImage.contentMode = .scaleAspectFit
         photoKTPImage.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
         photoKTPImage.layer.borderColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        photoKTPImage.contentMode = .scaleAspectFill
         
         //segmented periksa identitas
         
@@ -145,7 +154,7 @@ extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavig
         fotoBersamaKTPImage.trailingAnchor.constraint(equalTo: ktpView.trailingAnchor, constant: -63).isActive = true
         fotoBersamaKTPImage.layer.borderColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         fotoBersamaKTPImage.layer.borderWidth = 1
-        fotoBersamaKTPImage.contentMode = .scaleAspectFit
+        fotoBersamaKTPImage.contentMode = .scaleAspectFill
         
         ktpView.addSubview(ubahLabel)
         UIHelper.makeLabel(label: ubahLabel, corner: 0, allignment: .center, leadingAnchor: ktpView.leadingAnchor, trailingAnchor: ktpView.trailingAnchor, topAnchor: fotoBersamaKTPImage.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 12, heightAnchor: 12, widthAnchor: 0)
@@ -297,7 +306,7 @@ class SegmentedController : UIControl{
         let labelHeight = self.bounds.height
         let labelWidth = self.bounds.width/CGFloat(labels.count)
         let xPosition = CGFloat(0) * labelWidth + labelWidth/3
-        var lines  = line
+        let lines  = line
         lines.frame = CGRect(x:labelWidth/3 , y: 37/2, width: labelWidth*2, height: 1)
         thumbView.frame = CGRect(x: xPosition, y: 0, width: 37, height: labelHeight)
         thumbView.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
@@ -305,7 +314,7 @@ class SegmentedController : UIControl{
         thumbView.layer.cornerRadius = 37/2
 
         for index in 0...labels.count-1{
-            var label = labels[index]
+            let label = labels[index]
             let xPosition = CGFloat(index) * labelWidth + labelWidth/3
             label.layer.masksToBounds = true
             label.layer.cornerRadius = 37/2

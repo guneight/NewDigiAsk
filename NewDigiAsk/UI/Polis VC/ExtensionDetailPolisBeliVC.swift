@@ -11,12 +11,11 @@ import UIKit
 extension DetailPolisBeliViewController{
     
     func setupUIDetailPolisBeli(){
-        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
-        gesture.direction = .down
+        
         let height = view.frame.size.height
-        view.backgroundColor = .clear
+        view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         view.addSubview(detailPolisBeli)
-        UIHelper.makeView(view: detailPolisBeli, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 45, corner: 20, heightAnchor: height, widthAnchor: 0)
+        UIHelper.makeView(view: detailPolisBeli, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, corner: 20, heightAnchor: height, widthAnchor: 0)
         detailPolisBeli.backgroundColor = .white
         
         detailPolisBeli.addSubview(detailPolisBeliScrollView)
@@ -213,15 +212,20 @@ extension DetailPolisBeliViewController{
         UIHelper.makeButton(button: saveButton, leadingAnchor: detailPolisBeliView.leadingAnchor, trailingAnchor: detailPolisBeliView.trailingAnchor, topAnchor: underlineNomorTeleponAhliWaris.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 30, corner: 24, heightAnchor: 48, widthAnchor: 0)
         saveButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         saveButton.setTitle("SAVE", for: .normal)
-          
-        
-          
-
-       
-        
     }
     
-    @objc func swipeDown() {
-        self.dismiss(animated: true, completion: nil)
-    }
+    func setupNavBar(){
+           let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
+           self.navigationItem.leftBarButtonItem = customButtonNav
+           navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+           navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+           navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+           let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+                  UIHelper.setTextLabel(label: titleLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "KERANJANG", kerning: 0)
+                  navigationItem.titleView = titleLabel
+       }
+       @objc func backButtonTapped() {
+           navigationController?.popViewController(animated: true)
+       }
+
 }

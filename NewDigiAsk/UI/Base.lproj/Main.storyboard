@@ -369,6 +369,21 @@
             </objects>
             <point key="canvasLocation" x="5446" y="-5257"/>
         </scene>
+        <!--CameraKTP View Controller-->
+        <scene sceneID="2dr-og-3kS">
+            <objects>
+                <viewController storyboardIdentifier="CameraKTPViewController" id="mwA-Pi-X8X" customClass="CameraKTPViewController" customModule="NewDigiAsk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iQB-cV-R5E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rE6-fR-aRK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcI-K7-jG5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6118" y="-5257"/>
+        </scene>
         <!--Filter Polis View Controller-->
         <scene sceneID="OiD-vE-wXn">
             <objects>

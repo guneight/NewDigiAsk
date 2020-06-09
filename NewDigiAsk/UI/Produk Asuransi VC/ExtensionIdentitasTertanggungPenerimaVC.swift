@@ -10,6 +10,33 @@ import UIKit
 
 extension IdentitasTertanggungdanPenerimaManfaatViewController {
     
+    func pickerDateWaktuPolis(){
+        datePicker.datePickerMode = .date
+        let  dateToolbar = UIToolbar()
+        dateToolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePickerView));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        dateToolbar.setItems([spaceButton,doneButton,], animated: false)
+        waktuTextField.inputAccessoryView = dateToolbar
+        waktuTextField.inputView = datePicker
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        waktuTextField.text = formatter.string(from: datePicker.date)
+        
+    }
+    
+    @objc func donePickerView(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        waktuTextField.text = formatter.string(from: datePicker.date)
+        
+        self.view.endEditing(true)
+    }
+    
+    @objc func closeDatePicker(){
+        view.endEditing(true)
+    }
+    
     func setupUI(){
         let height = view.frame.size.height
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
@@ -130,7 +157,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController {
             identitasContainerView.trailingAnchor.constraint(equalTo: identitasScrollView.trailingAnchor),
             identitasContainerView.topAnchor.constraint(equalTo: identitasScrollView.topAnchor),
             identitasContainerView.bottomAnchor.constraint(equalTo: identitasScrollView.bottomAnchor),
-            identitasContainerView.heightAnchor.constraint(equalToConstant: 1100),
+            identitasContainerView.heightAnchor.constraint(equalToConstant: 1300),
             identitasContainerView.widthAnchor.constraint(equalTo: identitasScrollView.widthAnchor)
         ])
         let heightConstraint = identitasContainerView.heightAnchor.constraint(equalTo: identitasScrollView.heightAnchor)
@@ -254,7 +281,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController {
         
         identitasContainerView.addSubview(pilihWaktuAktifPolisLabel)
         UIHelper.makeLabel(label: pilihWaktuAktifPolisLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: masakAktifLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: pilihWaktuAktifPolisLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 10, text: "Pilih waktu aktif Polisf", kerning: 0.5)
+        UIHelper.setTextLabel(label: pilihWaktuAktifPolisLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 10, text: "Pilih waktu aktif Polis", kerning: 0.5)
         
         identitasContainerView.addSubview(waktuTextField)
         UIHelper.makeTetxField(textField: waktuTextField, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: pilihWaktuAktifPolisLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
@@ -281,8 +308,9 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController {
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
-        navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "PRODUK", style: .plain, target: nil, action: nil)
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+        UIHelper.setTextLabel(label: titleLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "SYARAT DAN KETENTUAN", kerning: 0)
+        navigationItem.titleView = titleLabel
         
     }
     @objc func backButtonTapped() {

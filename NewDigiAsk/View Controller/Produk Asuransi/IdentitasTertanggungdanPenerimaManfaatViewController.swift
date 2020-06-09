@@ -66,17 +66,22 @@ class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController {
     let underLineWaktu = UIView()
     
     let tambahKerajangbutton = UIButton()
+    let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupNavBarIdentitas()
+        pickerDateWaktuPolis()
         view.layoutIfNeeded()
+        
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         tambahKerajangbutton.addTarget(self, action: #selector(tambahKeranjangAction(sender:)), for: .touchUpInside)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        // Do any additional setup after loading the view.
-    }
+        let tapGesture = UITapGestureRecognizer(target: self, action:#selector(closeDatePicker))
+        view.addGestureRecognizer(tapGesture)
+   }
     
     
     @objc func tambahKeranjangAction(sender :Any){

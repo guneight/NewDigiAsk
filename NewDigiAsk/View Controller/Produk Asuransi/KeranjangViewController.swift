@@ -37,6 +37,7 @@ class KeranjangViewController: UIViewController {
     
     var selectRows : [IndexPath] = []
     var jumlahProdukdiKreanjang : Int = 10
+    var namaProdukArrays = ["Kecelakaan Diri", "Kebakaran", "Kontruksi", "Tanggung Gugat", "Pengangkutan Barang", "Perjalanan", "Kerusakan Mesin", "Property All Risk", "Uang", "Alat Berat", "Penjaminan", "Kredit Perdagangan", "Kredit Serba Guna", "Surety Bond", "Kontra Bank Garnis", "Custom Bond"]
     let deskripsiProduk = ["Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam", "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam"]
     let nominal = ["Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-"]
     
@@ -58,8 +59,13 @@ class KeranjangViewController: UIViewController {
     }
     
     @objc func checkOutAction(sender: Any){
+        if namaProdukArrays.count == 0{
+            let produkVC = storyboard?.instantiateViewController(identifier: "ProdukViewController")  as! ProdukViewController
+            self.navigationController?.pushViewController(produkVC, animated: true)
+        }else{
         let checkOutVC = storyboard?.instantiateViewController(identifier: "CheckOutKeranjangViewController")  as! CheckOutKeranjangViewController
         self.navigationController?.pushViewController(checkOutVC, animated: true)
+        }
     }
     
     @objc func namaProdukAction(sender: Any){

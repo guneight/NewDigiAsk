@@ -36,6 +36,7 @@ class SyaratdanKetentuanViewController: UIViewController {
     let detailSyaratdanKetentuanLabel = UILabel()
     let bacaSelengkapnyaLabel = UILabel()
     let setujuButton = UIButton()
+    let setujuView = UIView()
     let syaratDanKetentuan = "Memberikan perlindungan atas risiko kematian, cacat tetap, biaya perawatan dan atau pengobatan yang secara langsung disebabkan suatu kecelakaan. Kecelakaan yaitu suatu kejadian atau peristiwa yang mengandung unsur kekerasan, baik bersifat fisik maupun kimia, yang datangnya secara tiba-tiba, termasuk juga kecelakaan yaitu yang disebabkan karena keracunan makanan, uap dan gas, jatuh ke dalam air atau tenggelam."
     
     override func viewDidLoad() {
@@ -47,14 +48,22 @@ class SyaratdanKetentuanViewController: UIViewController {
         setupAnimation()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         setujuButton.addTarget(self, action: #selector(setujuAction(sender:)), for: .touchUpInside)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(setujuAction(sender:)))
+        setujuView.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+         setupAnimation()
+    }
     
     @objc func setujuAction(sender: Any){
+        print(" SETUJU BUTTON")
         let identitasPenanungVC = self.storyboard?.instantiateViewController(identifier: "IdentitasTertanggungdanPenerimaManfaatViewController") as! IdentitasTertanggungdanPenerimaManfaatViewController
         self.navigationController?.pushViewController(identitasPenanungVC, animated: true)
         
     }
+    
+    
     
 }
