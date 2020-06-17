@@ -204,12 +204,15 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             viewColletionProduct.centerXAnchor.constraint(equalTo:whiteView.centerXAnchor),
             viewColletionProduct.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
             viewColletionProduct.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor),
-            viewColletionProduct.heightAnchor.constraint(equalToConstant: 223)
-            
         ])
+        if width > 414 {
+            viewColletionProduct.heightAnchor.constraint(equalToConstant: width*0.5).isActive = true
+        }else{
+            viewColletionProduct.heightAnchor.constraint(equalToConstant: 223).isActive = true
+        }
         print(viewColletionProduct.frame.size.height)
         print(viewColletionProduct.frame.size.width)
-        viewColletionProduct.backgroundColor = #colorLiteral(red: 0.9294117647, green: 0.9294117647, blue: 0.9294117647, alpha: 0.2756046661)
+        viewColletionProduct.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.09586365582)
         viewColletionProduct.layoutIfNeeded()
         
         let headerCollectionProduct = UILabel()
@@ -325,7 +328,11 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == collectionViewPromo {
             return CGSize(width: containerCollectionView.frame.size.width , height: containerCollectionView.frame.size.height)
         }else if collectionView == collectionViewProduct{
-            return CGSize(width: 60, height: 82)
+            if viewColletionProduct.frame.size.width > 414{
+                return CGSize(width: viewColletionProduct.frame.width/5.6, height: viewColletionProduct.frame.height*0.45)
+            }else{
+                return CGSize(width: 60, height: 82)
+            }
         }else if collectionView == collectBannerPromo{
             return CGSize(width: collectBannerPromo.frame.size.height*2.44, height: collectBannerPromo.frame.size.height)
         }else if collectionView == collectionViewInfo{
@@ -370,7 +377,8 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == collectionViewProduct{
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cellproduct", for: indexPath) as! collectionViewProductCell
             cell.imageIconProduct.image = UIImage(named: namaProdukArray[indexPath.row])
-            UIHelper.setTextLabel(label: cell.labelIcon, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: namaProdukArray[indexPath.row], kerning: 0.5)
+            cell.labelIcon.text = namaProdukArray[indexPath.row]
+            cell.backgroundColor = UIColor.clear.withAlphaComponent(0)
             return cell
             
         }else if collectionView == collectionViewPromo{
@@ -545,7 +553,27 @@ class collectionViewProductCell : UICollectionViewCell{
     let labelIcon = UILabel()
     func setupViewProduct(){
         addSubview(containerIconImage)
-        UIHelper.makeView(view: containerIconImage, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: topAnchor, leadingConstant: 2, trailingConstant: -2, topConstant: 0, corner: 8, heightAnchor: 56, widthAnchor: 56)
+        containerIconImage.addSubview(imageIconProduct)
+        addSubview(labelIcon)
+        if viewColletionProduct.frame.size.width > 414 {
+            UIHelper.makeView(view: containerIconImage, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: topAnchor, leadingConstant: 2, trailingConstant: -2, topConstant: 0, corner: 8, heightAnchor: frame.size.width, widthAnchor: frame.size.width)
+            
+            UIHelper.makeImageView(imageView: imageIconProduct, leadingAnchor: containerIconImage.leadingAnchor, topAnchor: containerIconImage.topAnchor, leadingConstant: containerIconImage.frame.size.width*0.2, topConstant: containerIconImage.frame.size.width*0.2, corner: 5, heightAnchor: containerIconImage.frame.size.width*0.6)
+            imageIconProduct.widthAnchor.constraint(equalToConstant: containerIconImage.frame.size.width*0.6).isActive = true
+            
+            UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor ,topAnchor: containerIconImage.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: containerIconImage.frame.size.width/4, widthAnchor: 0)
+            UIHelper.setTextLabel(label: labelIcon, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 15, text: " ", kerning: 0.5)
+        }else{
+            UIHelper.makeView(view: containerIconImage, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: topAnchor, leadingConstant: 2, trailingConstant: -2, topConstant: 0, corner: 8, heightAnchor: 56, widthAnchor: 56)
+            
+            UIHelper.makeImageView(imageView: imageIconProduct, leadingAnchor: containerIconImage.leadingAnchor, topAnchor: containerIconImage.topAnchor, leadingConstant: 14, topConstant: 14, corner: 5, heightAnchor: 28)
+            imageIconProduct.widthAnchor.constraint(equalToConstant: 28).isActive = true
+            
+            UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor ,topAnchor: containerIconImage.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: 23, widthAnchor: 0)
+            
+            UIHelper.setTextLabel(label: labelIcon, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: " ", kerning: 0.5)
+        }
+        
         containerIconImage.backgroundColor = .white
         containerIconImage.layer.shadowColor = UIColor.black.cgColor
         containerIconImage.layer.shadowOpacity = 1
@@ -554,15 +582,11 @@ class collectionViewProductCell : UICollectionViewCell{
         containerIconImage.layer.shadowPath = UIBezierPath(rect: containerIconImage.bounds).cgPath
         containerIconImage.layer.shouldRasterize = true
         
-        containerIconImage.addSubview(imageIconProduct)
-        UIHelper.makeImageView(imageView: imageIconProduct, leadingAnchor: containerIconImage.leadingAnchor, topAnchor: containerIconImage.topAnchor, leadingConstant: 14, topConstant: 14, corner: 5, heightAnchor: 28)
-        imageIconProduct.widthAnchor.constraint(equalToConstant: 28).isActive = true
         imageIconProduct.contentMode = .scaleAspectFit
         imageIconProduct.backgroundColor?.withAlphaComponent(0)
         
-        addSubview(labelIcon)
-        UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor ,topAnchor: containerIconImage.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: 23, widthAnchor: 0)
         labelIcon.numberOfLines = 0
+        
         
         
     }
