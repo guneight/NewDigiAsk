@@ -85,7 +85,7 @@ class VerifikasiKTPViewController: UIViewController {
     @objc func selanjutnyaAction(sender: UIButton){
         if step == 0 {
             
-            if nomorKTPTextField.text!.count != 0 {
+            if nomorKTPTextField.text!.count == 16 {
                 nomorKTPTextFieldText = nomorKTPTextField.text?.count
                 step += 1
                 nomorKtpLabel.text = "Foto Diri dengan kartu Identitas/KTP"
@@ -103,7 +103,7 @@ class VerifikasiKTPViewController: UIViewController {
                 selanjutnyaButton.isEnabled = false
                 
             }else {
-                let alertNomorKTP = UIAlertController(title: "NOMOR KTP KOSONG", message: "Mohon masukkan nomor KTP Anda", preferredStyle: .alert)
+                let alertNomorKTP = UIAlertController(title: "Nomor KTP tidak sesuai ", message: "Mohon masukkan nomor KTP Anda", preferredStyle: .alert)
                 alertNomorKTP.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 self.present(alertNomorKTP, animated: true)
             }

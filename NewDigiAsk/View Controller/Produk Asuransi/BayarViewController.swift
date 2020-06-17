@@ -38,7 +38,8 @@ class BayarViewController: UIViewController {
     let lineMetodeBayar = UIImageView()
     let deskripsiMetodePembayaran = UILabel()
     let bayarButton = UIButton()
-    
+    var metodePembayaranText = ""
+    var iconImage = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,8 @@ class BayarViewController: UIViewController {
         setupNavBarBayar()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         bayarButton.addTarget(self, action: #selector(bayarAction(sender:)), for: .touchUpInside)
+        namaMetodeBayar.text = metodePembayaranText
+        iconImageMetodeBayar.image = UIImage(named: iconImage)
         // Do any additional setup after loading the view.
     }
     

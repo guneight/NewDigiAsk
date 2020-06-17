@@ -35,6 +35,9 @@ class PembayaranViewController: UIViewController {
     let pilihMetodePembayaranLabel = UILabel()
     let virtualAccountLabel = UILabel()
     let virtualAccountView = UIView()
+    let bcaView = UIView()
+    let mandiriView = UIView()
+    let bniView = UIView()
     let iconBCAimage = UIImageView()
     let iconMandiriImage = UIImageView()
     let iconBNIImage = UIImageView()
@@ -72,14 +75,45 @@ class PembayaranViewController: UIViewController {
         setupUI()
         setupNavBarPembayaran()
         kartuKredit()
+        virtualAccountAction()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        rightButtonBCA.addTarget(self, action: #selector(nextButtonBcaAction(sender:)), for: .touchUpInside)
+        
         
         // Do any additional setup after loading the view.
     }
     
+    func virtualAccountAction(){
+        rightButtonBCA.addTarget(self, action: #selector(nextButtonBcaAction(sender:)), for: .touchUpInside)
+        rightButtonBNI.addTarget(self, action: #selector(nextButtonBcaAction(sender:)), for: .touchUpInside)
+        rightButtonMandiri.addTarget(self, action: #selector(nextButtonBcaAction(sender:)), for: .touchUpInside)
+        
+        let tapGestureBCA = UITapGestureRecognizer(target: self, action: #selector(nextButtonBcaAction(sender:)))
+        bcaView.addGestureRecognizer(tapGestureBCA)
+        let tapGestureMandiri = UITapGestureRecognizer(target: self, action: #selector(nextButtonMandiriAction(sender:)))
+        mandiriView.addGestureRecognizer(tapGestureMandiri)
+        let tapGestureBNI = UITapGestureRecognizer(target: self, action: #selector(nextButtonBNIAction(sender:)))
+        bniView.addGestureRecognizer(tapGestureBNI)
+    }
+    
+    
     @objc func nextButtonBcaAction (sender :Any){
         let bayarVC = storyboard?.instantiateViewController(identifier: "BayarViewController") as! BayarViewController
+        bayarVC.metodePembayaranText = "BCA Virtual Account"
+        bayarVC.iconImage = "bca"
+        self.navigationController?.pushViewController(bayarVC, animated: true)
+    }
+    
+    @objc func nextButtonMandiriAction (sender :Any){
+        let bayarVC = storyboard?.instantiateViewController(identifier: "BayarViewController") as! BayarViewController
+        bayarVC.metodePembayaranText = "Mandiri Virtual Account"
+        bayarVC.iconImage = "mandiri"
+        self.navigationController?.pushViewController(bayarVC, animated: true)
+    }
+    
+    @objc func nextButtonBNIAction (sender :Any){
+        let bayarVC = storyboard?.instantiateViewController(identifier: "BayarViewController") as! BayarViewController
+        bayarVC.metodePembayaranText = "BNI Virtual Account"
+        bayarVC.iconImage = "bni"
         self.navigationController?.pushViewController(bayarVC, animated: true)
     }
     

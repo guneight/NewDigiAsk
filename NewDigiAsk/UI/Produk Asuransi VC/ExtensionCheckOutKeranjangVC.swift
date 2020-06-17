@@ -159,7 +159,7 @@ extension CheckOutKeranjangViewController : UITableViewDelegate, UITableViewData
         UIHelper.setTextLabel(label: totalHargaLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 250.000,-", kerning: 0.12)
         
         checkOutView.addSubview(bayarButton)
-        UIHelper.makeButton(button: bayarButton, leadingAnchor: checkOutView.leadingAnchor, trailingAnchor: checkOutView.trailingAnchor, topAnchor: totalHargaLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 10, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        UIHelper.makeButton(button: bayarButton, leadingAnchor: checkOutView.leadingAnchor, trailingAnchor: checkOutView.trailingAnchor, topAnchor: totalHargaLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 0, corner: 24, heightAnchor: 48, widthAnchor: 0)
         bayarButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         bayarButton.setTitle("BAYAR", for: .normal)
         

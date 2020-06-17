@@ -35,6 +35,7 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     var indexProduk : Int = 0
     var loginStatus : Int = 0
     let promo = ["promo1","promo2","promo2","promo1"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -96,16 +97,16 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     
     
     @objc func tabBarProfileAction (sender : UIButton){
-        //        if (loginStatus == 0) {
-        //        let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController")  as! LoginViewController
-        //        self.navigationController?.pushViewController(loginVC, animated: true)
-        //        print("pressss")
-        //        }else if(loginStatus == 1){
+                if (loginStatus == 0) {
+                let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController")  as! LoginViewController
+                self.navigationController?.pushViewController(loginVC, animated: true)
+                print("pressss")
+                }else if(loginStatus == 1){
         let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController") as!ProfileViewController
         self.navigationController?.pushViewController(profileVC, animated: true)
-        //        }else{
-        //            print("Login failed")
-        //        }
+                }else{
+                    print("Login failed")
+                }
         
         
     }

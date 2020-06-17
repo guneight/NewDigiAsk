@@ -132,11 +132,12 @@ extension BayarViewController{
         metodeBayarView.addSubview(iconImageMetodeBayar)
         UIHelper.makeImageView(imageView: iconImageMetodeBayar, leadingAnchor: metodeBayarView.leadingAnchor, topAnchor: metodeBayarView.topAnchor, leadingConstant: 18, topConstant: 14, corner: 0, heightAnchor: 20)
         iconImageMetodeBayar.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        iconImageMetodeBayar.contentMode = .scaleAspectFit
         
         
         metodeBayarView.addSubview(namaMetodeBayar)
         UIHelper.makeLabel(label: namaMetodeBayar, corner: 0, allignment: .right, leadingAnchor: iconImageMetodeBayar.trailingAnchor, trailingAnchor: metodeBayarView.trailingAnchor, topAnchor: metodeBayarView.topAnchor, leadingConstant: 13, trailingConstant: -13, topConstant: 13, heightAnchor: 17, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaMetodeBayar, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "BCA Virtual Account", kerning: 0.6)
+        UIHelper.setTextLabel(label: namaMetodeBayar, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.6)
         
         metodeBayarView.addSubview(lineMetodeBayar)
         UIHelper.makeView(view: lineMetodeBayar, leadingAnchor: metodeBayarView.leadingAnchor, trailingAnchor: metodeBayarView.trailingAnchor, topAnchor: namaMetodeBayar.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 13, corner: 0, heightAnchor: 1, widthAnchor: 0)
@@ -144,7 +145,7 @@ extension BayarViewController{
         
         metodeBayarView.addSubview(deskripsiMetodePembayaran)
         UIHelper.makeLabel(label: deskripsiMetodePembayaran, corner: 0, allignment: .left, leadingAnchor: metodeBayarView.leadingAnchor, trailingAnchor: metodeBayarView.trailingAnchor, topAnchor: lineMetodeBayar.bottomAnchor, leadingConstant: 18, trailingConstant: -18, topConstant: 13, heightAnchor: 70, widthAnchor: 0)
-        UIHelper.setTextLabel(label: deskripsiMetodePembayaran, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Kode pembayaran akan didapatkan estela klik botton Pembayaran. \nUser tidal perlu melakukan konfirmasi", kerning: 0.6)
+        UIHelper.setTextLabel(label: deskripsiMetodePembayaran, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Kode pembayaran akan didapatkan setelah klik botton Pembayaran. \nUser tidak perlu melakukan konfirmasi", kerning: 0.6)
         deskripsiMetodePembayaran.numberOfLines = 0
         
         bayarView.addSubview(bayarButton)

@@ -186,7 +186,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         daftarProdukKeranjangTable.layoutIfNeeded()
         daftarProdukKeranjangTable.allowsSelection = false
         keranjangBaseView.addSubview(checkOutButton)
-        UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: daftarProdukKeranjangTable.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 30, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: daftarProdukKeranjangTable.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 0, corner: 24, heightAnchor: 48, widthAnchor: 0)
         print("checkOutButton :", checkOutButton.frame.size.width)
         checkOutButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         checkOutButton.setTitle("CHECKOUT", for: .normal)

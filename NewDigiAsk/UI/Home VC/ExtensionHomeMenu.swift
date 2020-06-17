@@ -11,6 +11,9 @@ import UIKit
 extension HomeMenuViewController{
     
     func UiSetup(){
+        let height = view.frame.size.height
+        let width = view.frame.size.width
+        print("This is weight :\(width)")
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         self.view.addSubview(scrollView)
         
@@ -29,12 +32,17 @@ extension HomeMenuViewController{
         
         scrollView.addSubview(baseView)
         baseView.translatesAutoresizingMaskIntoConstraints = false
+        if width > 414 {
+            baseView.heightAnchor.constraint(equalToConstant: height*1.7).isActive = true
+        }else{
+            baseView.heightAnchor.constraint(equalToConstant: height*1.5).isActive = true
+        }
+        
         NSLayoutConstraint.activate([
             baseView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             baseView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             baseView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             baseView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            baseView.heightAnchor.constraint(equalToConstant: 1282),
             baseView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
         let heightConstraint = baseView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)

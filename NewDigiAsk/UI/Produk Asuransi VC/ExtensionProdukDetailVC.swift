@@ -128,14 +128,14 @@ extension ProdukDetailViewController {
         produkDetailScrollView.layoutIfNeeded()
         
         produkView.addSubview(pilihProdukButton)
-        UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: produkDetailScrollView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: produkDetailScrollView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 0, corner: 24, heightAnchor: 48, widthAnchor: 0)
         let index =  indexProdukSelect
                if index == 0  {
                    pilihProdukButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
                    pilihProdukButton.setTitle( "PILIH PRODUK", for: .normal)
                    
                }else{
-                   pilihProdukButton.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+                   pilihProdukButton.backgroundColor = #colorLiteral(red: 0.2458193898, green: 0.2900034189, blue: 0.4485326409, alpha: 1)
                    pilihProdukButton.setTitle( "Coming soon,,,", for: .normal)
                    pilihProdukButton.isEnabled = false
                    pilihProdukButton.layer.cornerRadius = 5
