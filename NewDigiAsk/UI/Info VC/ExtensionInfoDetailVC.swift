@@ -24,7 +24,7 @@ extension InfoDetailViewController{
             infoDetailView.trailingAnchor.constraint(equalTo: infoDetailScrollView.trailingAnchor),
             infoDetailView.topAnchor.constraint(equalTo: infoDetailScrollView.topAnchor),
             infoDetailView.bottomAnchor.constraint(equalTo: infoDetailScrollView.bottomAnchor),
-            infoDetailView.heightAnchor.constraint(equalToConstant: 1100),
+            infoDetailView.heightAnchor.constraint(equalToConstant: view.frame.size.height*1.5),
             infoDetailView.widthAnchor.constraint(equalTo: infoDetailScrollView.widthAnchor)
             ])
         let heightConstraint = infoDetailView.heightAnchor.constraint(equalTo: infoDetailScrollView.heightAnchor)
@@ -49,7 +49,12 @@ extension InfoDetailViewController{
         UIHelper.setTextLabel(label: tanggalInfoDetailLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .light, fontSize: 8, text: "24 Oktober 2019", kerning: 0.4)
         
         infoDetailView.addSubview(infoDetailImage)
-        UIHelper.makeImageView(imageView: infoDetailImage, leadingAnchor: infoDetailView.leadingAnchor, topAnchor: tanggalInfoDetailLabel.bottomAnchor, leadingConstant: 24, topConstant: 15, corner: 20, heightAnchor: 160)
+        if view.frame.size.width > 414 {
+            UIHelper.makeImageView(imageView: infoDetailImage, leadingAnchor: infoDetailView.leadingAnchor, topAnchor: tanggalInfoDetailLabel.bottomAnchor, leadingConstant: 24, topConstant: 15, corner: 20, heightAnchor: view.frame.size.width/2.3)
+        }else{
+             UIHelper.makeImageView(imageView: infoDetailImage, leadingAnchor: infoDetailView.leadingAnchor, topAnchor: tanggalInfoDetailLabel.bottomAnchor, leadingConstant: 24, topConstant: 15, corner: 20, heightAnchor: 160)
+        }
+       
         infoDetailImage.trailingAnchor.constraint(equalTo: infoDetailView.trailingAnchor, constant: -24).isActive = true
         infoDetailImage.backgroundColor = .white
         infoDetailImage.image = UIImage(named: "info-1")

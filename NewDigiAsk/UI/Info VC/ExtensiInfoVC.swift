@@ -22,7 +22,11 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        if view.frame.size.width > 414{
+            return view.frame.size.width/6
+        }else{
+            return 70
+        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
@@ -32,7 +36,7 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let infoDetailVC = storyboard?.instantiateViewController(withIdentifier: "InfoDetailViewController") as! InfoDetailViewController
         navigationController?.pushViewController(infoDetailVC, animated: true)
-
+        
     }
     
     
@@ -51,17 +55,18 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
         infoBaseView.backgroundColor = .white
         infoBaseView.addSubview(infoImage)
         if view.frame.size.width > 414{
-            UIHelper.makeImageView(imageView: infoImage, leadingAnchor: infoBaseView.leadingAnchor, topAnchor: infoBaseView.topAnchor, leadingConstant: 23, topConstant: 20, corner: 10, heightAnchor: view.frame.size.width*0.4)
-            infoImage.trailingAnchor.constraint(equalTo: infoBaseView.trailingAnchor, constant: -23).isActive = true
+            UIHelper.makeImageView(imageView: infoImage, leadingAnchor: infoBaseView.leadingAnchor, topAnchor: infoBaseView.topAnchor, leadingConstant: 23, topConstant: 20, corner: 10, heightAnchor: view.frame.size.width/2.5)
+            
         }else{
             UIHelper.makeImageView(imageView: infoImage, leadingAnchor: infoBaseView.leadingAnchor, topAnchor: infoBaseView.topAnchor, leadingConstant: 23, topConstant: 20, corner: 10, heightAnchor: 157)
-                   infoImage.trailingAnchor.constraint(equalTo: infoBaseView.trailingAnchor, constant: -23).isActive = true
         }
-  
-       
+        infoImage.trailingAnchor.constraint(equalTo: infoBaseView.trailingAnchor, constant: -23).isActive = true
+        
+        
         infoImage.contentMode = .scaleToFill
-//        infoImage.backgroundColor = .red
+        //        infoImage.backgroundColor = .red
         infoImage.image = UIImage(named: "info")
+        infoImage.isUserInteractionEnabled = true
         
         infoBaseView.addSubview(titleInfoLabel)
         UIHelper.makeLabel(label: titleInfoLabel, corner: 0, allignment: .left, leadingAnchor: infoBaseView.leadingAnchor, trailingAnchor: infoBaseView.trailingAnchor, topAnchor: infoImage.bottomAnchor, leadingConstant: 23, trailingConstant: -23, topConstant: 12, heightAnchor: 21, widthAnchor: 0)
@@ -114,10 +119,10 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         let backItem = UIBarButtonItem()
-          backItem.title = "HOME"
-          let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
-          backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
-          navigationItem.leftBarButtonItems = [customButtonNav, backItem]
+        backItem.title = "HOME"
+        let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
+        navigationItem.leftBarButtonItems = [customButtonNav, backItem]
         
         
     }
@@ -138,32 +143,55 @@ class infoListTableViewCell : UITableViewCell{
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        let width = UIScreen.main.bounds.size.width
         contentView.addSubview(headerInfoListLabel)
-        UIHelper.makeLabel(label: headerInfoListLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 0, trailingConstant: -110, topConstant: 0, heightAnchor: 40, widthAnchor: 0)
-        UIHelper.setTextLabel(label: headerInfoListLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 13, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan.", kerning: 0.13)
         headerInfoListLabel.backgroundColor = .white
-        headerInfoListLabel.numberOfLines = 2
-
+        
+        if  width > 414 {
+            UIHelper.makeLabel(label: headerInfoListLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 0, trailingConstant: -(width*0.35), topConstant: 0, heightAnchor: width/13, widthAnchor: 0)
+             headerInfoListLabel.numberOfLines = 4
+           
+        }else{
+            UIHelper.makeLabel(label: headerInfoListLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 0, trailingConstant: -110, topConstant: 0, heightAnchor: 40, widthAnchor: 0)
+             headerInfoListLabel.numberOfLines = 2
+        }
+       
+        
+        UIHelper.setTextLabel(label: headerInfoListLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 13, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan.", kerning: 0.13)
+//        headerInfoListLabel.backgroundColor = .white
+        
+        
         contentView.addSubview(timeIconInfoListImage)
         UIHelper.makeImageView(imageView: timeIconInfoListImage, leadingAnchor: contentView.leadingAnchor, topAnchor: headerInfoListLabel.bottomAnchor, leadingConstant: 0, topConstant: 5, corner: 0, heightAnchor: 10)
         timeIconInfoListImage.widthAnchor.constraint(equalToConstant: 10).isActive = true
         timeIconInfoListImage.image = UIImage(named: "time")
-
+        
         contentView.addSubview(tanggalInfoListLabel)
         UIHelper.makeLabel(label: tanggalInfoListLabel, corner: 0, allignment: .left, leadingAnchor: timeIconInfoListImage.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: headerInfoListLabel.bottomAnchor, leadingConstant: 7, trailingConstant: -110, topConstant: 5, heightAnchor: 10, widthAnchor: 0)
         UIHelper.setTextLabel(label: tanggalInfoListLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1), weight: .bold, fontSize: 8, text: " 24 Oktober 2019", kerning: 0.4)
         tanggalInfoListLabel.backgroundColor = .white
-
+        
         contentView.addSubview(infoListImage)
         infoListImage.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            infoListImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            infoListImage.topAnchor.constraint(equalTo: contentView.topAnchor),
-//            infoListImage.heightAnchor.constraint(equalToConstant: 95),
-            infoListImage.widthAnchor.constraint(equalToConstant: 95),
-            infoListImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
-        ])
+        if width > 414 {
+            NSLayoutConstraint.activate([
+                infoListImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+                infoListImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+                //            infoListImage.heightAnchor.constraint(equalToConstant: 95),
+                infoListImage.widthAnchor.constraint(equalToConstant: width/3),
+                infoListImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            ])
+            
+        }else{
+            NSLayoutConstraint.activate([
+                infoListImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+                infoListImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+                //            infoListImage.heightAnchor.constraint(equalToConstant: 95),
+                infoListImage.widthAnchor.constraint(equalToConstant: 95),
+                infoListImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            ])
+        }
+        
         infoListImage.backgroundColor = .white
         infoListImage.contentMode = .scaleAspectFit
         infoListImage.image = UIImage(named: "info-1")

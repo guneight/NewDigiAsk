@@ -139,8 +139,8 @@ class galeryTableViewCell : UITableViewCell{
         
         self.contentView.addSubview(galeryImage)
         print("width cell = \(frame.size.width)")
-        if contentView.frame.size.width > 414 {
-            UIHelper.makeImageView(imageView: galeryImage, leadingAnchor: leadingAnchor, topAnchor: topAnchor, leadingConstant: 0, topConstant: 0, corner: 10, heightAnchor: frame.size.width/0.5)
+        if UIScreen.main.bounds.width > 414 {
+            UIHelper.makeImageView(imageView: galeryImage, leadingAnchor: leadingAnchor, topAnchor: topAnchor, leadingConstant: 0, topConstant: 0, corner: 10, heightAnchor: UIScreen.main.bounds.width/3)
             galeryImage.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
             galeryImage.contentMode = .scaleAspectFill
         }else{

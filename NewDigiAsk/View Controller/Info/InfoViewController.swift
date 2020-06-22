@@ -29,6 +29,8 @@ class InfoViewController: UIViewController {
         titleInfoLabel.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(goToDetailInfo))
         titleInfoLabel.addGestureRecognizer(tapGesture)
+        let imageTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(goToDetailInfo))
+        infoImage.addGestureRecognizer(imageTapGesture)
     }
     
     @objc func  goToDetailInfo(){
