@@ -35,7 +35,7 @@ extension HomeMenuViewController{
         if width > 414 {
             baseView.heightAnchor.constraint(equalToConstant: height*2).isActive = true
         }else{
-            baseView.heightAnchor.constraint(equalToConstant: height*1.5).isActive = true
+            baseView.heightAnchor.constraint(equalToConstant: 1282).isActive = true
         }
         
         NSLayoutConstraint.activate([
@@ -50,7 +50,7 @@ extension HomeMenuViewController{
         heightConstraint.isActive = true
         baseView.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         
-        let widthView = baseView.frame.size.height
+        let widthView = baseView.frame.size.width
         print("baseview height = \(widthView)")
         
         
@@ -126,7 +126,16 @@ extension HomeMenuViewController{
         //NotifCount
         let labelNotif = UILabel()
         containerViewNav.addSubview(labelNotif)
+        labelNotif.translatesAutoresizingMaskIntoConstraints = false
+              NSLayoutConstraint.activate([
+                  labelNotif.leadingAnchor.constraint(equalTo: notifButton.trailingAnchor, constant : -10),
+                  labelNotif.topAnchor.constraint(equalTo: containerViewNav.topAnchor, constant:0),
+                  labelNotif.widthAnchor.constraint(equalToConstant: 14),
+                  labelNotif.heightAnchor.constraint(equalToConstant: 14)
+              ])
         UIHelper.makeLabel(label: labelNotif, corner: 7, allignment: .center, leadingAnchor: containerViewNav.leadingAnchor, trailingAnchor: containerViewNav.trailingAnchor, topAnchor: containerViewNav.topAnchor, leadingConstant: (containerViewNav.frame.size.width-100), trailingConstant: -86, topConstant: 0, heightAnchor: 14, widthAnchor: 14)
+        labelNotif.layer.masksToBounds = true
+        labelNotif.layer.cornerRadius = 7
         labelNotif.backgroundColor = #colorLiteral(red: 1, green: 0.2039215686, blue: 0.01176470588, alpha: 1)
         labelNotif.text = "1"
         labelNotif.font = UIFont(name: fontNameHelper.ArialBoldMT, size: 10)
@@ -194,11 +203,12 @@ extension HomeMenuViewController{
         tabBarView.addSubview(klaimButton)
         klaimButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            klaimButton.leadingAnchor.constraint(equalTo: homeButton.trailingAnchor, constant: -((widthView-(4*48+54))/5)/2),
+            klaimButton.leadingAnchor.constraint(equalTo: homeButton.trailingAnchor, constant: ((view.frame.size.width-(5*48))/4-15)),
             klaimButton.bottomAnchor.constraint(equalTo: tabBarView.bottomAnchor),
             klaimButton.heightAnchor.constraint(equalToConstant: 49),
             klaimButton.widthAnchor.constraint(equalToConstant: 48)
         ])
+        print("leading Anchor = \((widthView-(5*48))/4))")
         klaimButton.setImage(UIImage(named: "klaimNormal.png"), for: .normal)
         klaimButton.layoutIfNeeded()
         
@@ -230,7 +240,7 @@ extension HomeMenuViewController{
         tabBarView.addSubview(simulasiButton)
         simulasiButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            simulasiButton.trailingAnchor.constraint(equalTo: profileButton.leadingAnchor, constant: (((widthView-(4*48+54))/5)/2)),
+            simulasiButton.trailingAnchor.constraint(equalTo: profileButton.leadingAnchor, constant: -((view.frame.size.width-(5*48))/4-15)),
             simulasiButton.bottomAnchor.constraint(equalTo: tabBarView.bottomAnchor),
             simulasiButton.heightAnchor.constraint(equalToConstant: 49),
             simulasiButton.widthAnchor.constraint(equalToConstant: 48)

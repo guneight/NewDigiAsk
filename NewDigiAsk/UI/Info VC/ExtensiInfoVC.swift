@@ -49,10 +49,16 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
         infoBaseView.layer.masksToBounds = true
         infoBaseView.layer.cornerRadius = 20
         infoBaseView.backgroundColor = .white
-
         infoBaseView.addSubview(infoImage)
-        UIHelper.makeImageView(imageView: infoImage, leadingAnchor: infoBaseView.leadingAnchor, topAnchor: infoBaseView.topAnchor, leadingConstant: 23, topConstant: 20, corner: 10, heightAnchor: 157)
-        infoImage.trailingAnchor.constraint(equalTo: infoBaseView.trailingAnchor, constant: -23).isActive = true
+        if view.frame.size.width > 414{
+            UIHelper.makeImageView(imageView: infoImage, leadingAnchor: infoBaseView.leadingAnchor, topAnchor: infoBaseView.topAnchor, leadingConstant: 23, topConstant: 20, corner: 10, heightAnchor: view.frame.size.width*0.4)
+            infoImage.trailingAnchor.constraint(equalTo: infoBaseView.trailingAnchor, constant: -23).isActive = true
+        }else{
+            UIHelper.makeImageView(imageView: infoImage, leadingAnchor: infoBaseView.leadingAnchor, topAnchor: infoBaseView.topAnchor, leadingConstant: 23, topConstant: 20, corner: 10, heightAnchor: 157)
+                   infoImage.trailingAnchor.constraint(equalTo: infoBaseView.trailingAnchor, constant: -23).isActive = true
+        }
+  
+       
         infoImage.contentMode = .scaleToFill
 //        infoImage.backgroundColor = .red
         infoImage.image = UIImage(named: "info")

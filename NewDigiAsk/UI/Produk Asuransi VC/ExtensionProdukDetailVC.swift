@@ -12,6 +12,7 @@ extension ProdukDetailViewController {
     
     func setupUI(){
         let height = view.frame.size.height
+        let width = view.frame.size.width
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         view.addSubview(produkBaseView)
         produkBaseView.translatesAutoresizingMaskIntoConstraints = false
@@ -168,8 +169,14 @@ extension ProdukDetailViewController {
             produkDetailImage.leadingAnchor.constraint(equalTo: produkBasesView.leadingAnchor),
             produkDetailImage.trailingAnchor.constraint(equalTo: produkBasesView.trailingAnchor),
             produkDetailImage.topAnchor.constraint(equalTo: produkDetailHeaderLabel.bottomAnchor, constant: 13),
-            produkDetailImage.heightAnchor.constraint(equalToConstant: 157)
+            
         ])
+        
+        if width > 414 {
+            produkDetailImage.heightAnchor.constraint(equalToConstant: view.frame.size.width/2.3 ).isActive = true
+        }else{
+            produkDetailImage.heightAnchor.constraint(equalToConstant: 157 ).isActive = true
+        }
         produkDetailImage.image = UIImage(named: "PA")
         produkDetailImage.contentMode = .scaleAspectFit
         
@@ -185,7 +192,11 @@ extension ProdukDetailViewController {
         attributView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         produkBasesView.addSubview(namaProdukLabel)
-        UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: attributView.trailingAnchor, trailingAnchor: produkDetailImage.trailingAnchor, topAnchor: produkDetailImage.topAnchor, leadingConstant: 12, trailingConstant: -(view.frame.size.width/2.5), topConstant: 60, heightAnchor: 70, widthAnchor: 0)
+        if width > 414 {
+            UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: attributView.trailingAnchor, trailingAnchor: produkDetailImage.trailingAnchor, topAnchor: produkDetailImage.bottomAnchor, leadingConstant: 12, trailingConstant: -(view.frame.size.width/2.5), topConstant: -150, heightAnchor: 70, widthAnchor: 0)
+        }else{
+           UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: attributView.trailingAnchor, trailingAnchor: produkDetailImage.trailingAnchor, topAnchor: produkDetailImage.topAnchor, leadingConstant: 12, trailingConstant: -(view.frame.size.width/2.5), topConstant: 60, heightAnchor: 70, widthAnchor: 0)
+        }
         namaProdukLabel.numberOfLines = 3
         UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), weight: .bold, fontSize: 18, text: "Asuransi \nKecelakaan \nDiri", kerning: 1)
         

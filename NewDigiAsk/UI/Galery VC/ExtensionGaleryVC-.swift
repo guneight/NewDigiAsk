@@ -29,7 +29,12 @@ extension GaleryViewController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 270
+        if view.frame.size.width > 414 {
+            return view.frame.size.width
+        }else{
+            return 270
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -133,9 +138,16 @@ class galeryTableViewCell : UITableViewCell{
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.contentView.addSubview(galeryImage)
-        UIHelper.makeImageView(imageView: galeryImage, leadingAnchor: contentView.leadingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 0, topConstant: 0, corner: 10, heightAnchor: 160)
+        print("width cell = \(frame.size.width)")
+        if contentView.frame.size.width > 414 {
+            UIHelper.makeImageView(imageView: galeryImage, leadingAnchor: leadingAnchor, topAnchor: topAnchor, leadingConstant: 0, topConstant: 0, corner: 10, heightAnchor: frame.size.width/0.5)
+            galeryImage.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+            galeryImage.contentMode = .scaleAspectFill
+        }else{
+        UIHelper.makeImageView(imageView: galeryImage, leadingAnchor: contentView.leadingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 0, topConstant: 0, corner: 10, heightAnchor: 200)
         galeryImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         galeryImage.contentMode = .scaleAspectFill
+        }
         
         contentView.addSubview(playButton)
         playButton.translatesAutoresizingMaskIntoConstraints = false

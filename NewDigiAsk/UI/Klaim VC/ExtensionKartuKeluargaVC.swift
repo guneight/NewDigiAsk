@@ -14,7 +14,7 @@ extension KartuKeluargaViewController: UIImagePickerControllerDelegate , UINavig
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openCamera(gesture:)))
         cameraIconImage.addGestureRecognizer(tapGesture)
         
-       
+        
     }
     
     @objc func openCamera(gesture : UITapGestureRecognizer){
@@ -24,7 +24,7 @@ extension KartuKeluargaViewController: UIImagePickerControllerDelegate , UINavig
         imgPicker.allowsEditing = false
         imgPicker.showsCameraControls = true
         self.present(imgPicker, animated: true, completion: nil)
-         print("presss")
+        print("presss")
     }
     
     
@@ -37,11 +37,11 @@ extension KartuKeluargaViewController: UIImagePickerControllerDelegate , UINavig
         } else {
             print("error")
         }
-     
-         
+        
+        
     }
     
-     func resizeImage(image: UIImage, newHeight: CGFloat) -> UIImage {
+    func resizeImage(image: UIImage, newHeight: CGFloat) -> UIImage {
         let width = image.size.width
         let scale = newHeight / image.size.height
         let newHeight = image.size.height * scale
@@ -70,7 +70,7 @@ extension KartuKeluargaViewController: UIImagePickerControllerDelegate , UINavig
         
         kartuKeluargaView.addSubview(kartuKeluargaLabel)
         UIHelper.makeLabel(label: kartuKeluargaLabel, corner: 0, allignment: .left, leadingAnchor: kartuKeluargaView.leadingAnchor, trailingAnchor: kartuKeluargaView.trailingAnchor, topAnchor: datadiSiapkan.bottomAnchor, leadingConstant: 23, trailingConstant: -23, topConstant: 13, heightAnchor: 16, widthAnchor: 0)
-         UIHelper.setTextLabel(label: kartuKeluargaLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "3 - Kartu Keluarga", kerning: 0.12)
+        UIHelper.setTextLabel(label: kartuKeluargaLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "3 - Kartu Keluarga", kerning: 0.12)
         
         kartuKeluargaView.addSubview(deskripsiKartuKeluargaLabel)
         UIHelper.makeLabel(label: deskripsiKartuKeluargaLabel, corner: 0, allignment: .left, leadingAnchor: kartuKeluargaView.leadingAnchor, trailingAnchor: kartuKeluargaView.trailingAnchor, topAnchor: kartuKeluargaLabel.bottomAnchor, leadingConstant: 42, trailingConstant: -30, topConstant: 5, heightAnchor: 47, widthAnchor: 0)
@@ -91,38 +91,39 @@ extension KartuKeluargaViewController: UIImagePickerControllerDelegate , UINavig
         UIHelper.makeLabel(label: keteranganFoto, corner: 0, allignment: .center, leadingAnchor: kartuKeluargaView.leadingAnchor, trailingAnchor: kartuKeluargaView.trailingAnchor, topAnchor: cameraIconImage.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: keteranganFoto, fontName: "Arial", fontColor: #colorLiteral(red: 0.6470588235, green: 0.6274509804, blue: 0.6274509804, alpha: 1), weight: .bold, fontSize: 10, text: "Foto KTP ataupun Bukti Identitas lainnya dari Ahli Waris", kerning: 0)
         
-         kartuKeluargaView.addSubview(lanjutButton)
-               lanjutButton.translatesAutoresizingMaskIntoConstraints = false
-               NSLayoutConstraint.activate([
-                   lanjutButton.leadingAnchor.constraint(equalTo: kartuKeluargaView.leadingAnchor, constant: 24),
-                   lanjutButton.trailingAnchor.constraint(equalTo: kartuKeluargaView.trailingAnchor, constant: -24),
-                   lanjutButton.bottomAnchor.constraint(equalTo: kartuKeluargaView.bottomAnchor, constant: -23),
-                   lanjutButton.heightAnchor.constraint(equalToConstant: 48)
-               ])
+        kartuKeluargaView.addSubview(lanjutButton)
+        lanjutButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            lanjutButton.leadingAnchor.constraint(equalTo: kartuKeluargaView.leadingAnchor, constant: 24),
+            lanjutButton.trailingAnchor.constraint(equalTo: kartuKeluargaView.trailingAnchor, constant: -24),
+            lanjutButton.bottomAnchor.constraint(equalTo: kartuKeluargaView.bottomAnchor, constant: -23),
+            lanjutButton.heightAnchor.constraint(equalToConstant: 48)
+        ])
         lanjutButton.layer.masksToBounds = true
         lanjutButton.layer.borderColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
         lanjutButton.layer.borderWidth = 1
         lanjutButton.layer.cornerRadius = 24
         lanjutButton.setTitle("LANJUT", for: .normal)
         lanjutButton.setTitleColor(#colorLiteral(red: 0.6470588235, green: 0.6274509804, blue: 0.6274509804, alpha: 1), for: .normal)
-       
+        
     }
     
     func setupNavBar(){
-          let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
-                 self.navigationItem.leftBarButtonItem = customButtonNav
-                 navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-                 navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-                 navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                 navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-                 navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-                 UINavigationBar.appearance().isTranslucent = false
-                 navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-                 title: "PROSES KLAIM", style: .plain, target: nil, action: nil)
-      }
-      
-      @objc func backButtonTapped() {
-        navigationController?.popViewController(animated: true)
+        let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
+        self.navigationItem.leftBarButtonItem = customButtonNav
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+        UIHelper.setTextLabel(label: titleLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "SURAT BUKTI", kerning: 0)
+        navigationItem.titleView = titleLabel
+    }
     
+    @objc func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+        
     }
 }

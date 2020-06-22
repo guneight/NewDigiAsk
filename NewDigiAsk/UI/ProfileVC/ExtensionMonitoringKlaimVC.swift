@@ -128,7 +128,8 @@ extension MonitoringKlaimViewController: UITableViewDelegate, UITableViewDataSou
         
     }
     @objc func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
+        let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController") as! ProfileViewController
+        self.navigationController?.pushViewController(profileVC, animated: true)
     }
     
     

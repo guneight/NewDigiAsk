@@ -48,7 +48,7 @@ extension SubmitKlaimViewController{
         dataPolisView.addSubview(laniStatusPolis)
         UIHelper.makeLabel(label: laniStatusPolis, corner: 0, allignment: .center, leadingAnchor: dataPolisView.leadingAnchor, trailingAnchor: dataPolisView.trailingAnchor, topAnchor: statusPolisLabel.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 5, heightAnchor: 1, widthAnchor: 0)
         laniStatusPolis.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
- 
+        
         dataPolisView.addSubview(headerMasaBerlakuLabel)
         UIHelper.makeLabel(label: headerMasaBerlakuLabel, corner: 0, allignment: .left, leadingAnchor: dataPolisView.leadingAnchor, trailingAnchor: dataPolisView.trailingAnchor, topAnchor: statusPolisLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: headerMasaBerlakuLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Masa berlaku", kerning: 0.5)
@@ -65,11 +65,11 @@ extension SubmitKlaimViewController{
         manfaatView.addSubview(pilihManfaatLabel)
         UIHelper.makeLabel(label: pilihManfaatLabel, corner: 0, allignment: .center, leadingAnchor: manfaatView.leadingAnchor, trailingAnchor: manfaatView.trailingAnchor, topAnchor: manfaatView.topAnchor, leadingConstant: 70, trailingConstant: -70, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: pilihManfaatLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "PILIH MANFAAT", kerning: 0.5)
-
+        
         manfaatView.addSubview(linepilihManfaat)
         UIHelper.makeView(view: linepilihManfaat, leadingAnchor: manfaatView.leadingAnchor, trailingAnchor: manfaatView.trailingAnchor, topAnchor: pilihManfaatLabel.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 6.5, corner: 0, heightAnchor: 1, widthAnchor: 0)
         linepilihManfaat.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-
+        
         manfaatView.addSubview(manfaatlabel)
         UIHelper.makeSmalllabel(smallLabel: manfaatlabel, leadingAnchor: manfaatView.leadingAnchor, topAnchor: linepilihManfaat.bottomAnchor, leadingConstant: 17, topConstant: 10, corner: 0, heightAnchor: 16, widthtAnchor: manfaatView.frame.size.width/2)
         UIHelper.setTextLabel(label: manfaatlabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Meninggal", kerning: 0.5)
@@ -86,7 +86,7 @@ extension SubmitKlaimViewController{
         dokumentKlaimView.addSubview(lineDokumenKlaim)
         UIHelper.makeLabel(label: lineDokumenKlaim, corner: 0, allignment: .center, leadingAnchor: dokumentKlaimView.leadingAnchor, trailingAnchor: dokumentKlaimView.trailingAnchor, topAnchor: dokumenKlaimLabel.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 6, heightAnchor: 1, widthAnchor: 0)
         lineDokumenKlaim.backgroundColor = #colorLiteral(red: 0.8509803922, green: 0.8509803922, blue: 0.8509803922, alpha: 1)
-      
+        
         
         
         dokumentKlaimView.addSubview(suratBuktiImage)
@@ -119,11 +119,11 @@ extension SubmitKlaimViewController{
         dokumentKlaimView.addSubview(kartuKeluargaImage)
         kartuKeluargaImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-                 kartuKeluargaImage.topAnchor.constraint(equalTo: lineDokumenKlaim.bottomAnchor, constant: 10),
-                 kartuKeluargaImage.widthAnchor.constraint(equalToConstant: 90),
-                 kartuKeluargaImage.heightAnchor.constraint(equalToConstant: 90),
-                 kartuKeluargaImage.leadingAnchor.constraint(equalTo: suratBuktiImage.trailingAnchor, constant: 10)
-             ])
+            kartuKeluargaImage.topAnchor.constraint(equalTo: lineDokumenKlaim.bottomAnchor, constant: 10),
+            kartuKeluargaImage.widthAnchor.constraint(equalToConstant: 90),
+            kartuKeluargaImage.heightAnchor.constraint(equalToConstant: 90),
+            kartuKeluargaImage.leadingAnchor.constraint(equalTo: suratBuktiImage.trailingAnchor, constant: 10)
+        ])
         kartuKeluargaImage.layer.masksToBounds = true
         kartuKeluargaImage.layer.cornerRadius = 5
         kartuKeluargaImage.layer.borderWidth = 0.5
@@ -132,11 +132,11 @@ extension SubmitKlaimViewController{
         submitKlaimView.addSubview(klaimButton)
         klaimButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-                klaimButton.leadingAnchor.constraint(equalTo: submitKlaimView.leadingAnchor, constant: 24),
-                klaimButton.trailingAnchor.constraint(equalTo: submitKlaimView.trailingAnchor, constant: -24),
-                klaimButton.bottomAnchor.constraint(equalTo: submitKlaimView.bottomAnchor, constant: -23),
-                klaimButton.heightAnchor.constraint(equalToConstant: 48)
-            ])
+            klaimButton.leadingAnchor.constraint(equalTo: submitKlaimView.leadingAnchor, constant: 24),
+            klaimButton.trailingAnchor.constraint(equalTo: submitKlaimView.trailingAnchor, constant: -24),
+            klaimButton.bottomAnchor.constraint(equalTo: submitKlaimView.bottomAnchor, constant: -23),
+            klaimButton.heightAnchor.constraint(equalToConstant: 48)
+        ])
         klaimButton.layer.masksToBounds = true
         klaimButton.layer.cornerRadius = 24
         klaimButton.setTitle("KLAIM", for: .normal)
@@ -145,20 +145,21 @@ extension SubmitKlaimViewController{
     }
     
     func setupNavBar(){
-            let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
-                   self.navigationItem.leftBarButtonItem = customButtonNav
-                   navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-                   navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-                   navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                   navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-                   navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-                   UINavigationBar.appearance().isTranslucent = false
-                   navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-                   title: "PROSES KLAIM", style: .plain, target: nil, action: nil)
-        }
+        let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
+        self.navigationItem.leftBarButtonItem = customButtonNav
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+        UIHelper.setTextLabel(label: titleLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "KARTU KELUARGA", kerning: 0)
+        navigationItem.titleView = titleLabel
+    }
+    
+    @objc func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
         
-        @objc func backButtonTapped() {
-          navigationController?.popViewController(animated: true)
-      
-      }
+    }
 }
