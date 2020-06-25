@@ -206,7 +206,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             viewColletionProduct.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor),
         ])
         if width > 414 {
-            viewColletionProduct.heightAnchor.constraint(equalToConstant: width*0.5).isActive = true
+            viewColletionProduct.heightAnchor.constraint(equalToConstant: width*0.55).isActive = true
         }else{
             viewColletionProduct.heightAnchor.constraint(equalToConstant: 223).isActive = true
         }
@@ -258,7 +258,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         
         whiteView.addSubview(viewInfo)
         if width > 414 {
-            UIHelper.makeView(view: viewInfo, leadingAnchor: whiteView.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewPromo.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 17.64, corner: 0,  heightAnchor: width/3, widthAnchor: 0)
+            UIHelper.makeView(view: viewInfo, leadingAnchor: whiteView.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewPromo.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 17.64, corner: 0,  heightAnchor: width/2.5, widthAnchor: 0)
             
         }else{
             UIHelper.makeView(view: viewInfo, leadingAnchor: whiteView.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewPromo.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 17.64, corner: 0,  heightAnchor: 180, widthAnchor: 0)
@@ -277,7 +277,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         
         whiteView.addSubview(viewGalery)
         if width > 414 {
-            UIHelper.makeView(view: viewGalery, leadingAnchor: whiteView.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewInfo.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 18, corner: 0, heightAnchor: width/3.5, widthAnchor: 0)
+            UIHelper.makeView(view: viewGalery, leadingAnchor: whiteView.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewInfo.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 18, corner: 0, heightAnchor: width/3, widthAnchor: 0)
             
         }else{
             UIHelper.makeView(view: viewGalery, leadingAnchor: whiteView.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewInfo.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 18, corner: 0, heightAnchor: 184, widthAnchor: 0)

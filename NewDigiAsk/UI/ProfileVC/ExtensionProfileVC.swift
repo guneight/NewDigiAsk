@@ -89,7 +89,8 @@ extension ProfileViewController : UITableViewDataSource, UITableViewDelegate{
           
       }
     @objc func backButtonTapped() {
-      navigationController?.popToRootViewController(animated: true)
+        let homeVC = storyboard?.instantiateViewController(identifier: "HomeMenuViewController") as! HomeMenuViewController
+      navigationController?.pushViewController(homeVC, animated: true)
     }
 }
 

@@ -14,7 +14,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "produkKeranjang", for: indexPath)  as! daftarProdukKeranjangTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "produkKeranjang", for: indexPath)  as! daftarProdukCartTableViewCell
         cell.selectionStyle = .none
         cell.layoutIfNeeded()
         cell.iconProdukImage.image = UIImage(named: "\(namaProdukArray[indexPath.row])")
@@ -208,6 +208,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func backButtonTapped() {
+        
         navigationController?.popViewController(animated: true)
     }
     

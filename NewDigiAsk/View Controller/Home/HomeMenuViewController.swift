@@ -38,7 +38,11 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            print("iPad")
+        }else{
+            print("not iPad")
+        }
         collectionViewPromo.delegate = self
         collectionViewPromo.dataSource = self
         collectionViewProduct.delegate = self
