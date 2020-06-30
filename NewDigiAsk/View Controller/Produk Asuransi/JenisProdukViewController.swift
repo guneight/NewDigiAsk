@@ -54,6 +54,7 @@ class JenisProdukViewController: UIViewController {
         setupNavBarJenisProdukDetail()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         view.layoutIfNeeded()
+        jenisProdukTable.reloadData()
         
         
         // Do any additional setup after loading the view.
@@ -64,7 +65,6 @@ class JenisProdukViewController: UIViewController {
         jenisProdukDetailVC.namajenisProdukDetailLabel.text = jenisProdukLabel.text
         jenisProdukDetailVC.startHargaProdukDetailLabel.text = startHargaProdukLabel.text
         jenisProdukDetailVC.deskripsiJenisProdukDetail.text = deskripsiJenisProdukLabel.text
-        print( "deskripsi : \(  String(describing: jenisProdukDetailVC.deskripsiJenisProdukDetail.text))")
         self.navigationController?.pushViewController(jenisProdukDetailVC, animated: true)
         
     }

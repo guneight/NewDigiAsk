@@ -29,12 +29,18 @@ extension ProdukDetailViewController {
         produkBaseView.backgroundColor = #colorLiteral(red: 0.6549019608, green: 0.6980392157, blue: 0.8980392157, alpha: 0.7728756421)
         produkBaseView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.2017337329)
         produkBaseView.layoutIfNeeded()
-        
+
         produkBaseView.addSubview(lineView)
-        UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 2, widthAnchor: 0)
-        lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
-        lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            lineView.widthAnchor.constraint(equalToConstant: 280),
+            lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            lineView.heightAnchor.constraint(equalToConstant: 2),
+            lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+        ])
         
+        lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
         produkBaseView.addSubview(prosesStackView)
         NSLayoutConstraint.activate([
@@ -48,12 +54,12 @@ extension ProdukDetailViewController {
         prosesStackView.alignment = .center
         prosesStackView.axis = .horizontal
         prosesStackView.distribution = UIStackView.Distribution.fillEqually
-        
+
         prosesStackView.addArrangedSubview(produkImage)
         produkImage.translatesAutoresizingMaskIntoConstraints = false
         produkImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
         produkImage.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        
+
         produkImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         produkImage.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         produkImage.image = UIImage(named: "produkIconWhite")
@@ -61,8 +67,8 @@ extension ProdukDetailViewController {
         produkImage.layer.masksToBounds = true
         produkImage.layer.cornerRadius = 17
         produkImage.layer.borderWidth = 1
-        
-        
+
+
         prosesStackView.addArrangedSubview(tertanggungImage)
         tertanggungImage.translatesAutoresizingMaskIntoConstraints = false
         tertanggungImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
@@ -73,7 +79,7 @@ extension ProdukDetailViewController {
         tertanggungImage.layer.cornerRadius = 17
         tertanggungImage.image = UIImage(named: "profileIcon")
         tertanggungImage.contentMode = .center
-        
+
         prosesStackView.addArrangedSubview(kerangjangImage)
         kerangjangImage.translatesAutoresizingMaskIntoConstraints = false
         kerangjangImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
@@ -84,8 +90,8 @@ extension ProdukDetailViewController {
         kerangjangImage.layer.cornerRadius = 17
         kerangjangImage.image = UIImage(named: "keranjangIcon")
         kerangjangImage.contentMode = .center
-        
-        
+
+
         prosesStackView.addArrangedSubview(checkOutImage)
         checkOutImage.translatesAutoresizingMaskIntoConstraints = false
         checkOutImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
@@ -96,7 +102,7 @@ extension ProdukDetailViewController {
         checkOutImage.layer.cornerRadius = 17
         checkOutImage.image = UIImage(named: "rpIcon")
         checkOutImage.contentMode = .center
-        
+
         prosesStackView.addArrangedSubview(completeImage)
         completeImage.translatesAutoresizingMaskIntoConstraints = false
         completeImage.heightAnchor.constraint(equalToConstant: 34).isActive = true
@@ -109,32 +115,31 @@ extension ProdukDetailViewController {
         completeImage.contentMode = .center
         
         produkBaseView.addSubview(produkView)
-        UIHelper.makeView(view: produkView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
-        produkView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        UIHelper.makeView(view: produkView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0)
         produkView.backgroundColor = .white
-        
+
         produkView.addSubview(produkDetailScrollView)
         produkDetailScrollView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             produkDetailScrollView.leadingAnchor.constraint(equalTo: produkView.leadingAnchor),
             produkDetailScrollView.trailingAnchor.constraint(equalTo: produkView.trailingAnchor),
             produkDetailScrollView.topAnchor.constraint(equalTo: produkView.topAnchor),
-            produkDetailScrollView.heightAnchor.constraint(equalToConstant: height*0.77-35)
+            produkDetailScrollView.heightAnchor.constraint(equalToConstant: height*0.77)
         ])
         produkDetailScrollView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         produkDetailScrollView.isScrollEnabled = true
         produkDetailScrollView.showsVerticalScrollIndicator = false
-        print("Height : \(height-(height*0.75))")
-        print("Height scroll: \(produkDetailScrollView.frame.size.height)")
+
         produkDetailScrollView.layoutIfNeeded()
-        
+
         produkView.addSubview(pilihProdukButton)
-        UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: produkDetailScrollView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 0, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -20, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        
         let index =  indexProdukSelect
                if index == 0  {
                    pilihProdukButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
                    pilihProdukButton.setTitle( "PILIH PRODUK", for: .normal)
-                   
+
                }else{
                    pilihProdukButton.backgroundColor = #colorLiteral(red: 0.2458193898, green: 0.2900034189, blue: 0.4485326409, alpha: 1)
                    pilihProdukButton.setTitle( "Coming soon,,,", for: .normal)
@@ -143,7 +148,7 @@ extension ProdukDetailViewController {
                }
         let descriptionFont = UIFont(name: "Arial", size: 10)?.fontDescriptor.withSymbolicTraits(UIFontDescriptor.SymbolicTraits.traitBold)
         pilihProdukButton.titleLabel?.font = UIFont(descriptor: descriptionFont!, size: 10)
-        
+
         produkDetailScrollView.addSubview(produkBasesView)
         produkBasesView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -158,20 +163,20 @@ extension ProdukDetailViewController {
         heightConstraint.priority = UILayoutPriority(rawValue: 250)
         heightConstraint.isActive = true
         produkBasesView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
+
         produkBasesView.addSubview(produkDetailHeaderLabel)
         UIHelper.makeLabel(label: produkDetailHeaderLabel, corner: 0, allignment: .left, leadingAnchor: produkBasesView.leadingAnchor, trailingAnchor: produkBasesView.trailingAnchor, topAnchor: produkBasesView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 19, heightAnchor: 18, widthAnchor: 0)
         UIHelper.setTextLabel(label: produkDetailHeaderLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .medium, fontSize: 12, text: "Asuransi Kecelakaan Diri", kerning: 0.2)
-        
+
         produkBasesView.addSubview(produkDetailImage)
         produkDetailImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             produkDetailImage.leadingAnchor.constraint(equalTo: produkBasesView.leadingAnchor),
             produkDetailImage.trailingAnchor.constraint(equalTo: produkBasesView.trailingAnchor),
             produkDetailImage.topAnchor.constraint(equalTo: produkDetailHeaderLabel.bottomAnchor, constant: 13),
-            
+
         ])
-        
+
         if width > 414 {
             produkDetailImage.heightAnchor.constraint(equalToConstant: view.frame.size.width/2.3 ).isActive = true
         }else{
@@ -179,7 +184,7 @@ extension ProdukDetailViewController {
         }
         produkDetailImage.image = UIImage(named: "PA")
         produkDetailImage.contentMode = .scaleAspectFit
-        
+
         produkBasesView.addSubview(attributView)
         attributView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -187,10 +192,10 @@ extension ProdukDetailViewController {
             attributView.bottomAnchor.constraint(equalTo: produkDetailImage.bottomAnchor, constant: -30),
             attributView.widthAnchor.constraint(equalToConstant: 4),
             attributView.heightAnchor.constraint(equalToConstant: 60)
-            
+
         ])
         attributView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
+
         produkBasesView.addSubview(namaProdukLabel)
         if width > 414 {
             UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: attributView.trailingAnchor, trailingAnchor: produkDetailImage.trailingAnchor, topAnchor: produkDetailImage.bottomAnchor, leadingConstant: 12, trailingConstant: -(view.frame.size.width/2.5), topConstant: -150, heightAnchor: 70, widthAnchor: 0)
@@ -199,43 +204,43 @@ extension ProdukDetailViewController {
         }
         namaProdukLabel.numberOfLines = 3
         UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), weight: .bold, fontSize: 18, text: "Asuransi \nKecelakaan \nDiri", kerning: 1)
-        
-        
+
+
         produkBasesView.addSubview(deskripsiProdukLabel)
         let text = "Memberikan perlindungan atas risiko kematian, cacat tetap, biaya perawatan dan atau pengobatan yang secara langsung disebabkan suatu kecelakaan. Kecelakaan yaitu suatu kejadian atau peristiwa yang mengandung unsur kekerasan, baik bersifat fisik maupun kimia, yang datangnya secara tiba-tiba, termasuk juga kecelakaan yaitu yang disebabkan karena keracunan makanan, uap dan gas, jatuh ke dalam air atau tenggelam."
         //        let heightLabel = deskripsiProdukLabel.systemLayoutSizeFitting(CGSize(width: produkBaseView.frame.size.width-90, height: UIView.layoutFittingCompressedSize.height), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
         UIHelper.makeLabel(label: deskripsiProdukLabel, corner: 0, allignment: .left, leadingAnchor: produkBasesView.leadingAnchor, trailingAnchor: produkBasesView.trailingAnchor, topAnchor: produkDetailImage.bottomAnchor, leadingConstant: 70, trailingConstant: -20, topConstant: 17, heightAnchor: 200, widthAnchor: 0)
         UIHelper.setTextLabel(label: deskripsiProdukLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.66), weight: .medium, fontSize: 12, text: text, kerning: 0.6)
         deskripsiProdukLabel.numberOfLines = 0
-        
+
         produkBasesView.addSubview(penggunaLabel)
         UIHelper.makeLabel(label: penggunaLabel, corner: 0, allignment: .left, leadingAnchor: produkBasesView.leadingAnchor, trailingAnchor: produkBasesView.trailingAnchor, topAnchor: deskripsiProdukLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 18, widthAnchor: 0)
         UIHelper.setTextLabel(label: penggunaLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .medium, fontSize: 12, text: "Pengguna (tertanggung)", kerning: 0.12)
-        
+
         produkBasesView.addSubview(deskripsiPenggunaLabel)
         UIHelper.makeLabel(label: deskripsiPenggunaLabel, corner: 0, allignment: .left, leadingAnchor: produkBasesView.leadingAnchor, trailingAnchor: produkBasesView.trailingAnchor, topAnchor: penggunaLabel.bottomAnchor, leadingConstant: 73, trailingConstant: -17, topConstant: 10, heightAnchor: 43, widthAnchor: 0)
         UIHelper.setTextLabel(label: deskripsiPenggunaLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 14, text: "Individu yang berusia 17 sampai dengan 60 tahun baik perorangan atau grup", kerning: 0.04)
         deskripsiPenggunaLabel.numberOfLines = 0
-        
+
         produkBasesView.addSubview(gantiRugiContainerView)
         UIHelper.makeView(view: gantiRugiContainerView, leadingAnchor: produkBasesView.leadingAnchor, trailingAnchor: produkBasesView.trailingAnchor, topAnchor: deskripsiPenggunaLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 40 , corner: 10, heightAnchor: 206, widthAnchor:    0)
         gantiRugiContainerView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-        
+
         produkBasesView.addSubview(iconGantiRugiImage)
         UIHelper.makeImageView(imageView: iconGantiRugiImage, leadingAnchor: gantiRugiContainerView.leadingAnchor, topAnchor: gantiRugiContainerView.topAnchor, leadingConstant: 26, topConstant: -35, corner: 10, heightAnchor: 69)
         iconGantiRugiImage.widthAnchor.constraint(equalToConstant: 69).isActive = true
         iconGantiRugiImage.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         iconGantiRugiImage.image = UIImage(named: "wallet")
         iconGantiRugiImage.contentMode = .center
-        
+
         gantiRugiContainerView.addSubview(gantiRugiLabel)
         UIHelper.makeLabel(label: gantiRugiLabel, corner: 0, allignment: .right, leadingAnchor:iconGantiRugiImage.trailingAnchor, trailingAnchor: gantiRugiContainerView.trailingAnchor, topAnchor: gantiRugiContainerView.topAnchor, leadingConstant:10, trailingConstant: -15, topConstant: 10, heightAnchor: 16, widthAnchor: 0   )
         UIHelper.setTextLabel(label: gantiRugiLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: "Ganti Rugi", kerning: 0.12)
-        
+
         gantiRugiContainerView.addSubview(lineGantiRugiLabel)
         UIHelper.makeView(view: lineGantiRugiLabel, leadingAnchor: iconGantiRugiImage.trailingAnchor, trailingAnchor: gantiRugiContainerView.trailingAnchor, topAnchor: gantiRugiLabel.bottomAnchor, leadingConstant: 6, trailingConstant: 0, topConstant: 5, corner: 0, heightAnchor: 1, widthAnchor: 0)
         lineGantiRugiLabel.backgroundColor = #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)
-        
+
         gantiRugiContainerView.addSubview(deskripsiGantiRugi)
         deskripsiGantiRugi.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -244,31 +249,31 @@ extension ProdukDetailViewController {
             deskripsiGantiRugi.topAnchor.constraint(equalTo: lineGantiRugiLabel.bottomAnchor, constant: 15),
             deskripsiGantiRugi.bottomAnchor.constraint(equalTo: gantiRugiContainerView.bottomAnchor, constant: -12)
         ])
-        
+
         let textGantiRugi = "Memberikan ganti rugi kepada tertanggung/ahli waris apabila tertanggung mengalami kecelakaan yang mengakibatkan:Meninggal dunia, Cacat tetap total atau cacat tetap sebagian, Biaya perawatan dan atau pengobatan"
         UIHelper.setTextLabel(label: deskripsiGantiRugi , fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1), weight: .regular, fontSize: 12, text: textGantiRugi, kerning: 0.06)
         deskripsiGantiRugi.numberOfLines = 0
-        
+
         produkBasesView.addSubview(penggantiBiayacontainerView)
         UIHelper.makeView(view: penggantiBiayacontainerView, leadingAnchor: produkBasesView.leadingAnchor, trailingAnchor: produkBasesView.trailingAnchor, topAnchor: gantiRugiContainerView.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 47, corner: 10, heightAnchor: 206, widthAnchor: 0)
         penggantiBiayacontainerView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-        
+
         produkBasesView.addSubview(iconPenggantiBiayaImage)
         UIHelper.makeImageView(imageView: iconPenggantiBiayaImage, leadingAnchor: penggantiBiayacontainerView.leadingAnchor, topAnchor: penggantiBiayacontainerView.topAnchor, leadingConstant: 26, topConstant: -35, corner: 10, heightAnchor: 69)
         iconPenggantiBiayaImage.widthAnchor.constraint(equalToConstant: 69).isActive = true
         iconPenggantiBiayaImage.backgroundColor = #colorLiteral(red: 1, green: 0.6352941176, blue: 0.3137254902, alpha: 1)
         iconPenggantiBiayaImage.image = UIImage(named: "idr-min")
         iconPenggantiBiayaImage.contentMode = .center
-        
-        
+
+
         penggantiBiayacontainerView.addSubview(penggantiBiayaLabel)
         UIHelper.makeLabel(label: penggantiBiayaLabel, corner: 0, allignment: .right, leadingAnchor: iconPenggantiBiayaImage.trailingAnchor, trailingAnchor: penggantiBiayacontainerView.trailingAnchor, topAnchor: penggantiBiayacontainerView.topAnchor, leadingConstant:10, trailingConstant: -5, topConstant: 10, heightAnchor: 16, widthAnchor: 0   )
         UIHelper.setTextLabel(label: penggantiBiayaLabel , fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: "Penggantian Biaya", kerning: 0.12)
-        
+
         penggantiBiayacontainerView.addSubview(linePenggatianBiayaLabel)
         UIHelper.makeView(view: linePenggatianBiayaLabel, leadingAnchor: iconPenggantiBiayaImage.trailingAnchor, trailingAnchor: penggantiBiayacontainerView.trailingAnchor, topAnchor: penggantiBiayaLabel.bottomAnchor, leadingConstant: 6, trailingConstant: 0, topConstant: 5, corner: 0, heightAnchor: 1, widthAnchor: 0)
         linePenggatianBiayaLabel.backgroundColor = #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)
-        
+
         penggantiBiayacontainerView.addSubview(deskripsiPenggantiBiayaLabel)
         deskripsiPenggantiBiayaLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

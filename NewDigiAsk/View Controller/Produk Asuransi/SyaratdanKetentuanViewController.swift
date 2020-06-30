@@ -58,7 +58,6 @@ class SyaratdanKetentuanViewController: UIViewController {
     }
     
     @objc func setujuAction(sender: Any){
-        print(" SETUJU BUTTON")
         let identitasPenanungVC = self.storyboard?.instantiateViewController(identifier: "IdentitasTertanggungdanPenerimaManfaatViewController") as! IdentitasTertanggungdanPenerimaManfaatViewController
         self.navigationController?.pushViewController(identitasPenanungVC, animated: true)
         

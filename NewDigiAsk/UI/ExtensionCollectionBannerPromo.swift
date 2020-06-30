@@ -111,7 +111,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
     
     func cvSetup(){
         let width = view.frame.size.width
-        let height = view.frame.size.height
+    
         baseView.addSubview(whiteView)
         whiteView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -210,8 +210,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         }else{
             viewColletionProduct.heightAnchor.constraint(equalToConstant: 223).isActive = true
         }
-        print(viewColletionProduct.frame.size.height)
-        print(viewColletionProduct.frame.size.width)
+       
         viewColletionProduct.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.09586365582)
         viewColletionProduct.layoutIfNeeded()
         
@@ -329,7 +328,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             return CGSize(width: containerCollectionView.frame.size.width , height: containerCollectionView.frame.size.height)
         }else if collectionView == collectionViewProduct{
             if viewColletionProduct.frame.size.width > 414{
-                return CGSize(width: viewColletionProduct.frame.width/5.6, height: viewColletionProduct.frame.height*0.45)
+                return CGSize(width: viewColletionProduct.frame.width/6.5, height: viewColletionProduct.frame.height*0.45)
             }else{
                 return CGSize(width: 60, height: 82)
             }
@@ -360,7 +359,6 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         }else if collectionView == collectionViewPromo{
             return 5
         }else if collectionView == collectBannerPromo{
-            print("lewat")
             return promo.count
         }else if collectionView == collectionViewInfo{
             return infoPromo.count
@@ -378,7 +376,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cellproduct", for: indexPath) as! collectionViewProductCell
             cell.imageIconProduct.image = UIImage(named: namaProdukArray[indexPath.row])
             cell.labelIcon.text = namaProdukArray[indexPath.row]
-            cell.backgroundColor = UIColor.clear.withAlphaComponent(0)
+            cell.backgroundColor = UIColor.clear
             return cell
             
         }else if collectionView == collectionViewPromo{
@@ -411,14 +409,13 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
                 indicatorbanner4.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
                 indicatorbanner5.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
                 
-            }else {
+            }else if indexPath.row == 4{
                 indicatorbanner1.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
                 indicatorbanner2.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
                 indicatorbanner3.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
                 indicatorbanner4.backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.831372549, blue: 0.8235294118, alpha: 1)
                 indicatorbanner5.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
             }
-            print("thid index = \(indexPath.row)")
             return cell
             
         }else if collectionView == collectBannerPromo{
@@ -460,7 +457,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == collectionViewPromo {
             return 0
         }else if collectionView == collectionViewProduct{
-            return 3
+            return 0
         }else if collectionView == collectBannerPromo{
             return 0
         }else if collectionView == collectionViewInfo{
@@ -471,13 +468,12 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             return 0
         }
         
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == collectionViewPromo {
-            return CGFloat(0)
+            return CGFloat(15)
         }else if collectionView == collectionViewProduct{
             return CGFloat(13)
         }else if collectionView == collectBannerPromo{
@@ -558,11 +554,12 @@ class collectionViewProductCell : UICollectionViewCell{
         if viewColletionProduct.frame.size.width > 414 {
             UIHelper.makeView(view: containerIconImage, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: topAnchor, leadingConstant: 2, trailingConstant: -2, topConstant: 0, corner: 8, heightAnchor: frame.size.width, widthAnchor: frame.size.width)
             
-            UIHelper.makeImageView(imageView: imageIconProduct, leadingAnchor: containerIconImage.leadingAnchor, topAnchor: containerIconImage.topAnchor, leadingConstant: containerIconImage.frame.size.width*0.2, topConstant: containerIconImage.frame.size.width*0.2, corner: 5, heightAnchor: containerIconImage.frame.size.width*0.6)
-            imageIconProduct.widthAnchor.constraint(equalToConstant: containerIconImage.frame.size.width*0.6).isActive = true
+            UIHelper.makeImageView(imageView: imageIconProduct, leadingAnchor: containerIconImage.leadingAnchor, topAnchor: containerIconImage.topAnchor, leadingConstant: containerIconImage.frame.size.width*0.3, topConstant: containerIconImage.frame.size.width*0.3, corner: 5, heightAnchor: containerIconImage.frame.size.width*0.4)
+            imageIconProduct.widthAnchor.constraint(equalToConstant: containerIconImage.frame.size.width*0.4).isActive = true
             
-            UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor ,topAnchor: containerIconImage.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: containerIconImage.frame.size.width/4, widthAnchor: 0)
-            UIHelper.setTextLabel(label: labelIcon, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 15, text: " ", kerning: 0.5)
+            UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor ,topAnchor: containerIconImage.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: containerIconImage.frame.size.width/3, widthAnchor: 0)
+            UIHelper.setTextLabel(label: labelIcon, fontName: fontNameHelper.AvantGardeITCbyBTDemi, fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 15, text: " ", kerning: 0.5)
+            labelIcon.numberOfLines = 0
         }else{
             UIHelper.makeView(view: containerIconImage, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: topAnchor, leadingConstant: 2, trailingConstant: -2, topConstant: 0, corner: 8, heightAnchor: 56, widthAnchor: 56)
             
@@ -571,7 +568,7 @@ class collectionViewProductCell : UICollectionViewCell{
             
             UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor ,topAnchor: containerIconImage.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: 23, widthAnchor: 0)
             
-            UIHelper.setTextLabel(label: labelIcon, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: " ", kerning: 0.5)
+            UIHelper.setTextLabel(label: labelIcon, fontName: fontNameHelper.AvantGardeITCbyBTBook, fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: " ", kerning: 0.5)
         }
         
         containerIconImage.backgroundColor = .white

@@ -53,8 +53,13 @@ extension CheckOutKeranjangViewController : UITableViewDelegate, UITableViewData
         produkBaseView.layoutIfNeeded()
         
         produkBaseView.addSubview(lineView)
-        UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 2, widthAnchor: 0)
-        lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
+          lineView.translatesAutoresizingMaskIntoConstraints = false
+             NSLayoutConstraint.activate([
+                 lineView.widthAnchor.constraint(equalToConstant: 280),
+                 lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                 lineView.heightAnchor.constraint(equalToConstant: 2),
+                 lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+             ])
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
@@ -133,8 +138,7 @@ extension CheckOutKeranjangViewController : UITableViewDelegate, UITableViewData
         daftarPembelianTable.register(checkOutTableCell.self, forCellReuseIdentifier: "checkOUtCell")
         
         produkBaseView.addSubview(checkOutView)
-        UIHelper.makeView(view: checkOutView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
-        checkOutView.bottomAnchor.constraint(equalTo: produkBaseView.bottomAnchor).isActive = true
+        UIHelper.makeView(view: checkOutView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0)
         checkOutView.backgroundColor = .white
         
         checkOutView.addSubview(pembelianBerupa)
@@ -159,7 +163,7 @@ extension CheckOutKeranjangViewController : UITableViewDelegate, UITableViewData
         UIHelper.setTextLabel(label: totalHargaLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 250.000,-", kerning: 0.12)
         
         checkOutView.addSubview(bayarButton)
-        UIHelper.makeButton(button: bayarButton, leadingAnchor: checkOutView.leadingAnchor, trailingAnchor: checkOutView.trailingAnchor, topAnchor: totalHargaLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 0, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        UIHelper.makeButton(button: bayarButton, leadingAnchor: checkOutView.leadingAnchor, trailingAnchor: checkOutView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -20, corner: 24, heightAnchor: 48, widthAnchor: 0)
         bayarButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         bayarButton.setTitle("BAYAR", for: .normal)
         

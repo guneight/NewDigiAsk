@@ -59,8 +59,13 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         produkBaseView.layoutIfNeeded()
 
         produkBaseView.addSubview(lineView)
-        UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 2, widthAnchor: 0)
-        lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
+           lineView.translatesAutoresizingMaskIntoConstraints = false
+             NSLayoutConstraint.activate([
+                 lineView.widthAnchor.constraint(equalToConstant: 280),
+                 lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                 lineView.heightAnchor.constraint(equalToConstant: 2),
+                 lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+             ])
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
 
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
@@ -136,19 +141,18 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         completeImage.contentMode = .center
         
         produkBaseView.addSubview(jenisProdukView)
-        UIHelper.makeView(view: jenisProdukView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
-        jenisProdukView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        UIHelper.makeView(view: jenisProdukView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0)
         jenisProdukView.backgroundColor = .white
-        
+
         jenisProdukTable.backgroundColor = .white
         jenisProdukTable.register(jenisProdukTableViewCell.self, forCellReuseIdentifier: "cellJenisProduk")
         jenisProdukTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         jenisProdukTable.showsVerticalScrollIndicator = false
-        
+
         jenisProdukView.addSubview(namaProdukLabel)
         UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: jenisProdukView.leadingAnchor, trailingAnchor: jenisProdukView.trailingAnchor, topAnchor: jenisProdukView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 17, widthAnchor: 0)
         UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Asuransi Kecelakaan Diri", kerning: 0.12)
-        
+
         jenisProdukView.addSubview(jenisProdukTable)
         jenisProdukTable.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

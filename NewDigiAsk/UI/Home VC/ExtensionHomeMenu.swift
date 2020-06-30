@@ -33,7 +33,7 @@ extension HomeMenuViewController{
         scrollView.addSubview(baseView)
         baseView.translatesAutoresizingMaskIntoConstraints = false
         if width > 414 {
-            baseView.heightAnchor.constraint(equalToConstant: height*2).isActive = true
+            baseView.heightAnchor.constraint(equalToConstant: height*2.2 ).isActive = true
         }else{
             baseView.heightAnchor.constraint(equalToConstant: 1282).isActive = true
         }
@@ -78,9 +78,9 @@ extension HomeMenuViewController{
         containerViewNav.addSubview(cartButton)
         cartButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            cartButton.trailingAnchor.constraint(equalTo: containerViewNav.trailingAnchor, constant : -20.11),
+            cartButton.leadingAnchor.constraint(equalTo: containerViewNav.trailingAnchor, constant : -37.11),
             cartButton.topAnchor.constraint(equalTo: containerViewNav.topAnchor, constant:5),
-            cartButton.widthAnchor.constraint(equalToConstant: 17),
+//            cartButton.widthAnchor.constraint(equalToConstant: 17),
             cartButton.heightAnchor.constraint(equalToConstant: 16.57)
         ])
         cartButton.setImage(UIImage(named: "cart.png"), for: .normal)
@@ -107,7 +107,7 @@ extension HomeMenuViewController{
         NSLayoutConstraint.activate([
             chatButton.trailingAnchor.constraint(equalTo: cartButton.leadingAnchor, constant : -20.11),
             chatButton.topAnchor.constraint(equalTo: containerViewNav.topAnchor, constant:5),
-            chatButton.widthAnchor.constraint(equalToConstant: 17),
+//            chatButton.widthAnchor.constraint(equalToConstant: 17),
             chatButton.heightAnchor.constraint(equalToConstant: 16.25)
         ])
         chatButton.setImage(UIImage(named: "hubungikami.png"), for: .normal)
@@ -118,8 +118,8 @@ extension HomeMenuViewController{
         NSLayoutConstraint.activate([
             notifButton.trailingAnchor.constraint(equalTo: chatButton.leadingAnchor, constant : -20.11),
             notifButton.topAnchor.constraint(equalTo: containerViewNav.topAnchor, constant:5),
-            notifButton.widthAnchor.constraint(equalToConstant: 17),
-            notifButton.heightAnchor.constraint(equalToConstant: 17.55)
+//            notifButton.widthAnchor.constraint(equalToConstant: 17),
+            notifButton.heightAnchor.constraint(equalToConstant: 16.55)
         ])
         notifButton.setImage(UIImage(named: "notif.png"), for: .normal)
         

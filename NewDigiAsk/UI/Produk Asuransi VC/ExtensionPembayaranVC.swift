@@ -29,8 +29,13 @@ extension PembayaranViewController{
         produkBaseView.layoutIfNeeded()
         
         produkBaseView.addSubview(lineView)
-        UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 2, widthAnchor: 0)
-        lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
+          lineView.translatesAutoresizingMaskIntoConstraints = false
+             NSLayoutConstraint.activate([
+                 lineView.widthAnchor.constraint(equalToConstant: 280),
+                 lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                 lineView.heightAnchor.constraint(equalToConstant: 2),
+                 lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+             ])
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
@@ -106,8 +111,7 @@ extension PembayaranViewController{
         completeImage.contentMode = .center
         
         produkBaseView.addSubview(pembayaranView)
-        UIHelper.makeView(view: pembayaranView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
-        pembayaranView.bottomAnchor.constraint(equalTo: produkBaseView.bottomAnchor).isActive = true
+        UIHelper.makeView(view: pembayaranView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0)
         pembayaranView.backgroundColor = .white
         
         pembayaranView.addSubview(totalPembayaranView)

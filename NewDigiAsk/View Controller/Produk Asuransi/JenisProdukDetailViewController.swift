@@ -53,9 +53,8 @@ class JenisProdukDetailViewController: UIViewController {
         super.viewDidLoad()
         daftarPremiTable.reloadData()
         setupNavBarJenisProdukDetail()
-         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         view.layoutIfNeeded()
-        print("namajenisProdukDetailLabel : \(String(describing: namajenisProdukDetailLabel.text))")
         // Do any additional setup after loading the view.
     }
     

@@ -30,8 +30,13 @@ extension DeskripsiProdukViewController{
         produkIndicatorView.layoutIfNeeded()
         
         produkIndicatorView.addSubview(lineView)
-        UIHelper.makeView(view: lineView, leadingAnchor: produkIndicatorView.leadingAnchor, trailingAnchor: produkIndicatorView.trailingAnchor, topAnchor: produkIndicatorView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 1.5, widthAnchor: 0)
-        lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+             NSLayoutConstraint.activate([
+                 lineView.widthAnchor.constraint(equalToConstant: 280),
+                 lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                 lineView.heightAnchor.constraint(equalToConstant: 2),
+                 lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+             ])
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         
         produkIndicatorView.addSubview(prosesStackView)
@@ -100,7 +105,7 @@ extension DeskripsiProdukViewController{
         
         print("height view = \(height)")
         produkIndicatorView.addSubview(produkView)
-        UIHelper.makeView(view: produkView, leadingAnchor: produkIndicatorView.leadingAnchor, trailingAnchor: produkIndicatorView.trailingAnchor, topAnchor: produkIndicatorView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
+        UIHelper.makeView(view: produkView, leadingAnchor: produkIndicatorView.leadingAnchor, trailingAnchor: produkIndicatorView.trailingAnchor, topAnchor: produkIndicatorView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkIndicatorView.frame.size.height, widthAnchor: 0)
         produkView.bottomAnchor.constraint(equalTo: produkIndicatorView.bottomAnchor).isActive = true
         produkView.backgroundColor = .white
         

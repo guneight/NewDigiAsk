@@ -27,7 +27,7 @@ class HubungiKamiViewController: UIViewController,MFMailComposeViewControllerDel
         setupNavBarHubungiKami()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         view.layoutIfNeeded()
-        let tapGesture  = UITapGestureRecognizer.init(target: self, action: #selector(teleponAction(sender:)))
+        let tapGesture  = UITapGestureRecognizer.init(target: self, action: #selector(callNumber))
         teleponBaseView.addGestureRecognizer(tapGesture)
         
         let emailTapGesture  = UITapGestureRecognizer.init(target: self, action: #selector(emailAction(sender:)))
@@ -35,12 +35,13 @@ class HubungiKamiViewController: UIViewController,MFMailComposeViewControllerDel
         // Do any additional setup after loading the view.
     }
     
-
+    
     
     // MARK: - Action
     @objc func teleponAction(sender: Any){
-        let detailHubungiKamiVC = storyboard?.instantiateViewController(identifier: "DetailHubungiKamiViewController") as! DetailHubungiKamiViewController
-        navigationController?.pushViewController(detailHubungiKamiVC, animated: true)
+        //        callNumber(phoneNumber: nomorTeleponLabel.text!)
+        //        let detailHubungiKamiVC = storyboard?.instantiateViewController(identifier: "DetailHubungiKamiViewController") as! DetailHubungiKamiViewController
+        //        navigationController?.pushViewController(detailHubungiKamiVC, animated: true)
     }
     
     @objc func emailAction(sender : Any){
@@ -49,7 +50,7 @@ class HubungiKamiViewController: UIViewController,MFMailComposeViewControllerDel
             mail.mailComposeDelegate = self
             mail.setToRecipients(["digital@askrindo.co.id"])
             mail.setSubject("DigiAsk help-")
-
+            
             present(mail, animated: true)
         } else {
             print("send mail was failed")
@@ -57,9 +58,19 @@ class HubungiKamiViewController: UIViewController,MFMailComposeViewControllerDel
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-         dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-
     
+    
+    @objc func callNumber() {
+        guard let url = URL(string: "tel://1500-045"),
+            UIApplication.shared.canOpenURL(url) else { return }
+        if #available(iOS 10, *) {
+            UIApplication.shared.open(url)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+        
+    }
 }

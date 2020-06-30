@@ -130,7 +130,6 @@ class VerifikasiKTPViewController: UIViewController {
             
         }else if step == 2 {
             step = 0
-            print("nomor identitas :", nomorKTPTextField.text)
             let editProfile = storyboard?.instantiateViewController(identifier: "EditProfileViewController") as! EditProfileViewController
             editProfile.nomorIdentitas = nomorKTPTextField.text ?? ""
             

@@ -14,7 +14,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "produkKeranjang", for: indexPath)  as! daftarProdukCartTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "produkKeranjangCell", for: indexPath)  as! daftarProdukKeranjangTableViewCells
         cell.selectionStyle = .none
         cell.layoutIfNeeded()
         cell.iconProdukImage.image = UIImage(named: "\(namaProdukArray[indexPath.row])")
@@ -25,7 +25,6 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         cell.rightArrowButton.addTarget(self, action: #selector(rightButtonAction(sender:)), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(namaProdukAction(sender:)))
         cell.namaProdukLabel.addGestureRecognizer(tapGesture)
-        print("nilai tag = \(pilihSemuaProdukButton.tag)")
        
         if selectRows.contains(indexPath){
             cell.checkCellButton.setImage(UIImage(named: "checkBoxIcon"), for: .normal)
@@ -75,8 +74,13 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         produkBaseView.layoutIfNeeded()
         
         produkBaseView.addSubview(lineView)
-        UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 2, widthAnchor: 0)
-        lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
+           lineView.translatesAutoresizingMaskIntoConstraints = false
+             NSLayoutConstraint.activate([
+                 lineView.widthAnchor.constraint(equalToConstant: 280),
+                 lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                 lineView.heightAnchor.constraint(equalToConstant: 2),
+                 lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+             ])
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
@@ -153,8 +157,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         produkBaseView.addSubview(keranjangBaseView)
-        UIHelper.makeView(view: keranjangBaseView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
-        keranjangBaseView.bottomAnchor.constraint(equalTo: produkBaseView.bottomAnchor).isActive = true
+        UIHelper.makeView(view: keranjangBaseView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0)
         keranjangBaseView.backgroundColor = .white
         
         keranjangBaseView.addSubview(pilihSemuaProdukButton)
@@ -177,17 +180,17 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
             daftarProdukKeranjangTable.leadingAnchor.constraint(equalTo: keranjangBaseView.safeAreaLayoutGuide.leadingAnchor),
             daftarProdukKeranjangTable.trailingAnchor.constraint(equalTo: keranjangBaseView.safeAreaLayoutGuide.trailingAnchor),
             daftarProdukKeranjangTable.topAnchor.constraint(equalTo: pilihSemuaProdukButton.bottomAnchor, constant: 15),
-            daftarProdukKeranjangTable.heightAnchor.constraint(equalToConstant: height*0.7-35)
+            daftarProdukKeranjangTable.heightAnchor.constraint(equalToConstant: height*0.7)
         ])
-        daftarProdukKeranjangTable.register(daftarProdukKeranjangTableViewCell.self, forCellReuseIdentifier: "produkKeranjang")
+        daftarProdukKeranjangTable.register(daftarProdukKeranjangTableViewCells.self, forCellReuseIdentifier: "produkKeranjangCell")
         daftarProdukKeranjangTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         daftarProdukKeranjangTable.showsVerticalScrollIndicator = false
         daftarProdukKeranjangTable.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
         daftarProdukKeranjangTable.layoutIfNeeded()
         daftarProdukKeranjangTable.allowsSelection = false
         keranjangBaseView.addSubview(checkOutButton)
-        UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: daftarProdukKeranjangTable.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 0, corner: 24, heightAnchor: 48, widthAnchor: 0)
-        print("checkOutButton :", checkOutButton.frame.size.width)
+        UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -20, corner: 24, heightAnchor: 48, widthAnchor: 0)
+       
         checkOutButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         checkOutButton.setTitle("CHECKOUT", for: .normal)
         
@@ -276,7 +279,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-class daftarProdukKeranjangTableViewCell: UITableViewCell  {
+class daftarProdukKeranjangTableViewCells: UITableViewCell  {
     let containerView = UIView()
     let checkCellButton = UIButton()
     let namaProdukLabel = UILabel()

@@ -59,6 +59,7 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         collectionViewPromo.reloadData()
         collectionViewInfo.reloadData()
         view.layoutIfNeeded()
+        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         profileButton.addTarget(self, action: #selector(tabBarProfileAction(sender:)), for: .touchUpInside)
@@ -72,16 +73,16 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         imageViewMap.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.mapAction(sender:)))
         self.imageViewMap.addGestureRecognizer(gesture)
+        autoSwipeBanner()
         
-        
-        for family: String in UIFont.familyNames
-        {
-            print(family)
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                //                       print("== \(names)")
-            }
-        }
+//        for family: String in UIFont.familyNames
+//        {
+//            print(family)
+//            for names: String in UIFont.fontNames(forFamilyName: family)
+//            {
+//                //                       print("== \(names)")
+//            }
+//        }
         
         
     }
@@ -154,7 +155,25 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     
+    func autoSwipeBanner(){
+        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(automaticallyScroll), userInfo: nil, repeats: true)
+    }
     
+    @objc func automaticallyScroll(){
+         let cv  = collectionViewPromo
+            for cell in cv.visibleCells{
+                let indexpath : IndexPath? = cv.indexPath(for: cell)
+                if ((indexpath?.row)! < promo.count-1){
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: (indexpath?.row)!+1, section: (indexpath?.section)!)
+                    cv.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                }else{
+                    let indexPath1 : IndexPath?
+                    indexPath1 = IndexPath.init(row: 0, section: (indexpath?.section)!)
+                    cv.scrollToItem(at: indexPath1!, at: .left, animated: true)
+                }
+        }
+    }
     
 }
 

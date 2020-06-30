@@ -59,8 +59,13 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         produkBaseView.layoutIfNeeded()
         
         produkBaseView.addSubview(lineView)
-        UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 2, widthAnchor: 0)
-        lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+             NSLayoutConstraint.activate([
+                 lineView.widthAnchor.constraint(equalToConstant: 280),
+                 lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                 lineView.heightAnchor.constraint(equalToConstant: 2),
+                 lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+             ])
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
@@ -140,8 +145,7 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         daftarPremiTable.showsVerticalScrollIndicator = false
         
         produkBaseView.addSubview(jenisProdukDetailView)
-        UIHelper.makeView(view: jenisProdukDetailView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0 )
-        jenisProdukDetailView.bottomAnchor.constraint(equalTo: produkBaseView.bottomAnchor).isActive = true
+        UIHelper.makeView(view: jenisProdukDetailView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0 )
         jenisProdukDetailView.backgroundColor = .white
         
         jenisProdukDetailView.addSubview(JenisProdukContainerView)
@@ -164,13 +168,13 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         UIHelper.setTextLabel(label: startHargaProdukDetailLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text:startHarga[0], kerning: 0.12)
         
         JenisProdukContainerView.addSubview(lineHargaProdukDetail)
-        UIHelper.makeView(view: lineHargaProdukDetail, leadingAnchor: iconJenisProdukDetailImage.trailingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: startHargaProdukDetailLabel.bottomAnchor, leadingConstant: 6, trailingConstant: 0, topConstant: 7, corner: 0, heightAnchor: 0.5, widthAnchor: 0)
+        UIHelper.makeView(view: lineHargaProdukDetail, leadingAnchor: iconJenisProdukDetailImage.trailingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: startHargaProdukDetailLabel.bottomAnchor, leadingConstant: 6, trailingConstant: -10, topConstant: 7, corner: 0, heightAnchor: 0.5, widthAnchor: 0)
         lineHargaProdukDetail.backgroundColor = #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)
         
         
         
         JenisProdukContainerView.addSubview(deskripsiJenisProdukDetail)
-        UIHelper.makeLabel(label: deskripsiJenisProdukDetail, corner: 0, allignment: .left, leadingAnchor: JenisProdukContainerView.leadingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: lineHargaProdukDetail.bottomAnchor , leadingConstant: 60, trailingConstant: 18, topConstant: 15, heightAnchor: 60, widthAnchor: 0)
+        UIHelper.makeLabel(label: deskripsiJenisProdukDetail, corner: 0, allignment: .left, leadingAnchor: JenisProdukContainerView.leadingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: lineHargaProdukDetail.bottomAnchor , leadingConstant: 60, trailingConstant: -10, topConstant: 15, heightAnchor: 100, widthAnchor: 0)
         UIHelper.setTextLabel(label: deskripsiJenisProdukDetail, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: deskripsijenisProduk, kerning: 0.06)
         deskripsiJenisProdukDetail.numberOfLines = 0
         
