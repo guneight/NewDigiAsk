@@ -38,7 +38,6 @@ extension ProdukDetailViewController {
             lineView.heightAnchor.constraint(equalToConstant: 2),
             lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
         ])
-        
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
 
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false

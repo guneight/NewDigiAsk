@@ -120,7 +120,7 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         
         let daftarProdukVC = storyboard?.instantiateViewController(identifier : "ProdukViewController" ) as! ProdukViewController
         self.navigationController?.pushViewController(daftarProdukVC, animated: true)
-        print("beli")
+
     }
     
     @objc func tabBarKlaim(sender : UIButton){
@@ -147,7 +147,6 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     @objc func mapAction(sender: Any){
         let mapVc = storyboard?.instantiateViewController(identifier: "MapViewController") as! MapViewController
         self.navigationController?.pushViewController(mapVc, animated: true)
-        print("lewat")
     }
     
     @objc func simulasiAction(sender: UIButton){

@@ -53,9 +53,14 @@ extension PembayaranCartViewController: UITableViewDelegate, UITableViewDataSour
             produkBaseView.layoutIfNeeded()
             
             produkBaseView.addSubview(lineView)
-            UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 2, widthAnchor: 0)
-            lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
-            lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+             lineView.translatesAutoresizingMaskIntoConstraints = false
+                   NSLayoutConstraint.activate([
+                       lineView.widthAnchor.constraint(equalToConstant: 280),
+                       lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                       lineView.heightAnchor.constraint(equalToConstant: 2),
+                       lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+                   ])
+                   lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
             
             prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
             produkBaseView.addSubview(prosesStackView)
@@ -133,8 +138,7 @@ extension PembayaranCartViewController: UITableViewDelegate, UITableViewDataSour
             daftarPembelianTable.register(checkOutCartTableCell.self, forCellReuseIdentifier: "checkOUtCartCell")
             
             produkBaseView.addSubview(checkOutView)
-            UIHelper.makeView(view: checkOutView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
-            checkOutView.bottomAnchor.constraint(equalTo: produkBaseView.bottomAnchor).isActive = true
+            UIHelper.makeView(view: checkOutView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0)
             checkOutView.backgroundColor = .white
             
             checkOutView.addSubview(pembelianBerupa)

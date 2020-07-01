@@ -112,8 +112,7 @@ extension BayarViewController{
         completeImage.contentMode = .center
         
         produkBaseView.addSubview(bayarView)
-        UIHelper.makeView(view: bayarView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
-        bayarView.bottomAnchor.constraint(equalTo: produkBaseView.bottomAnchor).isActive = true
+        UIHelper.makeView(view: bayarView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0)
         bayarView.backgroundColor = .white
         
         bayarView.addSubview(totalBayarView)

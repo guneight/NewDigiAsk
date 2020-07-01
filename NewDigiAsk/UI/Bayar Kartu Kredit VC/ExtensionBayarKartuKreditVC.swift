@@ -66,8 +66,14 @@ extension BayarKartuKreditViewController : UIPickerViewDelegate , UIPickerViewDa
         produkBaseView.layoutIfNeeded()
         
         produkBaseView.addSubview(lineView)
-        UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 2, widthAnchor: 0)
-        lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
+     lineView.translatesAutoresizingMaskIntoConstraints = false
+             NSLayoutConstraint.activate([
+                 lineView.widthAnchor.constraint(equalToConstant: 280),
+                 lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                 lineView.heightAnchor.constraint(equalToConstant: 2),
+                 lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+             ])
+        lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
@@ -162,121 +168,121 @@ extension BayarKartuKreditViewController : UIPickerViewDelegate , UIPickerViewDa
         heightConstraint.priority = UILayoutPriority(rawValue: 250)
         heightConstraint.isActive = true
         kartuKreditBaseView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
+
         kartuKreditBaseView.addSubview(totalPembayaranView)
         UIHelper.makeView(view: totalPembayaranView, leadingAnchor: kartuKreditBaseView.leadingAnchor, trailingAnchor: kartuKreditBaseView.trailingAnchor, topAnchor: kartuKreditBaseView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 20, corner: 10, heightAnchor: 71, widthAnchor: 0)
         totalPembayaranView.layer.borderWidth = 1
         totalPembayaranView.layer.borderColor = #colorLiteral(red: 0.8509803922, green: 0.8509803922, blue: 0.8509803922, alpha: 1)
-        
+
         totalPembayaranView.addSubview(totalPembayaranLabel)
         UIHelper.makeLabel(label: totalPembayaranLabel, corner: 0, allignment: .left, leadingAnchor: totalPembayaranView.leadingAnchor, trailingAnchor: totalPembayaranView.trailingAnchor, topAnchor: totalPembayaranView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 20, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: totalPembayaranLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Total Pembayaran", kerning: 0.5)
-        
+
         totalPembayaranView.addSubview(nilaiTotalPembayaranLabel)
         UIHelper.makeLabel(label: nilaiTotalPembayaranLabel, corner: 0, allignment: .left, leadingAnchor: totalPembayaranView.leadingAnchor, trailingAnchor: totalPembayaranView.trailingAnchor, topAnchor: totalPembayaranLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 5, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: nilaiTotalPembayaranLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 14, text: "Rp 3.000.000,-", kerning: 0.12)
-        
+
         totalPembayaranView.addSubview(rightButtonImage)
         UIHelper.makeImageView(imageView: rightButtonImage, leadingAnchor: totalPembayaranView.trailingAnchor, topAnchor: nilaiTotalPembayaranLabel.topAnchor, leadingConstant: -30, topConstant: 3, corner: 0, heightAnchor: 10)
         rightButtonImage.widthAnchor.constraint(equalToConstant: 6).isActive = true
         rightButtonImage.image = UIImage(named: "next")
-        
+
         kartuKreditBaseView.addSubview(kartuKreditView)
         UIHelper.makeView(view: kartuKreditView, leadingAnchor: kartuKreditBaseView.leadingAnchor, trailingAnchor: kartuKreditBaseView.trailingAnchor, topAnchor: totalPembayaranView.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 11, corner: 10, heightAnchor: 360, widthAnchor: 0)
         kartuKreditView.layer.borderWidth = 1
         kartuKreditView.layer.borderColor = #colorLiteral(red: 0.8509803922, green: 0.8509803922, blue: 0.8509803922, alpha: 1)
-        
+
         kartuKreditView.addSubview(kartuKreditDebitLabel)
         UIHelper.makeLabel(label: kartuKreditDebitLabel, corner: 0, allignment: .left, leadingAnchor: kartuKreditView.leadingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: kartuKreditView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: kartuKreditDebitLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Kartu Kredit/Debit", kerning: 0.5)
-        
+
         kartuKreditView.addSubview(underlineKartuKredit)
         UIHelper.makeView(view: underlineKartuKredit, leadingAnchor: kartuKreditView.leadingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: kartuKreditDebitLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 7, corner: 0, heightAnchor: 1, widthAnchor: 0)
         underlineKartuKredit.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 0.2)
-        
+
         kartuKreditView.addSubview(masterCardIcon)
         UIHelper.makeImageView(imageView: masterCardIcon, leadingAnchor: kartuKreditView.leadingAnchor, topAnchor: underlineKartuKredit.bottomAnchor, leadingConstant: 20, topConstant: 15, corner: 0, heightAnchor: 33)
         masterCardIcon.widthAnchor.constraint(equalToConstant: 80).isActive = true
         masterCardIcon.contentMode = .scaleAspectFit
         masterCardIcon.image = UIImage(named: "masterCardIcon")
-        
+
         kartuKreditView.addSubview(masterCardLabel)
         UIHelper.makeLabel(label: masterCardLabel, corner: 0, allignment: .right, leadingAnchor: masterCardIcon.trailingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: underlineKartuKredit.bottomAnchor, leadingConstant: 20, trailingConstant: -25, topConstant: 20, heightAnchor: 17, widthAnchor: 0)
         UIHelper.setTextLabel(label: masterCardLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Master Card", kerning: 0.5)
-        
+
         kartuKreditView.addSubview(underlineMastercard)
         UIHelper.makeView(view: underlineMastercard, leadingAnchor: kartuKreditView.leadingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: masterCardIcon.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 7, corner: 0, heightAnchor: 1, widthAnchor: 0)
         underlineMastercard.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 0.2)
-        
+
         kartuKreditView.addSubview(nomorKartuLabel)
         UIHelper.makeLabel(label: nomorKartuLabel, corner: 0, allignment: .left, leadingAnchor: kartuKreditView.leadingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: underlineMastercard.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: nomorKartuLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Kartu", kerning: 0.5)
-        
+
         kartuKreditView.addSubview(nomorKartuTextField)
         UIHelper.makeTetxField(textField: nomorKartuTextField, leadingAnchor: kartuKreditView.leadingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: nomorKartuLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 8, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1))
         UIHelper.setTextField(textField: nomorKartuTextField, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 16, text: " ", kerning: 1)
         nomorKartuTextField.placeholder = "1234 7658 8790 7865"
         nomorKartuTextField.keyboardType = .numberPad
-        
+
         kartuKreditView.addSubview(masaBerlakuLabel)
         UIHelper.makeLabel(label: masaBerlakuLabel, corner: 0, allignment: .left, leadingAnchor: kartuKreditView.leadingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: nomorKartuTextField.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 15, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: masaBerlakuLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Masa Berlaku", kerning: 0.5)
-        
+
         kartuKreditView.addSubview(mmTextfield)
         UIHelper.makeSmallTetxField(textField: mmTextfield, leadingAnchor: kartuKreditView.leadingAnchor, topAnchor: masaBerlakuLabel.bottomAnchor, leadingConstant: 20, trailingConstant: 0, topConstant: 8, corner: 0, widthAnchor: 30, heightAnchor: 20, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
         UIHelper.setTextField(textField: mmTextfield, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "", kerning: 0.5)
         mmTextfield.placeholder = "mm"
         mmTextfield.keyboardType = .numberPad
-        
+
         kartuKreditView.addSubview(yyTextfield)
         UIHelper.makeSmallTetxField(textField: yyTextfield, leadingAnchor: mmTextfield.trailingAnchor, topAnchor: masaBerlakuLabel.bottomAnchor, leadingConstant: 20, trailingConstant: 0, topConstant: 8, corner: 0, widthAnchor: 30, heightAnchor: 16, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
         UIHelper.setTextField(textField: yyTextfield, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "", kerning: 0.5)
         yyTextfield.placeholder = "yy"
         yyTextfield.keyboardType = .numberPad
-        
+
         kartuKreditView.addSubview(CVVLabel)
         UIHelper.makeLabel(label: (CVVLabel), corner: 0, allignment: .left, leadingAnchor: kartuKreditView.trailingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: nomorKartuTextField.bottomAnchor, leadingConstant: -65, trailingConstant: -20, topConstant: 15, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: (CVVLabel), fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "CVV", kerning: 0.5)
-        
+
         kartuKreditView.addSubview(CVVTextfielsd)
         UIHelper.makeSmallTetxField(textField: CVVTextfielsd, leadingAnchor: kartuKreditView.trailingAnchor, topAnchor: CVVLabel.bottomAnchor, leadingConstant: -70, trailingConstant: 0, topConstant: 8, corner: 0, widthAnchor: 50, heightAnchor: 16, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
         UIHelper.setTextField(textField: CVVTextfielsd, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "", kerning: 0.5)
         CVVTextfielsd.placeholder = "CVV"
         CVVTextfielsd.keyboardType = .numberPad
-        
+
         kartuKreditView.addSubview(simpanNomorKartuButton)
         UIHelper.makeSmallButton(smallButton: simpanNomorKartuButton, leadingAnchor: kartuKreditView.leadingAnchor, topAnchor: mmTextfield.bottomAnchor, leadingConstant: 20, topConstant: 20, corner: 3, heightAnchor: 14, widthtAnchor: 14, borderWidth: 1, colorBorder: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1))
-        
+
         kartuKreditView.addSubview(simpanNomorkartuLabel)
         UIHelper.makeLabel(label: simpanNomorkartuLabel, corner: 0, allignment: .left, leadingAnchor: simpanNomorKartuButton.trailingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: mmTextfield.bottomAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 20, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: simpanNomorkartuLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 10, text: "Simpan nomor kartu", kerning: 0.5)
-        
+
         kartuKreditView.addSubview(pilihPembayaranLabel)
         UIHelper.makeLabel(label: pilihPembayaranLabel, corner: 0, allignment: .left, leadingAnchor: kartuKreditView.leadingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: simpanNomorKartuButton.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 20, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: pilihPembayaranLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Pilih Pembayaran", kerning: 0.5)
-        
+
         kartuKreditView.addSubview(checkBoxBayarPenuh)
         UIHelper.makeSmallButton(smallButton: checkBoxBayarPenuh, leadingAnchor: kartuKreditView.leadingAnchor, topAnchor: pilihPembayaranLabel.bottomAnchor, leadingConstant: 20, topConstant: 10, corner: 3, heightAnchor: 14, widthtAnchor: 14, borderWidth: 1, colorBorder: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1))
-        
+
         kartuKreditView.addSubview(bayarpenuhLabel)
         UIHelper.makeLabel(label: bayarpenuhLabel, corner: 0, allignment: .left, leadingAnchor: checkBoxBayarPenuh.trailingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: pilihPembayaranLabel.bottomAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
         UIHelper.setTextLabel(label: bayarpenuhLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Penuh", kerning: 0.5)
-        
+
         kartuKreditView.addSubview(checkBoxBayarCicilan)
         UIHelper.makeSmallButton(smallButton: checkBoxBayarCicilan, leadingAnchor: kartuKreditView.leadingAnchor, topAnchor: checkBoxBayarPenuh.bottomAnchor, leadingConstant: 20, topConstant: 15, corner: 3, heightAnchor: 14, widthtAnchor: 14, borderWidth: 1, colorBorder: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1))
-        
+
         kartuKreditView.addSubview(bayarCicilanTextField)
         UIHelper.makeTetxField(textField: bayarCicilanTextField, leadingAnchor: checkBoxBayarCicilan.trailingAnchor, trailingAnchor: kartuKreditView.trailingAnchor, topAnchor: bayarpenuhLabel.bottomAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 15, corner: 0, heightAnchor: 16, textColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1))
         UIHelper.setTextField(textField: bayarCicilanTextField, fontName: fontNameHelper.AvantGardeITCbyBTBook, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: "", kerning: 0.5)
         bayarCicilanTextField.textAlignment = .left
         bayarCicilanTextField.tintColor = .clear
-        
-        
+
+
         kartuKreditView.addSubview(dropDownImage)
         UIHelper.makeImageView(imageView: dropDownImage, leadingAnchor: kartuKreditView.trailingAnchor, topAnchor: checkBoxBayarCicilan.topAnchor, leadingConstant: -35, topConstant: 5, corner: 0, heightAnchor: 7)
         dropDownImage.widthAnchor.constraint(equalToConstant: 10).isActive = true
         dropDownImage.image = UIImage(named: "dropDownIcon")
-        
+
         kartuKreditBaseView.addSubview(bayarButton)
         UIHelper.makeButton(button: bayarButton, leadingAnchor: kartuKreditBaseView.leadingAnchor, trailingAnchor: kartuKreditBaseView.trailingAnchor, topAnchor: kartuKreditView.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
         bayarButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)

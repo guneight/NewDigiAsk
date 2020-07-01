@@ -26,7 +26,6 @@ extension CheckOutCartViewController: UITableViewDelegate, UITableViewDataSource
             cell.rightArrowButton.addTarget(self, action: #selector(rightButtonAction(sender:)), for: .touchUpInside)
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(namaProdukAction(sender:)))
             cell.namaProdukLabel.addGestureRecognizer(tapGesture)
-            print("nilai tag = \(pilihSemuaProdukButton.tag)")
            
             if selectRows.contains(indexPath){
                 cell.checkCellButton.setImage(UIImage(named: "checkBoxIcon"), for: .normal)
@@ -76,9 +75,14 @@ extension CheckOutCartViewController: UITableViewDelegate, UITableViewDataSource
             produkBaseView.layoutIfNeeded()
             
             produkBaseView.addSubview(lineView)
-            UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 2, widthAnchor: 0)
-            lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
-            lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
+             lineView.translatesAutoresizingMaskIntoConstraints = false
+                   NSLayoutConstraint.activate([
+                       lineView.widthAnchor.constraint(equalToConstant: 280),
+                       lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                       lineView.heightAnchor.constraint(equalToConstant: 2),
+                       lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+                   ])
+                   lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
             
             prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
             produkBaseView.addSubview(prosesStackView)
@@ -154,8 +158,8 @@ extension CheckOutCartViewController: UITableViewDelegate, UITableViewDataSource
             
             
             produkBaseView.addSubview(keranjangBaseView)
-            UIHelper.makeView(view: keranjangBaseView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
-            keranjangBaseView.bottomAnchor.constraint(equalTo: produkBaseView.bottomAnchor).isActive = true
+            UIHelper.makeView(view: keranjangBaseView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0)
+           
             keranjangBaseView.backgroundColor = .white
             
             keranjangBaseView.addSubview(pilihSemuaProdukButton)
@@ -187,8 +191,7 @@ extension CheckOutCartViewController: UITableViewDelegate, UITableViewDataSource
             daftarProdukKeranjangTable.layoutIfNeeded()
             daftarProdukKeranjangTable.allowsSelection = false
             keranjangBaseView.addSubview(checkOutButton)
-            UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: daftarProdukKeranjangTable.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 0, corner: 24, heightAnchor: 48, widthAnchor: 0)
-            print("checkOutButton :", checkOutButton.frame.size.width)
+            UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -20, corner: 24, heightAnchor: 48, widthAnchor: 0)
             checkOutButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
             checkOutButton.setTitle("CHECKOUT", for: .normal)
             

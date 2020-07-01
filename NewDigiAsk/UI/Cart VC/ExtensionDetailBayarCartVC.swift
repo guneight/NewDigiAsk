@@ -30,10 +30,14 @@ extension DetailBayarCartViewController {
             produkBaseView.layoutIfNeeded()
             
             produkBaseView.addSubview(lineView)
-            UIHelper.makeView(view: lineView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: (view.frame.size.width-290)/2 , trailingConstant: -((view.frame.size.width-290)/2), topConstant: 32, corner: 0, heightAnchor: 2, widthAnchor: 0)
-            lineView.widthAnchor.constraint(equalToConstant: view.frame.size.width-290).isActive = true
+            lineView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                lineView.widthAnchor.constraint(equalToConstant: 280),
+                lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                lineView.heightAnchor.constraint(equalToConstant: 2),
+                lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+            ])
             lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
-            
             prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
             produkBaseView.addSubview(prosesStackView)
             NSLayoutConstraint.activate([
@@ -107,8 +111,7 @@ extension DetailBayarCartViewController {
             completeImage.contentMode = .center
             
             produkBaseView.addSubview(detailBayarView)
-            UIHelper.makeView(view: detailBayarView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
-            detailBayarView.bottomAnchor.constraint(equalTo: produkBaseView.bottomAnchor).isActive = true
+            UIHelper.makeView(view: detailBayarView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0)
             detailBayarView.backgroundColor = .white
             
             detailBayarView.addSubview(transaksiView)
@@ -202,7 +205,7 @@ extension DetailBayarCartViewController {
            rightButtonMobile.layoutIfNeeded()
             
             detailBayarView.addSubview(lihatTransaksiButton)
-            UIHelper.makeButton(button: lihatTransaksiButton, leadingAnchor: detailBayarView.leadingAnchor, trailingAnchor: detailBayarView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: height*0.8-45, corner: 24, heightAnchor: 48, widthAnchor: 0)
+            UIHelper.makeButton(button: lihatTransaksiButton, leadingAnchor: detailBayarView.leadingAnchor, trailingAnchor: detailBayarView.trailingAnchor, topAnchor: mobileBankingView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
             lihatTransaksiButton.setTitle("LIHAT TRANSAKSI", for: .normal)
             lihatTransaksiButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         }

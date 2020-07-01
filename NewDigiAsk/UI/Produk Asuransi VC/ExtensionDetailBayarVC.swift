@@ -112,8 +112,7 @@ extension DetailBayarViewController{
         completeImage.contentMode = .center
         
         produkBaseView.addSubview(detailBayarView)
-        UIHelper.makeView(view: detailBayarView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: 0, widthAnchor: 0)
-        detailBayarView.bottomAnchor.constraint(equalTo: produkBaseView.bottomAnchor).isActive = true
+        UIHelper.makeView(view: detailBayarView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0)
         detailBayarView.backgroundColor = .white
         
         detailBayarView.addSubview(transaksiView)
@@ -207,7 +206,7 @@ extension DetailBayarViewController{
        rightButtonMobile.layoutIfNeeded()
         
         detailBayarView.addSubview(lihatTransaksiButton)
-        UIHelper.makeButton(button: lihatTransaksiButton, leadingAnchor: detailBayarView.leadingAnchor, trailingAnchor: detailBayarView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: height*0.8-45, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        UIHelper.makeButton(button: lihatTransaksiButton, leadingAnchor: detailBayarView.leadingAnchor, trailingAnchor: detailBayarView.trailingAnchor, topAnchor: mobileBankingView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
         lihatTransaksiButton.setTitle("LIHAT TRANSAKSI", for: .normal)
         lihatTransaksiButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
     }
