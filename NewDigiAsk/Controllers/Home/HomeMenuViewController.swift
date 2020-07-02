@@ -35,9 +35,12 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     var indexProduk : Int = 0
     var loginStatus : Int = 0
     let promo = ["promo1","promo2","promo2","promo1"]
+    let fetchindListProduct = FetchingListProduct()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchindListProduct.getDataFromApi()
+        fetchindListProduct.getDataPacketDetailFromApi()
         if UIDevice.current.userInterfaceIdiom == .pad {
             print("iPad")
         }else{
