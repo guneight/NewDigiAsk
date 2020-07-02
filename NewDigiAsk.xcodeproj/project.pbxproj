@@ -20,6 +20,7 @@
 		6702D64F2455C6FE0022325E /* ExtensionDetailBayarCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6702D64E2455C6FE0022325E /* ExtensionDetailBayarCartVC.swift */; };
 		6702D6512455EFD00022325E /* FilterPolisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6702D6502455EFD00022325E /* FilterPolisViewController.swift */; };
 		6702D6552455F1B30022325E /* ExtensionFilterPolisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6702D6542455F1B30022325E /* ExtensionFilterPolisVC.swift */; };
+		6706A98424AD9936003F0D4A /* ProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6706A98324AD9936003F0D4A /* ProductsModel.swift */; };
 		67104EC023FE35140035343F /* VerifikasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67104EBF23FE35140035343F /* VerifikasiViewController.swift */; };
 		67104EC223FE6FCD0035343F /* InputKodeVerifikasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67104EC123FE6FCD0035343F /* InputKodeVerifikasiViewController.swift */; };
 		6710AC8224894AC30040E2AC /* CameraKTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6710AC8124894AC30040E2AC /* CameraKTPViewController.swift */; };
@@ -178,6 +179,7 @@
 		6702D64E2455C6FE0022325E /* ExtensionDetailBayarCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDetailBayarCartVC.swift; sourceTree = "<group>"; };
 		6702D6502455EFD00022325E /* FilterPolisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPolisViewController.swift; sourceTree = "<group>"; };
 		6702D6542455F1B30022325E /* ExtensionFilterPolisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFilterPolisVC.swift; sourceTree = "<group>"; };
+		6706A98324AD9936003F0D4A /* ProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductsModel.swift; path = ../../../../ProductsModel.swift; sourceTree = "<group>"; };
 		67104EBF23FE35140035343F /* VerifikasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikasiViewController.swift; sourceTree = "<group>"; };
 		67104EC123FE6FCD0035343F /* InputKodeVerifikasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputKodeVerifikasiViewController.swift; sourceTree = "<group>"; };
 		6710AC8124894AC30040E2AC /* CameraKTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraKTPViewController.swift; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 			isa = PBXGroup;
 			children = (
 				67EA064624613F05000662AA /* Video.swift */,
+				6706A98324AD9936003F0D4A /* ProductsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1062,6 +1065,7 @@
 				67F06E1E241B7E8800B277B2 /* ExtensionDeskripsiProdukVC.swift in Sources */,
 				67F06E08241A266600B277B2 /* ExtensionProsesKlaimVC.swift in Sources */,
 				6700E98D2452C7C40097AC47 /* InputKodeVerifikasiEmailViewController.swift in Sources */,
+				6706A98424AD9936003F0D4A /* ProductsModel.swift in Sources */,
 				67D631962420B08B00197A39 /* ExtensiInfoVC.swift in Sources */,
 				67CF8B9E24066EF70032DBDE /* JenisProdukDetailViewController.swift in Sources */,
 				672857492410AA10005E3B6D /* ExtensionPolisVC.swift in Sources */,
