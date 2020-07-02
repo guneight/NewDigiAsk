@@ -509,8 +509,8 @@
 		6751E12C23EC06B4008ACB56 /* NewDigiAsk */ = {
 			isa = PBXGroup;
 			children = (
-				676D3F0523F2478F00AF813D /* Controller */,
-				676D3F0423F2477D00AF813D /* View Controller */,
+				676D3F0523F2478F00AF813D /* Controllers */,
+				676D3F0423F2477D00AF813D /* Controller */,
 				676D3F0323F2476E00AF813D /* Model */,
 				6751E14223ED0846008ACB56 /* UI */,
 				67288E8A23FBDAEC002E257C /* Font */,
@@ -576,7 +576,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		676D3F0423F2477D00AF813D /* View Controller */ = {
+		676D3F0423F2477D00AF813D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				67A97E1A246E688E00CB906F /* Verifikasi KTP */,
@@ -599,14 +599,14 @@
 				67D97645242A0E93001BA581 /* List Penerima Manfaat */,
 				67D97644242A0E1C001BA581 /* List Tertanggung */,
 			);
-			path = "View Controller";
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		676D3F0523F2478F00AF813D /* Controller */ = {
+		676D3F0523F2478F00AF813D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		679338CF2432C5BE002BB9F7 /* Notifikasi */ = {
