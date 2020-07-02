@@ -516,7 +516,6 @@
 			isa = PBXGroup;
 			children = (
 				6706A98F24ADC46B003F0D4A /* Modelss */,
-				676D3F0523F2478F00AF813D /* Controllers */,
 				676D3F0423F2477D00AF813D /* Controllers */,
 				6751E14223ED0846008ACB56 /* UI */,
 				67288E8A23FBDAEC002E257C /* Font */,
@@ -595,13 +594,6 @@
 				67AE26D6242D9A8C00BC82F2 /* Profile */,
 				67D97645242A0E93001BA581 /* List Penerima Manfaat */,
 				67D97644242A0E1C001BA581 /* List Tertanggung */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		676D3F0523F2478F00AF813D /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Controllers;
 			sourceTree = "<group>";
