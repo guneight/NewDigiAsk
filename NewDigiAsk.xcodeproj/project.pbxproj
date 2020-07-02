@@ -372,12 +372,19 @@
 			path = "Filter VC";
 			sourceTree = "<group>";
 		};
-		6706A98F24ADC46B003F0D4A /* Modelss */ = {
+		6706A98F24ADC46B003F0D4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				6706A99024ADC4A0003F0D4A /* Video.swift */,
 			);
-			path = Modelss;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6706A99224ADC62C003F0D4A /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 		6710FE882430E842001EE87F /* Daftar */ = {
@@ -515,7 +522,8 @@
 		6751E12C23EC06B4008ACB56 /* NewDigiAsk */ = {
 			isa = PBXGroup;
 			children = (
-				6706A98F24ADC46B003F0D4A /* Modelss */,
+				6706A99224ADC62C003F0D4A /* View Models */,
+				6706A98F24ADC46B003F0D4A /* Models */,
 				676D3F0423F2477D00AF813D /* Controllers */,
 				6751E14223ED0846008ACB56 /* UI */,
 				67288E8A23FBDAEC002E257C /* Font */,
