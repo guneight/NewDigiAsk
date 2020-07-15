@@ -452,10 +452,10 @@
 			isa = PBXGroup;
 			children = (
 				67392AF42403B76C007630DF /* ExtensionProdukVC.swift */,
+				67F06E1D241B7E8800B277B2 /* ExtensionDeskripsiProdukVC.swift */,
 				6728F0A424050D2E00A2C605 /* ExtensionProdukDetailVC.swift */,
 				67CF8B9B24064A310032DBDE /* ExtensionJenisProdukVC.swift */,
 				67CF8B9F24066FBF0032DBDE /* ExtensionJenisProdukDetailVC.swift */,
-				67F06E1D241B7E8800B277B2 /* ExtensionDeskripsiProdukVC.swift */,
 				67CF8BA32406A32C0032DBDE /* ExtensionSyaratdanKetentuanVC.swift */,
 				67EE59142407D82900404C6E /* ExtensionIdentitasTertanggungPenerimaVC.swift */,
 				67EE59182408F07300404C6E /* ExtensionKeranjangVC.swift */,
@@ -685,9 +685,9 @@
 			isa = PBXGroup;
 			children = (
 				67392AF22403B3A2007630DF /* ProdukViewController.swift */,
+				67F06E1B241B7E6D00B277B2 /* DeskripsiProdukViewController.swift */,
 				6728F0A224050CB500A2C605 /* ProdukDetailViewController.swift */,
 				67CF8B99240649D00032DBDE /* JenisProdukViewController.swift */,
-				67F06E1B241B7E6D00B277B2 /* DeskripsiProdukViewController.swift */,
 				67CF8B9D24066EF70032DBDE /* JenisProdukDetailViewController.swift */,
 				67CF8BA12406A2D60032DBDE /* SyaratdanKetentuanViewController.swift */,
 				67EE59122407D73500404C6E /* IdentitasTertanggungdanPenerimaManfaatViewController.swift */,

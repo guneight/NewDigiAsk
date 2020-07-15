@@ -49,7 +49,7 @@ class DeskripsiProdukViewController: UIViewController {
     let linePenggatianBiayaLabel = UIView()
     let deskripsiPenggantiBiayaLabel = UILabel()
     let pilihProdukButton = UIButton()
-    
+    var packetProduct = [PacketProduct]()
     var indexProdukSelect : Int!
     
     override func viewDidLoad() {

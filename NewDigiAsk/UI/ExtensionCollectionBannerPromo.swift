@@ -355,7 +355,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == collectionViewProduct {
-            return namaProdukArray.count
+            return packetProduct.count
         }else if collectionView == collectionViewPromo{
             return 5
         }else if collectionView == collectBannerPromo{
@@ -374,8 +374,8 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collectionViewProduct{
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cellproduct", for: indexPath) as! collectionViewProductCell
-            cell.imageIconProduct.image = UIImage(named: namaProdukArray[indexPath.row])
-            cell.labelIcon.text = namaProdukArray[indexPath.row]
+            cell.imageIconProduct.image = UIImage(named: "\(packetProduct[indexPath.row].namaProduct)")
+            cell.labelIcon.text = packetProduct[indexPath.row].namaProduct
             cell.backgroundColor = UIColor.clear
             return cell
             
@@ -491,9 +491,10 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         
         indexProduk = indexPath.row
         if collectionView == collectionViewProduct {
-            let deskripsiProdukVC  = storyboard?.instantiateViewController(identifier: "ProdukDetailViewController") as! ProdukDetailViewController
-            deskripsiProdukVC.indexProdukSelect = indexProduk
-            navigationController?.pushViewController(deskripsiProdukVC, animated: true)
+            let produkDetailVC  = storyboard?.instantiateViewController(identifier: "ProdukDetailViewController") as! ProdukDetailViewController
+            produkDetailVC.indexProdukSelect = indexPath.row
+            produkDetailVC.packetProduct = packetProduct[indexPath.row]
+            navigationController?.pushViewController(produkDetailVC, animated: true)
         }else if  collectionView == collectionViewPromo{
             if let url = URL(string: "https://www.askrindo.co.id") {
                 UIApplication.shared.open(url)

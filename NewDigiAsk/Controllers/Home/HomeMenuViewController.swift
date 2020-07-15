@@ -35,12 +35,11 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     var indexProduk : Int = 0
     var loginStatus : Int = 0
     let promo = ["promo1","promo2","promo2","promo1"]
-    let fetchindListProduct = FetchingListProduct()
-    
+    var listProduct = ListProduct?.self
+    var packetProduct = [PacketProduct]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchindListProduct.getDataFromApi()
-        fetchindListProduct.getDataPacketDetailFromApi()
+        
         if UIDevice.current.userInterfaceIdiom == .pad {
             print("iPad")
         }else{
@@ -77,17 +76,7 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.mapAction(sender:)))
         self.imageViewMap.addGestureRecognizer(gesture)
         autoSwipeBanner()
-        
-//        for family: String in UIFont.familyNames
-//        {
-//            print(family)
-//            for names: String in UIFont.fontNames(forFamilyName: family)
-//            {
-//                //                       print("== \(names)")
-//            }
-//        }
-        
-        
+        fecthProduct()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,11 +87,8 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         collectionViewPromo.reloadData()
         collectBannerPromo.reloadData()
         print("Login Status :", loginStatus)
+       
     }
-    
-    
-    
-    
     
     @objc func tabBarProfileAction (sender : UIButton){
                 if (loginStatus == 0) {
@@ -115,9 +101,8 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
                 }else{
                     print("Login failed")
                 }
-        
-        
     }
+ 
     
     @objc func tabBarBeliAction(sender : UIButton){
         

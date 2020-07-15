@@ -49,8 +49,9 @@ class ProdukDetailViewController: UIViewController {
     let linePenggatianBiayaLabel = UIView()
     let deskripsiPenggantiBiayaLabel = UILabel()
     let pilihProdukButton = UIButton()
-    
+    var packetProduct : PacketProduct?
     var indexProdukSelect : Int!
+    var idPacket : Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -58,25 +59,38 @@ class ProdukDetailViewController: UIViewController {
         setupNavBarProdukDetail()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         view.layoutIfNeeded()
+        setupValue()
+        
+        print("product item :", packetProduct)
         
         // Do any additional setup after loading the view.
     }
     
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        setupUI()
-    //        pilihProdukAction()
-    //    }
     func pilihProdukAction(){
         pilihProdukButton.addTarget(self, action: #selector(pilihProduk(sender:)), for: .touchUpInside)
     }
     
     @objc func pilihProduk(sender: UIButton){
         let jenisProdukVC = storyboard?.instantiateViewController(identifier: "JenisProdukViewController") as! JenisProdukViewController
+        jenisProdukVC.packetProduct = packetProduct
         self.navigationController?.pushViewController(jenisProdukVC, animated: true)
     }
     
-    
-    
-    
-    
+    func setupValue(){
+        produkDetailHeaderLabel.text = packetProduct?.namaProduct
+        namaProdukLabel.text = packetProduct?.namaProduct
+        deskripsiProdukLabel.text = packetProduct?.deskripsiProduk
+        deskripsiPenggunaLabel.text = packetProduct?.pengguna
+        deskripsiGantiRugi.text = packetProduct?.deskripsiGantiRugi
+        deskripsiPenggantiBiayaLabel.text = packetProduct?.deskripsiTambahan
+//        guard let images = packetProduct?.logo else{return}
+//        let data = Data(base64Encoded: images)
+//        guard let datas = data else{return}
+//        let image = UIImage(data: datas)
+//        print("image", image)
+//        produkDetailImage.image = image
+    }
 }
+
+
+

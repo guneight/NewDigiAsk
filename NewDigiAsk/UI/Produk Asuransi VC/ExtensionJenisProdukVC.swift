@@ -10,7 +10,8 @@ import UIKit
 
 extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -18,16 +19,10 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         cell.selectionStyle = .none
         cell.backgroundColor = .white
         cell.layoutIfNeeded()
-        cell.jenisProdukLabel.text = jenisProduk[indexPath.row]
-        cell.startHargaProdukLabel.text = startHarga[indexPath.row]
-        cell.deskripsiJenisProdukLabel.text = deskripsijenisProduk
-        jenisProdukLabel.text = cell.jenisProdukLabel.text
-        startHargaProdukLabel.text = cell.startHargaProdukLabel.text
-        deskripsiJenisProdukLabel.text = cell.deskripsiJenisProdukLabel.text
-        
-        cell.rightButton.addTarget(self, action: #selector(jenisProdukDetail(sender:)), for: .touchUpInside)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(jenisProdukDetail(sender:)))
-        cell.jenisProdukCellView.addGestureRecognizer(tapGesture)
+        guard let packetProduct = packetProduct else {return cell}
+        cell.jenisProdukLabel.text = packetProduct.namaPacket
+        cell.startHargaProdukLabel.text = packetProduct.deskripsi1
+        cell.deskripsiJenisProdukLabel.text = packetProduct.deskripsi2
         return cell
     }
     
@@ -39,6 +34,18 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         return 10
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let jenisProdukDetailVC = self.storyboard?.instantiateViewController(identifier: "JenisProdukDetailViewController") as! JenisProdukDetailViewController
+        jenisProdukDetailVC.idpacket = packetProduct!.idPacket
+        jenisProdukDetailVC.syaratKetentuan = packetProduct?.syaratKetentuan as! String
+        jenisProdukDetailVC.namajenisProdukDetailLabel.text = packetProduct?.namaProduct
+        jenisProdukDetailVC.startHargaProdukDetailLabel.text = packetProduct?.deskripsi1
+        jenisProdukDetailVC.deskripsiJenisProdukDetail.text = packetProduct?.deskripsi2
+        self.navigationController?.pushViewController(jenisProdukDetailVC, animated: true)
+        
+        
+       
+    }
     
     func setupUI(){
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
@@ -151,7 +158,7 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
 
         jenisProdukView.addSubview(namaProdukLabel)
         UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: jenisProdukView.leadingAnchor, trailingAnchor: jenisProdukView.trailingAnchor, topAnchor: jenisProdukView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 17, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Asuransi Kecelakaan Diri", kerning: 0.12)
+        UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: packetProduct?.namaProduct ?? "Produk tidak tersedia", kerning: 0.12)
 
         jenisProdukView.addSubview(jenisProdukTable)
         jenisProdukTable.translatesAutoresizingMaskIntoConstraints = false

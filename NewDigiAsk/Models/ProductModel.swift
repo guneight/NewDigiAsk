@@ -12,15 +12,15 @@ import UIKit
 
 typealias  ListProduct = [PacketProduct]
 
-struct PacketProduct: Codable {
-    let idPacket : Int
-    let product : Product
-    let namaPacket : String?
-    let currency : String?
-    let deskripsi1 : String?
-    let deskripsi2 : String?
-}
-struct Product : Codable{
+struct PacketProduct: Decodable {
+        let idPacket: Int
+        let namaPacket, deskripsi1, deskripsi2: String
+        let idProduct: Int
+        let namaProduct, deskripsiProduk, pengguna, deskripsiGantiRugi: String
+        let deskripsiTambahan, syaratKetentuan: String
+    }
+
+struct Product : Decodable{
     let idProduct : Int
     let namaProduct : String
     let deskripsiProduk : String?
@@ -35,10 +35,10 @@ struct Product : Codable{
 
 typealias PacketDetails = [PacketDetail]
 
-struct PacketDetail: Codable {
+struct PacketDetail: Decodable {
     let idProductDetail: Int
     let jangkaWaktu: String
-    let tsi: String?
+    let tsi: Float?
     let premi: Int
 }
 

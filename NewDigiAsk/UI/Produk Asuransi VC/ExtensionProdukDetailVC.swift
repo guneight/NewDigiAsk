@@ -134,17 +134,17 @@ extension ProdukDetailViewController {
         produkView.addSubview(pilihProdukButton)
         UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -20, corner: 24, heightAnchor: 48, widthAnchor: 0)
         
-        let index =  indexProdukSelect
-               if index == 0  {
+//        let index =  indexProdukSelect
+//               if index == 0  {
                    pilihProdukButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
                    pilihProdukButton.setTitle( "PILIH PRODUK", for: .normal)
 
-               }else{
-                   pilihProdukButton.backgroundColor = #colorLiteral(red: 0.2458193898, green: 0.2900034189, blue: 0.4485326409, alpha: 1)
-                   pilihProdukButton.setTitle( "Coming soon,,,", for: .normal)
-                   pilihProdukButton.isEnabled = false
-                   pilihProdukButton.layer.cornerRadius = 5
-               }
+//               }else{
+//                   pilihProdukButton.backgroundColor = #colorLiteral(red: 0.2458193898, green: 0.2900034189, blue: 0.4485326409, alpha: 1)
+//                   pilihProdukButton.setTitle( "Coming soon,,,", for: .normal)
+//                   pilihProdukButton.isEnabled = false
+//                   pilihProdukButton.layer.cornerRadius = 5
+//               }
         let descriptionFont = UIFont(name: "Arial", size: 10)?.fontDescriptor.withSymbolicTraits(UIFontDescriptor.SymbolicTraits.traitBold)
         pilihProdukButton.titleLabel?.font = UIFont(descriptor: descriptionFont!, size: 10)
 

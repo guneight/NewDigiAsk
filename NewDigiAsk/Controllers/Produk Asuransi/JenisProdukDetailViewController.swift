@@ -11,14 +11,14 @@ import UIKit
 class JenisProdukDetailViewController: UIViewController {
     let produkBaseView = UIView()
     let prosesStackView : UIStackView = {
-    let stackViewCV = UIStackView()
+        let stackViewCV = UIStackView()
         stackViewCV.axis = NSLayoutConstraint.Axis.horizontal
         stackViewCV.distribution = UIStackView.Distribution.fillEqually
         stackViewCV.alignment = UIStackView.Alignment.center
         stackViewCV.backgroundColor = #colorLiteral(red: 0.2131774127, green: 0.6528760791, blue: 1, alpha: 1)
         stackViewCV.translatesAutoresizingMaskIntoConstraints = false
         stackViewCV.spacing = 30
-    return stackViewCV
+        return stackViewCV
     }()
     let lineView = UIView()
     let viewContainerTableProduk = UIView()
@@ -36,7 +36,9 @@ class JenisProdukDetailViewController: UIViewController {
     let lineHargaProdukDetail = UIView()
     let deskripsiJenisProdukDetail = UILabel()
     let daftarPremiTable = UITableView()
-    
+    var packet = [PacketDetail]()
+    var syaratKetentuan = ""
+    var idpacket = 0
     let hargaDetail = ["Rp 20.000,-", "Rp 20.000,-","Rp 40.000,-","Rp 60.000,-","Rp 80.000,-"]
     let jumlahHari = ["7 hari", "14 hari", "30 hari", "3 bulan", "6 bulan"]
     let jenisProduk = ["Silver","Gold","Platinum"]
@@ -44,7 +46,7 @@ class JenisProdukDetailViewController: UIViewController {
     let deskripsijenisProduk = "Memberikan perlindungan atas risiko kematian, cacat tetap, biaya perawatan dan atau pengobatan yang secara langsung disebabkan suatu kecelakaan. Kecelakaan yaitu suatu kejadian atau peristiwa yang mengandung unsur kekerasan, baik bersifat fisik maupun kimia, yang datangnya secara tiba-tiba, termasuk juga kecelakaan yaitu yang disebabkan karena keracunan makanan, uap dan gas, jatuh ke dalam air atau tenggelam."
     
     
-
+    
     override func viewDidLoad() {
         view.backgroundColor = .gray
         daftarPremiTable.delegate = self
@@ -55,18 +57,16 @@ class JenisProdukDetailViewController: UIViewController {
         setupNavBarJenisProdukDetail()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         view.layoutIfNeeded()
-        // Do any additional setup after loading the view.
+        FecthData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func FecthData() {
+        print("idpacket :", idpacket)
+        FetchingListProduct.shared.getDataJenisProdukDetailFromApi(idProduct: "\(idpacket)" ) {(data) in
+            self.packet = data
+            self.daftarPremiTable.reloadData()
+            
+            
+        }
     }
-    */
-
 }

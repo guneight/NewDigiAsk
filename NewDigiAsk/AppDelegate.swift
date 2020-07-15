@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient, mode: AVAudioSession.Mode.moviePlayback, options: [.mixWithOthers] )
         let feed  = GaleryViewController()
         feed.video = Video.allVideos()
-        print("jumlah video adalah : \(feed.video.count)")
+        let homeVC = HomeMenuViewController()
+        homeVC.fecthProduct()
         return true
     }
 

@@ -80,7 +80,7 @@ extension HomeMenuViewController{
         NSLayoutConstraint.activate([
             cartButton.leadingAnchor.constraint(equalTo: containerViewNav.trailingAnchor, constant : -37.11),
             cartButton.topAnchor.constraint(equalTo: containerViewNav.topAnchor, constant:5),
-//            cartButton.widthAnchor.constraint(equalToConstant: 17),
+            //            cartButton.widthAnchor.constraint(equalToConstant: 17),
             cartButton.heightAnchor.constraint(equalToConstant: 16.57)
         ])
         cartButton.setImage(UIImage(named: "cart.png"), for: .normal)
@@ -107,7 +107,7 @@ extension HomeMenuViewController{
         NSLayoutConstraint.activate([
             chatButton.trailingAnchor.constraint(equalTo: cartButton.leadingAnchor, constant : -20.11),
             chatButton.topAnchor.constraint(equalTo: containerViewNav.topAnchor, constant:5),
-//            chatButton.widthAnchor.constraint(equalToConstant: 17),
+            //            chatButton.widthAnchor.constraint(equalToConstant: 17),
             chatButton.heightAnchor.constraint(equalToConstant: 16.25)
         ])
         chatButton.setImage(UIImage(named: "hubungikami.png"), for: .normal)
@@ -118,7 +118,7 @@ extension HomeMenuViewController{
         NSLayoutConstraint.activate([
             notifButton.trailingAnchor.constraint(equalTo: chatButton.leadingAnchor, constant : -20.11),
             notifButton.topAnchor.constraint(equalTo: containerViewNav.topAnchor, constant:5),
-//            notifButton.widthAnchor.constraint(equalToConstant: 17),
+            //            notifButton.widthAnchor.constraint(equalToConstant: 17),
             notifButton.heightAnchor.constraint(equalToConstant: 16.55)
         ])
         notifButton.setImage(UIImage(named: "notif.png"), for: .normal)
@@ -127,12 +127,12 @@ extension HomeMenuViewController{
         let labelNotif = UILabel()
         containerViewNav.addSubview(labelNotif)
         labelNotif.translatesAutoresizingMaskIntoConstraints = false
-              NSLayoutConstraint.activate([
-                  labelNotif.leadingAnchor.constraint(equalTo: notifButton.trailingAnchor, constant : -10),
-                  labelNotif.topAnchor.constraint(equalTo: containerViewNav.topAnchor, constant:0),
-                  labelNotif.widthAnchor.constraint(equalToConstant: 14),
-                  labelNotif.heightAnchor.constraint(equalToConstant: 14)
-              ])
+        NSLayoutConstraint.activate([
+            labelNotif.leadingAnchor.constraint(equalTo: notifButton.trailingAnchor, constant : -10),
+            labelNotif.topAnchor.constraint(equalTo: containerViewNav.topAnchor, constant:0),
+            labelNotif.widthAnchor.constraint(equalToConstant: 14),
+            labelNotif.heightAnchor.constraint(equalToConstant: 14)
+        ])
         UIHelper.makeLabel(label: labelNotif, corner: 7, allignment: .center, leadingAnchor: containerViewNav.leadingAnchor, trailingAnchor: containerViewNav.trailingAnchor, topAnchor: containerViewNav.topAnchor, leadingConstant: (containerViewNav.frame.size.width-100), trailingConstant: -86, topConstant: 0, heightAnchor: 14, widthAnchor: 14)
         labelNotif.layer.masksToBounds = true
         labelNotif.layer.cornerRadius = 7
@@ -247,6 +247,15 @@ extension HomeMenuViewController{
         ])
         simulasiButton.setImage(UIImage(named: "simulasiNormal"), for: .normal)
         
+    }
+    
+    func  fecthProduct(){
+        FetchingListProduct.shared.getDataFromApi(){(data) in
+            self.packetProduct = data
+            DispatchQueue.main.async {
+                collectionViewProduct.reloadData()
+            }
+        }
     }
     
 }

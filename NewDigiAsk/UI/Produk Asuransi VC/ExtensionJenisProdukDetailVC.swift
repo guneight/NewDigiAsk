@@ -10,14 +10,14 @@ import UIKit
 
 extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hargaDetail.count
+        return packet.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellJenisProdukDetail", for: indexPath) as! JenisProdukDetailTableViewCell
         cell.selectionStyle = .none
-        cell.nilaiPremiLabel.text = hargaDetail[indexPath.row]
-        cell.jumlahHariLabel.text = jumlahHari[indexPath.row]
+        cell.nilaiPremiLabel.text = "Rp  \(packet[indexPath.row].premi)"
+        cell.jumlahHariLabel.text = packet[indexPath.row].jangkaWaktu
         cell.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
         cell.layoutIfNeeded()
         
@@ -36,6 +36,7 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let SyaratdanKetentuanVC = self.storyboard?.instantiateViewController(identifier: "SyaratdanKetentuanViewController") as! SyaratdanKetentuanViewController
+        SyaratdanKetentuanVC.syaratKetentuan = syaratKetentuan
         self.navigationController?.pushViewController(SyaratdanKetentuanVC, animated: true)
         
     }
