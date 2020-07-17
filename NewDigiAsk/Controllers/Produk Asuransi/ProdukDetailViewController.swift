@@ -83,12 +83,6 @@ class ProdukDetailViewController: UIViewController {
         deskripsiPenggunaLabel.text = packetProduct?.pengguna
         deskripsiGantiRugi.text = packetProduct?.deskripsiGantiRugi
         deskripsiPenggantiBiayaLabel.text = packetProduct?.deskripsiTambahan
-//        guard let images = packetProduct?.logo else{return}
-//        let data = Data(base64Encoded: images)
-//        guard let datas = data else{return}
-//        let image = UIImage(data: datas)
-//        print("image", image)
-//        produkDetailImage.image = image
     }
 }
 

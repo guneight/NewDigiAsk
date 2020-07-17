@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController {
+class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let produkBaseView = UIView()
     let prosesStackView : UIStackView = {
         let stackViewCV = UIStackView()
@@ -68,31 +68,95 @@ class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController {
     let tambahKerajangbutton = UIButton()
     let datePicker = UIDatePicker()
     
+    let IdentitasTertanggungTableView = UITableView()
+    let penerimaManfaatTableView = UITableView()
+    var penerimaManfaat : Daftar?
+    var productInCart = [ProductinCart]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupNavBarIdentitas()
         pickerDateWaktuPolis()
         view.layoutIfNeeded()
-        
+        IdentitasTertanggungTableView.delegate = self
+        IdentitasTertanggungTableView.dataSource = self
+        penerimaManfaatTableView.delegate = self
+        penerimaManfaatTableView.dataSource = self
+        IdentitasTertanggungTableView.reloadData()
+        penerimaManfaatTableView.reloadData()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         tambahKerajangbutton.addTarget(self, action: #selector(tambahKeranjangAction(sender:)), for: .touchUpInside)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         let tapGesture = UITapGestureRecognizer(target: self, action:#selector(closeDatePicker))
         view.addGestureRecognizer(tapGesture)
-   }
+        
+        print(penerimaManfaat?.daftarTertanggung.count)
+    }
     
     
     @objc func tambahKeranjangAction(sender :Any){
         let kerangjangVC = storyboard?.instantiateViewController(identifier: "KeranjangViewController") as! KeranjangViewController
         self.navigationController?.pushViewController(kerangjangVC, animated: true)
-        
     }
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == IdentitasTertanggungTableView {
+            return penerimaManfaat?.daftarTertanggung.count ?? 0
+        }else {
+            return penerimaManfaat?.penerimaManfaat.count ?? 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == IdentitasTertanggungTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "IdentitastertanggungTbc", for: indexPath) as! IdentitastertanggungTbc
+            cell.namaIdentitasTertanggunglabel.text = penerimaManfaat?.daftarTertanggung[indexPath.row].nama
+            cell.backgroundColor = .white
+            cell.cellAction = {[weak self] in
+                guard let strongSelf = self  else {return}
+                self!.namaLengkapTextField.text = self?.penerimaManfaat?.daftarTertanggung[indexPath.row].nama
+                self!.nomorKTPTextField.text = self?.penerimaManfaat?.daftarTertanggung[indexPath.row].noKTP
+                self!.emailTextField.text = self?.penerimaManfaat?.daftarTertanggung[indexPath.row].email
+                self!.nomorTeleponTextField.text = self?.penerimaManfaat?.daftarTertanggung[indexPath.row].noTelp
+                self!.IdentitasTertanggungTableView.isHidden = true
+                let bottomOffset = CGPoint(x: 0, y: self!.identitasScrollView.contentSize.height - self!.identitasScrollView.bounds.size.height/0.82)
+                self!.identitasScrollView.setContentOffset(bottomOffset, animated: true)
+                self!.penerimaManfaatTableView.isHidden = false
+            }
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "penerimaManfaatTbc", for: indexPath) as! penerimaManfaatTbc
+            cell.namaIdentitasTertanggunglabel.text = penerimaManfaat?.penerimaManfaat[indexPath.row].nama
+            cell.backgroundColor = .white
+
+            cell.cellAction = {[weak self] in
+                guard let strongSelf = self  else {return}
+                self!.namaLengkapPenerimaManfaatTextField.text = self?.penerimaManfaat?.penerimaManfaat[indexPath.row].nama
+                self!.nomorKTPPenerimaManfaatTextField.text = self?.penerimaManfaat?.penerimaManfaat[indexPath.row].noKTP
+                self!.emailPenerimaManfaatTextField.text = self?.penerimaManfaat?.penerimaManfaat[indexPath.row].email
+                self!.nohpPenerimaManfaatTextField.text = self?.penerimaManfaat?.penerimaManfaat[indexPath.row].noTelp
+                self!.penerimaManfaatTableView.isHidden = true
+                let bottomOffset = CGPoint(x: 0, y: self!.identitasScrollView.contentSize.height - self!.identitasScrollView.bounds.size.height)
+                self!.identitasScrollView.setContentOffset(bottomOffset, animated: true)
+            }
+            return cell
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableView == IdentitasTertanggungTableView {
+            return 35
+        }else {
+            return 35
+        }
+    }
+    
+    
     
     
 }

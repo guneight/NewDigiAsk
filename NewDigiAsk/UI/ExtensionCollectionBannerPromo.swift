@@ -292,8 +292,6 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         collectionViewGalery.backgroundColor = UIColor.white
         collectionViewGalery.showsHorizontalScrollIndicator = false
         
-        
-        
         whiteView.addSubview(viewMap)
         UIHelper.makeView(view: viewMap, leadingAnchor: whiteView.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewGalery.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 20, corner: 0, heightAnchor: width/2, widthAnchor: 0)
         viewMap.backgroundColor = UIColor.white
@@ -319,6 +317,17 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         imageViewMap.contentMode = .scaleAspectFit
         imageViewMap.layoutIfNeeded()
         
+        view.addSubview(loadingIndicator)
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints =  false
+        NSLayoutConstraint.activate([
+            loadingIndicator.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            loadingIndicator.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            loadingIndicator.topAnchor.constraint(equalTo: view.topAnchor),
+            loadingIndicator.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        loadingIndicator.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        loadingIndicator.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        loadingIndicator.startAnimating()
         
     }
     

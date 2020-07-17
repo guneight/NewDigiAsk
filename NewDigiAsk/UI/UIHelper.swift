@@ -215,6 +215,11 @@ extension String {
     var isStrings : Bool{
         NSPredicate(format: "SELF MATCHES %@","[0-9]" ).evaluate(with: self)
     }
+    
+    var isEmpty : Bool{
+        NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z]{1,}").evaluate(with: self)
+    }
+        
 }
 
 

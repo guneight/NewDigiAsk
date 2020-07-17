@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension IdentitasTertanggungdanPenerimaManfaatViewController {
+extension IdentitasTertanggungdanPenerimaManfaatViewController: UITextFieldDelegate {
     
     func pickerDateWaktuPolis(){
         datePicker.datePickerMode = .date
@@ -37,6 +37,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController {
         view.endEditing(true)
     }
     
+    
     func setupUI(){
         let height = view.frame.size.height
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
@@ -57,13 +58,13 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController {
         produkBaseView.layoutIfNeeded()
         
         produkBaseView.addSubview(lineView)
-          lineView.translatesAutoresizingMaskIntoConstraints = false
-             NSLayoutConstraint.activate([
-                 lineView.widthAnchor.constraint(equalToConstant: 280),
-                 lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                 lineView.heightAnchor.constraint(equalToConstant: 2),
-                 lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
-             ])
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            lineView.widthAnchor.constraint(equalToConstant: 280),
+            lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            lineView.heightAnchor.constraint(equalToConstant: 2),
+            lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+        ])
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
@@ -179,6 +180,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController {
         UIHelper.makeLabel(label: namaLengkapLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: headerIdentitasTertanggung.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 14, widthAnchor: 0)
         UIHelper.setTextLabel(label: namaLengkapLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nama Lengkap", kerning: 0.5)
         
+        namaLengkapTextField.addTarget(self, action: #selector(checkTextfield), for: .editingChanged)
         
         identitasContainerView.addSubview(namaLengkapTextField)
         UIHelper.makeTetxField(textField: namaLengkapTextField, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: namaLengkapLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
@@ -233,6 +235,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController {
         identitasContainerView.addSubview(namaLengkapPenerimaManfaatLabel)
         UIHelper.makeLabel(label: namaLengkapPenerimaManfaatLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: identitasPenerimaManfaatLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 14, widthAnchor: 0)
         UIHelper.setTextLabel(label: namaLengkapPenerimaManfaatLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nama lengkap", kerning: 0.5)
+        namaLengkapPenerimaManfaatTextField.addTarget(self, action: #selector(checkTextfield), for: .editingChanged)
         
         identitasContainerView.addSubview(namaLengkapPenerimaManfaatTextField)
         UIHelper.makeTetxField(textField: namaLengkapPenerimaManfaatTextField, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: namaLengkapPenerimaManfaatLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
@@ -300,9 +303,96 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController {
         tambahKerajangbutton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         tambahKerajangbutton.setTitle("TAMBAH KE KERANJANG", for: .normal)
         
+        // form identitas tertanggung
+        namaLengkapTextField.delegate = self
+        nomorKTPTextField.delegate = self
+        emailTextField.delegate = self
+        nomorTeleponTextField.delegate = self
+        namaLengkapTextField.becomeFirstResponder()
+        namaLengkapTextField.returnKeyType = .next
+        nomorKTPTextField.keyboardType = .namePhonePad
+        nomorKTPTextField.returnKeyType = .next
+        emailTextField.returnKeyType = .next
+        nomorTeleponTextField.keyboardType = .numberPad
         
+        
+        identitasContainerView.addSubview(IdentitasTertanggungTableView)
+        IdentitasTertanggungTableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            IdentitasTertanggungTableView.leadingAnchor.constraint(equalTo: identitasContainerView.leadingAnchor, constant: 20),
+            IdentitasTertanggungTableView.trailingAnchor.constraint(equalTo: identitasContainerView.trailingAnchor, constant: -20),
+            IdentitasTertanggungTableView.topAnchor.constraint(equalTo: underLineNamaLengkap.bottomAnchor),
+            IdentitasTertanggungTableView.bottomAnchor.constraint(equalTo: identitasPenerimaManfaatLabel.topAnchor)
+        ])
+        
+        IdentitasTertanggungTableView.backgroundColor = .clear
+        IdentitasTertanggungTableView.separatorStyle = .none
+        IdentitasTertanggungTableView.allowsSelection = true
+        IdentitasTertanggungTableView.showsVerticalScrollIndicator = false
+        IdentitasTertanggungTableView.layer.masksToBounds = true
+        IdentitasTertanggungTableView.layer.cornerRadius = 10
+        IdentitasTertanggungTableView.register(IdentitastertanggungTbc.self, forCellReuseIdentifier: "IdentitastertanggungTbc")
+        
+        identitasContainerView.addSubview(penerimaManfaatTableView)
+        penerimaManfaatTableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            penerimaManfaatTableView.leadingAnchor.constraint(equalTo: identitasContainerView.leadingAnchor, constant: 20),
+            penerimaManfaatTableView.trailingAnchor.constraint(equalTo: identitasContainerView.trailingAnchor, constant: -20),
+            penerimaManfaatTableView.topAnchor.constraint(equalTo: underLinenamaLengkapPenerimaManfaat.bottomAnchor),
+            penerimaManfaatTableView.bottomAnchor.constraint(equalTo: masakAktifLabel.topAnchor)
+        ])
+        
+        penerimaManfaatTableView.backgroundColor = .clear
+        penerimaManfaatTableView.separatorStyle = .none
+        penerimaManfaatTableView.allowsSelection = true
+        penerimaManfaatTableView.showsVerticalScrollIndicator = false
+        penerimaManfaatTableView.layer.masksToBounds = true
+        penerimaManfaatTableView.layer.cornerRadius = 10
+        penerimaManfaatTableView.register(penerimaManfaatTbc.self, forCellReuseIdentifier: "penerimaManfaatTbc")
+        penerimaManfaatTableView.isHidden = true
+        
+        if penerimaManfaat?.daftarTertanggung.count == 0{
+            IdentitasTertanggungTableView.isHidden = true
+        }else{
+            IdentitasTertanggungTableView.isHidden = false
+        }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == namaLengkapTextField {
+            nomorKTPTextField.becomeFirstResponder()
+        }else if textField == nomorKTPTextField{
+            emailTextField.becomeFirstResponder()
+        }else if textField == emailTextField {
+            nomorTeleponTextField.becomeFirstResponder()
+        }else if textField == nomorTeleponTextField{
+            namaLengkapPenerimaManfaatTextField.becomeFirstResponder()
+        }else if textField == nomorKTPPenerimaManfaatTextField{
+            nomorKTPPenerimaManfaatTextField.becomeFirstResponder()
+        }else if textField == nomorKTPPenerimaManfaatTextField{
+            emailPenerimaManfaatTextField.becomeFirstResponder()
+        }else if textField == emailPenerimaManfaatTextField{
+            nohpPenerimaManfaatLabel.becomeFirstResponder()
+        }
+        return true
+    }
+    
+    @objc func checkTextfield(_ textField: UITextField){
+        if textField == namaLengkapTextField {
+            if namaLengkapTextField.text?.isEmpty == true {
+                IdentitasTertanggungTableView.isHidden = true
+            }else{
+                IdentitasTertanggungTableView.isHidden = false
+            }
+        }else if textField == namaLengkapPenerimaManfaatTextField{
+            if namaLengkapPenerimaManfaatTextField.text?.isEmpty == true {
+                penerimaManfaatTableView.isHidden = true
+            }else{
+                penerimaManfaatTableView.isHidden = false
+                penerimaManfaatTableView.reloadData()
+            }
+        }
+    }
     
     func setupNavBarIdentitas(){
         let customButtonNav =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
@@ -322,4 +412,61 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController {
     }
     
     
+}
+
+class IdentitastertanggungTbc: UITableViewCell{
+    let namaIdentitasTertanggunglabel = UILabel()
+    var cellAction : (()-> Void)?
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.addSubview(namaIdentitasTertanggunglabel)
+        UIHelper.makeLabel(label: namaIdentitasTertanggunglabel, corner: 0, allignment: .left, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 0, heightAnchor: 35, widthAnchor: 0)
+        UIHelper.setTextLabel(label: namaIdentitasTertanggunglabel, fontName: fontNameHelper.ArialMT, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 14, text: "Tertanggung-1", kerning: 0.5)
+        namaIdentitasTertanggunglabel.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(namaAction))
+        
+        let bottomLayer = CALayer()
+        bottomLayer.frame = CGRect(x: 0, y: 34, width: contentView.frame.size.width, height: 1)
+        bottomLayer.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        namaIdentitasTertanggunglabel.layer.addSublayer(bottomLayer)
+        
+        namaIdentitasTertanggunglabel.addGestureRecognizer(gesture)
+    }
+    
+    
+    @objc func namaAction(){
+        cellAction?()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class penerimaManfaatTbc: UITableViewCell{
+    let namaIdentitasTertanggunglabel = UILabel()
+    var cellAction : (()-> Void)?
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.addSubview(namaIdentitasTertanggunglabel)
+        
+        UIHelper.makeLabel(label: namaIdentitasTertanggunglabel, corner: 0, allignment: .left, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 0, heightAnchor: 35, widthAnchor: 0)
+        UIHelper.setTextLabel(label: namaIdentitasTertanggunglabel, fontName: fontNameHelper.ArialMT, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 14, text: "Tertanggung-1", kerning: 0.5)
+        namaIdentitasTertanggunglabel.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(namaAction))
+        
+        let bottomLayer = CALayer()
+        bottomLayer.frame = CGRect(x: 0, y: 34, width: contentView.frame.size.width, height: 1)
+        bottomLayer.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        namaIdentitasTertanggunglabel.layer.addSublayer(bottomLayer)
+        
+        namaIdentitasTertanggunglabel.addGestureRecognizer(gesture)
+        
+        
+    }
+    @objc func namaAction(){
+        cellAction?()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

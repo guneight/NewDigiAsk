@@ -42,3 +42,32 @@ struct PacketDetail: Decodable {
     let premi: Int
 }
 
+
+// MARK: - Product
+
+struct Daftar: Decodable {
+    let penerimaManfaat : [penerimaManfaat]
+    let daftarTertanggung: [daftarTertanggung]
+}
+
+
+// MARK: - penerimaManfaat
+struct penerimaManfaat: Decodable {
+    let nama : String
+    let noKTP : String
+    let email : String
+    let noTelp: String
+}
+
+// MARK: - DaftarTertanggung
+struct daftarTertanggung: Decodable {
+    let nama : String
+    let noKTP : String
+    let email : String
+    let noTelp: String
+}
+typealias ProductCart = [ProductinCart]
+struct ProductinCart: Decodable {
+    let namaProduct : String
+    let premi : Int
+}

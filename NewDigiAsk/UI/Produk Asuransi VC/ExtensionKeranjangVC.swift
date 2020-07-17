@@ -10,17 +10,18 @@ import UIKit
 
 extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return namaProdukArrays.count
+        print("productInCart.count table :", productCart)
+        return productInCart.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produkKeranjangCell", for: indexPath)  as! daftarProdukKeranjangTableViewCells
         cell.selectionStyle = .none
         cell.layoutIfNeeded()
-        cell.iconProdukImage.image = UIImage(named: "\(namaProdukArray[indexPath.row])")
-        cell.namaProdukLabel.text = namaProdukArray[indexPath.row]
-        cell.deskripsiManfaatLabel.text = deskripsiProduk[indexPath.row]
-        cell.nominalLabel.text = nominal[indexPath.row]
+        cell.iconProdukImage.image = UIImage(named: "\(productInCart[indexPath.row].namaProduct)")
+        cell.namaProdukLabel.text = productInCart[indexPath.row].namaProduct
+//        cell.deskripsiManfaatLabel.text = deskripsiProduk[indexPath.row]
+        cell.nominalLabel.text = String(productInCart[indexPath.row].premi)
         
         cell.rightArrowButton.addTarget(self, action: #selector(rightButtonAction(sender:)), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(namaProdukAction(sender:)))
@@ -185,7 +186,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         daftarProdukKeranjangTable.register(daftarProdukKeranjangTableViewCells.self, forCellReuseIdentifier: "produkKeranjangCell")
         daftarProdukKeranjangTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         daftarProdukKeranjangTable.showsVerticalScrollIndicator = false
-        daftarProdukKeranjangTable.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
+        daftarProdukKeranjangTable.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         daftarProdukKeranjangTable.layoutIfNeeded()
         daftarProdukKeranjangTable.allowsSelection = false
         keranjangBaseView.addSubview(checkOutButton)
@@ -194,6 +195,17 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         checkOutButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         checkOutButton.setTitle("CHECKOUT", for: .normal)
         
+        keranjangBaseView.addSubview(tableIndicator)
+        tableIndicator.translatesAutoresizingMaskIntoConstraints =  false
+        NSLayoutConstraint.activate([
+            tableIndicator.widthAnchor.constraint(equalToConstant: 40),
+            tableIndicator.heightAnchor.constraint(equalToConstant: 40),
+            tableIndicator.centerXAnchor.constraint(equalTo: daftarProdukKeranjangTable.centerXAnchor),
+            tableIndicator.centerYAnchor.constraint(equalTo: daftarProdukKeranjangTable.centerYAnchor)
+        ])
+        tableIndicator.tintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+        tableIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tableIndicator.startAnimating()
     }
     
     func setupNavBarKeranjang(){
@@ -254,7 +266,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         let alertDeleteAll = UIAlertController(title: "Hapus Semua Produk", message: "Apakah Anda yakin untuk menghapus semua produk?", preferredStyle: .alert)
         alertDeleteAll.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alertDeleteAll.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: {(action)-> Void in
-            self.namaProdukArrays.removeAll()
+            self.productInCart.removeAll()
             self.daftarProdukKeranjangTable.reloadData()
             self.trushButton.isEnabled = false
             self.checkOutButton.setTitle(" < PILIH PRODUK", for: .normal)
@@ -269,7 +281,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         let alertDeleteProduct = UIAlertController(title: "Hapus Produk", message: "Apakah Anda yakin untuk menghapus produk ini ?", preferredStyle: .alert)
 
         alertDeleteProduct.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: {(action)-> Void in
-            self.namaProdukArrays.remove(at: selectedIndexPath.row)
+            self.productInCart.remove(at: selectedIndexPath.row)
             self.daftarProdukKeranjangTable.reloadData()
           
         }))

@@ -252,9 +252,8 @@ extension HomeMenuViewController{
     func  fecthProduct(){
         FetchingListProduct.shared.getDataFromApi(){(data) in
             self.packetProduct = data
-            DispatchQueue.main.async {
-                collectionViewProduct.reloadData()
-            }
+            collectionViewProduct.reloadData()
+            self.loadingIndicator.stopAnimating()
         }
     }
     

@@ -63,35 +63,53 @@ struct  FetchingListProduct{
     
     
     
-    func getDataIdentitasPenerimaManfaat(idCart: Int, completion: @escaping (Data) -> ()){
-        let baseUrl = URLComponents(string:"http://10.220.20.3:8080/api/digiask/beli-product/shopping-cart/")
-        guard var urlComponents = baseUrl else {return}
-        urlComponents.queryItems = [
-                  URLQueryItem(name: "", value: "\(idCart)"),
-                  
-              ]
-
-              guard let url = urlComponents.url else {return}
-              print(url)
+    func getDataIdentitasPenerimaManfaat(idUser: String, idProduct: String, idPacket: String,  completion: @escaping (Daftar) -> ()){
+        let baseUrl = URL(string:"http://10.220.20.3:8080/api/digiask/beli-product/transaksi/user/\(idUser)/product/\(idProduct)/product-detail/\(idPacket)")
+        guard let url = baseUrl else {return}
+        print(url)
               URLSession.shared.dataTask(with: url) { (data, response, error) in
                   if let error = error {
                       print(error.localizedDescription)
+                      return
                   }
-                  if let response = response {
-                      print("Response:\(response)")
-                  }
-                  guard let data = data else { return }
-                  
+
+                  guard let data = data else {return}
                   do {
-                      let json = JSONDecoder()
-                      let  packetDetails = try json.decode(PacketDetails.self, from : data)
-                      print("Product List :\(packetDetails.count)")
-                      
-                  }catch{
+                      let json = try JSONDecoder().decode(Daftar.self, from: data)
+                    print(json)
+                      DispatchQueue.main.async {
+                          completion(json)
+                      }
+                  } catch {
                       print(error.localizedDescription)
+                      return
                   }
-              }
-              .resume()
+              }.resume()
+    }
+    
+    func getProductFromCart(idUser : String, completion: @escaping([ProductinCart])-> ()){
+        let baseUrl = URL(string: "http://10.220.20.3:8080/api/digiask/beli-product/shopping-cart/\(idUser)")
+        guard let url = baseUrl else {return}
+        print(url)
+              URLSession.shared.dataTask(with: url) { (data, response, error) in
+                  if let error = error {
+                      print(error.localizedDescription)
+                      return
+                  }
+
+                  guard let data = data else {return}
+            
+                  do {
+                      let json = try JSONDecoder().decode([ProductinCart].self, from: data)
+                    print(json)
+                      DispatchQueue.main.async {
+                          completion(json)
+                      }
+                  } catch {
+                      print(error.localizedDescription)
+                      return
+                  }
+              }.resume()
     }
     
 }

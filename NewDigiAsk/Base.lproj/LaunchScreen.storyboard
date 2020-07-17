@@ -15,29 +15,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Biglogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ww8-Pb-iu6">
-                                <rect key="frame" x="100" y="377" width="214" height="76"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXl-mn-YbB">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Biglogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ww8-Pb-iu6">
+                                        <rect key="frame" x="100" y="371" width="214" height="76"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="214" id="DRv-aG-nL3"/>
+                                            <constraint firstAttribute="height" constant="76" id="LMa-fx-JqB"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="214" id="bss-VW-txv"/>
-                                    <constraint firstAttribute="height" constant="76" id="up7-NJ-2DT"/>
+                                    <constraint firstItem="Ww8-Pb-iu6" firstAttribute="centerX" secondItem="qXl-mn-YbB" secondAttribute="centerX" id="M4C-o7-CID"/>
+                                    <constraint firstItem="Ww8-Pb-iu6" firstAttribute="centerY" secondItem="qXl-mn-YbB" secondAttribute="centerY" id="Xv3-CC-Wuc"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ASKRINDO" translatesAutoresizingMaskIntoConstraints="NO" id="3bo-Hw-EV8">
-                                <rect key="frame" x="156" y="297" width="102" height="75"/>
+                                <rect key="frame" x="156" y="378" width="102" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="WX7-SB-OGm"/>
-                                    <constraint firstAttribute="width" constant="102" id="lUX-fT-P5k"/>
+                                    <constraint firstAttribute="width" constant="102" id="4e9-0U-Nom"/>
+                                    <constraint firstAttribute="height" constant="32" id="UwS-ak-lcZ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3bo-Hw-EV8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="11S-ak-ckE"/>
-                            <constraint firstItem="Ww8-Pb-iu6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6T4-kL-giV"/>
-                            <constraint firstItem="Ww8-Pb-iu6" firstAttribute="top" secondItem="3bo-Hw-EV8" secondAttribute="bottom" constant="5" id="TZa-xS-ZlO"/>
-                            <constraint firstItem="3bo-Hw-EV8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="253" id="Tt8-UL-uoa"/>
+                            <constraint firstItem="Ww8-Pb-iu6" firstAttribute="top" secondItem="3bo-Hw-EV8" secondAttribute="bottom" constant="5" id="Mho-RY-WBR"/>
+                            <constraint firstItem="qXl-mn-YbB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WO0-dC-TRn"/>
+                            <constraint firstItem="3bo-Hw-EV8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="auG-z4-iJl"/>
+                            <constraint firstItem="qXl-mn-YbB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cK3-0a-Kdc"/>
+                            <constraint firstItem="qXl-mn-YbB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rcG-pj-Ibe"/>
+                            <constraint firstItem="qXl-mn-YbB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vNG-FG-r5A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

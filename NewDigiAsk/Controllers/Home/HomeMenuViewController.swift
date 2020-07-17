@@ -31,6 +31,7 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     let viewMap = UIView()
     let labelMap = UILabel()
     let imageViewMap = UIImageView()
+    let loadingIndicator = UIActivityIndicatorView()
     
     var indexProduk : Int = 0
     var loginStatus : Int = 0
@@ -86,6 +87,7 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         collectionViewInfo.reloadData()
         collectionViewPromo.reloadData()
         collectBannerPromo.reloadData()
+        fecthProduct()
         print("Login Status :", loginStatus)
        
     }

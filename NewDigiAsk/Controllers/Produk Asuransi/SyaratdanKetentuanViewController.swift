@@ -37,6 +37,7 @@ class SyaratdanKetentuanViewController: UIViewController {
     let bacaSelengkapnyaLabel = UILabel()
     let setujuButton = UIButton()
     let setujuView = UIView()
+    var penerimaManfaat : Daftar?
     var syaratKetentuan : String = ""
     let syaratDanKetentuan = "Memberikan perlindungan atas risiko kematian, cacat tetap, biaya perawatan dan atau pengobatan yang secara langsung disebabkan suatu kecelakaan. Kecelakaan yaitu suatu kejadian atau peristiwa yang mengandung unsur kekerasan, baik bersifat fisik maupun kimia, yang datangnya secara tiba-tiba, termasuk juga kecelakaan yaitu yang disebabkan karena keracunan makanan, uap dan gas, jatuh ke dalam air atau tenggelam."
     
@@ -52,6 +53,7 @@ class SyaratdanKetentuanViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(setujuAction(sender:)))
         setujuView.addGestureRecognizer(tapGesture)
         setupValue()
+        fecthData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,6 +62,7 @@ class SyaratdanKetentuanViewController: UIViewController {
     
     @objc func setujuAction(sender: Any){
         let identitasPenanungVC = self.storyboard?.instantiateViewController(identifier: "IdentitasTertanggungdanPenerimaManfaatViewController") as! IdentitasTertanggungdanPenerimaManfaatViewController
+        identitasPenanungVC.penerimaManfaat = penerimaManfaat
         self.navigationController?.pushViewController(identitasPenanungVC, animated: true)
         
     }
@@ -68,6 +71,11 @@ class SyaratdanKetentuanViewController: UIViewController {
         syaratDanKetentuanLabel.text = syaratKetentuan
     }
     
+    func fecthData(){
+        FetchingListProduct.shared.getDataIdentitasPenerimaManfaat(idUser: "5", idProduct: "5", idPacket: "3"){(data) in
+                   self.penerimaManfaat = data
+               }
+    }
     
     
 }

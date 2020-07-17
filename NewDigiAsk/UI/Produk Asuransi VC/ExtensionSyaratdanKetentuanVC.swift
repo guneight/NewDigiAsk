@@ -187,9 +187,9 @@ extension SyaratdanKetentuanViewController {
     }
     
     func setupAnimation(){
-        UIButton.animate(withDuration: 0.5, delay: 0, options: [.repeat, .autoreverse], animations: {
-               self.setujuButton.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-           }, completion: nil)
+//        UIButton.animate(withDuration: 0.5, delay: 0, options: [.repeat, .autoreverse], animations: {
+//               self.setujuButton.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+//           }, completion: nil)
            
        }
 }

@@ -34,17 +34,18 @@ class KeranjangViewController: UIViewController {
     let daftarProdukKeranjangTable = UITableView()
     let checkOutButton = UIButton()
     let trushButton = UIButton()
+    let tableIndicator = UIActivityIndicatorView()
     
     var selectRows : [IndexPath] = []
-    var jumlahProdukdiKreanjang : Int = 10
-    var namaProdukArrays = ["Kecelakaan Diri", "Kebakaran", "Kontruksi", "Tanggung Gugat", "Pengangkutan Barang", "Perjalanan", "Kerusakan Mesin", "Property All Risk", "Uang", "Alat Berat", "Penjaminan", "Kredit Perdagangan", "Kredit Serba Guna", "Surety Bond", "Kontra Bank Garnis", "Custom Bond"]
-    let deskripsiProduk = ["Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam", "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam","Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam"]
-    let nominal = ["Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-","Rp 250.000,-"]
+    var productCart : ProductinCart?
+    var productInCart = [ProductinCart]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         daftarProdukKeranjangTable.delegate = self
         daftarProdukKeranjangTable.dataSource = self
+        daftarProdukKeranjangTable.reloadData()
+        daftarProdukKeranjangTable.reloadData()
         view.layoutIfNeeded()
         setupUI()
         setupNavBarKeranjang()
@@ -53,18 +54,27 @@ class KeranjangViewController: UIViewController {
         trushButton.addTarget(self, action: #selector(deleteAllProduk), for: .touchUpInside)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         checkOutButton.addTarget(self, action: #selector(checkOutAction), for: .touchUpInside)
+        fecthData()
         
         
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    func fecthData(){
+        FetchingListProduct.shared.getProductFromCart(idUser: "5"){(data) in
+            self.productInCart = data
+            self.daftarProdukKeranjangTable.reloadData()
+            self.tableIndicator.stopAnimating()
+        }
     }
     
     @objc func checkOutAction(sender: Any){
-        if namaProdukArrays.count == 0{
+        if productInCart.count == 0{
             let produkVC = storyboard?.instantiateViewController(identifier: "ProdukViewController")  as! ProdukViewController
             self.navigationController?.pushViewController(produkVC, animated: true)
         }else{
-        let checkOutVC = storyboard?.instantiateViewController(identifier: "CheckOutKeranjangViewController")  as! CheckOutKeranjangViewController
-        self.navigationController?.pushViewController(checkOutVC, animated: true)
+            let checkOutVC = storyboard?.instantiateViewController(identifier: "CheckOutKeranjangViewController")  as! CheckOutKeranjangViewController
+            self.navigationController?.pushViewController(checkOutVC, animated: true)
         }
     }
     
