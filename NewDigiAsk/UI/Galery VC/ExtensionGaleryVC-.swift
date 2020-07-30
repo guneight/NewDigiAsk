@@ -113,7 +113,7 @@ extension GaleryViewController : UITableViewDelegate, UITableViewDataSource{
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         let backItem = UIBarButtonItem()
           backItem.title = "HOME"
-          let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+          let titleFont  = UIFont(name: fontNameHelper.NunitoBold, size: 14)
           backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
           navigationItem.leftBarButtonItems = [customButtonNav, backItem]
         
@@ -161,7 +161,7 @@ class galeryTableViewCell : UITableViewCell{
         
         self.contentView.addSubview(titleGaleryLabel)
         UIHelper.makeLabel(label: titleGaleryLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: galeryImage.bottomAnchor, leadingConstant: 0, trailingConstant: -40, topConstant: 10, heightAnchor: 45, widthAnchor: 0)
-        UIHelper.setTextLabel(label: titleGaleryLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 14, text: "Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi, Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi", kerning: 0.5)
+        UIHelper.setTextLabel(label: titleGaleryLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 14, text: "Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi, Askrindo Kanwil V Denpansar dan VII Makassar Berikan Apresiasi kepada Agen Asuransi Berprestasi", kerning: 0.5)
         titleGaleryLabel.numberOfLines = 0
         
         
@@ -176,7 +176,7 @@ class galeryTableViewCell : UITableViewCell{
         
         self.contentView.addSubview(tanggalGalery)
         UIHelper.makeLabel(label: tanggalGalery, corner: 0, allignment: .left, leadingAnchor: timeGaleryIcon.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: titleGaleryLabel.bottomAnchor, leadingConstant: 5, trailingConstant: -30, topConstant: 5, heightAnchor: 8, widthAnchor: 0)
-        UIHelper.setTextLabel(label: tanggalGalery, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1), weight: .regular, fontSize: 8, text: "24 Oktober 2019", kerning: 0.4)
+        UIHelper.setTextLabel(label: tanggalGalery, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1), weight: .regular, fontSize: 8, text: "24 Oktober 2019", kerning: 0.4)
         
         self.contentView.addSubview(underlineGalery)
         UIHelper.makeLabel(label: underlineGalery, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: timeGaleryIcon.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 15, heightAnchor: 5, widthAnchor: 0)

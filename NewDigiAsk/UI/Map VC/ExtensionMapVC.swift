@@ -77,7 +77,7 @@ extension MapViewController: UITableViewDelegate, UITableViewDataSource{
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
        let backItem = UIBarButtonItem()
         backItem.title = "HOME"
-        let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        let titleFont  = UIFont(name: fontNameHelper.NunitoExtraBold, size: 14)
         backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
         navigationItem.leftBarButtonItems = [customButtonNav, backItem]
       
@@ -100,11 +100,11 @@ class listPlaceTableViewCell : UITableViewCell{
         self.contentView.backgroundColor = .white
         self.contentView.addSubview(namaTempatLabel)
         UIHelper.makeLabel(label: namaTempatLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaTempatLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 12, text: "nama", kerning: 0.4)
+        UIHelper.setTextLabel(label: namaTempatLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 12, text: "nama", kerning: 0.4)
         
         contentView.addSubview(alamatLabel)
         UIHelper.makeLabel(label: alamatLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: namaTempatLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 5, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: alamatLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 12, text: "alamat", kerning: 0.4)
+        UIHelper.setTextLabel(label: alamatLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 12, text: "alamat", kerning: 0.4)
         
         
     }

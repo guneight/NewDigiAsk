@@ -19,7 +19,7 @@ extension DaftarViewController{
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         let backItem = UIBarButtonItem()
         backItem.title = "HOME"
-        let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        let titleFont  = UIFont(name: fontNameHelper.NunitoExtraBold, size: 14)
         backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
         navigationItem.leftBarButtonItems = [customButtonNav, backItem]
         
@@ -47,14 +47,14 @@ extension DaftarViewController{
         
         viewDaftar.addSubview(labelTextfieldEmail)
         UIHelper.makeLabel(label: labelTextfieldEmail, corner: 0, allignment: .left, leadingAnchor: viewDaftar.leadingAnchor, trailingAnchor: viewDaftar.trailingAnchor, topAnchor: viewDaftar.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 31, heightAnchor: 18, widthAnchor: 0)
-        UIHelper.setTextLabel(label: labelTextfieldEmail, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 15, text: "Daftar dengan nomor hp atau email", kerning: 0.4)
+        UIHelper.setTextLabel(label: labelTextfieldEmail, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 15, text: "Daftar dengan nomor hp atau email", kerning: 0.4)
         
         
         viewDaftar.addSubview(textFieldEmail)
         UIHelper.makeTetxField(textField: textFieldEmail, leadingAnchor: viewDaftar.leadingAnchor, trailingAnchor: viewDaftar.trailingAnchor, topAnchor: labelTextfieldEmail.bottomAnchor, leadingConstant: 40, trailingConstant: -24, topConstant: 20, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.06274509804, green: 0.06274509804, blue: 0.06274509804, alpha: 1))
-        textFieldEmail.font = UIFont(name: "AvantGarde Bk BT", size: 16)
+        textFieldEmail.font = UIFont(name: fontNameHelper.NunitoRegular, size: 16)
         textFieldEmail.placeholder = "nomor hp atau email"
-        UIHelper.setTextField(textField: textFieldEmail, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 16, text: "nomor hp atau email", kerning: 0.4)
+        UIHelper.setTextField(textField: textFieldEmail, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 16, text: "nomor hp atau email", kerning: 0.4)
         
         
         viewDaftar.addSubview(labelEmail)
@@ -71,7 +71,7 @@ extension DaftarViewController{
         viewDaftar.addSubview(labelMasukDengan)
         UIHelper.makeLabel(label: labelMasukDengan, corner: 0, allignment: .center, leadingAnchor: viewDaftar.leadingAnchor, trailingAnchor: viewDaftar.trailingAnchor, topAnchor: buttonDaftar.bottomAnchor, leadingConstant: 100, trailingConstant: -100, topConstant: 39, heightAnchor: 16, widthAnchor: 0)
         labelMasukDengan.text = "Atau masuk dengan "
-        labelMasukDengan.font = UIFont(name: "AvantGarde Bk BT", size: 12)
+        labelMasukDengan.font = UIFont(name: fontNameHelper.NunitoRegular, size: 12)
         labelMasukDengan.textColor =  #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1)
         
         viewDaftar.addSubview(buttonSingInGoogle)
@@ -85,7 +85,7 @@ extension DaftarViewController{
         viewDaftar.addSubview(labelSudahPunyaAkun)
         UIHelper.makeLabel(label: labelSudahPunyaAkun, corner: 0, allignment: .right, leadingAnchor: viewDaftar.leadingAnchor, trailingAnchor: viewDaftar.trailingAnchor, topAnchor: buttonSingInGoogle.bottomAnchor, leadingConstant: 84, trailingConstant: -84, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
         labelSudahPunyaAkun.text = "Sudah punya akun DigiAsk? Masuk"
-        labelSudahPunyaAkun.font = UIFont(name: "AvantGarde Bk BT", size: 12)
+        labelSudahPunyaAkun.font = UIFont(name: fontNameHelper.NunitoRegular, size: 12)
         labelSudahPunyaAkun.textColor = #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1)
         
         
@@ -94,7 +94,7 @@ extension DaftarViewController{
         //        masukButton.backgroundColor = UIColor.clear.withAlphaComponent(0)
         //        masukButton.setTitle(" Masuk", for: .normal)
         //        masukButton.setTitleColor(#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), for: .normal)
-        //        masukButton.titleLabel?.font = UIFont(name: "AvantGarde Bk BT", size: 12)
+        //        masukButton.titleLabel?.font = UIFont(name: fontNameHelper.NunitoRegular, size: 12)
         //        masukButton.contentHorizontalAlignment = .left
         
         

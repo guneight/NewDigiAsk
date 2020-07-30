@@ -56,7 +56,7 @@ extension LoginViewController : UITextFieldDelegate{
         
         loginsScrollView.addSubview(silahkanMasukLabel)
         UIHelper.makeLabel(label: silahkanMasukLabel, corner: 0, allignment: .center, leadingAnchor: loginsScrollView.leadingAnchor, trailingAnchor: loginsScrollView.trailingAnchor, topAnchor: logoImage.bottomAnchor, leadingConstant: 70, trailingConstant: -70, topConstant: 10, heightAnchor: 46, widthAnchor: 0)
-        UIHelper.setTextLabel(label: silahkanMasukLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), weight: .regular, fontSize: 12, text: "Silahkan masuk dengen nomor ponsel atau email", kerning: 0.1)
+        UIHelper.setTextLabel(label: silahkanMasukLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), weight: .regular, fontSize: 12, text: "Silahkan masuk dengen nomor ponsel atau email", kerning: 0.1)
         silahkanMasukLabel.numberOfLines = 2
         
         passwordLabel.isHidden = true
@@ -66,11 +66,11 @@ extension LoginViewController : UITextFieldDelegate{
         lupaPasswordLabel.isHidden = true
         loginBaseView.addSubview(nomorPonselEmailLabel)
         UIHelper.makeLabel(label: nomorPonselEmailLabel, corner: 0, allignment: .left, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: loginBaseView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 34, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorPonselEmailLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1), weight: .regular, fontSize: 14, text: "Nomor Ponsel/Email", kerning: 0.04)
+        UIHelper.setTextLabel(label: nomorPonselEmailLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1), weight: .regular, fontSize: 14, text: "Nomor Ponsel/Email", kerning: 0.04)
         
         loginBaseView.addSubview(nomorPonseLEmailTextField)
         UIHelper.makeTetxField(textField: nomorPonseLEmailTextField, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: nomorPonselEmailLabel.bottomAnchor, leadingConstant: 44, trailingConstant: -24, topConstant: 10, corner: 0, heightAnchor: 22, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
-        UIHelper.setTextField(textField: nomorPonseLEmailTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 16, text: "", kerning: 1)
+        UIHelper.setTextField(textField: nomorPonseLEmailTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 16, text: "", kerning: 1)
         nomorPonseLEmailTextField.placeholder = "Nomor ponsel atau email"
         
         loginBaseView.addSubview(underlineNomorPonselEmail)
@@ -80,15 +80,15 @@ extension LoginViewController : UITextFieldDelegate{
         loginBaseView.addSubview(emailAlert)
         emailAlert.isEnabled = true
         UIHelper.makeLabel(label: emailAlert, corner: 0, allignment: .right, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: underlineNomorPonselEmail.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 7, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: emailAlert, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 10, text: "Pastikan nomor atau email yang dimasukkan benar", kerning: 0.8)
+        UIHelper.setTextLabel(label: emailAlert, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 10, text: "Pastikan nomor atau email yang dimasukkan benar", kerning: 0.8)
         
         loginBaseView.addSubview(passwordLabel)
         UIHelper.makeLabel(label: passwordLabel, corner: 0, allignment: .left, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: underlineNomorPonselEmail.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: passwordLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1), weight: .regular, fontSize: 14, text: "Password", kerning: 0.04)
+        UIHelper.setTextLabel(label: passwordLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1), weight: .regular, fontSize: 14, text: "Password", kerning: 0.04)
         
         loginBaseView.addSubview(passwordTextField)
         UIHelper.makeTetxField(textField: passwordTextField, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: passwordLabel.bottomAnchor, leadingConstant: 44, trailingConstant: -24, topConstant: 10, corner: 0, heightAnchor: 22, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
-        UIHelper.setTextField(textField: passwordTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 16, text: "", kerning: 1)
+        UIHelper.setTextField(textField: passwordTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 16, text: "", kerning: 1)
         passwordTextField.placeholder = "Password"
         passwordTextField.isSecureTextEntry = true
         
@@ -102,7 +102,7 @@ extension LoginViewController : UITextFieldDelegate{
         
         loginBaseView.addSubview(lupaPasswordLabel)
         UIHelper.makeLabel(label: lupaPasswordLabel, corner: 0, allignment: .right, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: underlinePassword.bottomAnchor, leadingConstant: loginBaseView.frame.size.width/2, trailingConstant: -24, topConstant: 7, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: lupaPasswordLabel, fontName: "AvantGarde Bk BT", fontColor:#colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1) , weight: .regular, fontSize: 10, text: "Lupa password?", kerning: 0.8)
+        UIHelper.setTextLabel(label: lupaPasswordLabel, fontName: fontNameHelper.NunitoRegular, fontColor:#colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1) , weight: .regular, fontSize: 10, text: "Lupa password?", kerning: 0.8)
         lupaPasswordLabel.isUserInteractionEnabled = true
         
         loginBaseView.addSubview(continueButton)
@@ -112,7 +112,7 @@ extension LoginViewController : UITextFieldDelegate{
         
         loginBaseView.addSubview(atauMasukDenganLabel)
         UIHelper.makeLabel(label: atauMasukDenganLabel, corner: 0, allignment: .center, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: continueButton.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 18, heightAnchor: 17, widthAnchor: 0)
-        UIHelper.setTextLabel(label: atauMasukDenganLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: "Atau masuk dengan", kerning: 0.72)
+        UIHelper.setTextLabel(label: atauMasukDenganLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: "Atau masuk dengan", kerning: 0.72)
         
         loginBaseView.addSubview(signInWithGoogleButton)
         UIHelper.makeButton(button: signInWithGoogleButton, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: atauMasukDenganLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 27, corner: 24, heightAnchor: 48, widthAnchor: 0)
@@ -130,7 +130,7 @@ extension LoginViewController : UITextFieldDelegate{
         
         loginBaseView.addSubview(belumPunyaAkunLabel)
         UIHelper.makeLabel(label: belumPunyaAkunLabel, corner: 0, allignment: .center, leadingAnchor: loginBaseView.leadingAnchor, trailingAnchor: loginBaseView.trailingAnchor, topAnchor: signInWithGoogleButton.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 10, heightAnchor: 17, widthAnchor: 0)
-        UIHelper.setTextLabel(label: belumPunyaAkunLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: "Belum punya akun Digiask? Daftar disini", kerning: 0.72)
+        UIHelper.setTextLabel(label: belumPunyaAkunLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: "Belum punya akun Digiask? Daftar disini", kerning: 0.72)
         belumPunyaAkunLabel.isUserInteractionEnabled = true
         
         

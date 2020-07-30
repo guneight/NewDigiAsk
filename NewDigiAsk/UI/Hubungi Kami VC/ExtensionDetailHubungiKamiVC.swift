@@ -25,7 +25,7 @@ extension DetailHubungiKamiViewController {
         
         detailHubungiKamiBaseView.addSubview(createNewContactLabel)
         UIHelper.makeLabel(label: createNewContactLabel, corner: 0, allignment: .left, leadingAnchor: iconCreateNewContactImage.trailingAnchor, trailingAnchor: detailHubungiKamiBaseView.trailingAnchor, topAnchor: detailHubungiKamiBaseView.topAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 35, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: createNewContactLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 12, text: "Create New Contact", kerning: 0.4)
+        UIHelper.setTextLabel(label: createNewContactLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 12, text: "Create New Contact", kerning: 0.4)
         createNewContactLabel.isUserInteractionEnabled = true
 
         detailHubungiKamiBaseView.addSubview(underlineCreateNewContact)
@@ -39,7 +39,7 @@ extension DetailHubungiKamiViewController {
 
         detailHubungiKamiBaseView.addSubview(smsLabel)
         UIHelper.makeLabel(label: smsLabel, corner: 0, allignment: .left, leadingAnchor: iconSMSImage.trailingAnchor, trailingAnchor: detailHubungiKamiBaseView.trailingAnchor, topAnchor: underlineCreateNewContact.bottomAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 15, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: smsLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 12, text: "SMS", kerning: 0.4)
+        UIHelper.setTextLabel(label: smsLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .medium, fontSize: 12, text: "SMS", kerning: 0.4)
         smsLabel.isUserInteractionEnabled = true
 
         detailHubungiKamiBaseView.addSubview(underlineSMS)
@@ -57,7 +57,7 @@ extension DetailHubungiKamiViewController {
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
        let backItem = UIBarButtonItem()
           backItem.title = "HUBUNGI KAMI"
-          let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        let titleFont  = UIFont(name: fontNameHelper.NunitoExtraBold, size: 14)
           backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
           navigationItem.leftBarButtonItems = [customButtonNav, backItem]
         

@@ -118,7 +118,7 @@ extension SelesaiBayarEwalletViewController{
         UIHelper.makeLabel(label: terimakasihLabel, corner: 0, allignment: .center , leadingAnchor: selesaiBayarBaseView.leadingAnchor, trailingAnchor: selesaiBayarBaseView.trailingAnchor, topAnchor: selesaiBayarBaseView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 30, heightAnchor: 40, widthAnchor: 0)
         terimakasihLabel.numberOfLines = 2
         
-        UIHelper.setTextLabel(label: terimakasihLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Terimakasih untuk pembayaran Anda", kerning: 0.5)
+        UIHelper.setTextLabel(label: terimakasihLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Terimakasih untuk pembayaran Anda", kerning: 0.5)
         
         selesaiBayarBaseView.addSubview(transaksiView)
         UIHelper.makeView(view: transaksiView, leadingAnchor: selesaiBayarBaseView.leadingAnchor, trailingAnchor: selesaiBayarBaseView.trailingAnchor, topAnchor: terimakasihLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 15, corner: 10, heightAnchor: 118, widthAnchor: 0)
@@ -127,23 +127,23 @@ extension SelesaiBayarEwalletViewController{
         
         transaksiView.addSubview(nomorTransaksiHeaderLabel)
         UIHelper.makeLabel(label: nomorTransaksiHeaderLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: transaksiView.topAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 20, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorTransaksiHeaderLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Transaksi", kerning: 0.2)
+        UIHelper.setTextLabel(label: nomorTransaksiHeaderLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Transaksi", kerning: 0.2)
         
         transaksiView.addSubview(nomorTransaksiLabel)
         UIHelper.makeLabel(label: nomorTransaksiLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: nomorTransaksiHeaderLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 2, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorTransaksiLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.5)
+        UIHelper.setTextLabel(label: nomorTransaksiLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.5)
         
         transaksiView.addSubview(nomorPengajuanHeaderLabel)
         UIHelper.makeLabel(label: nomorPengajuanHeaderLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: nomorTransaksiLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorPengajuanHeaderLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor:#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Pengajuan", kerning: 0.2)
+        UIHelper.setTextLabel(label: nomorPengajuanHeaderLabel, fontName: fontNameHelper.NunitoBold, fontColor:#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Pengajuan", kerning: 0.2)
         
         transaksiView.addSubview(nomorPengajuanLabel)
         UIHelper.makeLabel(label: nomorPengajuanLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: nomorPengajuanHeaderLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 2, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorPengajuanLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor:#colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "ASK-2345-567-10879", kerning: 0.2)
+        UIHelper.setTextLabel(label: nomorPengajuanLabel, fontName: fontNameHelper.NunitoBold, fontColor:#colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "ASK-2345-567-10879", kerning: 0.2)
         
         selesaiBayarBaseView.addSubview(andaMelakukanLabel)
         UIHelper.makeLabel(label: andaMelakukanLabel, corner: 0, allignment: .left, leadingAnchor: selesaiBayarBaseView.leadingAnchor, trailingAnchor: selesaiBayarBaseView.trailingAnchor, topAnchor: transaksiView.bottomAnchor , leadingConstant: 22, trailingConstant: -22, topConstant: 30, heightAnchor: 32, widthAnchor: 0)
-        UIHelper.setTextLabel(label: andaMelakukanLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.87), weight: .regular, fontSize: 12, text: "", kerning: 0.6)
+        UIHelper.setTextLabel(label: andaMelakukanLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.87), weight: .regular, fontSize: 12, text: "", kerning: 0.6)
         andaMelakukanLabel.numberOfLines = 0
         
         selesaiBayarBaseView.addSubview(linkAjaIconImage)
@@ -165,7 +165,7 @@ extension SelesaiBayarEwalletViewController{
         
         selesaiBayarBaseView.addSubview(nominalLabel)
         UIHelper.makeLabel(label: nominalLabel, corner: 0, allignment: .left, leadingAnchor: linkAjaIconImage.trailingAnchor, trailingAnchor: selesaiBayarBaseView.trailingAnchor, topAnchor: andaMelakukanLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -22, topConstant: 10, heightAnchor: 15, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nominalLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.3)
+        UIHelper.setTextLabel(label: nominalLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.3)
         
         
         selesaiBayarBaseView.addSubview(lihatTransaksiButton)
@@ -182,7 +182,7 @@ extension SelesaiBayarEwalletViewController{
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         let backItem = UIBarButtonItem()
         backItem.title = "PEMBAYARAN"
-        let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        let titleFont  = UIFont(name: fontNameHelper.NunitoExtraBold, size: 14)
         backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
         navigationItem.leftBarButtonItems = [customButtonNav, backItem]
     }

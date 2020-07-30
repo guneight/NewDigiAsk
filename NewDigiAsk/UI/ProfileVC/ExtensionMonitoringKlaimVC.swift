@@ -71,7 +71,7 @@ extension MonitoringKlaimViewController: UITableViewDelegate, UITableViewDataSou
         klaimSearchBar.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         klaimSearchBar.barTintColor = .white
         klaimSearchBar.backgroundColor = .white
-        UIHelper.setTextField(textField: klaimSearchBar.searchTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "Tulis nama atau nomor polis", kerning: 0.5)
+        UIHelper.setTextField(textField: klaimSearchBar.searchTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "Tulis nama atau nomor polis", kerning: 0.5)
         
         view.addSubview(klaimfilterView)
         UIHelper.makeView(view: klaimfilterView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: klaimSearchBar.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 10, corner: 0, heightAnchor: 40, widthAnchor: 0)
@@ -121,7 +121,7 @@ extension MonitoringKlaimViewController: UITableViewDelegate, UITableViewDataSou
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
        let backItem = UIBarButtonItem()
           backItem.title = "HOME"
-          let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+          let titleFont  = UIFont(name: fontNameHelper.NunitoExtraBold, size: 14)
           backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
           navigationItem.leftBarButtonItems = [customButtonNav, backItem]
         
@@ -158,24 +158,24 @@ class MonitoringKlaimTableViewCell : UITableViewCell{
         
         self.contentView.addSubview(headerNomorKlaim)
         UIHelper.makeLabel(label: headerNomorKlaim, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 21, trailingConstant: -(contentView.frame.size.width/2), topConstant: 12, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: headerNomorKlaim, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Klaim", kerning: 0.12)
+        UIHelper.setTextLabel(label: headerNomorKlaim, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Klaim", kerning: 0.12)
         
         self.contentView.addSubview(nomorNomorKlaim)
         UIHelper.makeLabel(label: nomorNomorKlaim, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: headerNomorKlaim.bottomAnchor, leadingConstant: 24, trailingConstant: -(contentView.frame.size.width/2), topConstant: 5, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorNomorKlaim, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.12)
+        UIHelper.setTextLabel(label: nomorNomorKlaim, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.12)
         
         
         self.contentView.addSubview(tanggalTransaksiLabel)
         UIHelper.makeLabel(label: tanggalTransaksiLabel, corner: 0, allignment: .right, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: contentView.frame.size.width/2, trailingConstant: -21, topConstant: 14, heightAnchor: 11, widthAnchor: 0)
-         UIHelper.setTextLabel(label: tanggalTransaksiLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 9, text: "12 Desember 2019", kerning: 0.45)
+         UIHelper.setTextLabel(label: tanggalTransaksiLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 9, text: "12 Desember 2019", kerning: 0.45)
         
         self.contentView.addSubview(HeadernomorTransaksiLabel)
         UIHelper.makeLabel(label: HeadernomorTransaksiLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: nomorNomorKlaim.bottomAnchor, leadingConstant: 21, trailingConstant: -(contentView.frame.size.width/2), topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: HeadernomorTransaksiLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Transaksi", kerning: 0.12)
+        UIHelper.setTextLabel(label: HeadernomorTransaksiLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Transaksi", kerning: 0.12)
         
         self.contentView.addSubview(tanggalTransaksiLabel)
         UIHelper.makeLabel(label: tanggalTransaksiLabel, corner: 0, allignment: .right, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: contentView.frame.size.width/2, trailingConstant: -21, topConstant: 14, heightAnchor: 11, widthAnchor: 0)
-         UIHelper.setTextLabel(label: tanggalTransaksiLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 9, text: "12 Desember 2019", kerning: 0.45)
+         UIHelper.setTextLabel(label: tanggalTransaksiLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 9, text: "12 Desember 2019", kerning: 0.45)
         
         self.contentView.addSubview(klaimButton)
         klaimButton.translatesAutoresizingMaskIntoConstraints = false
@@ -189,7 +189,7 @@ class MonitoringKlaimTableViewCell : UITableViewCell{
         
         self.contentView.addSubview(nomorTransaksiLabel)
         UIHelper.makeLabel(label: nomorTransaksiLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: HeadernomorTransaksiLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 5, heightAnchor: 15, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorTransaksiLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.12)
+        UIHelper.setTextLabel(label: nomorTransaksiLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.12)
                
         self.contentView.addSubview(lineTransaksiView)
         UIHelper.makeView(view: lineTransaksiView, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: nomorTransaksiLabel.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 10, corner: 0, heightAnchor: 1, widthAnchor: 0)
@@ -202,7 +202,7 @@ class MonitoringKlaimTableViewCell : UITableViewCell{
         
         containerProdukView.addSubview(namaProdukLabel)
         UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: containerProdukView.leadingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: containerProdukView.topAnchor, leadingConstant: 16, trailingConstant: -25, topConstant: 10, heightAnchor: 17, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Asuransi Kecelakaan Diri", kerning: 0.12)
+        UIHelper.setTextLabel(label: namaProdukLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Asuransi Kecelakaan Diri", kerning: 0.12)
         namaProdukLabel.isUserInteractionEnabled = true
         
         containerProdukView.addSubview(rightDetailProdukButton)
@@ -228,11 +228,11 @@ class MonitoringKlaimTableViewCell : UITableViewCell{
         containerProdukView.addSubview(deskripsiProdukLabel)
         UIHelper.makeLabel(label: deskripsiProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: lineNamaProduk.bottomAnchor, leadingConstant: 12, trailingConstant: -20, topConstant: 12, heightAnchor: 35, widthAnchor: 0)
         deskripsiProdukLabel.numberOfLines = 0
-        UIHelper.setTextLabel(label: deskripsiProdukLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.65), weight: .bold, fontSize: 12, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam", kerning: 0.06)
+        UIHelper.setTextLabel(label: deskripsiProdukLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.65), weight: .bold, fontSize: 12, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam", kerning: 0.06)
         
         containerProdukView.addSubview(hargaProdukLabel)
         UIHelper.makeLabel(label: hargaProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerProdukView.trailingAnchor, topAnchor: deskripsiProdukLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -20, topConstant: 5, heightAnchor: 17, widthAnchor:   0)
-        UIHelper.setTextLabel(label: hargaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 250.000,-", kerning: 0.12)
+        UIHelper.setTextLabel(label: hargaProdukLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 250.000,-", kerning: 0.12)
         
         self.contentView.addSubview(grayLinePolis)
         UIHelper.makeView(view: grayLinePolis, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: containerProdukView.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 17, corner: 0, heightAnchor: 7, widthAnchor: 0)

@@ -173,12 +173,12 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController: UITextFieldDeleg
         identitasContainerView.addSubview(headerIdentitasTertanggung)
         UIHelper.makeLabel(label: headerIdentitasTertanggung, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: identitasContainerView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, heightAnchor: 50, widthAnchor: 0)
         headerIdentitasTertanggung.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
-        UIHelper.setTextLabel(label: headerIdentitasTertanggung, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "     IDENTITAS TERTANGGUNG", kerning: 0.5)
+        UIHelper.setTextLabel(label: headerIdentitasTertanggung, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "     IDENTITAS TERTANGGUNG", kerning: 0.5)
         
         
         identitasContainerView.addSubview(namaLengkapLabel)
         UIHelper.makeLabel(label: namaLengkapLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: headerIdentitasTertanggung.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaLengkapLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nama Lengkap", kerning: 0.5)
+        UIHelper.setTextLabel(label: namaLengkapLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nama Lengkap", kerning: 0.5)
         
         namaLengkapTextField.addTarget(self, action: #selector(checkTextfield), for: .editingChanged)
         
@@ -192,7 +192,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController: UITextFieldDeleg
         
         identitasContainerView.addSubview(nomorKTPLabel)
         UIHelper.makeLabel(label: nomorKTPLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: underLineNamaLengkap.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 15, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorKTPLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor KTP", kerning: 0.5)
+        UIHelper.setTextLabel(label: nomorKTPLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor KTP", kerning: 0.5)
         
         identitasContainerView.addSubview(nomorKTPTextField)
         UIHelper.makeTetxField(textField: nomorKTPTextField, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: nomorKTPLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
@@ -204,7 +204,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController: UITextFieldDeleg
         
         identitasContainerView.addSubview(emailLabel)
         UIHelper.makeLabel(label: emailLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: underLineKTP.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 15, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: emailLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Email", kerning: 0.5)
+        UIHelper.setTextLabel(label: emailLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Email", kerning: 0.5)
         
         identitasContainerView.addSubview(emailTextField)
         UIHelper.makeTetxField(textField: emailTextField, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: emailLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
@@ -216,7 +216,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController: UITextFieldDeleg
         
         identitasContainerView.addSubview(nomorTeleponLabel)
         UIHelper.makeLabel(label: nomorTeleponLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: underLineEmail.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 15, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorTeleponLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor Telepon", kerning: 0.5)
+        UIHelper.setTextLabel(label: nomorTeleponLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor Telepon", kerning: 0.5)
         
         identitasContainerView.addSubview(nomorTeleponTextField)
         UIHelper.makeTetxField(textField: nomorTeleponTextField, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: nomorTeleponLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
@@ -230,11 +230,11 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController: UITextFieldDeleg
         identitasContainerView.addSubview(identitasPenerimaManfaatLabel)
         UIHelper.makeLabel(label: identitasPenerimaManfaatLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: underLineTelepon.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 25, heightAnchor: 50, widthAnchor: 0)
         identitasPenerimaManfaatLabel.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
-        UIHelper.setTextLabel(label: identitasPenerimaManfaatLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "     IDENTITAS PENERIMA MANFAAT", kerning: 0.5)
+        UIHelper.setTextLabel(label: identitasPenerimaManfaatLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "     IDENTITAS PENERIMA MANFAAT", kerning: 0.5)
         
         identitasContainerView.addSubview(namaLengkapPenerimaManfaatLabel)
         UIHelper.makeLabel(label: namaLengkapPenerimaManfaatLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: identitasPenerimaManfaatLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaLengkapPenerimaManfaatLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nama lengkap", kerning: 0.5)
+        UIHelper.setTextLabel(label: namaLengkapPenerimaManfaatLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nama lengkap", kerning: 0.5)
         namaLengkapPenerimaManfaatTextField.addTarget(self, action: #selector(checkTextfield), for: .editingChanged)
         
         identitasContainerView.addSubview(namaLengkapPenerimaManfaatTextField)
@@ -247,7 +247,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController: UITextFieldDeleg
         
         identitasContainerView.addSubview(nomorKTPPenerimaManfaatLabel)
         UIHelper.makeLabel(label: nomorKTPPenerimaManfaatLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: underLinenamaLengkapPenerimaManfaat.trailingAnchor, topAnchor: underLinenamaLengkapPenerimaManfaat.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorKTPPenerimaManfaatLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor KTP", kerning: 0.5)
+        UIHelper.setTextLabel(label: nomorKTPPenerimaManfaatLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor KTP", kerning: 0.5)
         
         identitasContainerView.addSubview(nomorKTPPenerimaManfaatTextField)
         UIHelper.makeTetxField(textField: nomorKTPPenerimaManfaatTextField, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: nomorKTPPenerimaManfaatLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
@@ -259,7 +259,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController: UITextFieldDeleg
         
         identitasContainerView.addSubview(emailPenerimaManfaatLabel)
         UIHelper.makeLabel(label: emailPenerimaManfaatLabel, corner: 0, allignment: .left, leadingAnchor:    identitasContainerView.leadingAnchor, trailingAnchor: underLinenomorKTPPenerimaManfaat.trailingAnchor, topAnchor: underLinenomorKTPPenerimaManfaat.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: emailPenerimaManfaatLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Email", kerning: 0.5)
+        UIHelper.setTextLabel(label: emailPenerimaManfaatLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Email", kerning: 0.5)
         
         identitasContainerView.addSubview(emailPenerimaManfaatTextField)
         UIHelper.makeTetxField(textField: emailPenerimaManfaatTextField, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: emailPenerimaManfaatLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
@@ -271,7 +271,7 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController: UITextFieldDeleg
         
         identitasContainerView.addSubview(nohpPenerimaManfaatLabel)
         UIHelper.makeLabel(label: nohpPenerimaManfaatLabel, corner: 0, allignment: .left, leadingAnchor:    identitasContainerView.leadingAnchor, trailingAnchor: underLineEmailPenerimaManfaat.trailingAnchor, topAnchor: underLineEmailPenerimaManfaat.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nohpPenerimaManfaatLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor telepon", kerning: 0.5)
+        UIHelper.setTextLabel(label: nohpPenerimaManfaatLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor telepon", kerning: 0.5)
         
         identitasContainerView.addSubview(nohpPenerimaManfaatTextField)
         UIHelper.makeTetxField(textField: nohpPenerimaManfaatTextField, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: nohpPenerimaManfaatLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
@@ -284,11 +284,11 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController: UITextFieldDeleg
         identitasContainerView.addSubview(masakAktifLabel)
         UIHelper.makeLabel(label: masakAktifLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: underLinenoHpPenerimaManfaat.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 25, heightAnchor: 50, widthAnchor: 0)
         masakAktifLabel.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
-        UIHelper.setTextLabel(label: masakAktifLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "     MASA AKTIF", kerning: 0.5)
+        UIHelper.setTextLabel(label: masakAktifLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "     MASA AKTIF", kerning: 0.5)
         
         identitasContainerView.addSubview(pilihWaktuAktifPolisLabel)
         UIHelper.makeLabel(label: pilihWaktuAktifPolisLabel, corner: 0, allignment: .left, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: masakAktifLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: pilihWaktuAktifPolisLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 10, text: "Pilih waktu aktif Polis", kerning: 0.5)
+        UIHelper.setTextLabel(label: pilihWaktuAktifPolisLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 10, text: "Pilih waktu aktif Polis", kerning: 0.5)
         
         identitasContainerView.addSubview(waktuTextField)
         UIHelper.makeTetxField(textField: waktuTextField, leadingAnchor: identitasContainerView.leadingAnchor, trailingAnchor: identitasContainerView.trailingAnchor, topAnchor: pilihWaktuAktifPolisLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))

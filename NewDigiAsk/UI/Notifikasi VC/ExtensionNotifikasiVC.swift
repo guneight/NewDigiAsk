@@ -78,11 +78,11 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
         
         baseViewUndoDelete.addSubview(notifHaveDeleteLabel)
         UIHelper.makeLabel(label: notifHaveDeleteLabel, corner: 0, allignment: .left, leadingAnchor: baseViewUndoDelete.leadingAnchor, trailingAnchor: baseViewUndoDelete.trailingAnchor, topAnchor: baseViewUndoDelete.topAnchor, leadingConstant: 10, trailingConstant: baseViewUndoDelete.frame.size.width/2, topConstant: 15, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: notifHaveDeleteLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .regular, fontSize: 12, text: "Notifikasi telah dihapus", kerning: 0.5)
+        UIHelper.setTextLabel(label: notifHaveDeleteLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .regular, fontSize: 12, text: "Notifikasi telah dihapus", kerning: 0.5)
         
         baseViewUndoDelete.addSubview(undoLabel)
         UIHelper.makeLabel(label: undoLabel, corner: 0, allignment: .left, leadingAnchor: baseViewUndoDelete.leadingAnchor, trailingAnchor: baseViewUndoDelete.trailingAnchor, topAnchor: baseViewUndoDelete.topAnchor, leadingConstant: baseViewUndoDelete.frame.size.width/2+20, trailingConstant: 50, topConstant: 15, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: undoLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2458193898, green: 0.2900034189, blue: 0.4485326409, alpha: 1), weight: .regular, fontSize: 12, text: "Undo", kerning: 0.5)
+        UIHelper.setTextLabel(label: undoLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2458193898, green: 0.2900034189, blue: 0.4485326409, alpha: 1), weight: .regular, fontSize: 12, text: "Undo", kerning: 0.5)
         undoLabel.isUserInteractionEnabled = true
         
         baseViewUndoDelete.addSubview(closeButton)
@@ -160,17 +160,17 @@ class notifikasiListTableViewCell: UITableViewCell{
         
         contentView.addSubview(tanggalNotifikasilabel)
         UIHelper.makeLabel(label: tanggalNotifikasilabel, corner: 0, allignment: .left, leadingAnchor: timeIconImage.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: notifikasiImage.bottomAnchor, leadingConstant: 10, trailingConstant: -24, topConstant: 5, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: tanggalNotifikasilabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1), weight: .regular, fontSize: 8, text: "", kerning: 0.4)
+        UIHelper.setTextLabel(label: tanggalNotifikasilabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1), weight: .regular, fontSize: 8, text: "", kerning: 0.4)
         
         contentView.addSubview(headerNotifikaiLabel)
         UIHelper.makeLabel(label: headerNotifikaiLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: tanggalNotifikasilabel.bottomAnchor, leadingConstant: 24, trailingConstant: -30, topConstant: 5, heightAnchor: 14, widthAnchor: 0)
         
-        UIHelper.setTextLabel(label: headerNotifikaiLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 13, text: "", kerning: 0.13)
+        UIHelper.setTextLabel(label: headerNotifikaiLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 13, text: "", kerning: 0.13)
         headerNotifikaiLabel.backgroundColor = .white
         
         contentView.addSubview(deskripsiNotifikasilabel)
         UIHelper.makeLabel(label: deskripsiNotifikasilabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: headerNotifikaiLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -30, topConstant: 0, heightAnchor: 36, widthAnchor: 0)
-        UIHelper.setTextLabel(label: deskripsiNotifikasilabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 13, text: "", kerning: 0.13)
+        UIHelper.setTextLabel(label: deskripsiNotifikasilabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 13, text: "", kerning: 0.13)
         deskripsiNotifikasilabel.backgroundColor = .white
         deskripsiNotifikasilabel.numberOfLines = 0
     }

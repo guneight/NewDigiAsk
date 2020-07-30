@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SkeletonView
 class KeranjangViewController: UIViewController {
     let produkBaseView = UIView()
     let prosesStackView : UIStackView = {
@@ -45,7 +45,7 @@ class KeranjangViewController: UIViewController {
         daftarProdukKeranjangTable.delegate = self
         daftarProdukKeranjangTable.dataSource = self
         daftarProdukKeranjangTable.reloadData()
-        daftarProdukKeranjangTable.reloadData()
+    
         view.layoutIfNeeded()
         setupUI()
         setupNavBarKeranjang()
@@ -55,16 +55,15 @@ class KeranjangViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         checkOutButton.addTarget(self, action: #selector(checkOutAction), for: .touchUpInside)
         fecthData()
-        
-        
-        
     }
+    
+ 
     
     func fecthData(){
         FetchingListProduct.shared.getProductFromCart(idUser: "5"){(data) in
             self.productInCart = data
             self.daftarProdukKeranjangTable.reloadData()
-            self.tableIndicator.stopAnimating()
+            
         }
     }
     

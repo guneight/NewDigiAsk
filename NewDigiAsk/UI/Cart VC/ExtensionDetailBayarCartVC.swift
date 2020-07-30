@@ -121,20 +121,20 @@ extension DetailBayarCartViewController {
             
             transaksiView.addSubview(headerNomorTransaksiLabel)
             UIHelper.makeLabel(label: headerNomorTransaksiLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: transaksiView.topAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 20, heightAnchor: 16, widthAnchor: 0)
-            UIHelper.setTextLabel(label: headerNomorTransaksiLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Transaksi", kerning: 0.12)
+            UIHelper.setTextLabel(label: headerNomorTransaksiLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Transaksi", kerning: 0.12)
             
             transaksiView.addSubview(nomorTransaksiLabel)
             UIHelper.makeLabel(label: nomorTransaksiLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: headerNomorTransaksiLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 3, heightAnchor: 16, widthAnchor: 0)
-            UIHelper.setTextLabel(label: nomorTransaksiLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.12)
+            UIHelper.setTextLabel(label: nomorTransaksiLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "123-2345-567-10879", kerning: 0.12)
             
             
             transaksiView.addSubview(headerNomorPengajuanLabel)
             UIHelper.makeLabel(label: headerNomorPengajuanLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: nomorTransaksiLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-            UIHelper.setTextLabel(label: headerNomorPengajuanLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Pengajuan", kerning: 0.12)
+            UIHelper.setTextLabel(label: headerNomorPengajuanLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Nomor Pengajuan", kerning: 0.12)
             
             transaksiView.addSubview(nomorPengajuanLabel)
             UIHelper.makeLabel(label: nomorPengajuanLabel, corner: 0, allignment: .left, leadingAnchor: transaksiView.leadingAnchor, trailingAnchor: transaksiView.trailingAnchor, topAnchor: headerNomorPengajuanLabel.bottomAnchor, leadingConstant: 17, trailingConstant: -17, topConstant: 3, heightAnchor: 16, widthAnchor: 0)
-            UIHelper.setTextLabel(label: nomorPengajuanLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "ASK-2345-567-10879", kerning: 0.12)
+            UIHelper.setTextLabel(label: nomorPengajuanLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "ASK-2345-567-10879", kerning: 0.12)
             
             detailBayarView.addSubview(segeraLakukanPembayaranLabel)
             UIHelper.makeLabel(label: segeraLakukanPembayaranLabel, corner: 0, allignment: .center, leadingAnchor: detailBayarView.leadingAnchor, trailingAnchor: detailBayarView.trailingAnchor, topAnchor: transaksiView.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 20, heightAnchor: 16, widthAnchor: 0)
@@ -142,7 +142,7 @@ extension DetailBayarCartViewController {
             
             detailBayarView.addSubview(tanggalWaktuPembayarannLabel)
             UIHelper.makeLabel(label: tanggalWaktuPembayarannLabel, corner: 0, allignment: .center, leadingAnchor: detailBayarView.leadingAnchor, trailingAnchor: detailBayarView.trailingAnchor, topAnchor: segeraLakukanPembayaranLabel.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 10, heightAnchor: 17, widthAnchor: 0)
-            UIHelper.setTextLabel(label: tanggalWaktuPembayarannLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Jumat, 1 Nov 2019, 19.21 WIB", kerning: 0.16)
+            UIHelper.setTextLabel(label: tanggalWaktuPembayarannLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Jumat, 1 Nov 2019, 19.21 WIB", kerning: 0.16)
             
             detailBayarView.addSubview(virtualAccountView)
             UIHelper.makeView(view: virtualAccountView, leadingAnchor: detailBayarView.leadingAnchor, trailingAnchor: detailBayarView.trailingAnchor, topAnchor: tanggalWaktuPembayarannLabel.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 21, corner: 10, heightAnchor: 94, widthAnchor: 0)
@@ -151,7 +151,7 @@ extension DetailBayarCartViewController {
             
             virtualAccountView.addSubview(tranferkeNomorLabel)
             UIHelper.makeLabel(label: tranferkeNomorLabel, corner: 0, allignment: .left, leadingAnchor: virtualAccountView.leadingAnchor, trailingAnchor: virtualAccountView.trailingAnchor, topAnchor: virtualAccountView.topAnchor, leadingConstant: 15, trailingConstant: -15, topConstant: 12, heightAnchor: 16, widthAnchor: 0)
-            UIHelper.setTextLabel(label: tranferkeNomorLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 14, text: "Transfer ke nomor virtual account :", kerning: 0.16)
+            UIHelper.setTextLabel(label: tranferkeNomorLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 14, text: "Transfer ke nomor virtual account :", kerning: 0.16)
             
             virtualAccountView.addSubview(iconMetodeBayarImage)
             UIHelper.makeImageView(imageView: iconMetodeBayarImage, leadingAnchor: virtualAccountView.leadingAnchor, topAnchor: tranferkeNomorLabel.bottomAnchor, leadingConstant: 17, topConstant: 15, corner: 0, heightAnchor: 16)
@@ -159,16 +159,16 @@ extension DetailBayarCartViewController {
             
             virtualAccountView.addSubview(nomorVirtualAccountLabel)
             UIHelper.makeLabel(label: nomorVirtualAccountLabel, corner: 0, allignment: .right, leadingAnchor: iconMetodeBayarImage.trailingAnchor, trailingAnchor: virtualAccountView.trailingAnchor, topAnchor: tranferkeNomorLabel.bottomAnchor, leadingConstant: 16, trailingConstant: -16, topConstant: 16, heightAnchor: 15, widthAnchor: 0)
-            UIHelper.setTextLabel(label: nomorVirtualAccountLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "008-2345-567-10879", kerning: 0.16)
+            UIHelper.setTextLabel(label: nomorVirtualAccountLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "008-2345-567-10879", kerning: 0.16)
             
             virtualAccountView.addSubview(salinNomorRekening)
             UIHelper.makeLabel(label: salinNomorRekening, corner: 0, allignment: .right, leadingAnchor: virtualAccountView.leadingAnchor, trailingAnchor: virtualAccountView.trailingAnchor, topAnchor: nomorVirtualAccountLabel.bottomAnchor, leadingConstant: 16, trailingConstant: -16, topConstant: 5, heightAnchor: 12, widthAnchor: 0)
-            UIHelper.setTextLabel(label: salinNomorRekening, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 10, text: "Salin nomor rekening", kerning: 0.5)
+            UIHelper.setTextLabel(label: salinNomorRekening, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 10, text: "Salin nomor rekening", kerning: 0.5)
             salinNomorRekening.isUserInteractionEnabled = true
             
             detailBayarView.addSubview(panduanPembayranLabel)
             UIHelper.makeLabel(label: panduanPembayranLabel, corner: 0, allignment: .left, leadingAnchor: detailBayarView.leadingAnchor, trailingAnchor: detailBayarView.trailingAnchor, topAnchor: virtualAccountView.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 15, heightAnchor: 16, widthAnchor: 0)
-           UIHelper.setTextLabel(label: panduanPembayranLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Panduan Pembayaran", kerning: 0.12)
+           UIHelper.setTextLabel(label: panduanPembayranLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Panduan Pembayaran", kerning: 0.12)
             
             detailBayarView.addSubview(internetBankingView)
             UIHelper.makeView(view: internetBankingView, leadingAnchor: detailBayarView.leadingAnchor, trailingAnchor: detailBayarView.trailingAnchor, topAnchor: panduanPembayranLabel.bottomAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 8, corner: 10, heightAnchor: 36, widthAnchor: 0)
@@ -177,7 +177,7 @@ extension DetailBayarCartViewController {
             
             internetBankingView.addSubview(internetBankingLabel)
             UIHelper.makeLabel(label: internetBankingLabel, corner: 10, allignment: .left, leadingAnchor: internetBankingView.leadingAnchor, trailingAnchor: internetBankingView.trailingAnchor, topAnchor: internetBankingView.topAnchor, leadingConstant: 0, trailingConstant: -50, topConstant: 0, heightAnchor: 36, widthAnchor: 0)
-            UIHelper.setTextLabel(label: internetBankingLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "   Internet Banking", kerning: 0.6)
+            UIHelper.setTextLabel(label: internetBankingLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "   Internet Banking", kerning: 0.6)
             
             internetBankingView.addSubview(rightButtonInternet)
             UIHelper.makeSmallButton(smallButton: rightButtonInternet, leadingAnchor: internetBankingLabel.trailingAnchor, topAnchor: internetBankingView.topAnchor, leadingConstant: 20, topConstant: 12, corner: 0, heightAnchor: 11, widthtAnchor: 6, borderWidth: 0, colorBorder: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
@@ -191,7 +191,7 @@ extension DetailBayarCartViewController {
 
             mobileBankingView.addSubview(mobileBankingLabel)
             UIHelper.makeLabel(label: mobileBankingLabel, corner: 10, allignment: .left, leadingAnchor: mobileBankingView.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: mobileBankingView.safeAreaLayoutGuide.trailingAnchor, topAnchor: mobileBankingView.topAnchor, leadingConstant: 0, trailingConstant: -50, topConstant: 0, heightAnchor: 36, widthAnchor: 0)
-            UIHelper.setTextLabel(label: mobileBankingLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "   Mobile Banking", kerning: 0.6)
+            UIHelper.setTextLabel(label: mobileBankingLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "   Mobile Banking", kerning: 0.6)
             
             mobileBankingView.addSubview(rightButtonMobile)
             rightButtonMobile.translatesAutoresizingMaskIntoConstraints = false

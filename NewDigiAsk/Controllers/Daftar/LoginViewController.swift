@@ -31,6 +31,8 @@ class LoginViewController: UIViewController {
     var iconClick = true
     var loginStatus : Int = 0
     
+    var loginResponse : LoginResponse?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -40,15 +42,26 @@ class LoginViewController: UIViewController {
         showPasswordButton.addTarget(self, action: #selector(showOrHidePassword), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(lupaPasswordAction))
         lupaPasswordLabel.addGestureRecognizer(tapGesture)
-        continueButton.addTarget(self, action: #selector(continueAction), for: .touchUpInside)
+        continueButton.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
         daftarDisiniLink()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(daftarAkun(sender:)))
         belumPunyaAkunLabel.addGestureRecognizer(gesture)
         let tapDismissKeyBoard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapDismissKeyBoard)
-        // Do any additional setup after loading the view.
+ 
         
     }
+    
+    @objc func loginAction(){
+        LoginRegister.shared.loginRequest(nomorOrEmail: nomorPonseLEmailTextField.text ?? "", password: passwordTextField.text ?? ""){(data) in
+            self.loginResponse = data
+            let verifikasiEmailVC = self.storyboard?.instantiateViewController(identifier: "VerifkasiEmailViewController") as! VerifkasiEmailViewController
+            verifikasiEmailVC.loginStatus = self.loginStatus
+            self.navigationController?.pushViewController(verifikasiEmailVC, animated: true)
+            print("loginResponse", self.loginResponse)
+        }
+    }
+    
     
     @objc func dismissKeyboard(){
         view.endEditing(true)

@@ -66,16 +66,16 @@ extension SuratBuktiKematianViewController : UIImagePickerControllerDelegate , U
         
         suratKematianView.addSubview(datadiSiapkan)
         UIHelper.makeLabel(label: datadiSiapkan, corner: 0, allignment: .center, leadingAnchor: suratKematianView.leadingAnchor, trailingAnchor: suratKematianView.trailingAnchor, topAnchor: suratKematianView.topAnchor, leadingConstant: 70, trailingConstant: -70, topConstant: 26, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: datadiSiapkan, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "DATA YANG HARUS DISIAPKAN", kerning: 0.6)
+        UIHelper.setTextLabel(label: datadiSiapkan, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "DATA YANG HARUS DISIAPKAN", kerning: 0.6)
         
         suratKematianView.addSubview(suratBuktiKetianLabel)
         UIHelper.makeLabel(label: suratBuktiKetianLabel, corner: 0, allignment: .left, leadingAnchor: suratKematianView.leadingAnchor, trailingAnchor: suratKematianView.trailingAnchor, topAnchor: datadiSiapkan.bottomAnchor, leadingConstant: 23, trailingConstant: -23, topConstant: 13, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: suratBuktiKetianLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "2 - Surat Bukti Kematian", kerning: 0.12)
+        UIHelper.setTextLabel(label: suratBuktiKetianLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "2 - Surat Bukti Kematian", kerning: 0.12)
         
         suratKematianView.addSubview(deskripsiSuratKematianLabel)
         UIHelper.makeLabel(label: deskripsiSuratKematianLabel, corner: 0, allignment: .left, leadingAnchor: suratKematianView.leadingAnchor, trailingAnchor: suratKematianView.trailingAnchor, topAnchor: suratBuktiKetianLabel.bottomAnchor, leadingConstant: 42, trailingConstant: -30, topConstant: 5, heightAnchor: 47, widthAnchor: 0)
         
-        UIHelper.setTextLabel(label: deskripsiSuratKematianLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Lengkapi syarat syarat yang diperlukan untuk proses klaim yang Anda ajukan. untuk keterangan lebih jelas bisa hubungi Customer Services Kami.", kerning: 0.06)
+        UIHelper.setTextLabel(label: deskripsiSuratKematianLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Lengkapi syarat syarat yang diperlukan untuk proses klaim yang Anda ajukan. untuk keterangan lebih jelas bisa hubungi Customer Services Kami.", kerning: 0.06)
         deskripsiSuratKematianLabel.numberOfLines = 0
         
         suratKematianView.addSubview(cameraIconImage)
@@ -89,7 +89,7 @@ extension SuratBuktiKematianViewController : UIImagePickerControllerDelegate , U
         
         suratKematianView.addSubview(keteranganFoto)
         UIHelper.makeLabel(label: keteranganFoto, corner: 0, allignment: .center, leadingAnchor: suratKematianView.leadingAnchor, trailingAnchor: suratKematianView.trailingAnchor, topAnchor: cameraIconImage.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: keteranganFoto, fontName: "Arial", fontColor: #colorLiteral(red: 0.6470588235, green: 0.6274509804, blue: 0.6274509804, alpha: 1), weight: .bold, fontSize: 10, text: "Foto KTP ataupun Bukti Identitas lainnya dari Ahli Waris", kerning: 0)
+        UIHelper.setTextLabel(label: keteranganFoto, fontName:fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.6470588235, green: 0.6274509804, blue: 0.6274509804, alpha: 1), weight: .bold, fontSize: 10, text: "Foto KTP ataupun Bukti Identitas lainnya dari Ahli Waris", kerning: 0)
         
         suratKematianView.addSubview(lanjutButton)
         lanjutButton.translatesAutoresizingMaskIntoConstraints = false

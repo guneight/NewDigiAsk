@@ -10,4 +10,5 @@ target 'NewDigiAsk' do
     pod 'GoogleMaps'
     pod 'GooglePlaces'
     pod 'GooglePlacePicker'
+    pod 'SkeletonView'
 end

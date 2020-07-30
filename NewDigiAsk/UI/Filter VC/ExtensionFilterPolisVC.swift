@@ -33,11 +33,11 @@ extension FilterPolisViewController{
         
         filterBaseView.addSubview(startDateLabel)
         UIHelper.makeLabel(label: startDateLabel, corner: 0, allignment: .left, leadingAnchor: filterBaseView.leadingAnchor, trailingAnchor: filterBaseView.trailingAnchor, topAnchor: underlineReset.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 20, heightAnchor: 13, widthAnchor: 0)
-        UIHelper.setTextLabel(label: startDateLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .regular, fontSize: 12, text: "Start Date", kerning: 0.5)
+        UIHelper.setTextLabel(label: startDateLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .regular, fontSize: 12, text: "Start Date", kerning: 0.5)
         
         filterBaseView.addSubview(startDateTextField)
         UIHelper.makeTetxField(textField: startDateTextField, leadingAnchor: filterBaseView.leadingAnchor, trailingAnchor: filterBaseView.trailingAnchor, topAnchor: startDateLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 9, corner: 0, heightAnchor: 20, textColor:#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
-        UIHelper.setTextField(textField: startDateTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .regular, fontSize: 16, text: "", kerning: 0.8)
+        UIHelper.setTextField(textField: startDateTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .regular, fontSize: 16, text: "", kerning: 0.8)
         
         filterBaseView.addSubview(startDateIconImage)
         UIHelper.makeImageView(imageView: startDateIconImage, leadingAnchor: filterBaseView.trailingAnchor, topAnchor: startDateLabel.bottomAnchor, leadingConstant: -59, topConstant: 10, corner: 0, heightAnchor: 18)
@@ -51,12 +51,12 @@ extension FilterPolisViewController{
         
         filterBaseView.addSubview(endDateLabel)
         UIHelper.makeLabel(label: endDateLabel, corner: 0, allignment: .left, leadingAnchor: filterBaseView.leadingAnchor, trailingAnchor: filterBaseView.trailingAnchor, topAnchor: underlinestartDate.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 15, heightAnchor: 13, widthAnchor: 0)
-        UIHelper.setTextLabel(label: endDateLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .regular, fontSize: 12, text: "End Date", kerning: 0.5)
+        UIHelper.setTextLabel(label: endDateLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .regular, fontSize: 12, text: "End Date", kerning: 0.5)
         
         filterBaseView.addSubview(endDateTextField)
         UIHelper.makeTetxField(textField: endDateTextField, leadingAnchor: filterBaseView.leadingAnchor, trailingAnchor: filterBaseView.trailingAnchor, topAnchor:  endDateLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -40, topConstant: 9, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
         
-        UIHelper.setTextField(textField: endDateTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .regular, fontSize: 16, text: "", kerning: 0.8)
+        UIHelper.setTextField(textField: endDateTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), weight: .regular, fontSize: 16, text: "", kerning: 0.8)
         
         filterBaseView.addSubview(endDateIconImage)
         UIHelper.makeImageView(imageView: endDateIconImage, leadingAnchor: filterBaseView.trailingAnchor, topAnchor: endDateLabel.bottomAnchor, leadingConstant: -59, topConstant: 10, corner: 0, heightAnchor: 18)

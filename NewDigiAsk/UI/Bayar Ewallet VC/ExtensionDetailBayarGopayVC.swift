@@ -121,11 +121,11 @@ extension DetailBayarGopayViewController {
         
         totalPembayaranView.addSubview(totalPembayaranLabel)
         UIHelper.makeLabel(label: totalPembayaranLabel, corner: 0, allignment: .left, leadingAnchor: totalPembayaranView.leadingAnchor, trailingAnchor: totalPembayaranView.trailingAnchor, topAnchor: totalPembayaranView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 20, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: totalPembayaranLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Total Pembayaran", kerning: 0.5)
+        UIHelper.setTextLabel(label: totalPembayaranLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Total Pembayaran", kerning: 0.5)
         
         totalPembayaranView.addSubview(nilaiTotalPembayaranLabel)
         UIHelper.makeLabel(label: nilaiTotalPembayaranLabel, corner: 0, allignment: .left, leadingAnchor: totalPembayaranView.leadingAnchor, trailingAnchor: totalPembayaranView.trailingAnchor, topAnchor: totalPembayaranLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 5, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nilaiTotalPembayaranLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.5)
+        UIHelper.setTextLabel(label: nilaiTotalPembayaranLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.5)
         
         gopayBaseView.addSubview(detailPenerimaView)
         UIHelper.makeView(view: detailPenerimaView, leadingAnchor: gopayBaseView.leadingAnchor, trailingAnchor: gopayBaseView.trailingAnchor, topAnchor: totalPembayaranView.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 8, corner: 10, heightAnchor: 150, widthAnchor: 0)
@@ -135,7 +135,7 @@ extension DetailBayarGopayViewController {
         
         detailPenerimaView.addSubview(detailPenerimaLabel)
         UIHelper.makeLabel(label: detailPenerimaLabel, corner: 0, allignment: .left, leadingAnchor: detailPenerimaView.leadingAnchor, trailingAnchor: detailPenerimaView.trailingAnchor, topAnchor: detailPenerimaView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 17, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: detailPenerimaLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Detil Penerima", kerning: 0.2)
+        UIHelper.setTextLabel(label: detailPenerimaLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Detil Penerima", kerning: 0.2)
         
         detailPenerimaView.addSubview(logoDigiAskImage)
         UIHelper.makeImageView(imageView: logoDigiAskImage, leadingAnchor: detailPenerimaView.leadingAnchor, topAnchor: detailPenerimaLabel.bottomAnchor, leadingConstant: 20, topConstant: 30, corner: 0, heightAnchor: 40)
@@ -151,7 +151,7 @@ extension DetailBayarGopayViewController {
         
         detailPenerimaView.addSubview(termConditionLabel)
         UIHelper.makeLabel(label: termConditionLabel, corner: 0, allignment: .left, leadingAnchor: termConditionIcon.trailingAnchor, trailingAnchor: detailPenerimaView.trailingAnchor, topAnchor: logoDigiAskImage.bottomAnchor, leadingConstant: 6, trailingConstant: -13, topConstant: 11, heightAnchor: 18, widthAnchor: 0)
-        UIHelper.setTextLabel(label: termConditionLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .regular, fontSize: 7, text: "Dengan melakukan pembayaran ini berarti anda telah menyetujui slarat slarat yang berlaku. lihat Term n Condition disini", kerning: 0.2)
+        UIHelper.setTextLabel(label: termConditionLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .regular, fontSize: 7, text: "Dengan melakukan pembayaran ini berarti anda telah menyetujui slarat slarat yang berlaku. lihat Term n Condition disini", kerning: 0.2)
         termConditionLabel.numberOfLines = 0
         
         gopayBaseView.addSubview(gopayView)
@@ -168,16 +168,16 @@ extension DetailBayarGopayViewController {
         
         gopayView.addSubview(gopayLabel)
         UIHelper.makeLabel(label: gopayLabel, corner: 0, allignment: .right, leadingAnchor: logoDigiAskImage.trailingAnchor, trailingAnchor: gopayView.trailingAnchor, topAnchor: gopayView.topAnchor, leadingConstant: 50, trailingConstant: -20, topConstant: 9, heightAnchor: 17, widthAnchor: 0)
-        UIHelper.setTextLabel(label: gopayLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Gopay", kerning: 0.6)
+        UIHelper.setTextLabel(label: gopayLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Gopay", kerning: 0.6)
         
         gopayView.addSubview(payLaterLabel)
         UIHelper.makeLabel(label: payLaterLabel, corner: 5, allignment: .left, leadingAnchor: gopayView.leadingAnchor, trailingAnchor: gopayView.trailingAnchor, topAnchor: gopayLogoImage.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 5, heightAnchor: 26, widthAnchor: 0)
-        UIHelper.setTextLabel(label: payLaterLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .regular, fontSize: 9, text: "   Use PayLater and pay by the end of the mont", kerning: 0.2)
+        UIHelper.setTextLabel(label: payLaterLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .regular, fontSize: 9, text: "   Use PayLater and pay by the end of the mont", kerning: 0.2)
         payLaterLabel.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.431372549, blue: 0.7725490196, alpha: 1)
         
         gopayView.addSubview(useLabel)
         UIHelper.makeLabel(label: useLabel, corner: 5, allignment: .left, leadingAnchor: gopayView.trailingAnchor, trailingAnchor: gopayView.trailingAnchor, topAnchor: gopayLogoImage.bottomAnchor, leadingConstant: -70, trailingConstant: -20, topConstant: 5, heightAnchor: 26, widthAnchor: 0)
-        UIHelper.setTextLabel(label: useLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .regular, fontSize: 12, text: "  USE", kerning: 0.4)
+        UIHelper.setTextLabel(label: useLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .regular, fontSize: 12, text: "  USE", kerning: 0.4)
         useLabel.backgroundColor = #colorLiteral(red: 0.168627451, green: 0.5333333333, blue: 0.937254902, alpha: 1)
         
         gopayView.addSubview(payNowView)
@@ -187,11 +187,11 @@ extension DetailBayarGopayViewController {
 
         payNowView.addSubview(payNowLabel)
         UIHelper.makeSmalllabel(smallLabel: payNowLabel, leadingAnchor: payNowView.leadingAnchor, topAnchor: payNowView.topAnchor, leadingConstant: 17, topConstant: 11, corner: 0, heightAnchor: 14, widthtAnchor: 100)
-        UIHelper.setTextLabel(label: payNowLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "PAY NOW", kerning: 0.2)
+        UIHelper.setTextLabel(label: payNowLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "PAY NOW", kerning: 0.2)
 
         payNowView.addSubview(nominalLabel)
         UIHelper.makeLabel(label: nominalLabel, corner: 0, allignment: .right, leadingAnchor: payNowLabel.trailingAnchor, trailingAnchor: payNowView.trailingAnchor, topAnchor: payNowView.topAnchor, leadingConstant: 5, trailingConstant: -17, topConstant: 11, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nominalLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.2)
+        UIHelper.setTextLabel(label: nominalLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.2)
         
     }
     
@@ -203,7 +203,7 @@ extension DetailBayarGopayViewController {
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         let backItem = UIBarButtonItem()
         backItem.title = "PEMBAYARAN"
-        let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        let titleFont  = UIFont(name: fontNameHelper.NunitoExtraBold, size: 14)
         backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
         navigationItem.leftBarButtonItems = [customButtonNav, backItem]
     }

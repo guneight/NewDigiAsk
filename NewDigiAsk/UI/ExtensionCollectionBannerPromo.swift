@@ -218,7 +218,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         viewColletionProduct.addSubview(headerCollectionProduct)
         UIHelper.makeLabel(label: headerCollectionProduct, corner: 0, allignment: .left, leadingAnchor: viewColletionProduct.leadingAnchor, trailingAnchor: viewColletionProduct.trailingAnchor, topAnchor: viewColletionProduct.topAnchor, leadingConstant: 19, trailingConstant: -19, topConstant: 0, heightAnchor: 18, widthAnchor: viewColletionProduct.frame.size.width)
         
-        UIHelper.setTextLabel(label: headerCollectionProduct, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Produk Asuransi", kerning: 0.3)
+        UIHelper.setTextLabel(label: headerCollectionProduct, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Produk Asuransi", kerning: 0)
         
         
         viewColletionProduct.addSubview(collectionViewProduct)
@@ -236,7 +236,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         
         whiteView.addSubview(labelPromo)
         UIHelper.makeLabel(label: labelPromo, corner: 0, allignment: .left, leadingAnchor: whiteView.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: collectionViewProduct.bottomAnchor,   leadingConstant: 19, trailingConstant: -19, topConstant: 17.64, heightAnchor: 18, widthAnchor: whiteView.frame.size.width)
-        UIHelper.setTextLabel(label: labelPromo, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Promo", kerning: 0.3)
+        UIHelper.setTextLabel(label: labelPromo, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Promo", kerning: 0)
         
         
         
@@ -266,7 +266,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         
         viewInfo.addSubview(labelInfo)
         UIHelper.makeLabel(label: labelInfo, corner: 0, allignment: .left, leadingAnchor: viewInfo.leadingAnchor, trailingAnchor: viewInfo.trailingAnchor, topAnchor: viewInfo.topAnchor, leadingConstant: 19, trailingConstant: 19, topConstant: 0, heightAnchor: 18, widthAnchor: viewInfo.frame.size.width)
-        UIHelper.setTextLabel(label: labelInfo, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Info", kerning: 0.3)
+        UIHelper.setTextLabel(label: labelInfo, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Info", kerning: 0)
         
         viewInfo.addSubview(collectionViewInfo)
         UIHelper.makeContraintCollectionVIew(collectionView: collectionViewInfo, leadingAnchor: viewInfo.leadingAnchor, trailingAnchor: viewInfo.trailingAnchor, topAnchor: labelInfo.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 6, heightAnchor: viewInfo.frame.size.height, widthAnchor: 0)
@@ -284,7 +284,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         viewGalery.backgroundColor = .white
         viewGalery.addSubview(labelGalery)
         UIHelper.makeLabel(label: labelGalery, corner: 0, allignment: .left, leadingAnchor: viewGalery.leadingAnchor, trailingAnchor: viewGalery.trailingAnchor, topAnchor: viewGalery.topAnchor, leadingConstant: 19, trailingConstant: 19, topConstant: 0, heightAnchor: 18, widthAnchor: 0)
-        UIHelper.setTextLabel(label: labelGalery, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Galeri", kerning: 0.3)
+        UIHelper.setTextLabel(label: labelGalery, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Galeri", kerning: 0)
         
         
         viewGalery.addSubview(collectionViewGalery)
@@ -299,7 +299,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         
         viewMap.addSubview(labelMap)
         UIHelper.makeLabel(label: labelMap, corner: 0, allignment: .left, leadingAnchor: viewMap.leadingAnchor, trailingAnchor: whiteView.trailingAnchor, topAnchor: viewMap.topAnchor, leadingConstant: 19, trailingConstant: 19, topConstant: 0, heightAnchor: 18, widthAnchor: 0)
-        UIHelper.setTextLabel(label: labelMap, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Map ", kerning: 1)
+        UIHelper.setTextLabel(label: labelMap, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 15, text: "Map ", kerning: 0)
         
         viewMap.addSubview(imageViewMap)
         imageViewMap.translatesAutoresizingMaskIntoConstraints = false
@@ -317,17 +317,17 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         imageViewMap.contentMode = .scaleAspectFit
         imageViewMap.layoutIfNeeded()
         
-        view.addSubview(loadingIndicator)
-        loadingIndicator.translatesAutoresizingMaskIntoConstraints =  false
-        NSLayoutConstraint.activate([
-            loadingIndicator.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            loadingIndicator.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            loadingIndicator.topAnchor.constraint(equalTo: view.topAnchor),
-            loadingIndicator.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        loadingIndicator.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        loadingIndicator.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-        loadingIndicator.startAnimating()
+//        view.addSubview(loadingIndicator)
+//        loadingIndicator.translatesAutoresizingMaskIntoConstraints =  false
+//        NSLayoutConstraint.activate([
+//            loadingIndicator.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            loadingIndicator.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            loadingIndicator.topAnchor.constraint(equalTo: view.topAnchor),
+//            loadingIndicator.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+//        ])
+//        loadingIndicator.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        loadingIndicator.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
+//        loadingIndicator.startAnimating()
         
     }
     
@@ -439,8 +439,8 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             cell4.layer.masksToBounds = true
             cell4.layer.cornerRadius = 10
             cell4.imageInfo.image = UIImage(named: infoPromo[indexPath.row])
-            UIHelper.setTextLabel(label: cell4.labelTime, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: "24 Oktober 2019", kerning: 0.5)
-            UIHelper.setTextLabel(label: cell4.labeDeskripsilnfo, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 11, text: info[indexPath.row], kerning: 0.5)
+            UIHelper.setTextLabel(label: cell4.labelTime, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: "24 Oktober 2019", kerning: 0)
+            UIHelper.setTextLabel(label: cell4.labeDeskripsilnfo, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 11, text: info[indexPath.row], kerning: 0)
             cell4.backgroundColor = .white
             return cell4
             
@@ -449,9 +449,8 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
             cell5.layer.masksToBounds = true
             cell5.layer.cornerRadius = 10
             cell5.imageGalery.image = UIImage(named: galeri[indexPath.row])
-            UIHelper.setTextLabel(label: cell5.labelTime, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: "24 Oktober 2019", kerning: 0.3)
-            UIHelper.setTextLabel(label: cell5.labelGalery, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 9, text: "Manfaat The Hijau boat kesehatan anfaat The Hijau boat kesehatan", kerning: 0.5)
-            cell5.backgroundColor = .white
+            UIHelper.setTextLabel(label: cell5.labelTime, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: "24 Oktober 2019", kerning: 0)
+           cell5.backgroundColor = .white
             return cell5
             
         }else{
@@ -568,7 +567,7 @@ class collectionViewProductCell : UICollectionViewCell{
             imageIconProduct.widthAnchor.constraint(equalToConstant: containerIconImage.frame.size.width*0.4).isActive = true
             
             UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor ,topAnchor: containerIconImage.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: containerIconImage.frame.size.width/3, widthAnchor: 0)
-            UIHelper.setTextLabel(label: labelIcon, fontName: fontNameHelper.AvantGardeITCbyBTDemi, fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 15, text: " ", kerning: 0.5)
+            UIHelper.setTextLabel(label: labelIcon, fontName: fontNameHelper.AvantGardeITCbyBTDemi, fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 15, text: " ", kerning: 0)
             labelIcon.numberOfLines = 0
         }else{
             UIHelper.makeView(view: containerIconImage, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: topAnchor, leadingConstant: 2, trailingConstant: -2, topConstant: 0, corner: 8, heightAnchor: 56, widthAnchor: 56)
@@ -578,7 +577,7 @@ class collectionViewProductCell : UICollectionViewCell{
             
             UIHelper.makeLabel(label: labelIcon, corner: 0, allignment: .center, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor ,topAnchor: containerIconImage.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 4, heightAnchor: 23, widthAnchor: 0)
             
-            UIHelper.setTextLabel(label: labelIcon, fontName: fontNameHelper.AvantGardeITCbyBTBook, fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: " ", kerning: 0.5)
+            UIHelper.setTextLabel(label: labelIcon, fontName: fontNameHelper.AvantGardeITCbyBTBook, fontColor: #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1), weight: .bold, fontSize: 8, text: " ", kerning: 0)
         }
         
         containerIconImage.backgroundColor = .white
@@ -664,6 +663,7 @@ class collectionViewInfoCell: UICollectionViewCell {
         
         addSubview(labeDeskripsilnfo)
         UIHelper.makeLabel(label: labeDeskripsilnfo, corner: 0, allignment: .left, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: imageTime.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 2, heightAnchor: 156-105, widthAnchor: 0)
+        UIHelper.setTextLabel(label: labeDeskripsilnfo, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 16, text: "", kerning: 0.2)
         labeDeskripsilnfo.numberOfLines = 0
     }
     
@@ -708,6 +708,7 @@ class collectionViewGaleryCell: UICollectionViewCell {
         addSubview(labelGalery)
         UIHelper.makeLabel(label: labelGalery, corner: 0, allignment: .left, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, topAnchor: imageTime.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 2, heightAnchor: 40, widthAnchor: 0)
         labelGalery.numberOfLines = 3
+        UIHelper.setTextLabel(label: labelGalery, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 11, text: "Manfaat The Hijau boat kesehatan anfaat The Hijau boat kesehatan", kerning: 0.2)
     }
     
     required init?(coder: NSCoder) {

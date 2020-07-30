@@ -158,11 +158,11 @@ extension SyaratdanKetentuanViewController {
         
         syaratDanKetentuanContainerView.addSubview(syaratDanKetentuanLabel)
         UIHelper.makeLabel(label: syaratDanKetentuanLabel, corner: 0, allignment: .left, leadingAnchor: syaratDanKetentuanContainerView.leadingAnchor, trailingAnchor: syaratDanKetentuanContainerView.trailingAnchor, topAnchor: syaratDanKetentuanContainerView.topAnchor, leadingConstant: 27, trailingConstant: -27, topConstant: 30, heightAnchor: 15, widthAnchor: 0)
-        UIHelper.setTextLabel(label: syaratDanKetentuanLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "SYARAT DAN KETENTUAN", kerning: 0.12)
+        UIHelper.setTextLabel(label: syaratDanKetentuanLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "SYARAT DAN KETENTUAN", kerning: 0.12)
         
         syaratDanKetentuanContainerView.addSubview(detailSyaratdanKetentuanLabel)
         UIHelper.makeLabel(label: detailSyaratdanKetentuanLabel, corner: 0, allignment: .left, leadingAnchor: syaratDanKetentuanContainerView.leadingAnchor, trailingAnchor: syaratDanKetentuanContainerView.trailingAnchor, topAnchor: syaratDanKetentuanLabel.bottomAnchor, leadingConstant: 27, trailingConstant: -27, topConstant: 20, heightAnchor: 200, widthAnchor: 0)
-        UIHelper.setTextLabel(label: detailSyaratdanKetentuanLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.65), weight: .bold, fontSize: 14, text: syaratDanKetentuan, kerning: 0.04)
+        UIHelper.setTextLabel(label: detailSyaratdanKetentuanLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.65), weight: .bold, fontSize: 14, text: syaratDanKetentuan, kerning: 0.04)
         detailSyaratdanKetentuanLabel.numberOfLines = 0
         
     }

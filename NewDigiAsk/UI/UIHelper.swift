@@ -245,6 +245,18 @@ struct fontNameHelper {
     static var ArialMT : String {
         return "ArialMT"
     }
+    static var NunitoRegular : String {
+        return "Nunito-Regular"
+    }
+    static var NunitoBold : String {
+        return "Nunito-Bold"
+    }
+    static var NunitoLight : String {
+        return "Nunito-Light"
+    }
+    static var NunitoExtraBold : String {
+        return "Nunito-ExtraBold"
+    }
 }
 
 struct HexColorHelper {

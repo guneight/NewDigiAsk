@@ -81,21 +81,21 @@ extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavig
          //segmented nomor KTP
         ktpView.addSubview(nomorKtpLabel)
         UIHelper.makeLabel(label: nomorKtpLabel, corner: 0, allignment: .left, leadingAnchor: ktpView.leadingAnchor, trailingAnchor: ktpView.trailingAnchor, topAnchor: ktpView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 24, heightAnchor: 18, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorKtpLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 15, text: "Nomor Identitas/KTP", kerning: 0.2)
+        UIHelper.setTextLabel(label: nomorKtpLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 15, text: "Nomor Identitas/KTP", kerning: 0)
         
         ktpView.addSubview(keteranganLabel)
         UIHelper.makeLabel(label: keteranganLabel, corner: 0, allignment: .left, leadingAnchor: ktpView.leadingAnchor, trailingAnchor: ktpView.trailingAnchor, topAnchor: nomorKtpLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 7, heightAnchor: 35, widthAnchor: 0)
-        UIHelper.setTextLabel(label: keteranganLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 11, text: "masukkan nomor identitas/ktp yang masih berlaku. nomor ini sancta punting untuk verifikasi akun Anda.", kerning: 0.6)
+        UIHelper.setTextLabel(label: keteranganLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 11, text: "masukkan nomor identitas/ktp yang masih berlaku. nomor ini sancta punting untuk verifikasi akun Anda.", kerning: 0.6)
         keteranganLabel.numberOfLines = 0
         
         ktpView.addSubview(nomorKTPheaderLabel)
         UIHelper.makeLabel(label: nomorKTPheaderLabel, corner: 0, allignment: .left, leadingAnchor: ktpView.leadingAnchor, trailingAnchor: ktpView.trailingAnchor, topAnchor: keteranganLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorKTPheaderLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor KTP", kerning: 0.5)
+        UIHelper.setTextLabel(label: nomorKTPheaderLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor KTP", kerning: 0)
         
 
         ktpView.addSubview(nomorKTPTextField)
         UIHelper.makeTetxField(textField: nomorKTPTextField, leadingAnchor: ktpView.leadingAnchor, trailingAnchor: ktpView.trailingAnchor, topAnchor: nomorKTPheaderLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 0, heightAnchor: 40, textColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1))
-        UIHelper.setTextField(textField: nomorKTPTextField, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 18, text: " ", kerning: 0.8)
+        UIHelper.setTextField(textField: nomorKTPTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 18, text: " ", kerning: 0.8)
         nomorKTPTextField.placeholder = "123456789900"
         let thickness: CGFloat = 1.0
         let bottomBorder = CALayer()
@@ -106,7 +106,7 @@ extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavig
         
         ktpView.addSubview(alertNomorKtpLabel)
         UIHelper.makeLabel(label: alertNomorKtpLabel, corner: 0, allignment: .right, leadingAnchor: ktpView.leadingAnchor, trailingAnchor: ktpView.trailingAnchor, topAnchor: nomorKTPTextField.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 5, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: alertNomorKtpLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 12, text: "Nomor KTP yang dimasukkan salah", kerning: 0.5)
+        UIHelper.setTextLabel(label: alertNomorKtpLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 12, text: "Nomor KTP yang dimasukkan salah", kerning: 0)
         
         alertNomorKtpLabel.isHidden = true
         panduanPhotoBaseView.isHidden = true
@@ -128,11 +128,11 @@ extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavig
 
         panduanPhotoBaseView.addSubview(panduanPhotoKTPLabel)
         UIHelper.makeLabel(label: panduanPhotoKTPLabel, corner: 0, allignment: .center, leadingAnchor: panduanPhotoBaseView.leadingAnchor, trailingAnchor: panduanPhotoBaseView.trailingAnchor, topAnchor: panduanPhotoBaseView.topAnchor, leadingConstant: 10, trailingConstant: -10, topConstant: 10, heightAnchor: 18, widthAnchor: 0)
-        UIHelper.setTextLabel(label: panduanPhotoKTPLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 15, text: "Panduan Foto KTP", kerning: 0.2)
+        UIHelper.setTextLabel(label: panduanPhotoKTPLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 15, text: "Panduan Foto KTP", kerning: 0.2)
 
         panduanPhotoBaseView.addSubview(keteranganPanduanPhoto)
         UIHelper.makeLabel(label: keteranganPanduanPhoto, corner: 0, allignment: .center, leadingAnchor: panduanPhotoBaseView.leadingAnchor, trailingAnchor: panduanPhotoBaseView.trailingAnchor, topAnchor: panduanPhotoKTPLabel.bottomAnchor, leadingConstant: 10, trailingConstant: -10, topConstant: 7, heightAnchor: 55, widthAnchor: 0)
-        UIHelper.setTextLabel(label: keteranganPanduanPhoto, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.4156862745, green: 0.3960784314, blue: 0.3960784314, alpha: 1), weight: .regular, fontSize: 11, text: "Pastikan seluruh bagian wajah dan KTP Anda breada dalam bingkai foto dan terlihat dengen jelas. Patikan foto yang Anda kirim adalah foto asli tanpa editan", kerning: 0.6)
+        UIHelper.setTextLabel(label: keteranganPanduanPhoto, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4156862745, green: 0.3960784314, blue: 0.3960784314, alpha: 1), weight: .regular, fontSize: 11, text: "Pastikan seluruh bagian wajah dan KTP Anda breada dalam bingkai foto dan terlihat dengen jelas. Patikan foto yang Anda kirim adalah foto asli tanpa editan", kerning: 0)
         keteranganPanduanPhoto.numberOfLines = 0
 
         ktpView.addSubview(photoKTPImage)
@@ -147,7 +147,7 @@ extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavig
         
         ktpView.addSubview(fotoBersamaKtpLabel)
         UIHelper.makeLabel(label: fotoBersamaKtpLabel, corner: 0, allignment: .left, leadingAnchor: ktpView.leadingAnchor, trailingAnchor: ktpView.trailingAnchor, topAnchor: nomorKTPTextField.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: fotoBersamaKtpLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .regular, fontSize: 10, text: "Foto bersama KTP", kerning: 0.5)
+        UIHelper.setTextLabel(label: fotoBersamaKtpLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .regular, fontSize: 10, text: "Foto bersama KTP", kerning: 0.5)
         
         ktpView.addSubview(fotoBersamaKTPImage)
         UIHelper.makeImageView(imageView: fotoBersamaKTPImage, leadingAnchor: ktpView.leadingAnchor, topAnchor: fotoBersamaKtpLabel.bottomAnchor, leadingConstant: 63, topConstant: 10, corner: 10, heightAnchor: 170)
@@ -158,7 +158,7 @@ extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavig
         
         ktpView.addSubview(ubahLabel)
         UIHelper.makeLabel(label: ubahLabel, corner: 0, allignment: .center, leadingAnchor: ktpView.leadingAnchor, trailingAnchor: ktpView.trailingAnchor, topAnchor: fotoBersamaKTPImage.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 12, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: ubahLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 10, text: "Ubah", kerning: 0.5)
+        UIHelper.setTextLabel(label: ubahLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 10, text: "Ubah", kerning: 0.5)
         ubahLabel.isUserInteractionEnabled = true
         
         
@@ -234,7 +234,7 @@ extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavig
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         let backItem = UIBarButtonItem()
         backItem.title = "VERIFIKASI KARTU IDENTITAS"
-        let titleFont  = UIFont(name: "Arial-BoldMT", size: 12)
+        let titleFont  = UIFont(name: fontNameHelper.NunitoExtraBold, size: 12)
         backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
         navigationItem.leftBarButtonItems = [customButtonNav, backItem]
     }

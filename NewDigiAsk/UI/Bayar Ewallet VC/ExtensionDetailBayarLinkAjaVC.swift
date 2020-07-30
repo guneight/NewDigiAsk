@@ -116,7 +116,7 @@ extension DetailBayarLinkAjaViewController{
         
         detailBayarBaseView.addSubview(masukLabel)
         UIHelper.makeLabel(label: masukLabel, corner: 0, allignment: .left, leadingAnchor: detailBayarBaseView.leadingAnchor, trailingAnchor: detailBayarBaseView.trailingAnchor, topAnchor: detailBayarBaseView.topAnchor, leadingConstant: 24, trailingConstant: -26, topConstant: 25, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: masukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "MASUK", kerning: 0.2)
+        UIHelper.setTextLabel(label: masukLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "MASUK", kerning: 0.2)
         
         detailBayarBaseView.addSubview(linkAjaIconImage)
         UIHelper.makeImageView(imageView: linkAjaIconImage, leadingAnchor: detailBayarBaseView.trailingAnchor, topAnchor: detailBayarBaseView.topAnchor, leadingConstant: -75, topConstant: 25, corner: 0, heightAnchor: 50)
@@ -125,17 +125,17 @@ extension DetailBayarLinkAjaViewController{
         
         detailBayarBaseView.addSubview(nomorLinkAjaTextField)
         UIHelper.makeTetxField(textField: nomorLinkAjaTextField, leadingAnchor: detailBayarBaseView.leadingAnchor, trailingAnchor: detailBayarBaseView.trailingAnchor, topAnchor: linkAjaIconImage.bottomAnchor, leadingConstant: 26, trailingConstant: -24, topConstant: 22, corner: 0, heightAnchor: 25, textColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1))
-        UIHelper.setTextField(textField: nomorLinkAjaTextField, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 16, text: " ", kerning: 0.6)
+        UIHelper.setTextField(textField: nomorLinkAjaTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 16, text: " ", kerning: 0.6)
         nomorLinkAjaTextField.placeholder = "Nomor Link Aja"
         
         detailBayarBaseView.addSubview(pinTextField)
                UIHelper.makeTetxField(textField: pinTextField, leadingAnchor: detailBayarBaseView.leadingAnchor, trailingAnchor: detailBayarBaseView.trailingAnchor, topAnchor: nomorLinkAjaTextField.bottomAnchor, leadingConstant: 26, trailingConstant: -24, topConstant: 22, corner: 0, heightAnchor: 25, textColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1))
-               UIHelper.setTextField(textField: pinTextField, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 16, text: " ", kerning: 0.6)
+               UIHelper.setTextField(textField: pinTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 16, text: " ", kerning: 0.6)
         pinTextField.placeholder = "Masukkan PIN LinkAja"
         
         detailBayarBaseView.addSubview(sisaWaktuLabel)
         UIHelper.makeLabel(label: sisaWaktuLabel, corner: 0, allignment: .left, leadingAnchor: detailBayarBaseView.leadingAnchor, trailingAnchor: detailBayarBaseView.trailingAnchor, topAnchor: pinTextField.bottomAnchor, leadingConstant: 26, trailingConstant: -24, topConstant: 40, heightAnchor: 15, widthAnchor: 0)
-        UIHelper.setTextLabel(label: sisaWaktuLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.0431372549, green: 0.0431372549, blue: 0.0431372549, alpha: 1), weight: .regular, fontSize: 12, text: "Sisa waktu : 03 :00", kerning: 0.6)
+        UIHelper.setTextLabel(label: sisaWaktuLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.0431372549, green: 0.0431372549, blue: 0.0431372549, alpha: 1), weight: .regular, fontSize: 12, text: "Sisa waktu : 03 :00", kerning: 0.6)
         
         detailBayarBaseView.addSubview(digiaskLogoImage)
         UIHelper.makeImageView(imageView: digiaskLogoImage, leadingAnchor: detailBayarBaseView.leadingAnchor, topAnchor: sisaWaktuLabel.bottomAnchor, leadingConstant: 26, topConstant: 10, corner: 0, heightAnchor: 40)
@@ -149,15 +149,15 @@ extension DetailBayarLinkAjaViewController{
         
         totalView.addSubview(totalLabel)
         UIHelper.makeLabel(label: totalLabel, corner: 0, allignment: .left, leadingAnchor: totalView.leadingAnchor, trailingAnchor: totalView.trailingAnchor, topAnchor: totalView.topAnchor, leadingConstant: 17, trailingConstant: -(totalView.frame.size.width/2), topConstant: 12, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: totalLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "TOTAL", kerning: 0.2)
+        UIHelper.setTextLabel(label: totalLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "TOTAL", kerning: 0.2)
         
         totalView.addSubview(nilaiTotalLabel)
         UIHelper.makeLabel(label: nilaiTotalLabel, corner: 0, allignment: .right, leadingAnchor: totalLabel.trailingAnchor, trailingAnchor: totalView.trailingAnchor, topAnchor: totalView.topAnchor, leadingConstant: 5, trailingConstant: -15, topConstant: 12, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nilaiTotalLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.2)
+        UIHelper.setTextLabel(label: nilaiTotalLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "Rp 30.000.000,-", kerning: 0.2)
         
         detailBayarBaseView.addSubview(lihatTransaksiLabel)
         UIHelper.makeLabel(label: lihatTransaksiLabel, corner: 0, allignment: .left, leadingAnchor: detailBayarBaseView.leadingAnchor, trailingAnchor: detailBayarBaseView.trailingAnchor, topAnchor: totalView.bottomAnchor, leadingConstant: 26, trailingConstant: -10, topConstant: 11, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: lihatTransaksiLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.0431372549, green: 0.0431372549, blue: 0.0431372549, alpha: 1), weight: .bold, fontSize: 12, text: "LIHAT DETIL TRANSAKSI", kerning: 0.2)
+        UIHelper.setTextLabel(label: lihatTransaksiLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.0431372549, green: 0.0431372549, blue: 0.0431372549, alpha: 1), weight: .bold, fontSize: 12, text: "LIHAT DETIL TRANSAKSI", kerning: 0.2)
         
         detailBayarBaseView.addSubview(bayarButton)
         UIHelper.makeButton(button: bayarButton, leadingAnchor: detailBayarBaseView.leadingAnchor, trailingAnchor: detailBayarBaseView.trailingAnchor, topAnchor: lihatTransaksiLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -26, topConstant: 30, corner: 26, heightAnchor: 48, widthAnchor: 0)
@@ -175,7 +175,7 @@ extension DetailBayarLinkAjaViewController{
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         let backItem = UIBarButtonItem()
         backItem.title = "PEMBAYARAN"
-        let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        let titleFont  = UIFont(name: fontNameHelper.NunitoExtraBold, size: 14)
         backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
         navigationItem.leftBarButtonItems = [customButtonNav, backItem]
     }

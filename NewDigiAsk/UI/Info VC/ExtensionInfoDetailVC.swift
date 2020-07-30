@@ -36,7 +36,7 @@ extension InfoDetailViewController{
         
         infoDetailView.addSubview(titleInfoDetailLabel)
         UIHelper.makeLabel(label: titleInfoDetailLabel, corner: 0, allignment: .left, leadingAnchor: infoDetailView.leadingAnchor, trailingAnchor: infoDetailView.trailingAnchor, topAnchor: infoDetailView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 21, heightAnchor: 40, widthAnchor: 0)
-        UIHelper.setTextLabel(label: titleInfoDetailLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Askrindo serahkan bantuan mobil pintar untuk Aceh", kerning: 0.48)
+        UIHelper.setTextLabel(label: titleInfoDetailLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "Askrindo serahkan bantuan mobil pintar untuk Aceh", kerning: 0.48)
         titleInfoDetailLabel.numberOfLines = 0
         
         infoDetailView.addSubview(timeIconInfoDetailImage)
@@ -46,7 +46,7 @@ extension InfoDetailViewController{
         
         infoDetailView.addSubview(tanggalInfoDetailLabel)
         UIHelper.makeLabel(label: tanggalInfoDetailLabel, corner: 0, allignment: .left, leadingAnchor: timeIconInfoDetailImage.trailingAnchor, trailingAnchor: infoDetailView.trailingAnchor, topAnchor: titleInfoDetailLabel.bottomAnchor, leadingConstant: 8, trailingConstant: -24, topConstant: 10, heightAnchor: 10, widthAnchor: 0)
-        UIHelper.setTextLabel(label: tanggalInfoDetailLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .light, fontSize: 8, text: "24 Oktober 2019", kerning: 0.4)
+        UIHelper.setTextLabel(label: tanggalInfoDetailLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .light, fontSize: 8, text: "24 Oktober 2019", kerning: 0.4)
         
         infoDetailView.addSubview(infoDetailImage)
         if view.frame.size.width > 414 {

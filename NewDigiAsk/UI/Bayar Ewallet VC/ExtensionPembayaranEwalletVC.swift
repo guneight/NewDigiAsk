@@ -124,7 +124,7 @@ extension PembayaranEwalletViewController{
         
         totalPembayaranView.addSubview(totalPembayaranHeaderLabel)
         UIHelper.makeLabel(label: totalPembayaranHeaderLabel, corner: 0, allignment: .left, leadingAnchor: totalPembayaranView.leadingAnchor, trailingAnchor: totalPembayaranView.trailingAnchor, topAnchor: totalPembayaranView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 20, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: totalPembayaranHeaderLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Total Pembayaran", kerning: 0.2)
+        UIHelper.setTextLabel(label: totalPembayaranHeaderLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "Total Pembayaran", kerning: 0.2)
         
         totalPembayaranView.addSubview(totalPembayaranLabel)
         UIHelper.makeLabel(label: totalPembayaranLabel, corner: 0, allignment: .left, leadingAnchor: totalPembayaranView.leadingAnchor, trailingAnchor: totalPembayaranView.trailingAnchor, topAnchor: totalPembayaranHeaderLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 2, heightAnchor: 16, widthAnchor: 0)
@@ -144,7 +144,7 @@ extension PembayaranEwalletViewController{
         
         ewalletView.addSubview(namaEwallet)
         UIHelper.makeLabel(label: namaEwallet, corner: 0, allignment: .right, leadingAnchor: ewalletIcon.trailingAnchor, trailingAnchor: ewalletView.trailingAnchor, topAnchor: ewalletView.topAnchor, leadingConstant: 50, trailingConstant: -20, topConstant: 15, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaEwallet, fontName: "AvantGardeITCbyBT-Demi", fontColor:#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.6)
+        UIHelper.setTextLabel(label: namaEwallet, fontName: fontNameHelper.NunitoBold, fontColor:#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.6)
         
         ewalletView.addSubview(underlineEwallet)
         UIHelper.makeView(view: underlineEwallet, leadingAnchor: ewalletView.leadingAnchor, trailingAnchor: ewalletView.trailingAnchor, topAnchor: ewalletIcon.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 10, corner: 0, heightAnchor: 1, widthAnchor: 1)
@@ -152,7 +152,7 @@ extension PembayaranEwalletViewController{
         
         ewalletView.addSubview(keteranganLabel)
         UIHelper.makeLabel(label: keteranganLabel, corner: 0, allignment: .left, leadingAnchor: ewalletView.leadingAnchor, trailingAnchor: ewalletView.trailingAnchor, topAnchor: underlineEwallet.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 12, heightAnchor: 62, widthAnchor: 0)
-        UIHelper.setTextLabel(label: keteranganLabel, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.7), weight: .regular, fontSize: 12, text: " ", kerning: 0.6)
+        UIHelper.setTextLabel(label: keteranganLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.7), weight: .regular, fontSize: 12, text: " ", kerning: 0.6)
         keteranganLabel.numberOfLines = 0
         
         if ewalletSelected == 0{
@@ -186,7 +186,7 @@ extension PembayaranEwalletViewController{
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         let backItem = UIBarButtonItem()
         backItem.title = "PEMBAYARAN"
-        let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        let titleFont  = UIFont(name: fontNameHelper.NunitoBold, size: 14)
         backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
         navigationItem.leftBarButtonItems = [customButtonNav, backItem]
     }

@@ -97,19 +97,19 @@ class DaftarTertanggungTableViewCell : UITableViewCell{
         contentView.backgroundColor = .white
         contentView.addSubview(namaPenerimaManfaatLabel)
         UIHelper.makeLabel(label: namaPenerimaManfaatLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaPenerimaManfaatLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 12, text: "No Name", kerning: 0.12)
+        UIHelper.setTextLabel(label: namaPenerimaManfaatLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 12, text: "No Name", kerning: 0.12)
         
         contentView.addSubview(nomorPenerimaManfaatLabel)
         UIHelper.makeLabel(label: nomorPenerimaManfaatLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: namaPenerimaManfaatLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -20, topConstant: 5, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorPenerimaManfaatLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: "No KTP    : 0987654321", kerning: 0.12)
+        UIHelper.setTextLabel(label: nomorPenerimaManfaatLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: "No KTP    : 0987654321", kerning: 0.12)
         
         contentView.addSubview(emailPenerimaManfaatLabel)
         UIHelper.makeLabel(label: emailPenerimaManfaatLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: nomorPenerimaManfaatLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -20, topConstant: 0, heightAnchor: 14, widthAnchor: 0)
-         UIHelper.setTextLabel(label: emailPenerimaManfaatLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: "Email   : gmail@gmail.com", kerning: 0.12)
+         UIHelper.setTextLabel(label: emailPenerimaManfaatLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: "Email   : gmail@gmail.com", kerning: 0.12)
         
         contentView.addSubview(teleponPenerimaManfaatLabel)
         UIHelper.makeLabel(label: teleponPenerimaManfaatLabel, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: emailPenerimaManfaatLabel.bottomAnchor, leadingConstant: 40, trailingConstant: -20, topConstant: 0, heightAnchor: 14, widthAnchor: 0)
-        UIHelper.setTextLabel(label: teleponPenerimaManfaatLabel, fontName: "Arial", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: "No HP  : 01234567890", kerning: 0.12)
+        UIHelper.setTextLabel(label: teleponPenerimaManfaatLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: "No HP  : 01234567890", kerning: 0.12)
         
         
         

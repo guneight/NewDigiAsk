@@ -7,21 +7,33 @@
 //
 
 import UIKit
-
-extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
+import  SkeletonView
+extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource, SkeletonTableViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier{
+        return "produkKeranjangCell"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("productInCart.count table :", productCart)
-        return productInCart.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produkKeranjangCell", for: indexPath)  as! daftarProdukKeranjangTableViewCells
+        cell.isSkeletonable = true
         cell.selectionStyle = .none
         cell.layoutIfNeeded()
-        cell.iconProdukImage.image = UIImage(named: "\(productInCart[indexPath.row].namaProduct)")
-        cell.namaProdukLabel.text = productInCart[indexPath.row].namaProduct
+//        cell.namaProdukLabel.showAnimatedGradientSkeleton()
+//        cell.deskripsiManfaatLabel.showAnimatedGradientSkeleton()
+//        cell.iconProdukImage.showAnimatedGradientSkeleton()
+//        cell.nominalLabel.showAnimatedGradientSkeleton()
+//        cell.checkCellButton.showAnimatedSkeleton()
+//        cell.trushOptioButton.showAnimatedSkeleton()
+//        cell.rightArrowButton.showAnimatedSkeleton()
+//        cell.iconProdukImage.image = UIImage(named: "\(productInCart[indexPath.row].namaProduct)")
+//        cell.namaProdukLabel.text = productInCart[indexPath.row].namaProduct
 //        cell.deskripsiManfaatLabel.text = deskripsiProduk[indexPath.row]
-        cell.nominalLabel.text = String(productInCart[indexPath.row].premi)
+//        cell.nominalLabel.text = String("Rp  \(productInCart[indexPath.row].premi)")
         
         cell.rightArrowButton.addTarget(self, action: #selector(rightButtonAction(sender:)), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(namaProdukAction(sender:)))
@@ -51,6 +63,7 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
+    
     
     
     func setupUI(){
@@ -195,17 +208,6 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource {
         checkOutButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         checkOutButton.setTitle("CHECKOUT", for: .normal)
         
-        keranjangBaseView.addSubview(tableIndicator)
-        tableIndicator.translatesAutoresizingMaskIntoConstraints =  false
-        NSLayoutConstraint.activate([
-            tableIndicator.widthAnchor.constraint(equalToConstant: 40),
-            tableIndicator.heightAnchor.constraint(equalToConstant: 40),
-            tableIndicator.centerXAnchor.constraint(equalTo: daftarProdukKeranjangTable.centerXAnchor),
-            tableIndicator.centerYAnchor.constraint(equalTo: daftarProdukKeranjangTable.centerYAnchor)
-        ])
-        tableIndicator.tintColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-        tableIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        tableIndicator.startAnimating()
     }
     
     func setupNavBarKeranjang(){
@@ -312,12 +314,15 @@ class daftarProdukKeranjangTableViewCells: UITableViewCell  {
         UIHelper.makeSmallButton(smallButton: checkCellButton, leadingAnchor: containerView.leadingAnchor, topAnchor: containerView.topAnchor, leadingConstant: 22, topConstant: 13, corner: 4, heightAnchor: 14, widthtAnchor: 14, borderWidth: 1, colorBorder: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
         checkCellButton.isUserInteractionEnabled = true
         checkCellButton.contentMode = .center
+        checkCellButton.isSkeletonable = true
+       
         
         containerView.addSubview(namaProdukLabel)
         UIHelper.makeSmalllabel(smallLabel: namaProdukLabel, leadingAnchor: checkCellButton.trailingAnchor, topAnchor: containerView.topAnchor, leadingConstant: 12, topConstant: 13, corner: 0, heightAnchor: 18, widthtAnchor: containerView.frame.size.width)
         UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
         namaProdukLabel.isUserInteractionEnabled = true
-        
+        namaProdukLabel.isSkeletonable = true
+       
         containerView.addSubview(rightArrowButton)
         rightArrowButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -327,7 +332,7 @@ class daftarProdukKeranjangTableViewCells: UITableViewCell  {
             rightArrowButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -25)
         ])
         rightArrowButton.setImage(UIImage(named: "next"), for: .normal)
-        
+        rightArrowButton.isSkeletonable = true
         
         containerView.addSubview(underlineNamaProduk)
         UIHelper.makeView(view: underlineNamaProduk, leadingAnchor: containerView.leadingAnchor, trailingAnchor: containerView.trailingAnchor, topAnchor: namaProdukLabel.bottomAnchor, leadingConstant: 22, trailingConstant: -22, topConstant: 6.5, corner: 0, heightAnchor: 0.5, widthAnchor: containerView.frame.size.width-44)
@@ -338,17 +343,30 @@ class daftarProdukKeranjangTableViewCells: UITableViewCell  {
         iconProdukImage.widthAnchor.constraint(equalToConstant: 57).isActive = true
         iconProdukImage.backgroundColor = #colorLiteral(red: 0.8862745098, green: 0.8862745098, blue: 0.8862745098, alpha: 1)
         iconProdukImage.contentMode = .center
+        iconProdukImage.isSkeletonable = true
+   
         containerView.addSubview(deskripsiManfaatLabel)
         UIHelper.makeLabel(label: deskripsiManfaatLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerView.trailingAnchor, topAnchor: underlineNamaProduk.bottomAnchor, leadingConstant: 12, trailingConstant: -22, topConstant: 8.5, heightAnchor: 35, widthAnchor: 0)
         UIHelper.setTextLabel(label: deskripsiManfaatLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 10, text: " ", kerning: 0.5)
         deskripsiManfaatLabel.numberOfLines = 0
-        
+        deskripsiManfaatLabel.isSkeletonable = true
+        deskripsiManfaatLabel.backgroundColor = .gray
         containerView.addSubview(nominalLabel)
         UIHelper.makeLabel(label: nominalLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerView.trailingAnchor, topAnchor: deskripsiManfaatLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -22, topConstant: 5, heightAnchor: 20, widthAnchor: 0)
         UIHelper.setTextLabel(label: nominalLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 14, text: " ", kerning: 0.12)
+        nominalLabel.isSkeletonable = true
+    
         containerView.addSubview(trushOptioButton)
         UIHelper.makeSmallButton(smallButton: trushOptioButton, leadingAnchor: containerView.trailingAnchor, topAnchor: nominalLabel.bottomAnchor, leadingConstant: -40, topConstant: 3, corner: 0, heightAnchor: 15, widthtAnchor: 15, borderWidth: 0, colorBorder: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)  )
         trushOptioButton.setImage(UIImage(named: "trashicon"), for: .normal)
+        trushOptioButton.isSkeletonable = true
+        namaProdukLabel.showAnimatedGradientSkeleton()
+        deskripsiManfaatLabel.showAnimatedGradientSkeleton()
+        iconProdukImage.showAnimatedGradientSkeleton()
+        nominalLabel.showAnimatedGradientSkeleton()
+        checkCellButton.showAnimatedSkeleton()
+        trushOptioButton.showAnimatedSkeleton()
+        rightArrowButton.showAnimatedSkeleton()
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)

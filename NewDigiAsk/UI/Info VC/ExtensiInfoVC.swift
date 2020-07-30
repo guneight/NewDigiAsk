@@ -70,7 +70,7 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
         
         infoBaseView.addSubview(titleInfoLabel)
         UIHelper.makeLabel(label: titleInfoLabel, corner: 0, allignment: .left, leadingAnchor: infoBaseView.leadingAnchor, trailingAnchor: infoBaseView.trailingAnchor, topAnchor: infoImage.bottomAnchor, leadingConstant: 23, trailingConstant: -23, topConstant: 12, heightAnchor: 21, widthAnchor: 0)
-        UIHelper.setTextLabel(label: titleInfoLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 13, text: " Askrindo serahkan bantuan mobil pintar untuk Aceh", kerning: 0.13)
+        UIHelper.setTextLabel(label: titleInfoLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 13, text: " Askrindo serahkan bantuan mobil pintar untuk Aceh", kerning: 0.13)
         
         infoBaseView.addSubview(timeIconImage)
         UIHelper.makeImageView(imageView: timeIconImage, leadingAnchor: infoBaseView.leadingAnchor, topAnchor: titleInfoLabel.bottomAnchor, leadingConstant: 24, topConstant: 5, corner: 0, heightAnchor: 10)
@@ -79,7 +79,7 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
         
         infoBaseView.addSubview(tanggalInfoLabel)
         UIHelper.makeLabel(label: tanggalInfoLabel, corner: 0, allignment: .left, leadingAnchor: timeIconImage.trailingAnchor, trailingAnchor: infoImage.trailingAnchor, topAnchor: titleInfoLabel.bottomAnchor, leadingConstant: 10, trailingConstant: -23, topConstant: 5, heightAnchor: 10, widthAnchor: 0)
-        UIHelper.setTextLabel(label: tanggalInfoLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .light, fontSize: 8, text: "24 Oktober 2019", kerning: 0.4)
+        UIHelper.setTextLabel(label: tanggalInfoLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.4235294118, green: 0.4235294118, blue: 0.4235294118, alpha: 1), weight: .light, fontSize: 8, text: "24 Oktober 2019", kerning: 0.4)
         
         
         let deskripsiInfo = "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan."
@@ -157,7 +157,7 @@ class infoListTableViewCell : UITableViewCell{
         }
        
         
-        UIHelper.setTextLabel(label: headerInfoListLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 13, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan.", kerning: 0.13)
+        UIHelper.setTextLabel(label: headerInfoListLabel, fontName: "fontNameHelper.NunitoRegular", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 13, text: "Manfaat akan diberikan dalam hal Tertanggung meninggal dunia dalam periode polis sebagai akibat langsung dari suatu kecelakaan yang dijamin dalam polis.Santunan sebesar 100% (seratus persen) Nilai Santunan untuk Manfaat Kematian akan dibayarkan kepada Ahli Waris yang namanya tercantum dalam Ikhtisar Pertanggungan.", kerning: 0.13)
 //        headerInfoListLabel.backgroundColor = .white
         
         
@@ -168,7 +168,7 @@ class infoListTableViewCell : UITableViewCell{
         
         contentView.addSubview(tanggalInfoListLabel)
         UIHelper.makeLabel(label: tanggalInfoListLabel, corner: 0, allignment: .left, leadingAnchor: timeIconInfoListImage.trailingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: headerInfoListLabel.bottomAnchor, leadingConstant: 7, trailingConstant: -110, topConstant: 5, heightAnchor: 10, widthAnchor: 0)
-        UIHelper.setTextLabel(label: tanggalInfoListLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1), weight: .bold, fontSize: 8, text: " 24 Oktober 2019", kerning: 0.4)
+        UIHelper.setTextLabel(label: tanggalInfoListLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1), weight: .bold, fontSize: 8, text: " 24 Oktober 2019", kerning: 0.4)
         tanggalInfoListLabel.backgroundColor = .white
         
         contentView.addSubview(infoListImage)

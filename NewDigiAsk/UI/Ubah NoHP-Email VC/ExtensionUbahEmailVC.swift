@@ -17,11 +17,11 @@ extension UbahEmailViewController{
         
         ubahEmailBaseView.addSubview(EmailLamaLabel)
         UIHelper.makeLabel(label: EmailLamaLabel, corner: 0, allignment: .left, leadingAnchor: ubahEmailBaseView.leadingAnchor, trailingAnchor: ubahEmailBaseView.trailingAnchor, topAnchor: ubahEmailBaseView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 40, heightAnchor: 13, widthAnchor: 0)
-        UIHelper.setTextLabel(label: EmailLamaLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Email Lama", kerning: 0.06)
+        UIHelper.setTextLabel(label: EmailLamaLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Email Lama", kerning: 0.06)
         
         ubahEmailBaseView.addSubview(EmailLamaTextField)
         UIHelper.makeTetxField(textField: EmailLamaTextField, leadingAnchor: ubahEmailBaseView.leadingAnchor, trailingAnchor: ubahEmailBaseView.trailingAnchor, topAnchor: EmailLamaLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 10, corner: 0, heightAnchor: 16, textColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-        UIHelper.setTextField(textField: EmailLamaTextField, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 0.5)
+        UIHelper.setTextField(textField: EmailLamaTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 0.5)
         EmailLamaTextField.placeholder = "Email Lama"
         
         ubahEmailBaseView.addSubview(underlineEmailLama)
@@ -30,15 +30,15 @@ extension UbahEmailViewController{
         
         ubahEmailBaseView.addSubview(alertEmailLama)
         UIHelper.makeLabel(label: alertEmailLama, corner: 0, allignment: .right, leadingAnchor: ubahEmailBaseView.leadingAnchor, trailingAnchor: ubahEmailBaseView.trailingAnchor, topAnchor: underlineEmailLama.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 5, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: alertEmailLama, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 10, text: "Email yang Anda masukkan salah", kerning: 0.5)
+        UIHelper.setTextLabel(label: alertEmailLama, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 10, text: "Email yang Anda masukkan salah", kerning: 0.5)
         
         ubahEmailBaseView.addSubview(EmailBaruLabel)
         UIHelper.makeLabel(label: EmailBaruLabel, corner: 0, allignment: .left, leadingAnchor: ubahEmailBaseView.leadingAnchor, trailingAnchor: ubahEmailBaseView.trailingAnchor, topAnchor: alertEmailLama.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 34, heightAnchor: 13, widthAnchor: 0)
-        UIHelper.setTextLabel(label: EmailBaruLabel, fontName: "Helvetica", fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Email Baru", kerning: 0.06)
+        UIHelper.setTextLabel(label: EmailBaruLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 0.5), weight: .regular, fontSize: 12, text: "Email Baru", kerning: 0.06)
 
         ubahEmailBaseView.addSubview(EmailBaruTextField)
         UIHelper.makeTetxField(textField: EmailBaruTextField, leadingAnchor: ubahEmailBaseView.leadingAnchor, trailingAnchor: ubahEmailBaseView.trailingAnchor, topAnchor: EmailBaruLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 10, corner: 0, heightAnchor: 16, textColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-        UIHelper.setTextField(textField: EmailBaruTextField, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 0.5)
+        UIHelper.setTextField(textField: EmailBaruTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 0.5)
         EmailBaruTextField.placeholder = "Email Baru"
 
         ubahEmailBaseView.addSubview(underLineEmailBaru)
@@ -47,12 +47,12 @@ extension UbahEmailViewController{
 
         ubahEmailBaseView.addSubview(alertEmailBaru)
         UIHelper.makeLabel(label: alertEmailBaru, corner: 0, allignment: .right, leadingAnchor: ubahEmailBaseView.leadingAnchor, trailingAnchor: ubahEmailBaseView.trailingAnchor, topAnchor: underLineEmailBaru.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 5, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: alertEmailBaru, fontName: "AvantGardeITCbyBT-Book", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 10, text: "Email yang Anda masukkan salah", kerning: 0.5)
+        UIHelper.setTextLabel(label: alertEmailBaru, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .regular, fontSize: 10, text: "Email yang Anda masukkan salah", kerning: 0.5)
         
         ubahEmailBaseView.addSubview(selanjutnyaButton)
         UIHelper.makeButton(button: selanjutnyaButton, leadingAnchor: ubahEmailBaseView.leadingAnchor, trailingAnchor: ubahEmailBaseView.trailingAnchor, topAnchor: alertEmailBaru.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 54, corner: 24, heightAnchor: 48, widthAnchor: 0)
         selanjutnyaButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-        let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        let titleFont  = UIFont(name: fontNameHelper.NunitoExtraBold, size: 14)
         let titleAtribut = NSAttributedString(string: "SELANJUTNYA", attributes: [NSAttributedString.Key.font:titleFont!, NSAttributedString.Key.foregroundColor :UIColor.white])
         selanjutnyaButton.setAttributedTitle(titleAtribut, for: .normal)
         
@@ -68,7 +68,7 @@ extension UbahEmailViewController{
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         let backItem = UIBarButtonItem()
         backItem.title = "PROFILE"
-        let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        let titleFont  = UIFont(name: fontNameHelper.NunitoExtraBold, size: 14)
         backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
         navigationItem.leftBarButtonItems = [customButtonNav, backItem]
     }

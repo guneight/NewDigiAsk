@@ -18,14 +18,14 @@ extension LupaPasswordViewController{
         
         lupaPasswordBaseView.addSubview(kesulitanLabel)
         UIHelper.makeLabel(label: kesulitanLabel, corner: 0, allignment: .left, leadingAnchor: lupaPasswordBaseView.leadingAnchor, trailingAnchor: lupaPasswordBaseView.trailingAnchor, topAnchor: lupaPasswordBaseView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 34, heightAnchor: 18, widthAnchor: 0)
-        UIHelper.setTextLabel(label: kesulitanLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 15, text: "Kesulitan mengakses akun Anda?", kerning: 0.5)
+        UIHelper.setTextLabel(label: kesulitanLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 15, text: "Kesulitan mengakses akun Anda?", kerning: 0.5)
         
         lupaPasswordBaseView.addSubview(alamatEmailLabel)
         UIHelper.makeLabel(label: alamatEmailLabel, corner: 0, allignment: .left, leadingAnchor: lupaPasswordBaseView.leadingAnchor, trailingAnchor: lupaPasswordBaseView.trailingAnchor, topAnchor: kesulitanLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20 , heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: alamatEmailLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: "Alamat Email", kerning: 0.5)
+        UIHelper.setTextLabel(label: alamatEmailLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 12, text: "Alamat Email", kerning: 0.5)
         lupaPasswordBaseView.addSubview(emailTextField)
         UIHelper.makeTetxField(textField: emailTextField, leadingAnchor: lupaPasswordBaseView.leadingAnchor, trailingAnchor: lupaPasswordBaseView.trailingAnchor, topAnchor: alamatEmailLabel.bottomAnchor, leadingConstant: 44, trailingConstant: -24, topConstant: 15, corner: 0, heightAnchor: 20, textColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1))
-        UIHelper.setTextField(textField: emailTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "", kerning: 0.5)
+        UIHelper.setTextField(textField: emailTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 16, text: "", kerning: 0.5)
         emailTextField.placeholder = "Email"
         
         lupaPasswordBaseView.addSubview(underlineEmail)

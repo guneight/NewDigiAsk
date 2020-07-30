@@ -14,11 +14,11 @@ extension HubungiKamiViewController{
         view.backgroundColor = .white
         view.addSubview(hubungiKamiLabel)
         UIHelper.makeLabel(label: hubungiKamiLabel, corner: 0, allignment: .center, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 30, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: hubungiKamiLabel, fontName: "AvantGarde Bk BT" , fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 14, text: "HUBUNGI KAMI", kerning: 0.4)
+        UIHelper.setTextLabel(label: hubungiKamiLabel, fontName: fontNameHelper.NunitoRegular , fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 14, text: "HUBUNGI KAMI", kerning: 0.4)
         
         view.addSubview(hubungiKami7hariLabel)
         UIHelper.makeLabel(label: hubungiKami7hariLabel, corner: 0, allignment: .center, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: hubungiKamiLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 5, heightAnchor: 30, widthAnchor: 0)
-        UIHelper.setTextLabel(label: hubungiKami7hariLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 12, text: "Hubungi kami 7 hari dalam seminggu dan 24 jam setiap hari", kerning: 0.14)
+        UIHelper.setTextLabel(label: hubungiKami7hariLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 12, text: "Hubungi kami 7 hari dalam seminggu dan 24 jam setiap hari", kerning: 0.14)
         
         view.addSubview(teleponBaseView)
         UIHelper.makeView(view: teleponBaseView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: hubungiKami7hariLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 40, corner: 10, heightAnchor: 70, widthAnchor: 0)
@@ -36,7 +36,7 @@ extension HubungiKamiViewController{
         teleponBaseView.addSubview(nomorTeleponLabel)
         UIHelper.makeLabel(label: nomorTeleponLabel, corner: 0, allignment: .left, leadingAnchor: teleponIconImage.trailingAnchor, trailingAnchor: teleponBaseView.trailingAnchor, topAnchor: teleponBaseView.topAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 15, heightAnchor: 32, widthAnchor: 0)
         
-        UIHelper.setTextLabel(label: nomorTeleponLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular
+        UIHelper.setTextLabel(label: nomorTeleponLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular
             , fontSize: 12, text: "Melalui telepon di \n1500-045", kerning: 0.4)
         nomorTeleponLabel.numberOfLines = 2
         
@@ -54,7 +54,7 @@ extension HubungiKamiViewController{
         
         chatBaseView.addSubview(chatLabel)
         UIHelper.makeLabel(label: chatLabel, corner: 0, allignment: .left, leadingAnchor: chatIconImage.trailingAnchor, trailingAnchor: chatBaseView.trailingAnchor, topAnchor: chatBaseView.topAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 15, heightAnchor: 32, widthAnchor: 0)
-        UIHelper.setTextLabel(label: chatLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 12, text: "Chat melalui Whatsapp", kerning: 0.4)
+        UIHelper.setTextLabel(label: chatLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 12, text: "Chat melalui Whatsapp", kerning: 0.4)
         
         view.addSubview(emailBaseView)
         UIHelper.makeView(view: emailBaseView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: chatBaseView.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, corner: 10, heightAnchor: 70, widthAnchor: 0)
@@ -70,7 +70,7 @@ extension HubungiKamiViewController{
         
         emailBaseView.addSubview(emailLabel)
         UIHelper.makeLabel(label: emailLabel, corner: 0, allignment: .left, leadingAnchor: emailIconImage.trailingAnchor, trailingAnchor: emailBaseView.trailingAnchor, topAnchor: emailBaseView.topAnchor, leadingConstant: 10, trailingConstant: -20, topConstant: 15, heightAnchor: 32, widthAnchor: 0)
-        UIHelper.setTextLabel(label: emailLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 12, text: "Email ke digital@askrindo.co.id", kerning: 0.4)
+        UIHelper.setTextLabel(label: emailLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .regular, fontSize: 12, text: "Email ke digital@askrindo.co.id", kerning: 0.4)
         
         
         
@@ -88,7 +88,7 @@ extension HubungiKamiViewController{
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         let backItem = UIBarButtonItem()
           backItem.title = "HOME"
-          let titleFont  = UIFont(name: "Arial-BoldMT", size: 14)
+        let titleFont  = UIFont(name: fontNameHelper.NunitoExtraBold, size: 14)
           backItem.setTitleTextAttributes([NSAttributedString.Key.font:titleFont!], for: .normal)
           navigationItem.leftBarButtonItems = [customButtonNav, backItem]
         

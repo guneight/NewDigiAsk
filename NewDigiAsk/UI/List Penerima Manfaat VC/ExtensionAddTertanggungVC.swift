@@ -18,11 +18,11 @@ extension AddTertanggungViewController{
         addPenerimaManfaatBaseView.backgroundColor = .white
         addPenerimaManfaatBaseView.addSubview(namaLengkapLabel)
         UIHelper.makeLabel(label: namaLengkapLabel, corner: 0, allignment: .left, leadingAnchor: addPenerimaManfaatBaseView.leadingAnchor, trailingAnchor: addPenerimaManfaatBaseView.trailingAnchor, topAnchor: addPenerimaManfaatBaseView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 20, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaLengkapLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "Nama Lengkap", kerning: 0.12)
+        UIHelper.setTextLabel(label: namaLengkapLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "Nama Lengkap", kerning: 0.12)
         
         addPenerimaManfaatBaseView.addSubview(namaLengkapTextField)
         UIHelper.makeTetxField(textField: namaLengkapTextField, leadingAnchor: addPenerimaManfaatBaseView.leadingAnchor, trailingAnchor: addPenerimaManfaatBaseView.trailingAnchor, topAnchor: namaLengkapLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 0, corner: 0, heightAnchor: 16, textColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1))
-        UIHelper.setTextField(textField: namaLengkapTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 1)
+        UIHelper.setTextField(textField: namaLengkapTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 1)
         namaLengkapTextField.placeholder = "Nama lengkap"
         
         addPenerimaManfaatBaseView.addSubview(underlineNamaLengkap)
@@ -31,11 +31,11 @@ extension AddTertanggungViewController{
         
         addPenerimaManfaatBaseView.addSubview(nomorKTPLLabel)
         UIHelper.makeLabel(label: nomorKTPLLabel, corner: 0, allignment: .left, leadingAnchor: addPenerimaManfaatBaseView.leadingAnchor, trailingAnchor: addPenerimaManfaatBaseView.trailingAnchor, topAnchor: underlineNamaLengkap.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorKTPLLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor KTP", kerning: 0.12)
+        UIHelper.setTextLabel(label: nomorKTPLLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor KTP", kerning: 0.12)
         
         addPenerimaManfaatBaseView.addSubview(nomorKTPTetxField)
         UIHelper.makeTetxField(textField: nomorKTPTetxField, leadingAnchor: addPenerimaManfaatBaseView.leadingAnchor, trailingAnchor: addPenerimaManfaatBaseView.trailingAnchor, topAnchor: nomorKTPLLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 0, corner: 0, heightAnchor: 16, textColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1))
-        UIHelper.setTextField(textField: nomorKTPTetxField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 1)
+        UIHelper.setTextField(textField: nomorKTPTetxField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 1)
         nomorKTPTetxField.placeholder = "Nama lengkap"
         
         addPenerimaManfaatBaseView.addSubview(underlineNomorKTP)
@@ -44,11 +44,11 @@ extension AddTertanggungViewController{
         
         addPenerimaManfaatBaseView.addSubview(emailLabel)
         UIHelper.makeLabel(label: emailLabel, corner: 0, allignment: .left, leadingAnchor: addPenerimaManfaatBaseView.leadingAnchor, trailingAnchor: addPenerimaManfaatBaseView.trailingAnchor, topAnchor: underlineNomorKTP.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: emailLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "email", kerning: 0.12)
+        UIHelper.setTextLabel(label: emailLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "email", kerning: 0.12)
         
         addPenerimaManfaatBaseView.addSubview(emailTextField)
         UIHelper.makeTetxField(textField: emailTextField, leadingAnchor: addPenerimaManfaatBaseView.leadingAnchor, trailingAnchor: addPenerimaManfaatBaseView.trailingAnchor, topAnchor: emailLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 0, corner: 0, heightAnchor: 16, textColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1))
-        UIHelper.setTextField(textField: emailTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 1)
+        UIHelper.setTextField(textField: emailTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 1)
         emailTextField.placeholder = "Email"
         
         addPenerimaManfaatBaseView.addSubview(underlineEmail)
@@ -57,11 +57,11 @@ extension AddTertanggungViewController{
 
         addPenerimaManfaatBaseView.addSubview(nomorTeleponLabel)
         UIHelper.makeLabel(label: nomorTeleponLabel, corner: 0, allignment: .left, leadingAnchor: addPenerimaManfaatBaseView.leadingAnchor, trailingAnchor: addPenerimaManfaatBaseView.trailingAnchor, topAnchor: underlineEmail.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 10, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nomorTeleponLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor telepon", kerning: 0.12)
+        UIHelper.setTextLabel(label: nomorTeleponLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), weight: .bold, fontSize: 10, text: "Nomor telepon", kerning: 0.12)
 
         addPenerimaManfaatBaseView.addSubview(nomorTeleponTextField)
         UIHelper.makeTetxField(textField: nomorTeleponTextField, leadingAnchor: addPenerimaManfaatBaseView.leadingAnchor, trailingAnchor: addPenerimaManfaatBaseView.trailingAnchor, topAnchor: nomorTeleponLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 0, corner: 0, heightAnchor: 16, textColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1))
-        UIHelper.setTextField(textField: nomorTeleponTextField, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 1)
+        UIHelper.setTextField(textField: nomorTeleponTextField, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .regular, fontSize: 14, text: "", kerning: 1)
         nomorTeleponTextField.placeholder = "Nomor telepon"
 
         addPenerimaManfaatBaseView.addSubview(underlineNomorTelepon)

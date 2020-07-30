@@ -87,11 +87,11 @@ class ListPenerimaManfaatTableViewCell: UITableViewCell{
         contentView.backgroundColor = .white
         contentView.addSubview(kategoriAsuransi)
         UIHelper.makeLabel(label: kategoriAsuransi, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 20, trailingConstant: 0, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: kategoriAsuransi, fontName: "Arial", fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.4)
+        UIHelper.setTextLabel(label: kategoriAsuransi, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.4)
         
         contentView.addSubview(deskripsiKAtegori)
         UIHelper.makeLabel(label: deskripsiKAtegori, corner: 0, allignment: .left, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: kategoriAsuransi.bottomAnchor, leadingConstant: 20, trailingConstant: 0, topConstant: 0, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: deskripsiKAtegori, fontName: "Arial", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.4)
+        UIHelper.setTextLabel(label: deskripsiKAtegori, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.4)
         
         contentView.addSubview(rightButton)
         UIHelper.makeSmallButton(smallButton: rightButton, leadingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: -30, topConstant: 15, corner: 0, heightAnchor: 10, widthtAnchor: 6, borderWidth: 0, colorBorder: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))

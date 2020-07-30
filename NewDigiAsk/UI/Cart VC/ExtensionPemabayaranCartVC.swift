@@ -143,7 +143,7 @@ extension PembayaranCartViewController: UITableViewDelegate, UITableViewDataSour
             
             checkOutView.addSubview(pembelianBerupa)
             UIHelper.makeLabel(label: pembelianBerupa, corner: 0, allignment: .left, leadingAnchor: checkOutView.leadingAnchor, trailingAnchor: checkOutView.trailingAnchor, topAnchor: checkOutView.topAnchor, leadingConstant: 20, trailingConstant: -20, topConstant: 15, heightAnchor: 20, widthAnchor: 0)
-            UIHelper.setTextLabel(label: pembelianBerupa, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 13, text: "Anda melakukan pembelian berupa :", kerning: 0.13)
+            UIHelper.setTextLabel(label: pembelianBerupa, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 13, text: "Anda melakukan pembelian berupa :", kerning: 0.13)
             
             checkOutView.addSubview(daftarPembelianTable)
             daftarPembelianTable.translatesAutoresizingMaskIntoConstraints = false
@@ -160,7 +160,7 @@ extension PembayaranCartViewController: UITableViewDelegate, UITableViewDataSour
             
             checkOutView.addSubview(totalHargaLabel)
             UIHelper.makeLabel(label: totalHargaLabel, corner: 0, allignment: .right, leadingAnchor: checkOutView.leadingAnchor, trailingAnchor: checkOutView.trailingAnchor, topAnchor: daftarPembelianTable.bottomAnchor, leadingConstant: 30, trailingConstant: -47, topConstant: 5, heightAnchor: 20, widthAnchor: 0)
-            UIHelper.setTextLabel(label: totalHargaLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 250.000,-", kerning: 0.12)
+            UIHelper.setTextLabel(label: totalHargaLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 12, text: "Rp 250.000,-", kerning: 0.12)
             
             checkOutView.addSubview(bayarButton)
             UIHelper.makeButton(button: bayarButton, leadingAnchor: checkOutView.leadingAnchor, trailingAnchor: checkOutView.trailingAnchor, topAnchor: totalHargaLabel.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 0, corner: 24, heightAnchor: 48, widthAnchor: 0)
@@ -209,7 +209,7 @@ extension PembayaranCartViewController: UITableViewDelegate, UITableViewDataSour
             
             containerView.addSubview(namaProdukLabel)
             UIHelper.makeSmalllabel(smallLabel: namaProdukLabel, leadingAnchor: containerView.leadingAnchor, topAnchor: containerView.topAnchor, leadingConstant: 17, topConstant: 14, corner: 0, heightAnchor: 18, widthtAnchor: containerView.frame.size.width)
-            UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
+            UIHelper.setTextLabel(label: namaProdukLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
             namaProdukLabel.isUserInteractionEnabled = true
             containerView.addSubview(rightButton)
             rightButton.translatesAutoresizingMaskIntoConstraints = false
@@ -235,7 +235,7 @@ extension PembayaranCartViewController: UITableViewDelegate, UITableViewDataSour
             
             containerView.addSubview(deskripsiProduklabel)
             UIHelper.makeLabel(label: deskripsiProduklabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerView.trailingAnchor, topAnchor: underlineNamaProduk.bottomAnchor, leadingConstant: 12, trailingConstant: -22, topConstant: 8.5, heightAnchor: 30, widthAnchor: 0)
-            UIHelper.setTextLabel(label: deskripsiProduklabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 10, text: " ", kerning: 0.5)
+            UIHelper.setTextLabel(label: deskripsiProduklabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 10, text: " ", kerning: 0.5)
             deskripsiProduklabel.numberOfLines = 0
             
             containerView.addSubview(hargaLabel)
