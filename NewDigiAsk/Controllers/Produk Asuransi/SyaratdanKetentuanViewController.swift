@@ -39,12 +39,16 @@ class SyaratdanKetentuanViewController: UIViewController {
     let setujuView = UIView()
     var penerimaManfaat : Daftar?
     var syaratKetentuan : String = ""
-    let syaratDanKetentuan = "Memberikan perlindungan atas risiko kematian, cacat tetap, biaya perawatan dan atau pengobatan yang secara langsung disebabkan suatu kecelakaan. Kecelakaan yaitu suatu kejadian atau peristiwa yang mengandung unsur kekerasan, baik bersifat fisik maupun kimia, yang datangnya secara tiba-tiba, termasuk juga kecelakaan yaitu yang disebabkan karena keracunan makanan, uap dan gas, jatuh ke dalam air atau tenggelam."
-    
+    var heightdetailSyaratdanKetentuanLabel : CGFloat = 0
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self.customHeightLabel(text: self.syaratKetentuan)
+            self.setupUI()
+            self.setupValue()
+        }
         
-        setupUI()
         setupNavBarSyaratdanKetentuan()
         view.layoutIfNeeded()
         setupAnimation()
@@ -52,8 +56,7 @@ class SyaratdanKetentuanViewController: UIViewController {
         setujuButton.addTarget(self, action: #selector(setujuAction(sender:)), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(setujuAction(sender:)))
         setujuView.addGestureRecognizer(tapGesture)
-        setupValue()
-        fecthData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -67,15 +70,15 @@ class SyaratdanKetentuanViewController: UIViewController {
         
     }
     
-    func setupValue(){
-        syaratDanKetentuanLabel.text = syaratKetentuan
+    func customHeightLabel(text: String){
+        heightdetailSyaratdanKetentuanLabel = heightForView(text: text, font: UIFont(name: fontNameHelper.NunitoRegular, size: 14)!, width: view.frame.size.width-100)
     }
     
-    func fecthData(){
-        FetchingListProduct.shared.getDataIdentitasPenerimaManfaat(idUser: "5", idProduct: "5", idPacket: "3"){(data) in
-                   self.penerimaManfaat = data
-               }
+    func setupValue(){
+        detailSyaratdanKetentuanLabel.text = syaratKetentuan
     }
+    
+  
     
     
 }

@@ -36,7 +36,7 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let SyaratdanKetentuanVC = self.storyboard?.instantiateViewController(identifier: "SyaratdanKetentuanViewController") as! SyaratdanKetentuanViewController
-        SyaratdanKetentuanVC.syaratKetentuan = syaratKetentuan
+        SyaratdanKetentuanVC.syaratKetentuan = packet[indexPath.row].packet.productDetail.product.syaratKetentuan
         self.navigationController?.pushViewController(SyaratdanKetentuanVC, animated: true)
         
     }
