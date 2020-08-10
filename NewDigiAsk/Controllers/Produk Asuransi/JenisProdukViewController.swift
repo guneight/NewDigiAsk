@@ -39,7 +39,9 @@ class JenisProdukViewController: UIViewController {
     let jenisProdukLabel = UILabel()
     let startHargaProdukLabel = UILabel()
     let deskripsiJenisProdukLabel = UILabel()
-    var packetProduct : PacketProduct?
+    var productDetail = [ProductDetails]()
+    var productId : String = ""
+    var customHeigthLabel: CGFloat = 0
     let jenisProduk = ["Silver","Gold","Platinum"]
     let startHarga = ["Start From Rp 20.000,-", "Start From Rp 50.000,-", "Start From Rp 100.000,-"]
     let deskripsijenisProduk = "Memberikan perlindungan atas risiko kematian, cacat tetap, biaya perawatan dan atau pengobatan yang secara langsung disebabkan suatu kecelakaan. Kecelakaan yaitu suatu kejadian atau peristiwa yang mengandung unsur kekerasan, baik bersifat fisik maupun kimia, yang datangnya secara tiba-tiba, termasuk juga kecelakaan yaitu yang disebabkan karena keracunan makanan, uap dan gas, jatuh ke dalam air atau tenggelam."
@@ -48,6 +50,7 @@ class JenisProdukViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
         jenisProdukTable.delegate = self
         jenisProdukTable.dataSource = self
         setupUI()
@@ -58,5 +61,23 @@ class JenisProdukViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-  
+    
+    private func getData(){
+        print("productId", productId)
+        DispatchQueue.main.async {
+            FetchAllProduct.share.getDetailProduct(id_packet: self.productId ){ (data) in
+                self.productDetail = data
+                self.namaProdukLabel.text = self.productDetail[0].productDetail.product.namaProduct
+                self.heightDeskripsiLabel(text: self.productDetail[0].deskripsi2)
+                self.jenisProdukTable.reloadData()
+            }
+        }
+    }
+    
+    private func heightDeskripsiLabel(text : String){
+        customHeigthLabel = heightForView(text: text, font: UIFont(name: fontNameHelper.NunitoRegular, size: 12)!, width: view.frame.size.width-100)
+        
+    }
+    
+    
 }

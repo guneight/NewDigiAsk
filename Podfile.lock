@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.9.1)
   - GoogleMaps (3.1.0):
     - GoogleMaps/Maps (= 3.1.0)
   - GoogleMaps/Base (3.1.0)
@@ -13,6 +14,7 @@ PODS:
   - SkeletonView (1.8.7)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.9.0)
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
@@ -21,6 +23,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - GoogleMaps
     - GooglePlacePicker
     - GooglePlaces
@@ -28,12 +31,13 @@ SPEC REPOS:
     - SkeletonView
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
   GooglePlacePicker: fa975116ac202ac29822c0a79758ea1c4db5a95f
   GooglePlaces: e874db179f2675c4f3eeda0b686b540273a578b0
   PinCodeTextField: a3c39be58bde3ed1d6888d0fb1d88b0a4a2277cc
   SkeletonView: ba5370f41280b2f0a76918bb143c1294232bb4f4
 
-PODFILE CHECKSUM: 1e0d40979026276a4ddf78adeaf44cc9abd4e694
+PODFILE CHECKSUM: dd887ef0ce2b4ba52616a8cbe9cae91de0ad4062
 
 COCOAPODS: 1.8.4

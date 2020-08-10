@@ -36,37 +36,49 @@ class JenisProdukDetailViewController: UIViewController {
     let lineHargaProdukDetail = UIView()
     let deskripsiJenisProdukDetail = UILabel()
     let daftarPremiTable = UITableView()
-    var packet = [PacketDetail]()
+    var packet = [DetailJenisProduct]()
     var syaratKetentuan = ""
-    var idpacket = 0
-    let hargaDetail = ["Rp 20.000,-", "Rp 20.000,-","Rp 40.000,-","Rp 60.000,-","Rp 80.000,-"]
-    let jumlahHari = ["7 hari", "14 hari", "30 hari", "3 bulan", "6 bulan"]
-    let jenisProduk = ["Silver","Gold","Platinum"]
-    let startHarga = ["Start From Rp 20.000,-", "Start From Rp 50.000,-", "Start From Rp 100.000,-"]
-    let deskripsijenisProduk = "Memberikan perlindungan atas risiko kematian, cacat tetap, biaya perawatan dan atau pengobatan yang secara langsung disebabkan suatu kecelakaan. Kecelakaan yaitu suatu kejadian atau peristiwa yang mengandung unsur kekerasan, baik bersifat fisik maupun kimia, yang datangnya secara tiba-tiba, termasuk juga kecelakaan yaitu yang disebabkan karena keracunan makanan, uap dan gas, jatuh ke dalam air atau tenggelam."
-    
+    var idDetailPacket = 0
+    var heightDeskLabel : CGFloat = 0
     
     
     override func viewDidLoad() {
+        FecthData()
         view.backgroundColor = .gray
         daftarPremiTable.delegate = self
         daftarPremiTable.dataSource = self
-        setupUI()
+      
         super.viewDidLoad()
         daftarPremiTable.reloadData()
         setupNavBarJenisProdukDetail()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         view.layoutIfNeeded()
-        FecthData()
+        
     }
     
     func FecthData() {
-        print("idpacket :", idpacket)
-        FetchingListProduct.shared.getDataJenisProdukDetailFromApi(idProduct: "\(idpacket)" ) {(data) in
-            self.packet = data
-            self.daftarPremiTable.reloadData()
-            
-            
+        print("idpacket :", idDetailPacket)
+        DispatchQueue.main.async {
+            FetchAllProduct.share.getDetailJenisProduct(id_packet_detail: "\(self.idDetailPacket)"){ (data) in
+                self.packet = data
+                self.heightdDeskripsiJenisProdukDetail(text: self.packet[0].packet.deskripsi2)
+                print("heightdDeskripsiJenisProdukDetail = ", self.heightDeskLabel)
+                self.setupUI()
+                self.daftarPremiTable.reloadData()
+                self.setupValue()
+            }
         }
     }
+    
+    func heightdDeskripsiJenisProdukDetail(text : String){
+            heightDeskLabel = heightForView(text: text, font: UIFont(name: fontNameHelper.NunitoRegular, size: 12)!, width: view.frame.size.width-100)
+       }
+    
+    private func setupValue(){
+        namajenisProdukDetailLabel.text = packet[0].packet.namaPacket
+        startHargaProdukDetailLabel.text = packet[0].packet.deskripsi1
+        deskripsiJenisProdukDetail.text = packet[0].packet.deskripsi2
+    }
+    
+   
 }

@@ -35,9 +35,11 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     
     var indexProduk : Int = 0
     var loginStatus : Int = 0
+    var idSelected : Int = 0
     let promo = ["promo1","promo2","promo2","promo1"]
-    var listProduct = ListProduct?.self
-    var packetProduct = [PacketProduct]()
+    var listProduct = [ProductAll]()
+    var products = [product]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -79,15 +81,6 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         autoSwipeBanner()
         fecthProduct()
         
-        for family in UIFont.familyNames {
-
-            let sName: String = family as String
-            print("family: \(sName)")
-                    
-            for name in UIFont.fontNames(forFamilyName: sName) {
-                print("name: \(name as String)")
-            }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,28 +92,39 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         collectBannerPromo.reloadData()
         fecthProduct()
         print("Login Status :", loginStatus)
-       
+        
+    }
+    
+    private func fecthProduct(){
+    DispatchQueue.main.async {
+            FetchAllProduct.share.getDataFromApi(){(data) in
+                self.listProduct = data
+                collectionViewProduct.reloadData()
+                
+            }
+        }
+        
     }
     
     @objc func tabBarProfileAction (sender : UIButton){
-                if (loginStatus == 0) {
-                let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController")  as! LoginViewController
-                self.navigationController?.pushViewController(loginVC, animated: true)
-                print("pressss")
-                }else if(loginStatus == 1){
-        let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController") as!ProfileViewController
-        self.navigationController?.pushViewController(profileVC, animated: true)
-                }else{
-                    print("Login failed")
-                }
+        if (loginStatus == 0) {
+            let loginVC = storyboard?.instantiateViewController(identifier: "LoginViewController")  as! LoginViewController
+            self.navigationController?.pushViewController(loginVC, animated: true)
+            print("pressss")
+        }else if(loginStatus == 1){
+            let profileVC = storyboard?.instantiateViewController(identifier: "ProfileViewController") as!ProfileViewController
+            self.navigationController?.pushViewController(profileVC, animated: true)
+        }else{
+            print("Login failed")
+        }
     }
- 
+    
     
     @objc func tabBarBeliAction(sender : UIButton){
         
         let daftarProdukVC = storyboard?.instantiateViewController(identifier : "ProdukViewController" ) as! ProdukViewController
         self.navigationController?.pushViewController(daftarProdukVC, animated: true)
-
+        
     }
     
     @objc func tabBarKlaim(sender : UIButton){
@@ -159,18 +163,18 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     @objc func automaticallyScroll(){
-         let cv  = collectionViewPromo
-            for cell in cv.visibleCells{
-                let indexpath : IndexPath? = cv.indexPath(for: cell)
-                if ((indexpath?.row)! < promo.count-1){
-                    let indexPath1: IndexPath?
-                    indexPath1 = IndexPath.init(row: (indexpath?.row)!+1, section: (indexpath?.section)!)
-                    cv.scrollToItem(at: indexPath1!, at: .right, animated: true)
-                }else{
-                    let indexPath1 : IndexPath?
-                    indexPath1 = IndexPath.init(row: 0, section: (indexpath?.section)!)
-                    cv.scrollToItem(at: indexPath1!, at: .left, animated: true)
-                }
+        let cv  = collectionViewPromo
+        for cell in cv.visibleCells{
+            let indexpath : IndexPath? = cv.indexPath(for: cell)
+            if ((indexpath?.row)! < promo.count-1){
+                let indexPath1: IndexPath?
+                indexPath1 = IndexPath.init(row: (indexpath?.row)!+1, section: (indexpath?.section)!)
+                cv.scrollToItem(at: indexPath1!, at: .right, animated: true)
+            }else{
+                let indexPath1 : IndexPath?
+                indexPath1 = IndexPath.init(row: 0, section: (indexpath?.section)!)
+                cv.scrollToItem(at: indexPath1!, at: .left, animated: true)
+            }
         }
     }
     

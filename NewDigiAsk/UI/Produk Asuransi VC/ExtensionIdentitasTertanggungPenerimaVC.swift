@@ -351,11 +351,11 @@ extension IdentitasTertanggungdanPenerimaManfaatViewController: UITextFieldDeleg
         penerimaManfaatTableView.register(penerimaManfaatTbc.self, forCellReuseIdentifier: "penerimaManfaatTbc")
         penerimaManfaatTableView.isHidden = true
         
-        if penerimaManfaat?.daftarTertanggung.count == 0{
-            IdentitasTertanggungTableView.isHidden = true
-        }else{
-            IdentitasTertanggungTableView.isHidden = false
-        }
+//        if penerimaManfaat?.daftarTertanggung.count == 0{
+//            IdentitasTertanggungTableView.isHidden = true
+//        }else{
+//            IdentitasTertanggungTableView.isHidden = false
+//        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

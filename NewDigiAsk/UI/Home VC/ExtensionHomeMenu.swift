@@ -249,12 +249,6 @@ extension HomeMenuViewController{
         
     }
     
-    func  fecthProduct(){
-        FetchingListProduct.shared.getDataFromApi(){(data) in
-//            self.packetProduct = data
-//            collectionViewProduct.reloadData()
-//            self.loadingIndicator.stopAnimating()
-        }
-    }
-    
 }
+
+

@@ -49,19 +49,22 @@ class ProdukDetailViewController: UIViewController {
     let linePenggatianBiayaLabel = UIView()
     let deskripsiPenggantiBiayaLabel = UILabel()
     let pilihProdukButton = UIButton()
-    var packetProduct : PacketProduct?
+    var product : product?
     var indexProdukSelect : Int!
     var idPacket : Int?
+    var heightGantiRugiLabel : CGFloat = 0
+    var heighPenggantianBiayaLabel : CGFloat = 0
+    var heightDeskripsiProdukLabel : CGFloat = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        customHeightLabel()
         setupUI()
         pilihProdukAction()
         setupNavBarProdukDetail()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         view.layoutIfNeeded()
+        customHeightLabel()
         setupValue()
-        
-        print("product item :", packetProduct)
         
         // Do any additional setup after loading the view.
     }
@@ -72,17 +75,24 @@ class ProdukDetailViewController: UIViewController {
     
     @objc func pilihProduk(sender: UIButton){
         let jenisProdukVC = storyboard?.instantiateViewController(identifier: "JenisProdukViewController") as! JenisProdukViewController
-        jenisProdukVC.packetProduct = packetProduct
+        guard let idProduct = product?.idProduct else {return}
+        jenisProdukVC.productId = "\(idProduct)"
         self.navigationController?.pushViewController(jenisProdukVC, animated: true)
     }
     
+    func customHeightLabel(){
+          heightDeskripsiProdukLabel =  heightForView(text: product?.deskripsiProduk ?? "", font: UIFont(name: fontNameHelper.NunitoRegular, size: 12)!, width: view.frame.size.width-100)
+        heightGantiRugiLabel =  heightForView(text: product?.deskripsiGantiRugi ?? "", font: UIFont(name: fontNameHelper.NunitoRegular, size: 12)!, width: view.frame.size.width-100)
+        heighPenggantianBiayaLabel =  heightForView(text: product?.deskripsiTambahan ?? "", font: UIFont(name: fontNameHelper.NunitoRegular, size: 12)!, width: view.frame.size.width-100)
+        print(heightGantiRugiLabel, heighPenggantianBiayaLabel)
+    }
     func setupValue(){
-        produkDetailHeaderLabel.text = packetProduct?.namaProduct
-        namaProdukLabel.text = packetProduct?.namaProduct
-        deskripsiProdukLabel.text = packetProduct?.deskripsiProduk
-        deskripsiPenggunaLabel.text = packetProduct?.pengguna
-        deskripsiGantiRugi.text = packetProduct?.deskripsiGantiRugi
-        deskripsiPenggantiBiayaLabel.text = packetProduct?.deskripsiTambahan
+        produkDetailHeaderLabel.text = product?.namaProduct
+        namaProdukLabel.text = product?.namaProduct
+        deskripsiProdukLabel.text = product?.deskripsiProduk
+        deskripsiPenggunaLabel.text = product?.pengguna
+        deskripsiGantiRugi.text = product?.deskripsiGantiRugi
+        deskripsiPenggantiBiayaLabel.text = product?.deskripsiTambahan
     }
 }
 

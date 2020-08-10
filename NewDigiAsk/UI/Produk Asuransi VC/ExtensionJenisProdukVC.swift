@@ -10,7 +10,7 @@ import UIKit
 
 extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return productDetail.count
         
     }
     
@@ -19,28 +19,21 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         cell.selectionStyle = .none
         cell.backgroundColor = .white
         cell.layoutIfNeeded()
-        guard let packetProduct = packetProduct else {return cell}
-        cell.jenisProdukLabel.text = packetProduct.namaPacket
-        cell.startHargaProdukLabel.text = packetProduct.deskripsi1
-        cell.deskripsiJenisProdukLabel.text = packetProduct.deskripsi2
+        cell.jenisProdukLabel.text = productDetail[indexPath.row].namaPacket
+        cell.startHargaProdukLabel.text = productDetail[indexPath.row].deskripsi1
+        cell.deskripsiJenisProdukLabel.text = productDetail[indexPath.row].deskripsi2
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return 130+customHeigthLabel
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 10
-    }
+   
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let jenisProdukDetailVC = self.storyboard?.instantiateViewController(identifier: "JenisProdukDetailViewController") as! JenisProdukDetailViewController
-        jenisProdukDetailVC.idpacket = packetProduct!.idPacket
-        jenisProdukDetailVC.syaratKetentuan = packetProduct?.syaratKetentuan as! String
-        jenisProdukDetailVC.namajenisProdukDetailLabel.text = packetProduct?.namaProduct
-        jenisProdukDetailVC.startHargaProdukDetailLabel.text = packetProduct?.deskripsi1
-        jenisProdukDetailVC.deskripsiJenisProdukDetail.text = packetProduct?.deskripsi2
+        jenisProdukDetailVC.idDetailPacket = productDetail[indexPath.row].idPacket
         self.navigationController?.pushViewController(jenisProdukDetailVC, animated: true)
         
         
@@ -158,7 +151,7 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
 
         jenisProdukView.addSubview(namaProdukLabel)
         UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: jenisProdukView.leadingAnchor, trailingAnchor: jenisProdukView.trailingAnchor, topAnchor: jenisProdukView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 17, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namaProdukLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: packetProduct?.namaProduct ?? "Produk tidak tersedia", kerning: 0.12)
+        UIHelper.setTextLabel(label: namaProdukLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0)
 
         jenisProdukView.addSubview(jenisProdukTable)
         jenisProdukTable.translatesAutoresizingMaskIntoConstraints = false
@@ -166,7 +159,7 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
             jenisProdukTable.leadingAnchor.constraint(equalTo: jenisProdukView.leadingAnchor, constant: 0),
             jenisProdukTable.trailingAnchor.constraint(equalTo: jenisProdukView.trailingAnchor, constant: 0),
             jenisProdukTable.topAnchor.constraint(equalTo: namaProdukLabel.bottomAnchor, constant: 20),
-            jenisProdukTable.bottomAnchor.constraint(equalTo: jenisProdukView.bottomAnchor, constant: 0)
+            jenisProdukTable.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
@@ -191,7 +184,6 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
 
 
 class jenisProdukTableViewCell: UITableViewCell {
-    
     let iconJenisProdukImage = UIImageView()
     let jenisProdukCellView = UIView()
     let jenisProdukLabel = UILabel()
@@ -204,9 +196,15 @@ class jenisProdukTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         self.contentView.addSubview(jenisProdukCellView)
-        UIHelper.makeView(view: jenisProdukCellView, leadingAnchor: contentView.leadingAnchor, trailingAnchor: contentView.trailingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 21, trailingConstant: -21, topConstant: 30, corner: 10, heightAnchor: 140, widthAnchor: 0)
+      
+        jenisProdukCellView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            jenisProdukCellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            jenisProdukCellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            jenisProdukCellView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            jenisProdukCellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            ])
         jenisProdukCellView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
         jenisProdukCellView.isUserInteractionEnabled = true
         
@@ -219,12 +217,12 @@ class jenisProdukTableViewCell: UITableViewCell {
         
         jenisProdukCellView.addSubview(jenisProdukLabel)
         UIHelper.makeLabel(label: jenisProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconJenisProdukImage.trailingAnchor, trailingAnchor: jenisProdukCellView.trailingAnchor, topAnchor: jenisProdukCellView.topAnchor, leadingConstant: 18, trailingConstant: -40, topConstant: 10, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: jenisProdukLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0.12)
+        UIHelper.setTextLabel(label: jenisProdukLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0)
         jenisProdukLabel.numberOfLines = 0
         
         jenisProdukCellView.addSubview(startHargaProdukLabel)
         UIHelper.makeLabel(label: startHargaProdukLabel, corner: 0, allignment: .left, leadingAnchor: iconJenisProdukImage.trailingAnchor, trailingAnchor: jenisProdukCellView.trailingAnchor, topAnchor: jenisProdukLabel.bottomAnchor, leadingConstant: 18, trailingConstant: -40, topConstant: 5, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: startHargaProdukLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0.12)
+        UIHelper.setTextLabel(label: startHargaProdukLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0)
         startHargaProdukLabel.numberOfLines = 0
         
         jenisProdukCellView.addSubview(rightButton)
@@ -250,9 +248,9 @@ class jenisProdukTableViewCell: UITableViewCell {
             deskripsiJenisProdukLabel.leadingAnchor.constraint(equalTo: jenisProdukCellView.leadingAnchor, constant: 60),
             deskripsiJenisProdukLabel.trailingAnchor.constraint(equalTo: jenisProdukCellView.trailingAnchor, constant: -23),
             deskripsiJenisProdukLabel.topAnchor.constraint(equalTo: lineHargaProduk.bottomAnchor, constant: 18),
-            deskripsiJenisProdukLabel.heightAnchor.constraint(equalToConstant: 50),
+            deskripsiJenisProdukLabel.bottomAnchor.constraint(equalTo: jenisProdukCellView.bottomAnchor)
         ])
-        UIHelper.setTextLabel(label: deskripsiJenisProdukLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0.06)
+        UIHelper.setTextLabel(label: deskripsiJenisProdukLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0)
         deskripsiJenisProdukLabel.numberOfLines = 0
         
         

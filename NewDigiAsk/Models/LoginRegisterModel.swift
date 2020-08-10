@@ -17,3 +17,5 @@ struct loginRegisterParams : Codable{
     var noTelpOrEmail : String!
     var password : String!
 }
+
+

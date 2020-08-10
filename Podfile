@@ -11,4 +11,5 @@ target 'NewDigiAsk' do
     pod 'GooglePlaces'
     pod 'GooglePlacePicker'
     pod 'SkeletonView'
+    pod 'Alamofire', '~> 4.9.0'
 end

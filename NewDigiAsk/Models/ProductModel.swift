@@ -7,48 +7,48 @@
 //
 
 import UIKit
-
-
-
-typealias  ListProduct = [PacketProduct]
-
-struct PacketProduct: Decodable {
-        let idPacket: Int
-        let namaPacket, deskripsi1, deskripsi2: String
-        let idProduct: Int
-        let namaProduct, deskripsiProduk, pengguna, deskripsiGantiRugi: String
-        let deskripsiTambahan, syaratKetentuan: String
-    }
-
-struct Product : Decodable{
-    let idProduct : Int
-    let namaProduct : String
-    let deskripsiProduk : String?
-    let pengguna : String?
-    let deskripsiGantiRugi : String?
-    let deskripsiTambahan : String?
-    let picture : String?
-    let logo: String?
-    let syaratKetentuan : String?
-}
-
-
-typealias PacketDetails = [PacketDetail]
-
-struct PacketDetail: Decodable {
+struct ProductAll: Decodable {
     let idProductDetail: Int
-    let jangkaWaktu: String
-    let tsi: Float?
-    let premi: Int
+    let product: product
 }
+struct ProductDetails: Decodable {
+    let idPacket: Int
+    let productDetail: productDetail
+    let namaPacket: String
+    let deskripsi1: String
+    let deskripsi2: String
+}
+
+// MARK: - ProductDetail
+struct productDetail: Decodable {
+    let idProductDetail: Int
+    let product: product
+}
+
+// MARK: - Product
+struct product: Decodable {
+    let idProduct: Int
+    let namaProduct: String
+    let deskripsiProduk : String
+    let pengguna : String
+    let deskripsiGantiRugi: String
+    let deskripsiTambahan: String
+    let picture :  String?
+    let logo: String?
+    let syaratKetentuan: String
+}
+
+
 
 
 // MARK: - Product
-
 struct Daftar: Decodable {
     let penerimaManfaat : [penerimaManfaat]
     let daftarTertanggung: [daftarTertanggung]
 }
+
+
+
 
 
 // MARK: - penerimaManfaat

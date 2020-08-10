@@ -17,7 +17,7 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellJenisProdukDetail", for: indexPath) as! JenisProdukDetailTableViewCell
         cell.selectionStyle = .none
         cell.nilaiPremiLabel.text = "Rp  \(packet[indexPath.row].premi)"
-        cell.jumlahHariLabel.text = packet[indexPath.row].jangkaWaktu
+        cell.jumlahHariLabel.text = "\(packet[indexPath.row].jangkaWaktu) Hari"
         cell.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
         cell.layoutIfNeeded()
         
@@ -162,11 +162,11 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         
         JenisProdukContainerView.addSubview(namajenisProdukDetailLabel)
         UIHelper.makeLabel(label: namajenisProdukDetailLabel, corner: 0, allignment: .left, leadingAnchor: iconJenisProdukDetailImage.trailingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: JenisProdukContainerView.topAnchor, leadingConstant: 18, trailingConstant: -18, topConstant: 18, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: namajenisProdukDetailLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text:jenisProduk[0], kerning: 0.12)
+        UIHelper.setTextLabel(label: namajenisProdukDetailLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text:"", kerning: 0)
         
         JenisProdukContainerView.addSubview(startHargaProdukDetailLabel)
         UIHelper.makeLabel(label: startHargaProdukDetailLabel, corner: 0, allignment: .left, leadingAnchor: iconJenisProdukDetailImage.trailingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: namajenisProdukDetailLabel.bottomAnchor , leadingConstant: 18, trailingConstant: -18, topConstant: 2, heightAnchor: 16, widthAnchor: 0)
-        UIHelper.setTextLabel(label: startHargaProdukDetailLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text:startHarga[0], kerning: 0.12)
+        UIHelper.setTextLabel(label: startHargaProdukDetailLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0)
         
         JenisProdukContainerView.addSubview(lineHargaProdukDetail)
         UIHelper.makeView(view: lineHargaProdukDetail, leadingAnchor: iconJenisProdukDetailImage.trailingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: startHargaProdukDetailLabel.bottomAnchor, leadingConstant: 6, trailingConstant: -10, topConstant: 7, corner: 0, heightAnchor: 0.5, widthAnchor: 0)
@@ -175,10 +175,10 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         
         
         JenisProdukContainerView.addSubview(deskripsiJenisProdukDetail)
-        UIHelper.makeLabel(label: deskripsiJenisProdukDetail, corner: 0, allignment: .left, leadingAnchor: JenisProdukContainerView.leadingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: lineHargaProdukDetail.bottomAnchor , leadingConstant: 60, trailingConstant: -10, topConstant: 15, heightAnchor: 100, widthAnchor: 0)
-        UIHelper.setTextLabel(label: deskripsiJenisProdukDetail, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: deskripsijenisProduk, kerning: 0.06)
+        UIHelper.makeLabel(label: deskripsiJenisProdukDetail, corner: 0, allignment: .left, leadingAnchor: JenisProdukContainerView.leadingAnchor, trailingAnchor: JenisProdukContainerView.trailingAnchor, topAnchor: lineHargaProdukDetail.bottomAnchor , leadingConstant: 60, trailingConstant: -10, topConstant: 15, heightAnchor: heightDeskLabel+20, widthAnchor: 0)
+        UIHelper.setTextLabel(label: deskripsiJenisProdukDetail, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0)
         deskripsiJenisProdukDetail.numberOfLines = 0
-        
+        print("deskripsiJenisProdukDetail = ", deskripsiJenisProdukDetail.frame.size.height)
         JenisProdukContainerView.addSubview(daftarPremiTable)
         daftarPremiTable.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -234,11 +234,11 @@ class JenisProdukDetailTableViewCell : UITableViewCell{
         
         containerViewCell.addSubview(nilaiPremiLabel)
         UIHelper.makeLabel(label: nilaiPremiLabel, corner: 0, allignment: .left, leadingAnchor: iconPremiImage.trailingAnchor, trailingAnchor: containerViewCell.trailingAnchor, topAnchor: containerViewCell.topAnchor, leadingConstant: 13, trailingConstant: -13, topConstant: 10, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: nilaiPremiLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0.12)
+        UIHelper.setTextLabel(label: nilaiPremiLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0)
         
         containerViewCell.addSubview(jumlahHariLabel)
         UIHelper.makeLabel(label: jumlahHariLabel, corner: 0, allignment: .left, leadingAnchor: iconPremiImage.trailingAnchor, trailingAnchor: containerViewCell.trailingAnchor, topAnchor: nilaiPremiLabel.bottomAnchor, leadingConstant: 13, trailingConstant: -13, topConstant: 3, heightAnchor: 12, widthAnchor: 0)
-        UIHelper.setTextLabel(label: jumlahHariLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 1), weight: .bold, fontSize: 10, text: "", kerning: 0.5)
+        UIHelper.setTextLabel(label: jumlahHariLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 1), weight: .bold, fontSize: 10, text: "", kerning: 0)
     }
     
     required init?(coder: NSCoder) {

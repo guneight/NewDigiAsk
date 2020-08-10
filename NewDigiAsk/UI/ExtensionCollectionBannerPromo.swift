@@ -7,6 +7,8 @@
 //
 
 import UIKit
+let heightScreenIPhone = 0
+let heightScreenIPad = 0
 
 let containerCollectionView : UIView = {
     let cv = UIView()
@@ -85,6 +87,16 @@ let collectionViewGalery  : UICollectionView = {
     return cvGalery
 }()
 
+func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat {
+    let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+    label.numberOfLines = 0
+    label.lineBreakMode = NSLineBreakMode.byWordWrapping
+    label.font = font
+    label.text = text
+
+    label.sizeToFit()
+    return label.frame.height
+}
 let viewColletionProduct = UIView()
 let viewPromo = UIView()
 let labelPromo = UILabel()
@@ -316,20 +328,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         imageViewMap.layer.cornerRadius = 5
         imageViewMap.contentMode = .scaleAspectFit
         imageViewMap.layoutIfNeeded()
-        
-//        view.addSubview(loadingIndicator)
-//        loadingIndicator.translatesAutoresizingMaskIntoConstraints =  false
-//        NSLayoutConstraint.activate([
-//            loadingIndicator.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            loadingIndicator.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            loadingIndicator.topAnchor.constraint(equalTo: view.topAnchor),
-//            loadingIndicator.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-//        ])
-//        loadingIndicator.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//        loadingIndicator.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
-//        loadingIndicator.startAnimating()
-        
-    }
+        }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -364,7 +363,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == collectionViewProduct {
-            return packetProduct.count
+            return listProduct.count
         }else if collectionView == collectionViewPromo{
             return 5
         }else if collectionView == collectBannerPromo{
@@ -383,8 +382,8 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collectionViewProduct{
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cellproduct", for: indexPath) as! collectionViewProductCell
-            cell.imageIconProduct.image = UIImage(named: "\(packetProduct[indexPath.row].namaProduct)")
-            cell.labelIcon.text = packetProduct[indexPath.row].namaProduct
+            cell.imageIconProduct.image = UIImage(named: "\(listProduct[indexPath.row].product.namaProduct)")
+            cell.labelIcon.text = listProduct[indexPath.row].product.namaProduct
             cell.backgroundColor = UIColor.clear
             return cell
             
@@ -501,7 +500,7 @@ extension HomeMenuViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == collectionViewProduct {
             let produkDetailVC  = storyboard?.instantiateViewController(identifier: "ProdukDetailViewController") as! ProdukDetailViewController
             produkDetailVC.indexProdukSelect = indexPath.row
-            produkDetailVC.packetProduct = packetProduct[indexPath.row]
+            produkDetailVC.product = listProduct[indexPath.row].product
             navigationController?.pushViewController(produkDetailVC, animated: true)
         }else if  collectionView == collectionViewPromo{
             if let url = URL(string: "https://www.askrindo.co.id") {
