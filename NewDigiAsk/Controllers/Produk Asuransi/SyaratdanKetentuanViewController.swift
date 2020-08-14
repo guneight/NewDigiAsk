@@ -10,7 +10,7 @@ import UIKit
 
 class SyaratdanKetentuanViewController: UIViewController {
     let produkBaseView = UIView()
-  
+    
     let prosesStackView : UIStackView = {
         let stackViewCV = UIStackView()
         stackViewCV.axis = NSLayoutConstraint.Axis.horizontal
@@ -37,10 +37,11 @@ class SyaratdanKetentuanViewController: UIViewController {
     let bacaSelengkapnyaLabel = UILabel()
     let setujuButton = UIButton()
     let setujuView = UIView()
+     var packet = [DetailJenisProduct]()
     var penerimaManfaat : Daftar?
     var syaratKetentuan : String = ""
     var heightdetailSyaratdanKetentuanLabel : CGFloat = 0
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
@@ -60,13 +61,26 @@ class SyaratdanKetentuanViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-         setupAnimation()
+        setupAnimation()
     }
     
     @objc func setujuAction(sender: Any){
-        let identitasPenanungVC = self.storyboard?.instantiateViewController(identifier: "IdentitasTertanggungdanPenerimaManfaatViewController") as! IdentitasTertanggungdanPenerimaManfaatViewController
-        identitasPenanungVC.penerimaManfaat = penerimaManfaat
-        self.navigationController?.pushViewController(identitasPenanungVC, animated: true)
+        DispatchQueue.main.async {
+            print("cart", self.packet)
+            Cart.shared.createCart(
+                idProduct: "\(self.packet[0].packet.productDetail.product.idProduct)",
+                productName: "\(self.packet[0].packet.productDetail.product.namaProduct)",
+                productDescription: "\(self.packet[0].packet.productDetail.product.deskripsiProduk)",
+                jenisPremi: "\(self.packet[0].packet.namaPacket)",
+                jangkaWaktu: "\(self.packet[0].jangkaWaktu)",
+                premi: "\(self.packet[0].premi)",
+                nilaiPertanggungan: "\(self.packet[0].tsi)"
+            )
+            let identitasPenanungVC = self.storyboard?.instantiateViewController(identifier: "IdentitasTertanggungdanPenerimaManfaatViewController") as! IdentitasTertanggungdanPenerimaManfaatViewController
+            identitasPenanungVC.penerimaManfaat = self.penerimaManfaat
+            self.navigationController?.pushViewController(identitasPenanungVC, animated: true)
+            
+        }
         
     }
     
@@ -78,7 +92,7 @@ class SyaratdanKetentuanViewController: UIViewController {
         detailSyaratdanKetentuanLabel.text = syaratKetentuan
     }
     
-  
+    
     
     
 }

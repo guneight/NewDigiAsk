@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     var iconClick = true
     var loginStatus : Int = 0
     
-    var loginResponse : LoginResponse?
+    var loginResponse : User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,19 +48,39 @@ class LoginViewController: UIViewController {
         belumPunyaAkunLabel.addGestureRecognizer(gesture)
         let tapDismissKeyBoard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapDismissKeyBoard)
- 
+        print("LoginViewController")
+        
         
     }
     
     @objc func loginAction(){
-        LoginRegister.shared.loginRequest(nomorOrEmail: nomorPonseLEmailTextField.text ?? "", password: passwordTextField.text ?? ""){(data) in
-            self.loginResponse = data
-            let verifikasiEmailVC = self.storyboard?.instantiateViewController(identifier: "VerifkasiEmailViewController") as! VerifkasiEmailViewController
-            verifikasiEmailVC.loginStatus = self.loginStatus
-            self.navigationController?.pushViewController(verifikasiEmailVC, animated: true)
-            print("loginResponse", self.loginResponse)
+        if (self.nomorPonseLEmailTextField.text?.isValidEmail == true && self.passwordTextField.text?.isEmpty == true) || self.nomorPonseLEmailTextField.text?.isNumber == true{
+            print("nomorPonseLEmailTextField.text= \(nomorPonseLEmailTextField.text)" ,passwordTextField.text)
+            LoginRegister.shared.loginRequest(nomorOrEmail: nomorPonseLEmailTextField.text ?? "", password: passwordTextField.text ?? ""){(data) in
+                
+                if data != nil {
+                    self.loginResponse = data
+                    print(self.loginResponse!)
+                    DispatchQueue.main.async {
+                        let homeVC = self.storyboard?.instantiateViewController(identifier: "HomeMenuViewController") as! HomeMenuViewController
+                        self.navigationController?.pushViewController(homeVC, animated: true)
+                    }
+                    
+                }else{
+                    print("Login Failed")
+                    let alertNoHp = UIAlertController(title: "Login Failed", message: "Email tidak ditemukan", preferredStyle: .alert)
+                    alertNoHp.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(alertNoHp, animated: true)
+                }
+            }
+        }else {
+            print("continueAction")
+            let alertNoHp = UIAlertController(title: "Nomor HP atau Email tidak valid", message: "Mohon periksa kembali nomor hp atau email Anda", preferredStyle: .alert)
+            alertNoHp.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alertNoHp, animated: true)
         }
     }
+    
     
     
     @objc func dismissKeyboard(){
@@ -85,24 +105,6 @@ class LoginViewController: UIViewController {
             underlinePassword.isHidden = true
         }
     }
-    
-    @objc func continueAction(){
-        if (nomorPonseLEmailTextField.text?.isValidEmail == true && passwordTextField.text != "") {
-            print("continueAction")
-            let verifikasiEmailVC = storyboard?.instantiateViewController(identifier: "VerifkasiEmailViewController") as! VerifkasiEmailViewController
-            verifikasiEmailVC.loginStatus = loginStatus
-            self.navigationController?.pushViewController(verifikasiEmailVC, animated: true)
-        }else if (nomorPonseLEmailTextField.text?.isNumber == true){
-            let verifikasiVC = storyboard?.instantiateViewController(identifier: "VerifikasiViewController") as!VerifikasiViewController
-            verifikasiVC.loginStatus = loginStatus
-            self.navigationController?.pushViewController(verifikasiVC, animated: true)
-        }else{
-            let alertNoHp = UIAlertController(title: "Nomor HP atau Email tidak valid", message: "Mohon periksa kembali nomor hp atau email Anda", preferredStyle: .alert)
-            alertNoHp.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alertNoHp, animated: true)
-        }
-    }
-    
     
     func daftarDisiniLink(){
         let text = (belumPunyaAkunLabel.text)!

@@ -26,7 +26,7 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130+customHeigthLabel
+        return 150+customHeigthLabel
     }
     
    
@@ -144,23 +144,25 @@ extension JenisProdukViewController : UITableViewDelegate, UITableViewDataSource
         UIHelper.makeView(view: jenisProdukView, leadingAnchor: produkBaseView.leadingAnchor, trailingAnchor: produkBaseView.trailingAnchor, topAnchor: produkBaseView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 60, corner: 20, heightAnchor: produkBaseView.frame.size.height, widthAnchor: 0)
         jenisProdukView.backgroundColor = .white
 
-        jenisProdukTable.backgroundColor = .white
+
         jenisProdukTable.register(jenisProdukTableViewCell.self, forCellReuseIdentifier: "cellJenisProduk")
         jenisProdukTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         jenisProdukTable.showsVerticalScrollIndicator = false
 
         jenisProdukView.addSubview(namaProdukLabel)
-        UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: jenisProdukView.leadingAnchor, trailingAnchor: jenisProdukView.trailingAnchor, topAnchor: jenisProdukView.topAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, heightAnchor: 17, widthAnchor: 0)
+        UIHelper.makeLabel(label: namaProdukLabel, corner: 0, allignment: .left, leadingAnchor: jenisProdukView.leadingAnchor, trailingAnchor: jenisProdukView.trailingAnchor, topAnchor: jenisProdukView.topAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, heightAnchor: 50, widthAnchor: 0)
         UIHelper.setTextLabel(label: namaProdukLabel, fontName: fontNameHelper.NunitoBold, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0)
+        namaProdukLabel.backgroundColor = .white
 
         jenisProdukView.addSubview(jenisProdukTable)
         jenisProdukTable.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            jenisProdukTable.leadingAnchor.constraint(equalTo: jenisProdukView.leadingAnchor, constant: 0),
-            jenisProdukTable.trailingAnchor.constraint(equalTo: jenisProdukView.trailingAnchor, constant: 0),
-            jenisProdukTable.topAnchor.constraint(equalTo: namaProdukLabel.bottomAnchor, constant: 20),
+            jenisProdukTable.leadingAnchor.constraint(equalTo: jenisProdukView.leadingAnchor, constant: 24),
+            jenisProdukTable.trailingAnchor.constraint(equalTo: jenisProdukView.trailingAnchor, constant: -24),
+            jenisProdukTable.topAnchor.constraint(equalTo: namaProdukLabel.bottomAnchor, constant: 0),
             jenisProdukTable.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+        jenisProdukTable.backgroundColor = .white
     }
     
     func setupNavBarJenisProdukDetail(){
@@ -202,12 +204,13 @@ class jenisProdukTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             jenisProdukCellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             jenisProdukCellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            jenisProdukCellView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            jenisProdukCellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            jenisProdukCellView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
+            jenisProdukCellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             ])
         jenisProdukCellView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
         jenisProdukCellView.isUserInteractionEnabled = true
-        
+        jenisProdukCellView.layer.masksToBounds = true
+        jenisProdukCellView.layer.cornerRadius = 10
         self.contentView.addSubview(iconJenisProdukImage)
         UIHelper.makeImageView(imageView: iconJenisProdukImage, leadingAnchor: contentView.leadingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 25, topConstant: 10, corner: 10, heightAnchor: 69)
         iconJenisProdukImage.widthAnchor.constraint(equalToConstant: 69).isActive = true
@@ -247,7 +250,7 @@ class jenisProdukTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             deskripsiJenisProdukLabel.leadingAnchor.constraint(equalTo: jenisProdukCellView.leadingAnchor, constant: 60),
             deskripsiJenisProdukLabel.trailingAnchor.constraint(equalTo: jenisProdukCellView.trailingAnchor, constant: -23),
-            deskripsiJenisProdukLabel.topAnchor.constraint(equalTo: lineHargaProduk.bottomAnchor, constant: 18),
+            deskripsiJenisProdukLabel.topAnchor.constraint(equalTo: lineHargaProduk.bottomAnchor, constant: 0),
             deskripsiJenisProdukLabel.bottomAnchor.constraint(equalTo: jenisProdukCellView.bottomAnchor)
         ])
         UIHelper.setTextLabel(label: deskripsiJenisProdukLabel, fontName: fontNameHelper.NunitoRegular, fontColor: #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), weight: .bold, fontSize: 12, text: "", kerning: 0)

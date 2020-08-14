@@ -13,8 +13,6 @@ extension VerifikasiKTPViewController:  UIImagePickerControllerDelegate, UINavig
         photoKTPImage.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewCamera))
         photoKTPImage.addGestureRecognizer(tapGesture)
-        
-       
     }
     
     @objc func viewCamera(){
@@ -350,7 +348,7 @@ class SegmentedController : UIControl{
     
     func displayNewSelectedIndex(){
         let controller = VerifikasiKTPViewController()
-        var label = labels[selectedIndex]
+        let label = labels[selectedIndex]
         self.thumbView.frame = label.frame
         print("selectedIndex", selectedIndex)
        
@@ -358,13 +356,13 @@ class SegmentedController : UIControl{
         
         for index in 0...labels.count-1{
             if index == selectedIndex{
-                var label = labels[selectedIndex]
+                let label = labels[selectedIndex]
                 label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 label.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
                 
             
             }else{
-                var label = labels[index]
+                let label = labels[index]
                 label.textColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
                 label.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             }

@@ -11,7 +11,7 @@ import UIKit
 extension DetailBayarViewController{
     
     func setupUI(){
-        let height = view.frame.size.height
+//        let height = view.frame.size.height
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         view.addSubview(produkBaseView)
         produkBaseView.translatesAutoresizingMaskIntoConstraints = false

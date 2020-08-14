@@ -6,11 +6,11 @@
 //  Copyright © 2020 Gun Eight . All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct LoginRegister {
     static let shared = LoginRegister()
-    func loginRequest(nomorOrEmail : String, password: String, completion: @escaping (LoginResponse) -> ()){
+    func loginRequest(nomorOrEmail : String, password: String, completion: @escaping (User) -> ()){
         let baseUrl =  URL(string: "http://10.220.20.3:8080/api/auth/signin")
         guard let requestUrl = baseUrl else { fatalError() }
         var request = URLRequest(url: requestUrl)
@@ -32,13 +32,15 @@ struct LoginRegister {
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print( error.localizedDescription)
+                var user : User?
+                completion(user!)
                 return
             }
             
             guard let data = data else {return}
             
             do {
-                let json = try JSONDecoder().decode(LoginResponse.self, from: data)
+                let json = try JSONDecoder().decode(User.self, from: data)
                 DispatchQueue.main.async {
                     completion(json)
                 }

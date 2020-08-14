@@ -129,7 +129,11 @@ extension SyaratdanKetentuanViewController {
         SyaratDanKetentuanScrollView.layoutIfNeeded()
         
         syaratDanKetentuanView.addSubview(setujuButton)
-        UIHelper.makeButton(button: setujuButton, leadingAnchor: syaratDanKetentuanView.leadingAnchor, trailingAnchor: syaratDanKetentuanView.trailingAnchor, topAnchor:view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -20, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        if device == "iPhone"{
+            UIHelper.makeButton(button: setujuButton, leadingAnchor: syaratDanKetentuanView.leadingAnchor, trailingAnchor: syaratDanKetentuanView.trailingAnchor, topAnchor:view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -20, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        }else{
+            UIHelper.makeButton(button: setujuButton, leadingAnchor: syaratDanKetentuanView.leadingAnchor, trailingAnchor: syaratDanKetentuanView.trailingAnchor, topAnchor:view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -60, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        }
         setujuButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         setujuButton.setTitle("SETUJU", for: .normal)
         

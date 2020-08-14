@@ -14,31 +14,19 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource, S
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("productInCart.count table :", productCart)
-        return 10
+       
+        return productInCart.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produkKeranjangCell", for: indexPath)  as! daftarProdukKeranjangTableViewCells
-        cell.isSkeletonable = true
         cell.selectionStyle = .none
         cell.layoutIfNeeded()
-//        cell.namaProdukLabel.showAnimatedGradientSkeleton()
-//        cell.deskripsiManfaatLabel.showAnimatedGradientSkeleton()
-//        cell.iconProdukImage.showAnimatedGradientSkeleton()
-//        cell.nominalLabel.showAnimatedGradientSkeleton()
-//        cell.checkCellButton.showAnimatedSkeleton()
-//        cell.trushOptioButton.showAnimatedSkeleton()
-//        cell.rightArrowButton.showAnimatedSkeleton()
-//        cell.iconProdukImage.image = UIImage(named: "\(productInCart[indexPath.row].namaProduct)")
-//        cell.namaProdukLabel.text = productInCart[indexPath.row].namaProduct
-//        cell.deskripsiManfaatLabel.text = deskripsiProduk[indexPath.row]
-//        cell.nominalLabel.text = String("Rp  \(productInCart[indexPath.row].premi)")
         
         cell.rightArrowButton.addTarget(self, action: #selector(rightButtonAction(sender:)), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(namaProdukAction(sender:)))
         cell.namaProdukLabel.addGestureRecognizer(tapGesture)
-       
+        
         if selectRows.contains(indexPath){
             cell.checkCellButton.setImage(UIImage(named: "checkBoxIcon"), for: .normal)
             cell.checkCellButton.layer.borderColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
@@ -52,7 +40,8 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource, S
         
         cell.trushOptioButton.tag = indexPath.row
         cell.trushOptioButton.addTarget(self, action: #selector(deleteSelectProduk(sender:)), for: .touchUpInside)
-    
+        cell.showAnimation()
+//        cell.hideAnimation()
         return cell
     }
     
@@ -88,13 +77,13 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource, S
         produkBaseView.layoutIfNeeded()
         
         produkBaseView.addSubview(lineView)
-           lineView.translatesAutoresizingMaskIntoConstraints = false
-             NSLayoutConstraint.activate([
-                 lineView.widthAnchor.constraint(equalToConstant: 280),
-                 lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                 lineView.heightAnchor.constraint(equalToConstant: 2),
-                 lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
-             ])
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            lineView.widthAnchor.constraint(equalToConstant: 280),
+            lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            lineView.heightAnchor.constraint(equalToConstant: 2),
+            lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+        ])
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
@@ -203,8 +192,13 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource, S
         daftarProdukKeranjangTable.layoutIfNeeded()
         daftarProdukKeranjangTable.allowsSelection = false
         keranjangBaseView.addSubview(checkOutButton)
-        UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -20, corner: 24, heightAnchor: 48, widthAnchor: 0)
-       
+        if device == "iPhone"{
+            UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -20, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        }else{
+            UIHelper.makeButton(button: checkOutButton, leadingAnchor: keranjangBaseView.leadingAnchor, trailingAnchor: keranjangBaseView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -60, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        }
+        
+        
         checkOutButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         checkOutButton.setTitle("CHECKOUT", for: .normal)
         
@@ -219,8 +213,8 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource, S
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
-               UIHelper.setTextLabel(label: titleLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "IDENTITAS", kerning: 0)
-               navigationItem.titleView = titleLabel
+        UIHelper.setTextLabel(label: titleLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "IDENTITAS", kerning: 0)
+        navigationItem.titleView = titleLabel
         
     }
     
@@ -246,21 +240,21 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource, S
     
     func getAllIndexPath()->[IndexPath]{
         var indexPaths : [IndexPath] = []
-          if pilihSemuaProdukButton.tag == 0{
+        if pilihSemuaProdukButton.tag == 0{
             for j in 0..<daftarProdukKeranjangTable.numberOfRows(inSection: 0){
                 indexPaths.append(IndexPath(row: j, section: 0))
                 pilihSemuaProdukButton.setImage(UIImage(named: "checkBoxIcon"), for: .normal)
                 pilihSemuaProdukButton.layer.borderColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-               
+                
             }
-             pilihSemuaProdukButton.tag += 1
-          }else {
-                indexPaths.removeAll()
-                pilihSemuaProdukButton.setImage(UIImage(named: "checkBoxDisableIcon"), for: .normal)
-                pilihSemuaProdukButton.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-                pilihSemuaProdukButton.tag = 0
-            }
-            
+            pilihSemuaProdukButton.tag += 1
+        }else {
+            indexPaths.removeAll()
+            pilihSemuaProdukButton.setImage(UIImage(named: "checkBoxDisableIcon"), for: .normal)
+            pilihSemuaProdukButton.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            pilihSemuaProdukButton.tag = 0
+        }
+        
         return indexPaths
     }
     
@@ -281,13 +275,13 @@ extension KeranjangViewController: UITableViewDelegate, UITableViewDataSource, S
     @objc func deleteSelectProduk(sender : UIButton){
         let selectedIndexPath = IndexPath(row: sender.tag, section: 0)
         let alertDeleteProduct = UIAlertController(title: "Hapus Produk", message: "Apakah Anda yakin untuk menghapus produk ini ?", preferredStyle: .alert)
-
+        
         alertDeleteProduct.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: {(action)-> Void in
             self.productInCart.remove(at: selectedIndexPath.row)
             self.daftarProdukKeranjangTable.reloadData()
-          
+            
         }))
-         alertDeleteProduct.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertDeleteProduct.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alertDeleteProduct, animated: true)
     }
     
@@ -315,14 +309,14 @@ class daftarProdukKeranjangTableViewCells: UITableViewCell  {
         checkCellButton.isUserInteractionEnabled = true
         checkCellButton.contentMode = .center
         checkCellButton.isSkeletonable = true
-       
+        
         
         containerView.addSubview(namaProdukLabel)
         UIHelper.makeSmalllabel(smallLabel: namaProdukLabel, leadingAnchor: checkCellButton.trailingAnchor, topAnchor: containerView.topAnchor, leadingConstant: 12, topConstant: 13, corner: 0, heightAnchor: 18, widthtAnchor: containerView.frame.size.width)
         UIHelper.setTextLabel(label: namaProdukLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 12, text: " ", kerning: 0.12)
         namaProdukLabel.isUserInteractionEnabled = true
         namaProdukLabel.isSkeletonable = true
-       
+        
         containerView.addSubview(rightArrowButton)
         rightArrowButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -344,7 +338,7 @@ class daftarProdukKeranjangTableViewCells: UITableViewCell  {
         iconProdukImage.backgroundColor = #colorLiteral(red: 0.8862745098, green: 0.8862745098, blue: 0.8862745098, alpha: 1)
         iconProdukImage.contentMode = .center
         iconProdukImage.isSkeletonable = true
-   
+        
         containerView.addSubview(deskripsiManfaatLabel)
         UIHelper.makeLabel(label: deskripsiManfaatLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerView.trailingAnchor, topAnchor: underlineNamaProduk.bottomAnchor, leadingConstant: 12, trailingConstant: -22, topConstant: 8.5, heightAnchor: 35, widthAnchor: 0)
         UIHelper.setTextLabel(label: deskripsiManfaatLabel, fontName: "AvantGarde Bk BT", fontColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), weight: .bold, fontSize: 10, text: " ", kerning: 0.5)
@@ -355,18 +349,22 @@ class daftarProdukKeranjangTableViewCells: UITableViewCell  {
         UIHelper.makeLabel(label: nominalLabel, corner: 0, allignment: .left, leadingAnchor: iconProdukImage.trailingAnchor, trailingAnchor: containerView.trailingAnchor, topAnchor: deskripsiManfaatLabel.bottomAnchor, leadingConstant: 12, trailingConstant: -22, topConstant: 5, heightAnchor: 20, widthAnchor: 0)
         UIHelper.setTextLabel(label: nominalLabel, fontName: "AvantGardeITCbyBT-Demi", fontColor: #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1), weight: .bold, fontSize: 14, text: " ", kerning: 0.12)
         nominalLabel.isSkeletonable = true
-    
+        
         containerView.addSubview(trushOptioButton)
         UIHelper.makeSmallButton(smallButton: trushOptioButton, leadingAnchor: containerView.trailingAnchor, topAnchor: nominalLabel.bottomAnchor, leadingConstant: -40, topConstant: 3, corner: 0, heightAnchor: 15, widthtAnchor: 15, borderWidth: 0, colorBorder: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)  )
         trushOptioButton.setImage(UIImage(named: "trashicon"), for: .normal)
         trushOptioButton.isSkeletonable = true
-        namaProdukLabel.showAnimatedGradientSkeleton()
-        deskripsiManfaatLabel.showAnimatedGradientSkeleton()
-        iconProdukImage.showAnimatedGradientSkeleton()
-        nominalLabel.showAnimatedGradientSkeleton()
-        checkCellButton.showAnimatedSkeleton()
-        trushOptioButton.showAnimatedSkeleton()
-        rightArrowButton.showAnimatedSkeleton()
+    }
+    func showAnimation(){
+        [namaProdukLabel, deskripsiManfaatLabel, iconProdukImage, nominalLabel, checkCellButton, trushOptioButton, rightArrowButton].forEach{
+            $0?.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    func hideAnimation(){
+        [namaProdukLabel,deskripsiManfaatLabel, iconProdukImage, nominalLabel, checkCellButton, trushOptioButton, rightArrowButton].forEach{
+            $0?.hideSkeleton()
+        }
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)

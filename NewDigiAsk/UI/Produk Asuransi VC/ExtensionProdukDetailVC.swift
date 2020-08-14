@@ -132,8 +132,11 @@ extension ProdukDetailViewController {
         produkDetailScrollView.layoutIfNeeded()
 
         produkView.addSubview(pilihProdukButton)
+        if device == "iPhone"{
         UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -20, corner: 24, heightAnchor: 48, widthAnchor: 0)
-        
+        }else if device == "iPad"{
+            UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: -60, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        }
 //        let index =  indexProdukSelect
 //               if index == 0  {
                    pilihProdukButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)

@@ -67,7 +67,7 @@ class JenisProdukViewController: UIViewController {
         DispatchQueue.main.async {
             FetchAllProduct.share.getDetailProduct(id_packet: self.productId ){ (data) in
                 self.productDetail = data
-                self.namaProdukLabel.text = self.productDetail[0].productDetail.product.namaProduct
+                self.namaProdukLabel.text = "         \(self.productDetail[0].productDetail.product.namaProduct)"
                 self.heightDeskripsiLabel(text: self.productDetail[0].deskripsi2)
                 self.jenisProdukTable.reloadData()
             }

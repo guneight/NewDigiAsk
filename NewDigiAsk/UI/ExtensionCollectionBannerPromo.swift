@@ -9,7 +9,7 @@
 import UIKit
 let heightScreenIPhone = 0
 let heightScreenIPad = 0
-
+var device : String = ""
 let containerCollectionView : UIView = {
     let cv = UIView()
     cv.translatesAutoresizingMaskIntoConstraints = false

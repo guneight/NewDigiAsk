@@ -46,7 +46,7 @@ class VerifikasiKTPViewController: UIViewController {
         alertNomorKTP()
         checkStep()
         self.view.endEditing(true)
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         // Do any additional setup after loading the view.

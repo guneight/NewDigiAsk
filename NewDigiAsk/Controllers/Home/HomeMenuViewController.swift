@@ -44,9 +44,11 @@ class HomeMenuViewController: UIViewController,UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         if UIDevice.current.userInterfaceIdiom == .pad {
+            device = "iPad"
             print("iPad")
-        }else{
-            print("not iPad")
+        }else if UIDevice.current.userInterfaceIdiom == .phone{
+            device = "iPhone"
+            print("iPhone")
         }
         collectionViewPromo.delegate = self
         collectionViewPromo.dataSource = self

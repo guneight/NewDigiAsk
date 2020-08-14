@@ -19,13 +19,11 @@ struct ProductDetails: Decodable {
     let deskripsi2: String
 }
 
-// MARK: - ProductDetail
 struct productDetail: Decodable {
     let idProductDetail: Int
     let product: product
 }
 
-// MARK: - Product
 struct product: Decodable {
     let idProduct: Int
     let namaProduct: String
@@ -71,3 +69,6 @@ struct ProductinCart: Decodable {
     let namaProduct : String
     let premi : Int
 }
+
+//"noTelpOrEmail": "izannuary@gmail.com",
+//"password": "123456789"

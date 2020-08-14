@@ -37,6 +37,7 @@ class JenisProdukDetailViewController: UIViewController {
     let deskripsiJenisProdukDetail = UILabel()
     let daftarPremiTable = UITableView()
     var packet = [DetailJenisProduct]()
+    var cartmodel = [CartModel]()
     var syaratKetentuan = ""
     var idDetailPacket = 0
     var heightDeskLabel : CGFloat = 0

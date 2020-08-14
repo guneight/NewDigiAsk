@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CheckOutEntity" representedClassName=".CheckOutEntity" syncable="YES">
+        <attribute name="idProduct" optional="YES" attributeType="String"/>
+        <attribute name="jangkaWaktu" optional="YES" attributeType="String"/>
+        <attribute name="jenisPremi" optional="YES" attributeType="String"/>
+        <attribute name="nilaiPertanggungan" optional="YES" attributeType="String"/>
+        <attribute name="premi" optional="YES" attributeType="String"/>
+        <attribute name="productDescription" optional="YES" attributeType="String"/>
+        <attribute name="productName" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CheckOutEntity" positionX="-63" positionY="-18" width="128" height="148"/>
+    </elements>
+</model>

@@ -26,7 +26,6 @@
 		67104EC023FE35140035343F /* VerifikasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67104EBF23FE35140035343F /* VerifikasiViewController.swift */; };
 		67104EC223FE6FCD0035343F /* InputKodeVerifikasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67104EC123FE6FCD0035343F /* InputKodeVerifikasiViewController.swift */; };
 		6710AC8224894AC30040E2AC /* CameraKTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6710AC8124894AC30040E2AC /* CameraKTPViewController.swift */; };
-		6711EF3924DA599500413C09 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6711EF3824DA599500413C09 /* Constans.swift */; };
 		6711EF3C24DA5A2400413C09 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6711EF3B24DA5A2400413C09 /* APIProtocol.swift */; };
 		6728574324109F24005E3B6D /* KlaimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728574224109F24005E3B6D /* KlaimViewController.swift */; };
 		6728574524109F3A005E3B6D /* ExtensionKlaimVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728574424109F3A005E3B6D /* ExtensionKlaimVC.swift */; };
@@ -57,6 +56,7 @@
 		675ECFB124C5812C003BD5BB /* APILogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675ECFB024C5812C003BD5BB /* APILogin.swift */; };
 		67616DD9245B316A005E1346 /* LupaPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67616DD8245B316A005E1346 /* LupaPasswordViewController.swift */; };
 		67616DDB245B3189005E1346 /* ExtensionLupaPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67616DDA245B3189005E1346 /* ExtensionLupaPasswordVC.swift */; };
+		676335CC24E27DC2001E84CC /* CheckOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676335CB24E27DC2001E84CC /* CheckOutModel.swift */; };
 		676B7C55240CA762003D0FB1 /* CheckOutKeranjangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B7C54240CA762003D0FB1 /* CheckOutKeranjangViewController.swift */; };
 		676B7C57240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B7C56240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift */; };
 		677EFC1C2411EE0600656CE4 /* MonitoringKlaimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677EFC1B2411EE0600656CE4 /* MonitoringKlaimViewController.swift */; };
@@ -100,6 +100,8 @@
 		67B0AB08243E274D009AC66F /* ExtensionHubungiKamiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0AB07243E274D009AC66F /* ExtensionHubungiKamiVC.swift */; };
 		67B0AB0A243E27B4009AC66F /* DetailHubungiKamiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0AB09243E27B4009AC66F /* DetailHubungiKamiViewController.swift */; };
 		67B0AB0C243E27CA009AC66F /* ExtensionDetailHubungiKamiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0AB0B243E27CA009AC66F /* ExtensionDetailHubungiKamiVC.swift */; };
+		67B2821B24E5327900C3808E /* CheckOutCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 676335C824E27ACF001E84CC /* CheckOutCoreData.xcdatamodeld */; };
+		67B2821D24E54F3100C3808E /* CartNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B2821C24E54F3100C3808E /* CartNetwork.swift */; };
 		67BBA209246A8BF0000EDABA /* UbahNoHPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBA208246A8BF0000EDABA /* UbahNoHPViewController.swift */; };
 		67BBA20B246A8C02000EDABA /* UbahEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBA20A246A8C02000EDABA /* UbahEmailViewController.swift */; };
 		67BBA20E246A8C36000EDABA /* ExtensionUbahNoHPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBA20D246A8C36000EDABA /* ExtensionUbahNoHPVC.swift */; };
@@ -195,7 +197,6 @@
 		67104EBF23FE35140035343F /* VerifikasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikasiViewController.swift; sourceTree = "<group>"; };
 		67104EC123FE6FCD0035343F /* InputKodeVerifikasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputKodeVerifikasiViewController.swift; sourceTree = "<group>"; };
 		6710AC8124894AC30040E2AC /* CameraKTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraKTPViewController.swift; sourceTree = "<group>"; };
-		6711EF3824DA599500413C09 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		6711EF3B24DA5A2400413C09 /* APIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
 		6728574224109F24005E3B6D /* KlaimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlaimViewController.swift; sourceTree = "<group>"; };
 		6728574424109F3A005E3B6D /* ExtensionKlaimVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionKlaimVC.swift; sourceTree = "<group>"; };
@@ -236,6 +237,8 @@
 		675ECFB024C5812C003BD5BB /* APILogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogin.swift; sourceTree = "<group>"; };
 		67616DD8245B316A005E1346 /* LupaPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LupaPasswordViewController.swift; sourceTree = "<group>"; };
 		67616DDA245B3189005E1346 /* ExtensionLupaPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionLupaPasswordVC.swift; sourceTree = "<group>"; };
+		676335C924E27ACF001E84CC /* CheckOutCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CheckOutCoreData.xcdatamodel; sourceTree = "<group>"; };
+		676335CB24E27DC2001E84CC /* CheckOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutModel.swift; sourceTree = "<group>"; };
 		676B7C54240CA762003D0FB1 /* CheckOutKeranjangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutKeranjangViewController.swift; sourceTree = "<group>"; };
 		676B7C56240CA7B6003D0FB1 /* ExtensionCheckOutKeranjangVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCheckOutKeranjangVC.swift; sourceTree = "<group>"; };
 		677EFC1B2411EE0600656CE4 /* MonitoringKlaimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringKlaimViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +275,7 @@
 		67B0AB07243E274D009AC66F /* ExtensionHubungiKamiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHubungiKamiVC.swift; sourceTree = "<group>"; };
 		67B0AB09243E27B4009AC66F /* DetailHubungiKamiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHubungiKamiViewController.swift; sourceTree = "<group>"; };
 		67B0AB0B243E27CA009AC66F /* ExtensionDetailHubungiKamiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDetailHubungiKamiVC.swift; sourceTree = "<group>"; };
+		67B2821C24E54F3100C3808E /* CartNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartNetwork.swift; sourceTree = "<group>"; };
 		67BBA208246A8BF0000EDABA /* UbahNoHPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbahNoHPViewController.swift; sourceTree = "<group>"; };
 		67BBA20A246A8C02000EDABA /* UbahEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbahEmailViewController.swift; sourceTree = "<group>"; };
 		67BBA20D246A8C36000EDABA /* ExtensionUbahNoHPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUbahNoHPVC.swift; sourceTree = "<group>"; };
@@ -401,6 +405,7 @@
 				6706A99324ADC6A2003F0D4A /* ProductModel.swift */,
 				67F6D42F24C582D600FCF777 /* LoginRegisterModel.swift */,
 				67E5BA1C24DC0EFD0082E099 /* DetailJenisProductModel.swift */,
+				676335CB24E27DC2001E84CC /* CheckOutModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -417,7 +422,7 @@
 			children = (
 				6706A99624ADCA3F003F0D4A /* APIProduct.swift */,
 				675ECFB024C5812C003BD5BB /* APILogin.swift */,
-				6711EF3824DA599500413C09 /* Constans.swift */,
+				67B2821C24E54F3100C3808E /* CartNetwork.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -582,6 +587,7 @@
 				6751E13923EC06B5008ACB56 /* LaunchScreen.storyboard */,
 				6751E13C23EC06B5008ACB56 /* Info.plist */,
 				6751E13423EC06B4008ACB56 /* NewDigiAsk.xcdatamodeld */,
+				676335C824E27ACF001E84CC /* CheckOutCoreData.xcdatamodeld */,
 			);
 			path = NewDigiAsk;
 			sourceTree = "<group>";
@@ -1118,6 +1124,7 @@
 				67F06E08241A266600B277B2 /* ExtensionProsesKlaimVC.swift in Sources */,
 				67E5BA1D24DC0EFD0082E099 /* DetailJenisProductModel.swift in Sources */,
 				6700E98D2452C7C40097AC47 /* InputKodeVerifikasiEmailViewController.swift in Sources */,
+				67B2821D24E54F3100C3808E /* CartNetwork.swift in Sources */,
 				67D631962420B08B00197A39 /* ExtensiInfoVC.swift in Sources */,
 				67CF8B9E24066EF70032DBDE /* JenisProdukDetailViewController.swift in Sources */,
 				672857492410AA10005E3B6D /* ExtensionPolisVC.swift in Sources */,
@@ -1156,6 +1163,7 @@
 				6710AC8224894AC30040E2AC /* CameraKTPViewController.swift in Sources */,
 				67F06E0E241B454200B277B2 /* SuratBuktiKematianViewController.swift in Sources */,
 				67924D92240CDCE10099F26F /* DetailBayarViewController.swift in Sources */,
+				676335CC24E27DC2001E84CC /* CheckOutModel.swift in Sources */,
 				67A494B82451FD5600F7BFAD /* LengkapiDataEmailViewController.swift in Sources */,
 				67288E8923FBA19F002E257C /* ExtensionHomeMenu.swift in Sources */,
 				67616DDB245B3189005E1346 /* ExtensionLupaPasswordVC.swift in Sources */,
@@ -1165,6 +1173,7 @@
 				679EAFA7246B04AC00021248 /* SelesaiBayarKartuKreditVC.swift in Sources */,
 				67F06E12241B494400B277B2 /* KartuKeluargaViewController.swift in Sources */,
 				6702D64B2455AF7C0022325E /* ExtensionBayarCartVC.swift in Sources */,
+				67B2821B24E5327900C3808E /* CheckOutCoreData.xcdatamodeld in Sources */,
 				67F06E18241B5CAB00B277B2 /* ExtensionSubmitKlaimVC.swift in Sources */,
 				6702D6512455EFD00022325E /* FilterPolisViewController.swift in Sources */,
 				67EE59172408F05600404C6E /* KeranjangViewController.swift in Sources */,
@@ -1204,7 +1213,6 @@
 				67B0AB02243E2101009AC66F /* EkstensionDetailNotifikasiVC.swift in Sources */,
 				67E60CF624440976003E22A6 /* ExtensionDaftarsVC.swift in Sources */,
 				6742325D242C4BB300A07141 /* DaftarTertanggungViewController.swift in Sources */,
-				6711EF3924DA599500413C09 /* Constans.swift in Sources */,
 				6702D6552455F1B30022325E /* ExtensionFilterPolisVC.swift in Sources */,
 				676B7C55240CA762003D0FB1 /* CheckOutKeranjangViewController.swift in Sources */,
 				67D97650242A0F5A001BA581 /* ListTertanggungViewController.swift in Sources */,
@@ -1424,6 +1432,16 @@
 			);
 			currentVersion = 6751E13523EC06B4008ACB56 /* NewDigiAsk.xcdatamodel */;
 			path = NewDigiAsk.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		676335C824E27ACF001E84CC /* CheckOutCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				676335C924E27ACF001E84CC /* CheckOutCoreData.xcdatamodel */,
+			);
+			currentVersion = 676335C924E27ACF001E84CC /* CheckOutCoreData.xcdatamodel */;
+			path = CheckOutCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

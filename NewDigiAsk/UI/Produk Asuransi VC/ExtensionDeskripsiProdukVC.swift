@@ -125,9 +125,15 @@ extension DeskripsiProdukViewController{
         produkDetailScrollView.layoutIfNeeded()
         
         produkView.addSubview(pilihProdukButton)
-        UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: produkDetailScrollView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        if device == "iPhone" {
+            UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: produkDetailScrollView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 20, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        }else if device == "iPad"{
+            UIHelper.makeButton(button: pilihProdukButton, leadingAnchor: produkView.leadingAnchor, trailingAnchor: produkView.trailingAnchor, topAnchor: produkDetailScrollView.bottomAnchor, leadingConstant: 24, trailingConstant: -24, topConstant: 48, corner: 24, heightAnchor: 48, widthAnchor: 0)
+        }
+        
         let descriptionFont = UIFont(name: "Arial", size: 10)?.fontDescriptor.withSymbolicTraits(UIFontDescriptor.SymbolicTraits.traitBold)
         pilihProdukButton.titleLabel?.font = UIFont(descriptor: descriptionFont!, size: 16)
+        
         
         let index =  indexProdukSelect
         if index == 0 {

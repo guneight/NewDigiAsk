@@ -22,8 +22,8 @@ extension NotifikasiViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 190
+  
+            return view.frame.size.width/2.5
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -148,7 +148,15 @@ class notifikasiListTableViewCell: UITableViewCell{
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(notifikasiImage)
-        UIHelper.makeImageView(imageView: notifikasiImage, leadingAnchor: contentView.leadingAnchor, topAnchor: contentView.topAnchor, leadingConstant: 24, topConstant: 10, corner: 10, heightAnchor: 100)
+        notifikasiImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            notifikasiImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            notifikasiImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            notifikasiImage.topAnchor.constraint(equalTo: topAnchor),
+            notifikasiImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -72)
+        
+        ])
+        
         notifikasiImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24).isActive = true
         notifikasiImage.contentMode = .scaleAspectFit
         notifikasiImage.backgroundColor = .gray

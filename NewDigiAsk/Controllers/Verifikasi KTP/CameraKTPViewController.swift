@@ -77,7 +77,7 @@ class CameraKTPViewController: UIViewController {
     }
     
     func setupLivePreview() {
-        let height = self.view.frame.size.height
+//        let height = self.view.frame.size.height
         let width = self.view.frame.size.width
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         videoPreviewLayer.videoGravity = .resizeAspectFill
@@ -188,9 +188,9 @@ extension CameraKTPViewController : AVCapturePhotoCaptureDelegate{
             else { return }
         
         let image = UIImage(data: imageData)
-        let imgData = NSData(data: (image?.jpegData(compressionQuality: 1))!)
-        var imageSize: Int = imageData.count
-        print("size of image in KB: %f ", Double(imageSize) / 1000.0)
+//        let imgData = NSData(data: (image?.jpegData(compressionQuality: 1))!)
+//        var imageSize: Int = imageData.count
+//        print("size of image in KB: %f ", Double(imageSize) / 1000.0)
         captureImageView.image = image
         
     }

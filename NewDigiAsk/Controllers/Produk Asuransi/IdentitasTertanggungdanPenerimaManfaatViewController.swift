@@ -119,7 +119,7 @@ class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController, UI
             cell.namaIdentitasTertanggunglabel.text = penerimaManfaat?.daftarTertanggung[indexPath.row].nama
             cell.backgroundColor = .white
             cell.cellAction = {[weak self] in
-                guard let strongSelf = self  else {return}
+                guard self != nil  else {return}
                 self!.namaLengkapTextField.text = self?.penerimaManfaat?.daftarTertanggung[indexPath.row].nama
                 self!.nomorKTPTextField.text = self?.penerimaManfaat?.daftarTertanggung[indexPath.row].noKTP
                 self!.emailTextField.text = self?.penerimaManfaat?.daftarTertanggung[indexPath.row].email
@@ -136,7 +136,7 @@ class IdentitasTertanggungdanPenerimaManfaatViewController: UIViewController, UI
             cell.backgroundColor = .white
 
             cell.cellAction = {[weak self] in
-                guard let strongSelf = self  else {return}
+                guard self != nil  else {return}
                 self!.namaLengkapPenerimaManfaatTextField.text = self?.penerimaManfaat?.penerimaManfaat[indexPath.row].nama
                 self!.nomorKTPPenerimaManfaatTextField.text = self?.penerimaManfaat?.penerimaManfaat[indexPath.row].noKTP
                 self!.emailPenerimaManfaatTextField.text = self?.penerimaManfaat?.penerimaManfaat[indexPath.row].email

@@ -35,9 +35,14 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let SyaratdanKetentuanVC = self.storyboard?.instantiateViewController(identifier: "SyaratdanKetentuanViewController") as! SyaratdanKetentuanViewController
-        SyaratdanKetentuanVC.syaratKetentuan = packet[indexPath.row].packet.productDetail.product.syaratKetentuan
-        self.navigationController?.pushViewController(SyaratdanKetentuanVC, animated: true)
+        let packetSelect = packet[indexPath.row]
+        DispatchQueue.main.async {
+            let SyaratdanKetentuanVC = self.storyboard?.instantiateViewController(identifier: "SyaratdanKetentuanViewController") as! SyaratdanKetentuanViewController
+            SyaratdanKetentuanVC.packet.append(packetSelect)
+            SyaratdanKetentuanVC.syaratKetentuan = self.packet[indexPath.row].packet.productDetail.product.syaratKetentuan
+            self.navigationController?.pushViewController(SyaratdanKetentuanVC, animated: true)
+            
+        }
         
     }
     
@@ -61,12 +66,12 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         
         produkBaseView.addSubview(lineView)
         lineView.translatesAutoresizingMaskIntoConstraints = false
-             NSLayoutConstraint.activate([
-                 lineView.widthAnchor.constraint(equalToConstant: 280),
-                 lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                 lineView.heightAnchor.constraint(equalToConstant: 2),
-                 lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
-             ])
+        NSLayoutConstraint.activate([
+            lineView.widthAnchor.constraint(equalToConstant: 280),
+            lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            lineView.heightAnchor.constraint(equalToConstant: 2),
+            lineView.topAnchor.constraint(equalTo: produkBaseView.topAnchor, constant: 32)
+        ])
         lineView.backgroundColor = #colorLiteral(red: 0.6941176471, green: 0.6941176471, blue: 0.6941176471, alpha: 1)
         
         prosesStackView.translatesAutoresizingMaskIntoConstraints =  false
@@ -140,7 +145,7 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         completeImage.layer.cornerRadius = 17
         completeImage.image = UIImage(named: "checkfinishIcon")
         completeImage.contentMode = .center
-      
+        
         daftarPremiTable.register(JenisProdukDetailTableViewCell.self, forCellReuseIdentifier: "cellJenisProdukDetail")
         daftarPremiTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         daftarPremiTable.showsVerticalScrollIndicator = false
@@ -201,9 +206,9 @@ extension JenisProdukDetailViewController : UITableViewDelegate, UITableViewData
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2196078431, blue: 0.3725490196, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
-               UIHelper.setTextLabel(label: titleLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "PRODUK", kerning: 0)
-               navigationItem.titleView = titleLabel
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+        UIHelper.setTextLabel(label: titleLabel, fontName: fontNameHelper.ArialBoldMT, fontColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), weight: .bold, fontSize: 12, text: "PRODUK", kerning: 0)
+        navigationItem.titleView = titleLabel
         
     }
     @objc func backButtonTapped() {

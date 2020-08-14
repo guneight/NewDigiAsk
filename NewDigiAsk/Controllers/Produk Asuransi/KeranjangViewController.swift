@@ -37,8 +37,7 @@ class KeranjangViewController: UIViewController {
     let tableIndicator = UIActivityIndicatorView()
     
     var selectRows : [IndexPath] = []
-    var productCart : ProductinCart?
-    var productInCart = [ProductinCart]()
+    var productInCart = [CartModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,28 +48,40 @@ class KeranjangViewController: UIViewController {
         view.layoutIfNeeded()
         setupUI()
         setupNavBarKeranjang()
+        setupAction()
+//        fecthData()
+        statusCheckOutButton()
+    }
+    
+    func setupAction(){
         pilihSemuaProdukButton.tag = 0
         pilihSemuaProdukButton.addTarget(self, action: #selector(pilihSemuaProduk(sender:)), for: .touchUpInside)
         trushButton.addTarget(self, action: #selector(deleteAllProduk), for: .touchUpInside)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         checkOutButton.addTarget(self, action: #selector(checkOutAction), for: .touchUpInside)
-        fecthData()
     }
-    
  
     
     func fecthData(){
-        FetchingListProduct.shared.getProductFromCart(idUser: "5"){(data) in
-            self.productInCart = data
-            self.daftarProdukKeranjangTable.reloadData()
-            
+        let cart = Cart.shared.fetchDataCart()
+//        productInCart.append(contentsOf: cart)
+//        print("productInCart", productInCart)
+    }
+    
+    func statusCheckOutButton(){
+        if productInCart.count == 0{
+            checkOutButton.isEnabled = false
+            checkOutButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        }else{
+            checkOutButton.isEnabled = true
+             checkOutButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
         }
     }
     
     @objc func checkOutAction(sender: Any){
         if productInCart.count == 0{
-            let produkVC = storyboard?.instantiateViewController(identifier: "ProdukViewController")  as! ProdukViewController
-            self.navigationController?.pushViewController(produkVC, animated: true)
+            let homeVC = storyboard?.instantiateViewController(identifier: "HomeMenuViewController")  as! HomeMenuViewController
+            self.navigationController?.pushViewController(homeVC, animated: true)
         }else{
             let checkOutVC = storyboard?.instantiateViewController(identifier: "CheckOutKeranjangViewController")  as! CheckOutKeranjangViewController
             self.navigationController?.pushViewController(checkOutVC, animated: true)

@@ -19,3 +19,9 @@ struct loginRegisterParams : Codable{
 }
 
 
+struct User: Decodable {
+    let userId: Int
+    let noTelp, email: String
+    let roles: [String]
+    let accessToken, tokenType: String
+}
